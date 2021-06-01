@@ -35,6 +35,8 @@ class SignupVC: UIViewController {
     @IBOutlet weak var btnContinue: UIButton!
     @IBOutlet weak var btnSignIn: UIButton!
     
+    let otpView = ValidateOTP.instanceFromNib()
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +83,7 @@ class SignupVC: UIViewController {
     
     
     @IBAction func onClickContinue(_ sender: Any) {
+        self.view.addSubview(otpView)
     }
     
     @IBAction func onClickSignIn(_ sender: Any) {
@@ -89,6 +92,13 @@ class SignupVC: UIViewController {
     
     func setupUI() {
       
+        otpView.frame = UIScreen.main.bounds
+        //otpView.delegate = self
+        otpView.viewBckGrnd.applyAllAroundShadow()
+        otpView.viewBckGrnd.layer.cornerRadius = 10
+        otpView.imgViewBckGrnd.backgroundColor = .black
+        otpView.imgViewBckGrnd.alpha = 0.6
+        
         txtFieldFullName.layer.cornerRadius = txtFieldFullName.layer.bounds.height/2
         txtFieldFullName.layer.masksToBounds = true
         txtFieldFullName.delegate = self

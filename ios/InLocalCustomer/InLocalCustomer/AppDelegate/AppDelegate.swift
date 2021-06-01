@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         moveToLoginVC()
-        
+        //moveToTabBarVC()
         return true
     }
 
@@ -28,5 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 
+    func moveToTabBarVC(){
+        
+        let signinStoryboard = UIStoryboard.init(name: "BottumTabBar", bundle: nil)
+        let signinViewController = signinStoryboard.instantiateViewController(withIdentifier: "BottumTabBarVC")
+        window?.rootViewController = signinViewController
+        window?.makeKeyAndVisible()
+    }
+    
 }
 

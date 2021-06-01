@@ -61,6 +61,7 @@ class SigninVC: UIViewController {
     }
     
     @IBAction func onClickForgotPassword(_ sender: Any) {
+        moveToForgotPassword()
     }
     
     @IBAction func onClickLogin(_ sender: Any) {
@@ -138,12 +139,19 @@ extension SigninVC: SigninAPIResponseDelegate {
  extension SigninVC{
     
     func moveToRegistration() {
-        //let vc = SignupVC.load(withDependency: nil)
-        //self.navigationController?.pushViewController(vc!, animated: true)
         
         let signupStoryboard = UIStoryboard.init(name: "Signup", bundle: nil)
         let signupViewController = signupStoryboard.instantiateViewController(withIdentifier: "SignupVC")
         
         self.present(signupViewController, animated: true, completion: nil)
     }
+    
+    func moveToForgotPassword() {
+        
+        let signupStoryboard = UIStoryboard.init(name: "ForgotPassword", bundle: nil)
+        let signupViewController = signupStoryboard.instantiateViewController(withIdentifier: "ForgotPasswordVC")
+        
+        self.present(signupViewController, animated: true, completion: nil)
+    }
+    
  }

@@ -14,6 +14,9 @@
         <array key="SFProDisplay-Regular.ttf">
             <string>SFProDisplay-Regular</string>
         </array>
+        <array key="SFProDisplay-Semibold.ttf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--SigninVC-->
@@ -123,7 +126,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="RRx-DO-boq"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
                                                 <state key="normal" title="LOGIN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
