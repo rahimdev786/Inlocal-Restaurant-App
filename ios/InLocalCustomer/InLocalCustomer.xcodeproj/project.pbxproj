@@ -115,6 +115,19 @@
 		C19DB9F42666013300028326 /* BottumTabBarLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB9EE2666013300028326 /* BottumTabBarLocalDataManager.swift */; };
 		C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB9EF2666013300028326 /* BottumTabBarAPIDataManager.swift */; };
 		C19DB9F62666013300028326 /* BottumTabBarDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB9F02666013300028326 /* BottumTabBarDataManager.swift */; };
+		C1B9639526678EE900CECDDF /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B9639326678EE800CECDDF /* Search.storyboard */; };
+		C1B9639626678EE900CECDDF /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9639426678EE900CECDDF /* SearchVC.swift */; };
+		C1B9639926678F1600CECDDF /* SearchDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9639826678F1600CECDDF /* SearchDependency.swift */; };
+		C1B9639E26678F3A00CECDDF /* SearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9639B26678F3900CECDDF /* SearchDataManager.swift */; };
+		C1B9639F26678F3A00CECDDF /* SearchLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9639C26678F3900CECDDF /* SearchLocalDataManager.swift */; };
+		C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9639D26678F3900CECDDF /* SearchAPIDataManager.swift */; };
+		C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963A326678F9400CECDDF /* NotificationsVC.swift */; };
+		C1B963A626678F9400CECDDF /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B963A426678F9400CECDDF /* Notifications.storyboard */; };
+		C1B963A926678FBE00CECDDF /* NotificationsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963A826678FBE00CECDDF /* NotificationsDependency.swift */; };
+		C1B963AE26678FE000CECDDF /* NotificationsAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963AB26678FDF00CECDDF /* NotificationsAPIDataManager.swift */; };
+		C1B963AF26678FE000CECDDF /* NotificationsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963AC26678FDF00CECDDF /* NotificationsLocalDataManager.swift */; };
+		C1B963B026678FE000CECDDF /* NotificationsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963AD26678FDF00CECDDF /* NotificationsDataManager.swift */; };
+		C1B963B42667910D00CECDDF /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963B32667910D00CECDDF /* NotificationTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +264,19 @@
 		C19DB9EE2666013300028326 /* BottumTabBarLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottumTabBarLocalDataManager.swift; sourceTree = "<group>"; };
 		C19DB9EF2666013300028326 /* BottumTabBarAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottumTabBarAPIDataManager.swift; sourceTree = "<group>"; };
 		C19DB9F02666013300028326 /* BottumTabBarDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottumTabBarDataManager.swift; sourceTree = "<group>"; };
+		C1B9639326678EE800CECDDF /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		C1B9639426678EE900CECDDF /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		C1B9639826678F1600CECDDF /* SearchDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDependency.swift; sourceTree = "<group>"; };
+		C1B9639B26678F3900CECDDF /* SearchDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataManager.swift; sourceTree = "<group>"; };
+		C1B9639C26678F3900CECDDF /* SearchLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocalDataManager.swift; sourceTree = "<group>"; };
+		C1B9639D26678F3900CECDDF /* SearchAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPIDataManager.swift; sourceTree = "<group>"; };
+		C1B963A326678F9400CECDDF /* NotificationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		C1B963A426678F9400CECDDF /* Notifications.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		C1B963A826678FBE00CECDDF /* NotificationsDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsDependency.swift; sourceTree = "<group>"; };
+		C1B963AB26678FDF00CECDDF /* NotificationsAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsAPIDataManager.swift; sourceTree = "<group>"; };
+		C1B963AC26678FDF00CECDDF /* NotificationsLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsLocalDataManager.swift; sourceTree = "<group>"; };
+		C1B963AD26678FDF00CECDDF /* NotificationsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsDataManager.swift; sourceTree = "<group>"; };
+		C1B963B32667910D00CECDDF /* NotificationTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +466,8 @@
 		C10C7639265F913800473CB7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C1B963B22667902800CECDDF /* Notifications */,
+				C1B963A226678F5600CECDDF /* Search */,
 				6D48215226674C7A00F1DE01 /* Profile */,
 				C153C77D26662E25002FF282 /* ForgotPassword */,
 				C19DB9DB266600CC00028326 /* BottumTabBar */,
@@ -825,6 +853,89 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		C1B9639726678EF400CECDDF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1B9639326678EE800CECDDF /* Search.storyboard */,
+				C1B9639426678EE900CECDDF /* SearchVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1B9639A26678F2600CECDDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1B9639826678F1600CECDDF /* SearchDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1B963A126678F4000CECDDF /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1B9639C26678F3900CECDDF /* SearchLocalDataManager.swift */,
+				C1B9639D26678F3900CECDDF /* SearchAPIDataManager.swift */,
+				C1B9639B26678F3900CECDDF /* SearchDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C1B963A226678F5600CECDDF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C1B963A126678F4000CECDDF /* DataManager */,
+				C1B9639A26678F2600CECDDF /* Model */,
+				C1B9639726678EF400CECDDF /* ViewController */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		C1B963A726678F9B00CECDDF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1B963A426678F9400CECDDF /* Notifications.storyboard */,
+				C1B963A326678F9400CECDDF /* NotificationsVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1B963AA26678FCE00CECDDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1B963A826678FBE00CECDDF /* NotificationsDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1B963B126678FEE00CECDDF /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1B963AB26678FDF00CECDDF /* NotificationsAPIDataManager.swift */,
+				C1B963AD26678FDF00CECDDF /* NotificationsDataManager.swift */,
+				C1B963AC26678FDF00CECDDF /* NotificationsLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C1B963B22667902800CECDDF /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				C1B963B52667911400CECDDF /* Views */,
+				C1B963B126678FEE00CECDDF /* DataManager */,
+				C1B963AA26678FCE00CECDDF /* Model */,
+				C1B963A726678F9B00CECDDF /* ViewController */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		C1B963B52667911400CECDDF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1B963B32667910D00CECDDF /* NotificationTVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -948,6 +1059,8 @@
 				C185D8A92664D95500BCDA2E /* SFProDisplay-MediumItalic.ttf in Resources */,
 				C185D8972664D95400BCDA2E /* SFProText-RegularItalic.ttf in Resources */,
 				6D48216926674CBE00F1DE01 /* ProfileInfo.storyboard in Resources */,
+				C1B963A626678F9400CECDDF /* Notifications.storyboard in Resources */,
+				C1B9639526678EE900CECDDF /* Search.storyboard in Resources */,
 				C185D8AB2664D95500BCDA2E /* SFProText-MediumItalic.ttf in Resources */,
 				C185D89E2664D95400BCDA2E /* SFProText-Regular.ttf in Resources */,
 				C10C7603265F8BDB00473CB7 /* LaunchScreen.storyboard in Resources */,
@@ -1072,20 +1185,29 @@
 				C10C7695265FA45C00473CB7 /* Utility.swift in Sources */,
 				C19DB9F42666013300028326 /* BottumTabBarLocalDataManager.swift in Sources */,
 				C153C79726662E65002FF282 /* ForgotPasswordVC.swift in Sources */,
+				C1B963B42667910D00CECDDF /* NotificationTVC.swift in Sources */,
 				C10C7689265FA20700473CB7 /* AppColors.swift in Sources */,
 				C10C76CA265FA66800473CB7 /* UITableviewCell.swift in Sources */,
 				C19DB9F32666013300028326 /* BottumTabBarDependency.swift in Sources */,
 				C185D93F2664F85D00BCDA2E /* SigninDependency.swift in Sources */,
 				C185D93C2664F85D00BCDA2E /* SigninDataManager.swift in Sources */,
 				C185D9632664F90300BCDA2E /* ValidateOTPVC.swift in Sources */,
+				C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */,
+				C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */,
 				C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */,
 				C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */,
+				C1B9639F26678F3A00CECDDF /* SearchLocalDataManager.swift in Sources */,
+				C1B9639626678EE900CECDDF /* SearchVC.swift in Sources */,
 				C19DB9F62666013300028326 /* BottumTabBarDataManager.swift in Sources */,
+				C1B963A926678FBE00CECDDF /* NotificationsDependency.swift in Sources */,
+				C1B963AE26678FE000CECDDF /* NotificationsAPIDataManager.swift in Sources */,
 				C185D9442664F85D00BCDA2E /* SignupLocalDataManager.swift in Sources */,
 				6D48216C26674CBE00F1DE01 /* ProfileInfoDataManager.swift in Sources */,
 				C10C76CC265FA66800473CB7 /* UIView + Gradient.swift in Sources */,
+				C1B9639926678F1600CECDDF /* SearchDependency.swift in Sources */,
 				C19DB9F12666013300028326 /* BottumTabBarVC.swift in Sources */,
 				C10C76C7265FA66800473CB7 /* UILabel.swift in Sources */,
+				C1B963B026678FE000CECDDF /* NotificationsDataManager.swift in Sources */,
 				C10C76CE265FA66800473CB7 /* UIVIewController.swift in Sources */,
 				C153C79826662E65002FF282 /* ForgotPasswordDependency.swift in Sources */,
 				C10C76A7265FA55600473CB7 /* UITableView + Header + Footer.swift in Sources */,
@@ -1105,8 +1227,10 @@
 				C10C76CF265FA66800473CB7 /* UIView + Shadow.swift in Sources */,
 				C19DB9D42665E7E300028326 /* ChangePasswordAPIDataManager.swift in Sources */,
 				C185D9402664F85D00BCDA2E /* SigninVC.swift in Sources */,
+				C1B963AF26678FE000CECDDF /* NotificationsLocalDataManager.swift in Sources */,
 				6D48216A26674CBE00F1DE01 /* ProfileInfoVC.swift in Sources */,
 				C10C767C265FA1A800473CB7 /* Validator.swift in Sources */,
+				C1B9639E26678F3A00CECDDF /* SearchDataManager.swift in Sources */,
 				C185D93D2664F85D00BCDA2E /* SigninAPIDataManager.swift in Sources */,
 				C19DB9D22665E7E300028326 /* ChangePasswordVC.swift in Sources */,
 				C185D9432664F85D00BCDA2E /* SignupAPIDataManager.swift in Sources */,

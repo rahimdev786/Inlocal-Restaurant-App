@@ -96,6 +96,17 @@ extension BottumTabBarVC{
 
         //set delegate
         tabController.delegate = self
+        
+        //set child controllers
+        let searchStoryboard = UIStoryboard.init(name: "Search", bundle: nil)
+        let searchViewController = searchStoryboard.instantiateViewController(withIdentifier: "SearchVC")
+        tabController.setViewController(searchViewController, atIndex: 1)
+        
+        let notificationStoryboard = UIStoryboard.init(name: "Notifications", bundle: nil)
+        let notificationViewController = notificationStoryboard.instantiateViewController(withIdentifier: "NotificationsVC")
+        tabController.setViewController(notificationViewController, atIndex: 4)
+        
+        
         /*
         //set child controllers
         tabController.setViewController(ColorSelectorController.instance(), atIndex: 0)
