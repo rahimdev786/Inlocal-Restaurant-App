@@ -65,6 +65,12 @@ class SigninVC: UIViewController {
     }
     
     @IBAction func onClickLogin(_ sender: Any) {
+        
+        guard let vc = ProfileInfoVC.loadFromXIB() else {
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @IBAction func onClickRegister(_ sender: Any) {
