@@ -14,6 +14,9 @@ class OrderListVC: UIViewController {
 	lazy var dataManager = OrderListDataManager()
     var dependency: OrderListDependency?
     // MARK: - View Life Cycle Methods
+    
+    @IBOutlet weak var tableView: UITableView!
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
@@ -37,6 +40,11 @@ class OrderListVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
+    @IBAction func didTapOnBack(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 // MARK: - Load from storyboard with dependency
@@ -53,4 +61,24 @@ extension OrderListVC {
 
 // MARK: - OrderListAPIResponseDelegate
 extension OrderListVC: OrderListAPIResponseDelegate {
+}
+
+//MARK: UITableViewDataSource
+extension OrderListVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: OrderListTVC.identifier, for: indexPath) as! OrderListTVC
+        return cell
+    }
+    
+}
+
+extension OrderListVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 108.0
+    }
 }
