@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D48216926674CBE00F1DE01 /* ProfileInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D48216126674CBD00F1DE01 /* ProfileInfo.storyboard */; };
+		6D48216A26674CBE00F1DE01 /* ProfileInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48216226674CBD00F1DE01 /* ProfileInfoVC.swift */; };
+		6D48216B26674CBE00F1DE01 /* ProfileInfoAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48216426674CBD00F1DE01 /* ProfileInfoAPIDataManager.swift */; };
+		6D48216C26674CBE00F1DE01 /* ProfileInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48216526674CBD00F1DE01 /* ProfileInfoDataManager.swift */; };
+		6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48216626674CBD00F1DE01 /* ProfileInfoLocalDataManager.swift */; };
+		6D48216E26674CBE00F1DE01 /* ProfileInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48216826674CBD00F1DE01 /* ProfileInfoDependency.swift */; };
+		6D48217326676C5900F1DE01 /* ProfileInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48217226676C5900F1DE01 /* ProfileInfoTVC.swift */; };
 		7DA6B199F286E9C5CD746A03 /* Pods_InLocalCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */; };
 		C10C75F7265F8BD700473CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C75F6265F8BD700473CB7 /* AppDelegate.swift */; };
 		C10C75FB265F8BD700473CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C75FA265F8BD700473CB7 /* ViewController.swift */; };
@@ -130,6 +137,13 @@
 /* Begin PBXFileReference section */
 		1E376E308EF62AA7CE0CE549 /* Pods-InLocalCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InLocalCustomer.release.xcconfig"; path = "Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer.release.xcconfig"; sourceTree = "<group>"; };
 		281CFFC35515D0E7C94A34E3 /* Pods-InLocalCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InLocalCustomer.debug.xcconfig"; path = "Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer.debug.xcconfig"; sourceTree = "<group>"; };
+		6D48216126674CBD00F1DE01 /* ProfileInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileInfo.storyboard; sourceTree = "<group>"; };
+		6D48216226674CBD00F1DE01 /* ProfileInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoVC.swift; sourceTree = "<group>"; };
+		6D48216426674CBD00F1DE01 /* ProfileInfoAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoAPIDataManager.swift; sourceTree = "<group>"; };
+		6D48216526674CBD00F1DE01 /* ProfileInfoDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoDataManager.swift; sourceTree = "<group>"; };
+		6D48216626674CBD00F1DE01 /* ProfileInfoLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoLocalDataManager.swift; sourceTree = "<group>"; };
+		6D48216826674CBD00F1DE01 /* ProfileInfoDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoDependency.swift; sourceTree = "<group>"; };
+		6D48217226676C5900F1DE01 /* ProfileInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTVC.swift; sourceTree = "<group>"; };
 		A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InLocalCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10C75F3265F8BD700473CB7 /* InLocalCustomer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InLocalCustomer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10C75F6265F8BD700473CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +287,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6D48215226674C7A00F1DE01 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6D48215326674C7A00F1DE01 /* ProfileInfo */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6D48215326674C7A00F1DE01 /* ProfileInfo */ = {
+			isa = PBXGroup;
+			children = (
+				6D48216326674CBD00F1DE01 /* DataManager */,
+				6D48216726674CBD00F1DE01 /* Model */,
+				6D48216026674CBD00F1DE01 /* ViewController */,
+			);
+			path = ProfileInfo;
+			sourceTree = "<group>";
+		};
+		6D48216026674CBD00F1DE01 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D48216126674CBD00F1DE01 /* ProfileInfo.storyboard */,
+				6D48216226674CBD00F1DE01 /* ProfileInfoVC.swift */,
+				6D48217226676C5900F1DE01 /* ProfileInfoTVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6D48216326674CBD00F1DE01 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D48216426674CBD00F1DE01 /* ProfileInfoAPIDataManager.swift */,
+				6D48216526674CBD00F1DE01 /* ProfileInfoDataManager.swift */,
+				6D48216626674CBD00F1DE01 /* ProfileInfoLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		6D48216726674CBD00F1DE01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D48216826674CBD00F1DE01 /* ProfileInfoDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C020C172CBA0FD658C8185F0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +440,7 @@
 		C10C7639265F913800473CB7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6D48215226674C7A00F1DE01 /* Profile */,
 				C153C77D26662E25002FF282 /* ForgotPassword */,
 				C19DB9DB266600CC00028326 /* BottumTabBar */,
 				C19DB9BC2665E77D00028326 /* ChangePassword */,
@@ -886,6 +947,7 @@
 				C153C79626662E65002FF282 /* ForgotPassword.storyboard in Resources */,
 				C185D8A92664D95500BCDA2E /* SFProDisplay-MediumItalic.ttf in Resources */,
 				C185D8972664D95400BCDA2E /* SFProText-RegularItalic.ttf in Resources */,
+				6D48216926674CBE00F1DE01 /* ProfileInfo.storyboard in Resources */,
 				C185D8AB2664D95500BCDA2E /* SFProText-MediumItalic.ttf in Resources */,
 				C185D89E2664D95400BCDA2E /* SFProText-Regular.ttf in Resources */,
 				C10C7603265F8BDB00473CB7 /* LaunchScreen.storyboard in Resources */,
@@ -1006,6 +1068,7 @@
 				C10C75FB265F8BD700473CB7 /* ViewController.swift in Sources */,
 				C10C76C8265FA66800473CB7 /* UIPageControl.swift in Sources */,
 				C10C76B2265FA60700473CB7 /* PopNavigationController.swift in Sources */,
+				6D48216E26674CBE00F1DE01 /* ProfileInfoDependency.swift in Sources */,
 				C10C7695265FA45C00473CB7 /* Utility.swift in Sources */,
 				C19DB9F42666013300028326 /* BottumTabBarLocalDataManager.swift in Sources */,
 				C153C79726662E65002FF282 /* ForgotPasswordVC.swift in Sources */,
@@ -1019,12 +1082,14 @@
 				C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */,
 				C19DB9F62666013300028326 /* BottumTabBarDataManager.swift in Sources */,
 				C185D9442664F85D00BCDA2E /* SignupLocalDataManager.swift in Sources */,
+				6D48216C26674CBE00F1DE01 /* ProfileInfoDataManager.swift in Sources */,
 				C10C76CC265FA66800473CB7 /* UIView + Gradient.swift in Sources */,
 				C19DB9F12666013300028326 /* BottumTabBarVC.swift in Sources */,
 				C10C76C7265FA66800473CB7 /* UILabel.swift in Sources */,
 				C10C76CE265FA66800473CB7 /* UIVIewController.swift in Sources */,
 				C153C79826662E65002FF282 /* ForgotPasswordDependency.swift in Sources */,
 				C10C76A7265FA55600473CB7 /* UITableView + Header + Footer.swift in Sources */,
+				6D48217326676C5900F1DE01 /* ProfileInfoTVC.swift in Sources */,
 				C185D9642664F90300BCDA2E /* ValidateOTPDataManager.swift in Sources */,
 				C10C7688265FA20700473CB7 /* AppFonts.swift in Sources */,
 				C10C7687265FA20700473CB7 /* AppConstants.swift in Sources */,
@@ -1040,17 +1105,20 @@
 				C10C76CF265FA66800473CB7 /* UIView + Shadow.swift in Sources */,
 				C19DB9D42665E7E300028326 /* ChangePasswordAPIDataManager.swift in Sources */,
 				C185D9402664F85D00BCDA2E /* SigninVC.swift in Sources */,
+				6D48216A26674CBE00F1DE01 /* ProfileInfoVC.swift in Sources */,
 				C10C767C265FA1A800473CB7 /* Validator.swift in Sources */,
 				C185D93D2664F85D00BCDA2E /* SigninAPIDataManager.swift in Sources */,
 				C19DB9D22665E7E300028326 /* ChangePasswordVC.swift in Sources */,
 				C185D9432664F85D00BCDA2E /* SignupAPIDataManager.swift in Sources */,
 				C10C766A265FA10000473CB7 /* AppEnum.swift in Sources */,
+				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,
 				C19DB9D62665E7E400028326 /* ChangePasswordDataManager.swift in Sources */,
 				C10C764D265F9E2A00473CB7 /* AppActivityIndicator.swift in Sources */,
 				C19DB9D52665E7E300028326 /* ChangePasswordLocalDataManager.swift in Sources */,
 				C10C76CB265FA66800473CB7 /* UIImage+Utilities.swift in Sources */,
 				C10C76C9265FA66800473CB7 /* UIButton.swift in Sources */,
 				C185D93E2664F85D00BCDA2E /* SigninLocalDataManager.swift in Sources */,
+				6D48216B26674CBE00F1DE01 /* ProfileInfoAPIDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1228,6 +1296,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9STZT28MB5;
 				INFOPLIST_FILE = InLocalCustomer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1248,6 +1317,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9STZT28MB5;
 				INFOPLIST_FILE = InLocalCustomer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

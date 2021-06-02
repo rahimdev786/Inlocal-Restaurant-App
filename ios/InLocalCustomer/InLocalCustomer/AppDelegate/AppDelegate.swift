@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
         moveToLoginVC()
         //moveToTabBarVC()
+        // IQKeyboard
+        IQKeyboardManager.shared.enable = true
         return true
     }
 
@@ -24,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let signinStoryboard = UIStoryboard.init(name: "Signin", bundle: nil)
         let signinViewController = signinStoryboard.instantiateViewController(withIdentifier: "SigninVC")
-        window?.rootViewController = signinViewController
+        let navVC = UINavigationController(rootViewController: signinViewController)
+        navVC.isNavigationBarHidden = true
+        window?.rootViewController = navVC
         window?.makeKeyAndVisible()
     }
 
