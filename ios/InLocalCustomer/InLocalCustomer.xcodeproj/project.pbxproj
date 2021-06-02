@@ -14,6 +14,36 @@
 		6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48216626674CBD00F1DE01 /* ProfileInfoLocalDataManager.swift */; };
 		6D48216E26674CBE00F1DE01 /* ProfileInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48216826674CBD00F1DE01 /* ProfileInfoDependency.swift */; };
 		6D48217326676C5900F1DE01 /* ProfileInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48217226676C5900F1DE01 /* ProfileInfoTVC.swift */; };
+		6D4821AE2667A75700F1DE01 /* BookingListDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821A62667A75600F1DE01 /* BookingListDependency.swift */; };
+		6D4821AF2667A75700F1DE01 /* BookingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821A82667A75600F1DE01 /* BookingListVC.swift */; };
+		6D4821B02667A75700F1DE01 /* BookingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4821A92667A75600F1DE01 /* BookingList.storyboard */; };
+		6D4821B12667A75700F1DE01 /* BookingListAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821AB2667A75600F1DE01 /* BookingListAPIDataManager.swift */; };
+		6D4821B22667A75700F1DE01 /* BookingListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821AC2667A75600F1DE01 /* BookingListDataManager.swift */; };
+		6D4821B32667A75700F1DE01 /* BookingListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821AD2667A75600F1DE01 /* BookingListLocalDataManager.swift */; };
+		6D4821CC2667A77F00F1DE01 /* BookingDetailsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821C42667A77F00F1DE01 /* BookingDetailsDependency.swift */; };
+		6D4821CD2667A77F00F1DE01 /* BookingDetailsAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821C62667A77F00F1DE01 /* BookingDetailsAPIDataManager.swift */; };
+		6D4821CE2667A77F00F1DE01 /* BookingDetailsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821C72667A77F00F1DE01 /* BookingDetailsLocalDataManager.swift */; };
+		6D4821CF2667A77F00F1DE01 /* BookingDetailsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821C82667A77F00F1DE01 /* BookingDetailsDataManager.swift */; };
+		6D4821D02667A77F00F1DE01 /* BookingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4821CA2667A77F00F1DE01 /* BookingDetailsVC.swift */; };
+		6D4821D12667A77F00F1DE01 /* BookingDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4821CB2667A77F00F1DE01 /* BookingDetails.storyboard */; };
+		6D4822372667A82200F1DE01 /* OrderListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48222F2667A82100F1DE01 /* OrderListDataManager.swift */; };
+		6D4822382667A82200F1DE01 /* OrderListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822302667A82100F1DE01 /* OrderListLocalDataManager.swift */; };
+		6D4822392667A82200F1DE01 /* OrderListAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822312667A82100F1DE01 /* OrderListAPIDataManager.swift */; };
+		6D48223A2667A82200F1DE01 /* OrderListDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822332667A82100F1DE01 /* OrderListDependency.swift */; };
+		6D48223B2667A82200F1DE01 /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4822352667A82200F1DE01 /* OrderList.storyboard */; };
+		6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822362667A82200F1DE01 /* OrderListVC.swift */; };
+		6D4822492667A83400F1DE01 /* OrderDetailsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822412667A83300F1DE01 /* OrderDetailsDataManager.swift */; };
+		6D48224A2667A83400F1DE01 /* OrderDetailsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822422667A83300F1DE01 /* OrderDetailsLocalDataManager.swift */; };
+		6D48224B2667A83400F1DE01 /* OrderDetailsAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822432667A83400F1DE01 /* OrderDetailsAPIDataManager.swift */; };
+		6D48224C2667A83400F1DE01 /* OrderDetailsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822452667A83400F1DE01 /* OrderDetailsDependency.swift */; };
+		6D48224D2667A83400F1DE01 /* OrderDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4822472667A83400F1DE01 /* OrderDetails.storyboard */; };
+		6D48224E2667A83400F1DE01 /* OrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822482667A83400F1DE01 /* OrderDetailsVC.swift */; };
+		6D4822672667A85900F1DE01 /* NotificationSettingsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48225F2667A85900F1DE01 /* NotificationSettingsDependency.swift */; };
+		6D4822682667A85900F1DE01 /* NotificationSettingsAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822612667A85900F1DE01 /* NotificationSettingsAPIDataManager.swift */; };
+		6D4822692667A85900F1DE01 /* NotificationSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822622667A85900F1DE01 /* NotificationSettingsDataManager.swift */; };
+		6D48226A2667A85900F1DE01 /* NotificationSettingsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822632667A85900F1DE01 /* NotificationSettingsLocalDataManager.swift */; };
+		6D48226B2667A85900F1DE01 /* NotificationSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822652667A85900F1DE01 /* NotificationSettingsVC.swift */; };
+		6D48226C2667A85900F1DE01 /* NotificationSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4822662667A85900F1DE01 /* NotificationSettings.storyboard */; };
 		7DA6B199F286E9C5CD746A03 /* Pods_InLocalCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */; };
 		C10C75F7265F8BD700473CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C75F6265F8BD700473CB7 /* AppDelegate.swift */; };
 		C10C75FB265F8BD700473CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C75FA265F8BD700473CB7 /* ViewController.swift */; };
@@ -157,6 +187,36 @@
 		6D48216626674CBD00F1DE01 /* ProfileInfoLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoLocalDataManager.swift; sourceTree = "<group>"; };
 		6D48216826674CBD00F1DE01 /* ProfileInfoDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoDependency.swift; sourceTree = "<group>"; };
 		6D48217226676C5900F1DE01 /* ProfileInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTVC.swift; sourceTree = "<group>"; };
+		6D4821A62667A75600F1DE01 /* BookingListDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListDependency.swift; sourceTree = "<group>"; };
+		6D4821A82667A75600F1DE01 /* BookingListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListVC.swift; sourceTree = "<group>"; };
+		6D4821A92667A75600F1DE01 /* BookingList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookingList.storyboard; sourceTree = "<group>"; };
+		6D4821AB2667A75600F1DE01 /* BookingListAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListAPIDataManager.swift; sourceTree = "<group>"; };
+		6D4821AC2667A75600F1DE01 /* BookingListDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListDataManager.swift; sourceTree = "<group>"; };
+		6D4821AD2667A75600F1DE01 /* BookingListLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListLocalDataManager.swift; sourceTree = "<group>"; };
+		6D4821C42667A77F00F1DE01 /* BookingDetailsDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailsDependency.swift; sourceTree = "<group>"; };
+		6D4821C62667A77F00F1DE01 /* BookingDetailsAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailsAPIDataManager.swift; sourceTree = "<group>"; };
+		6D4821C72667A77F00F1DE01 /* BookingDetailsLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailsLocalDataManager.swift; sourceTree = "<group>"; };
+		6D4821C82667A77F00F1DE01 /* BookingDetailsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailsDataManager.swift; sourceTree = "<group>"; };
+		6D4821CA2667A77F00F1DE01 /* BookingDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailsVC.swift; sourceTree = "<group>"; };
+		6D4821CB2667A77F00F1DE01 /* BookingDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookingDetails.storyboard; sourceTree = "<group>"; };
+		6D48222F2667A82100F1DE01 /* OrderListDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListDataManager.swift; sourceTree = "<group>"; };
+		6D4822302667A82100F1DE01 /* OrderListLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListLocalDataManager.swift; sourceTree = "<group>"; };
+		6D4822312667A82100F1DE01 /* OrderListAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListAPIDataManager.swift; sourceTree = "<group>"; };
+		6D4822332667A82100F1DE01 /* OrderListDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListDependency.swift; sourceTree = "<group>"; };
+		6D4822352667A82200F1DE01 /* OrderList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
+		6D4822362667A82200F1DE01 /* OrderListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListVC.swift; sourceTree = "<group>"; };
+		6D4822412667A83300F1DE01 /* OrderDetailsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsDataManager.swift; sourceTree = "<group>"; };
+		6D4822422667A83300F1DE01 /* OrderDetailsLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsLocalDataManager.swift; sourceTree = "<group>"; };
+		6D4822432667A83400F1DE01 /* OrderDetailsAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsAPIDataManager.swift; sourceTree = "<group>"; };
+		6D4822452667A83400F1DE01 /* OrderDetailsDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsDependency.swift; sourceTree = "<group>"; };
+		6D4822472667A83400F1DE01 /* OrderDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrderDetails.storyboard; sourceTree = "<group>"; };
+		6D4822482667A83400F1DE01 /* OrderDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsVC.swift; sourceTree = "<group>"; };
+		6D48225F2667A85900F1DE01 /* NotificationSettingsDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsDependency.swift; sourceTree = "<group>"; };
+		6D4822612667A85900F1DE01 /* NotificationSettingsAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsAPIDataManager.swift; sourceTree = "<group>"; };
+		6D4822622667A85900F1DE01 /* NotificationSettingsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsDataManager.swift; sourceTree = "<group>"; };
+		6D4822632667A85900F1DE01 /* NotificationSettingsLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsLocalDataManager.swift; sourceTree = "<group>"; };
+		6D4822652667A85900F1DE01 /* NotificationSettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsVC.swift; sourceTree = "<group>"; };
+		6D4822662667A85900F1DE01 /* NotificationSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NotificationSettings.storyboard; sourceTree = "<group>"; };
 		A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InLocalCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10C75F3265F8BD700473CB7 /* InLocalCustomer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InLocalCustomer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10C75F6265F8BD700473CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +376,11 @@
 		6D48215226674C7A00F1DE01 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				6D4821912667A73600F1DE01 /* BookingDetails */,
+				6D4821942667A73600F1DE01 /* BookingList */,
+				6D4821932667A73600F1DE01 /* NotificationSettings */,
+				6D4821952667A73700F1DE01 /* OrderDetails */,
+				6D4821922667A73600F1DE01 /* OrderList */,
 				6D48215326674C7A00F1DE01 /* ProfileInfo */,
 			);
 			path = Profile;
@@ -357,6 +422,191 @@
 				6D48216826674CBD00F1DE01 /* ProfileInfoDependency.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6D4821912667A73600F1DE01 /* BookingDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6D4821C52667A77F00F1DE01 /* DataManager */,
+				6D4821C32667A77F00F1DE01 /* Model */,
+				6D4821C92667A77F00F1DE01 /* ViewController */,
+			);
+			path = BookingDetails;
+			sourceTree = "<group>";
+		};
+		6D4821922667A73600F1DE01 /* OrderList */ = {
+			isa = PBXGroup;
+			children = (
+				6D48222E2667A82100F1DE01 /* DataManager */,
+				6D4822322667A82100F1DE01 /* Model */,
+				6D4822342667A82200F1DE01 /* ViewController */,
+			);
+			path = OrderList;
+			sourceTree = "<group>";
+		};
+		6D4821932667A73600F1DE01 /* NotificationSettings */ = {
+			isa = PBXGroup;
+			children = (
+				6D4822602667A85900F1DE01 /* DataManager */,
+				6D48225E2667A85800F1DE01 /* Model */,
+				6D4822642667A85900F1DE01 /* ViewController */,
+			);
+			path = NotificationSettings;
+			sourceTree = "<group>";
+		};
+		6D4821942667A73600F1DE01 /* BookingList */ = {
+			isa = PBXGroup;
+			children = (
+				6D4821AA2667A75600F1DE01 /* DataManager */,
+				6D4821A52667A75600F1DE01 /* Model */,
+				6D4821A72667A75600F1DE01 /* ViewController */,
+			);
+			path = BookingList;
+			sourceTree = "<group>";
+		};
+		6D4821952667A73700F1DE01 /* OrderDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6D4822402667A83300F1DE01 /* DataManager */,
+				6D4822442667A83400F1DE01 /* Model */,
+				6D4822462667A83400F1DE01 /* ViewController */,
+			);
+			path = OrderDetails;
+			sourceTree = "<group>";
+		};
+		6D4821A52667A75600F1DE01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D4821A62667A75600F1DE01 /* BookingListDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D4821A72667A75600F1DE01 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D4821A82667A75600F1DE01 /* BookingListVC.swift */,
+				6D4821A92667A75600F1DE01 /* BookingList.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6D4821AA2667A75600F1DE01 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D4821AB2667A75600F1DE01 /* BookingListAPIDataManager.swift */,
+				6D4821AC2667A75600F1DE01 /* BookingListDataManager.swift */,
+				6D4821AD2667A75600F1DE01 /* BookingListLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		6D4821C32667A77F00F1DE01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D4821C42667A77F00F1DE01 /* BookingDetailsDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D4821C52667A77F00F1DE01 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D4821C62667A77F00F1DE01 /* BookingDetailsAPIDataManager.swift */,
+				6D4821C72667A77F00F1DE01 /* BookingDetailsLocalDataManager.swift */,
+				6D4821C82667A77F00F1DE01 /* BookingDetailsDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		6D4821C92667A77F00F1DE01 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D4821CA2667A77F00F1DE01 /* BookingDetailsVC.swift */,
+				6D4821CB2667A77F00F1DE01 /* BookingDetails.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6D48222E2667A82100F1DE01 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D48222F2667A82100F1DE01 /* OrderListDataManager.swift */,
+				6D4822302667A82100F1DE01 /* OrderListLocalDataManager.swift */,
+				6D4822312667A82100F1DE01 /* OrderListAPIDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		6D4822322667A82100F1DE01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D4822332667A82100F1DE01 /* OrderListDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D4822342667A82200F1DE01 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D4822352667A82200F1DE01 /* OrderList.storyboard */,
+				6D4822362667A82200F1DE01 /* OrderListVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6D4822402667A83300F1DE01 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D4822412667A83300F1DE01 /* OrderDetailsDataManager.swift */,
+				6D4822422667A83300F1DE01 /* OrderDetailsLocalDataManager.swift */,
+				6D4822432667A83400F1DE01 /* OrderDetailsAPIDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		6D4822442667A83400F1DE01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D4822452667A83400F1DE01 /* OrderDetailsDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D4822462667A83400F1DE01 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D4822472667A83400F1DE01 /* OrderDetails.storyboard */,
+				6D4822482667A83400F1DE01 /* OrderDetailsVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6D48225E2667A85800F1DE01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D48225F2667A85900F1DE01 /* NotificationSettingsDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D4822602667A85900F1DE01 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D4822612667A85900F1DE01 /* NotificationSettingsAPIDataManager.swift */,
+				6D4822622667A85900F1DE01 /* NotificationSettingsDataManager.swift */,
+				6D4822632667A85900F1DE01 /* NotificationSettingsLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		6D4822642667A85900F1DE01 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D4822652667A85900F1DE01 /* NotificationSettingsVC.swift */,
+				6D4822662667A85900F1DE01 /* NotificationSettings.storyboard */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C020C172CBA0FD658C8185F0 /* Pods */ = {
@@ -1042,8 +1292,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D48224D2667A83400F1DE01 /* OrderDetails.storyboard in Resources */,
 				C185D8A22664D95400BCDA2E /* SFProText-SemiboldItalic.ttf in Resources */,
 				C19DB9D32665E7E300028326 /* ChangePassword.storyboard in Resources */,
+				6D48223B2667A82200F1DE01 /* OrderList.storyboard in Resources */,
 				C185D89C2664D95400BCDA2E /* SFProDisplay-Medium.ttf in Resources */,
 				C185D8AD2664D95500BCDA2E /* SFProDisplay-BlackItalic.ttf in Resources */,
 				C153C79F26664228002FF282 /* ValidateOTP.xib in Resources */,
@@ -1063,6 +1315,7 @@
 				C1B9639526678EE900CECDDF /* Search.storyboard in Resources */,
 				C185D8AB2664D95500BCDA2E /* SFProText-MediumItalic.ttf in Resources */,
 				C185D89E2664D95400BCDA2E /* SFProText-Regular.ttf in Resources */,
+				6D4821D12667A77F00F1DE01 /* BookingDetails.storyboard in Resources */,
 				C10C7603265F8BDB00473CB7 /* LaunchScreen.storyboard in Resources */,
 				C185D8982664D95400BCDA2E /* SFProDisplay-Thin.ttf in Resources */,
 				C185D8962664D95400BCDA2E /* SFProDisplay-BoldItalic.ttf in Resources */,
@@ -1071,10 +1324,12 @@
 				C185D89B2664D95400BCDA2E /* SFProDisplay-HeavyItalic.ttf in Resources */,
 				C185D8922664D95400BCDA2E /* SFProDisplay-SemiboldItalic.ttf in Resources */,
 				C185D8932664D95400BCDA2E /* SFProDisplay-Ultralight.ttf in Resources */,
+				6D4821B02667A75700F1DE01 /* BookingList.storyboard in Resources */,
 				C185D8AA2664D95500BCDA2E /* SFProDisplay-Regular.ttf in Resources */,
 				C185D9622664F90300BCDA2E /* ValidateOTP.storyboard in Resources */,
 				C185D8A42664D95400BCDA2E /* SFProText-Light.ttf in Resources */,
 				C185D89F2664D95400BCDA2E /* SFProDisplay-Semibold.ttf in Resources */,
+				6D48226C2667A85900F1DE01 /* NotificationSettings.storyboard in Resources */,
 				C185D8A12664D95400BCDA2E /* SFProText-Heavy.ttf in Resources */,
 				C185D89D2664D95400BCDA2E /* SFProDisplay-RegularItalic.ttf in Resources */,
 				C185D8A62664D95400BCDA2E /* SFProText-LightItalic.ttf in Resources */,
@@ -1170,43 +1425,59 @@
 			buildActionMask = 2147483647;
 			files = (
 				C153C79426662E65002FF282 /* ForgotPasswordDataManager.swift in Sources */,
+				6D4822392667A82200F1DE01 /* OrderListAPIDataManager.swift in Sources */,
 				C185D9652664F90300BCDA2E /* ValidateOTPAPIDataManager.swift in Sources */,
 				C10C76D0265FA66800473CB7 /* UIDevice.swift in Sources */,
+				6D4821B32667A75700F1DE01 /* BookingListLocalDataManager.swift in Sources */,
+				6D4822382667A82200F1DE01 /* OrderListLocalDataManager.swift in Sources */,
 				C185D9462664F85D00BCDA2E /* SignupVC.swift in Sources */,
+				6D48224A2667A83400F1DE01 /* OrderDetailsLocalDataManager.swift in Sources */,
 				C185D9662664F90300BCDA2E /* ValidateOTPLocalDataManager.swift in Sources */,
 				C185D9612664F90300BCDA2E /* ValidateOTPDependency.swift in Sources */,
+				6D4821CC2667A77F00F1DE01 /* BookingDetailsDependency.swift in Sources */,
 				C10C7673265FA15700473CB7 /* EmptyResponse.swift in Sources */,
 				C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */,
 				C10C7661265F9F2E00473CB7 /* LocationManager.swift in Sources */,
 				C10C75FB265F8BD700473CB7 /* ViewController.swift in Sources */,
 				C10C76C8265FA66800473CB7 /* UIPageControl.swift in Sources */,
+				6D48224B2667A83400F1DE01 /* OrderDetailsAPIDataManager.swift in Sources */,
 				C10C76B2265FA60700473CB7 /* PopNavigationController.swift in Sources */,
 				6D48216E26674CBE00F1DE01 /* ProfileInfoDependency.swift in Sources */,
 				C10C7695265FA45C00473CB7 /* Utility.swift in Sources */,
 				C19DB9F42666013300028326 /* BottumTabBarLocalDataManager.swift in Sources */,
 				C153C79726662E65002FF282 /* ForgotPasswordVC.swift in Sources */,
 				C1B963B42667910D00CECDDF /* NotificationTVC.swift in Sources */,
+				6D4821B22667A75700F1DE01 /* BookingListDataManager.swift in Sources */,
 				C10C7689265FA20700473CB7 /* AppColors.swift in Sources */,
 				C10C76CA265FA66800473CB7 /* UITableviewCell.swift in Sources */,
+				6D4822672667A85900F1DE01 /* NotificationSettingsDependency.swift in Sources */,
 				C19DB9F32666013300028326 /* BottumTabBarDependency.swift in Sources */,
 				C185D93F2664F85D00BCDA2E /* SigninDependency.swift in Sources */,
+				6D4821AE2667A75700F1DE01 /* BookingListDependency.swift in Sources */,
 				C185D93C2664F85D00BCDA2E /* SigninDataManager.swift in Sources */,
 				C185D9632664F90300BCDA2E /* ValidateOTPVC.swift in Sources */,
 				C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */,
+				6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */,
 				C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */,
 				C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */,
 				C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */,
+				6D4821AF2667A75700F1DE01 /* BookingListVC.swift in Sources */,
 				C1B9639F26678F3A00CECDDF /* SearchLocalDataManager.swift in Sources */,
 				C1B9639626678EE900CECDDF /* SearchVC.swift in Sources */,
 				C19DB9F62666013300028326 /* BottumTabBarDataManager.swift in Sources */,
 				C1B963A926678FBE00CECDDF /* NotificationsDependency.swift in Sources */,
+				6D4822682667A85900F1DE01 /* NotificationSettingsAPIDataManager.swift in Sources */,
 				C1B963AE26678FE000CECDDF /* NotificationsAPIDataManager.swift in Sources */,
 				C185D9442664F85D00BCDA2E /* SignupLocalDataManager.swift in Sources */,
+				6D4821B12667A75700F1DE01 /* BookingListAPIDataManager.swift in Sources */,
 				6D48216C26674CBE00F1DE01 /* ProfileInfoDataManager.swift in Sources */,
 				C10C76CC265FA66800473CB7 /* UIView + Gradient.swift in Sources */,
+				6D48223A2667A82200F1DE01 /* OrderListDependency.swift in Sources */,
 				C1B9639926678F1600CECDDF /* SearchDependency.swift in Sources */,
+				6D4821CE2667A77F00F1DE01 /* BookingDetailsLocalDataManager.swift in Sources */,
 				C19DB9F12666013300028326 /* BottumTabBarVC.swift in Sources */,
 				C10C76C7265FA66800473CB7 /* UILabel.swift in Sources */,
+				6D48226A2667A85900F1DE01 /* NotificationSettingsLocalDataManager.swift in Sources */,
 				C1B963B026678FE000CECDDF /* NotificationsDataManager.swift in Sources */,
 				C10C76CE265FA66800473CB7 /* UIVIewController.swift in Sources */,
 				C153C79826662E65002FF282 /* ForgotPasswordDependency.swift in Sources */,
@@ -1214,29 +1485,38 @@
 				6D48217326676C5900F1DE01 /* ProfileInfoTVC.swift in Sources */,
 				C185D9642664F90300BCDA2E /* ValidateOTPDataManager.swift in Sources */,
 				C10C7688265FA20700473CB7 /* AppFonts.swift in Sources */,
+				6D4821CF2667A77F00F1DE01 /* BookingDetailsDataManager.swift in Sources */,
+				6D4822492667A83400F1DE01 /* OrderDetailsDataManager.swift in Sources */,
 				C10C7687265FA20700473CB7 /* AppConstants.swift in Sources */,
 				C185D96C2664FDFA00BCDA2E /* TextFieldView.swift in Sources */,
+				6D4822692667A85900F1DE01 /* NotificationSettingsDataManager.swift in Sources */,
 				C10C75F7265F8BD700473CB7 /* AppDelegate.swift in Sources */,
 				C10C76A8265FA55600473CB7 /* UIColor.swift in Sources */,
 				C185D9422664F85D00BCDA2E /* SignupDataManager.swift in Sources */,
 				C10C76CD265FA66800473CB7 /* UIWindow.swift in Sources */,
 				C185D9452664F85D00BCDA2E /* SignupDependency.swift in Sources */,
 				C10C76A9265FA55600473CB7 /* UIView.swift in Sources */,
+				6D4822372667A82200F1DE01 /* OrderListDataManager.swift in Sources */,
+				6D4821D02667A77F00F1DE01 /* BookingDetailsVC.swift in Sources */,
 				C153C79326662E65002FF282 /* ForgotPasswordAPIDataManager.swift in Sources */,
 				C19DB9D72665E7E400028326 /* ChangePasswordDependency.swift in Sources */,
 				C10C76CF265FA66800473CB7 /* UIView + Shadow.swift in Sources */,
 				C19DB9D42665E7E300028326 /* ChangePasswordAPIDataManager.swift in Sources */,
 				C185D9402664F85D00BCDA2E /* SigninVC.swift in Sources */,
+				6D48226B2667A85900F1DE01 /* NotificationSettingsVC.swift in Sources */,
 				C1B963AF26678FE000CECDDF /* NotificationsLocalDataManager.swift in Sources */,
 				6D48216A26674CBE00F1DE01 /* ProfileInfoVC.swift in Sources */,
 				C10C767C265FA1A800473CB7 /* Validator.swift in Sources */,
 				C1B9639E26678F3A00CECDDF /* SearchDataManager.swift in Sources */,
+				6D4821CD2667A77F00F1DE01 /* BookingDetailsAPIDataManager.swift in Sources */,
 				C185D93D2664F85D00BCDA2E /* SigninAPIDataManager.swift in Sources */,
 				C19DB9D22665E7E300028326 /* ChangePasswordVC.swift in Sources */,
 				C185D9432664F85D00BCDA2E /* SignupAPIDataManager.swift in Sources */,
 				C10C766A265FA10000473CB7 /* AppEnum.swift in Sources */,
 				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,
 				C19DB9D62665E7E400028326 /* ChangePasswordDataManager.swift in Sources */,
+				6D48224E2667A83400F1DE01 /* OrderDetailsVC.swift in Sources */,
+				6D48224C2667A83400F1DE01 /* OrderDetailsDependency.swift in Sources */,
 				C10C764D265F9E2A00473CB7 /* AppActivityIndicator.swift in Sources */,
 				C19DB9D52665E7E300028326 /* ChangePasswordLocalDataManager.swift in Sources */,
 				C10C76CB265FA66800473CB7 /* UIImage+Utilities.swift in Sources */,
