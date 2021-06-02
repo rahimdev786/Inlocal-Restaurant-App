@@ -1,0 +1,69 @@
+PODS:
+  - Alamofire (5.0.0-rc.2)
+  - AlamofireObjectMapper (6.2.0):
+    - Alamofire (= 5.0.0-rc.2)
+    - ObjectMapper (~> 3.5.1)
+  - AZTabBar (1.4.2):
+    - EasyNotificationBadge
+  - EasyNotificationBadge (1.2.5)
+  - GoogleMaps (3.9.0):
+    - GoogleMaps/Maps (= 3.9.0)
+  - GoogleMaps/Base (3.9.0)
+  - GoogleMaps/Maps (3.9.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.9.0):
+    - GoogleMaps/Base (= 3.9.0)
+  - IQKeyboardManagerSwift (6.4.2)
+  - JGProgressHUD (2.1)
+  - LanguageManager-iOS (1.2.0)
+  - ObjectMapper (3.5.3)
+  - OTPFieldView (1.0.1)
+  - Toast-Swift (4.0.1)
+  - "UITextView+Placeholder (1.4.0)"
+
+DEPENDENCIES:
+  - AlamofireObjectMapper
+  - AZTabBar
+  - GoogleMaps
+  - GooglePlaces
+  - IQKeyboardManagerSwift (~> 6.4.1)
+  - JGProgressHUD
+  - LanguageManager-iOS
+  - OTPFieldView
+  - Toast-Swift (~> 4.0.0)
+  - "UITextView+Placeholder"
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireObjectMapper
+    - AZTabBar
+    - EasyNotificationBadge
+    - GoogleMaps
+    - GooglePlaces
+    - IQKeyboardManagerSwift
+    - JGProgressHUD
+    - LanguageManager-iOS
+    - ObjectMapper
+    - OTPFieldView
+    - Toast-Swift
+    - "UITextView+Placeholder"
+
+SPEC CHECKSUMS:
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
+  AZTabBar: e4d5a1f5f3fc7be044d532b7a704d303cff9af11
+  EasyNotificationBadge: a3ebbcb1de0c0558e102e954380c75801f352702
+  GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
+  GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
+  IQKeyboardManagerSwift: 79a3ec200dfb41cb66a89b8575417b5378107c5d
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
+  LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  OTPFieldView: 700a752fe62c41d1c4914c78aa500fb30d97c255
+  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
+
+PODFILE CHECKSUM: d157a231c3782c776019112dbcdc1dad812cc011
+
+COCOAPODS: 1.9.3
