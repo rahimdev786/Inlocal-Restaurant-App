@@ -158,6 +158,8 @@
 		C1B963AF26678FE000CECDDF /* NotificationsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963AC26678FDF00CECDDF /* NotificationsLocalDataManager.swift */; };
 		C1B963B026678FE000CECDDF /* NotificationsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963AD26678FDF00CECDDF /* NotificationsDataManager.swift */; };
 		C1B963B42667910D00CECDDF /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963B32667910D00CECDDF /* NotificationTVC.swift */; };
+		C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */; };
+		C1E7D1E52667A58100A677A7 /* SearchPostCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -337,6 +339,8 @@
 		C1B963AC26678FDF00CECDDF /* NotificationsLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsLocalDataManager.swift; sourceTree = "<group>"; };
 		C1B963AD26678FDF00CECDDF /* NotificationsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsDataManager.swift; sourceTree = "<group>"; };
 		C1B963B32667910D00CECDDF /* NotificationTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
+		C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
+		C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPostCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1136,6 +1140,7 @@
 				C1B963A126678F4000CECDDF /* DataManager */,
 				C1B9639A26678F2600CECDDF /* Model */,
 				C1B9639726678EF400CECDDF /* ViewController */,
+				C1E7D1E92667A58800A677A7 /* Views */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1182,6 +1187,15 @@
 			isa = PBXGroup;
 			children = (
 				C1B963B32667910D00CECDDF /* NotificationTVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C1E7D1E92667A58800A677A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */,
+				C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1456,6 +1470,7 @@
 				6D4821AE2667A75700F1DE01 /* BookingListDependency.swift in Sources */,
 				C185D93C2664F85D00BCDA2E /* SigninDataManager.swift in Sources */,
 				C185D9632664F90300BCDA2E /* ValidateOTPVC.swift in Sources */,
+				C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */,
 				C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */,
 				6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */,
 				C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */,
@@ -1507,6 +1522,7 @@
 				C1B963AF26678FE000CECDDF /* NotificationsLocalDataManager.swift in Sources */,
 				6D48216A26674CBE00F1DE01 /* ProfileInfoVC.swift in Sources */,
 				C10C767C265FA1A800473CB7 /* Validator.swift in Sources */,
+				C1E7D1E52667A58100A677A7 /* SearchPostCVC.swift in Sources */,
 				C1B9639E26678F3A00CECDDF /* SearchDataManager.swift in Sources */,
 				6D4821CD2667A77F00F1DE01 /* BookingDetailsAPIDataManager.swift in Sources */,
 				C185D93D2664F85D00BCDA2E /* SigninAPIDataManager.swift in Sources */,
