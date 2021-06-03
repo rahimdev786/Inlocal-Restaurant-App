@@ -97,6 +97,11 @@ extension BottumTabBarVC{
         tabController.delegate = self
         
         //set child controllers
+        guard let publicFeedwallViewController = PublicFeedwallVC.load(withDependency: nil) else {
+            return
+        }
+        tabController.setViewController(publicFeedwallViewController, atIndex: 0)
+        
         guard let searchViewController = SearchVC.load(withDependency: nil) else {
             return
         }
@@ -167,7 +172,7 @@ extension BottumTabBarVC{
             //self.tabController.setBar(hidden: true, animated: true)
         }
 
-        tabController.setIndex(1, animated: true)
+        tabController.setIndex(0, animated: true)
 
         tabController.animateTabChange = true
         tabController.onlyShowTextForSelectedButtons = false
@@ -184,7 +189,7 @@ extension BottumTabBarVC{
         container?.layer.shadowOpacity = 0.1
         container?.layer.shadowColor = UIColor.black.cgColor
 
-        tabController.setButtonTintColor(color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), atIndex: 0)
+        //tabController.setButtonTintColor(color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), atIndex: 0)
     }
 }
 

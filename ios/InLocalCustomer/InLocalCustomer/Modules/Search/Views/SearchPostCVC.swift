@@ -8,5 +8,14 @@
 import UIKit
 
 class SearchPostCVC: UICollectionViewCell {
+    @IBOutlet weak var imgViewUserPost: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        imgViewUserPost.layer.cornerRadius = 10
+        imgViewUserPost.layer.masksToBounds = false
+        imgViewUserPost.clipsToBounds = true
+    }
+
 }

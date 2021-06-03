@@ -183,8 +183,8 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="185" height="170"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-qk-wRN">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="185" height="182"/>
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-qk-wRN">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="185" height="170"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sanwitch" translatesAutoresizingMaskIntoConstraints="NO" id="1M2-zL-hzx">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="185" height="170"/>
@@ -207,6 +207,9 @@
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="185" height="170"/>
+                                                                <connections>
+                                                                    <outlet property="imgViewUserPost" destination="1M2-zL-hzx" id="w03-IG-g8K"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>

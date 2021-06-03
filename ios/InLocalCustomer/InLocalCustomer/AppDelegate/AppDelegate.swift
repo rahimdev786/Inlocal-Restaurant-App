@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        moveToLoginVC()
-        //moveToTabBarVC()
+        //moveToLoginVC()
+        moveToTabBarVC()
         // IQKeyboard
         IQKeyboardManager.shared.enable = true
         return true

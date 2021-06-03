@@ -164,6 +164,14 @@
 		C1CD22C826688880000324FF /* PublicFeedwallDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD22C126688880000324FF /* PublicFeedwallDependency.swift */; };
 		C1CD22C926688880000324FF /* PublicFeedwallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD22C326688880000324FF /* PublicFeedwallVC.swift */; };
 		C1CD22CA26688880000324FF /* PublicFeedwall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1CD22C426688880000324FF /* PublicFeedwall.storyboard */; };
+		C1CD22CF2668A139000324FF /* FeedwallStoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD22CE2668A139000324FF /* FeedwallStoryCVC.swift */; };
+		C1CD22DB2668A52F000324FF /* FeedwallPostTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD22DA2668A52F000324FF /* FeedwallPostTVC.swift */; };
+		C1DDAC5A2668F27700B4DB90 /* ViewStoryLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DDAC522668F27700B4DB90 /* ViewStoryLocalDataManager.swift */; };
+		C1DDAC5B2668F27700B4DB90 /* ViewStoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DDAC532668F27700B4DB90 /* ViewStoryDataManager.swift */; };
+		C1DDAC5C2668F27700B4DB90 /* ViewStoryAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DDAC542668F27700B4DB90 /* ViewStoryAPIDataManager.swift */; };
+		C1DDAC5D2668F27700B4DB90 /* ViewStoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DDAC562668F27700B4DB90 /* ViewStoryVC.swift */; };
+		C1DDAC5E2668F27700B4DB90 /* ViewStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1DDAC572668F27700B4DB90 /* ViewStory.storyboard */; };
+		C1DDAC5F2668F27700B4DB90 /* ViewStoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DDAC592668F27700B4DB90 /* ViewStoryDependency.swift */; };
 		C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */; };
 		C1E7D1E52667A58100A677A7 /* SearchPostCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */; };
 /* End PBXBuildFile section */
@@ -351,6 +359,14 @@
 		C1CD22C126688880000324FF /* PublicFeedwallDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicFeedwallDependency.swift; sourceTree = "<group>"; };
 		C1CD22C326688880000324FF /* PublicFeedwallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicFeedwallVC.swift; sourceTree = "<group>"; };
 		C1CD22C426688880000324FF /* PublicFeedwall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PublicFeedwall.storyboard; sourceTree = "<group>"; };
+		C1CD22CE2668A139000324FF /* FeedwallStoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedwallStoryCVC.swift; sourceTree = "<group>"; };
+		C1CD22DA2668A52F000324FF /* FeedwallPostTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedwallPostTVC.swift; sourceTree = "<group>"; };
+		C1DDAC522668F27700B4DB90 /* ViewStoryLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStoryLocalDataManager.swift; sourceTree = "<group>"; };
+		C1DDAC532668F27700B4DB90 /* ViewStoryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStoryDataManager.swift; sourceTree = "<group>"; };
+		C1DDAC542668F27700B4DB90 /* ViewStoryAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStoryAPIDataManager.swift; sourceTree = "<group>"; };
+		C1DDAC562668F27700B4DB90 /* ViewStoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStoryVC.swift; sourceTree = "<group>"; };
+		C1DDAC572668F27700B4DB90 /* ViewStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewStory.storyboard; sourceTree = "<group>"; };
+		C1DDAC592668F27700B4DB90 /* ViewStoryDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStoryDependency.swift; sourceTree = "<group>"; };
 		C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPostCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1207,6 +1223,7 @@
 		C1CD22AE266887C5000324FF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C1DDAC442668EFEE00B4DB90 /* ViewStory */,
 				C1CD22AF26688804000324FF /* PublicFeedwall */,
 			);
 			path = Home;
@@ -1218,6 +1235,7 @@
 				C1CD22BC26688880000324FF /* DataManager */,
 				C1CD22C026688880000324FF /* Model */,
 				C1CD22C226688880000324FF /* ViewController */,
+				C1CD22D32668A13F000324FF /* Views */,
 			);
 			path = PublicFeedwall;
 			sourceTree = "<group>";
@@ -1247,6 +1265,52 @@
 				C1CD22C426688880000324FF /* PublicFeedwall.storyboard */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1CD22D32668A13F000324FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD22CE2668A139000324FF /* FeedwallStoryCVC.swift */,
+				C1CD22DA2668A52F000324FF /* FeedwallPostTVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C1DDAC442668EFEE00B4DB90 /* ViewStory */ = {
+			isa = PBXGroup;
+			children = (
+				C1DDAC512668F27700B4DB90 /* DataManager */,
+				C1DDAC582668F27700B4DB90 /* Model */,
+				C1DDAC552668F27700B4DB90 /* ViewController */,
+			);
+			path = ViewStory;
+			sourceTree = "<group>";
+		};
+		C1DDAC512668F27700B4DB90 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1DDAC522668F27700B4DB90 /* ViewStoryLocalDataManager.swift */,
+				C1DDAC532668F27700B4DB90 /* ViewStoryDataManager.swift */,
+				C1DDAC542668F27700B4DB90 /* ViewStoryAPIDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C1DDAC552668F27700B4DB90 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1DDAC562668F27700B4DB90 /* ViewStoryVC.swift */,
+				C1DDAC572668F27700B4DB90 /* ViewStory.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1DDAC582668F27700B4DB90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1DDAC592668F27700B4DB90 /* ViewStoryDependency.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C1E7D1E92667A58800A677A7 /* Views */ = {
@@ -1373,6 +1437,7 @@
 				C153C79F26664228002FF282 /* ValidateOTP.xib in Resources */,
 				C185D8952664D95400BCDA2E /* SFProText-HeavyItalic.ttf in Resources */,
 				C185D9412664F85D00BCDA2E /* Signin.storyboard in Resources */,
+				C1DDAC5E2668F27700B4DB90 /* ViewStory.storyboard in Resources */,
 				C185D8A72664D95500BCDA2E /* SFProDisplay-Light.ttf in Resources */,
 				C185D96D2664FDFA00BCDA2E /* TextFieldView.xib in Resources */,
 				C185D8942664D95400BCDA2E /* SFProDisplay-UltralightItalic.ttf in Resources */,
@@ -1514,6 +1579,7 @@
 				C10C75FB265F8BD700473CB7 /* ViewController.swift in Sources */,
 				C10C76C8265FA66800473CB7 /* UIPageControl.swift in Sources */,
 				6D48224B2667A83400F1DE01 /* OrderDetailsAPIDataManager.swift in Sources */,
+				C1DDAC5D2668F27700B4DB90 /* ViewStoryVC.swift in Sources */,
 				C10C76B2265FA60700473CB7 /* PopNavigationController.swift in Sources */,
 				6D48216E26674CBE00F1DE01 /* ProfileInfoDependency.swift in Sources */,
 				C10C7695265FA45C00473CB7 /* Utility.swift in Sources */,
@@ -1534,6 +1600,7 @@
 				C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */,
 				C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */,
 				6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */,
+				C1DDAC5A2668F27700B4DB90 /* ViewStoryLocalDataManager.swift in Sources */,
 				C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */,
 				C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */,
 				C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */,
@@ -1571,12 +1638,14 @@
 				C10C75F7265F8BD700473CB7 /* AppDelegate.swift in Sources */,
 				C10C76A8265FA55600473CB7 /* UIColor.swift in Sources */,
 				C185D9422664F85D00BCDA2E /* SignupDataManager.swift in Sources */,
+				C1DDAC5F2668F27700B4DB90 /* ViewStoryDependency.swift in Sources */,
 				C10C76CD265FA66800473CB7 /* UIWindow.swift in Sources */,
 				C185D9452664F85D00BCDA2E /* SignupDependency.swift in Sources */,
 				C10C76A9265FA55600473CB7 /* UIView.swift in Sources */,
 				6D4822372667A82200F1DE01 /* OrderListDataManager.swift in Sources */,
 				6D4821D02667A77F00F1DE01 /* BookingDetailsVC.swift in Sources */,
 				C153C79326662E65002FF282 /* ForgotPasswordAPIDataManager.swift in Sources */,
+				C1CD22CF2668A139000324FF /* FeedwallStoryCVC.swift in Sources */,
 				C1CD22C526688880000324FF /* PublicFeedwallLocalDataManager.swift in Sources */,
 				C19DB9D72665E7E400028326 /* ChangePasswordDependency.swift in Sources */,
 				C10C76CF265FA66800473CB7 /* UIView + Shadow.swift in Sources */,
@@ -1587,10 +1656,13 @@
 				6D48216A26674CBE00F1DE01 /* ProfileInfoVC.swift in Sources */,
 				C10C767C265FA1A800473CB7 /* Validator.swift in Sources */,
 				C1E7D1E52667A58100A677A7 /* SearchPostCVC.swift in Sources */,
+				C1DDAC5B2668F27700B4DB90 /* ViewStoryDataManager.swift in Sources */,
 				C1B9639E26678F3A00CECDDF /* SearchDataManager.swift in Sources */,
 				6D4821CD2667A77F00F1DE01 /* BookingDetailsAPIDataManager.swift in Sources */,
 				C185D93D2664F85D00BCDA2E /* SigninAPIDataManager.swift in Sources */,
 				C19DB9D22665E7E300028326 /* ChangePasswordVC.swift in Sources */,
+				C1CD22DB2668A52F000324FF /* FeedwallPostTVC.swift in Sources */,
+				C1DDAC5C2668F27700B4DB90 /* ViewStoryAPIDataManager.swift in Sources */,
 				C185D9432664F85D00BCDA2E /* SignupAPIDataManager.swift in Sources */,
 				C10C766A265FA10000473CB7 /* AppEnum.swift in Sources */,
 				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,

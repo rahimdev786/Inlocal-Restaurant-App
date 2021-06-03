@@ -15,6 +15,9 @@ class PublicFeedwallVC: UIViewController {
 	lazy var dataManager = PublicFeedwallDataManager()
     var dependency: PublicFeedwallDependency?
     
+    @IBOutlet weak var collectionViewStories: UICollectionView!
+    @IBOutlet weak var tableViewPost: UITableView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,4 +69,28 @@ extension PublicFeedwallVC {
 // MARK: - PublicFeedwallAPIResponseDelegate
 extension PublicFeedwallVC: PublicFeedwallAPIResponseDelegate {
     
+}
+
+extension PublicFeedwallVC: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedwallStoryCVC", for: indexPath) as! FeedwallStoryCVC
+        return cell
+    }
+    
+}
+
+extension PublicFeedwallVC: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedwallPostTVC", for: indexPath) as! FeedwallPostTVC
+        return cell
+    }
+
 }
