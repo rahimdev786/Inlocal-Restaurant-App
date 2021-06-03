@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func moveToLoginVC(){
-        
-        let signinStoryboard = UIStoryboard.init(name: "Signin", bundle: nil)
-        let signinViewController = signinStoryboard.instantiateViewController(withIdentifier: "SigninVC")
+        guard let signinViewController = SigninVC.load(withDependency: nil) else {
+            return
+        }
         let navVC = UINavigationController(rootViewController: signinViewController)
         navVC.isNavigationBarHidden = true
         window?.rootViewController = navVC
@@ -36,10 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func moveToTabBarVC(){
-        
-        let signinStoryboard = UIStoryboard.init(name: "BottumTabBar", bundle: nil)
-        let signinViewController = signinStoryboard.instantiateViewController(withIdentifier: "BottumTabBarVC")
-        window?.rootViewController = signinViewController
+        guard let tabViewController = BottumTabBarVC.load(withDependency: nil) else {
+            return
+        }
+        window?.rootViewController = tabViewController
         window?.makeKeyAndVisible()
     }
     

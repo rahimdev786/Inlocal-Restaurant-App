@@ -158,6 +158,12 @@
 		C1B963AF26678FE000CECDDF /* NotificationsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963AC26678FDF00CECDDF /* NotificationsLocalDataManager.swift */; };
 		C1B963B026678FE000CECDDF /* NotificationsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963AD26678FDF00CECDDF /* NotificationsDataManager.swift */; };
 		C1B963B42667910D00CECDDF /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B963B32667910D00CECDDF /* NotificationTVC.swift */; };
+		C1CD22C526688880000324FF /* PublicFeedwallLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD22BD26688880000324FF /* PublicFeedwallLocalDataManager.swift */; };
+		C1CD22C626688880000324FF /* PublicFeedwallAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD22BE26688880000324FF /* PublicFeedwallAPIDataManager.swift */; };
+		C1CD22C726688880000324FF /* PublicFeedwallDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD22BF26688880000324FF /* PublicFeedwallDataManager.swift */; };
+		C1CD22C826688880000324FF /* PublicFeedwallDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD22C126688880000324FF /* PublicFeedwallDependency.swift */; };
+		C1CD22C926688880000324FF /* PublicFeedwallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CD22C326688880000324FF /* PublicFeedwallVC.swift */; };
+		C1CD22CA26688880000324FF /* PublicFeedwall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1CD22C426688880000324FF /* PublicFeedwall.storyboard */; };
 		C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */; };
 		C1E7D1E52667A58100A677A7 /* SearchPostCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */; };
 /* End PBXBuildFile section */
@@ -339,6 +345,12 @@
 		C1B963AC26678FDF00CECDDF /* NotificationsLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsLocalDataManager.swift; sourceTree = "<group>"; };
 		C1B963AD26678FDF00CECDDF /* NotificationsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsDataManager.swift; sourceTree = "<group>"; };
 		C1B963B32667910D00CECDDF /* NotificationTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
+		C1CD22BD26688880000324FF /* PublicFeedwallLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicFeedwallLocalDataManager.swift; sourceTree = "<group>"; };
+		C1CD22BE26688880000324FF /* PublicFeedwallAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicFeedwallAPIDataManager.swift; sourceTree = "<group>"; };
+		C1CD22BF26688880000324FF /* PublicFeedwallDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicFeedwallDataManager.swift; sourceTree = "<group>"; };
+		C1CD22C126688880000324FF /* PublicFeedwallDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicFeedwallDependency.swift; sourceTree = "<group>"; };
+		C1CD22C326688880000324FF /* PublicFeedwallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicFeedwallVC.swift; sourceTree = "<group>"; };
+		C1CD22C426688880000324FF /* PublicFeedwall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PublicFeedwall.storyboard; sourceTree = "<group>"; };
 		C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPostCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -720,6 +732,7 @@
 		C10C7639265F913800473CB7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C1CD22AE266887C5000324FF /* Home */,
 				C1B963B22667902800CECDDF /* Notifications */,
 				C1B963A226678F5600CECDDF /* Search */,
 				6D48215226674C7A00F1DE01 /* Profile */,
@@ -1191,6 +1204,51 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C1CD22AE266887C5000324FF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD22AF26688804000324FF /* PublicFeedwall */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C1CD22AF26688804000324FF /* PublicFeedwall */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD22BC26688880000324FF /* DataManager */,
+				C1CD22C026688880000324FF /* Model */,
+				C1CD22C226688880000324FF /* ViewController */,
+			);
+			path = PublicFeedwall;
+			sourceTree = "<group>";
+		};
+		C1CD22BC26688880000324FF /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD22BD26688880000324FF /* PublicFeedwallLocalDataManager.swift */,
+				C1CD22BE26688880000324FF /* PublicFeedwallAPIDataManager.swift */,
+				C1CD22BF26688880000324FF /* PublicFeedwallDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C1CD22C026688880000324FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD22C126688880000324FF /* PublicFeedwallDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1CD22C226688880000324FF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1CD22C326688880000324FF /* PublicFeedwallVC.swift */,
+				C1CD22C426688880000324FF /* PublicFeedwall.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		C1E7D1E92667A58800A677A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1345,6 +1403,7 @@
 				C185D89F2664D95400BCDA2E /* SFProDisplay-Semibold.ttf in Resources */,
 				6D48226C2667A85900F1DE01 /* NotificationSettings.storyboard in Resources */,
 				C185D8A12664D95400BCDA2E /* SFProText-Heavy.ttf in Resources */,
+				C1CD22CA26688880000324FF /* PublicFeedwall.storyboard in Resources */,
 				C185D89D2664D95400BCDA2E /* SFProDisplay-RegularItalic.ttf in Resources */,
 				C185D8A62664D95400BCDA2E /* SFProText-LightItalic.ttf in Resources */,
 				C10C7600265F8BDB00473CB7 /* Assets.xcassets in Resources */,
@@ -1464,21 +1523,25 @@
 				6D4821B22667A75700F1DE01 /* BookingListDataManager.swift in Sources */,
 				C10C7689265FA20700473CB7 /* AppColors.swift in Sources */,
 				C10C76CA265FA66800473CB7 /* UITableviewCell.swift in Sources */,
+				C1CD22C626688880000324FF /* PublicFeedwallAPIDataManager.swift in Sources */,
 				6D4822672667A85900F1DE01 /* NotificationSettingsDependency.swift in Sources */,
 				C19DB9F32666013300028326 /* BottumTabBarDependency.swift in Sources */,
 				C185D93F2664F85D00BCDA2E /* SigninDependency.swift in Sources */,
 				6D4821AE2667A75700F1DE01 /* BookingListDependency.swift in Sources */,
 				C185D93C2664F85D00BCDA2E /* SigninDataManager.swift in Sources */,
 				C185D9632664F90300BCDA2E /* ValidateOTPVC.swift in Sources */,
+				C1CD22C926688880000324FF /* PublicFeedwallVC.swift in Sources */,
 				C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */,
 				C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */,
 				6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */,
 				C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */,
 				C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */,
 				C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */,
+				C1CD22C826688880000324FF /* PublicFeedwallDependency.swift in Sources */,
 				6D4821AF2667A75700F1DE01 /* BookingListVC.swift in Sources */,
 				C1B9639F26678F3A00CECDDF /* SearchLocalDataManager.swift in Sources */,
 				C1B9639626678EE900CECDDF /* SearchVC.swift in Sources */,
+				C1CD22C726688880000324FF /* PublicFeedwallDataManager.swift in Sources */,
 				C19DB9F62666013300028326 /* BottumTabBarDataManager.swift in Sources */,
 				C1B963A926678FBE00CECDDF /* NotificationsDependency.swift in Sources */,
 				6D4822682667A85900F1DE01 /* NotificationSettingsAPIDataManager.swift in Sources */,
@@ -1514,6 +1577,7 @@
 				6D4822372667A82200F1DE01 /* OrderListDataManager.swift in Sources */,
 				6D4821D02667A77F00F1DE01 /* BookingDetailsVC.swift in Sources */,
 				C153C79326662E65002FF282 /* ForgotPasswordAPIDataManager.swift in Sources */,
+				C1CD22C526688880000324FF /* PublicFeedwallLocalDataManager.swift in Sources */,
 				C19DB9D72665E7E400028326 /* ChangePasswordDependency.swift in Sources */,
 				C10C76CF265FA66800473CB7 /* UIView + Shadow.swift in Sources */,
 				C19DB9D42665E7E300028326 /* ChangePasswordAPIDataManager.swift in Sources */,
