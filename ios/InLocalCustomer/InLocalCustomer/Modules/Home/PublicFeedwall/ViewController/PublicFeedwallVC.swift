@@ -83,6 +83,15 @@ extension PublicFeedwallVC: UICollectionViewDataSource{
     
 }
 
+extension PublicFeedwallVC: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewStoryController = ViewStoryVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(viewStoryController, animated: true)
+    }
+}
+
 extension PublicFeedwallVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5

@@ -15,6 +15,8 @@ class ViewStoryVC: UIViewController {
 	lazy var dataManager = ViewStoryDataManager()
     var dependency: ViewStoryDependency?
     
+    @IBOutlet weak var collectionViewStory: UICollectionView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,5 +67,18 @@ extension ViewStoryVC {
 
 // MARK: - ViewStoryAPIResponseDelegate
 extension ViewStoryVC: ViewStoryAPIResponseDelegate {
+    
+}
+
+extension ViewStoryVC: UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ViewStoryCVC", for: indexPath) as! ViewStoryCVC
+        return cell
+    }
     
 }

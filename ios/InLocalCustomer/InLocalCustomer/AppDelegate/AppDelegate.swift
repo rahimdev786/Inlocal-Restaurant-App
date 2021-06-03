@@ -39,7 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let tabViewController = BottumTabBarVC.load(withDependency: nil) else {
             return
         }
-        window?.rootViewController = tabViewController
+        let navVC = UINavigationController(rootViewController: tabViewController)
+        navVC.isNavigationBarHidden = true
+        window?.rootViewController = navVC
         window?.makeKeyAndVisible()
     }
     

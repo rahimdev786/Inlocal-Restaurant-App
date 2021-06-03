@@ -172,6 +172,7 @@
 		C1DDAC5D2668F27700B4DB90 /* ViewStoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DDAC562668F27700B4DB90 /* ViewStoryVC.swift */; };
 		C1DDAC5E2668F27700B4DB90 /* ViewStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1DDAC572668F27700B4DB90 /* ViewStory.storyboard */; };
 		C1DDAC5F2668F27700B4DB90 /* ViewStoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DDAC592668F27700B4DB90 /* ViewStoryDependency.swift */; };
+		C1DDAC68266905A200B4DB90 /* ViewStoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DDAC67266905A200B4DB90 /* ViewStoryCVC.swift */; };
 		C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */; };
 		C1E7D1E52667A58100A677A7 /* SearchPostCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */; };
 /* End PBXBuildFile section */
@@ -367,6 +368,7 @@
 		C1DDAC562668F27700B4DB90 /* ViewStoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStoryVC.swift; sourceTree = "<group>"; };
 		C1DDAC572668F27700B4DB90 /* ViewStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewStory.storyboard; sourceTree = "<group>"; };
 		C1DDAC592668F27700B4DB90 /* ViewStoryDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStoryDependency.swift; sourceTree = "<group>"; };
+		C1DDAC67266905A200B4DB90 /* ViewStoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStoryCVC.swift; sourceTree = "<group>"; };
 		C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPostCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1279,6 +1281,7 @@
 		C1DDAC442668EFEE00B4DB90 /* ViewStory */ = {
 			isa = PBXGroup;
 			children = (
+				C1DDAC632669055E00B4DB90 /* Views */,
 				C1DDAC512668F27700B4DB90 /* DataManager */,
 				C1DDAC582668F27700B4DB90 /* Model */,
 				C1DDAC552668F27700B4DB90 /* ViewController */,
@@ -1311,6 +1314,14 @@
 				C1DDAC592668F27700B4DB90 /* ViewStoryDependency.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C1DDAC632669055E00B4DB90 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1DDAC67266905A200B4DB90 /* ViewStoryCVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C1E7D1E92667A58800A677A7 /* Views */ = {
@@ -1573,6 +1584,7 @@
 				C185D9662664F90300BCDA2E /* ValidateOTPLocalDataManager.swift in Sources */,
 				C185D9612664F90300BCDA2E /* ValidateOTPDependency.swift in Sources */,
 				6D4821CC2667A77F00F1DE01 /* BookingDetailsDependency.swift in Sources */,
+				C1DDAC68266905A200B4DB90 /* ViewStoryCVC.swift in Sources */,
 				C10C7673265FA15700473CB7 /* EmptyResponse.swift in Sources */,
 				C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */,
 				C10C7661265F9F2E00473CB7 /* LocationManager.swift in Sources */,
