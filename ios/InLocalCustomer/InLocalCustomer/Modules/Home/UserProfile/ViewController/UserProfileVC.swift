@@ -95,3 +95,13 @@ extension UserProfileVC: UICollectionViewDataSource {
         return cell
     }
 }
+
+extension UserProfileVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = TagedPhotosVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}

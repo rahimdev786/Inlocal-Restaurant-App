@@ -207,12 +207,13 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgI-iJ-SPQ">
-                                                                            <rect key="frame" x="341" y="48" width="0.0" height="218"/>
+                                                                            <rect key="frame" x="287" y="48" width="54" height="218"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7Mo-8A-sec">
-                                                                                    <rect key="frame" x="0.0" y="86.666666666666657" width="0.0" height="45"/>
+                                                                                    <rect key="frame" x="8" y="10.666666666666657" width="38" height="197"/>
                                                                                     <subviews>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HG-Pa-UHl">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="width" secondItem="9HG-Pa-UHl" secondAttribute="height" multiplier="1:1" id="CRY-xx-8Kc"/>
                                                                                                 <constraint firstAttribute="height" constant="38" id="KB4-Fm-sgf"/>
@@ -220,21 +221,21 @@
                                                                                             <state key="normal" image="burgerking_icon"/>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZv-uN-fCQ">
-                                                                                            <rect key="frame" x="0.0" y="15" width="0.0" height="0.0"/>
+                                                                                            <rect key="frame" x="0.0" y="53" width="38" height="38"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="38" id="OWY-1Z-Lfx"/>
                                                                                             </constraints>
                                                                                             <state key="normal" image="menu_icon_white"/>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFi-6f-trv">
-                                                                                            <rect key="frame" x="0.0" y="30" width="0.0" height="0.0"/>
+                                                                                            <rect key="frame" x="0.0" y="106" width="38" height="38"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="38" id="Dc0-02-4Kq"/>
                                                                                             </constraints>
                                                                                             <state key="normal" image="favrite_blue"/>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqX-fP-v9U">
-                                                                                            <rect key="frame" x="0.0" y="45" width="0.0" height="0.0"/>
+                                                                                            <rect key="frame" x="0.0" y="159" width="38" height="38"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="38" id="Vp5-U1-8cr"/>
                                                                                             </constraints>
@@ -242,7 +243,7 @@
                                                                                         </button>
                                                                                     </subviews>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" id="7T2-p7-3GU"/>
+                                                                                        <constraint firstAttribute="width" constant="38" id="7T2-p7-3GU"/>
                                                                                         <constraint firstItem="TFi-6f-trv" firstAttribute="width" secondItem="TFi-6f-trv" secondAttribute="height" multiplier="1:1" id="An3-hk-4tv"/>
                                                                                         <constraint firstItem="SqX-fP-v9U" firstAttribute="width" secondItem="SqX-fP-v9U" secondAttribute="height" multiplier="1:1" id="V97-fU-xw0"/>
                                                                                         <constraint firstItem="AZv-uN-fCQ" firstAttribute="width" secondItem="AZv-uN-fCQ" secondAttribute="height" multiplier="1:1" id="k9H-Hv-3Ca"/>
@@ -253,7 +254,7 @@
                                                                             <constraints>
                                                                                 <constraint firstItem="7Mo-8A-sec" firstAttribute="centerY" secondItem="ZgI-iJ-SPQ" secondAttribute="centerY" id="EwK-50-eCh"/>
                                                                                 <constraint firstAttribute="height" constant="218" id="QPU-Yt-Kwe"/>
-                                                                                <constraint firstAttribute="width" id="dhg-6T-WVn"/>
+                                                                                <constraint firstAttribute="width" constant="54" id="dhg-6T-WVn"/>
                                                                                 <constraint firstItem="7Mo-8A-sec" firstAttribute="centerX" secondItem="ZgI-iJ-SPQ" secondAttribute="centerX" id="qGM-wX-dN0"/>
                                                                             </constraints>
                                                                         </view>

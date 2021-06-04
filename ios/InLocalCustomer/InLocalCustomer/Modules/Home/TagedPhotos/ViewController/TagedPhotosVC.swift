@@ -15,6 +15,8 @@ class TagedPhotosVC: UIViewController {
 	lazy var dataManager = TagedPhotosDataManager()
     var dependency: TagedPhotosDependency?
     
+    @IBOutlet weak var tableViewPosts: UITableView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,11 @@ class TagedPhotosVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 // MARK: - Load from storyboard with dependency
@@ -66,4 +73,16 @@ extension TagedPhotosVC {
 // MARK: - TagedPhotosAPIResponseDelegate
 extension TagedPhotosVC: TagedPhotosAPIResponseDelegate {
     
+}
+//TagedPhotoTVC
+extension TagedPhotosVC: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TagedPhotoTVC", for: indexPath) as! TagedPhotoTVC
+        return cell
+    }
+
 }
