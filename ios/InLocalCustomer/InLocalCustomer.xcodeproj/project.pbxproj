@@ -45,6 +45,18 @@
 		6D48226B2667A85900F1DE01 /* NotificationSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4822652667A85900F1DE01 /* NotificationSettingsVC.swift */; };
 		6D48226C2667A85900F1DE01 /* NotificationSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4822662667A85900F1DE01 /* NotificationSettings.storyboard */; };
 		7DA6B199F286E9C5CD746A03 /* Pods_InLocalCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */; };
+		C1042D0F2669DE780054B24D /* UserProfileDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D072669DE770054B24D /* UserProfileDependency.swift */; };
+		C1042D102669DE780054B24D /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1042D092669DE770054B24D /* UserProfile.storyboard */; };
+		C1042D112669DE780054B24D /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D0A2669DE770054B24D /* UserProfileVC.swift */; };
+		C1042D122669DE780054B24D /* UserProfileLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D0C2669DE780054B24D /* UserProfileLocalDataManager.swift */; };
+		C1042D132669DE780054B24D /* UserProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D0D2669DE780054B24D /* UserProfileDataManager.swift */; };
+		C1042D142669DE780054B24D /* UserProfileAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D0E2669DE780054B24D /* UserProfileAPIDataManager.swift */; };
+		C1042D2E2669DF500054B24D /* RestaurantProfileLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D262669DF500054B24D /* RestaurantProfileLocalDataManager.swift */; };
+		C1042D2F2669DF500054B24D /* RestaurantProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D272669DF500054B24D /* RestaurantProfileDataManager.swift */; };
+		C1042D302669DF500054B24D /* RestaurantProfileAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D282669DF500054B24D /* RestaurantProfileAPIDataManager.swift */; };
+		C1042D312669DF500054B24D /* RestaurantProfileDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D2A2669DF500054B24D /* RestaurantProfileDependency.swift */; };
+		C1042D322669DF500054B24D /* RestaurantProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1042D2C2669DF500054B24D /* RestaurantProfile.storyboard */; };
+		C1042D332669DF500054B24D /* RestaurantProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D2D2669DF500054B24D /* RestaurantProfileVC.swift */; };
 		C10C75F7265F8BD700473CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C75F6265F8BD700473CB7 /* AppDelegate.swift */; };
 		C10C75FB265F8BD700473CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10C75FA265F8BD700473CB7 /* ViewController.swift */; };
 		C10C75FE265F8BD700473CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10C75FC265F8BD700473CB7 /* Main.storyboard */; };
@@ -235,6 +247,18 @@
 		6D4822652667A85900F1DE01 /* NotificationSettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsVC.swift; sourceTree = "<group>"; };
 		6D4822662667A85900F1DE01 /* NotificationSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NotificationSettings.storyboard; sourceTree = "<group>"; };
 		A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InLocalCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1042D072669DE770054B24D /* UserProfileDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileDependency.swift; sourceTree = "<group>"; };
+		C1042D092669DE770054B24D /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
+		C1042D0A2669DE770054B24D /* UserProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		C1042D0C2669DE780054B24D /* UserProfileLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileLocalDataManager.swift; sourceTree = "<group>"; };
+		C1042D0D2669DE780054B24D /* UserProfileDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileDataManager.swift; sourceTree = "<group>"; };
+		C1042D0E2669DE780054B24D /* UserProfileAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileAPIDataManager.swift; sourceTree = "<group>"; };
+		C1042D262669DF500054B24D /* RestaurantProfileLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantProfileLocalDataManager.swift; sourceTree = "<group>"; };
+		C1042D272669DF500054B24D /* RestaurantProfileDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantProfileDataManager.swift; sourceTree = "<group>"; };
+		C1042D282669DF500054B24D /* RestaurantProfileAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantProfileAPIDataManager.swift; sourceTree = "<group>"; };
+		C1042D2A2669DF500054B24D /* RestaurantProfileDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantProfileDependency.swift; sourceTree = "<group>"; };
+		C1042D2C2669DF500054B24D /* RestaurantProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantProfile.storyboard; sourceTree = "<group>"; };
+		C1042D2D2669DF500054B24D /* RestaurantProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantProfileVC.swift; sourceTree = "<group>"; };
 		C10C75F3265F8BD700473CB7 /* InLocalCustomer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InLocalCustomer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10C75F6265F8BD700473CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C10C75FA265F8BD700473CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -650,6 +674,80 @@
 				1E376E308EF62AA7CE0CE549 /* Pods-InLocalCustomer.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C1042CF92669DE270054B24D /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D0B2669DE780054B24D /* DataManager */,
+				C1042D062669DE770054B24D /* Model */,
+				C1042D082669DE770054B24D /* ViewController */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		C1042D062669DE770054B24D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D072669DE770054B24D /* UserProfileDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1042D082669DE770054B24D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D092669DE770054B24D /* UserProfile.storyboard */,
+				C1042D0A2669DE770054B24D /* UserProfileVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1042D0B2669DE780054B24D /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D0C2669DE780054B24D /* UserProfileLocalDataManager.swift */,
+				C1042D0D2669DE780054B24D /* UserProfileDataManager.swift */,
+				C1042D0E2669DE780054B24D /* UserProfileAPIDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C1042D182669DEB10054B24D /* RestaurantProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D252669DF500054B24D /* DataManager */,
+				C1042D292669DF500054B24D /* Model */,
+				C1042D2B2669DF500054B24D /* ViewController */,
+			);
+			path = RestaurantProfile;
+			sourceTree = "<group>";
+		};
+		C1042D252669DF500054B24D /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D262669DF500054B24D /* RestaurantProfileLocalDataManager.swift */,
+				C1042D272669DF500054B24D /* RestaurantProfileDataManager.swift */,
+				C1042D282669DF500054B24D /* RestaurantProfileAPIDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C1042D292669DF500054B24D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D2A2669DF500054B24D /* RestaurantProfileDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1042D2B2669DF500054B24D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D2C2669DF500054B24D /* RestaurantProfile.storyboard */,
+				C1042D2D2669DF500054B24D /* RestaurantProfileVC.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C10C75EA265F8BD700473CB7 = {
@@ -1225,6 +1323,8 @@
 		C1CD22AE266887C5000324FF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C1042D182669DEB10054B24D /* RestaurantProfile */,
+				C1042CF92669DE270054B24D /* UserProfile */,
 				C1DDAC442668EFEE00B4DB90 /* ViewStory */,
 				C1CD22AF26688804000324FF /* PublicFeedwall */,
 			);
@@ -1477,6 +1577,7 @@
 				C185D9622664F90300BCDA2E /* ValidateOTP.storyboard in Resources */,
 				C185D8A42664D95400BCDA2E /* SFProText-Light.ttf in Resources */,
 				C185D89F2664D95400BCDA2E /* SFProDisplay-Semibold.ttf in Resources */,
+				C1042D322669DF500054B24D /* RestaurantProfile.storyboard in Resources */,
 				6D48226C2667A85900F1DE01 /* NotificationSettings.storyboard in Resources */,
 				C185D8A12664D95400BCDA2E /* SFProText-Heavy.ttf in Resources */,
 				C1CD22CA26688880000324FF /* PublicFeedwall.storyboard in Resources */,
@@ -1488,6 +1589,7 @@
 				C185D8AC2664D95500BCDA2E /* SFProDisplay-ThinItalic.ttf in Resources */,
 				C185D89A2664D95400BCDA2E /* SFProDisplay-Bold.ttf in Resources */,
 				C10C75FE265F8BD700473CB7 /* Main.storyboard in Resources */,
+				C1042D102669DE780054B24D /* UserProfile.storyboard in Resources */,
 				C185D8A52664D95400BCDA2E /* SFProDisplay-Heavy.ttf in Resources */,
 				C185D8992664D95400BCDA2E /* SFProText-Bold.ttf in Resources */,
 			);
@@ -1578,6 +1680,7 @@
 				C185D9652664F90300BCDA2E /* ValidateOTPAPIDataManager.swift in Sources */,
 				C10C76D0265FA66800473CB7 /* UIDevice.swift in Sources */,
 				6D4821B32667A75700F1DE01 /* BookingListLocalDataManager.swift in Sources */,
+				C1042D142669DE780054B24D /* UserProfileAPIDataManager.swift in Sources */,
 				6D4822382667A82200F1DE01 /* OrderListLocalDataManager.swift in Sources */,
 				C185D9462664F85D00BCDA2E /* SignupVC.swift in Sources */,
 				6D48224A2667A83400F1DE01 /* OrderDetailsLocalDataManager.swift in Sources */,
@@ -1588,6 +1691,7 @@
 				C10C7673265FA15700473CB7 /* EmptyResponse.swift in Sources */,
 				C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */,
 				C10C7661265F9F2E00473CB7 /* LocationManager.swift in Sources */,
+				C1042D122669DE780054B24D /* UserProfileLocalDataManager.swift in Sources */,
 				C10C75FB265F8BD700473CB7 /* ViewController.swift in Sources */,
 				C10C76C8265FA66800473CB7 /* UIPageControl.swift in Sources */,
 				6D48224B2667A83400F1DE01 /* OrderDetailsAPIDataManager.swift in Sources */,
@@ -1600,6 +1704,7 @@
 				C1B963B42667910D00CECDDF /* NotificationTVC.swift in Sources */,
 				6D4821B22667A75700F1DE01 /* BookingListDataManager.swift in Sources */,
 				C10C7689265FA20700473CB7 /* AppColors.swift in Sources */,
+				C1042D302669DF500054B24D /* RestaurantProfileAPIDataManager.swift in Sources */,
 				C10C76CA265FA66800473CB7 /* UITableviewCell.swift in Sources */,
 				C1CD22C626688880000324FF /* PublicFeedwallAPIDataManager.swift in Sources */,
 				6D4822672667A85900F1DE01 /* NotificationSettingsDependency.swift in Sources */,
@@ -1612,6 +1717,7 @@
 				C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */,
 				C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */,
 				6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */,
+				C1042D132669DE780054B24D /* UserProfileDataManager.swift in Sources */,
 				C1DDAC5A2668F27700B4DB90 /* ViewStoryLocalDataManager.swift in Sources */,
 				C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */,
 				C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */,
@@ -1624,13 +1730,16 @@
 				C19DB9F62666013300028326 /* BottumTabBarDataManager.swift in Sources */,
 				C1B963A926678FBE00CECDDF /* NotificationsDependency.swift in Sources */,
 				6D4822682667A85900F1DE01 /* NotificationSettingsAPIDataManager.swift in Sources */,
+				C1042D112669DE780054B24D /* UserProfileVC.swift in Sources */,
 				C1B963AE26678FE000CECDDF /* NotificationsAPIDataManager.swift in Sources */,
 				C185D9442664F85D00BCDA2E /* SignupLocalDataManager.swift in Sources */,
 				6D4821B12667A75700F1DE01 /* BookingListAPIDataManager.swift in Sources */,
 				6D48216C26674CBE00F1DE01 /* ProfileInfoDataManager.swift in Sources */,
 				C10C76CC265FA66800473CB7 /* UIView + Gradient.swift in Sources */,
 				6D48223A2667A82200F1DE01 /* OrderListDependency.swift in Sources */,
+				C1042D312669DF500054B24D /* RestaurantProfileDependency.swift in Sources */,
 				C1B9639926678F1600CECDDF /* SearchDependency.swift in Sources */,
+				C1042D2F2669DF500054B24D /* RestaurantProfileDataManager.swift in Sources */,
 				6D4821CE2667A77F00F1DE01 /* BookingDetailsLocalDataManager.swift in Sources */,
 				C19DB9F12666013300028326 /* BottumTabBarVC.swift in Sources */,
 				C10C76C7265FA66800473CB7 /* UILabel.swift in Sources */,
@@ -1641,6 +1750,7 @@
 				C10C76A7265FA55600473CB7 /* UITableView + Header + Footer.swift in Sources */,
 				6D48217326676C5900F1DE01 /* ProfileInfoTVC.swift in Sources */,
 				C185D9642664F90300BCDA2E /* ValidateOTPDataManager.swift in Sources */,
+				C1042D332669DF500054B24D /* RestaurantProfileVC.swift in Sources */,
 				C10C7688265FA20700473CB7 /* AppFonts.swift in Sources */,
 				6D4821CF2667A77F00F1DE01 /* BookingDetailsDataManager.swift in Sources */,
 				6D4822492667A83400F1DE01 /* OrderDetailsDataManager.swift in Sources */,
@@ -1661,6 +1771,7 @@
 				C1CD22C526688880000324FF /* PublicFeedwallLocalDataManager.swift in Sources */,
 				C19DB9D72665E7E400028326 /* ChangePasswordDependency.swift in Sources */,
 				C10C76CF265FA66800473CB7 /* UIView + Shadow.swift in Sources */,
+				C1042D2E2669DF500054B24D /* RestaurantProfileLocalDataManager.swift in Sources */,
 				C19DB9D42665E7E300028326 /* ChangePasswordAPIDataManager.swift in Sources */,
 				C185D9402664F85D00BCDA2E /* SigninVC.swift in Sources */,
 				6D48226B2667A85900F1DE01 /* NotificationSettingsVC.swift in Sources */,
@@ -1678,6 +1789,7 @@
 				C185D9432664F85D00BCDA2E /* SignupAPIDataManager.swift in Sources */,
 				C10C766A265FA10000473CB7 /* AppEnum.swift in Sources */,
 				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,
+				C1042D0F2669DE780054B24D /* UserProfileDependency.swift in Sources */,
 				C19DB9D62665E7E400028326 /* ChangePasswordDataManager.swift in Sources */,
 				6D48224E2667A83400F1DE01 /* OrderDetailsVC.swift in Sources */,
 				6D48224C2667A83400F1DE01 /* OrderDetailsDependency.swift in Sources */,

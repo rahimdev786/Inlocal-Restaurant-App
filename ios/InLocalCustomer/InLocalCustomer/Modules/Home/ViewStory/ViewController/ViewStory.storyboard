@@ -41,6 +41,9 @@
                                             <constraint firstAttribute="width" secondItem="Y53-9U-9kI" secondAttribute="height" multiplier="1:1" id="nWv-F3-CQn"/>
                                         </constraints>
                                         <state key="normal" image="back_button_dark"/>
+                                        <connections>
+                                            <action selector="onClickBackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4yP-Ck-H1T"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="d6f-px-weC">
                                         <rect key="frame" x="290" y="54.333333333333343" width="77" height="38"/>
@@ -48,6 +51,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxm-oB-A1i">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="38"/>
                                                 <state key="normal" image="three_dot_black"/>
+                                                <connections>
+                                                    <action selector="onClickMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yDy-5B-YJ5"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Dg-sm-A2P">
                                                 <rect key="frame" x="39" y="0.0" width="38" height="38"/>
@@ -56,6 +62,9 @@
                                                     <constraint firstAttribute="width" secondItem="1Dg-sm-A2P" secondAttribute="height" multiplier="1:1" id="qmg-2x-pjg"/>
                                                 </constraints>
                                                 <state key="normal" image="cross_white"/>
+                                                <connections>
+                                                    <action selector="onClickClose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zus-Zc-ERC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

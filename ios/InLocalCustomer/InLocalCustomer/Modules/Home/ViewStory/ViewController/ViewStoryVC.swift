@@ -48,6 +48,16 @@ class ViewStoryVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
+    @IBAction func onClickBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickMenu(_ sender: Any) {
+    }
+    
+    @IBAction func onClickClose(_ sender: Any) {
+    }
 }
 
 // MARK: - Load from storyboard with dependency
