@@ -15,11 +15,15 @@ class UserProfileVC: UIViewController {
 	lazy var dataManager = UserProfileDataManager()
     var dependency: UserProfileDependency?
     
+    @IBOutlet weak var viewProfileImageBack: UIView!
+    @IBOutlet weak var collectionViewPost: UICollectionView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        setupView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,6 +50,19 @@ class UserProfileVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setupView(){
+        viewProfileImageBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
+        
+        let widthValue = ((UIScreen.main.bounds.width-44)/2)
+        let heightValue = widthValue
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: widthValue, height: heightValue)
+        self.collectionViewPost.setCollectionViewLayout(layout, animated: true)
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -66,4 +83,15 @@ extension UserProfileVC {
 // MARK: - UserProfileAPIResponseDelegate
 extension UserProfileVC: UserProfileAPIResponseDelegate {
     
+}
+
+extension UserProfileVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
+        return cell
+    }
 }

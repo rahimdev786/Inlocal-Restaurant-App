@@ -90,6 +90,9 @@
                                             <constraint firstAttribute="height" constant="48" id="wfP-5f-yvg"/>
                                         </constraints>
                                         <state key="normal" image="story_user_photo"/>
+                                        <connections>
+                                            <action selector="onClickUserPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mKZ-Va-BFH"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IFj-UU-4ai">
                                         <rect key="frame" x="58" y="0.0" width="225" height="48"/>
@@ -115,11 +118,15 @@
                                             <constraint firstAttribute="height" constant="48" id="5A2-CZ-q1g"/>
                                         </constraints>
                                         <state key="normal" image="burgerking_icon2"/>
+                                        <connections>
+                                            <action selector="onClickRestaurentPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nka-g8-iCF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NGd-R7-q9t">
                                 <rect key="frame" x="15" y="179.33333333333334" width="345" height="31"/>
+                                <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </slider>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XKV-zt-64x">
                                 <rect key="frame" x="17" y="229.33333333333331" width="341" height="548.66666666666674"/>

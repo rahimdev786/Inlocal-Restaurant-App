@@ -15,11 +15,21 @@ class RestaurantProfileVC: UIViewController {
 	lazy var dataManager = RestaurantProfileDataManager()
     var dependency: RestaurantProfileDependency?
     
+    @IBOutlet weak var viewProfileBack: UIView!
+    @IBOutlet weak var collectionViewPost: UICollectionView!
+    
+    @IBOutlet weak var btnFollow: UIButton!
+    @IBOutlet weak var btnMenu: UIButton!
+    @IBOutlet weak var btnDelivery: UIButton!
+    @IBOutlet weak var btnReservation: UIButton!
+    @IBOutlet weak var btnInfo: UIButton!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        setupView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,6 +56,26 @@ class RestaurantProfileVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setupView(){
+        btnFollow.layer.cornerRadius = btnFollow.frame.height/2
+        btnMenu.layer.cornerRadius = btnMenu.frame.height/2
+        btnDelivery.layer.cornerRadius = btnDelivery.frame.height/2
+        btnReservation.layer.cornerRadius = btnReservation.frame.height/2
+        btnInfo.layer.cornerRadius = btnInfo.frame.height/2
+        
+        viewProfileBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
+        
+        let widthValue = ((UIScreen.main.bounds.width-44)/2)
+        let heightValue = widthValue
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: widthValue, height: heightValue)
+        self.collectionViewPost.setCollectionViewLayout(layout, animated: true)
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -66,4 +96,15 @@ extension RestaurantProfileVC {
 // MARK: - RestaurantProfileAPIResponseDelegate
 extension RestaurantProfileVC: RestaurantProfileAPIResponseDelegate {
     
+}
+
+extension RestaurantProfileVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
+        return cell
+    }
 }

@@ -57,7 +57,23 @@ class ViewStoryVC: UIViewController {
     }
     
     @IBAction func onClickClose(_ sender: Any) {
+        
     }
+    
+    @IBAction func onClickUserPhoto(_ sender: Any) {
+        guard let vc = UserProfileVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onClickRestaurentPhoto(_ sender: Any) {
+        guard let vc = RestaurantProfileVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 // MARK: - Load from storyboard with dependency
