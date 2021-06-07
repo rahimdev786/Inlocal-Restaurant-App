@@ -18,17 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        moveToLoginVC()
-        //moveToTabBarVC()
+        //moveToLoginVC()
+        moveToTabBarVC()
         // IQKeyboard
         IQKeyboardManager.shared.enable = true
         return true
     }
 
     func moveToLoginVC(){
-        
-        let signinStoryboard = UIStoryboard.init(name: "Signin", bundle: nil)
-        let signinViewController = signinStoryboard.instantiateViewController(withIdentifier: "SigninVC")
+        guard let signinViewController = SigninVC.load(withDependency: nil) else {
+            return
+        }
         let navVC = UINavigationController(rootViewController: signinViewController)
         navVC.isNavigationBarHidden = true
         window?.rootViewController = navVC
@@ -36,10 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func moveToTabBarVC(){
-        
-        let signinStoryboard = UIStoryboard.init(name: "BottumTabBar", bundle: nil)
-        let signinViewController = signinStoryboard.instantiateViewController(withIdentifier: "BottumTabBarVC")
-        window?.rootViewController = signinViewController
+        guard let tabViewController = BottumTabBarVC.load(withDependency: nil) else {
+            return
+        }
+        let navVC = UINavigationController(rootViewController: tabViewController)
+        navVC.isNavigationBarHidden = true
+        window?.rootViewController = navVC
         window?.makeKeyAndVisible()
     }
     

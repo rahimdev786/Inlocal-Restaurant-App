@@ -146,18 +146,18 @@ extension SigninVC: SigninAPIResponseDelegate {
     
     func moveToRegistration() {
         
-        let signupStoryboard = UIStoryboard.init(name: "Signup", bundle: nil)
-        let signupViewController = signupStoryboard.instantiateViewController(withIdentifier: "SignupVC")
-        
+        guard let signupViewController = SignupVC.load(withDependency: nil) else {
+            return
+        }
         self.present(signupViewController, animated: true, completion: nil)
     }
     
     func moveToForgotPassword() {
         
-        let signupStoryboard = UIStoryboard.init(name: "ForgotPassword", bundle: nil)
-        let signupViewController = signupStoryboard.instantiateViewController(withIdentifier: "ForgotPasswordVC")
-        
-        self.present(signupViewController, animated: true, completion: nil)
+        guard let forgotPasswordViewController = ForgotPasswordVC.load(withDependency: nil) else {
+            return
+        }
+        self.present(forgotPasswordViewController, animated: true, completion: nil)
     }
     
  }

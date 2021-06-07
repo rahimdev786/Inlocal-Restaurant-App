@@ -89,7 +89,6 @@ extension BottumTabBarVC{
         sIcons.append(#imageLiteral(resourceName: "tab_cart"))
         sIcons.append(#imageLiteral(resourceName: "tab_notification"))
 
-        
         //init
         //tabController = .insert(into: self, withTabIconNames: icons)
         tabController = .insert(into: self, withTabIcons: icons, andSelectedIcons: sIcons)
@@ -98,14 +97,20 @@ extension BottumTabBarVC{
         tabController.delegate = self
         
         //set child controllers
-        let searchStoryboard = UIStoryboard.init(name: "Search", bundle: nil)
-        let searchViewController = searchStoryboard.instantiateViewController(withIdentifier: "SearchVC")
+        guard let publicFeedwallViewController = PublicFeedwallVC.load(withDependency: nil) else {
+            return
+        }
+        tabController.setViewController(publicFeedwallViewController, atIndex: 0)
+        
+        guard let searchViewController = SearchVC.load(withDependency: nil) else {
+            return
+        }
         tabController.setViewController(searchViewController, atIndex: 1)
         
-        let notificationStoryboard = UIStoryboard.init(name: "Notifications", bundle: nil)
-        let notificationViewController = notificationStoryboard.instantiateViewController(withIdentifier: "NotificationsVC")
+        guard let notificationViewController = NotificationsVC.load(withDependency: nil) else {
+            return
+        }
         tabController.setViewController(notificationViewController, atIndex: 4)
-        
         
         /*
         //set child controllers
@@ -126,7 +131,6 @@ extension BottumTabBarVC{
         */
 
         //customize
-
         let color = UIColor(red: 14.0/255, green: 122.0/255, blue: 254.0/255, alpha: 1.0)
 
         tabController.selectedColor = color
@@ -138,8 +142,7 @@ extension BottumTabBarVC{
         tabController.defaultColor = .white
 
         //tabController.highlightButton(atIndex: 2)
-
-        tabController.buttonsBackgroundColor = UIColor.init(hexString: "#333333") //UIColor(red: (247.0/255), green: (247.0/255), blue: (247.0/255), alpha: 1.0)
+        tabController.buttonsBackgroundColor = UIColor.init(hexString: "#333333")
 
         tabController.selectionIndicatorHeight = 0
 
@@ -169,7 +172,7 @@ extension BottumTabBarVC{
             //self.tabController.setBar(hidden: true, animated: true)
         }
 
-        tabController.setIndex(1, animated: true)
+        tabController.setIndex(0, animated: true)
 
         tabController.animateTabChange = true
         tabController.onlyShowTextForSelectedButtons = false
@@ -186,8 +189,7 @@ extension BottumTabBarVC{
         container?.layer.shadowOpacity = 0.1
         container?.layer.shadowColor = UIColor.black.cgColor
 
-
-        tabController.setButtonTintColor(color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), atIndex: 0)
+        //tabController.setButtonTintColor(color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), atIndex: 0)
     }
 }
 
