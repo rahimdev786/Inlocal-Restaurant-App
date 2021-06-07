@@ -15,6 +15,9 @@ class RestaurantMenuVC: UIViewController {
 	lazy var dataManager = RestaurantMenuDataManager()
     var dependency: RestaurantMenuDependency?
     
+    @IBOutlet weak var collectionViewCategory: UICollectionView!
+    @IBOutlet weak var tableViewMenuList: UITableView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,11 @@ class RestaurantMenuVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 // MARK: - Load from storyboard with dependency
@@ -66,4 +74,37 @@ extension RestaurantMenuVC {
 // MARK: - RestaurantMenuAPIResponseDelegate
 extension RestaurantMenuVC: RestaurantMenuAPIResponseDelegate {
     
+}
+
+extension RestaurantMenuVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCategoryCVC", for: indexPath) as! MenuCategoryCVC
+        return cell
+    }
+}
+
+extension RestaurantMenuVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuListTVC", for: indexPath) as! MenuListTVC
+        return cell
+    }
+    
+}
+
+extension RestaurantMenuVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = MenuDetailVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

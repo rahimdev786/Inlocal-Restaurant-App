@@ -18,6 +18,8 @@ class UserProfileVC: UIViewController {
     @IBOutlet weak var viewProfileImageBack: UIView!
     @IBOutlet weak var collectionViewPost: UICollectionView!
     
+    @IBOutlet weak var collectionViewPost_height: NSLayoutConstraint!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,7 @@ class UserProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.collectionViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -44,6 +47,7 @@ class UserProfileVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.collectionViewPost.removeObserver(self, forKeyPath: "contentSize")
     }
     
     // MARK: Deinitialization
@@ -57,11 +61,24 @@ class UserProfileVC: UIViewController {
     func setupView(){
         viewProfileImageBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
         
-        let widthValue = ((UIScreen.main.bounds.width-44)/2)
+        let widthValue = ((UIScreen.main.bounds.width-36)/2)
         let heightValue = widthValue
         let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 2
+        layout.minimumLineSpacing = 2
         layout.itemSize = CGSize(width: widthValue, height: heightValue)
         self.collectionViewPost.setCollectionViewLayout(layout, animated: true)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize"{
+            if object is UICollectionView{
+                if let newvalue = change?[.newKey]{
+                    let newsize = newvalue as! CGSize
+                    self.collectionViewPost_height.constant = newsize.height
+                }
+            }
+        }
     }
 }
 

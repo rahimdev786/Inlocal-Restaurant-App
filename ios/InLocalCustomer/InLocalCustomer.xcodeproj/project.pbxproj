@@ -127,6 +127,9 @@
 		C10FBABC266DD3DA0012FD8E /* DeliveryAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10FBAB5266DD3DA0012FD8E /* DeliveryAPIDataManager.swift */; };
 		C10FBABD266DD3DA0012FD8E /* DeliveryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10FBAB6266DD3DA0012FD8E /* DeliveryDataManager.swift */; };
 		C10FBABE266DD3DA0012FD8E /* DeliveryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10FBAB8266DD3DA0012FD8E /* DeliveryDependency.swift */; };
+		C1277902266DE78D00F9F7FC /* MenuCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1277901266DE78D00F9F7FC /* MenuCategoryCVC.swift */; };
+		C1277907266DEF9D00F9F7FC /* MenuListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1277906266DEF9D00F9F7FC /* MenuListTVC.swift */; };
+		C127790D266E25A600F9F7FC /* DeliveryMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127790C266E25A600F9F7FC /* DeliveryMenuTVC.swift */; };
 		C153C79326662E65002FF282 /* ForgotPasswordAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78B26662E65002FF282 /* ForgotPasswordAPIDataManager.swift */; };
 		C153C79426662E65002FF282 /* ForgotPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78C26662E65002FF282 /* ForgotPasswordDataManager.swift */; };
 		C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78D26662E65002FF282 /* ForgotPasswordLocalDataManager.swift */; };
@@ -375,6 +378,9 @@
 		C10FBAB5266DD3DA0012FD8E /* DeliveryAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryAPIDataManager.swift; sourceTree = "<group>"; };
 		C10FBAB6266DD3DA0012FD8E /* DeliveryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryDataManager.swift; sourceTree = "<group>"; };
 		C10FBAB8266DD3DA0012FD8E /* DeliveryDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryDependency.swift; sourceTree = "<group>"; };
+		C1277901266DE78D00F9F7FC /* MenuCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoryCVC.swift; sourceTree = "<group>"; };
+		C1277906266DEF9D00F9F7FC /* MenuListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListTVC.swift; sourceTree = "<group>"; };
+		C127790C266E25A600F9F7FC /* DeliveryMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMenuTVC.swift; sourceTree = "<group>"; };
 		C153C78B26662E65002FF282 /* ForgotPasswordAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordAPIDataManager.swift; sourceTree = "<group>"; };
 		C153C78C26662E65002FF282 /* ForgotPasswordDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataManager.swift; sourceTree = "<group>"; };
 		C153C78D26662E65002FF282 /* ForgotPasswordLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordLocalDataManager.swift; sourceTree = "<group>"; };
@@ -1168,6 +1174,7 @@
 		C10FBA68266DD0C40012FD8E /* RestaurantMenu */ = {
 			isa = PBXGroup;
 			children = (
+				C10FBAC3266DE0170012FD8E /* Views */,
 				C10FBA74266DD1A50012FD8E /* DataManager */,
 				C10FBA72266DD1A50012FD8E /* Model */,
 				C10FBA78266DD1A50012FD8E /* ViewController */,
@@ -1242,6 +1249,7 @@
 		C10FBAA3266DD38E0012FD8E /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				C127790B266E258200F9F7FC /* Views */,
 				C10FBAB3266DD3DA0012FD8E /* DataManager */,
 				C10FBAB7266DD3DA0012FD8E /* Model */,
 				C10FBAB0266DD3DA0012FD8E /* ViewController */,
@@ -1274,6 +1282,23 @@
 				C10FBAB8266DD3DA0012FD8E /* DeliveryDependency.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C10FBAC3266DE0170012FD8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1277901266DE78D00F9F7FC /* MenuCategoryCVC.swift */,
+				C1277906266DEF9D00F9F7FC /* MenuListTVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C127790B266E258200F9F7FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C127790C266E25A600F9F7FC /* DeliveryMenuTVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C153C77D26662E25002FF282 /* ForgotPassword */ = {
@@ -2014,6 +2039,7 @@
 				C1042D82266A356B0054B24D /* TagedPhotosLocalDataManager.swift in Sources */,
 				6D4821B32667A75700F1DE01 /* BookingListLocalDataManager.swift in Sources */,
 				C10FBA9B266DD2140012FD8E /* MenuDetailLocalDataManager.swift in Sources */,
+				C127790D266E25A600F9F7FC /* DeliveryMenuTVC.swift in Sources */,
 				C1042D142669DE780054B24D /* UserProfileAPIDataManager.swift in Sources */,
 				6D4822382667A82200F1DE01 /* OrderListLocalDataManager.swift in Sources */,
 				C1042D85266A356B0054B24D /* TagedPhotosDependency.swift in Sources */,
@@ -2141,6 +2167,7 @@
 				C1DDAC5B2668F27700B4DB90 /* ViewStoryDataManager.swift in Sources */,
 				C1B9639E26678F3A00CECDDF /* SearchDataManager.swift in Sources */,
 				6D4821CD2667A77F00F1DE01 /* BookingDetailsAPIDataManager.swift in Sources */,
+				C1277907266DEF9D00F9F7FC /* MenuListTVC.swift in Sources */,
 				C185D93D2664F85D00BCDA2E /* SigninAPIDataManager.swift in Sources */,
 				6D54BB22266DE1A700BC4C34 /* EditProfileAPIDataManager.swift in Sources */,
 				C19DB9D22665E7E300028326 /* ChangePasswordVC.swift in Sources */,
@@ -2155,6 +2182,7 @@
 				6D48224E2667A83400F1DE01 /* OrderDetailsVC.swift in Sources */,
 				6D48224C2667A83400F1DE01 /* OrderDetailsDependency.swift in Sources */,
 				C10C764D265F9E2A00473CB7 /* AppActivityIndicator.swift in Sources */,
+				C1277902266DE78D00F9F7FC /* MenuCategoryCVC.swift in Sources */,
 				6D54BB24266DE1A700BC4C34 /* EditProfileLocalDataManager.swift in Sources */,
 				C19DB9D52665E7E300028326 /* ChangePasswordLocalDataManager.swift in Sources */,
 				C10C76CB265FA66800473CB7 /* UIImage+Utilities.swift in Sources */,

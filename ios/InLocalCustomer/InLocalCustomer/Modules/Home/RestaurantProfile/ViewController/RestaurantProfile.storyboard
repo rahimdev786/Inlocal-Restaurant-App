@@ -195,6 +195,9 @@
                                                                     <constraint firstAttribute="width" secondItem="87C-oj-dwB" secondAttribute="height" multiplier="1:1" id="PxZ-kv-pln"/>
                                                                 </constraints>
                                                                 <state key="normal" image="follow_white"/>
+                                                                <connections>
+                                                                    <action selector="onClickFollow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJl-qE-De9"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv2-4G-cUB">
                                                                 <rect key="frame" x="15.333333333333339" y="60.000000000000007" width="33.666666666666657" height="14.333333333333336"/>
@@ -215,6 +218,9 @@
                                                                     <constraint firstAttribute="width" secondItem="BbV-a5-Yyg" secondAttribute="height" multiplier="1:1" id="fjh-jD-QA9"/>
                                                                 </constraints>
                                                                 <state key="normal" image="menu_icon_white"/>
+                                                                <connections>
+                                                                    <action selector="onClickMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LLl-6x-fE4"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TP-Jz-AJS">
                                                                 <rect key="frame" x="17" y="60.000000000000007" width="29.666666666666671" height="14.333333333333336"/>
@@ -235,6 +241,9 @@
                                                                     <constraint firstAttribute="height" constant="55" id="ijZ-GX-TUr"/>
                                                                 </constraints>
                                                                 <state key="normal" image="delivery_white"/>
+                                                                <connections>
+                                                                    <action selector="onClickDelivery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gma-i8-61N"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXB-w5-4Hj">
                                                                 <rect key="frame" x="11.333333333333314" y="60.000000000000007" width="42" height="14.333333333333336"/>
@@ -275,6 +284,9 @@
                                                                     <constraint firstAttribute="height" constant="55" id="dXb-b0-Uab"/>
                                                                 </constraints>
                                                                 <state key="normal" image="info_white"/>
+                                                                <connections>
+                                                                    <action selector="onClickInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Ce-UF-LfO"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pei-uR-yK8">
                                                                 <rect key="frame" x="22.333333333333314" y="60.000000000000007" width="19.666666666666671" height="14.333333333333336"/>
@@ -305,9 +317,12 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VVY-58-2oC">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VVY-58-2oC">
                                                 <rect key="frame" x="17" y="385.33333333333326" width="341" height="316.66666666666674"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="316.66666666666674" id="TwI-50-zRa"/>
+                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yp4-84-E1S">
                                                     <size key="itemSize" width="148" height="154"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -385,7 +400,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Cii-mj-U2K" firstAttribute="top" secondItem="cN9-zT-nx8" secondAttribute="top" id="BZW-VS-VAF"/>
-                                    <constraint firstItem="Cii-mj-U2K" firstAttribute="height" secondItem="cN9-zT-nx8" secondAttribute="height" id="Ccj-o5-dN2"/>
                                     <constraint firstItem="Cii-mj-U2K" firstAttribute="width" secondItem="cN9-zT-nx8" secondAttribute="width" id="Mm9-65-mah"/>
                                     <constraint firstAttribute="bottom" secondItem="Cii-mj-U2K" secondAttribute="bottom" id="Mqj-Rw-xh2"/>
                                     <constraint firstItem="Cii-mj-U2K" firstAttribute="leading" secondItem="cN9-zT-nx8" secondAttribute="leading" id="Og2-ls-PeS"/>
@@ -412,6 +426,7 @@
                         <outlet property="btnMenu" destination="BbV-a5-Yyg" id="DmH-oh-MQP"/>
                         <outlet property="btnReservation" destination="sx5-DC-Z1U" id="q9R-QV-AaE"/>
                         <outlet property="collectionViewPost" destination="VVY-58-2oC" id="gSy-wi-Vdy"/>
+                        <outlet property="collectionViewPost_height" destination="TwI-50-zRa" id="K44-hE-bgh"/>
                         <outlet property="viewProfileBack" destination="CWQ-nG-kyg" id="QZ1-yw-iLP"/>
                     </connections>
                 </viewController>

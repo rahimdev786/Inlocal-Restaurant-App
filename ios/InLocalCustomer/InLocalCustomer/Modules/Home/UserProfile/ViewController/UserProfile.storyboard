@@ -157,6 +157,9 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8P9-gX-GU3">
                                                 <rect key="frame" x="17" y="260" width="341" height="432"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="432" id="XvI-RP-gy2"/>
+                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="sUU-ky-Q14">
                                                     <size key="itemSize" width="148" height="154"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -226,7 +229,6 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Dgr-1f-GQr" secondAttribute="bottom" id="KME-pD-UqR"/>
                                     <constraint firstAttribute="trailing" secondItem="Dgr-1f-GQr" secondAttribute="trailing" id="QFT-xZ-ln2"/>
-                                    <constraint firstItem="Dgr-1f-GQr" firstAttribute="height" secondItem="LU5-aC-4Cq" secondAttribute="height" id="e44-2z-kx4"/>
                                     <constraint firstItem="Dgr-1f-GQr" firstAttribute="leading" secondItem="LU5-aC-4Cq" secondAttribute="leading" id="iIV-r6-SjZ"/>
                                     <constraint firstItem="Dgr-1f-GQr" firstAttribute="width" secondItem="LU5-aC-4Cq" secondAttribute="width" id="u2X-sf-VBk"/>
                                     <constraint firstItem="Dgr-1f-GQr" firstAttribute="top" secondItem="LU5-aC-4Cq" secondAttribute="top" id="wtT-rG-hoA"/>
@@ -247,6 +249,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewPost" destination="8P9-gX-GU3" id="whN-Hv-T7D"/>
+                        <outlet property="collectionViewPost_height" destination="XvI-RP-gy2" id="MWL-RG-8bu"/>
                         <outlet property="viewProfileImageBack" destination="KhZ-M7-0mD" id="OHo-uB-QFj"/>
                     </connections>
                 </viewController>
