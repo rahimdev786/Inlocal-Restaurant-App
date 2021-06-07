@@ -47,6 +47,18 @@
 		6D48F8DA2667BA6E00A19468 /* OrderListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48F8D92667BA6E00A19468 /* OrderListTVC.swift */; };
 		6D48F8DF2667C30400A19468 /* BookingListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48F8DE2667C30400A19468 /* BookingListTVC.swift */; };
 		6D4BA41D266DDA700022CA37 /* NotificationSettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4BA41C266DDA700022CA37 /* NotificationSettingsTVC.swift */; };
+		6D54BB22266DE1A700BC4C34 /* EditProfileAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB1A266DE1A700BC4C34 /* EditProfileAPIDataManager.swift */; };
+		6D54BB23266DE1A700BC4C34 /* EditProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB1B266DE1A700BC4C34 /* EditProfileDataManager.swift */; };
+		6D54BB24266DE1A700BC4C34 /* EditProfileLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB1C266DE1A700BC4C34 /* EditProfileLocalDataManager.swift */; };
+		6D54BB25266DE1A700BC4C34 /* EditProfileDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB1E266DE1A700BC4C34 /* EditProfileDependency.swift */; };
+		6D54BB26266DE1A700BC4C34 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB20266DE1A700BC4C34 /* EditProfileVC.swift */; };
+		6D54BB27266DE1A700BC4C34 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D54BB21266DE1A700BC4C34 /* EditProfile.storyboard */; };
+		6D54BB43266DE1C600BC4C34 /* SavedPostsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB3B266DE1C600BC4C34 /* SavedPostsLocalDataManager.swift */; };
+		6D54BB44266DE1C600BC4C34 /* SavedPostsAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB3C266DE1C600BC4C34 /* SavedPostsAPIDataManager.swift */; };
+		6D54BB45266DE1C600BC4C34 /* SavedPostsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB3D266DE1C600BC4C34 /* SavedPostsDataManager.swift */; };
+		6D54BB46266DE1C600BC4C34 /* SavedPostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB3F266DE1C600BC4C34 /* SavedPostsVC.swift */; };
+		6D54BB47266DE1C600BC4C34 /* SavedPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D54BB40266DE1C600BC4C34 /* SavedPosts.storyboard */; };
+		6D54BB48266DE1C600BC4C34 /* SavedPostsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB42266DE1C600BC4C34 /* SavedPostsDependency.swift */; };
 		7DA6B199F286E9C5CD746A03 /* Pods_InLocalCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */; };
 		C1042D0F2669DE780054B24D /* UserProfileDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D072669DE770054B24D /* UserProfileDependency.swift */; };
 		C1042D102669DE780054B24D /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1042D092669DE770054B24D /* UserProfile.storyboard */; };
@@ -277,6 +289,18 @@
 		6D48F8D92667BA6E00A19468 /* OrderListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTVC.swift; sourceTree = "<group>"; };
 		6D48F8DE2667C30400A19468 /* BookingListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListTVC.swift; sourceTree = "<group>"; };
 		6D4BA41C266DDA700022CA37 /* NotificationSettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsTVC.swift; sourceTree = "<group>"; };
+		6D54BB1A266DE1A700BC4C34 /* EditProfileAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileAPIDataManager.swift; sourceTree = "<group>"; };
+		6D54BB1B266DE1A700BC4C34 /* EditProfileDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileDataManager.swift; sourceTree = "<group>"; };
+		6D54BB1C266DE1A700BC4C34 /* EditProfileLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileLocalDataManager.swift; sourceTree = "<group>"; };
+		6D54BB1E266DE1A700BC4C34 /* EditProfileDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileDependency.swift; sourceTree = "<group>"; };
+		6D54BB20266DE1A700BC4C34 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		6D54BB21266DE1A700BC4C34 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		6D54BB3B266DE1C600BC4C34 /* SavedPostsLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPostsLocalDataManager.swift; sourceTree = "<group>"; };
+		6D54BB3C266DE1C600BC4C34 /* SavedPostsAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPostsAPIDataManager.swift; sourceTree = "<group>"; };
+		6D54BB3D266DE1C600BC4C34 /* SavedPostsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPostsDataManager.swift; sourceTree = "<group>"; };
+		6D54BB3F266DE1C600BC4C34 /* SavedPostsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPostsVC.swift; sourceTree = "<group>"; };
+		6D54BB40266DE1C600BC4C34 /* SavedPosts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedPosts.storyboard; sourceTree = "<group>"; };
+		6D54BB42266DE1C600BC4C34 /* SavedPostsDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPostsDependency.swift; sourceTree = "<group>"; };
 		A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InLocalCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1042D072669DE770054B24D /* UserProfileDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileDependency.swift; sourceTree = "<group>"; };
 		C1042D092669DE770054B24D /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
@@ -496,6 +520,8 @@
 				6D4821952667A73700F1DE01 /* OrderDetails */,
 				6D4821922667A73600F1DE01 /* OrderList */,
 				6D48215326674C7A00F1DE01 /* ProfileInfo */,
+				6D54BB0C266DE17200BC4C34 /* EditProfile */,
+				6D54BB0B266DE17200BC4C34 /* SavedPosts */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -724,6 +750,82 @@
 				6D4BA41C266DDA700022CA37 /* NotificationSettingsTVC.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6D54BB0B266DE17200BC4C34 /* SavedPosts */ = {
+			isa = PBXGroup;
+			children = (
+				6D54BB3A266DE1C600BC4C34 /* DataManager */,
+				6D54BB41266DE1C600BC4C34 /* Model */,
+				6D54BB3E266DE1C600BC4C34 /* ViewController */,
+			);
+			name = SavedPosts;
+			path = InLocalCustomer/Modules/Profile/SavedPosts;
+			sourceTree = SOURCE_ROOT;
+		};
+		6D54BB0C266DE17200BC4C34 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				6D54BB19266DE1A700BC4C34 /* DataManager */,
+				6D54BB1D266DE1A700BC4C34 /* Model */,
+				6D54BB1F266DE1A700BC4C34 /* ViewController */,
+			);
+			name = EditProfile;
+			path = InLocalCustomer/Modules/Profile/EditProfile;
+			sourceTree = SOURCE_ROOT;
+		};
+		6D54BB19266DE1A700BC4C34 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D54BB1A266DE1A700BC4C34 /* EditProfileAPIDataManager.swift */,
+				6D54BB1B266DE1A700BC4C34 /* EditProfileDataManager.swift */,
+				6D54BB1C266DE1A700BC4C34 /* EditProfileLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		6D54BB1D266DE1A700BC4C34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D54BB1E266DE1A700BC4C34 /* EditProfileDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D54BB1F266DE1A700BC4C34 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D54BB20266DE1A700BC4C34 /* EditProfileVC.swift */,
+				6D54BB21266DE1A700BC4C34 /* EditProfile.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6D54BB3A266DE1C600BC4C34 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D54BB3B266DE1C600BC4C34 /* SavedPostsLocalDataManager.swift */,
+				6D54BB3C266DE1C600BC4C34 /* SavedPostsAPIDataManager.swift */,
+				6D54BB3D266DE1C600BC4C34 /* SavedPostsDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		6D54BB3E266DE1C600BC4C34 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D54BB3F266DE1C600BC4C34 /* SavedPostsVC.swift */,
+				6D54BB40266DE1C600BC4C34 /* SavedPosts.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6D54BB41266DE1C600BC4C34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D54BB42266DE1C600BC4C34 /* SavedPostsDependency.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C020C172CBA0FD658C8185F0 /* Pods */ = {
@@ -1777,9 +1879,11 @@
 				C185D8A32664D95400BCDA2E /* SFProText-Semibold.ttf in Resources */,
 				C185D8AF2664D95500BCDA2E /* SFProText-Medium.ttf in Resources */,
 				C153C79626662E65002FF282 /* ForgotPassword.storyboard in Resources */,
+				6D54BB27266DE1A700BC4C34 /* EditProfile.storyboard in Resources */,
 				C185D8A92664D95500BCDA2E /* SFProDisplay-MediumItalic.ttf in Resources */,
 				C185D8972664D95400BCDA2E /* SFProText-RegularItalic.ttf in Resources */,
 				C10FBA7F266DD1A50012FD8E /* RestaurantMenu.storyboard in Resources */,
+				6D54BB47266DE1C600BC4C34 /* SavedPosts.storyboard in Resources */,
 				6D48216926674CBE00F1DE01 /* ProfileInfo.storyboard in Resources */,
 				C1B963A626678F9400CECDDF /* Notifications.storyboard in Resources */,
 				C1B9639526678EE900CECDDF /* Search.storyboard in Resources */,
@@ -1906,6 +2010,7 @@
 				C10C76D0265FA66800473CB7 /* UIDevice.swift in Sources */,
 				6D48F8DF2667C30400A19468 /* BookingListTVC.swift in Sources */,
 				C10FBABC266DD3DA0012FD8E /* DeliveryAPIDataManager.swift in Sources */,
+				6D54BB45266DE1C600BC4C34 /* SavedPostsDataManager.swift in Sources */,
 				C1042D82266A356B0054B24D /* TagedPhotosLocalDataManager.swift in Sources */,
 				6D4821B32667A75700F1DE01 /* BookingListLocalDataManager.swift in Sources */,
 				C10FBA9B266DD2140012FD8E /* MenuDetailLocalDataManager.swift in Sources */,
@@ -1919,7 +2024,9 @@
 				6D4821CC2667A77F00F1DE01 /* BookingDetailsDependency.swift in Sources */,
 				C1DDAC68266905A200B4DB90 /* ViewStoryCVC.swift in Sources */,
 				C10C7673265FA15700473CB7 /* EmptyResponse.swift in Sources */,
+				6D54BB25266DE1A700BC4C34 /* EditProfileDependency.swift in Sources */,
 				C1042D81266A356B0054B24D /* TagedPhotosVC.swift in Sources */,
+				6D54BB26266DE1A700BC4C34 /* EditProfileVC.swift in Sources */,
 				C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */,
 				C10C7661265F9F2E00473CB7 /* LocationManager.swift in Sources */,
 				C1042D122669DE780054B24D /* UserProfileLocalDataManager.swift in Sources */,
@@ -1947,16 +2054,19 @@
 				6D4821AE2667A75700F1DE01 /* BookingListDependency.swift in Sources */,
 				C185D93C2664F85D00BCDA2E /* SigninDataManager.swift in Sources */,
 				C185D9632664F90300BCDA2E /* ValidateOTPVC.swift in Sources */,
+				6D54BB43266DE1C600BC4C34 /* SavedPostsLocalDataManager.swift in Sources */,
 				C1CD22C926688880000324FF /* PublicFeedwallVC.swift in Sources */,
 				C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */,
 				C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */,
 				6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */,
+				6D54BB48266DE1C600BC4C34 /* SavedPostsDependency.swift in Sources */,
 				C1042D132669DE780054B24D /* UserProfileDataManager.swift in Sources */,
 				C1DDAC5A2668F27700B4DB90 /* ViewStoryLocalDataManager.swift in Sources */,
 				C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */,
 				C10FBA7D266DD1A50012FD8E /* RestaurantMenuDataManager.swift in Sources */,
 				C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */,
 				C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */,
+				6D54BB46266DE1C600BC4C34 /* SavedPostsVC.swift in Sources */,
 				C1CD22C826688880000324FF /* PublicFeedwallDependency.swift in Sources */,
 				6D4821AF2667A75700F1DE01 /* BookingListVC.swift in Sources */,
 				C1B9639F26678F3A00CECDDF /* SearchLocalDataManager.swift in Sources */,
@@ -2006,6 +2116,7 @@
 				C1DDAC5F2668F27700B4DB90 /* ViewStoryDependency.swift in Sources */,
 				C10C76CD265FA66800473CB7 /* UIWindow.swift in Sources */,
 				C185D9452664F85D00BCDA2E /* SignupDependency.swift in Sources */,
+				6D54BB23266DE1A700BC4C34 /* EditProfileDataManager.swift in Sources */,
 				C10C76A9265FA55600473CB7 /* UIView.swift in Sources */,
 				6D4822372667A82200F1DE01 /* OrderListDataManager.swift in Sources */,
 				6D4821D02667A77F00F1DE01 /* BookingDetailsVC.swift in Sources */,
@@ -2031,6 +2142,7 @@
 				C1B9639E26678F3A00CECDDF /* SearchDataManager.swift in Sources */,
 				6D4821CD2667A77F00F1DE01 /* BookingDetailsAPIDataManager.swift in Sources */,
 				C185D93D2664F85D00BCDA2E /* SigninAPIDataManager.swift in Sources */,
+				6D54BB22266DE1A700BC4C34 /* EditProfileAPIDataManager.swift in Sources */,
 				C19DB9D22665E7E300028326 /* ChangePasswordVC.swift in Sources */,
 				C1CD22DB2668A52F000324FF /* FeedwallPostTVC.swift in Sources */,
 				C1DDAC5C2668F27700B4DB90 /* ViewStoryAPIDataManager.swift in Sources */,
@@ -2038,10 +2150,12 @@
 				C10C766A265FA10000473CB7 /* AppEnum.swift in Sources */,
 				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,
 				C1042D0F2669DE780054B24D /* UserProfileDependency.swift in Sources */,
+				6D54BB44266DE1C600BC4C34 /* SavedPostsAPIDataManager.swift in Sources */,
 				C19DB9D62665E7E400028326 /* ChangePasswordDataManager.swift in Sources */,
 				6D48224E2667A83400F1DE01 /* OrderDetailsVC.swift in Sources */,
 				6D48224C2667A83400F1DE01 /* OrderDetailsDependency.swift in Sources */,
 				C10C764D265F9E2A00473CB7 /* AppActivityIndicator.swift in Sources */,
+				6D54BB24266DE1A700BC4C34 /* EditProfileLocalDataManager.swift in Sources */,
 				C19DB9D52665E7E300028326 /* ChangePasswordLocalDataManager.swift in Sources */,
 				C10C76CB265FA66800473CB7 /* UIImage+Utilities.swift in Sources */,
 				C10C76C9265FA66800473CB7 /* UIButton.swift in Sources */,
