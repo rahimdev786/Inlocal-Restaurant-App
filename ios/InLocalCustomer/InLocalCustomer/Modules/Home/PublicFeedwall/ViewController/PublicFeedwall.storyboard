@@ -54,6 +54,9 @@
                                                                     <constraint firstAttribute="width" secondItem="1uB-fm-zcl" secondAttribute="height" multiplier="1:1" id="wt9-3k-u2r"/>
                                                                 </constraints>
                                                                 <state key="normal" image="feedwall_profile_face"/>
+                                                                <connections>
+                                                                    <action selector="didTapOnProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jsl-Xc-AHx"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pr-fL-3aJ">
                                                                 <rect key="frame" x="243" y="3" width="52" height="30"/>
