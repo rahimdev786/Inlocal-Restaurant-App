@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0s-3e-3pi" customClass="HeaderView" customModule="DMS" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0s-3e-3pi" customClass="HeaderView" customModule="InLocalCustomer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="43.999999999999986" width="375" height="210.66666666666663"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AW3-Mr-ooO">
@@ -37,8 +37,11 @@
                                             <constraint firstAttribute="width" constant="50" id="Yjr-nj-5dl"/>
                                         </constraints>
                                         <state key="normal" image="back_button_dark"/>
+                                        <connections>
+                                            <action selector="didTapOnBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2u-kt-Ctr"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vC-7P-Z7x" customClass="AppNavBarTitleLabel" customModule="DMS" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vC-7P-Z7x" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
                                         <rect key="frame" x="139.33333333333334" y="12.999999999999998" width="96.666666666666657" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,13 +50,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="51w-z4-lCK">
                                         <rect key="frame" x="28" y="171.33333333333334" width="319" height="19.333333333333343"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewv-vz-8QI" customClass="AppNavBarTitleLabel" customModule="DMS" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewv-vz-8QI" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="19.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York, USA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-c8-0Ie" customClass="AppNavBarSubTitleLabel" customModule="DMS" customModuleProvider="target">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York, USA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-c8-0Ie" customClass="AppNavBarSubTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="AvenirLTStd-Roman" family="Avenir LT Std" pointSize="13"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,7 +64,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-Av-avJ" customClass="AppThemeSeparatorView" customModule="DMS" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-Av-avJ" customClass="AppThemeSeparatorView" customModule="InLocalCustomer" customModuleProvider="target">
                                         <rect key="frame" x="132.66666666666666" y="51.333333333333329" width="110" height="109.99999999999999"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ZnF-NV-u0n">
@@ -142,7 +145,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="F3D-Df-jlD">
-                                                            <rect key="frame" x="308" y="18.666666666666671" width="24" height="30"/>
+                                                            <rect key="frame" x="308" y="21.666666666666671" width="24" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnp-t6-yTi">
                                                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -163,7 +166,7 @@
                                                     <constraints>
                                                         <constraint firstItem="NMy-xG-crj" firstAttribute="centerY" secondItem="Ibt-1L-ahk" secondAttribute="centerY" id="H40-fk-Jmy"/>
                                                         <constraint firstAttribute="trailing" secondItem="F3D-Df-jlD" secondAttribute="trailing" constant="17" id="QC1-Uq-Hds"/>
-                                                        <constraint firstItem="F3D-Df-jlD" firstAttribute="centerY" secondItem="Ibt-1L-ahk" secondAttribute="centerY" id="aED-x5-n8m"/>
+                                                        <constraint firstItem="F3D-Df-jlD" firstAttribute="centerY" secondItem="Ibt-1L-ahk" secondAttribute="centerY" constant="3" id="aED-x5-n8m"/>
                                                         <constraint firstAttribute="trailing" secondItem="NMy-xG-crj" secondAttribute="trailing" constant="17" id="rEf-Zm-mfB"/>
                                                         <constraint firstItem="NMy-xG-crj" firstAttribute="leading" secondItem="Ibt-1L-ahk" secondAttribute="leading" constant="17" id="tar-38-kwf"/>
                                                     </constraints>
@@ -231,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="52"/>
+            <point key="canvasLocation" x="-870" y="-43"/>
         </scene>
     </scenes>
     <resources>

@@ -46,6 +46,10 @@ class ProfileInfoVC: UIViewController {
        debugPrint("\(self) deinitialized")
     }
     
+    @IBAction func didTapOnBack(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func setupUI() {
         
         let view = UIView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 30))
@@ -103,15 +107,24 @@ extension ProfileInfoVC: UITableViewDelegate {
         
         switch obj.type {
         case .orders:
-            ()
+            guard let vc = OrderListVC.loadFromXIB() else{
+                return
+            }
+            navigationController?.pushViewController(vc, animated: true)
         case .bookings:
-            ()
+            guard let vc = BookingListVC.loadFromXIB() else{
+                return
+            }
+            navigationController?.pushViewController(vc, animated: true)
         case .savedPosts:
             ()
         case .changePassword:
             ()
         case .notificationSettings:
-            ()
+            guard let vc = NotificationSettingsVC.loadFromXIB() else{
+                return
+            }
+            navigationController?.pushViewController(vc, animated: true)
         default:
             ()
         }

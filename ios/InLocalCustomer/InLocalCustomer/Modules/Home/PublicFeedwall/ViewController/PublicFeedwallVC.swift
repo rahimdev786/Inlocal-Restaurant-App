@@ -49,6 +49,15 @@ class PublicFeedwallVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
+    @IBAction func didTapOnProfile(_ sender: UIButton) {
+        
+        guard let vc = ProfileInfoVC.loadFromXIB() else {
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 // MARK: - Load from storyboard with dependency
