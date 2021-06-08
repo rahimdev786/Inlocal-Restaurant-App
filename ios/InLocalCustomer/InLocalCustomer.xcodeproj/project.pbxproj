@@ -200,6 +200,24 @@
 		C19DB9F42666013300028326 /* BottumTabBarLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB9EE2666013300028326 /* BottumTabBarLocalDataManager.swift */; };
 		C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB9EF2666013300028326 /* BottumTabBarAPIDataManager.swift */; };
 		C19DB9F62666013300028326 /* BottumTabBarDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB9F02666013300028326 /* BottumTabBarDataManager.swift */; };
+		C1AE0E2B266F2412000E6470 /* CommentDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E23266F2412000E6470 /* CommentDependency.swift */; };
+		C1AE0E2C266F2412000E6470 /* CommentLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E25266F2412000E6470 /* CommentLocalDataManager.swift */; };
+		C1AE0E2D266F2412000E6470 /* CommentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E26266F2412000E6470 /* CommentDataManager.swift */; };
+		C1AE0E2E266F2412000E6470 /* CommentAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E27266F2412000E6470 /* CommentAPIDataManager.swift */; };
+		C1AE0E2F266F2412000E6470 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E29266F2412000E6470 /* CommentVC.swift */; };
+		C1AE0E30266F2412000E6470 /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AE0E2A266F2412000E6470 /* Comment.storyboard */; };
+		C1AE0E47266F248E000E6470 /* ReservationAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E3F266F248E000E6470 /* ReservationAPIDataManager.swift */; };
+		C1AE0E48266F248E000E6470 /* ReservationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E40266F248E000E6470 /* ReservationDataManager.swift */; };
+		C1AE0E49266F248E000E6470 /* ReservationLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E41266F248E000E6470 /* ReservationLocalDataManager.swift */; };
+		C1AE0E4A266F248E000E6470 /* ReservationDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E43266F248E000E6470 /* ReservationDependency.swift */; };
+		C1AE0E4B266F248E000E6470 /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E45266F248E000E6470 /* ReservationVC.swift */; };
+		C1AE0E4C266F248E000E6470 /* Reservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AE0E46266F248E000E6470 /* Reservation.storyboard */; };
+		C1AE0E69266F2554000E6470 /* RestaurantInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E61266F2554000E6470 /* RestaurantInfoDependency.swift */; };
+		C1AE0E6A266F2554000E6470 /* RestaurantInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E63266F2554000E6470 /* RestaurantInfoVC.swift */; };
+		C1AE0E6B266F2554000E6470 /* RestaurantInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AE0E64266F2554000E6470 /* RestaurantInfo.storyboard */; };
+		C1AE0E6C266F2554000E6470 /* RestaurantInfoAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E66266F2554000E6470 /* RestaurantInfoAPIDataManager.swift */; };
+		C1AE0E6D266F2554000E6470 /* RestaurantInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E67266F2554000E6470 /* RestaurantInfoDataManager.swift */; };
+		C1AE0E6E266F2554000E6470 /* RestaurantInfoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E68266F2554000E6470 /* RestaurantInfoLocalDataManager.swift */; };
 		C1B9639526678EE900CECDDF /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B9639326678EE800CECDDF /* Search.storyboard */; };
 		C1B9639626678EE900CECDDF /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9639426678EE900CECDDF /* SearchVC.swift */; };
 		C1B9639926678F1600CECDDF /* SearchDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9639826678F1600CECDDF /* SearchDependency.swift */; };
@@ -451,6 +469,24 @@
 		C19DB9EE2666013300028326 /* BottumTabBarLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottumTabBarLocalDataManager.swift; sourceTree = "<group>"; };
 		C19DB9EF2666013300028326 /* BottumTabBarAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottumTabBarAPIDataManager.swift; sourceTree = "<group>"; };
 		C19DB9F02666013300028326 /* BottumTabBarDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottumTabBarDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E23266F2412000E6470 /* CommentDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDependency.swift; sourceTree = "<group>"; };
+		C1AE0E25266F2412000E6470 /* CommentLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentLocalDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E26266F2412000E6470 /* CommentDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E27266F2412000E6470 /* CommentAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAPIDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E29266F2412000E6470 /* CommentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
+		C1AE0E2A266F2412000E6470 /* Comment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comment.storyboard; sourceTree = "<group>"; };
+		C1AE0E3F266F248E000E6470 /* ReservationAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationAPIDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E40266F248E000E6470 /* ReservationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E41266F248E000E6470 /* ReservationLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationLocalDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E43266F248E000E6470 /* ReservationDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationDependency.swift; sourceTree = "<group>"; };
+		C1AE0E45266F248E000E6470 /* ReservationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
+		C1AE0E46266F248E000E6470 /* Reservation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reservation.storyboard; sourceTree = "<group>"; };
+		C1AE0E61266F2554000E6470 /* RestaurantInfoDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoDependency.swift; sourceTree = "<group>"; };
+		C1AE0E63266F2554000E6470 /* RestaurantInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoVC.swift; sourceTree = "<group>"; };
+		C1AE0E64266F2554000E6470 /* RestaurantInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantInfo.storyboard; sourceTree = "<group>"; };
+		C1AE0E66266F2554000E6470 /* RestaurantInfoAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoAPIDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E67266F2554000E6470 /* RestaurantInfoDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E68266F2554000E6470 /* RestaurantInfoLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoLocalDataManager.swift; sourceTree = "<group>"; };
 		C1B9639326678EE800CECDDF /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		C1B9639426678EE900CECDDF /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		C1B9639826678F1600CECDDF /* SearchDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDependency.swift; sourceTree = "<group>"; };
@@ -1579,6 +1615,117 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		C1AE0E18266F23D2000E6470 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E24266F2412000E6470 /* DataManager */,
+				C1AE0E22266F2412000E6470 /* Model */,
+				C1AE0E28266F2412000E6470 /* ViewController */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		C1AE0E22266F2412000E6470 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E23266F2412000E6470 /* CommentDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1AE0E24266F2412000E6470 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E25266F2412000E6470 /* CommentLocalDataManager.swift */,
+				C1AE0E26266F2412000E6470 /* CommentDataManager.swift */,
+				C1AE0E27266F2412000E6470 /* CommentAPIDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C1AE0E28266F2412000E6470 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E29266F2412000E6470 /* CommentVC.swift */,
+				C1AE0E2A266F2412000E6470 /* Comment.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1AE0E34266F2448000E6470 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E3E266F248E000E6470 /* DataManager */,
+				C1AE0E42266F248E000E6470 /* Model */,
+				C1AE0E44266F248E000E6470 /* ViewController */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		C1AE0E3E266F248E000E6470 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E3F266F248E000E6470 /* ReservationAPIDataManager.swift */,
+				C1AE0E40266F248E000E6470 /* ReservationDataManager.swift */,
+				C1AE0E41266F248E000E6470 /* ReservationLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C1AE0E42266F248E000E6470 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E43266F248E000E6470 /* ReservationDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1AE0E44266F248E000E6470 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E45266F248E000E6470 /* ReservationVC.swift */,
+				C1AE0E46266F248E000E6470 /* Reservation.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1AE0E50266F2495000E6470 /* RestaurantInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E65266F2554000E6470 /* DataManager */,
+				C1AE0E60266F2554000E6470 /* Model */,
+				C1AE0E62266F2554000E6470 /* ViewController */,
+			);
+			path = RestaurantInfo;
+			sourceTree = "<group>";
+		};
+		C1AE0E60266F2554000E6470 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E61266F2554000E6470 /* RestaurantInfoDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1AE0E62266F2554000E6470 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E63266F2554000E6470 /* RestaurantInfoVC.swift */,
+				C1AE0E64266F2554000E6470 /* RestaurantInfo.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1AE0E65266F2554000E6470 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E66266F2554000E6470 /* RestaurantInfoAPIDataManager.swift */,
+				C1AE0E67266F2554000E6470 /* RestaurantInfoDataManager.swift */,
+				C1AE0E68266F2554000E6470 /* RestaurantInfoLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		C1B9639726678EF400CECDDF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1666,6 +1813,9 @@
 		C1CD22AE266887C5000324FF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C1AE0E50266F2495000E6470 /* RestaurantInfo */,
+				C1AE0E34266F2448000E6470 /* Reservation */,
+				C1AE0E18266F23D2000E6470 /* Comment */,
 				C10FBAA3266DD38E0012FD8E /* Delivery */,
 				C10FBA84266DD1B60012FD8E /* MenuDetail */,
 				C10FBA68266DD0C40012FD8E /* RestaurantMenu */,
@@ -1887,9 +2037,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D48224D2667A83400F1DE01 /* OrderDetails.storyboard in Resources */,
+				C1AE0E4C266F248E000E6470 /* Reservation.storyboard in Resources */,
 				C185D8A22664D95400BCDA2E /* SFProText-SemiboldItalic.ttf in Resources */,
 				C19DB9D32665E7E300028326 /* ChangePassword.storyboard in Resources */,
 				6D48223B2667A82200F1DE01 /* OrderList.storyboard in Resources */,
+				C1AE0E30266F2412000E6470 /* Comment.storyboard in Resources */,
 				C185D89C2664D95400BCDA2E /* SFProDisplay-Medium.ttf in Resources */,
 				C185D8AD2664D95500BCDA2E /* SFProDisplay-BlackItalic.ttf in Resources */,
 				C153C79F26664228002FF282 /* ValidateOTP.xib in Resources */,
@@ -1945,6 +2097,7 @@
 				C1042D102669DE780054B24D /* UserProfile.storyboard in Resources */,
 				C185D8A52664D95400BCDA2E /* SFProDisplay-Heavy.ttf in Resources */,
 				C185D8992664D95400BCDA2E /* SFProText-Bold.ttf in Resources */,
+				C1AE0E6B266F2554000E6470 /* RestaurantInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2029,11 +2182,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C153C79426662E65002FF282 /* ForgotPasswordDataManager.swift in Sources */,
+				C1AE0E4B266F248E000E6470 /* ReservationVC.swift in Sources */,
 				6D4822392667A82200F1DE01 /* OrderListAPIDataManager.swift in Sources */,
 				6D48F8DA2667BA6E00A19468 /* OrderListTVC.swift in Sources */,
 				C185D9652664F90300BCDA2E /* ValidateOTPAPIDataManager.swift in Sources */,
 				C10C76D0265FA66800473CB7 /* UIDevice.swift in Sources */,
+				C1AE0E4A266F248E000E6470 /* ReservationDependency.swift in Sources */,
 				6D48F8DF2667C30400A19468 /* BookingListTVC.swift in Sources */,
+				C1AE0E2F266F2412000E6470 /* CommentVC.swift in Sources */,
+				C1AE0E69266F2554000E6470 /* RestaurantInfoDependency.swift in Sources */,
 				C10FBABC266DD3DA0012FD8E /* DeliveryAPIDataManager.swift in Sources */,
 				6D54BB45266DE1C600BC4C34 /* SavedPostsDataManager.swift in Sources */,
 				C1042D82266A356B0054B24D /* TagedPhotosLocalDataManager.swift in Sources */,
@@ -2051,9 +2208,11 @@
 				C1DDAC68266905A200B4DB90 /* ViewStoryCVC.swift in Sources */,
 				C10C7673265FA15700473CB7 /* EmptyResponse.swift in Sources */,
 				6D54BB25266DE1A700BC4C34 /* EditProfileDependency.swift in Sources */,
+				C1AE0E2D266F2412000E6470 /* CommentDataManager.swift in Sources */,
 				C1042D81266A356B0054B24D /* TagedPhotosVC.swift in Sources */,
 				6D54BB26266DE1A700BC4C34 /* EditProfileVC.swift in Sources */,
 				C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */,
+				C1AE0E2E266F2412000E6470 /* CommentAPIDataManager.swift in Sources */,
 				C10C7661265F9F2E00473CB7 /* LocationManager.swift in Sources */,
 				C1042D122669DE780054B24D /* UserProfileLocalDataManager.swift in Sources */,
 				C10C75FB265F8BD700473CB7 /* ViewController.swift in Sources */,
@@ -2083,6 +2242,7 @@
 				6D54BB43266DE1C600BC4C34 /* SavedPostsLocalDataManager.swift in Sources */,
 				C1CD22C926688880000324FF /* PublicFeedwallVC.swift in Sources */,
 				C1E7D1E026679F5E00A677A7 /* CategoryCVC.swift in Sources */,
+				C1AE0E49266F248E000E6470 /* ReservationLocalDataManager.swift in Sources */,
 				C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */,
 				6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */,
 				6D54BB48266DE1C600BC4C34 /* SavedPostsDependency.swift in Sources */,
@@ -2095,6 +2255,7 @@
 				6D54BB46266DE1C600BC4C34 /* SavedPostsVC.swift in Sources */,
 				C1CD22C826688880000324FF /* PublicFeedwallDependency.swift in Sources */,
 				6D4821AF2667A75700F1DE01 /* BookingListVC.swift in Sources */,
+				C1AE0E48266F248E000E6470 /* ReservationDataManager.swift in Sources */,
 				C1B9639F26678F3A00CECDDF /* SearchLocalDataManager.swift in Sources */,
 				C10FBA9D266DD2140012FD8E /* MenuDetailVC.swift in Sources */,
 				C1B9639626678EE900CECDDF /* SearchVC.swift in Sources */,
@@ -2109,6 +2270,7 @@
 				6D4821B12667A75700F1DE01 /* BookingListAPIDataManager.swift in Sources */,
 				6D48216C26674CBE00F1DE01 /* ProfileInfoDataManager.swift in Sources */,
 				C10C76CC265FA66800473CB7 /* UIView + Gradient.swift in Sources */,
+				C1AE0E6C266F2554000E6470 /* RestaurantInfoAPIDataManager.swift in Sources */,
 				6D48223A2667A82200F1DE01 /* OrderListDependency.swift in Sources */,
 				C1042D312669DF500054B24D /* RestaurantProfileDependency.swift in Sources */,
 				C1B9639926678F1600CECDDF /* SearchDependency.swift in Sources */,
@@ -2117,6 +2279,7 @@
 				C10FBABD266DD3DA0012FD8E /* DeliveryDataManager.swift in Sources */,
 				C1042D83266A356B0054B24D /* TagedPhotosDataManager.swift in Sources */,
 				C19DB9F12666013300028326 /* BottumTabBarVC.swift in Sources */,
+				C1AE0E2C266F2412000E6470 /* CommentLocalDataManager.swift in Sources */,
 				C10C76C7265FA66800473CB7 /* UILabel.swift in Sources */,
 				C10FBA80266DD1A50012FD8E /* RestaurantMenuVC.swift in Sources */,
 				6D48226A2667A85900F1DE01 /* NotificationSettingsLocalDataManager.swift in Sources */,
@@ -2150,6 +2313,7 @@
 				C1CD22CF2668A139000324FF /* FeedwallStoryCVC.swift in Sources */,
 				C10FBABA266DD3DA0012FD8E /* DeliveryVC.swift in Sources */,
 				C1CD22C526688880000324FF /* PublicFeedwallLocalDataManager.swift in Sources */,
+				C1AE0E6E266F2554000E6470 /* RestaurantInfoLocalDataManager.swift in Sources */,
 				C19DB9D72665E7E400028326 /* ChangePasswordDependency.swift in Sources */,
 				6D4BA41D266DDA700022CA37 /* NotificationSettingsTVC.swift in Sources */,
 				C10C76CF265FA66800473CB7 /* UIView + Shadow.swift in Sources */,
@@ -2162,6 +2326,7 @@
 				C10FBA9A266DD2140012FD8E /* MenuDetailAPIDataManager.swift in Sources */,
 				C10FBA9F266DD2140012FD8E /* MenuDetailDependency.swift in Sources */,
 				C10C767C265FA1A800473CB7 /* Validator.swift in Sources */,
+				C1AE0E47266F248E000E6470 /* ReservationAPIDataManager.swift in Sources */,
 				C1E7D1E52667A58100A677A7 /* SearchPostCVC.swift in Sources */,
 				C1042D84266A356B0054B24D /* TagedPhotosAPIDataManager.swift in Sources */,
 				C1DDAC5B2668F27700B4DB90 /* ViewStoryDataManager.swift in Sources */,
@@ -2174,18 +2339,21 @@
 				C1CD22DB2668A52F000324FF /* FeedwallPostTVC.swift in Sources */,
 				C1DDAC5C2668F27700B4DB90 /* ViewStoryAPIDataManager.swift in Sources */,
 				C185D9432664F85D00BCDA2E /* SignupAPIDataManager.swift in Sources */,
+				C1AE0E6A266F2554000E6470 /* RestaurantInfoVC.swift in Sources */,
 				C10C766A265FA10000473CB7 /* AppEnum.swift in Sources */,
 				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,
 				C1042D0F2669DE780054B24D /* UserProfileDependency.swift in Sources */,
 				6D54BB44266DE1C600BC4C34 /* SavedPostsAPIDataManager.swift in Sources */,
 				C19DB9D62665E7E400028326 /* ChangePasswordDataManager.swift in Sources */,
 				6D48224E2667A83400F1DE01 /* OrderDetailsVC.swift in Sources */,
+				C1AE0E2B266F2412000E6470 /* CommentDependency.swift in Sources */,
 				6D48224C2667A83400F1DE01 /* OrderDetailsDependency.swift in Sources */,
 				C10C764D265F9E2A00473CB7 /* AppActivityIndicator.swift in Sources */,
 				C1277902266DE78D00F9F7FC /* MenuCategoryCVC.swift in Sources */,
 				6D54BB24266DE1A700BC4C34 /* EditProfileLocalDataManager.swift in Sources */,
 				C19DB9D52665E7E300028326 /* ChangePasswordLocalDataManager.swift in Sources */,
 				C10C76CB265FA66800473CB7 /* UIImage+Utilities.swift in Sources */,
+				C1AE0E6D266F2554000E6470 /* RestaurantInfoDataManager.swift in Sources */,
 				C10C76C9265FA66800473CB7 /* UIButton.swift in Sources */,
 				C185D93E2664F85D00BCDA2E /* SigninLocalDataManager.swift in Sources */,
 				6D48216B26674CBE00F1DE01 /* ProfileInfoAPIDataManager.swift in Sources */,
