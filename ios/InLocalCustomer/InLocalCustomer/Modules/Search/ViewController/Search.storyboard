@@ -55,7 +55,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-N4-JBC">
                                 <rect key="frame" x="0.0" y="118" width="414" height="778"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAm-qX-Mxy">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAm-qX-Mxy">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="778"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I66-uh-vm0">
@@ -166,9 +166,12 @@
                                                             <outlet property="delegate" destination="BYZ-38-t0r" id="8HU-4M-vkD"/>
                                                         </connections>
                                                     </collectionView>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I5V-8G-COt">
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I5V-8G-COt">
                                                         <rect key="frame" x="10" y="127" width="394" height="651"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="651" id="AUc-ND-cni"/>
+                                                        </constraints>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="iZE-MM-BHl">
                                                             <size key="itemSize" width="185" height="170"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -237,7 +240,6 @@
                                             <constraint firstAttribute="trailing" secondItem="I66-uh-vm0" secondAttribute="trailing" id="6Vx-ss-v4T"/>
                                             <constraint firstItem="I66-uh-vm0" firstAttribute="leading" secondItem="EAm-qX-Mxy" secondAttribute="leading" id="7uE-Xa-POI"/>
                                             <constraint firstItem="I66-uh-vm0" firstAttribute="width" secondItem="EAm-qX-Mxy" secondAttribute="width" id="Juf-Wr-DYo"/>
-                                            <constraint firstItem="I66-uh-vm0" firstAttribute="height" secondItem="EAm-qX-Mxy" secondAttribute="height" id="LBD-R2-HTv"/>
                                             <constraint firstItem="I66-uh-vm0" firstAttribute="top" secondItem="EAm-qX-Mxy" secondAttribute="top" id="aUs-20-wyP"/>
                                             <constraint firstAttribute="bottom" secondItem="I66-uh-vm0" secondAttribute="bottom" id="mb0-bF-zgK"/>
                                         </constraints>
@@ -267,6 +269,7 @@
                     <connections>
                         <outlet property="collectionViewCategory" destination="hcO-9R-dYU" id="C2d-OD-JOT"/>
                         <outlet property="collectionViewPost" destination="I5V-8G-COt" id="SoR-pf-Yh9"/>
+                        <outlet property="collectionview_height" destination="AUc-ND-cni" id="DWe-eV-4Si"/>
                         <outlet property="viewSearchContainer" destination="lQh-5C-zoR" id="lJG-Rg-hSx"/>
                     </connections>
                 </viewController>

@@ -18,6 +18,8 @@ class RestaurantProfileVC: UIViewController {
     @IBOutlet weak var viewProfileBack: UIView!
     @IBOutlet weak var collectionViewPost: UICollectionView!
     
+    @IBOutlet weak var collectionViewPost_height: NSLayoutConstraint!
+    
     @IBOutlet weak var btnFollow: UIButton!
     @IBOutlet weak var btnMenu: UIButton!
     @IBOutlet weak var btnDelivery: UIButton!
@@ -42,6 +44,7 @@ class RestaurantProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.collectionViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -50,6 +53,7 @@ class RestaurantProfileVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.collectionViewPost.removeObserver(self, forKeyPath: "contentSize")
     }
     
     // MARK: Deinitialization
@@ -61,6 +65,26 @@ class RestaurantProfileVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickMenu(_ sender: Any) {
+        guard let vc = RestaurantMenuVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onClickDelivery(_ sender: Any) {
+        guard let vc = DeliveryVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onClickFollow(_ sender: Any) {
+    }
+    
+    @IBAction func onClickInfo(_ sender: Any) {
+    }
+    
     func setupView(){
         btnFollow.layer.cornerRadius = btnFollow.frame.height/2
         btnMenu.layer.cornerRadius = btnMenu.frame.height/2
@@ -70,11 +94,24 @@ class RestaurantProfileVC: UIViewController {
         
         viewProfileBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
         
-        let widthValue = ((UIScreen.main.bounds.width-44)/2)
+        let widthValue = ((UIScreen.main.bounds.width-36)/2)
         let heightValue = widthValue
         let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 2
+        layout.minimumLineSpacing = 2
         layout.itemSize = CGSize(width: widthValue, height: heightValue)
         self.collectionViewPost.setCollectionViewLayout(layout, animated: true)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize"{
+            if object is UICollectionView{
+                if let newvalue = change?[.newKey]{
+                    let newsize = newvalue as! CGSize
+                    self.collectionViewPost_height.constant = newsize.height
+                }
+            }
+        }
     }
 }
 
