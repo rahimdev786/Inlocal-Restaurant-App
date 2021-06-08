@@ -15,11 +15,14 @@ class ReservationVC: UIViewController {
 	lazy var dataManager = ReservationDataManager()
     var dependency: ReservationDependency?
     
+    @IBOutlet weak var viewSpecialIntructionBack: UIView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        setupView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -45,6 +48,16 @@ class ReservationVC: UIViewController {
     // MARK: Deinitialization
     deinit {
        debugPrint("\(self) deinitialized")
+    }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setupView(){
+        viewSpecialIntructionBack.layer.cornerRadius = 10
+        viewSpecialIntructionBack.layer.borderWidth = 1
+        viewSpecialIntructionBack.layer.borderColor = UIColor.lightGray.cgColor
     }
 }
 

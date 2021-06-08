@@ -218,6 +218,9 @@
 		C1AE0E6C266F2554000E6470 /* RestaurantInfoAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E66266F2554000E6470 /* RestaurantInfoAPIDataManager.swift */; };
 		C1AE0E6D266F2554000E6470 /* RestaurantInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E67266F2554000E6470 /* RestaurantInfoDataManager.swift */; };
 		C1AE0E6E266F2554000E6470 /* RestaurantInfoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E68266F2554000E6470 /* RestaurantInfoLocalDataManager.swift */; };
+		C1AE0E74266F41A7000E6470 /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E73266F41A7000E6470 /* CommentTVC.swift */; };
+		C1AE0E7D266F75E8000E6470 /* OpeningHourseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E7C266F75E8000E6470 /* OpeningHourseTVC.swift */; };
+		C1AE0E82266F7622000E6470 /* RestaurantImageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E81266F7622000E6470 /* RestaurantImageCVC.swift */; };
 		C1B9639526678EE900CECDDF /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B9639326678EE800CECDDF /* Search.storyboard */; };
 		C1B9639626678EE900CECDDF /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9639426678EE900CECDDF /* SearchVC.swift */; };
 		C1B9639926678F1600CECDDF /* SearchDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9639826678F1600CECDDF /* SearchDependency.swift */; };
@@ -487,6 +490,9 @@
 		C1AE0E66266F2554000E6470 /* RestaurantInfoAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoAPIDataManager.swift; sourceTree = "<group>"; };
 		C1AE0E67266F2554000E6470 /* RestaurantInfoDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoDataManager.swift; sourceTree = "<group>"; };
 		C1AE0E68266F2554000E6470 /* RestaurantInfoLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfoLocalDataManager.swift; sourceTree = "<group>"; };
+		C1AE0E73266F41A7000E6470 /* CommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
+		C1AE0E7C266F75E8000E6470 /* OpeningHourseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHourseTVC.swift; sourceTree = "<group>"; };
+		C1AE0E81266F7622000E6470 /* RestaurantImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantImageCVC.swift; sourceTree = "<group>"; };
 		C1B9639326678EE800CECDDF /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		C1B9639426678EE900CECDDF /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		C1B9639826678F1600CECDDF /* SearchDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDependency.swift; sourceTree = "<group>"; };
@@ -1618,6 +1624,7 @@
 		C1AE0E18266F23D2000E6470 /* Comment */ = {
 			isa = PBXGroup;
 			children = (
+				C1AE0E72266F4185000E6470 /* Views */,
 				C1AE0E24266F2412000E6470 /* DataManager */,
 				C1AE0E22266F2412000E6470 /* Model */,
 				C1AE0E28266F2412000E6470 /* ViewController */,
@@ -1692,6 +1699,7 @@
 		C1AE0E50266F2495000E6470 /* RestaurantInfo */ = {
 			isa = PBXGroup;
 			children = (
+				C1AE0E7B266F75A8000E6470 /* Views */,
 				C1AE0E65266F2554000E6470 /* DataManager */,
 				C1AE0E60266F2554000E6470 /* Model */,
 				C1AE0E62266F2554000E6470 /* ViewController */,
@@ -1724,6 +1732,23 @@
 				C1AE0E68266F2554000E6470 /* RestaurantInfoLocalDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C1AE0E72266F4185000E6470 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E73266F41A7000E6470 /* CommentTVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C1AE0E7B266F75A8000E6470 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1AE0E7C266F75E8000E6470 /* OpeningHourseTVC.swift */,
+				C1AE0E81266F7622000E6470 /* RestaurantImageCVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C1B9639726678EF400CECDDF /* ViewController */ = {
@@ -2233,6 +2258,7 @@
 				C1042D302669DF500054B24D /* RestaurantProfileAPIDataManager.swift in Sources */,
 				C10C76CA265FA66800473CB7 /* UITableviewCell.swift in Sources */,
 				C1CD22C626688880000324FF /* PublicFeedwallAPIDataManager.swift in Sources */,
+				C1AE0E7D266F75E8000E6470 /* OpeningHourseTVC.swift in Sources */,
 				6D4822672667A85900F1DE01 /* NotificationSettingsDependency.swift in Sources */,
 				C19DB9F32666013300028326 /* BottumTabBarDependency.swift in Sources */,
 				C185D93F2664F85D00BCDA2E /* SigninDependency.swift in Sources */,
@@ -2271,6 +2297,7 @@
 				6D48216C26674CBE00F1DE01 /* ProfileInfoDataManager.swift in Sources */,
 				C10C76CC265FA66800473CB7 /* UIView + Gradient.swift in Sources */,
 				C1AE0E6C266F2554000E6470 /* RestaurantInfoAPIDataManager.swift in Sources */,
+				C1AE0E82266F7622000E6470 /* RestaurantImageCVC.swift in Sources */,
 				6D48223A2667A82200F1DE01 /* OrderListDependency.swift in Sources */,
 				C1042D312669DF500054B24D /* RestaurantProfileDependency.swift in Sources */,
 				C1B9639926678F1600CECDDF /* SearchDependency.swift in Sources */,
@@ -2325,6 +2352,7 @@
 				6D48216A26674CBE00F1DE01 /* ProfileInfoVC.swift in Sources */,
 				C10FBA9A266DD2140012FD8E /* MenuDetailAPIDataManager.swift in Sources */,
 				C10FBA9F266DD2140012FD8E /* MenuDetailDependency.swift in Sources */,
+				C1AE0E74266F41A7000E6470 /* CommentTVC.swift in Sources */,
 				C10C767C265FA1A800473CB7 /* Validator.swift in Sources */,
 				C1AE0E47266F248E000E6470 /* ReservationAPIDataManager.swift in Sources */,
 				C1E7D1E52667A58100A677A7 /* SearchPostCVC.swift in Sources */,

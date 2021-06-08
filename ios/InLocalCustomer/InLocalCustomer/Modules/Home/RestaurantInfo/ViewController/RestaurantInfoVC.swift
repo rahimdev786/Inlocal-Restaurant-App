@@ -15,11 +15,19 @@ class RestaurantInfoVC: UIViewController {
 	lazy var dataManager = RestaurantInfoDataManager()
     var dependency: RestaurantInfoDependency?
     
+    @IBOutlet weak var collctionViewRestaurantImage: UICollectionView!
+    @IBOutlet weak var tableViewOpeningHourse: UITableView!
+    
+    @IBOutlet weak var tableViewOpeningHourse_Height: NSLayoutConstraint!
+    
+    @IBOutlet weak var viewTblOpeninghourseBack: UIView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        setupView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -32,6 +40,7 @@ class RestaurantInfoVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableViewOpeningHourse.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -40,11 +49,33 @@ class RestaurantInfoVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.tableViewOpeningHourse.removeObserver(self, forKeyPath: "contentSize")
     }
     
     // MARK: Deinitialization
     deinit {
        debugPrint("\(self) deinitialized")
+    }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setupView(){
+        viewTblOpeninghourseBack.layer.cornerRadius = 20
+        viewTblOpeninghourseBack.layer.borderWidth = 1
+        viewTblOpeninghourseBack.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize"{
+            if object is UITableView{
+                if let newvalue = change?[.newKey]{
+                    let newsize = newvalue as! CGSize
+                    self.tableViewOpeningHourse_Height.constant = newsize.height
+                }
+            }
+        }
     }
 }
 
@@ -65,5 +96,29 @@ extension RestaurantInfoVC {
 
 // MARK: - RestaurantInfoAPIResponseDelegate
 extension RestaurantInfoVC: RestaurantInfoAPIResponseDelegate {
+    
+}
+
+extension RestaurantInfoVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RestaurantImageCVC", for: indexPath) as! RestaurantImageCVC
+        return cell
+    }
+}
+
+extension RestaurantInfoVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OpeningHourseTVC", for: indexPath) as! OpeningHourseTVC
+        return cell
+    }
     
 }
