@@ -50,6 +50,14 @@ class ProfileInfoVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func didTapOnEditProfile(_ sender: UIButton) {
+        guard let vc = EditProfileVC.loadFromXIB() else{
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     func setupUI() {
         
         let view = UIView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 30))
@@ -117,7 +125,10 @@ extension ProfileInfoVC: UITableViewDelegate {
             }
             navigationController?.pushViewController(vc, animated: true)
         case .savedPosts:
-            ()
+            guard let vc = SavedPostsVC.loadFromXIB() else{
+                return
+            }
+            navigationController?.pushViewController(vc, animated: true)
         case .changePassword:
             ()
         case .notificationSettings:

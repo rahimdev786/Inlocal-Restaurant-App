@@ -47,6 +47,7 @@
 		6D48F8DA2667BA6E00A19468 /* OrderListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48F8D92667BA6E00A19468 /* OrderListTVC.swift */; };
 		6D48F8DF2667C30400A19468 /* BookingListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48F8DE2667C30400A19468 /* BookingListTVC.swift */; };
 		6D4BA41D266DDA700022CA37 /* NotificationSettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4BA41C266DDA700022CA37 /* NotificationSettingsTVC.swift */; };
+		6D4FFDC2266E2ACF00F04634 /* FavouriteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4FFDC1266E2ACF00F04634 /* FavouriteCVC.swift */; };
 		6D54BB22266DE1A700BC4C34 /* EditProfileAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB1A266DE1A700BC4C34 /* EditProfileAPIDataManager.swift */; };
 		6D54BB23266DE1A700BC4C34 /* EditProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB1B266DE1A700BC4C34 /* EditProfileDataManager.swift */; };
 		6D54BB24266DE1A700BC4C34 /* EditProfileLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB1C266DE1A700BC4C34 /* EditProfileLocalDataManager.swift */; };
@@ -289,6 +290,7 @@
 		6D48F8D92667BA6E00A19468 /* OrderListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTVC.swift; sourceTree = "<group>"; };
 		6D48F8DE2667C30400A19468 /* BookingListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListTVC.swift; sourceTree = "<group>"; };
 		6D4BA41C266DDA700022CA37 /* NotificationSettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsTVC.swift; sourceTree = "<group>"; };
+		6D4FFDC1266E2ACF00F04634 /* FavouriteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCVC.swift; sourceTree = "<group>"; };
 		6D54BB1A266DE1A700BC4C34 /* EditProfileAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileAPIDataManager.swift; sourceTree = "<group>"; };
 		6D54BB1B266DE1A700BC4C34 /* EditProfileDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileDataManager.swift; sourceTree = "<group>"; };
 		6D54BB1C266DE1A700BC4C34 /* EditProfileLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileLocalDataManager.swift; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 			children = (
 				6D54BB3F266DE1C600BC4C34 /* SavedPostsVC.swift */,
 				6D54BB40266DE1C600BC4C34 /* SavedPosts.storyboard */,
+				6D4FFDC1266E2ACF00F04634 /* FavouriteCVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2150,6 +2153,7 @@
 				C10C766A265FA10000473CB7 /* AppEnum.swift in Sources */,
 				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,
 				C1042D0F2669DE780054B24D /* UserProfileDependency.swift in Sources */,
+				6D4FFDC2266E2ACF00F04634 /* FavouriteCVC.swift in Sources */,
 				6D54BB44266DE1C600BC4C34 /* SavedPostsAPIDataManager.swift in Sources */,
 				C19DB9D62665E7E400028326 /* ChangePasswordDataManager.swift in Sources */,
 				6D48224E2667A83400F1DE01 /* OrderDetailsVC.swift in Sources */,
