@@ -1,28 +1,25 @@
 //
-//  ReservationVC.swift
+//  CartVC.swift
 //  InLocalCustomer
 //
-//  Created by Sudipta Patel on 08/06/21.
+//  Created by Sudipta Patel on 09/06/21.
 //  Copyright © 2021 ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
 
 import UIKit
 
-class ReservationVC: UIViewController {
+class CartVC: UIViewController {
     
     // MARK: Instance variables
-	lazy var dataManager = ReservationDataManager()
-    var dependency: ReservationDependency?
-    
-    @IBOutlet weak var viewSpecialIntructionBack: UIView!
+	lazy var dataManager = CartDataManager()
+    var dependency: CartDependency?
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
-        setupView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -49,26 +46,16 @@ class ReservationVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
-    
-    @IBAction func onClickBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func setupView(){
-        viewSpecialIntructionBack.layer.cornerRadius = 10
-        viewSpecialIntructionBack.layer.borderWidth = 1
-        viewSpecialIntructionBack.layer.borderColor = UIColor.lightGray.cgColor
-    }
 }
 
 // MARK: - Load from storyboard with dependency
-extension ReservationVC {
+extension CartVC {
     
-    class func load(withDependency dependency: ReservationDependency? = nil) -> ReservationVC? {
+    class func load(withDependency dependency: CartDependency? = nil) -> CartVC? {
         
-        let storyboard = UIStoryboard(name: "Reservation", bundle: nil)
+        let storyboard = UIStoryboard(name: "Cart", bundle: nil)
         
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "ReservationVC") as? ReservationVC else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "CartVC") as? CartVC else {
             return nil
         }
         vc.dependency = dependency
@@ -76,7 +63,7 @@ extension ReservationVC {
     }
 }
 
-// MARK: - ReservationAPIResponseDelegate
-extension ReservationVC: ReservationAPIResponseDelegate {
+// MARK: - CartAPIResponseDelegate
+extension CartVC: CartAPIResponseDelegate {
     
 }

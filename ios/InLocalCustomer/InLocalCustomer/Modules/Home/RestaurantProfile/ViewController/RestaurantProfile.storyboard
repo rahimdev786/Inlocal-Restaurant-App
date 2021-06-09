@@ -264,6 +264,9 @@
                                                                     <constraint firstAttribute="height" constant="55" id="nbL-wt-Cyb"/>
                                                                 </constraints>
                                                                 <state key="normal" image="reservation_white"/>
+                                                                <connections>
+                                                                    <action selector="onClickReservation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kWb-ce-QrW"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrH-nc-Yav">
                                                                 <rect key="frame" x="1.3333333333333393" y="60.000000000000007" width="61.666666666666657" height="14.333333333333336"/>

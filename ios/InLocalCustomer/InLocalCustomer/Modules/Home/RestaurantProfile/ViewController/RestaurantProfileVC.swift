@@ -82,7 +82,20 @@ class RestaurantProfileVC: UIViewController {
     @IBAction func onClickFollow(_ sender: Any) {
     }
     
+    @IBAction func onClickReservation(_ sender: Any) {
+    //ReservationVC
+        guard let vc = ReservationVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func onClickInfo(_ sender: Any) {
+        //RestaurantInfoVC
+        guard let vc = RestaurantInfoVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setupView(){

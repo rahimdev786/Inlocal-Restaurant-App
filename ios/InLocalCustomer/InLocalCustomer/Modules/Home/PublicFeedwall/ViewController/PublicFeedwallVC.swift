@@ -94,10 +94,19 @@ extension PublicFeedwallVC: UICollectionViewDataSource{
 
 extension PublicFeedwallVC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         guard let viewStoryController = ViewStoryVC.load(withDependency: nil) else{
             return
         }
         self.navigationController?.pushViewController(viewStoryController, animated: true)
+        
+        /*
+        //CommentVC
+        guard let viewStoryController = CommentVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(viewStoryController, animated: true)
+        */
     }
 }
 
