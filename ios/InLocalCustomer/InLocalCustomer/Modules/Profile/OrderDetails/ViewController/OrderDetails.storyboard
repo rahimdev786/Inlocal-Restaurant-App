@@ -198,17 +198,17 @@
                                                                                     <rect key="frame" x="10" y="12" width="325" height="101"/>
                                                                                     <subviews>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abI-Jx-1T2">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="23" height="23"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                                                                                             <constraints>
-                                                                                                <constraint firstAttribute="width" constant="23" id="aZ0-5M-dUG"/>
-                                                                                                <constraint firstAttribute="height" constant="23" id="slX-9F-XgG"/>
+                                                                                                <constraint firstAttribute="width" constant="15" id="aZ0-5M-dUG"/>
+                                                                                                <constraint firstAttribute="height" constant="15" id="slX-9F-XgG"/>
                                                                                             </constraints>
-                                                                                            <color key="tintColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                            <state key="normal" image="empty_checkbox_gray"/>
-                                                                                            <state key="selected" image="favrite_blue"/>
+                                                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                            <state key="normal" backgroundImage="empty_checkbox_gray"/>
+                                                                                            <state key="selected" backgroundImage="favrite_blue"/>
                                                                                         </button>
                                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="8QN-Vy-b7S">
-                                                                                            <rect key="frame" x="33" y="0.0" width="80" height="80"/>
+                                                                                            <rect key="frame" x="25" y="0.0" width="80" height="80"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="width" constant="80" id="h6R-xI-NAI"/>
                                                                                                 <constraint firstAttribute="height" constant="80" id="mxy-tR-YTC"/>
@@ -220,16 +220,16 @@
                                                                                             </userDefinedRuntimeAttributes>
                                                                                         </imageView>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3Z-NR-if9">
-                                                                                            <rect key="frame" x="123" y="0.0" width="192" height="101"/>
+                                                                                            <rect key="frame" x="115" y="0.0" width="200" height="101"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Dine In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3d-7p-bnq" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="132" height="14.333333333333334"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="14.333333333333334"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subway Place Try our new delicious" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg2-Zl-Ydn" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                                                    <rect key="frame" x="0.0" y="24.333333333333336" width="112" height="24"/>
+                                                                                                    <rect key="frame" x="0.0" y="24.333333333333336" width="120" height="24"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="10"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -247,13 +247,13 @@
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$170.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nap-ad-TnG" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                                                    <rect key="frame" x="132" y="80.333333333333329" width="39" height="14.333333333333329"/>
+                                                                                                    <rect key="frame" x="140" y="80.333333333333329" width="39" height="14.333333333333329"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="12"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRO-b9-RhE" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                                                    <rect key="frame" x="132" y="0.0" width="13.666666666666657" height="14.333333333333334"/>
+                                                                                                    <rect key="frame" x="140" y="0.0" width="13.666666666666657" height="14.333333333333334"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="12"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
