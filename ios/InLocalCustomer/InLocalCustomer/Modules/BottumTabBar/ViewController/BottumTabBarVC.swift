@@ -107,10 +107,18 @@ extension BottumTabBarVC{
         }
         tabController.setViewController(searchViewController, atIndex: 1)
         
+        //CartVC
+        guard let cartViewController = CartVC.load(withDependency: nil) else {
+            return
+        }
+        tabController.setViewController(cartViewController, atIndex: 3)
+        
         guard let notificationViewController = NotificationsVC.load(withDependency: nil) else {
             return
         }
         tabController.setViewController(notificationViewController, atIndex: 4)
+        
+        
         
         /*
         //set child controllers

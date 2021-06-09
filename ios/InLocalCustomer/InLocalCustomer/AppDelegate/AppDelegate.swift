@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 import IQKeyboardManagerSwift
 
 //@main
@@ -17,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        GMSPlacesClient.provideAPIKey("AIzaSyDjsfqGGOp9nhwCMmNA-k48-kz42d8twSE")
+        GMSServices.provideAPIKey("AIzaSyDjsfqGGOp9nhwCMmNA-k48-kz42d8twSE")
         
         //moveToLoginVC()
         moveToTabBarVC()

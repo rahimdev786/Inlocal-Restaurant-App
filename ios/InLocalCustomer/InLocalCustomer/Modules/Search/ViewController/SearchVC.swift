@@ -23,7 +23,6 @@ class SearchVC: UIViewController {
     @IBOutlet weak var collectionview_height: NSLayoutConstraint!
     
     // MARK: - View Life Cycle Methods
-    
 	override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,6 +57,13 @@ class SearchVC: UIViewController {
        debugPrint("\(self) deinitialized")
     }
     
+    @IBAction func onClickLocation(_ sender: Any) {
+        guard let vc = SelectRediusVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func setupView(){
         viewSearchContainer.layer.cornerRadius = 10
         viewSearchContainer.layer.borderWidth = 1
@@ -82,7 +88,6 @@ class SearchVC: UIViewController {
             }
         }
     }
-    
 }
 
 // MARK: - Load from storyboard with dependency
@@ -122,6 +127,5 @@ extension SearchVC: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
             return cell
         }
-        
     }
 }

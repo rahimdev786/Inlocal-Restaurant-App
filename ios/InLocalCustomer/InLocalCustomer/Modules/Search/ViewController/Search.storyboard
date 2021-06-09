@@ -97,6 +97,9 @@
                                                                     <constraint firstAttribute="height" constant="38" id="e8B-5t-luC"/>
                                                                 </constraints>
                                                                 <state key="normal" image="location_white"/>
+                                                                <connections>
+                                                                    <action selector="onClickLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k5n-Ou-9Gd"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

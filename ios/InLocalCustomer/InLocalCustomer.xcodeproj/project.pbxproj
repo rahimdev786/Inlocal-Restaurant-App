@@ -158,6 +158,7 @@
 		C16920C5267076F600055FD3 /* SelectRediusLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920BF267076F600055FD3 /* SelectRediusLocalDataManager.swift */; };
 		C16920C6267076F600055FD3 /* SelectRediusDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920C0267076F600055FD3 /* SelectRediusDataManager.swift */; };
 		C16920C7267076F600055FD3 /* SelectRediusAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920C1267076F600055FD3 /* SelectRediusAPIDataManager.swift */; };
+		C16921032670CE3A00055FD3 /* DeliveryCartItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16921022670CE3A00055FD3 /* DeliveryCartItemTVC.swift */; };
 		C185D8922664D95400BCDA2E /* SFProDisplay-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C185D8742664D94F00BCDA2E /* SFProDisplay-SemiboldItalic.ttf */; };
 		C185D8932664D95400BCDA2E /* SFProDisplay-Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C185D8752664D95000BCDA2E /* SFProDisplay-Ultralight.ttf */; };
 		C185D8942664D95400BCDA2E /* SFProDisplay-UltralightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C185D8762664D95000BCDA2E /* SFProDisplay-UltralightItalic.ttf */; };
@@ -450,6 +451,7 @@
 		C16920BF267076F600055FD3 /* SelectRediusLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRediusLocalDataManager.swift; sourceTree = "<group>"; };
 		C16920C0267076F600055FD3 /* SelectRediusDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRediusDataManager.swift; sourceTree = "<group>"; };
 		C16920C1267076F600055FD3 /* SelectRediusAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRediusAPIDataManager.swift; sourceTree = "<group>"; };
+		C16921022670CE3A00055FD3 /* DeliveryCartItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCartItemTVC.swift; sourceTree = "<group>"; };
 		C185D8742664D94F00BCDA2E /* SFProDisplay-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		C185D8752664D95000BCDA2E /* SFProDisplay-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Ultralight.ttf"; sourceTree = "<group>"; };
 		C185D8762664D95000BCDA2E /* SFProDisplay-UltralightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-UltralightItalic.ttf"; sourceTree = "<group>"; };
@@ -1473,6 +1475,7 @@
 		C16920902670760700055FD3 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				C16921012670CE0300055FD3 /* Views */,
 				C169209D2670765500055FD3 /* DataManager */,
 				C16920A12670765500055FD3 /* Model */,
 				C169209A2670765500055FD3 /* ViewController */,
@@ -1542,6 +1545,14 @@
 				C16920C1267076F600055FD3 /* SelectRediusAPIDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C16921012670CE0300055FD3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C16921022670CE3A00055FD3 /* DeliveryCartItemTVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C185D8B32664D95F00BCDA2E /* Font */ = {
@@ -2451,6 +2462,7 @@
 				C16920C4267076F600055FD3 /* SelectRediusDependency.swift in Sources */,
 				C16920A82670765500055FD3 /* CartDependency.swift in Sources */,
 				C10FBA7D266DD1A50012FD8E /* RestaurantMenuDataManager.swift in Sources */,
+				C16921032670CE3A00055FD3 /* DeliveryCartItemTVC.swift in Sources */,
 				C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */,
 				C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */,
 				6D54BB46266DE1C600BC4C34 /* SavedPostsVC.swift in Sources */,
