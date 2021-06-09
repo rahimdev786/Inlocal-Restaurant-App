@@ -8,8 +8,9 @@
 //
 
 import UIKit
+import Photos
 
-class EditProfileVC: UIViewController {
+class EditProfileVC: UIViewController, UINavigationControllerDelegate {
     // MARK: Instance variables
 	lazy var dataManager = EditProfileDataManager()
     var dependency: EditProfileDependency?
@@ -17,6 +18,13 @@ class EditProfileVC: UIViewController {
     @IBOutlet weak var txtFieldName: TextFieldView!
     @IBOutlet weak var txtFieldEmail: TextFieldView!
     @IBOutlet weak var txtFieldPhoneNumber: TextFieldView!
+    @IBOutlet weak var profilePicView: UIView!
+    @IBOutlet weak var imgViewProfile: UIImageView!
+    
+    @IBOutlet weak var btnSave: UIButton!
+    
+    let imagePicker = UIImagePickerController()
+    var isImageSelected = false
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -78,6 +86,102 @@ class EditProfileVC: UIViewController {
     @IBAction func didTapOnBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+
+    func showActionSheet() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let alertCntlr = UIAlertController.init(title: "Please select", message: nil, preferredStyle: .actionSheet)
+            let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel) { _ in
+            }
+            let cameraAction = UIAlertAction.init(title: "Camera", style: .default) { _ in
+                self.checkCameraAccess()
+            }
+            let galleryAction = UIAlertAction.init(title: "Photo Library", style: .default) { _ in
+                self.checkPhotoLibraryPermission()
+            }
+            alertCntlr.addAction(cancelAction)
+            alertCntlr.addAction(galleryAction)
+            alertCntlr.addAction(cameraAction)
+            self.present(alertCntlr, animated: true, completion: nil)
+        } else {
+            self.checkPhotoLibraryPermission()
+        }
+    }
+    
+    func checkCameraAccess() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .denied:
+            ()
+        case .restricted:
+            ()
+        case .authorized:
+            DispatchQueue.main.async {
+                self.openImagePicker(isCamera: true)
+            }
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { success in
+                DispatchQueue.main.async {
+                    if success {
+                        self.openImagePicker(isCamera: true)
+                    } else {
+                    }
+                }
+            }
+        default:
+            ()
+        }
+    }
+    
+    func checkPhotoLibraryPermission() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .authorized:
+            DispatchQueue.main.async {
+                self.openImagePicker(isCamera: false)
+            }
+        case .denied, .restricted :
+            ()
+        case .notDetermined:
+            // ask for permissions
+            PHPhotoLibrary.requestAuthorization { (status) in
+                DispatchQueue.main.async {
+                    switch status {
+                    case .authorized:
+                        self.openImagePicker(isCamera: false)
+                    case .denied, .restricted:
+                        ()
+                    case .notDetermined:
+                        ()
+                    default:
+                        ()
+                    }
+                }
+            }
+        default:
+            ()
+        }
+    }
+    
+    func openImagePicker(isCamera: Bool) {
+        self.imagePicker.delegate = self
+        if isCamera {
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true, completion: nil)
+        } else {
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: IBActions
+    @IBAction func addProfPicClicked(_ sender: UIButton) {
+        showActionSheet()
+    }
+    
+    @IBAction func didTapOnCamera(_ sender: Any) {
+        showActionSheet()
+    }
     
 }
 
@@ -120,4 +224,19 @@ extension EditProfileVC: TextFieldDelegate{
         return true
     }
     
+}
+
+// MARK: - UIImagePickerCintrollerDelegate
+extension EditProfileVC: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        isImageSelected = true
+        imgViewProfile.image = img
+        
+        //        let fixedImg = img.fixOrientation()
+        //        saveImageDocumentDirectory(with: fixedImg, name: "profile.png")
+        //        imageChanged = true
+        dismiss(animated: true, completion: nil)
+    }
 }

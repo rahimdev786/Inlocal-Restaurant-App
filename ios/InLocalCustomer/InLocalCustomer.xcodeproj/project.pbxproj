@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D21FDD026708E1900611AD4 /* BookingDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D21FDCF26708E1900611AD4 /* BookingDetailsTVC.swift */; };
 		6D48216926674CBE00F1DE01 /* ProfileInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D48216126674CBD00F1DE01 /* ProfileInfo.storyboard */; };
 		6D48216A26674CBE00F1DE01 /* ProfileInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48216226674CBD00F1DE01 /* ProfileInfoVC.swift */; };
 		6D48216B26674CBE00F1DE01 /* ProfileInfoAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48216426674CBD00F1DE01 /* ProfileInfoAPIDataManager.swift */; };
@@ -271,6 +272,7 @@
 /* Begin PBXFileReference section */
 		1E376E308EF62AA7CE0CE549 /* Pods-InLocalCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InLocalCustomer.release.xcconfig"; path = "Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer.release.xcconfig"; sourceTree = "<group>"; };
 		281CFFC35515D0E7C94A34E3 /* Pods-InLocalCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InLocalCustomer.debug.xcconfig"; path = "Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer.debug.xcconfig"; sourceTree = "<group>"; };
+		6D21FDCF26708E1900611AD4 /* BookingDetailsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsTVC.swift; sourceTree = "<group>"; };
 		6D48216126674CBD00F1DE01 /* ProfileInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileInfo.storyboard; sourceTree = "<group>"; };
 		6D48216226674CBD00F1DE01 /* ProfileInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoVC.swift; sourceTree = "<group>"; };
 		6D48216426674CBD00F1DE01 /* ProfileInfoAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoAPIDataManager.swift; sourceTree = "<group>"; };
@@ -709,6 +711,7 @@
 			children = (
 				6D4821CA2667A77F00F1DE01 /* BookingDetailsVC.swift */,
 				6D4821CB2667A77F00F1DE01 /* BookingDetails.storyboard */,
+				6D21FDCF26708E1900611AD4 /* BookingDetailsTVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2344,6 +2347,7 @@
 				C185D9432664F85D00BCDA2E /* SignupAPIDataManager.swift in Sources */,
 				C1AE0E6A266F2554000E6470 /* RestaurantInfoVC.swift in Sources */,
 				C10C766A265FA10000473CB7 /* AppEnum.swift in Sources */,
+				6D21FDD026708E1900611AD4 /* BookingDetailsTVC.swift in Sources */,
 				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,
 				C1042D0F2669DE780054B24D /* UserProfileDependency.swift in Sources */,
 				6D4FFDC2266E2ACF00F04634 /* FavouriteCVC.swift in Sources */,

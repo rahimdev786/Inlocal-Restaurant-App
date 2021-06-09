@@ -57,7 +57,7 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="698"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aj2-aV-qFd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIc-iy-vfV">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -69,7 +69,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                        <integer key="value" value="48"/>
+                                                                        <integer key="value" value="45"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
@@ -91,23 +91,29 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enn-jX-eUg">
                                                         <rect key="frame" x="142.66666666666666" y="15" width="90" height="90"/>
+                                                        <connections>
+                                                            <action selector="addProfPicClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LXg-UR-ceM"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehv-53-THM">
-                                                        <rect key="frame" x="182.66666666666666" y="55" width="40" height="40"/>
+                                                        <rect key="frame" x="202.66666666666666" y="65" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="Jff-Vy-1Ck"/>
                                                             <constraint firstAttribute="height" constant="40" id="hFa-Hn-Rzm"/>
                                                         </constraints>
-                                                        <state key="normal" image="camera_change_photo"/>
+                                                        <state key="normal" image="editProfileCircle"/>
+                                                        <connections>
+                                                            <action selector="didTapOnCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A8T-Vx-O8n"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="Fgu-mL-gao" firstAttribute="centerX" secondItem="xIc-iy-vfV" secondAttribute="centerX" id="Dc5-RG-2Ww"/>
-                                                    <constraint firstItem="ehv-53-THM" firstAttribute="bottom" secondItem="enn-jX-eUg" secondAttribute="bottom" constant="-10" id="OAC-ei-AHV"/>
+                                                    <constraint firstItem="ehv-53-THM" firstAttribute="bottom" secondItem="enn-jX-eUg" secondAttribute="bottom" id="OAC-ei-AHV"/>
                                                     <constraint firstItem="enn-jX-eUg" firstAttribute="leading" secondItem="Fgu-mL-gao" secondAttribute="leading" id="QI7-ZT-Z07"/>
                                                     <constraint firstItem="enn-jX-eUg" firstAttribute="top" secondItem="Fgu-mL-gao" secondAttribute="top" id="Qgd-H0-x8l"/>
-                                                    <constraint firstItem="ehv-53-THM" firstAttribute="trailing" secondItem="enn-jX-eUg" secondAttribute="trailing" constant="-10" id="Wec-NU-HAU"/>
+                                                    <constraint firstItem="ehv-53-THM" firstAttribute="trailing" secondItem="enn-jX-eUg" secondAttribute="trailing" constant="10" id="Wec-NU-HAU"/>
                                                     <constraint firstItem="enn-jX-eUg" firstAttribute="trailing" secondItem="Fgu-mL-gao" secondAttribute="trailing" id="jMN-pn-V9s"/>
                                                     <constraint firstItem="enn-jX-eUg" firstAttribute="bottom" secondItem="Fgu-mL-gao" secondAttribute="bottom" id="uk4-d6-3Q8"/>
                                                     <constraint firstItem="Fgu-mL-gao" firstAttribute="centerY" secondItem="xIc-iy-vfV" secondAttribute="centerY" id="zE2-Be-1m3"/>
@@ -115,19 +121,19 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="bFw-JJ-JBL">
-                                                <rect key="frame" x="17" y="125" width="341" height="299"/>
+                                                <rect key="frame" x="17" y="125" width="341" height="297"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rmR-rV-Ptr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="341" height="83"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="341" height="82.333333333333329"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArR-gm-t8N">
-                                                                <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="341" height="16.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHb-pa-Prk" customClass="TextFieldView" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="32" width="341" height="51"/>
+                                                                <rect key="frame" x="0.0" y="31.333333333333314" width="341" height="51"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="51" id="O0v-Tl-Tg2"/>
@@ -143,16 +149,16 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1Vj-FT-YU1">
-                                                        <rect key="frame" x="0.0" y="108" width="341" height="83"/>
+                                                        <rect key="frame" x="0.0" y="107.33333333333331" width="341" height="82.333333333333314"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCz-rQ-AKJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="341" height="16.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emp-Bk-oxe" customClass="TextFieldView" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="32" width="341" height="51"/>
+                                                                <rect key="frame" x="0.0" y="31.333333333333371" width="341" height="51"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="51" id="tXw-0J-n3t"/>
@@ -167,16 +173,16 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dFR-5z-1JI">
-                                                        <rect key="frame" x="0.0" y="216" width="341" height="83"/>
+                                                        <rect key="frame" x="0.0" y="214.66666666666669" width="341" height="82.333333333333314"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlq-UU-7cQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="341" height="16.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVc-SR-Wfh" customClass="TextFieldView" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="32" width="341" height="51"/>
+                                                                <rect key="frame" x="0.0" y="31.333333333333314" width="341" height="51"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="51" id="3SG-m6-gZB"/>
@@ -194,7 +200,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAc-VB-eiC">
-                                                <rect key="frame" x="17" y="464" width="341" height="45"/>
+                                                <rect key="frame" x="17" y="462" width="341" height="45"/>
                                                 <color key="backgroundColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="ZsO-wg-pgZ"/>
@@ -247,6 +253,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnSave" destination="mAc-VB-eiC" id="5ec-hY-vSg"/>
+                        <outlet property="imgViewProfile" destination="bKI-5K-6Qr" id="jfc-vX-UtA"/>
+                        <outlet property="profilePicView" destination="Fgu-mL-gao" id="1vA-nU-VnY"/>
                         <outlet property="txtFieldEmail" destination="emp-Bk-oxe" id="YZh-E6-7Ou"/>
                         <outlet property="txtFieldName" destination="yHb-pa-Prk" id="W6L-zC-d7i"/>
                         <outlet property="txtFieldPhoneNumber" destination="QVc-SR-Wfh" id="xej-5i-kuA"/>
@@ -260,6 +269,6 @@
     <resources>
         <image name="avatar" width="133.33332824707031" height="133.33332824707031"/>
         <image name="back_button_dark" width="24" height="22"/>
-        <image name="camera_change_photo" width="28.333333969116211" height="28"/>
+        <image name="editProfileCircle" width="38" height="38"/>
     </resources>
 </document>
