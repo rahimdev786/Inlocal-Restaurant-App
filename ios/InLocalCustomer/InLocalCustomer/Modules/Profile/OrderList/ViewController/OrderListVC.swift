@@ -81,4 +81,11 @@ extension OrderListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 108.0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = OrderDetailsVC.loadFromXIB() else{
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

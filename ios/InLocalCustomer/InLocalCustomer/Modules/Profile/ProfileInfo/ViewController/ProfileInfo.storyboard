@@ -75,6 +75,12 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUq-GT-cRl">
+                                                <rect key="frame" x="5" y="5" width="100" height="100"/>
+                                                <connections>
+                                                    <action selector="didTapOnEditProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JfG-aM-uKJ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -82,8 +88,12 @@
                                             <constraint firstItem="ZnF-NV-u0n" firstAttribute="top" secondItem="Pbl-Av-avJ" secondAttribute="top" constant="5" id="4Zi-aI-znz"/>
                                             <constraint firstItem="ZnF-NV-u0n" firstAttribute="leading" secondItem="Pbl-Av-avJ" secondAttribute="leading" constant="5" id="53L-LR-XLd"/>
                                             <constraint firstAttribute="height" constant="110" id="93F-Lb-ZfO"/>
+                                            <constraint firstItem="xUq-GT-cRl" firstAttribute="bottom" secondItem="ZnF-NV-u0n" secondAttribute="bottom" id="QHZ-pQ-aO0"/>
+                                            <constraint firstItem="xUq-GT-cRl" firstAttribute="trailing" secondItem="ZnF-NV-u0n" secondAttribute="trailing" id="Qfk-4l-axb"/>
                                             <constraint firstAttribute="trailing" secondItem="ZnF-NV-u0n" secondAttribute="trailing" constant="5" id="ZSF-56-7gj"/>
                                             <constraint firstAttribute="bottom" secondItem="ZnF-NV-u0n" secondAttribute="bottom" constant="5" id="dAh-MR-4tp"/>
+                                            <constraint firstItem="xUq-GT-cRl" firstAttribute="leading" secondItem="ZnF-NV-u0n" secondAttribute="leading" id="oZd-Jb-Jgm"/>
+                                            <constraint firstItem="xUq-GT-cRl" firstAttribute="top" secondItem="ZnF-NV-u0n" secondAttribute="top" id="pLI-B9-6bz"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -234,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-870" y="-43"/>
+            <point key="canvasLocation" x="-1945" y="-88"/>
         </scene>
     </scenes>
     <resources>

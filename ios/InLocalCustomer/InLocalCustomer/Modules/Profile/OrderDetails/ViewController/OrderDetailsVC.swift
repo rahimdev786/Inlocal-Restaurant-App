@@ -13,10 +13,19 @@ class OrderDetailsVC: UIViewController {
     // MARK: Instance variables
 	lazy var dataManager = OrderDetailsDataManager()
     var dependency: OrderDetailsDependency?
+    
+    @IBOutlet weak var placeholderView: UIView!
+    
+    @IBOutlet weak var dateView: UIView!
+    
+    var previousSelectedCell: BookingDetailsTVC?
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
+        
+        setupUI()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -37,6 +46,25 @@ class OrderDetailsVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
+    func setupUI() {
+        
+        placeholderView.layer.borderWidth = 1.0
+        placeholderView.layer.borderColor = UIColor(hexString: "f2f2f2").cgColor
+        
+        dateView.layer.borderWidth = 1.0
+        dateView.layer.borderColor = UIColor(hexString: "333333").cgColor
+    }
+    
+    @IBAction func didTapOnUploadStatus(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func didTapOnBack(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 
 // MARK: - Load from storyboard with dependency
@@ -53,4 +81,34 @@ extension OrderDetailsVC {
 
 // MARK: - OrderDetailsAPIResponseDelegate
 extension OrderDetailsVC: OrderDetailsAPIResponseDelegate {
+}
+
+extension OrderDetailsVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: BookingDetailsTVC.identifier, for: indexPath) as! BookingDetailsTVC
+        cell.btnSelect.isSelected = false
+        return cell
+    }
+    
+}
+
+extension OrderDetailsVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 145.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let previousSelectedCell = previousSelectedCell {
+            previousSelectedCell.btnSelect.isSelected = false
+        }
+        let cell = tableView.cellForRow(at: indexPath) as! BookingDetailsTVC
+        cell.btnSelect.isSelected = !cell.btnSelect.isSelected
+        previousSelectedCell = cell
+    }
 }

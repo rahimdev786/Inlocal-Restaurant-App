@@ -13,10 +13,16 @@ class SavedPostsVC: UIViewController {
     // MARK: Instance variables
 	lazy var dataManager = SavedPostsDataManager()
     var dependency: SavedPostsDependency?
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .normal)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -37,6 +43,11 @@ class SavedPostsVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    @IBAction func didTapOnBack(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 
 // MARK: - Load from storyboard with dependency
@@ -53,4 +64,24 @@ extension SavedPostsVC {
 
 // MARK: - SavedPostsAPIResponseDelegate
 extension SavedPostsVC: SavedPostsAPIResponseDelegate {
+}
+
+
+extension SavedPostsVC:UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: FavouriteCVC.identifier, for: indexPath) as! FavouriteCVC
+        return item
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = collectionView.frame.size.width/2 - 4.0
+        let size = CGSize(width: width, height: 135.0)
+        return size
+    }
 }
