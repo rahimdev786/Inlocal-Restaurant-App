@@ -104,11 +104,11 @@ extension OrderDetailsVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if previousSelectedCell != nil {
-            previousSelectedCell?.btnSelect.isSelected = false
+        if let previousSelectedCell = previousSelectedCell {
+            previousSelectedCell.btnSelect.isSelected = false
         }
         let cell = tableView.cellForRow(at: indexPath) as! BookingDetailsTVC
-        cell.btnSelect.isSelected = true
+        cell.btnSelect.isSelected = !cell.btnSelect.isSelected
         previousSelectedCell = cell
     }
 }
