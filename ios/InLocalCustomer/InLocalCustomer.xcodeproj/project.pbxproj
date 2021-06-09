@@ -138,6 +138,18 @@
 		C153C79826662E65002FF282 /* ForgotPasswordDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C79226662E65002FF282 /* ForgotPasswordDependency.swift */; };
 		C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C79C26664228002FF282 /* ValidateOTP.swift */; };
 		C153C79F26664228002FF282 /* ValidateOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = C153C79D26664228002FF282 /* ValidateOTP.xib */; };
+		C16920A32670765500055FD3 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169209B2670765500055FD3 /* Cart.storyboard */; };
+		C16920A42670765500055FD3 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169209C2670765500055FD3 /* CartVC.swift */; };
+		C16920A52670765500055FD3 /* CartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169209E2670765500055FD3 /* CartDataManager.swift */; };
+		C16920A62670765500055FD3 /* CartAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169209F2670765500055FD3 /* CartAPIDataManager.swift */; };
+		C16920A72670765500055FD3 /* CartLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920A02670765500055FD3 /* CartLocalDataManager.swift */; };
+		C16920A82670765500055FD3 /* CartDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920A22670765500055FD3 /* CartDependency.swift */; };
+		C16920C2267076F600055FD3 /* SelectRedius.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C16920BA267076F600055FD3 /* SelectRedius.storyboard */; };
+		C16920C3267076F600055FD3 /* SelectRediusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920BB267076F600055FD3 /* SelectRediusVC.swift */; };
+		C16920C4267076F600055FD3 /* SelectRediusDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920BD267076F600055FD3 /* SelectRediusDependency.swift */; };
+		C16920C5267076F600055FD3 /* SelectRediusLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920BF267076F600055FD3 /* SelectRediusLocalDataManager.swift */; };
+		C16920C6267076F600055FD3 /* SelectRediusDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920C0267076F600055FD3 /* SelectRediusDataManager.swift */; };
+		C16920C7267076F600055FD3 /* SelectRediusAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16920C1267076F600055FD3 /* SelectRediusAPIDataManager.swift */; };
 		C185D8922664D95400BCDA2E /* SFProDisplay-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C185D8742664D94F00BCDA2E /* SFProDisplay-SemiboldItalic.ttf */; };
 		C185D8932664D95400BCDA2E /* SFProDisplay-Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C185D8752664D95000BCDA2E /* SFProDisplay-Ultralight.ttf */; };
 		C185D8942664D95400BCDA2E /* SFProDisplay-UltralightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C185D8762664D95000BCDA2E /* SFProDisplay-UltralightItalic.ttf */; };
@@ -410,6 +422,18 @@
 		C153C79226662E65002FF282 /* ForgotPasswordDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDependency.swift; sourceTree = "<group>"; };
 		C153C79C26664228002FF282 /* ValidateOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateOTP.swift; sourceTree = "<group>"; };
 		C153C79D26664228002FF282 /* ValidateOTP.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateOTP.xib; sourceTree = "<group>"; };
+		C169209B2670765500055FD3 /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		C169209C2670765500055FD3 /* CartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		C169209E2670765500055FD3 /* CartDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartDataManager.swift; sourceTree = "<group>"; };
+		C169209F2670765500055FD3 /* CartAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartAPIDataManager.swift; sourceTree = "<group>"; };
+		C16920A02670765500055FD3 /* CartLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartLocalDataManager.swift; sourceTree = "<group>"; };
+		C16920A22670765500055FD3 /* CartDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartDependency.swift; sourceTree = "<group>"; };
+		C16920BA267076F600055FD3 /* SelectRedius.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectRedius.storyboard; sourceTree = "<group>"; };
+		C16920BB267076F600055FD3 /* SelectRediusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRediusVC.swift; sourceTree = "<group>"; };
+		C16920BD267076F600055FD3 /* SelectRediusDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRediusDependency.swift; sourceTree = "<group>"; };
+		C16920BF267076F600055FD3 /* SelectRediusLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRediusLocalDataManager.swift; sourceTree = "<group>"; };
+		C16920C0267076F600055FD3 /* SelectRediusDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRediusDataManager.swift; sourceTree = "<group>"; };
+		C16920C1267076F600055FD3 /* SelectRediusAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRediusAPIDataManager.swift; sourceTree = "<group>"; };
 		C185D8742664D94F00BCDA2E /* SFProDisplay-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		C185D8752664D95000BCDA2E /* SFProDisplay-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Ultralight.ttf"; sourceTree = "<group>"; };
 		C185D8762664D95000BCDA2E /* SFProDisplay-UltralightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-UltralightItalic.ttf"; sourceTree = "<group>"; };
@@ -1103,6 +1127,8 @@
 		C10C7639265F913800473CB7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C16920AC2670767500055FD3 /* MapRadius */,
+				C169208F2670752F00055FD3 /* CartModule */,
 				C1CD22AE266887C5000324FF /* Home */,
 				C1B963B22667902800CECDDF /* Notifications */,
 				C1B963A226678F5600CECDDF /* Search */,
@@ -1378,6 +1404,88 @@
 				C153C79226662E65002FF282 /* ForgotPasswordDependency.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C169208F2670752F00055FD3 /* CartModule */ = {
+			isa = PBXGroup;
+			children = (
+				C16920902670760700055FD3 /* Cart */,
+			);
+			path = CartModule;
+			sourceTree = "<group>";
+		};
+		C16920902670760700055FD3 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				C169209D2670765500055FD3 /* DataManager */,
+				C16920A12670765500055FD3 /* Model */,
+				C169209A2670765500055FD3 /* ViewController */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		C169209A2670765500055FD3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C169209B2670765500055FD3 /* Cart.storyboard */,
+				C169209C2670765500055FD3 /* CartVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C169209D2670765500055FD3 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C169209E2670765500055FD3 /* CartDataManager.swift */,
+				C169209F2670765500055FD3 /* CartAPIDataManager.swift */,
+				C16920A02670765500055FD3 /* CartLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C16920A12670765500055FD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C16920A22670765500055FD3 /* CartDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C16920AC2670767500055FD3 /* MapRadius */ = {
+			isa = PBXGroup;
+			children = (
+				C16920BE267076F600055FD3 /* DataManager */,
+				C16920BC267076F600055FD3 /* Model */,
+				C16920B9267076F600055FD3 /* ViewController */,
+			);
+			path = MapRadius;
+			sourceTree = "<group>";
+		};
+		C16920B9267076F600055FD3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C16920BA267076F600055FD3 /* SelectRedius.storyboard */,
+				C16920BB267076F600055FD3 /* SelectRediusVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C16920BC267076F600055FD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C16920BD267076F600055FD3 /* SelectRediusDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C16920BE267076F600055FD3 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C16920BF267076F600055FD3 /* SelectRediusLocalDataManager.swift */,
+				C16920C0267076F600055FD3 /* SelectRediusDataManager.swift */,
+				C16920C1267076F600055FD3 /* SelectRediusAPIDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		C185D8B32664D95F00BCDA2E /* Font */ = {
@@ -2087,6 +2195,7 @@
 				C10FBA7F266DD1A50012FD8E /* RestaurantMenu.storyboard in Resources */,
 				6D54BB47266DE1C600BC4C34 /* SavedPosts.storyboard in Resources */,
 				6D48216926674CBE00F1DE01 /* ProfileInfo.storyboard in Resources */,
+				C16920C2267076F600055FD3 /* SelectRedius.storyboard in Resources */,
 				C1B963A626678F9400CECDDF /* Notifications.storyboard in Resources */,
 				C1B9639526678EE900CECDDF /* Search.storyboard in Resources */,
 				C185D8AB2664D95500BCDA2E /* SFProText-MediumItalic.ttf in Resources */,
@@ -2116,6 +2225,7 @@
 				C185D9472664F85D00BCDA2E /* Signup.storyboard in Resources */,
 				C185D8A02664D95400BCDA2E /* SFProDisplay-Black.ttf in Resources */,
 				C1042D80266A356B0054B24D /* TagedPhotos.storyboard in Resources */,
+				C16920A32670765500055FD3 /* Cart.storyboard in Resources */,
 				C185D8AC2664D95500BCDA2E /* SFProDisplay-ThinItalic.ttf in Resources */,
 				C185D89A2664D95400BCDA2E /* SFProDisplay-Bold.ttf in Resources */,
 				C10C75FE265F8BD700473CB7 /* Main.storyboard in Resources */,
@@ -2229,7 +2339,9 @@
 				6D48224A2667A83400F1DE01 /* OrderDetailsLocalDataManager.swift in Sources */,
 				C185D9662664F90300BCDA2E /* ValidateOTPLocalDataManager.swift in Sources */,
 				C185D9612664F90300BCDA2E /* ValidateOTPDependency.swift in Sources */,
+				C16920A52670765500055FD3 /* CartDataManager.swift in Sources */,
 				6D4821CC2667A77F00F1DE01 /* BookingDetailsDependency.swift in Sources */,
+				C16920A72670765500055FD3 /* CartLocalDataManager.swift in Sources */,
 				C1DDAC68266905A200B4DB90 /* ViewStoryCVC.swift in Sources */,
 				C10C7673265FA15700473CB7 /* EmptyResponse.swift in Sources */,
 				6D54BB25266DE1A700BC4C34 /* EditProfileDependency.swift in Sources */,
@@ -2250,6 +2362,7 @@
 				C19DB9F42666013300028326 /* BottumTabBarLocalDataManager.swift in Sources */,
 				C10FBA9C266DD2140012FD8E /* MenuDetailDataManager.swift in Sources */,
 				C10FBA7B266DD1A50012FD8E /* RestaurantMenuDependency.swift in Sources */,
+				C16920C5267076F600055FD3 /* SelectRediusLocalDataManager.swift in Sources */,
 				C153C79726662E65002FF282 /* ForgotPasswordVC.swift in Sources */,
 				C1B963B42667910D00CECDDF /* NotificationTVC.swift in Sources */,
 				6D4821B22667A75700F1DE01 /* BookingListDataManager.swift in Sources */,
@@ -2272,9 +2385,13 @@
 				C1B963A526678F9400CECDDF /* NotificationsVC.swift in Sources */,
 				6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */,
 				6D54BB48266DE1C600BC4C34 /* SavedPostsDependency.swift in Sources */,
+				C16920C6267076F600055FD3 /* SelectRediusDataManager.swift in Sources */,
 				C1042D132669DE780054B24D /* UserProfileDataManager.swift in Sources */,
 				C1DDAC5A2668F27700B4DB90 /* ViewStoryLocalDataManager.swift in Sources */,
 				C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */,
+				C16920A62670765500055FD3 /* CartAPIDataManager.swift in Sources */,
+				C16920C4267076F600055FD3 /* SelectRediusDependency.swift in Sources */,
+				C16920A82670765500055FD3 /* CartDependency.swift in Sources */,
 				C10FBA7D266DD1A50012FD8E /* RestaurantMenuDataManager.swift in Sources */,
 				C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */,
 				C19DB9F52666013300028326 /* BottumTabBarAPIDataManager.swift in Sources */,
@@ -2347,6 +2464,7 @@
 				C1042D2E2669DF500054B24D /* RestaurantProfileLocalDataManager.swift in Sources */,
 				C19DB9D42665E7E300028326 /* ChangePasswordAPIDataManager.swift in Sources */,
 				C185D9402664F85D00BCDA2E /* SigninVC.swift in Sources */,
+				C16920C7267076F600055FD3 /* SelectRediusAPIDataManager.swift in Sources */,
 				6D48226B2667A85900F1DE01 /* NotificationSettingsVC.swift in Sources */,
 				C1B963AF26678FE000CECDDF /* NotificationsLocalDataManager.swift in Sources */,
 				6D48216A26674CBE00F1DE01 /* ProfileInfoVC.swift in Sources */,
@@ -2364,9 +2482,11 @@
 				C185D93D2664F85D00BCDA2E /* SigninAPIDataManager.swift in Sources */,
 				6D54BB22266DE1A700BC4C34 /* EditProfileAPIDataManager.swift in Sources */,
 				C19DB9D22665E7E300028326 /* ChangePasswordVC.swift in Sources */,
+				C16920A42670765500055FD3 /* CartVC.swift in Sources */,
 				C1CD22DB2668A52F000324FF /* FeedwallPostTVC.swift in Sources */,
 				C1DDAC5C2668F27700B4DB90 /* ViewStoryAPIDataManager.swift in Sources */,
 				C185D9432664F85D00BCDA2E /* SignupAPIDataManager.swift in Sources */,
+				C16920C3267076F600055FD3 /* SelectRediusVC.swift in Sources */,
 				C1AE0E6A266F2554000E6470 /* RestaurantInfoVC.swift in Sources */,
 				C10C766A265FA10000473CB7 /* AppEnum.swift in Sources */,
 				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,
