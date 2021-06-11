@@ -280,6 +280,7 @@
                                                                 </tableViewCellContentView>
                                                                 <connections>
                                                                     <outlet property="imgViewPost" destination="DXb-UA-ick" id="GFn-PP-1eS"/>
+                                                                    <outlet property="lblLikeCount" destination="EX5-Hc-4gZ" id="dBd-Kf-IN0"/>
                                                                     <outlet property="viewMenuContainer" destination="ZgI-iJ-SPQ" id="670-63-nbV"/>
                                                                     <outlet property="widthMenuView" destination="dhg-6T-WVn" id="NSW-dU-qap"/>
                                                                     <outlet property="widthStackView" destination="7T2-p7-3GU" id="cfe-05-vyd"/>

@@ -19,6 +19,7 @@ class UserProfileVC: UIViewController {
     @IBOutlet weak var collectionViewPost: UICollectionView!
     
     @IBOutlet weak var collectionViewPost_height: NSLayoutConstraint!
+    @IBOutlet weak var btnFollow: UIButton!
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -89,6 +90,7 @@ class UserProfileVC: UIViewController {
     
     func setupView(){
         viewProfileImageBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
+        btnFollow.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner], radius: btnFollow.frame.height/2)
         
         let widthValue = ((UIScreen.main.bounds.width-36)/2)
         let heightValue = widthValue

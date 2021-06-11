@@ -14,11 +14,16 @@ class FeedwallPostTVC: UITableViewCell {
     @IBOutlet weak var imgViewPost: UIImageView!
     @IBOutlet weak var widthStackView: NSLayoutConstraint!
     
+    @IBOutlet weak var lblLikeCount: UILabel!
+    
     var isMenuOpen = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
         viewMenuContainer.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner], radius: 20.0)
+        
+        lblLikeCount.layer.cornerRadius = lblLikeCount.frame.height / 2
+        lblLikeCount.layer.masksToBounds = true
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imgViewPost.isUserInteractionEnabled = true

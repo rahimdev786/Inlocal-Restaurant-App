@@ -29,16 +29,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwC-28-JNq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-KS-wXv">
-                                        <rect key="frame" x="151.5" y="60" width="111.5" height="26.5"/>
+                                        <rect key="frame" x="151.5" y="22" width="111.5" height="26.5"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc0-YL-Ytd">
-                                        <rect key="frame" x="10" y="55.5" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="75h-Nh-gc2"/>
                                             <constraint firstAttribute="width" secondItem="hc0-YL-Ytd" secondAttribute="height" multiplier="1:1" id="m1F-U6-iG4"/>
@@ -49,7 +49,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="X5S-G3-Hzd">
-                                        <rect key="frame" x="378" y="59.5" width="28" height="28"/>
+                                        <rect key="frame" x="378" y="21" width="28" height="28"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwO-kL-r3m">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -66,14 +66,14 @@
                                     <constraint firstItem="X5S-G3-Hzd" firstAttribute="centerY" secondItem="mbn-KS-wXv" secondAttribute="centerY" id="0tT-qK-jkO"/>
                                     <constraint firstItem="hc0-YL-Ytd" firstAttribute="leading" secondItem="gwC-28-JNq" secondAttribute="leading" constant="10" id="43g-re-kLB"/>
                                     <constraint firstItem="mbn-KS-wXv" firstAttribute="centerX" secondItem="gwC-28-JNq" secondAttribute="centerX" id="VxL-kp-sbN"/>
+                                    <constraint firstItem="mbn-KS-wXv" firstAttribute="centerY" secondItem="gwC-28-JNq" secondAttribute="centerY" id="Wh1-5C-K2Q"/>
                                     <constraint firstAttribute="trailing" secondItem="X5S-G3-Hzd" secondAttribute="trailing" constant="8" id="XxV-30-xZ5"/>
                                     <constraint firstItem="hc0-YL-Ytd" firstAttribute="centerY" secondItem="mbn-KS-wXv" secondAttribute="centerY" id="cYe-ng-vci"/>
-                                    <constraint firstAttribute="height" constant="110" id="ljX-6m-gH6"/>
-                                    <constraint firstItem="mbn-KS-wXv" firstAttribute="top" secondItem="gwC-28-JNq" secondAttribute="top" constant="60" id="zlx-0i-oJm"/>
+                                    <constraint firstAttribute="height" constant="70" id="ljX-6m-gH6"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uo6-sp-n9V">
-                                <rect key="frame" x="17" y="110" width="380" height="28"/>
+                                <rect key="frame" x="17" y="114" width="380" height="28"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="jNv-qb-Vy1"/>
@@ -131,7 +131,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ba-Rd-xRY">
-                                <rect key="frame" x="17" y="148" width="380" height="748"/>
+                                <rect key="frame" x="17" y="152" width="380" height="744"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuListTVC" rowHeight="110" id="HVV-19-BoM" customClass="MenuListTVC" customModule="InLocalCustomer" customModuleProvider="target">
@@ -218,10 +218,10 @@
                             <constraint firstItem="2ba-Rd-xRY" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="DaC-1C-3ms"/>
                             <constraint firstItem="uo6-sp-n9V" firstAttribute="top" secondItem="gwC-28-JNq" secondAttribute="bottom" id="Hlq-m2-SwJ"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="gwC-28-JNq" secondAttribute="trailing" id="Jbp-zT-38r"/>
-                            <constraint firstItem="gwC-28-JNq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fn4-VT-9sz"/>
                             <constraint firstItem="uo6-sp-n9V" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="g5d-3z-ggl"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="2ba-Rd-xRY" secondAttribute="trailing" constant="17" id="i8G-Ei-cAt"/>
                             <constraint firstAttribute="bottom" secondItem="2ba-Rd-xRY" secondAttribute="bottom" id="kUw-ut-nHX"/>
+                            <constraint firstItem="gwC-28-JNq" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="odd-X1-oJe"/>
                         </constraints>
                     </view>
                     <connections>

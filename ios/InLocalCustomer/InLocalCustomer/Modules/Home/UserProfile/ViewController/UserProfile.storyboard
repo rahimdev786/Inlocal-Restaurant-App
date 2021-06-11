@@ -26,16 +26,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9G-eV-bUm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jane Copper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbN-n6-fjQ">
-                                        <rect key="frame" x="126.66666666666669" y="60.000000000000007" width="122" height="26.333333333333336"/>
+                                        <rect key="frame" x="126.66666666666669" y="22" width="122" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc5-Qp-V8a">
-                                        <rect key="frame" x="10" y="55.333333333333343" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="Ldc-RM-Ic1"/>
                                             <constraint firstAttribute="width" secondItem="Hc5-Qp-V8a" secondAttribute="height" multiplier="1:1" id="tHo-u3-zga"/>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="rGx-Pb-ndV">
-                                        <rect key="frame" x="339" y="59.333333333333343" width="28" height="28"/>
+                                        <rect key="frame" x="339" y="21" width="28" height="28"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7V-gq-EBX">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -63,14 +63,14 @@
                                     <constraint firstItem="Hc5-Qp-V8a" firstAttribute="centerY" secondItem="AbN-n6-fjQ" secondAttribute="centerY" id="2sG-WU-IIJ"/>
                                     <constraint firstAttribute="trailing" secondItem="rGx-Pb-ndV" secondAttribute="trailing" constant="8" id="Bw8-g3-NUo"/>
                                     <constraint firstItem="Hc5-Qp-V8a" firstAttribute="leading" secondItem="Z9G-eV-bUm" secondAttribute="leading" constant="10" id="Cab-Iq-usy"/>
-                                    <constraint firstItem="AbN-n6-fjQ" firstAttribute="top" secondItem="Z9G-eV-bUm" secondAttribute="top" constant="60" id="U07-uu-UNz"/>
-                                    <constraint firstAttribute="height" constant="120" id="cJb-jP-mXJ"/>
+                                    <constraint firstItem="AbN-n6-fjQ" firstAttribute="centerY" secondItem="Z9G-eV-bUm" secondAttribute="centerY" id="PfT-xv-uw7"/>
+                                    <constraint firstAttribute="height" constant="70" id="cJb-jP-mXJ"/>
                                     <constraint firstItem="AbN-n6-fjQ" firstAttribute="centerX" secondItem="Z9G-eV-bUm" secondAttribute="centerX" id="koM-DX-jVc"/>
                                     <constraint firstItem="rGx-Pb-ndV" firstAttribute="centerY" secondItem="AbN-n6-fjQ" secondAttribute="centerY" id="ol9-h3-t1D"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU5-aC-4Cq">
-                                <rect key="frame" x="0.0" y="120" width="375" height="692"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-1f-GQr">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="692"/>
@@ -246,11 +246,12 @@
                             <constraint firstItem="LU5-aC-4Cq" firstAttribute="top" secondItem="Z9G-eV-bUm" secondAttribute="bottom" id="DMx-6l-0TP"/>
                             <constraint firstItem="LU5-aC-4Cq" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="TzV-4Y-9J4"/>
                             <constraint firstAttribute="bottom" secondItem="LU5-aC-4Cq" secondAttribute="bottom" id="gQg-N5-sKr"/>
-                            <constraint firstItem="Z9G-eV-bUm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nXU-1Q-yLT"/>
+                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="top" secondItem="Z9G-eV-bUm" secondAttribute="top" id="oUb-FB-awv"/>
                             <constraint firstItem="LU5-aC-4Cq" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="wnt-r7-Y9N"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnFollow" destination="2Ux-fy-gRL" id="8tn-O8-I9B"/>
                         <outlet property="collectionViewPost" destination="8P9-gX-GU3" id="whN-Hv-T7D"/>
                         <outlet property="collectionViewPost_height" destination="XvI-RP-gy2" id="MWL-RG-8bu"/>
                         <outlet property="viewProfileImageBack" destination="KhZ-M7-0mD" id="OHo-uB-QFj"/>
