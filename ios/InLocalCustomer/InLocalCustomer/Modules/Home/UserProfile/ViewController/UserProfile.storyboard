@@ -51,6 +51,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7V-gq-EBX">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                 <state key="normal" image="three_dot_black"/>
+                                                <connections>
+                                                    <action selector="onClickOptions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uEM-0d-xze"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

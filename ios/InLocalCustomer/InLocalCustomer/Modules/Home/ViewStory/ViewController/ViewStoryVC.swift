@@ -14,8 +14,7 @@ class ViewStoryVC: UIViewController {
     // MARK: Instance variables
 	lazy var dataManager = ViewStoryDataManager()
     var dependency: ViewStoryDependency?
-    
-    @IBOutlet weak var collectionViewStory: UICollectionView!
+
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -53,7 +52,27 @@ class ViewStoryVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func onClickMenu(_ sender: Any) {
+    @IBAction func onClickOptios(_ sender: Any) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction(title: "Report", style: .default) { (action) in
+            
+        }
+        action1.setValue(UIColor.black, forKey: "titleTextColor")
+        
+        let action2 = UIAlertAction(title: "Share", style: .default) { (action) in
+            
+        }
+        action2.setValue(UIColor.black, forKey: "titleTextColor")
+        
+        let action3 = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            
+        }
+        action3.setValue(UIColor.black, forKey: "titleTextColor")
+        
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.addAction(action3)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func onClickClose(_ sender: Any) {
@@ -93,18 +112,5 @@ extension ViewStoryVC {
 
 // MARK: - ViewStoryAPIResponseDelegate
 extension ViewStoryVC: ViewStoryAPIResponseDelegate {
-    
-}
-
-extension ViewStoryVC: UICollectionViewDataSource{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ViewStoryCVC", for: indexPath) as! ViewStoryCVC
-        return cell
-    }
     
 }

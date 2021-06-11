@@ -138,6 +138,7 @@
 		C1277902266DE78D00F9F7FC /* MenuCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1277901266DE78D00F9F7FC /* MenuCategoryCVC.swift */; };
 		C1277907266DEF9D00F9F7FC /* MenuListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1277906266DEF9D00F9F7FC /* MenuListTVC.swift */; };
 		C127790D266E25A600F9F7FC /* DeliveryMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127790C266E25A600F9F7FC /* DeliveryMenuTVC.swift */; };
+		C14B059F2671EEF60098AFC6 /* DineInCartItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B059E2671EEF60098AFC6 /* DineInCartItemTVC.swift */; };
 		C153C79326662E65002FF282 /* ForgotPasswordAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78B26662E65002FF282 /* ForgotPasswordAPIDataManager.swift */; };
 		C153C79426662E65002FF282 /* ForgotPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78C26662E65002FF282 /* ForgotPasswordDataManager.swift */; };
 		C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78D26662E65002FF282 /* ForgotPasswordLocalDataManager.swift */; };
@@ -437,6 +438,7 @@
 		C1277901266DE78D00F9F7FC /* MenuCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoryCVC.swift; sourceTree = "<group>"; };
 		C1277906266DEF9D00F9F7FC /* MenuListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListTVC.swift; sourceTree = "<group>"; };
 		C127790C266E25A600F9F7FC /* DeliveryMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMenuTVC.swift; sourceTree = "<group>"; };
+		C14B059E2671EEF60098AFC6 /* DineInCartItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DineInCartItemTVC.swift; sourceTree = "<group>"; };
 		C153C78B26662E65002FF282 /* ForgotPasswordAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordAPIDataManager.swift; sourceTree = "<group>"; };
 		C153C78C26662E65002FF282 /* ForgotPasswordDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataManager.swift; sourceTree = "<group>"; };
 		C153C78D26662E65002FF282 /* ForgotPasswordLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordLocalDataManager.swift; sourceTree = "<group>"; };
@@ -1439,6 +1441,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C14B059D2671EEC10098AFC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C14B059E2671EEF60098AFC6 /* DineInCartItemTVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C153C77D26662E25002FF282 /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -2026,6 +2036,7 @@
 		C1CB452A2671C9CD002170D8 /* DineInCart */ = {
 			isa = PBXGroup;
 			children = (
+				C14B059D2671EEC10098AFC6 /* Views */,
 				C1CB453A2671CA85002170D8 /* DataManager */,
 				C1CB453E2671CA85002170D8 /* Model */,
 				C1CB45372671CA85002170D8 /* ViewController */,
@@ -2634,6 +2645,7 @@
 				C19DB9D52665E7E300028326 /* ChangePasswordLocalDataManager.swift in Sources */,
 				C10C76CB265FA66800473CB7 /* UIImage+Utilities.swift in Sources */,
 				C1AE0E6D266F2554000E6470 /* RestaurantInfoDataManager.swift in Sources */,
+				C14B059F2671EEF60098AFC6 /* DineInCartItemTVC.swift in Sources */,
 				C10C76C9265FA66800473CB7 /* UIButton.swift in Sources */,
 				C185D93E2664F85D00BCDA2E /* SigninLocalDataManager.swift in Sources */,
 				6D48216B26674CBE00F1DE01 /* ProfileInfoAPIDataManager.swift in Sources */,

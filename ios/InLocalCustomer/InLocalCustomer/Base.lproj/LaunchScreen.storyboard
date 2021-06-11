@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash_Screens" translatesAutoresizingMaskIntoConstraints="NO" id="1gJ-Jl-1cW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ctp-at-xKz">
                                 <rect key="frame" x="63" y="309" width="288" height="288"/>
                                 <constraints>
@@ -27,7 +30,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1gJ-Jl-1cW" secondAttribute="bottom" id="4kx-wi-p8r"/>
                             <constraint firstItem="ctp-at-xKz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="5gc-er-mn8"/>
+                            <constraint firstItem="1gJ-Jl-1cW" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Xtg-uQ-N8i"/>
+                            <constraint firstItem="1gJ-Jl-1cW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YTh-sw-e01"/>
+                            <constraint firstItem="1gJ-Jl-1cW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hlQ-kb-DEx"/>
                             <constraint firstItem="ctp-at-xKz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="m2J-FE-5xo"/>
                         </constraints>
                     </view>
@@ -38,6 +45,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Splash_Screens" width="320" height="687"/>
         <image name="Splash_logo" width="200" height="187.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
