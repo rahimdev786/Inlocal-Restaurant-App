@@ -130,7 +130,10 @@ extension ProfileInfoVC: UITableViewDelegate {
             }
             navigationController?.pushViewController(vc, animated: true)
         case .changePassword:
-            ()
+            guard let vc = FollowerVC.loadFromXIB() else{
+                return
+            }
+            navigationController?.pushViewController(vc, animated: true)
         case .notificationSettings:
             guard let vc = NotificationSettingsVC.loadFromXIB() else{
                 return
