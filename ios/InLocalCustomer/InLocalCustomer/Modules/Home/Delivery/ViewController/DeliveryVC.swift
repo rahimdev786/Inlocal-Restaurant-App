@@ -50,9 +50,37 @@ class DeliveryVC: UIViewController {
        debugPrint("\(self) deinitialized")
     }
     
-    
     @IBAction func onClickBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickOption(_ sender: Any) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let action0 = UIAlertAction(title: "Block", style: .default) { (action) in
+            
+        }
+        action0.setValue(UIColor.black, forKey: "titleTextColor")
+        
+        let action1 = UIAlertAction(title: "Report", style: .default) { (action) in
+            
+        }
+        action1.setValue(UIColor.black, forKey: "titleTextColor")
+        
+        let action2 = UIAlertAction(title: "Share", style: .default) { (action) in
+            
+        }
+        action2.setValue(UIColor.black, forKey: "titleTextColor")
+        
+        let action3 = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            
+        }
+        action3.setValue(UIColor.black, forKey: "titleTextColor")
+        
+        alertController.addAction(action0)
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.addAction(action3)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

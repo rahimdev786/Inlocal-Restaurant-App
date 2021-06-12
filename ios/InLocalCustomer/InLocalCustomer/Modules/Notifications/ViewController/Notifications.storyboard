@@ -28,10 +28,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQr-Ki-esk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqe-fP-SHb">
-                                        <rect key="frame" x="127.33333333333331" y="60.000000000000007" width="120.66666666666669" height="26.333333333333336"/>
+                                        <rect key="frame" x="127.33333333333331" y="22" width="120.66666666666669" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -39,13 +39,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="FHg-z2-8Pz"/>
-                                    <constraint firstItem="fqe-fP-SHb" firstAttribute="top" secondItem="VQr-Ki-esk" secondAttribute="top" constant="60" id="NUv-Nd-OKp"/>
+                                    <constraint firstAttribute="height" constant="70" id="FHg-z2-8Pz"/>
                                     <constraint firstItem="fqe-fP-SHb" firstAttribute="centerX" secondItem="VQr-Ki-esk" secondAttribute="centerX" id="kzW-te-vGe"/>
+                                    <constraint firstItem="fqe-fP-SHb" firstAttribute="centerY" secondItem="VQr-Ki-esk" secondAttribute="centerY" id="oju-9Y-DcD"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QSA-bL-ekq">
-                                <rect key="frame" x="0.0" y="120" width="375" height="692"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationTVC" rowHeight="113" id="f2e-8c-ElW" customClass="NotificationTVC" customModule="InLocalCustomer" customModuleProvider="target">
@@ -141,7 +141,7 @@
                             <constraint firstItem="QSA-bL-ekq" firstAttribute="top" secondItem="VQr-Ki-esk" secondAttribute="bottom" id="LIT-hh-I6n"/>
                             <constraint firstItem="QSA-bL-ekq" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Vll-sp-bkS"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="VQr-Ki-esk" secondAttribute="trailing" id="bbV-Lv-Pyf"/>
-                            <constraint firstItem="VQr-Ki-esk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oaw-G4-wnc"/>
+                            <constraint firstItem="VQr-Ki-esk" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="shL-WA-l31"/>
                             <constraint firstItem="QSA-bL-ekq" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="wh9-ns-i8H"/>
                         </constraints>
                     </view>

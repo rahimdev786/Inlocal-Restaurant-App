@@ -19,11 +19,14 @@ class SearchVC: UIViewController {
     
     @IBOutlet weak var collectionViewCategory: UICollectionView!
     @IBOutlet weak var collectionViewPost: UICollectionView!
-    
     @IBOutlet weak var collectionview_height: NSLayoutConstraint!
     
-    // MARK: - View Life Cycle Methods
+    @IBOutlet weak var tableViewPostList_Height: NSLayoutConstraint!
+    @IBOutlet weak var tableViewPostList: UITableView!
     
+    var isGridViewEnable = true
+    
+    // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +44,8 @@ class SearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.collectionViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        //self.collectionViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        //self.tableViewPostList.addObserver(self, forKeyPath: "contentSizeTable", options: .new, context: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -50,12 +54,34 @@ class SearchVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.collectionViewPost.removeObserver(self, forKeyPath: "contentSize")
+        //self.collectionViewPost.removeObserver(self, forKeyPath: "contentSize")
+        //self.tableViewPostList.removeObserver(self, forKeyPath: "contentSizeTable")
     }
     
     // MARK: Deinitialization
     deinit {
        debugPrint("\(self) deinitialized")
+    }
+    
+    @IBAction func onClickLocation(_ sender: Any) {
+        guard let vc = SelectRediusVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onClickChangeView(_ sender: UIButton) {
+        if isGridViewEnable{
+            isGridViewEnable = false
+            sender.setImage(#imageLiteral(resourceName: "search_grid"), for: .normal)
+            collectionViewPost.isHidden = true
+            tableViewPostList.isHidden = false
+        } else{
+            isGridViewEnable = true
+            sender.setImage(#imageLiteral(resourceName: "search_list"), for: .normal)
+            collectionViewPost.isHidden = false
+            tableViewPostList.isHidden = true
+        }
     }
     
     func setupView(){
@@ -70,8 +96,16 @@ class SearchVC: UIViewController {
         layout.minimumLineSpacing = 2
         layout.itemSize = CGSize(width: widthValue, height: heightValue)
         self.collectionViewPost.setCollectionViewLayout(layout, animated: true)
+        
+        if isGridViewEnable{
+            collectionViewPost.isHidden = false
+            tableViewPostList.isHidden = true
+        } else{
+            collectionViewPost.isHidden = true
+            tableViewPostList.isHidden = false
+        }
     }
-    
+    /*
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "contentSize"{
             if object is UICollectionView{
@@ -81,8 +115,17 @@ class SearchVC: UIViewController {
                 }
             }
         }
+        //contentSizeTable
+        if keyPath == "contentSizeTable"{
+            if object is UITableView{
+                if let newvalue = change?[.newKey]{
+                    let newsize = newvalue as! CGSize
+                    self.tableViewPostList_Height.constant = newsize.height
+                }
+            }
+        }
     }
-    
+    */
 }
 
 // MARK: - Load from storyboard with dependency
@@ -122,6 +165,17 @@ extension SearchVC: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
             return cell
         }
-        
+    }
+}
+
+extension SearchVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //SearchPostListTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchPostListTVC", for: indexPath) as! SearchPostListTVC
+        return cell
     }
 }
