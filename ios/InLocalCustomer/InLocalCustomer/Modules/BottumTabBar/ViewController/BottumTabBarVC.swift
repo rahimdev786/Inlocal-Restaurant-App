@@ -107,6 +107,11 @@ extension BottumTabBarVC{
         }
         tabController.setViewController(searchViewController, atIndex: 1)
         
+        guard let uploadStoryVC = UploadStoryVC.loadFromXIB(withDependency: nil) else {
+            return
+        }
+        tabController.setViewController(uploadStoryVC, atIndex: 2)
+        
         //CartVC
         guard let cartViewController = CartVC.load(withDependency: nil) else {
             return
