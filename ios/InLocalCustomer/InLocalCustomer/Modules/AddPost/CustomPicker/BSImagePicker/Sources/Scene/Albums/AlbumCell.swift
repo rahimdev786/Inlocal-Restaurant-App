@@ -35,7 +35,7 @@ final class AlbumCell: UITableViewCell {
         didSet {
             // Selection checkmark
             if isSelected == true {
-                accessoryType = .checkmark
+                //accessoryType = .checkmark
             } else {
                 accessoryType = .none
             }
@@ -52,6 +52,9 @@ final class AlbumCell: UITableViewCell {
         albumImageView.translatesAutoresizingMaskIntoConstraints = false
         albumImageView.contentMode = .scaleAspectFill
         albumImageView.clipsToBounds = true
+        //********** Changed
+        albumImageView.layer.cornerRadius = 10.0
+        albumImageView.layer.masksToBounds = true
         contentView.addSubview(albumImageView)
         
         albumTitleLabel.translatesAutoresizingMaskIntoConstraints = false

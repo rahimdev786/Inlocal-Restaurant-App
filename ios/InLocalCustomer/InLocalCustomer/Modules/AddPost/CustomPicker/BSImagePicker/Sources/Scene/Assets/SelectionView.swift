@@ -128,7 +128,9 @@ class SelectionViewSelect: UIView {
     public lazy var icon: UIView = {
         switch settings.theme.selectionStyle {
         case .checked:
-            return CheckmarkView()
+            //******** Changed
+            return UIView()
+            //return CheckmarkView()
         case .numbered:
             return NumberView()
         }

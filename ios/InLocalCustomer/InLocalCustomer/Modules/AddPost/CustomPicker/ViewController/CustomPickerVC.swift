@@ -8,7 +8,12 @@
 //
 
 import UIKit
+import Photos
 
+protocol CustomPickerVCProtocol: AnyObject {
+    func didTapOnSave(image:UIImage)
+    func didTapOnCamera()
+}
 class CustomPickerVC: UIViewController {
     // MARK: Instance variables
 	lazy var dataManager = CustomPickerDataManager()
@@ -18,12 +23,14 @@ class CustomPickerVC: UIViewController {
     @IBOutlet weak var imgPicked: UIImageView!
     @IBOutlet weak var pickerView: UIView!
     
-    
+    weak var delegate: CustomPickerVCProtocol?
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
+        
+        openImagePicker()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -46,7 +53,24 @@ class CustomPickerVC: UIViewController {
     }
     
     @IBAction func didTapOnClose(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true) {
+        }
+    }
+    
+    @IBAction func didTapOnSave(_ sender: UIButton) {
+        
+        self.dismiss(animated: true) {
+            self.delegate?.didTapOnSave(image: self.imgPicked.image!)
+        }
+        
+    }
+    
+    @IBAction func didTapOnCamera(_ sender: UIButton) {
+        
+        self.dismiss(animated: true) {
+            self.delegate?.didTapOnCamera()
+        }
+        
     }
     
     
@@ -75,25 +99,11 @@ class CustomPickerVC: UIViewController {
         imagePicker.providesPresentationContextTransitionStyle = true
         imagePicker.definesPresentationContext = true
         imagePicker.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        imagePicker.imagePickerDelegate = self
+        imagePicker.view.frame = self.pickerView.bounds
+        self.pickerView.addSubview(imagePicker.view)
         
-        presentImagePicker(imagePicker, select: { (asset) in
-            // User selected an asset. Do something with it. Perhaps begin processing/upload?
 
-            
-        }, deselect: { (asset) in
-            // User deselected an asset. Cancel whatever you did when asset was selected.
-        }, cancel: { (assets) in
-            // User canceled selection.
-        }, finish: { (assets) in
-            // User finished selection assets.
-            imagePicker.dismiss(animated: true, completion: {
-                
-//                if let image = self.getUIImage(asset: assets[0]) {
-//
-//                    self.presentCropViewControllerWith(selectedImage: image)
-//                }
-            })
-        })
     }
     
     
@@ -122,4 +132,43 @@ extension CustomPickerVC {
 
 // MARK: - CustomPickerAPIResponseDelegate
 extension CustomPickerVC: CustomPickerAPIResponseDelegate {
+}
+
+extension CustomPickerVC: ImagePickerControllerDelegate {
+    func imagePicker(_ imagePicker: ImagePickerController, didSelectAsset asset: PHAsset) {
+        self.imgPicked.image = getUIImage(asset: asset)
+    }
+    
+    func imagePicker(_ imagePicker: ImagePickerController, didDeselectAsset asset: PHAsset) {
+        
+    }
+    
+    func imagePicker(_ imagePicker: ImagePickerController, didFinishWithAssets assets: [PHAsset]) {
+        
+    }
+    
+    func imagePicker(_ imagePicker: ImagePickerController, didCancelWithAssets assets: [PHAsset]) {
+        
+    }
+    
+    func imagePicker(_ imagePicker: ImagePickerController, didReachSelectionLimit count: Int) {
+        
+    }
+    
+    func getUIImage(asset: PHAsset) -> UIImage? {
+        
+        var img: UIImage?
+        let manager = PHImageManager.default()
+        let options = PHImageRequestOptions()
+        options.version = .original
+        options.isSynchronous = true
+        manager.requestImageData(for: asset, options: options) { data, _, _, _ in
+            
+            if let data = data {
+                img = UIImage(data: data)
+            }
+        }
+        return img
+    }
+    
 }

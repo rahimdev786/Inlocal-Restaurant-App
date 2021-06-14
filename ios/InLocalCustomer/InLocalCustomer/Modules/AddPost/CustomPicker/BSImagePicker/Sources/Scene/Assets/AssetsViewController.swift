@@ -48,6 +48,8 @@ class AssetsViewController: UIViewController {
     private let dataSource: AssetsCollectionViewDataSource
 
     private let selectionFeedback = UISelectionFeedbackGenerator()
+    
+    var previousSelectedIndexpath: IndexPath?
 
     init(store: AssetStore) {
         self.store = store
@@ -86,6 +88,14 @@ class AssetsViewController: UIViewController {
         collectionView.addGestureRecognizer(longPressRecognizer)
 
         syncSelections(store.assets)
+        
+        previousSelectedIndexpath = IndexPath(row: 0, section: 0)
+        collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .bottom)
+        let asset = fetchResult.object(at: 0)
+        selectionFeedback.selectionChanged()
+        store.append(asset)
+        
+        delegate?.assetsViewController(self, didSelectAsset: asset)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -96,8 +106,17 @@ class AssetsViewController: UIViewController {
     func showAssets(in album: PHAssetCollection) {
         fetchResult = PHAsset.fetchAssets(in: album, options: settings.fetch.assets.options)
         collectionView.reloadData()
+        
+        previousSelectedIndexpath = IndexPath(row: 0, section: 0)
+        collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .bottom)
+        let asset = fetchResult.object(at: 0)
+        selectionFeedback.selectionChanged()
+        store.append(asset)
+        delegate?.assetsViewController(self, didSelectAsset: asset)
+        
         let selections = self.store.assets
         syncSelections(selections)
+        //collectionView.setContentOffset(CGPoint(x: 0.0, y: -10.0), animated: false)
         collectionView.setContentOffset(.zero, animated: false)
     }
 
@@ -158,7 +177,7 @@ class AssetsViewController: UIViewController {
         let itemWidth = (collectionView.bounds.width - CGFloat(itemsPerRow - 1) * itemSpacing) / CGFloat(itemsPerRow)
         let itemSize = CGSize(width: itemWidth, height: itemWidth)
 
-        collectionViewFlowLayout.minimumLineSpacing = itemSpacing
+        collectionViewFlowLayout.minimumLineSpacing = itemSpacing * 2
         collectionViewFlowLayout.minimumInteritemSpacing = itemSpacing
         collectionViewFlowLayout.itemSize = itemSize
     }
@@ -175,26 +194,48 @@ extension AssetsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
-        let asset = fetchResult.object(at: indexPath.row)
+        if let previousSelectedIndexpath = previousSelectedIndexpath {
+    
+            if previousSelectedIndexpath != indexPath {
+                let previousCell = collectionView.cellForItem(at: previousSelectedIndexpath) as! AssetCollectionViewCell
+                previousCell.updateAlpha(false)
+            }
+            
+        }
+        
         
         let cell = collectionView.cellForItem(at: indexPath) as! AssetCollectionViewCell
-        if asset.mediaType == .video {
+        
+        let asset = fetchResult.object(at: indexPath.row)
+  
+        if let previousSelectedIndexpath = previousSelectedIndexpath {
+            if previousSelectedIndexpath != indexPath {
+                selectionFeedback.selectionChanged()
+                
+                store.append(asset)
+                delegate?.assetsViewController(self, didSelectAsset: asset)
+                
+                updateSelectionIndexForCell(at: indexPath)
+            }
             
-            var isVideoIsTooLong = false
-
         }else{
-            
             selectionFeedback.selectionChanged()
             
             store.append(asset)
             delegate?.assetsViewController(self, didSelectAsset: asset)
             
             updateSelectionIndexForCell(at: indexPath)
-            
         }
+        
+
+        previousSelectedIndexpath = indexPath
+        
+
     }
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        /*
         selectionFeedback.selectionChanged()
         
         let asset = fetchResult.object(at: indexPath.row)
@@ -204,6 +245,7 @@ extension AssetsViewController: UICollectionViewDelegate {
         for indexPath in collectionView.indexPathsForSelectedItems ?? [] {
             updateSelectionIndexForCell(at: indexPath)
         }
+ */
     }
 
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
@@ -216,6 +258,9 @@ extension AssetsViewController: UICollectionViewDelegate {
 
 extension AssetsViewController: PHPhotoLibraryChangeObserver {
     func photoLibraryDidChange(_ changeInstance: PHChange) {
+        
+        previousSelectedIndexpath = nil
+        
         guard let changes = changeInstance.changeDetails(for: fetchResult) else { return }
         // Since we are gonna update UI, make sure we are on main
         DispatchQueue.main.async {
