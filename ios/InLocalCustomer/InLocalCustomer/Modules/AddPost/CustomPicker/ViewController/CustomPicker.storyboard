@@ -66,9 +66,9 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3S8-vR-H0J">
-                                <rect key="frame" x="17" y="114" width="341" height="300"/>
+                                <rect key="frame" x="17" y="114" width="341" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="PeU-t8-3sT"/>
+                                    <constraint firstAttribute="height" constant="200" id="PeU-t8-3sT"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -77,7 +77,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msl-AC-5Gb">
-                                <rect key="frame" x="17" y="414" width="341" height="398"/>
+                                <rect key="frame" x="17" y="314" width="341" height="498"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihp-qP-VM8">
