@@ -22,7 +22,6 @@
 
 import UIKit
 import Photos
-import PryntTrimmerView
 
 protocol AssetsViewControllerDelegate: class {
     func assetsViewController(_ assetsViewController: AssetsViewController, didSelectAsset asset: PHAsset)
@@ -182,93 +181,7 @@ extension AssetsViewController: UICollectionViewDelegate {
         if asset.mediaType == .video {
             
             var isVideoIsTooLong = false
-            asset.getURLForVideo(completionHandler: { (url) in
-                if let sizeOfFile = url?.fileSizeInMBInDouble(), sizeOfFile > 150 {
-                    
-                    DispatchQueue.main.async {
-                        // create the alert
-                        let alert = UIAlertController(title: "Video is too big", message: "Video greater than 150 MB can't be uploaded", preferredStyle: UIAlertController.Style.alert)
-                        
-                        // add an action (button)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                        
-                        // show the alert
-                        self.present(alert, animated: true, completion: nil)
-                        
-                        // Deselect the cell
-                        
-                        collectionView.deselectItem(at: indexPath, animated: true)
-                        isVideoIsTooLong = true
-                        return
-                    }
-                    
-                }else{
-                    if self.settings.isFromStory {
-                        if asset.duration > 15.0 {
 
-                            DispatchQueue.main.async {
-                                self.collectionView.deselectItem(at: indexPath, animated: true)
-                                
-                                if let pickerVC = self.pickerVC, let storyVC = self.settings.storyVC {
-                                    let dependency = StoryLongVideoDependency(asset: asset,imagePicker: pickerVC,storyVC: storyVC)
-                                    let storyLongVideoVC = StoryLongVideoVC.loadFromXIB(withDependency: dependency)
-                                    storyLongVideoVC?.showModally(with: self)
-                                                        
-                                }
-                            }
-                            
-                            
-
-                        } else{
-                            DispatchQueue.main.async {
-                                self.selectionFeedback.selectionChanged()
-                                
-                                self.store.append(asset)
-                                self.delegate?.assetsViewController(self, didSelectAsset: asset)
-                                
-                                self.updateSelectionIndexForCell(at: indexPath)
-                            }
-                            
-                            
-                        }
-                    }else{
-                        if asset.duration > 30.0 {
-
-                            DispatchQueue.main.async {
-                                // create the alert
-                                let alert = UIAlertController(title: "Video is too long", message: "Video longer than 30 seconds can't be uploaded", preferredStyle: UIAlertController.Style.alert)
-                                
-                                // add an action (button)
-                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                                
-                                // show the alert
-                                self.present(alert, animated: true, completion: nil)
-                                
-                                // Deselect the cell
-                                
-                                self.collectionView.deselectItem(at: indexPath, animated: true)
-                            }
-                            
-
-                        } else{
-                            
-                            DispatchQueue.main.async {
-                                self.selectionFeedback.selectionChanged()
-                                
-                                self.store.append(asset)
-                                self.delegate?.assetsViewController(self, didSelectAsset: asset)
-                                
-                                self.updateSelectionIndexForCell(at: indexPath)
-                            }
-
-                        }
-                    }
-                }
-            })
-            
-            
-            
-            
         }else{
             
             selectionFeedback.selectionChanged()

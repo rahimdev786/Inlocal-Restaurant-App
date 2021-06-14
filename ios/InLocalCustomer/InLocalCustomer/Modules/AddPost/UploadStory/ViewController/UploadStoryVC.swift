@@ -244,7 +244,8 @@ extension UploadStoryVC: CustomCameraOverlayProtocol {
     func galleryTapped() {
         imagePicker.dismiss(animated: true) {
             //open gallery
-            
+            let customPicker = CustomPickerVC.loadFromXIB(withDependency: nil)
+            customPicker?.showModally(with: self)
         }
     }
     

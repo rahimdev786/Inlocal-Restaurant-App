@@ -26,7 +26,6 @@ import Photos
 /// Settings for BSImagePicker
 @objcMembers public class Settings : NSObject {
     
-    var storyVC: AddStoryVC?
     public var isFromStory = false
     
     public static let shared = Settings()
