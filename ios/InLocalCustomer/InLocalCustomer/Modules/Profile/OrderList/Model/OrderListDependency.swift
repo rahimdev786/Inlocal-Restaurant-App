@@ -8,4 +8,6 @@
 //
 
 struct OrderListDependency {
+    
+    var isComingFromUpload = false
 }

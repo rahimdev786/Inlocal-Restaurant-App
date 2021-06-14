@@ -9,14 +9,32 @@
 
 import UIKit
 
+enum UserType {
+    case followers
+    case following
+}
+
 class FollowerVC: UIViewController {
     // MARK: Instance variables
 	lazy var dataManager = FollowerDataManager()
     var dependency: FollowerDependency?
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var type: UserType = .followers
+    
+    var numberOfItems = 10
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
+        
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .normal)
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -37,6 +55,20 @@ class FollowerVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
+    @IBAction func didTapOnSegmentedControl(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            type = .followers
+            lblTitle.text = "Followers"
+        }else{
+            type = .following
+            lblTitle.text = "Following"
+        }
+        
+        tableView.reloadData()
+    }
+    
 }
 
 // MARK: - Load from storyboard with dependency
@@ -53,4 +85,51 @@ extension FollowerVC {
 
 // MARK: - FollowerAPIResponseDelegate
 extension FollowerVC: FollowerAPIResponseDelegate {
+}
+
+//MARK: UITableViewDataSource
+extension FollowerVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numberOfItems
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if type == .followers {
+            let cell = tableView.dequeueReusableCell(withIdentifier: FollowerTVC.identifier, for: indexPath) as! FollowerTVC
+            cell.delegate = self
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: FollowingTVC.identifier, for: indexPath) as! FollowingTVC
+            return cell
+        }
+        
+        
+    }
+    
+}
+
+extension FollowerVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 87.0
+    }
+}
+extension FollowerVC: FollowerTVCProtocol{
+    
+    func didTapOnCross() {
+        
+        let alertCntlr = UIAlertController.init(title: "Alert", message: "Do you want to remove this follower", preferredStyle: .alert)
+        let cancelAction = UIAlertAction.init(title: "No", style: .cancel) { _ in
+            
+        }
+        let okAction = UIAlertAction.init(title: "OK", style: .default) { _ in
+            self.numberOfItems = self.numberOfItems - 1
+            self.tableView.reloadData()
+        }
+        
+        alertCntlr.addAction(cancelAction)
+        alertCntlr.addAction(okAction)
+        self.present(alertCntlr, animated: true, completion: nil)
+    }
 }

@@ -83,9 +83,23 @@ extension OrderListVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let vc = OrderDetailsVC.loadFromXIB() else{
-            return
+        
+        if let dependency = dependency {
+            if dependency.isComingFromUpload {
+                navigationController?.popViewController(animated: true)
+            }else{
+                guard let vc = OrderDetailsVC.loadFromXIB() else{
+                    return
+                }
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }else{
+            guard let vc = OrderDetailsVC.loadFromXIB() else{
+                return
+            }
+            navigationController?.pushViewController(vc, animated: true)
         }
-        navigationController?.pushViewController(vc, animated: true)
+        
+        
     }
 }
