@@ -20,6 +20,7 @@ enum DetailType {
     case orders
     case bookings
     case savedPosts
+    case addressBook
     case changePassword
     case notificationSettings
 }

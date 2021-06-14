@@ -36,7 +36,7 @@ class SignupVC: UIViewController {
     @IBOutlet weak var btnSignIn: UIButton!
     
     let otpView = ValidateOTP.instanceFromNib()
-    
+    var isTermConditionAccepted = false
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +73,16 @@ class SignupVC: UIViewController {
     
     @IBAction func onClickBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func onClickCheckBox(_ sender: UIButton) {
+        if isTermConditionAccepted{
+            isTermConditionAccepted = false
+            sender.setImage(#imageLiteral(resourceName: "empty_checkbox_gray"), for: .normal)
+        } else{
+            isTermConditionAccepted = true
+            sender.setImage(#imageLiteral(resourceName: "checked_checkbox"), for: .normal)
+        }
     }
     
     @IBAction func onClickTermsAndServicess(_ sender: Any) {

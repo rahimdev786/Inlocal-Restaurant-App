@@ -297,6 +297,7 @@
 		C1AACA36267714FF000D4D2A /* AddressBookLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AACA2F267714FE000D4D2A /* AddressBookLocalDataManager.swift */; };
 		C1AACA37267714FF000D4D2A /* AddressBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AACA31267714FF000D4D2A /* AddressBookVC.swift */; };
 		C1AACA38267714FF000D4D2A /* AddressBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AACA32267714FF000D4D2A /* AddressBook.storyboard */; };
+		C1AACA3E267720EE000D4D2A /* AddressBookTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AACA3D267720EE000D4D2A /* AddressBookTVC.swift */; };
 		C1AE0E2B266F2412000E6470 /* CommentDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E23266F2412000E6470 /* CommentDependency.swift */; };
 		C1AE0E2C266F2412000E6470 /* CommentLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E25266F2412000E6470 /* CommentLocalDataManager.swift */; };
 		C1AE0E2D266F2412000E6470 /* CommentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE0E26266F2412000E6470 /* CommentDataManager.swift */; };
@@ -672,6 +673,7 @@
 		C1AACA2F267714FE000D4D2A /* AddressBookLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookLocalDataManager.swift; sourceTree = "<group>"; };
 		C1AACA31267714FF000D4D2A /* AddressBookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookVC.swift; sourceTree = "<group>"; };
 		C1AACA32267714FF000D4D2A /* AddressBook.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddressBook.storyboard; sourceTree = "<group>"; };
+		C1AACA3D267720EE000D4D2A /* AddressBookTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTVC.swift; sourceTree = "<group>"; };
 		C1AE0E23266F2412000E6470 /* CommentDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDependency.swift; sourceTree = "<group>"; };
 		C1AE0E25266F2412000E6470 /* CommentLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentLocalDataManager.swift; sourceTree = "<group>"; };
 		C1AE0E26266F2412000E6470 /* CommentDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDataManager.swift; sourceTree = "<group>"; };
@@ -2304,6 +2306,7 @@
 		C1AACA1A267714BE000D4D2A /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				C1AACA3C267720BA000D4D2A /* Views */,
 				C1AACA2C267714FE000D4D2A /* DataManager */,
 				C1AACA2A267714FE000D4D2A /* Model */,
 				C1AACA30267714FF000D4D2A /* ViewController */,
@@ -2336,6 +2339,14 @@
 				C1AACA32267714FF000D4D2A /* AddressBook.storyboard */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1AACA3C267720BA000D4D2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1AACA3D267720EE000D4D2A /* AddressBookTVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C1AE0E18266F23D2000E6470 /* Comment */ = {
@@ -3125,6 +3136,7 @@
 				6D446D292676FE9B00C5ED9B /* ImagePickerController.swift in Sources */,
 				C1B9639926678F1600CECDDF /* SearchDependency.swift in Sources */,
 				C1042D2F2669DF500054B24D /* RestaurantProfileDataManager.swift in Sources */,
+				C1AACA3E267720EE000D4D2A /* AddressBookTVC.swift in Sources */,
 				6D4821CE2667A77F00F1DE01 /* BookingDetailsLocalDataManager.swift in Sources */,
 				C10FBABD266DD3DA0012FD8E /* DeliveryDataManager.swift in Sources */,
 				C1042D83266A356B0054B24D /* TagedPhotosDataManager.swift in Sources */,

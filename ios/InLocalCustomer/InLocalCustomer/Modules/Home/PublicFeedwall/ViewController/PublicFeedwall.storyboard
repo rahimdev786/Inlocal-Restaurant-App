@@ -63,6 +63,9 @@
                                                                 <state key="normal" title="Adriana">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="didTapOnProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVv-z3-Xky"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -130,9 +133,12 @@
                                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Vmr-J7-vSg"/>
                                                         </connections>
                                                     </collectionView>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6H0-qi-VY0">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6H0-qi-VY0">
                                                         <rect key="frame" x="0.0" y="184" width="341" height="584"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="584" id="4ym-By-yzA"/>
+                                                        </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedwallPostTVC" rowHeight="351" id="RWT-pq-DJw" customClass="FeedwallPostTVC" customModule="InLocalCustomer" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="341" height="351"/>
@@ -305,7 +311,6 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Sez-mf-nUg" firstAttribute="height" secondItem="fwR-M5-Mq8" secondAttribute="height" id="Cz7-PA-2bw"/>
                                     <constraint firstItem="Sez-mf-nUg" firstAttribute="top" secondItem="fwR-M5-Mq8" secondAttribute="top" id="acy-RU-MfH"/>
                                     <constraint firstItem="Sez-mf-nUg" firstAttribute="leading" secondItem="fwR-M5-Mq8" secondAttribute="leading" id="fc4-qz-gfM"/>
                                     <constraint firstAttribute="bottom" secondItem="Sez-mf-nUg" secondAttribute="bottom" id="rYD-y0-L9q"/>
@@ -326,6 +331,7 @@
                     <connections>
                         <outlet property="collectionViewStories" destination="3GK-1T-0qq" id="qwA-A9-z4W"/>
                         <outlet property="tableViewPost" destination="6H0-qi-VY0" id="D2E-Z7-W8U"/>
+                        <outlet property="tableViewPost_Height" destination="4ym-By-yzA" id="2QV-8N-ZGH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

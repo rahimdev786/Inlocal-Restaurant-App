@@ -69,6 +69,9 @@ class FollowerVC: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - Load from storyboard with dependency

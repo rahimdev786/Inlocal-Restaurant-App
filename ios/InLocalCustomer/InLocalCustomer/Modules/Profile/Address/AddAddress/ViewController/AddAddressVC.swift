@@ -15,11 +15,18 @@ class AddAddressVC: UIViewController {
 	lazy var dataManager = AddAddressDataManager()
     var dependency: AddAddressDependency?
     
+    @IBOutlet weak var txtFieldHouseNo: TextFieldView!
+    @IBOutlet weak var txtFiledLandmark: TextFieldView!
+    @IBOutlet weak var txtFiledZipCode: TextFieldView!
+    @IBOutlet weak var txtFieldCity: TextFieldView!
+    @IBOutlet weak var txtFieldCountry: TextFieldView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        setupUI()
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,6 +53,43 @@ class AddAddressVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setupUI() {
+      
+        txtFieldHouseNo.layer.cornerRadius = txtFieldHouseNo.layer.bounds.height/2
+        txtFieldHouseNo.layer.masksToBounds = true
+        txtFieldHouseNo.delegate = self
+        txtFieldHouseNo.populateWithData(text: "", placeholderText: "House no, street name", fieldType: .address)
+        txtFieldHouseNo.txtFldInput.returnKeyType = UIReturnKeyType.next
+        
+        txtFiledLandmark.layer.cornerRadius = txtFiledLandmark.layer.bounds.height/2
+        txtFiledLandmark.layer.masksToBounds = true
+        txtFiledLandmark.delegate = self
+        txtFiledLandmark.populateWithData(text: "", placeholderText: "Landmark", fieldType: .landmark)
+        txtFiledLandmark.txtFldInput.returnKeyType = UIReturnKeyType.default
+        
+        txtFiledZipCode.layer.cornerRadius = txtFiledZipCode.layer.bounds.height/2
+        txtFiledZipCode.layer.masksToBounds = true
+        txtFiledZipCode.delegate = self
+        txtFiledZipCode.populateWithData(text: "", placeholderText:"Zip Code", fieldType: .zipcode)
+        txtFiledZipCode.txtFldInput.returnKeyType = UIReturnKeyType.next
+        
+        txtFieldCity.layer.cornerRadius = txtFieldCity.layer.bounds.height/2
+        txtFieldCity.layer.masksToBounds = true
+        txtFieldCity.delegate = self
+        txtFieldCity.populateWithData(text: "", placeholderText: "City", fieldType: .city)
+        txtFieldCity.txtFldInput.returnKeyType = UIReturnKeyType.default
+        
+        txtFieldCountry.layer.cornerRadius = txtFieldCountry.layer.bounds.height/2
+        txtFieldCountry.layer.masksToBounds = true
+        txtFieldCountry.delegate = self
+        txtFieldCountry.populateWithData(text: "", placeholderText: "Country", fieldType: .country)
+        txtFieldCountry.txtFldInput.returnKeyType = UIReturnKeyType.default
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -65,5 +109,25 @@ extension AddAddressVC {
 
 // MARK: - AddAddressAPIResponseDelegate
 extension AddAddressVC: AddAddressAPIResponseDelegate {
+    
+}
+
+extension AddAddressVC: TextFieldDelegate{
+   func forgotPwdClicked() {
+       
+   }
+   
+   func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
+       
+   }
+   
+    func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {
+        
+    }
+    
+    func textFieldViewShouldReturn(_ textFieldView: TextFieldView) -> Bool {
+       
+        return true
+    }
     
 }

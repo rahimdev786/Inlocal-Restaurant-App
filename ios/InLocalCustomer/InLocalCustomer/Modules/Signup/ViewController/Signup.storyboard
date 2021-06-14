@@ -28,16 +28,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMX-1Z-vPM">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQV-EZ-bL6">
-                                        <rect key="frame" x="157.66666666666666" y="60.000000000000007" width="75" height="26.333333333333336"/>
+                                        <rect key="frame" x="157.66666666666666" y="22" width="75" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B0-3H-9Si">
-                                        <rect key="frame" x="10" y="55.333333333333343" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="LCx-Wt-FsV"/>
                                             <constraint firstAttribute="width" secondItem="2B0-3H-9Si" secondAttribute="height" multiplier="1:1" id="hOt-gk-sEY"/>
@@ -50,18 +50,18 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="eQV-EZ-bL6" firstAttribute="centerY" secondItem="mMX-1Z-vPM" secondAttribute="centerY" id="fuz-hw-8CA"/>
                                     <constraint firstItem="eQV-EZ-bL6" firstAttribute="centerX" secondItem="mMX-1Z-vPM" secondAttribute="centerX" id="hEP-Zn-7po"/>
-                                    <constraint firstItem="eQV-EZ-bL6" firstAttribute="top" secondItem="mMX-1Z-vPM" secondAttribute="top" constant="60" id="kpA-OP-B6c"/>
                                     <constraint firstItem="2B0-3H-9Si" firstAttribute="centerY" secondItem="eQV-EZ-bL6" secondAttribute="centerY" id="tN0-wL-VOB"/>
                                     <constraint firstItem="2B0-3H-9Si" firstAttribute="leading" secondItem="mMX-1Z-vPM" secondAttribute="leading" constant="10" id="wqz-Od-ZYz"/>
-                                    <constraint firstAttribute="height" constant="120" id="yEI-jn-sqM"/>
+                                    <constraint firstAttribute="height" constant="70" id="yEI-jn-sqM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPm-96-Sq4">
-                                <rect key="frame" x="0.0" y="128" width="390" height="716"/>
+                                <rect key="frame" x="0.0" y="122" width="390" height="722"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0c-vQ-OFb">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="716"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaQ-dO-6re">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="726.66666666666663"/>
@@ -174,6 +174,9 @@
                                                             <constraint firstAttribute="height" constant="40" id="vka-nI-qhT"/>
                                                         </constraints>
                                                         <state key="normal" image="empty_checkbox_gray"/>
+                                                        <connections>
+                                                            <action selector="onClickCheckBox:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJ4-Dm-Yc7"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="VLK-pW-Lot">
                                                         <rect key="frame" x="62" y="534.33333333333337" width="311" height="29"/>
@@ -218,6 +221,11 @@
                                                         <state key="normal" title="CONTINUE">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="onClickContinue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q7g-fW-llZ"/>
                                                         </connections>
@@ -284,11 +292,11 @@
                         <constraints>
                             <constraint firstItem="xPm-96-Sq4" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="CJo-ke-OOx"/>
                             <constraint firstItem="xPm-96-Sq4" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="I8f-Yt-DSU"/>
-                            <constraint firstItem="mMX-1Z-vPM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LwX-ik-Nvm"/>
                             <constraint firstItem="mMX-1Z-vPM" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="TCv-gy-sFw"/>
                             <constraint firstItem="mMX-1Z-vPM" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="WLY-lP-PTA"/>
                             <constraint firstAttribute="bottom" secondItem="xPm-96-Sq4" secondAttribute="bottom" id="bmo-U5-s95"/>
                             <constraint firstItem="xPm-96-Sq4" firstAttribute="top" secondItem="mMX-1Z-vPM" secondAttribute="bottom" constant="8" symbolic="YES" id="fUf-Hn-OEW"/>
+                            <constraint firstItem="mMX-1Z-vPM" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="sRM-zb-eIo"/>
                         </constraints>
                     </view>
                     <connections>
@@ -317,7 +325,7 @@
     </scenes>
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
-        <image name="empty_checkbox_gray" width="20.666666030883789" height="20.666666030883789"/>
+        <image name="empty_checkbox_gray" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

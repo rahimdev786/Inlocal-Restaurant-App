@@ -30,6 +30,7 @@ class ChangePasswordVC: UIViewController {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        setupUI()
     }
     
     override func viewDidLayoutSubviews() {
@@ -58,9 +59,31 @@ class ChangePasswordVC: UIViewController {
     }
     
     @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onClickSave(_ sender: Any) {
+    }
+    
+    func setupUI() {
+      
+        txtFiledCurrentPassword.layer.cornerRadius = txtFiledCurrentPassword.layer.bounds.height/2
+        txtFiledCurrentPassword.layer.masksToBounds = true
+        txtFiledCurrentPassword.delegate = self
+        txtFiledCurrentPassword.populateWithData(text: "", placeholderText: "Current password", fieldType: .password)
+        txtFiledCurrentPassword.txtFldInput.returnKeyType = UIReturnKeyType.next
+        
+        txtFiledNewPassword.layer.cornerRadius = txtFiledNewPassword.layer.bounds.height/2
+        txtFiledNewPassword.layer.masksToBounds = true
+        txtFiledNewPassword.delegate = self
+        txtFiledNewPassword.populateWithData(text: "", placeholderText: "New password", fieldType: .password)
+        txtFiledNewPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
+        
+        txtFiledConfirmNewPassword.layer.cornerRadius = txtFiledConfirmNewPassword.layer.bounds.height/2
+        txtFiledConfirmNewPassword.layer.masksToBounds = true
+        txtFiledConfirmNewPassword.delegate = self
+        txtFiledConfirmNewPassword.populateWithData(text: "", placeholderText: "Confirm new password", fieldType: .password)
+        txtFiledConfirmNewPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
     }
     
 }
@@ -84,3 +107,24 @@ extension ChangePasswordVC {
 extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
     
 }
+
+ extension ChangePasswordVC: TextFieldDelegate{
+    
+    func forgotPwdClicked() {
+        
+    }
+    
+    func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
+        
+    }
+    
+     func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {
+         
+     }
+     
+     func textFieldViewShouldReturn(_ textFieldView: TextFieldView) -> Bool {
+    
+         return true
+     }
+     
+ }

@@ -65,9 +65,8 @@ class SigninVC: UIViewController {
     }
     
     @IBAction func onClickLogin(_ sender: Any) {
-        
-        
-        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.moveToTabBarVC()
     }
     
     @IBAction func onClickRegister(_ sender: Any) {

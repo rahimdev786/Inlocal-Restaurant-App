@@ -24,6 +24,7 @@ class CartVC: UIViewController {
     @IBOutlet weak var viewItemTotalBack: UIView!
     @IBOutlet weak var btnPay: UIButton!
     
+    var orderAllItem = false
     // MARK: - View Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,17 @@ class CartVC: UIViewController {
     // MARK: Deinitialization
     deinit {
        debugPrint("\(self) deinitialized")
+    }
+    
+    
+    @IBAction func onClickOrderAllCheckBox(_ sender: UIButton) {
+        if orderAllItem{
+            orderAllItem = false
+            sender.setImage(#imageLiteral(resourceName: "empty_checkbox_gray"), for: .normal)
+        } else{
+            orderAllItem = true
+            sender.setImage(#imageLiteral(resourceName: "checked_checkbox"), for: .normal)
+        }
     }
     
     func setupView(){
