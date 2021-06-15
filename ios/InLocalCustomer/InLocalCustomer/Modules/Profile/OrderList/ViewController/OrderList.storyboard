@@ -54,6 +54,9 @@
                                             <constraint firstAttribute="width" constant="50" id="h4X-Yu-G0W"/>
                                         </constraints>
                                         <state key="normal" image="calendar"/>
+                                        <connections>
+                                            <action selector="didTapOnCalendar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0t8-5a-kca"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
@@ -184,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="38"/>
+            <point key="canvasLocation" x="38" y="21"/>
         </scene>
     </scenes>
     <resources>

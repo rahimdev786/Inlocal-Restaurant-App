@@ -197,8 +197,10 @@ extension AssetsViewController: UICollectionViewDelegate {
         if let previousSelectedIndexpath = previousSelectedIndexpath {
     
             if previousSelectedIndexpath != indexPath {
-                let previousCell = collectionView.cellForItem(at: previousSelectedIndexpath) as! AssetCollectionViewCell
-                previousCell.updateAlpha(false)
+                if let previousCell = collectionView.cellForItem(at: previousSelectedIndexpath) as? AssetCollectionViewCell {
+                    previousCell.updateAlpha(false)
+                }
+                
             }
             
         }
