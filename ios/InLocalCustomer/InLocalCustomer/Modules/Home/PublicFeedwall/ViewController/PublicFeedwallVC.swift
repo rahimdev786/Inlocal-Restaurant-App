@@ -18,6 +18,8 @@ class PublicFeedwallVC: UIViewController {
     @IBOutlet weak var collectionViewStories: UICollectionView!
     @IBOutlet weak var tableViewPost: UITableView!
     
+    @IBOutlet weak var tableViewPost_Height: NSLayoutConstraint!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class PublicFeedwallVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -43,6 +46,7 @@ class PublicFeedwallVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.tableViewPost.removeObserver(self, forKeyPath: "contentSize")
     }
     
     // MARK: Deinitialization
@@ -58,6 +62,16 @@ class PublicFeedwallVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize"{
+            if object is UITableView{
+                if let newvalue = change?[.newKey]{
+                    let newsize = newvalue as! CGSize
+                    self.tableViewPost_Height.constant = newsize.height
+                }
+            }
+        }
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -89,7 +103,6 @@ extension PublicFeedwallVC: UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedwallStoryCVC", for: indexPath) as! FeedwallStoryCVC
         return cell
     }
-    
 }
 
 extension PublicFeedwallVC: UICollectionViewDelegate{
@@ -117,7 +130,52 @@ extension PublicFeedwallVC: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedwallPostTVC", for: indexPath) as! FeedwallPostTVC
+        cell.btnRestaurent.addTarget(self, action: #selector(onClickRestaurent(sender:)), for: .touchUpInside)
+        cell.btnRestaurent.tag = indexPath.row
+        
+        cell.btnMenu.addTarget(self, action: #selector(onClickMenu(sender:)), for: .touchUpInside)
+        cell.btnMenu.tag = indexPath.row
+        
+        cell.btnSavedPost.addTarget(self, action: #selector(onClickSavedPost(sender:)), for: .touchUpInside)
+        cell.btnSavedPost.tag = indexPath.row
+        
+        cell.btnComment.addTarget(self, action: #selector(onClickComment(sender:)), for: .touchUpInside)
+        cell.btnComment.tag = indexPath.row
         return cell
     }
 
+}
+
+extension PublicFeedwallVC {
+    @objc func onClickRestaurent(sender: UIButton){
+        let buttonTag = sender.tag
+        guard let vc = RestaurantProfileVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func onClickMenu(sender: UIButton){
+        let buttonTag = sender.tag
+        guard let vc = RestaurantMenuVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func onClickSavedPost(sender: UIButton){
+        let buttonTag = sender.tag
+        guard let vc = SavedPostsVC.loadFromXIB() else{
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func onClickComment(sender: UIButton){
+        let buttonTag = sender.tag
+        guard let viewStoryController = CommentVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(viewStoryController, animated: true)
+    }
 }

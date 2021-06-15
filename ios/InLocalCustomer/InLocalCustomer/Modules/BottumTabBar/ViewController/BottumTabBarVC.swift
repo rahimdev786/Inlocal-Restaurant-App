@@ -144,7 +144,7 @@ extension BottumTabBarVC{
         */
 
         //customize
-        let color = UIColor(red: 14.0/255, green: 122.0/255, blue: 254.0/255, alpha: 1.0)
+        let color = UIColor.init(hexString: "#1DA1F2")//(red: 14.0/255, green: 122.0/255, blue: 254.0/255, alpha: 1.0)
 
         tabController.selectedColor = color
 
@@ -163,7 +163,7 @@ extension BottumTabBarVC{
 
         tabController.tabBarHeight = 60
 
-        tabController.notificationBadgeAppearance.backgroundColor = .red
+        tabController.notificationBadgeAppearance.backgroundColor = UIColor.init(hexString: "#1DA1F2")
         tabController.notificationBadgeAppearance.textColor = .white
         tabController.notificationBadgeAppearance.borderColor = .clear
         tabController.notificationBadgeAppearance.borderWidth = 0.2

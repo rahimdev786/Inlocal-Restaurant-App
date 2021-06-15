@@ -68,6 +68,7 @@ class ProfileInfoVC: UIViewController {
         arrDetails = [AccountDetails(title: "My Orders", image: #imageLiteral(resourceName: "myBookings"), type: .orders),
         AccountDetails(title: "My Bookings", image: #imageLiteral(resourceName: "myBookings"), type: .bookings),
         AccountDetails(title: "Saved Posts", image: #imageLiteral(resourceName: "myBookings"), type: .savedPosts),
+        AccountDetails(title: "Address Book", image: #imageLiteral(resourceName: "myBookings"), type: .addressBook),
         AccountDetails(title: "Change Password", image: #imageLiteral(resourceName: "myBookings"), type: .changePassword),
         AccountDetails(title: "Notification Settings", image: #imageLiteral(resourceName: "myBookings"), type: .notificationSettings),
         ]
@@ -129,8 +130,13 @@ extension ProfileInfoVC: UITableViewDelegate {
                 return
             }
             navigationController?.pushViewController(vc, animated: true)
+        case .addressBook:
+            guard let vc = AddressBookVC.load() else{
+                return
+            }
+            navigationController?.pushViewController(vc, animated: true)
         case .changePassword:
-            guard let vc = FollowerVC.loadFromXIB() else{
+            guard let vc = ChangePasswordVC.load() else{
                 return
             }
             navigationController?.pushViewController(vc, animated: true)

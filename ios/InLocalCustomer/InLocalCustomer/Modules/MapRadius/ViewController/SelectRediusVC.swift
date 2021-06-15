@@ -108,7 +108,6 @@ extension SelectRediusVC: CLLocationManagerDelegate {
         self.locationManager.stopUpdatingLocation()
     }
     
-    
     func setRadius(radiusValue: Int){
         let circleCenter : CLLocationCoordinate2D  = CLLocationCoordinate2DMake(18.5204, 73.8567);
         //let circ = GMSCircle(position: circleCenter, radius: CLLocationDistance(radiusValue * 1000))

@@ -15,7 +15,13 @@ class TagedPhotoTVC: UITableViewCell {
     @IBOutlet weak var widthStackView: NSLayoutConstraint!
     @IBOutlet weak var lblLikeCount: UILabel!
     
+    @IBOutlet weak var btnRestaurent: UIButton!
+    @IBOutlet weak var btnMenu: UIButton!
+    @IBOutlet weak var btnSavedPost: UIButton!
+    @IBOutlet weak var btnComment: UIButton!
+    
     var isMenuOpen = false
+    var isLiked = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -56,6 +62,16 @@ class TagedPhotoTVC: UITableViewCell {
             } completion: { [self] (state) in
                 isMenuOpen = true
             }
+        }
+    }
+    
+    @IBAction func onClickLike(_ sender: UIButton) {
+        if isLiked{
+            isLiked = false
+            sender.setImage(#imageLiteral(resourceName: "like_empty_white"), for: .normal)
+        } else{
+            isLiked = true
+            sender.setImage(#imageLiteral(resourceName: "like_filled"), for: .normal)
         }
     }
 

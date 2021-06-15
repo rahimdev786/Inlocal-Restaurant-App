@@ -10,6 +10,7 @@ import UIKit
 class DeliveryMenuTVC: UITableViewCell {
 
     @IBOutlet weak var viewCellBackground: UIView!
+    @IBOutlet weak var btnCustomizable: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

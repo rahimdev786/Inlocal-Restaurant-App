@@ -126,6 +126,9 @@
                                                                 <state key="normal" title="1.4M">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickFollowers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YE7-TC-3my"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-bi-2R1">
                                                                 <rect key="frame" x="0.0" y="32" width="70" height="27"/>
@@ -133,6 +136,9 @@
                                                                 <state key="normal" title="Followers">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickFollowers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j4R-s2-Uxq"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -145,6 +151,9 @@
                                                                 <state key="normal" title="90K">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickFollowing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ee-Io-GhF"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ze5-Ut-0Rx">
                                                                 <rect key="frame" x="0.0" y="32" width="70.333333333333329" height="27"/>
@@ -152,6 +161,9 @@
                                                                 <state key="normal" title="Following">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClickFollowing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I7g-4F-A6q"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>

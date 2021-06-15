@@ -65,6 +65,20 @@ class RestaurantProfileVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickFollowers(_ sender: Any) {
+        guard let vc = FollowerVC.loadFromXIB(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onClickFollowing(_ sender: Any) {
+        guard let vc = FollowerVC.loadFromXIB(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func onClickOptions(_ sender: Any) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let action0 = UIAlertAction(title: "Block", style: .default) { (action) in
@@ -109,6 +123,10 @@ class RestaurantProfileVC: UIViewController {
     }
     
     @IBAction func onClickFollow(_ sender: Any) {
+        guard let vc = ReservationVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onClickReservation(_ sender: Any) {

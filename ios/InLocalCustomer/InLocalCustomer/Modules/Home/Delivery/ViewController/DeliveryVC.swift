@@ -17,7 +17,7 @@ class DeliveryVC: UIViewController {
     
     @IBOutlet weak var collectionViewMenuCategory: UICollectionView!
     @IBOutlet weak var tableViewDeliveryMenu: UITableView!
-
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,7 +123,19 @@ extension DeliveryVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryMenuTVC", for: indexPath) as! DeliveryMenuTVC
+        cell.btnCustomizable.addTarget(self, action: #selector(onClickCustomizable(sender:)), for: .touchUpInside)
+        cell.btnCustomizable.tag = indexPath.row
         return cell
     }
     
+}
+
+extension DeliveryVC{
+    @objc func onClickCustomizable(sender: UIButton){
+        let buttonTag = sender.tag
+        guard let vc = MenuCustomisationVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

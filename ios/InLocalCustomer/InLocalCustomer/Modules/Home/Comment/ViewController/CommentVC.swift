@@ -19,8 +19,10 @@ class CommentVC: UIViewController {
     @IBOutlet weak var viewMenuBack: UIView!
     @IBOutlet weak var lblLike: UILabel!
     
+    @IBOutlet weak var viewCommentBack: UIView!
     @IBOutlet weak var tableViewComment_Height: NSLayoutConstraint!
     
+    var isLiked = false
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,11 +62,44 @@ class CommentVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickRestaurant(_ sender: Any) {
+        guard let vc = RestaurantProfileVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onClickMenu(_ sender: Any) {
+        guard let vc = RestaurantMenuVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onClickSavedPost(_ sender: Any) {
+        guard let vc = SavedPostsVC.loadFromXIB() else{
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onClickLike(_ sender: UIButton) {
+        if isLiked{
+            isLiked = false
+            sender.setImage(#imageLiteral(resourceName: "like_empty_white"), for: .normal)
+        } else{
+            isLiked = true
+            sender.setImage(#imageLiteral(resourceName: "like_filled"), for: .normal)
+        }
+    }
+    
     func setupView(){
         viewMenuBack.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner], radius: 20.0)
         //lblLike.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMinYCorner], radius: lblLike.frame.height/2)
         lblLike.layer.cornerRadius = lblLike.frame.height / 2
         lblLike.layer.masksToBounds = true
+        
+        viewCommentBack.applyLightShadow()
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

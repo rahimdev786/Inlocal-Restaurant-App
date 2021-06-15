@@ -156,6 +156,11 @@
                                                                                 <constraint firstItem="Ewe-as-EFS" firstAttribute="top" secondItem="Qnw-Vz-h59" secondAttribute="top" id="PR7-eX-MSG"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="Ewe-as-EFS" secondAttribute="bottom" id="YNg-Et-Ujq"/>
                                                                             </constraints>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                    <integer key="value" value="4"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                     </subviews>
                                                                     <constraints>
@@ -282,6 +287,11 @@
                                                                                 <constraint firstItem="p7x-UQ-mHU" firstAttribute="leading" secondItem="i6q-Pr-bHW" secondAttribute="leading" constant="10" id="xZJ-ys-gEz"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="p7x-UQ-mHU" secondAttribute="bottom" constant="15" id="yNH-NO-KhB"/>
                                                                             </constraints>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                    <integer key="value" value="10"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                     </subviews>
                                                                     <constraints>
