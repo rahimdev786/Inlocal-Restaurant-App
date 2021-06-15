@@ -8,4 +8,6 @@
 //
 
 struct CustomPickerDependency {
+    let title: String
+    let postType: PostType
 }

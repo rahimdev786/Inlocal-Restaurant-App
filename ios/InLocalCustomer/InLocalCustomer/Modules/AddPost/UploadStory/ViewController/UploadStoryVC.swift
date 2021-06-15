@@ -13,7 +13,7 @@ import Photos
 class UploadStoryVC: UIViewController, UINavigationControllerDelegate {
     // MARK: Instance variables
 	lazy var dataManager = UploadStoryDataManager()
-    var dependency: UploadStoryDependency?
+    var dependency: UploadStoryDependency!
     
     let imagePicker = UIImagePickerController()
     var isImageSelected = false
@@ -72,6 +72,8 @@ class UploadStoryVC: UIViewController, UINavigationControllerDelegate {
             restaurantView.isHidden = true
             tagRestaurantView.isHidden = false
         }
+        
+        imgUpload.image = dependency.selectedImage
     }
     
     @IBAction func didTapOnBack(_ sender: UIButton) {
@@ -95,7 +97,7 @@ class UploadStoryVC: UIViewController, UINavigationControllerDelegate {
         
         //showActionSheet()
         
-        self.checkCameraAccess()
+        //self.checkCameraAccess()
     }
     
     func showActionSheet() {

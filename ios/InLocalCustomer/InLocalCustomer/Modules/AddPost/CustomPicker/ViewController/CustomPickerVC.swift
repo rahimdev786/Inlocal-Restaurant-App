@@ -17,7 +17,7 @@ protocol CustomPickerVCProtocol: AnyObject {
 class CustomPickerVC: UIViewController {
     // MARK: Instance variables
 	lazy var dataManager = CustomPickerDataManager()
-    var dependency: CustomPickerDependency?
+    var dependency: CustomPickerDependency!
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var imgPicked: UIImageView!
@@ -31,6 +31,8 @@ class CustomPickerVC: UIViewController {
         dataManager.apiResponseDelegate = self
         
         openImagePicker()
+        
+        lblTitle.text = dependency.title
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -60,7 +62,26 @@ class CustomPickerVC: UIViewController {
     @IBAction func didTapOnSave(_ sender: UIButton) {
         
         self.dismiss(animated: true) {
-            self.delegate?.didTapOnSave(image: self.imgPicked.image!)
+            //self.delegate?.didTapOnSave(image: self.imgPicked.image!)
+            
+            DispatchQueue.main.async {
+                if let rootVC = UIApplication.shared.windows.first?.rootViewController?.children.first{
+                    
+                    if self.dependency.postType == .story {
+                        let dependency = UploadStoryDependency(selectedImage: self.imgPicked.image!)
+                        let vc = UploadStoryVC.loadFromXIB(withDependency: dependency)
+                        rootVC.navigationController?.pushViewController(vc!, animated: true)
+                    }else{
+                        let dependency = UploadPostDependency(selectedImage: self.imgPicked.image!)
+                        guard let uploadPostVC = UploadPostVC.loadFromXIB(withDependency: dependency) else {
+                            return
+                        }
+                        rootVC.navigationController?.pushViewController(uploadPostVC, animated: true)
+                    }
+                    
+                }
+                
+            }
         }
         
     }

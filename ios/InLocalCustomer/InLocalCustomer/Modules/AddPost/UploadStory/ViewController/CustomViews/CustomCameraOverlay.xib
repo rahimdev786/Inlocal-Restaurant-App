@@ -74,6 +74,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="75" id="KQv-x7-JcV"/>
                                             </constraints>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Story">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -92,6 +93,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="75" id="DuQ-X2-EGM"/>
                                             </constraints>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Post">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -160,6 +162,10 @@
                 <constraint firstItem="NXT-ju-jO1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cGa-58-pvY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="NXT-ju-jO1" secondAttribute="bottom" id="h6P-5Q-eqm"/>
             </constraints>
+            <connections>
+                <outlet property="btnPost" destination="aEc-Ce-3XE" id="GAp-fR-BGI"/>
+                <outlet property="btnStory" destination="OA3-8T-0YK" id="pIt-1b-rua"/>
+            </connections>
             <point key="canvasLocation" x="-501" y="-84"/>
         </view>
     </objects>
