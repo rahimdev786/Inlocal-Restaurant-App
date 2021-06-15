@@ -117,6 +117,9 @@
                                                                     <constraint firstAttribute="height" constant="24" id="LXk-Cx-rUO"/>
                                                                 </constraints>
                                                                 <state key="normal" image="like_empty_white"/>
+                                                                <connections>
+                                                                    <action selector="onClickLike:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lfn-vl-YD0"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.6k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsc-B6-PEd">
                                                                 <rect key="frame" x="0.0" y="29" width="40" height="16"/>
@@ -144,6 +147,9 @@
                                                                             <constraint firstAttribute="width" secondItem="hzR-kY-FQd" secondAttribute="height" multiplier="1:1" id="X7z-FR-HNu"/>
                                                                         </constraints>
                                                                         <state key="normal" image="burgerking_icon"/>
+                                                                        <connections>
+                                                                            <action selector="onClickRestaurant:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3n0-hB-GAh"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRv-3v-BJL">
                                                                         <rect key="frame" x="0.0" y="53" width="38" height="38"/>
@@ -151,6 +157,9 @@
                                                                             <constraint firstAttribute="height" constant="38" id="frZ-4T-Cdq"/>
                                                                         </constraints>
                                                                         <state key="normal" image="menu_icon_white"/>
+                                                                        <connections>
+                                                                            <action selector="onClickMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xJP-m1-TAu"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDN-hf-ekN">
                                                                         <rect key="frame" x="0.0" y="106" width="38" height="38"/>
@@ -158,6 +167,9 @@
                                                                             <constraint firstAttribute="height" constant="38" id="Usb-hm-M4P"/>
                                                                         </constraints>
                                                                         <state key="normal" image="favrite_blue"/>
+                                                                        <connections>
+                                                                            <action selector="onClickSavedPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBS-uM-s4m"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -282,12 +294,51 @@
                                     <constraint firstItem="0t6-b5-XjM" firstAttribute="leading" secondItem="O0t-L6-DKd" secondAttribute="leading" id="rfH-Jb-V3R"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsC-lS-dPI">
+                                <rect key="frame" x="0.0" y="748" width="375" height="64"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_avtar" translatesAutoresizingMaskIntoConstraints="NO" id="Csy-9Z-rXg">
+                                        <rect key="frame" x="17" y="12" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ghV-Ij-f5q"/>
+                                            <constraint firstAttribute="width" secondItem="Csy-9Z-rXg" secondAttribute="height" multiplier="1:1" id="tQw-DX-YW3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write your comment here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-rb-wkd">
+                                        <rect key="frame" x="72" y="22.666666666666629" width="236" height="18.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZZ-Bv-LCU">
+                                        <rect key="frame" x="328" y="17" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="GtQ-Mj-L3G"/>
+                                            <constraint firstAttribute="width" secondItem="QZZ-Bv-LCU" secondAttribute="height" multiplier="1:1" id="K3w-Ee-XRy"/>
+                                        </constraints>
+                                        <state key="normal" image="send_message"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="QZZ-Bv-LCU" firstAttribute="centerY" secondItem="fsC-lS-dPI" secondAttribute="centerY" id="F4W-HV-OIe"/>
+                                    <constraint firstItem="Trv-rb-wkd" firstAttribute="leading" secondItem="Csy-9Z-rXg" secondAttribute="trailing" constant="15" id="O12-8i-FkU"/>
+                                    <constraint firstAttribute="trailing" secondItem="QZZ-Bv-LCU" secondAttribute="trailing" constant="17" id="bIK-iD-Jd3"/>
+                                    <constraint firstItem="Csy-9Z-rXg" firstAttribute="centerY" secondItem="fsC-lS-dPI" secondAttribute="centerY" id="bqz-z7-YSd"/>
+                                    <constraint firstItem="Csy-9Z-rXg" firstAttribute="leading" secondItem="fsC-lS-dPI" secondAttribute="leading" constant="17" id="dU9-7d-BG5"/>
+                                    <constraint firstAttribute="height" constant="64" id="gFE-ot-cIw"/>
+                                    <constraint firstItem="Trv-rb-wkd" firstAttribute="centerY" secondItem="Csy-9Z-rXg" secondAttribute="centerY" id="pgV-fM-EnB"/>
+                                    <constraint firstItem="QZZ-Bv-LCU" firstAttribute="leading" secondItem="Trv-rb-wkd" secondAttribute="trailing" constant="20" id="xEh-cT-ORL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="Yhv-mB-OzP" secondAttribute="trailing" id="0Cb-FB-RHl"/>
+                            <constraint firstItem="fsC-lS-dPI" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="4vq-qJ-DU6"/>
                             <constraint firstItem="O0t-L6-DKd" firstAttribute="top" secondItem="Yhv-mB-OzP" secondAttribute="bottom" id="9jR-gP-83v"/>
+                            <constraint firstAttribute="bottom" secondItem="fsC-lS-dPI" secondAttribute="bottom" id="Emk-7l-oyk"/>
+                            <constraint firstItem="fsC-lS-dPI" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Gxd-2U-2cw"/>
                             <constraint firstItem="O0t-L6-DKd" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="S19-vE-YhE"/>
                             <constraint firstItem="O0t-L6-DKd" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="VsW-c4-7EV"/>
                             <constraint firstItem="Yhv-mB-OzP" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="W9p-Ty-edS"/>
@@ -299,6 +350,7 @@
                         <outlet property="lblLike" destination="Dsc-B6-PEd" id="MVX-mb-KvL"/>
                         <outlet property="tableViewComment" destination="KFq-SG-Svz" id="jW2-hs-ty6"/>
                         <outlet property="tableViewComment_Height" destination="LUi-1K-Dkd" id="gaG-pm-4qe"/>
+                        <outlet property="viewCommentBack" destination="fsC-lS-dPI" id="Rlo-NR-df7"/>
                         <outlet property="viewMenuBack" destination="IAM-46-1ts" id="BhM-OP-3BX"/>
                     </connections>
                 </viewController>
@@ -311,11 +363,13 @@
         <image name="back_button_dark" width="24" height="22"/>
         <image name="burgerking_icon" width="38" height="38"/>
         <image name="burgerking_icon2" width="52" height="52"/>
+        <image name="comment_avtar" width="40" height="40"/>
         <image name="comment_bg_image" width="343" height="343"/>
         <image name="comment_image" width="60" height="60"/>
         <image name="favrite_blue" width="38" height="38"/>
         <image name="like_empty_white" width="24" height="24"/>
         <image name="menu_icon_white" width="38" height="38"/>
+        <image name="send_message" width="23.666666030883789" height="23"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

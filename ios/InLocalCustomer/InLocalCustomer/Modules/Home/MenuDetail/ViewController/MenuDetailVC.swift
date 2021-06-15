@@ -58,6 +58,13 @@ class MenuDetailVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickCustomizable(_ sender: Any) {
+        guard let vc = MenuCustomisationVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func setupView(){
         
         let widthValue = ((UIScreen.main.bounds.width-36)/2)

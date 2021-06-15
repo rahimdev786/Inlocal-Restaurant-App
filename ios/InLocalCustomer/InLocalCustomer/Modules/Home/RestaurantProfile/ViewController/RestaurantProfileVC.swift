@@ -123,7 +123,10 @@ class RestaurantProfileVC: UIViewController {
     }
     
     @IBAction func onClickFollow(_ sender: Any) {
-        
+        guard let vc = ReservationVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onClickReservation(_ sender: Any) {

@@ -201,6 +201,9 @@
                                                                                         <constraint firstAttribute="width" secondItem="uiG-o2-3Tp" secondAttribute="height" multiplier="1:1" id="pzt-Cd-7nV"/>
                                                                                     </constraints>
                                                                                     <state key="normal" image="like_empty_white"/>
+                                                                                    <connections>
+                                                                                        <action selector="onClickLike:" destination="RWT-pq-DJw" eventType="touchUpInside" id="4mO-eT-gyH"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.6k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EX5-Hc-4gZ">
                                                                                     <rect key="frame" x="0.0" y="40" width="40" height="16"/>
@@ -285,6 +288,10 @@
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                                 <connections>
+                                                                    <outlet property="btnComment" destination="SqX-fP-v9U" id="rHb-WF-6CQ"/>
+                                                                    <outlet property="btnMenu" destination="AZv-uN-fCQ" id="xM3-Or-U8L"/>
+                                                                    <outlet property="btnRestaurent" destination="9HG-Pa-UHl" id="bo3-yM-C3O"/>
+                                                                    <outlet property="btnSavedPost" destination="TFi-6f-trv" id="cju-fg-j7t"/>
                                                                     <outlet property="imgViewPost" destination="DXb-UA-ick" id="GFn-PP-1eS"/>
                                                                     <outlet property="lblLikeCount" destination="EX5-Hc-4gZ" id="dBd-Kf-IN0"/>
                                                                     <outlet property="viewMenuContainer" destination="ZgI-iJ-SPQ" id="670-63-nbV"/>

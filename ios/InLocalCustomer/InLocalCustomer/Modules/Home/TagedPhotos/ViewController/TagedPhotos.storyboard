@@ -121,6 +121,9 @@
                                                                 <constraint firstAttribute="height" constant="24" id="vBy-cg-Jf8"/>
                                                             </constraints>
                                                             <state key="normal" image="like_empty_white"/>
+                                                            <connections>
+                                                                <action selector="onClickLike:" destination="ghM-O4-IsR" eventType="touchUpInside" id="2jC-8L-XjO"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.6k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IST-8o-IFl">
                                                             <rect key="frame" x="0.0" y="29" width="40" height="16"/>
@@ -213,6 +216,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnComment" destination="Y8L-sk-yS9" id="jei-Q8-fEn"/>
+                                            <outlet property="btnMenu" destination="Rkw-nn-mWO" id="DbI-ih-tgI"/>
+                                            <outlet property="btnRestaurent" destination="RYl-fl-P4j" id="Sjf-ge-1Co"/>
+                                            <outlet property="btnSavedPost" destination="nVd-Hq-hR9" id="lcI-s5-ESJ"/>
                                             <outlet property="imgViewPost" destination="Dvi-X1-3RN" id="Cvj-cQ-Mva"/>
                                             <outlet property="lblLikeCount" destination="IST-8o-IFl" id="WOg-MF-EBr"/>
                                             <outlet property="viewMenuContainer" destination="zxr-jm-eDt" id="Y7B-1m-LcZ"/>
