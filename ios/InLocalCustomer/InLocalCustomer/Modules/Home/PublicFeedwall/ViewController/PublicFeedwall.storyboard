@@ -292,6 +292,8 @@
                                                                     <outlet property="btnMenu" destination="AZv-uN-fCQ" id="xM3-Or-U8L"/>
                                                                     <outlet property="btnRestaurent" destination="9HG-Pa-UHl" id="bo3-yM-C3O"/>
                                                                     <outlet property="btnSavedPost" destination="TFi-6f-trv" id="cju-fg-j7t"/>
+                                                                    <outlet property="btnUserName" destination="dox-t8-cFd" id="orP-NY-tvj"/>
+                                                                    <outlet property="btnUserProfile" destination="ZHV-JM-Bsu" id="Snf-eP-fMZ"/>
                                                                     <outlet property="imgViewPost" destination="DXb-UA-ick" id="GFn-PP-1eS"/>
                                                                     <outlet property="lblLikeCount" destination="EX5-Hc-4gZ" id="dBd-Kf-IN0"/>
                                                                     <outlet property="viewMenuContainer" destination="ZgI-iJ-SPQ" id="670-63-nbV"/>

@@ -130,6 +130,12 @@ extension PublicFeedwallVC: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedwallPostTVC", for: indexPath) as! FeedwallPostTVC
+        cell.btnUserProfile.addTarget(self, action: #selector(onUserProfile(sender:)), for: .touchUpInside)
+        cell.btnUserProfile.tag = indexPath.row
+        
+        cell.btnUserName.addTarget(self, action: #selector(onUserProfile(sender:)), for: .touchUpInside)
+        cell.btnUserName.tag = indexPath.row
+        
         cell.btnRestaurent.addTarget(self, action: #selector(onClickRestaurent(sender:)), for: .touchUpInside)
         cell.btnRestaurent.tag = indexPath.row
         
@@ -147,6 +153,14 @@ extension PublicFeedwallVC: UITableViewDataSource{
 }
 
 extension PublicFeedwallVC {
+    @objc func onUserProfile(sender: UIButton){
+        let buttonTag = sender.tag
+        guard let vc = UserProfileVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc func onClickRestaurent(sender: UIButton){
         let buttonTag = sender.tag
         guard let vc = RestaurantProfileVC.load(withDependency: nil) else{

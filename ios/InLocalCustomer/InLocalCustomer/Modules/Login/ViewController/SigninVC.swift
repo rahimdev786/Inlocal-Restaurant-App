@@ -27,6 +27,8 @@ class SigninVC: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     
+    var userLoginData = LoginDetails()
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,20 +79,26 @@ class SigninVC: UIViewController {
     // MARK: Methods
     func setupUI() {
       
-        txtFieldPhoneNumber.layer.cornerRadius = txtFieldPhoneNumber.layer.bounds.height/2
-        txtFieldPhoneNumber.layer.masksToBounds = true
         txtFieldPhoneNumber.delegate = self
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone no", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.next
         
-        txtFieldPassword.layer.cornerRadius = txtFieldPhoneNumber.layer.bounds.height/2
-        txtFieldPassword.layer.masksToBounds = true
         txtFieldPassword.delegate = self
         txtFieldPassword.populateWithData(text: "", placeholderText: "Password", fieldType: .password)
         txtFieldPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
         
+        validateFields()
     }
     
+    func validateFields() {
+        if userLoginData.phone?.isNullString() ?? true || userLoginData.password?.isNullString() ?? true{
+            btnLogin.alpha = 0.5
+            btnLogin.isUserInteractionEnabled = false
+        } else{
+           btnLogin.alpha = 1
+           btnLogin.isUserInteractionEnabled = true
+        }
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -119,7 +127,27 @@ extension SigninVC: SigninAPIResponseDelegate {
     }
     
     func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
+        let strText = string
+        let fieldType = textFieldView.fieldType!
+        switch fieldType {
+        case .phone:
+            if strText.isNullString() {
+                userLoginData.phone = ""
+                textFieldView.showError(with: "* Required")
+            } else {
+                userLoginData.phone = strText
+                textFieldView.hideError()
+            }
+            
+        case .password:
+            userLoginData.password = strText
+            strText.isNullString() ? textFieldView.showError(with: "* Required") : textFieldView.hideError()
+            
+        default:
+            break
+        }
         
+        validateFields()
     }
     
      func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {

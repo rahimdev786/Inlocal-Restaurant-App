@@ -62,6 +62,7 @@
                                                 </constraints>
                                                 <state key="normal" image="cross_white"/>
                                                 <connections>
+                                                    <action selector="onClickBackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rkl-6I-6Fm"/>
                                                     <action selector="onClickClose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zus-Zc-ERC"/>
                                                 </connections>
                                             </button>

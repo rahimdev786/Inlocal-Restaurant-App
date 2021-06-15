@@ -10,3 +10,9 @@
 struct ChangePasswordDependency {
 
 }
+
+struct ChangePasswordRequest {
+    var currentPassword: String?
+    var newPassword: String?
+    var confirmNewPassword: String?
+}

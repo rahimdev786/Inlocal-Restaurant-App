@@ -274,6 +274,7 @@
 		C185D96C2664FDFA00BCDA2E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185D96A2664FDFA00BCDA2E /* TextFieldView.swift */; };
 		C185D96D2664FDFA00BCDA2E /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C185D96B2664FDFA00BCDA2E /* TextFieldView.xib */; };
 		C1864853267843B900413491 /* MenuCustomisationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1864852267843B900413491 /* MenuCustomisationTVC.swift */; };
+		C186486D267861E200413491 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186486C267861E200413491 /* String.swift */; };
 		C19DB9D22665E7E300028326 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB9CA2665E7E300028326 /* ChangePasswordVC.swift */; };
 		C19DB9D32665E7E300028326 /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C19DB9CB2665E7E300028326 /* ChangePassword.storyboard */; };
 		C19DB9D42665E7E300028326 /* ChangePasswordAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB9CD2665E7E300028326 /* ChangePasswordAPIDataManager.swift */; };
@@ -651,6 +652,7 @@
 		C185D96A2664FDFA00BCDA2E /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		C185D96B2664FDFA00BCDA2E /* TextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		C1864852267843B900413491 /* MenuCustomisationTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCustomisationTVC.swift; sourceTree = "<group>"; };
+		C186486C267861E200413491 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C19DB9CA2665E7E300028326 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		C19DB9CB2665E7E300028326 /* ChangePassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
 		C19DB9CD2665E7E300028326 /* ChangePasswordAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordAPIDataManager.swift; sourceTree = "<group>"; };
@@ -1719,6 +1721,7 @@
 			isa = PBXGroup;
 			children = (
 				C10C76AD265FA55F00473CB7 /* UIKit */,
+				C186486B2678618D00413491 /* Foundation */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2192,6 +2195,14 @@
 				C1864852267843B900413491 /* MenuCustomisationTVC.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C186486B2678618D00413491 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				C186486C267861E200413491 /* String.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		C19DB9BC2665E77D00028326 /* ChangePassword */ = {
@@ -3062,6 +3073,7 @@
 				C1B963B42667910D00CECDDF /* NotificationTVC.swift in Sources */,
 				6D4821B22667A75700F1DE01 /* BookingListDataManager.swift in Sources */,
 				C10C7689265FA20700473CB7 /* AppColors.swift in Sources */,
+				C186486D267861E200413491 /* String.swift in Sources */,
 				C10FBA7C266DD1A50012FD8E /* RestaurantMenuLocalDataManager.swift in Sources */,
 				C1042D302669DF500054B24D /* RestaurantProfileAPIDataManager.swift in Sources */,
 				C1AACA19267714B9000D4D2A /* AddAddressDataManager.swift in Sources */,

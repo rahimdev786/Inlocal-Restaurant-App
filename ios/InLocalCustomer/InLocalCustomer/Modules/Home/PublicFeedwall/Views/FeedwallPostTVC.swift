@@ -21,6 +21,10 @@ class FeedwallPostTVC: UITableViewCell {
     @IBOutlet weak var btnSavedPost: UIButton!
     @IBOutlet weak var btnComment: UIButton!
     
+    @IBOutlet weak var btnUserProfile: UIButton!
+    
+    @IBOutlet weak var btnUserName: UIButton!
+    
     var isMenuOpen = false
     var isLiked = false
     override func awakeFromNib() {

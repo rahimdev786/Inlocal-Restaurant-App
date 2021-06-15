@@ -10,3 +10,8 @@
 struct SigninDependency {
 
 }
+
+struct LoginDetails{
+    var phone: String?
+    var password: String?
+}
