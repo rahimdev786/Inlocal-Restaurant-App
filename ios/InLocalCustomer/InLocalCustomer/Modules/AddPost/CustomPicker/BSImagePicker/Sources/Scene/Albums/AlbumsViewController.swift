@@ -70,7 +70,7 @@ protocol AlbumsViewControllerDelegate: class {
         lineView.frame.origin.y = view.frame.size.height - lineHeight
         lineView.backgroundColor = .gray
         lineView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
-        view.addSubview(lineView)
+        //view.addSubview(lineView)
 
         self.providesPresentationContextTransitionStyle = true
         self.definesPresentationContext = true

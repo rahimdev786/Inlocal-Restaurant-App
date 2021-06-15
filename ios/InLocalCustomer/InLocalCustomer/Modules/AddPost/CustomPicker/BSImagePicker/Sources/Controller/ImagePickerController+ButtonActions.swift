@@ -33,9 +33,10 @@ extension ImagePickerController {
         
         //*******************Changed
         
-        albumsViewController.view.frame = self.view.frame
-        
-        present(albumsViewController, animated: true)
+        //albumsViewController.view.frame = self.view.frame
+        albumsViewController.view.frame = CGRect(x: 0.0, y: self.view.frame.origin.y - 40.0, width: self.view.frame.width, height: self.view.frame.height + 40.0)
+        self.view.addSubview(albumsViewController.view)
+        //present(albumsViewController, animated: true)
     }
 
     @objc func doneButtonPressed(_ sender: UIBarButtonItem) {

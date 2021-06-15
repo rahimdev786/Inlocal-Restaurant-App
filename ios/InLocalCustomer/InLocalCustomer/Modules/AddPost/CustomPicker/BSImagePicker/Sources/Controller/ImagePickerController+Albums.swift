@@ -30,7 +30,8 @@ extension ImagePickerController: AlbumsViewControllerDelegate {
     
     func albumsViewController(_ albumsViewController: AlbumsViewController, didSelectAlbum album: PHAssetCollection) {
         select(album: album)
-        albumsViewController.dismiss(animated: true)
+        //albumsViewController.dismiss(animated: true)
+        albumsViewController.view.removeFromSuperview()
     }
 
     func select(album: PHAssetCollection) {

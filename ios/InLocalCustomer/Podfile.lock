@@ -5,6 +5,7 @@ PODS:
     - ObjectMapper (~> 3.5.1)
   - AZTabBar (1.4.2):
     - EasyNotificationBadge
+  - CalendarDateRangePicker (2.0)
   - EasyNotificationBadge (1.2.5)
   - GoogleMaps (3.9.0):
     - GoogleMaps/Maps (= 3.9.0)
@@ -24,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - AlamofireObjectMapper
   - AZTabBar
+  - CalendarDateRangePicker
   - GoogleMaps
   - GooglePlaces
   - IQKeyboardManagerSwift (~> 6.4.1)
@@ -38,6 +40,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireObjectMapper
     - AZTabBar
+    - CalendarDateRangePicker
     - EasyNotificationBadge
     - GoogleMaps
     - GooglePlaces
@@ -53,6 +56,7 @@ SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   AZTabBar: e4d5a1f5f3fc7be044d532b7a704d303cff9af11
+  CalendarDateRangePicker: fa5f660023cf896180c04fe5c7687106734a54e4
   EasyNotificationBadge: a3ebbcb1de0c0558e102e954380c75801f352702
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
   GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
@@ -64,6 +68,6 @@ SPEC CHECKSUMS:
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: d157a231c3782c776019112dbcdc1dad812cc011
+PODFILE CHECKSUM: 5af44f21cc095add31d59762f362bbec0980ea52
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

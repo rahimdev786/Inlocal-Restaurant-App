@@ -115,6 +115,31 @@ import Photos
         
         // Setup buttons
         let firstViewController = viewControllers.first
+        
+//        albumButton.setTitleColor(albumButton.tintColor, for: .normal)
+//        albumButton.titleLabel?.font = .systemFont(ofSize: 16)
+//        albumButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//
+//        let arrowView = ArrowView(frame: CGRect(x: 0, y: 0, width: 8, height: 8))
+//        arrowView.backgroundColor = .clear
+//        arrowView.strokeColor = albumButton.tintColor
+//        let image = arrowView.asImage
+//
+//        albumButton.setImage(image, for: .normal)
+//        albumButton.semanticContentAttribute = .forceRightToLeft // To set image to the right without having to calculate insets/constraints.
+//        albumButton.addTarget(self, action: #selector(ImagePickerController.albumsButtonPressed(_:)), for: .touchUpInside)
+//        firstViewController?.navigationItem.titleView = albumButton
+
+//        doneButton.target = self
+//        doneButton.action = #selector(doneButtonPressed(_:))
+//        firstViewController?.navigationItem.rightBarButtonItem = doneButton
+
+        //************ Changed
+        
+//        cancelButton.target = self
+//        cancelButton.action = #selector(cancelButtonPressed(_:))
+//        firstViewController?.navigationItem.leftBarButtonItem = cancelButton
+        
         albumButton.setTitleColor(albumButton.tintColor, for: .normal)
         albumButton.titleLabel?.font = .systemFont(ofSize: 16)
         albumButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -127,16 +152,15 @@ import Photos
         albumButton.setImage(image, for: .normal)
         albumButton.semanticContentAttribute = .forceRightToLeft // To set image to the right without having to calculate insets/constraints.
         albumButton.addTarget(self, action: #selector(ImagePickerController.albumsButtonPressed(_:)), for: .touchUpInside)
-        firstViewController?.navigationItem.titleView = albumButton
-
-        doneButton.target = self
-        doneButton.action = #selector(doneButtonPressed(_:))
-        firstViewController?.navigationItem.rightBarButtonItem = doneButton
-
-        cancelButton.target = self
-        cancelButton.action = #selector(cancelButtonPressed(_:))
-        firstViewController?.navigationItem.leftBarButtonItem = cancelButton
-        
+        let contentView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 110, height: 25.0))
+        albumButton.frame = CGRect(x: 18.0, y: 2.0, width: 90, height: 25.0)
+        contentView.backgroundColor = .lightGray
+        contentView.layer.cornerRadius = 12.5
+        //contentView.bounds = contentView.bounds.offsetBy(dx: -50, dy: 0)
+        contentView.addSubview(albumButton)
+        let leftBarButton = UIBarButtonItem(customView: contentView)
+        firstViewController?.navigationItem.leftBarButtonItem = leftBarButton
+        firstViewController?.navigationController?.navigationBar.bounds = (firstViewController?.navigationController?.navigationBar.bounds.offsetBy(dx: 10, dy: 0))!
         updatedDoneButton()
         updateAlbumButton()
 
@@ -148,6 +172,8 @@ import Photos
         if let firstAlbum = albums.first {
             select(album: firstAlbum)
         }
+        
+        firstViewController?.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
     
     // Actually it will update cancel button after modification

@@ -9,8 +9,14 @@
 
 import UIKit
 import AZTabBar
+import Photos
 
-class BottumTabBarVC: UIViewController {
+enum PostType {
+    case story
+    case post
+}
+
+class BottumTabBarVC: UIViewController, UINavigationControllerDelegate {
     
     // MARK: Instance variables
 	lazy var dataManager = BottumTabBarDataManager()
@@ -18,6 +24,11 @@ class BottumTabBarVC: UIViewController {
     
     var counter = 0
     var tabController:AZTabBarController!
+    
+    let imagePicker = UIImagePickerController()
+    var isImageSelected = false
+    var selectedImage: UIImage?
+    var postType:PostType = .story
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -107,10 +118,11 @@ extension BottumTabBarVC{
         }
         tabController.setViewController(searchViewController, atIndex: 1)
         
-        guard let uploadStoryVC = UploadStoryVC.loadFromXIB(withDependency: nil) else {
-            return
-        }
-        tabController.setViewController(uploadStoryVC, atIndex: 2)
+//        guard let uploadStoryVC = UploadStoryVC.loadFromXIB(withDependency: nil) else {
+//            return
+//        }
+//        tabController.setViewController(uploadStoryVC, atIndex: 2)
+        
         
         //CartVC
         guard let cartViewController = CartVC.load(withDependency: nil) else {
@@ -179,6 +191,9 @@ extension BottumTabBarVC{
 
         tabController.setAction(atIndex: 2) {
             self.tabController.onlyShowTextForSelectedButtons = !self.tabController.onlyShowTextForSelectedButtons
+            
+            self.checkCameraAccess()
+            
         }
 
         tabController.setAction(atIndex: 4) {
@@ -239,4 +254,167 @@ extension BottumTabBarVC: AZTabBarDelegate{
 //        return tabBar.selectedIndex == index ? nil : audioId
 //    }
     
+}
+
+extension BottumTabBarVC{
+    
+    func checkCameraAccess() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .denied:
+            ()
+        case .restricted:
+            ()
+        case .authorized:
+            DispatchQueue.main.async {
+                self.openImagePicker(isCamera: true)
+            }
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { success in
+                DispatchQueue.main.async {
+                    if success {
+                        self.openImagePicker(isCamera: true)
+                    } else {
+                    }
+                }
+            }
+        default:
+            ()
+        }
+    }
+    
+    func checkPhotoLibraryPermission() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .authorized:
+            DispatchQueue.main.async {
+                self.openImagePicker(isCamera: false)
+            }
+        case .denied, .restricted :
+            ()
+        case .notDetermined:
+            // ask for permissions
+            PHPhotoLibrary.requestAuthorization { (status) in
+                DispatchQueue.main.async {
+                    switch status {
+                    case .authorized:
+                        self.openImagePicker(isCamera: false)
+                    case .denied, .restricted:
+                        ()
+                    case .notDetermined:
+                        ()
+                    default:
+                        ()
+                    }
+                }
+            }
+        default:
+            ()
+        }
+    }
+    
+    func openImagePicker(isCamera: Bool) {
+        self.imagePicker.delegate = self
+        if isCamera {
+            //self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = .camera
+            //customize
+            self.imagePicker.showsCameraControls = true
+             self.imagePicker.cameraFlashMode = .on
+             self.imagePicker.showsCameraControls = false
+            let overlayView = Bundle.main.loadNibNamed("CustomCameraOverlay", owner: nil, options: nil)?.first as! CustomCameraOverlay
+            overlayView.delegate = self
+            overlayView.frame = (self.imagePicker.cameraOverlayView?.frame)!
+            imagePicker.cameraViewTransform = CGAffineTransform(translationX: 0.0, y: 100.0)
+            self.imagePicker.cameraOverlayView = overlayView
+            self.imagePicker.cameraFlashMode = .on
+            self.present(self.imagePicker, animated: true, completion: nil)
+        } else {
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+    }
+}
+
+// MARK: - UIImagePickerCintrollerDelegate
+extension BottumTabBarVC: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        isImageSelected = true
+        selectedImage = img
+        dismiss(animated: true) {
+            
+            if self.postType == .story {
+                let dependency = UploadStoryDependency(selectedImage: self.selectedImage!)
+                guard let uploadStoryVC = UploadStoryVC.loadFromXIB(withDependency: dependency) else {
+                    return
+                }
+                self.navigationController?.pushViewController(uploadStoryVC, animated: true)
+            }else{
+                let dependency = UploadPostDependency(selectedImage: self.selectedImage!)
+                guard let uploadPostVC = UploadPostVC.loadFromXIB(withDependency: dependency) else {
+                    return
+                }
+                self.navigationController?.pushViewController(uploadPostVC, animated: true)
+            }
+            
+        }
+    }
+}
+
+extension BottumTabBarVC: CustomCameraOverlayProtocol {
+    
+    func cameraTapped(isSelected:Bool) {
+        
+        imagePicker.takePicture()
+//        if isSelected {
+//            imagePicker.cameraDevice = .front
+//        }else{
+//            imagePicker.cameraDevice = .rear
+//        }
+        
+    }
+    
+    func cameraCancelled() {
+        imagePicker.dismiss(animated: true) {
+            
+        }
+    }
+    
+    func galleryTapped() {
+        imagePicker.dismiss(animated: true) {
+            //open gallery
+            var dependency: CustomPickerDependency?
+            if self.postType == .story {
+                dependency = CustomPickerDependency(title: "New Story", postType: .story)
+            }else{
+                dependency = CustomPickerDependency(title: "New Post", postType: .post)
+            }
+            let customPicker = CustomPickerVC.loadFromXIB(withDependency: dependency!)
+            customPicker?.delegate = self
+            customPicker?.showModally(with: self)
+        }
+    }
+    
+    func flashTapped() {
+        self.imagePicker.cameraFlashMode = .off
+    }
+    
+    func storyTapped() {
+        postType = .story
+    }
+    
+    func postTapped() {
+        postType = .post
+    }
+}
+
+extension BottumTabBarVC:CustomPickerVCProtocol {
+    func didTapOnSave(image: UIImage) {
+        selectedImage = image
+    }
+    func didTapOnCamera(){
+        self.checkCameraAccess()
+    }
 }

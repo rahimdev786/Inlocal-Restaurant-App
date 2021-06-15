@@ -78,12 +78,12 @@ import Photos
         public lazy var min: Int = 1
         
         /// If it reaches the max limit, unselect the first selection, and allow the new selection
-        public lazy var unselectOnReachingMax : Bool = false
+        public lazy var unselectOnReachingMax : Bool = true
     }
 
     public class List : NSObject {
         /// How much spacing between cells
-        public lazy var spacing: CGFloat = 2
+        public lazy var spacing: CGFloat = 5
         
         /// How many cells per row
         public lazy var cellsPerRow: (_ verticalSize: UIUserInterfaceSizeClass, _ horizontalSize: UIUserInterfaceSizeClass) -> Int = {(verticalSize: UIUserInterfaceSizeClass, horizontalSize: UIUserInterfaceSizeClass) -> Int in

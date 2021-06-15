@@ -13,7 +13,7 @@ import Photos
 class UploadStoryVC: UIViewController, UINavigationControllerDelegate {
     // MARK: Instance variables
 	lazy var dataManager = UploadStoryDataManager()
-    var dependency: UploadStoryDependency?
+    var dependency: UploadStoryDependency!
     
     let imagePicker = UIImagePickerController()
     var isImageSelected = false
@@ -72,6 +72,8 @@ class UploadStoryVC: UIViewController, UINavigationControllerDelegate {
             restaurantView.isHidden = true
             tagRestaurantView.isHidden = false
         }
+        
+        imgUpload.image = dependency.selectedImage
     }
     
     @IBAction func didTapOnBack(_ sender: UIButton) {
@@ -93,7 +95,9 @@ class UploadStoryVC: UIViewController, UINavigationControllerDelegate {
     
     @IBAction func didTapOnUpload(_ sender: UIButton) {
         
-        showActionSheet()
+        //showActionSheet()
+        
+        //self.checkCameraAccess()
     }
     
     func showActionSheet() {
@@ -245,6 +249,7 @@ extension UploadStoryVC: CustomCameraOverlayProtocol {
         imagePicker.dismiss(animated: true) {
             //open gallery
             let customPicker = CustomPickerVC.loadFromXIB(withDependency: nil)
+            customPicker?.delegate = self
             customPicker?.showModally(with: self)
         }
     }
@@ -259,5 +264,14 @@ extension UploadStoryVC: CustomCameraOverlayProtocol {
     
     func postTapped() {
         
+    }
+}
+
+extension UploadStoryVC:CustomPickerVCProtocol {
+    func didTapOnSave(image: UIImage) {
+        imgUpload.image = image
+    }
+    func didTapOnCamera(){
+        self.checkCameraAccess()
     }
 }

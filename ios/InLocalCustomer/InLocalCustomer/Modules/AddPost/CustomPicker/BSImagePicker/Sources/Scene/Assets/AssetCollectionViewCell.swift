@@ -34,29 +34,35 @@ class AssetCollectionViewCell: UICollectionViewCell {
     var selectionIndex: Int? {
         didSet { selectionView.selectionIndex = selectionIndex }
     }
+    
 
 
     override var isSelected: Bool {
         didSet {
             guard oldValue != isSelected else { return }
             
-            updateAccessibilityLabel(isSelected)
-            if UIView.areAnimationsEnabled {
-                UIView.animate(withDuration: TimeInterval(0.1), animations: { () -> Void in
-                    // Set alpha for views
-                    self.updateAlpha(self.isSelected)
-
-                    // Scale all views down a little
-                    self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-                }, completion: { (finished: Bool) -> Void in
+            if oldValue == true {
+                
+            }else{
+                updateAccessibilityLabel(isSelected)
+                if UIView.areAnimationsEnabled {
                     UIView.animate(withDuration: TimeInterval(0.1), animations: { () -> Void in
-                        // And then scale them back upp again to give a bounce effect
-                        self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                    }, completion: nil)
-                })
-            } else {
-                updateAlpha(isSelected)
+                        // Set alpha for views
+                        self.updateAlpha(self.isSelected)
+
+                        // Scale all views down a little
+                        self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                    }, completion: { (finished: Bool) -> Void in
+                        UIView.animate(withDuration: TimeInterval(0.1), animations: { () -> Void in
+                            // And then scale them back upp again to give a bounce effect
+                            self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        }, completion: nil)
+                    })
+                } else {
+                    updateAlpha(isSelected)
+                }
             }
+            
         }
     }
     
@@ -70,6 +76,9 @@ class AssetCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10.0
+        contentView.layer.cornerRadius = 10.0
+        selectionOverlayView.layer.cornerRadius = 10.0
         selectionOverlayView.backgroundColor = UIColor.systemOverlayColor
         selectionOverlayView.translatesAutoresizingMaskIntoConstraints = false
         selectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,8 +99,8 @@ class AssetCollectionViewCell: UICollectionViewCell {
             selectionOverlayView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             selectionOverlayView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             selectionOverlayView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            selectionView.heightAnchor.constraint(equalToConstant: 20),
-            selectionView.widthAnchor.constraint(equalToConstant: 20),
+            selectionView.heightAnchor.constraint(equalToConstant: 0),
+            selectionView.widthAnchor.constraint(equalToConstant: 0),
 //            selectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
 //            selectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
             selectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
@@ -118,7 +127,7 @@ class AssetCollectionViewCell: UICollectionViewCell {
     
     // ***** Changed
     
-    private func updateAlpha(_ selected: Bool) {
+    func updateAlpha(_ selected: Bool) {
         if selected {
             selectionView.bgColor = .white
             self.selectionView.alpha = 1.0
