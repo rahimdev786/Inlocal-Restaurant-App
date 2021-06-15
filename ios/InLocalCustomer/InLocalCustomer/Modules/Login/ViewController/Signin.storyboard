@@ -73,7 +73,7 @@
                                                                 <rect key="frame" x="0.0" y="32" width="341" height="51"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="51" id="bjN-tp-sNK"/>
+                                                                    <constraint firstAttribute="height" constant="51" placeholder="YES" id="bjN-tp-sNK"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -97,7 +97,7 @@
                                                                 <rect key="frame" x="0.0" y="32.000000000000057" width="341" height="51"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="51" id="ZHL-pQ-gAX"/>
+                                                                    <constraint firstAttribute="height" constant="51" placeholder="YES" id="ZHL-pQ-gAX"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -159,7 +159,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="xFK-ti-qmZ" firstAttribute="leading" secondItem="2zP-YK-uWc" secondAttribute="leading" constant="17" id="3JQ-OH-iap"/>
                                             <constraint firstItem="5OM-O0-0AH" firstAttribute="centerX" secondItem="gjK-gq-1jS" secondAttribute="centerX" id="61L-5b-qHn"/>

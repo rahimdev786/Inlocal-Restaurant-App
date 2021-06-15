@@ -10,3 +10,7 @@
 struct ForgotPasswordDependency {
 
 }
+
+struct ForgotPasswordRequest{
+    var phone: String?
+}

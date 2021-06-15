@@ -21,8 +21,9 @@ class ForgotPasswordVC: UIViewController {
     @IBOutlet weak var lblPhoneNumber: UILabel!
     
     @IBOutlet weak var txtFieldPhoneNumber: TextFieldView!
-    
     @IBOutlet weak var btnContinue: UIButton!
+    
+    var forgotPasswordRequest = ForgotPasswordRequest()
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -66,12 +67,21 @@ class ForgotPasswordVC: UIViewController {
     
     // MARK: Methods
     func setupUI() {
-      
-        txtFieldPhoneNumber.layer.cornerRadius = txtFieldPhoneNumber.layer.bounds.height/2
-        txtFieldPhoneNumber.layer.masksToBounds = true
         txtFieldPhoneNumber.delegate = self
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone no", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.next
+        
+        validateFields()
+    }
+    
+    func validateFields() {
+        if forgotPasswordRequest.phone?.isNullString() ?? true{
+            btnContinue.alpha = 0.5
+            btnContinue.isUserInteractionEnabled = false
+        } else{
+            btnContinue.alpha = 1
+            btnContinue.isUserInteractionEnabled = true
+        }
     }
 }
 
@@ -100,9 +110,25 @@ extension ForgotPasswordVC: TextFieldDelegate{
        
    }
    
-   func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
-       
-   }
+    func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
+        let strText = string
+        let fieldType = textFieldView.fieldType!
+        switch fieldType {
+        case .phone:
+            if strText.isNullString() {
+                forgotPasswordRequest.phone = ""
+                textFieldView.showError(with: "* Required")
+            } else {
+                forgotPasswordRequest.phone = strText
+                textFieldView.hideError()
+            }
+            
+        default:
+            break
+        }
+        
+        validateFields()
+    }
    
     func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {
         
@@ -110,11 +136,6 @@ extension ForgotPasswordVC: TextFieldDelegate{
     
     func textFieldViewShouldReturn(_ textFieldView: TextFieldView) -> Bool {
        
-            if textFieldView == txtFieldPhoneNumber{
-               txtFieldPhoneNumber.txtFldInput.becomeFirstResponder()
-            } else{
-                textFieldView.txtFldInput.resignFirstResponder()
-            }
         return true
     }
     

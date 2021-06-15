@@ -35,6 +35,8 @@ class SignupVC: UIViewController {
     @IBOutlet weak var btnContinue: UIButton!
     @IBOutlet weak var btnSignIn: UIButton!
     
+    var signUpRequest = SignUpRequest()
+    
     let otpView = ValidateOTP.instanceFromNib()
     var isTermConditionAccepted = false
     // MARK: - View Life Cycle Methods
@@ -109,29 +111,33 @@ class SignupVC: UIViewController {
         otpView.imgViewBckGrnd.backgroundColor = .black
         otpView.imgViewBckGrnd.alpha = 0.6
         
-        txtFieldFullName.layer.cornerRadius = txtFieldFullName.layer.bounds.height/2
-        txtFieldFullName.layer.masksToBounds = true
         txtFieldFullName.delegate = self
         txtFieldFullName.populateWithData(text: "", placeholderText: "Full Name", fieldType: .firstName)
         txtFieldFullName.txtFldInput.returnKeyType = UIReturnKeyType.next
         
-        txtFieldEmailAddress.layer.cornerRadius = txtFieldEmailAddress.layer.bounds.height/2
-        txtFieldEmailAddress.layer.masksToBounds = true
         txtFieldEmailAddress.delegate = self
         txtFieldEmailAddress.populateWithData(text: "", placeholderText: "Email Address", fieldType: .email)
         txtFieldEmailAddress.txtFldInput.returnKeyType = UIReturnKeyType.default
         
-        txtFieldPhoneNo.layer.cornerRadius = txtFieldPhoneNo.layer.bounds.height/2
-        txtFieldPhoneNo.layer.masksToBounds = true
         txtFieldPhoneNo.delegate = self
         txtFieldPhoneNo.populateWithData(text: "", placeholderText: "Phone Number", fieldType: .phone)
         txtFieldPhoneNo.txtFldInput.returnKeyType = UIReturnKeyType.next
         
-        txtFieldPassword.layer.cornerRadius = txtFieldPassword.layer.bounds.height/2
-        txtFieldPassword.layer.masksToBounds = true
         txtFieldPassword.delegate = self
         txtFieldPassword.populateWithData(text: "", placeholderText: "Password", fieldType: .password)
         txtFieldPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
+        
+        validateFields()
+    }
+    
+    func validateFields() {
+        if signUpRequest.fullName?.isNullString() ?? true || signUpRequest.email?.isNullString() ?? true || signUpRequest.phone?.isNullString() ?? true || signUpRequest.password?.isNullString() ?? true{
+            btnContinue.alpha = 0.5
+            btnContinue.isUserInteractionEnabled = false
+        } else{
+            btnContinue.alpha = 1
+            btnContinue.isUserInteractionEnabled = true
+        }
     }
 }
 
@@ -160,10 +166,61 @@ extension SignupVC: TextFieldDelegate{
        
    }
    
-   func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
-       
-   }
-   
+    func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
+        let strText = string
+        let fieldType = textFieldView.fieldType!
+        switch fieldType {
+        case .firstName:
+            signUpRequest.fullName = strText
+            if strText.isNullString() {
+                textFieldView.showError(with: "* Required")
+            
+            } else if Validator.isValid(itemToValidate: strText , validationType: .name){
+                textFieldView.hideError()
+            } else{
+                textFieldView.showError(with: "Enter valid fullname")
+            }
+        case .phone:
+            if strText.isNullString() {
+                signUpRequest.phone = ""
+                textFieldView.showError(with: "* Required")
+            } else {
+                signUpRequest.phone = strText
+                textFieldView.hideError()
+            }
+            
+        case .email:
+            if strText.isNullString() {
+                signUpRequest.email = ""
+                textFieldView.showError(with: "* Required")
+                
+            } else if Validator.isValid(itemToValidate: strText , validationType: .email){
+                signUpRequest.email = strText
+                textFieldView.hideError()
+            } else{
+                signUpRequest.email = ""
+                textFieldView.showError(with: "Enter a valid email")
+            }
+            
+        case .password:
+            if strText.isNullString() {
+                signUpRequest.password = ""
+                textFieldView.showError(with: "* Required")
+            } else if strText.count >= 6{
+                signUpRequest.password = strText
+                textFieldView.hideError()
+            } else{
+                signUpRequest.password = ""
+                textFieldView.showError(with: "Password should be atleast 6 characters")
+            }
+            
+        default:
+            break
+        }
+        
+        validateFields()
+    }
+    
     func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {
         
     }
