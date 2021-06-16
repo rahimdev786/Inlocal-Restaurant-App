@@ -10,3 +10,10 @@
 struct SignupDependency {
 
 }
+
+struct SignUpRequest{
+    var fullName: String?
+    var email: String?
+    var phone: String?
+    var password: String?
+}

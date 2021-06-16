@@ -45,15 +45,15 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="GUT-7E-q7z">
-                                        <rect key="frame" x="378.5" y="20" width="27.5" height="30"/>
+                                        <rect key="frame" x="373.5" y="17" width="32.5" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0H3-H3-QS5">
-                                                <rect key="frame" x="0.0" y="0.0" width="27.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0H3-H3-QS5" secondAttribute="height" multiplier="10:11" id="her-xc-Ysx"/>
-                                                    <constraint firstAttribute="height" constant="30" id="trV-g6-xzm"/>
+                                                    <constraint firstAttribute="height" constant="36" id="trV-g6-xzm"/>
                                                 </constraints>
-                                                <state key="normal" image="plus.circle" catalog="system"/>
+                                                <state key="normal" image="add_black"/>
                                                 <connections>
                                                     <action selector="onClickAddNew:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yu9-S5-f3r"/>
                                                 </connections>
@@ -149,9 +149,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_black" width="30" height="30"/>
         <image name="back_button_dark" width="24" height="22"/>
         <image name="order_unselect" width="22" height="22"/>
-        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -53,7 +53,7 @@ class TextFieldView: UIView {
     @IBOutlet weak var imgViewCountryFlag: UIImageView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var viewBottom: UIView!
-    
+    @IBOutlet weak var viewTxtFieldBack: UIView!
     @IBOutlet weak var imgDropdown: UIImageView!
     
     var delegate : TextFieldDelegate?
@@ -71,7 +71,9 @@ class TextFieldView: UIView {
         super.layoutSubviews()
         let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(didTapCountryCode(sender:)))
         stckViewCountryCode.addGestureRecognizer(tapGuesture)
-
+        
+        viewTxtFieldBack.layer.cornerRadius = viewTxtFieldBack.frame.height / 2
+        viewTxtFieldBack.layer.masksToBounds = true
     }
     
  /*   class func instanceFromNib() -> TextFieldView{
@@ -112,7 +114,7 @@ class TextFieldView: UIView {
         stckViewCountryCode.isHidden = true
         viewErrorHolder.isHidden = true
         lblError.isHidden = true
-        lblError.textColor = UIColor.init(hexString: "#Ed5661")
+        lblError.textColor = UIColor.darkGray //UIColor.init(hexString: "#Ed5661")
         imgViewRightIcon.isHidden = true
         btnShowPwd.isHidden = true
         btnForgot.isHidden = true
@@ -125,18 +127,21 @@ class TextFieldView: UIView {
             txtFldInput.keyboardType = .phonePad
             stckViewCountryCode.isHidden = true
             imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             
         case .email:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .emailAddress
             txtFldInput.autocapitalizationType = .none
             imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             
         case .firstName:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .words
             imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             
         case .password:
             txtFldInput.isSecureTextEntry = true
@@ -145,24 +150,33 @@ class TextFieldView: UIView {
             btnForgot.isHidden = true
             txtFldInput.textContentType = UITextContentType(rawValue: "")
             imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
+            btnShowPwd.isHidden = false
+            btnShowPwd.setImage(#imageLiteral(resourceName: "hide_password"), for: .normal)
 
         case .lastName:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .words
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "name")
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             
         case .city:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "landmark")
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
 
         case .otp:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .numberPad
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "otp")
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
 
         case .cnfrmPassword:
             txtFldInput.isSecureTextEntry = true
@@ -171,6 +185,7 @@ class TextFieldView: UIView {
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "password")
             txtFldInput.textContentType = UITextContentType(rawValue: "")
 
+            imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
             btnShowPwd.isHidden = true
             
@@ -181,6 +196,7 @@ class TextFieldView: UIView {
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "password")
             txtFldInput.textContentType = UITextContentType(rawValue: "")
 
+            imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
             btnShowPwd.isHidden = true
             
@@ -191,6 +207,7 @@ class TextFieldView: UIView {
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "password")
             txtFldInput.textContentType = UITextContentType(rawValue: "")
 
+            imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
             btnShowPwd.isHidden = true
                         
@@ -199,19 +216,24 @@ class TextFieldView: UIView {
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "landmark")
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             
         case .address:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "address")
-                        
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
+            
         case .country:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "country")
-            imgViewRightIcon.isHidden = false
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             imgViewRightIcon.image = UIImage(named: "arrow_down")
                         
         case .zipcode:
@@ -219,13 +241,16 @@ class TextFieldView: UIView {
             txtFldInput.keyboardType = .numberPad
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "zip_code")
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             
         case .prdctCity:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "landmark")
-            imgViewRightIcon.isHidden = false
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             self.addGestureRecognizer(tapGuestureTxtFld)
 
         case .date:
@@ -233,7 +258,8 @@ class TextFieldView: UIView {
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "datePlaceholder")
-            imgViewRightIcon.isHidden = false
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             self.addGestureRecognizer(tapGuestureTxtFld)
 
         case .deliveryType:
@@ -241,7 +267,8 @@ class TextFieldView: UIView {
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "delivery_type")
-            imgViewRightIcon.isHidden = false
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             self.addGestureRecognizer(tapGuestureTxtFld)
 
         case .timeSlot:
@@ -249,7 +276,8 @@ class TextFieldView: UIView {
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "time_slot")
-            imgViewRightIcon.isHidden = false
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
             self.addGestureRecognizer(tapGuestureTxtFld)
 
         }
@@ -279,12 +307,15 @@ class TextFieldView: UIView {
         delegate?.forgotPwdClicked()
     }
     
-   
     @IBAction func onClickShowPassword(_ sender: UIButton) {
         if sender.isSelected{
             sender.isSelected = false
+            sender.setImage(#imageLiteral(resourceName: "hide_password"), for: .normal)
+            txtFldInput.isSecureTextEntry = true
         } else{
             sender.isSelected = true
+            sender.setImage(#imageLiteral(resourceName: "show_password"), for: .normal)
+            txtFldInput.isSecureTextEntry = false
         }
        // delegate?.showPassword(isHide: sender.isSelected)
     }

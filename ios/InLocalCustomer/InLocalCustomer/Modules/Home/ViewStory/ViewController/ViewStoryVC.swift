@@ -53,7 +53,9 @@ class ViewStoryVC: UIViewController {
     }
     
     @IBAction func onClickOptios(_ sender: Any) {
+        
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
         let action1 = UIAlertAction(title: "Report", style: .default) { (action) in
             
         }
@@ -73,6 +75,7 @@ class ViewStoryVC: UIViewController {
         alertController.addAction(action2)
         alertController.addAction(action3)
         self.present(alertController, animated: true, completion: nil)
+        
     }
     
     @IBAction func onClickClose(_ sender: Any) {
@@ -92,7 +95,6 @@ class ViewStoryVC: UIViewController {
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 // MARK: - Load from storyboard with dependency

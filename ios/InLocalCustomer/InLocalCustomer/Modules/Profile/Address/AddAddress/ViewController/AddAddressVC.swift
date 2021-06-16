@@ -21,6 +21,9 @@ class AddAddressVC: UIViewController {
     @IBOutlet weak var txtFieldCity: TextFieldView!
     @IBOutlet weak var txtFieldCountry: TextFieldView!
     
+    @IBOutlet weak var btnSave: UIButton!
+    
+    var addAddressRequest = AddAddressRequest()
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,35 +63,37 @@ class AddAddressVC: UIViewController {
     
     func setupUI() {
       
-        txtFieldHouseNo.layer.cornerRadius = txtFieldHouseNo.layer.bounds.height/2
-        txtFieldHouseNo.layer.masksToBounds = true
         txtFieldHouseNo.delegate = self
         txtFieldHouseNo.populateWithData(text: "", placeholderText: "House no, street name", fieldType: .address)
         txtFieldHouseNo.txtFldInput.returnKeyType = UIReturnKeyType.next
         
-        txtFiledLandmark.layer.cornerRadius = txtFiledLandmark.layer.bounds.height/2
-        txtFiledLandmark.layer.masksToBounds = true
         txtFiledLandmark.delegate = self
         txtFiledLandmark.populateWithData(text: "", placeholderText: "Landmark", fieldType: .landmark)
         txtFiledLandmark.txtFldInput.returnKeyType = UIReturnKeyType.default
         
-        txtFiledZipCode.layer.cornerRadius = txtFiledZipCode.layer.bounds.height/2
-        txtFiledZipCode.layer.masksToBounds = true
         txtFiledZipCode.delegate = self
         txtFiledZipCode.populateWithData(text: "", placeholderText:"Zip Code", fieldType: .zipcode)
         txtFiledZipCode.txtFldInput.returnKeyType = UIReturnKeyType.next
         
-        txtFieldCity.layer.cornerRadius = txtFieldCity.layer.bounds.height/2
-        txtFieldCity.layer.masksToBounds = true
         txtFieldCity.delegate = self
         txtFieldCity.populateWithData(text: "", placeholderText: "City", fieldType: .city)
         txtFieldCity.txtFldInput.returnKeyType = UIReturnKeyType.default
         
-        txtFieldCountry.layer.cornerRadius = txtFieldCountry.layer.bounds.height/2
-        txtFieldCountry.layer.masksToBounds = true
         txtFieldCountry.delegate = self
         txtFieldCountry.populateWithData(text: "", placeholderText: "Country", fieldType: .country)
         txtFieldCountry.txtFldInput.returnKeyType = UIReturnKeyType.default
+        
+        validateFields()
+    }
+    
+    func validateFields() {
+        if addAddressRequest.flatNo?.isNullString() ?? true || addAddressRequest.landmark?.isNullString() ?? true || addAddressRequest.zipCode?.isNullString() ?? true || addAddressRequest.city?.isNullString() ?? true || addAddressRequest.country?.isNullString() ?? true{
+            btnSave.alpha = 0.5
+            btnSave.isUserInteractionEnabled = false
+        } else{
+            btnSave.alpha = 1
+            btnSave.isUserInteractionEnabled = true
+        }
     }
 }
 
@@ -117,9 +122,63 @@ extension AddAddressVC: TextFieldDelegate{
        
    }
    
-   func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
-       
-   }
+    func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
+        
+        let strText = string
+        let fieldType = textFieldView.fieldType!
+        switch fieldType {
+        case .address:
+            if strText.isNullString() {
+                addAddressRequest.flatNo = ""
+                textFieldView.showError(with: "* Required")
+            } else {
+                addAddressRequest.flatNo = strText
+                textFieldView.hideError()
+            }
+        
+        case .landmark:
+            if strText.isNullString() {
+                addAddressRequest.landmark = ""
+                textFieldView.showError(with: "* Required")
+            } else {
+                addAddressRequest.landmark = strText
+                textFieldView.hideError()
+            }
+        
+        case .zipcode:
+            if strText.isNullString() {
+                addAddressRequest.zipCode = ""
+                textFieldView.showError(with: "* Required")
+            } else {
+                addAddressRequest.zipCode = strText
+                textFieldView.hideError()
+            }
+         
+        case .city:
+            if strText.isNullString() {
+                addAddressRequest.city = ""
+                textFieldView.showError(with: "* Required")
+            } else {
+                addAddressRequest.city = strText
+                textFieldView.hideError()
+            }
+            
+        case .country:
+            if strText.isNullString() {
+                addAddressRequest.country = ""
+                textFieldView.showError(with: "* Required")
+            } else {
+                addAddressRequest.country = strText
+                textFieldView.hideError()
+            }
+            
+        default:
+            break
+        }
+        
+        validateFields()
+        
+    }
    
     func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {
         

@@ -10,3 +10,12 @@
 struct AddAddressDependency {
 
 }
+
+struct AddAddressRequest {
+    
+    var flatNo: String?
+    var landmark: String?
+    var zipCode: String?
+    var city:  String?
+    var country: String?
+}
