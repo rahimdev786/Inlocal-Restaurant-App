@@ -57,6 +57,21 @@ class ProfileInfoVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func didTapOnLogout(_ sender: UIButton) {
+        
+        
+        guard let introVC = SigninVC.load()else {
+            fatalError("IntroVC or LoginVC could not be loaded.")
+        }
+        let navVC = PopNavigationController(rootViewController: introVC)
+        navVC.isNavigationBarHidden = true
+        
+        AppDelegate.shared.window?.replaceRootViewControllerWith(navVC, animated: true, completion: {
+            //do nothing as of now
+        })
+        
+        
+    }
     
     func setupUI() {
         
