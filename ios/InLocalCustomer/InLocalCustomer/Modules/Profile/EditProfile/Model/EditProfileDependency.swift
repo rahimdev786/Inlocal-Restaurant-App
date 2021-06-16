@@ -8,4 +8,11 @@
 //
 
 struct EditProfileDependency {
+    
+}
+
+struct UpdateProfileRequest {
+    var userName : String?
+    var email : String?
+    var phoneNumber : String?
 }
