@@ -26,6 +26,25 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
     let imagePicker = UIImagePickerController()
     var isImageSelected = false
     
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var btnEdit: UIButton!
+    
+    var isEdit: Bool = false {
+        
+        didSet{
+            if isEdit {
+                lblTitle.text = "Edit Profile"
+                btnEdit.isHidden = true
+                btnSave.isHidden = false
+            }else{
+                lblTitle.text = "My Profile"
+                btnEdit.isHidden = false
+                btnSave.isHidden = true
+            }
+        }
+    }
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +91,7 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         txtFieldEmail.txtFldInput.returnKeyType = UIReturnKeyType.default
         txtFieldEmail.txtFldInput.text = "a@b.com"
         txtFieldEmail.txtFldInput.backgroundColor = .clear
+        txtFieldEmail.contentView.backgroundColor = .clear
         
         //txtFieldPhoneNumber.layer.cornerRadius = txtFieldPhoneNumber.layer.bounds.height/2
         txtFieldPhoneNumber.layer.masksToBounds = true
@@ -80,7 +100,9 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.default
         txtFieldPhoneNumber.txtFldInput.text = "+91 1234567890"
         txtFieldPhoneNumber.txtFldInput.backgroundColor = .clear
+        txtFieldPhoneNumber.contentView.backgroundColor = .clear
         
+        btnSave.isHidden = true
     }
     
     @IBAction func didTapOnBack(_ sender: UIButton) {
@@ -182,6 +204,12 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
     @IBAction func didTapOnCamera(_ sender: Any) {
         showActionSheet()
     }
+    
+    @IBAction func didTapOnEdit(_ sender: UIButton) {
+        
+        isEdit = true
+    }
+    
     
 }
 
