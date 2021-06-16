@@ -44,7 +44,8 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
             }
         }
     }
-    
+
+    var updateProfileRequest = UpdateProfileRequest()
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,11 +79,12 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         //txtFieldName.layer.cornerRadius = txtFieldPhoneNumber.layer.bounds.height/2
         txtFieldName.layer.masksToBounds = true
         txtFieldName.delegate = self
-        txtFieldName.populateWithData(text: "", placeholderText: "Name", fieldType: .phone)
+        txtFieldName.populateWithData(text: "", placeholderText: "Name", fieldType: .firstName)
         txtFieldName.txtFldInput.returnKeyType = UIReturnKeyType.next
         txtFieldName.txtFldInput.text = "John Doe"
-        txtFieldName.txtFldInput.backgroundColor = .clear
-        txtFieldName.contentView.backgroundColor = .clear
+        updateProfileRequest.userName = "John Doe"
+        //txtFieldName.txtFldInput.backgroundColor = .clear
+        //txtFieldName.contentView.backgroundColor = .clear
         
         //txtFieldEmail.layer.cornerRadius = txtFieldPhoneNumber.layer.bounds.height/2
         txtFieldEmail.layer.masksToBounds = true
@@ -90,8 +92,10 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         txtFieldEmail.populateWithData(text: "", placeholderText: "Email", fieldType: .email)
         txtFieldEmail.txtFldInput.returnKeyType = UIReturnKeyType.default
         txtFieldEmail.txtFldInput.text = "a@b.com"
-        txtFieldEmail.txtFldInput.backgroundColor = .clear
-        txtFieldEmail.contentView.backgroundColor = .clear
+        updateProfileRequest.email = "a@b.com"
+        //txtFieldEmail.txtFldInput.backgroundColor = .clear
+        //txtFieldEmail.contentView.backgroundColor = .clear
+        
         
         //txtFieldPhoneNumber.layer.cornerRadius = txtFieldPhoneNumber.layer.bounds.height/2
         txtFieldPhoneNumber.layer.masksToBounds = true
@@ -99,10 +103,21 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone No", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.default
         txtFieldPhoneNumber.txtFldInput.text = "+91 1234567890"
-        txtFieldPhoneNumber.txtFldInput.backgroundColor = .clear
-        txtFieldPhoneNumber.contentView.backgroundColor = .clear
+        updateProfileRequest.phoneNumber = "+91 1234567890"
+        //txtFieldPhoneNumber.txtFldInput.backgroundColor = .clear
+        //txtFieldPhoneNumber.contentView.backgroundColor = .clear
         
         btnSave.isHidden = true
+    }
+    
+    func validateFields() {
+        if updateProfileRequest.userName?.isNullString() ?? true || updateProfileRequest.email?.isNullString() ?? true || updateProfileRequest.phoneNumber?.isNullString() ?? true{
+            btnSave.alpha = 0.5
+            btnSave.isUserInteractionEnabled = false
+        } else{
+            btnSave.alpha = 1
+            btnSave.isUserInteractionEnabled = true
+        }
     }
     
     @IBAction func didTapOnBack(_ sender: UIButton) {
@@ -209,8 +224,7 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         
         isEdit = true
     }
-    
-    
+
 }
 
 // MARK: - Load from storyboard with dependency
@@ -234,21 +248,60 @@ extension EditProfileVC: TextFieldDelegate{
        
    }
    
-   func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
-       
-   }
-   
+    func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
+        let strText = string
+        let fieldType = textFieldView.fieldType!
+        switch fieldType {
+        case .firstName:
+             
+            if strText.isNullString() {
+                updateProfileRequest.userName = ""
+                textFieldView.showError(with: "* Required")
+            } else{
+                updateProfileRequest.userName = strText
+                textFieldView.hideError()
+            }
+            
+        case .email:
+            if strText.isNullString() {
+                updateProfileRequest.email = ""
+                textFieldView.showError(with: "* Required")
+                
+            } else if Validator.isValid(itemToValidate: strText , validationType: .email){
+                updateProfileRequest.email = strText
+                textFieldView.hideError()
+            } else{
+                updateProfileRequest.email = ""
+                textFieldView.showError(with: "Enter a valid email")
+            }
+            
+        case .phone:
+            if strText.isNullString() {
+                updateProfileRequest.phoneNumber = ""
+                textFieldView.showError(with: "* Required")
+            } else {
+                updateProfileRequest.phoneNumber = strText
+                textFieldView.hideError()
+            }
+    
+        default:
+            break
+        }
+        
+        validateFields()
+    }
+    
     func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {
         
     }
     
     func textFieldViewShouldReturn(_ textFieldView: TextFieldView) -> Bool {
-       
-            if textFieldView == txtFieldPhoneNumber{
-               txtFieldPhoneNumber.txtFldInput.becomeFirstResponder()
-            } else{
-                textFieldView.txtFldInput.resignFirstResponder()
-            }
+        
+        if textFieldView == txtFieldPhoneNumber{
+            txtFieldPhoneNumber.txtFldInput.becomeFirstResponder()
+        } else{
+            textFieldView.txtFldInput.resignFirstResponder()
+        }
         return true
     }
     
