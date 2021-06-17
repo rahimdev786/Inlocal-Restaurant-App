@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AppDelegate.shared = self
         
+        //Client key - AIzaSyAwRfuPEhmSsjGxT-kB57Yr4yeqKX5xr7Y
         GMSPlacesClient.provideAPIKey("AIzaSyBSwxGcA3qxi0HX7J5TlGaRng2z-KUBgFI")
         GMSServices.provideAPIKey("AIzaSyBSwxGcA3qxi0HX7J5TlGaRng2z-KUBgFI")
         

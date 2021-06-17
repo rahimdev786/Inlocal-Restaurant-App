@@ -20,6 +20,9 @@ class OrderDetailsVC: UIViewController {
     
     var previousSelectedCell: BookingDetailsTVC?
     
+    @IBOutlet weak var btnUploadStatus: UIButton!
+    
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,5 +113,8 @@ extension OrderDetailsVC: UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath) as! BookingDetailsTVC
         cell.btnSelect.isSelected = !cell.btnSelect.isSelected
         previousSelectedCell = cell
+        
+        btnUploadStatus.backgroundColor = UIColor(hexString: "1DA1F2")
+        btnUploadStatus.titleLabel?.textColor = .white
     }
 }

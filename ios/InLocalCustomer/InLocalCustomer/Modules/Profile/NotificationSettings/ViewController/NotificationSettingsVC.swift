@@ -14,7 +14,7 @@ class NotificationSettingsVC: UIViewController {
 	lazy var dataManager = NotificationSettingsDataManager()
     var dependency: NotificationSettingsDependency?
     
-    var arrSettings = ["Posts","Stories","Comments","Followers","Orders","Bookings","Payments"]
+    var arrSettings = ["Posts","Stories","Comments","Followers","Orders","Bookings","Payment"]
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()

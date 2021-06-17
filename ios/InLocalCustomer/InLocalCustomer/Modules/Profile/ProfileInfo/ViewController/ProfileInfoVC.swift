@@ -60,15 +60,29 @@ class ProfileInfoVC: UIViewController {
     @IBAction func didTapOnLogout(_ sender: UIButton) {
         
         
-        guard let introVC = SigninVC.load()else {
-            fatalError("IntroVC or LoginVC could not be loaded.")
+        let alertVC = UIAlertController(title: "Logout", message: "Are you sure you want to logout of the app?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+
+            guard let introVC = SigninVC.load()else {
+                fatalError("IntroVC or LoginVC could not be loaded.")
+            }
+            let navVC = PopNavigationController(rootViewController: introVC)
+            navVC.isNavigationBarHidden = true
+            
+            AppDelegate.shared.window?.replaceRootViewControllerWith(navVC, animated: true, completion: {
+                //do nothing as of now
+            })
         }
-        let navVC = PopNavigationController(rootViewController: introVC)
-        navVC.isNavigationBarHidden = true
         
-        AppDelegate.shared.window?.replaceRootViewControllerWith(navVC, animated: true, completion: {
-            //do nothing as of now
-        })
+        //okAction.setValue(AppColors.themeOrange.color, forKey: "titleTextColor")
+        
+        let cancelAction = UIAlertAction(title: "No", style: .cancel) { (_) in
+            alertVC.dismiss(animated: true, completion: nil)
+        }
+        //cancelAction.setValue(AppColors.txtDarkGray.color, forKey: "titleTextColor")
+        alertVC.addAction(okAction)
+        alertVC.addAction(cancelAction)
+        self.present(alertVC, animated: true, completion: nil)
         
         
     }

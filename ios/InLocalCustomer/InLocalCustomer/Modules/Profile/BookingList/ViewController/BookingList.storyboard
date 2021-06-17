@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -54,9 +55,12 @@
                                             <constraint firstAttribute="width" constant="50" id="fyT-fQ-0qg"/>
                                         </constraints>
                                         <state key="normal" image="calendar"/>
+                                        <connections>
+                                            <action selector="didTapOnCalendar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iAq-1v-eQQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="lLG-Ug-4PH" firstAttribute="centerY" secondItem="Of5-zn-hcc" secondAttribute="centerY" id="BTe-Pl-51I"/>
                                     <constraint firstItem="tK8-aF-ns1" firstAttribute="centerY" secondItem="Of5-zn-hcc" secondAttribute="centerY" id="U7Z-zb-HQu"/>
@@ -68,8 +72,8 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FI5-01-qW7">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
-                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="131" width="375" height="681"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookingListTVC" rowHeight="108" id="CBT-VB-Zsg" customClass="BookingListTVC" customModule="InLocalCustomer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="108"/>
@@ -104,21 +108,21 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Dine In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C39-kK-maj" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                            <rect key="frame" x="12" y="40" width="99.333333333333329" height="14"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C39-kK-maj" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                            <rect key="frame" x="12" y="40" width="318" height="14"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:31 PM, 03.03.2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLj-bs-Ch7" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                            <rect key="frame" x="232.33333333333334" y="10" width="98.666666666666657" height="12"/>
+                                                            <rect key="frame" x="236" y="10" width="95" height="12"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. of guests : 05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWm-Zl-ESm" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                            <rect key="frame" x="12" y="64" width="79.333333333333329" height="12"/>
-                                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
+                                                            <rect key="frame" x="12" y="64" width="88" height="14.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -126,7 +130,7 @@
                                                             <rect key="frame" x="211" y="64" width="120" height="22"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJj-Eb-YwJ">
-                                                                    <rect key="frame" x="58" y="6" width="10" height="10"/>
+                                                                    <rect key="frame" x="56.666666666666686" y="6" width="10" height="10"/>
                                                                     <color key="backgroundColor" red="0.92156862745098034" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="10" id="FFE-Tw-VJI"/>
@@ -139,7 +143,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Declined" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqc-bA-zBW" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                    <rect key="frame" x="73" y="4" width="47" height="14"/>
+                                                                    <rect key="frame" x="71.666666666666686" y="4" width="48.333333333333343" height="14"/>
                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="12"/>
                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -170,6 +174,7 @@
                                                         <constraint firstItem="PLj-bs-Ch7" firstAttribute="top" secondItem="WTb-JO-Zh7" secondAttribute="top" constant="10" id="JIS-QN-OPJ"/>
                                                         <constraint firstItem="8YM-cx-xNg" firstAttribute="top" secondItem="wWm-Zl-ESm" secondAttribute="top" id="Nn6-u8-QPZ"/>
                                                         <constraint firstItem="wWm-Zl-ESm" firstAttribute="top" secondItem="C39-kK-maj" secondAttribute="bottom" constant="10" id="YFQ-Bm-rpr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="C39-kK-maj" secondAttribute="trailing" constant="17" id="eEU-yo-cpB"/>
                                                         <constraint firstItem="wWm-Zl-ESm" firstAttribute="leading" secondItem="C39-kK-maj" secondAttribute="leading" id="mvc-AL-2IG"/>
                                                         <constraint firstItem="C39-kK-maj" firstAttribute="top" secondItem="SRZ-Ft-nfQ" secondAttribute="bottom" constant="10" id="nA5-Ub-gRY"/>
                                                         <constraint firstAttribute="trailing" secondItem="8YM-cx-xNg" secondAttribute="trailing" constant="16" id="ucP-oR-DX7"/>
@@ -181,7 +186,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="WTb-JO-Zh7" firstAttribute="top" secondItem="HWe-z3-CHJ" secondAttribute="top" id="JJJ-X6-m2M"/>
                                                 <constraint firstAttribute="trailing" secondItem="WTb-JO-Zh7" secondAttribute="trailing" constant="14" id="URc-gG-m6l"/>
@@ -199,11 +204,11 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
-                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Of5-zn-hcc" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="1Ld-aY-XEd"/>
                             <constraint firstItem="FI5-01-qW7" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Ofh-4l-9xA"/>
-                            <constraint firstItem="FI5-01-qW7" firstAttribute="top" secondItem="Of5-zn-hcc" secondAttribute="bottom" id="YS3-7J-fmy"/>
+                            <constraint firstItem="FI5-01-qW7" firstAttribute="top" secondItem="Of5-zn-hcc" secondAttribute="bottom" constant="17" id="YS3-7J-fmy"/>
                             <constraint firstAttribute="bottom" secondItem="FI5-01-qW7" secondAttribute="bottom" id="kdq-j3-voZ"/>
                             <constraint firstItem="Of5-zn-hcc" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="leE-O9-usT"/>
                             <constraint firstItem="Of5-zn-hcc" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="uBE-1r-FOv"/>
@@ -216,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-551" y="-58"/>
+            <point key="canvasLocation" x="-706" y="-66"/>
         </scene>
     </scenes>
     <resources>

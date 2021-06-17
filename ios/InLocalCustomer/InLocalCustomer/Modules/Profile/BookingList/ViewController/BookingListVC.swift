@@ -44,6 +44,41 @@ class BookingListVC: UIViewController {
     @IBAction func didTapOnBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func didTapOnCalendar(_ sender: UIButton) {
+        
+        showCalendar()
+    }
+    
+    func showCalendar() {
+        let dateRangeCalendar = DateSelectionHelper.shared
+        
+        dateRangeCalendar.showCalendar(with: Calendar.current.date(byAdding: .year, value: -1, to: Date())!, maxDate:  Date(), target: self) { (checkInDate, checkoutDate,isCancelled) in
+              if isCancelled{
+              } else{
+                  let dateFormatter = DateFormatter()
+                  dateFormatter.dateFormat = ApiDateFormat.filterDateFormat
+                  let fromDate = dateFormatter.string(from: checkInDate!)
+                  let toDate = dateFormatter.string(from: checkoutDate!)
+                /*
+                  self.lblStartDate.text = fromDate
+                  self.startDate = checkInDate
+                  self.lblEndDate.text = toDate
+                  self.endDate = checkoutDate
+                
+                  self.dateFilterStk.isHidden = false
+                
+                if self.isCurrentOrders {
+                    self.viewModel.currentPageForCurrentTask = 1
+                    self.tableviewCurrentOrders.loadData(refresh: true)
+                }else{
+                    self.viewModel.currentPageForPastTask = 1
+                    self.tableviewPastOrders.loadData(refresh: true)
+                }
+                */
+              }
+          }
+    }
 }
 
 // MARK: - Load from storyboard with dependency

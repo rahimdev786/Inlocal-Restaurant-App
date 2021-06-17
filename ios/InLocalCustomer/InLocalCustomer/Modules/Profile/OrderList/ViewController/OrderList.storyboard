@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -59,7 +60,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="K8G-DK-8RN"/>
                                     <constraint firstItem="gPd-dH-oi9" firstAttribute="leading" secondItem="oud-kZ-tW9" secondAttribute="leading" id="Yab-74-BBM"/>
@@ -71,8 +72,8 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EI8-eD-RVS">
-                                <rect key="frame" x="0.0" y="124" width="375" height="688"/>
-                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="131" width="375" height="681"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderListTVC" rowHeight="108" id="bfC-FF-Xma" customClass="OrderListTVC" customModule="InLocalCustomer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="108"/>
@@ -152,7 +153,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="aYB-BG-z9R" firstAttribute="leading" secondItem="Cn4-kr-uLH" secondAttribute="leading" constant="14" id="7FY-Yw-dIR"/>
                                                 <constraint firstAttribute="bottom" secondItem="aYB-BG-z9R" secondAttribute="bottom" constant="8" id="Hy1-sL-VVf"/>
@@ -160,7 +161,7 @@
                                                 <constraint firstItem="aYB-BG-z9R" firstAttribute="top" secondItem="Cn4-kr-uLH" secondAttribute="top" id="pqI-Qz-UYH"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -170,14 +171,14 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
-                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="oud-kZ-tW9" secondAttribute="trailing" id="D9e-fE-4gq"/>
                             <constraint firstItem="oud-kZ-tW9" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="DiO-M1-K8v"/>
                             <constraint firstItem="oud-kZ-tW9" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="QPE-ft-Ktd"/>
                             <constraint firstItem="EI8-eD-RVS" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Tu6-7A-NGh"/>
                             <constraint firstAttribute="bottom" secondItem="EI8-eD-RVS" secondAttribute="bottom" id="UAm-rC-eun"/>
-                            <constraint firstItem="EI8-eD-RVS" firstAttribute="top" secondItem="oud-kZ-tW9" secondAttribute="bottom" constant="10" id="Yrl-38-kVe"/>
+                            <constraint firstItem="EI8-eD-RVS" firstAttribute="top" secondItem="oud-kZ-tW9" secondAttribute="bottom" constant="17" id="Yrl-38-kVe"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="EI8-eD-RVS" secondAttribute="trailing" id="iQd-4W-VYm"/>
                         </constraints>
                     </view>

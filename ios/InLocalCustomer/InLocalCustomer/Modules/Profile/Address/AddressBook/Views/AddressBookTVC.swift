@@ -9,6 +9,8 @@ import UIKit
 
 class AddressBookTVC: UITableViewCell {
 
+    @IBOutlet weak var btnSelect: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

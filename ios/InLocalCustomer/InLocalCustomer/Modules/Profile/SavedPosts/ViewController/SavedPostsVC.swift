@@ -15,17 +15,32 @@ class SavedPostsVC: UIViewController {
     var dependency: SavedPostsDependency?
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
-        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .normal)
+        
+        
+        if #available(iOS 13.0, *){
+            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
+            UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .normal)
+        }else{
+            
+            segmentedControl.tintColor = UIColor(hexString: "1DA1F2")
+            segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.selected)
+            segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
+            segmentedControl.backgroundColor = UIColor(hexString: "333333")
+            segmentedControl.layer.cornerRadius = 4
+        }
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+//        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
+//        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .normal)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -81,7 +96,7 @@ extension SavedPostsVC:UICollectionViewDataSource, UICollectionViewDelegateFlowL
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = collectionView.frame.size.width/2 - 4.0
-        let size = CGSize(width: width, height: 135.0)
+        let size = CGSize(width: width, height: width)
         return size
     }
 }

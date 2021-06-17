@@ -72,14 +72,20 @@ class ChangePasswordVC: UIViewController {
         txtFiledCurrentPassword.delegate = self
         txtFiledCurrentPassword.populateWithData(text: "", placeholderText: "Current password", fieldType: .oldPassword)
         txtFiledCurrentPassword.txtFldInput.returnKeyType = UIReturnKeyType.next
+        txtFiledCurrentPassword.txtFldInput.delegate = self
+        txtFiledCurrentPassword.txtFldInput.tag = 0
         
         txtFiledNewPassword.delegate = self
         txtFiledNewPassword.populateWithData(text: "", placeholderText: "New password", fieldType: .newPassword)
-        txtFiledNewPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
+        txtFiledNewPassword.txtFldInput.returnKeyType = UIReturnKeyType.next
+        txtFiledNewPassword.txtFldInput.delegate = self
+        txtFiledNewPassword.txtFldInput.tag = 1
         
         txtFiledConfirmNewPassword.delegate = self
         txtFiledConfirmNewPassword.populateWithData(text: "", placeholderText: "Confirm new password", fieldType: .cnfrmPassword)
-        txtFiledConfirmNewPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
+        txtFiledConfirmNewPassword.txtFldInput.returnKeyType = UIReturnKeyType.done
+        txtFiledConfirmNewPassword.txtFldInput.delegate = self
+        txtFiledConfirmNewPassword.txtFldInput.tag = 2
         
         validateFields()
     }
@@ -114,6 +120,7 @@ extension ChangePasswordVC {
 extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
     
 }
+ 
 
  extension ChangePasswordVC: TextFieldDelegate{
     
@@ -130,8 +137,10 @@ extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
             changePasswordRequest.currentPassword = strText
             if strText.isNullString() {
                 textFieldView.showError(with: "* Required")
-            } else{
+            }else if strText.count >= 6{
                 textFieldView.hideError()
+            } else{
+                textFieldView.showError(with: "Password should be atleast 6 characters")
             }
             
         case .newPassword:
@@ -183,4 +192,22 @@ extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
          return true
      }
      
+ }
+ 
+ extension ChangePasswordVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        
+        if  txtFiledCurrentPassword.tag == textField.tag {
+            txtFiledNewPassword.txtFldInput.becomeFirstResponder()
+        } else if txtFiledNewPassword.tag == textField.tag {
+            txtFiledConfirmNewPassword.txtFldInput.becomeFirstResponder()
+        }else{
+            textField.resignFirstResponder()
+        }
+        
+        return true
+        
+    }
  }

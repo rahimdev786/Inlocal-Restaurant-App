@@ -17,11 +17,18 @@ class AddressBookVC: UIViewController {
     
     @IBOutlet weak var tableViewAddressBook: UITableView!
     
+    var selectedIndexPath: IndexPath?
+    var previousSelectedCell: AddressBookTVC?
+    
+    @IBOutlet weak var btnPlus: UIButton!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,7 +71,10 @@ class AddressBookVC: UIViewController {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     
         let action0 = UIAlertAction(title: "Set Default", style: .default) { (action) in
-            
+            let cell = self.tableViewAddressBook.cellForRow(at: self.selectedIndexPath!) as! AddressBookTVC
+            cell.btnSelect.isSelected = true
+            self.previousSelectedCell?.btnSelect.isSelected = false
+            self.previousSelectedCell = cell
         }
         action0.setValue(UIColor.black, forKey: "titleTextColor")
         
@@ -113,12 +123,21 @@ extension AddressBookVC: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddressBookTVC", for: indexPath) as! AddressBookTVC
+        if indexPath.row == 0 {
+            previousSelectedCell = cell
+            cell.btnSelect.isSelected = true
+        }else{
+            //cell.btnSelect.isSelected = false
+        }
         return cell
     }
 }
 
 extension AddressBookVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! AddressBookTVC
+        selectedIndexPath = indexPath
         openActionSheet()
+        
     }
 }

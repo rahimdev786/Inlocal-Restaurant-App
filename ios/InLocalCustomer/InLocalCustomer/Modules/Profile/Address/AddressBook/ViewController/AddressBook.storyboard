@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -53,7 +54,7 @@
                                                     <constraint firstAttribute="width" secondItem="0H3-H3-QS5" secondAttribute="height" multiplier="10:11" id="her-xc-Ysx"/>
                                                     <constraint firstAttribute="height" constant="36" id="trV-g6-xzm"/>
                                                 </constraints>
-                                                <state key="normal" image="add_black"/>
+                                                <state key="normal" image="add_blue"/>
                                                 <connections>
                                                     <action selector="onClickAddNew:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yu9-S5-f3r"/>
                                                 </connections>
@@ -99,6 +100,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="Qic-zb-VVx"/>
                                                             </constraints>
                                                             <state key="normal" image="order_unselect"/>
+                                                            <state key="selected" image="order_select"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,6 +112,11 @@
                                                         <constraint firstAttribute="bottom" secondItem="KfD-vj-bCW" secondAttribute="bottom" constant="15" id="bBp-qb-MBU"/>
                                                         <constraint firstItem="KfD-vj-bCW" firstAttribute="leading" secondItem="nuB-XO-bIX" secondAttribute="leading" constant="15" id="kOA-80-z4b"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -119,6 +126,9 @@
                                                 <constraint firstItem="nuB-XO-bIX" firstAttribute="leading" secondItem="vJx-kC-np1" secondAttribute="leading" id="m7t-lt-FIt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnSelect" destination="xAr-YZ-dQq" id="m38-Sk-QVs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -140,17 +150,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnPlus" destination="0H3-H3-QS5" id="Oeo-Ds-gQa"/>
                         <outlet property="tableViewAddressBook" destination="LMt-Ce-eSK" id="HIH-LY-8iW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59.420289855072468" y="67.633928571428569"/>
+            <point key="canvasLocation" x="-943" y="63"/>
         </scene>
     </scenes>
     <resources>
-        <image name="add_black" width="30" height="30"/>
+        <image name="add_blue" width="32" height="32"/>
         <image name="back_button_dark" width="24" height="22"/>
+        <image name="order_select" width="22" height="22"/>
         <image name="order_unselect" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -114,7 +114,8 @@ class TextFieldView: UIView {
         stckViewCountryCode.isHidden = true
         viewErrorHolder.isHidden = true
         lblError.isHidden = true
-        lblError.textColor = UIColor.darkGray //UIColor.init(hexString: "#Ed5661")
+        UIColor.init(hexString: "#Ed5661")
+        //lblError.textColor = UIColor.darkGray //UIColor.init(hexString: "#Ed5661")
         imgViewRightIcon.isHidden = true
         btnShowPwd.isHidden = true
         btnForgot.isHidden = true
