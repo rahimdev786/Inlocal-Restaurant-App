@@ -24,6 +24,7 @@ class ForgotPasswordVC: UIViewController {
     @IBOutlet weak var btnContinue: UIButton!
     
     var forgotPasswordRequest = ForgotPasswordRequest()
+    let otpView = ValidateOTP.instanceFromNib()
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -63,12 +64,18 @@ class ForgotPasswordVC: UIViewController {
     }
     
     @IBAction func onClickContinue(_ sender: Any) {
-        
-        
+        self.view.addSubview(otpView)
     }
     
     // MARK: Methods
     func setupUI() {
+        otpView.frame = UIScreen.main.bounds
+        otpView.delegate = self
+        otpView.viewBckGrnd.applyAllAroundShadow()
+        otpView.viewBckGrnd.layer.cornerRadius = 10
+        otpView.imgViewBckGrnd.backgroundColor = .black
+        otpView.imgViewBckGrnd.alpha = 0.6
+        
         txtFieldPhoneNumber.delegate = self
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone no", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.next
@@ -107,6 +114,15 @@ extension ForgotPasswordVC {
 // MARK: - ForgotPasswordAPIResponseDelegate
 extension ForgotPasswordVC: ForgotPasswordAPIResponseDelegate {
     
+}
+
+extension ForgotPasswordVC : ValidateOTPDelegate{
+    func onClickContinue() {
+        guard let forgotPasswordViewController = SetNewPasswordVC.load(withDependency: nil) else {
+            return
+        }
+        self.navigationController?.pushViewController(forgotPasswordViewController, animated: true)
+    }
 }
 
 extension ForgotPasswordVC: TextFieldDelegate{

@@ -444,6 +444,9 @@
                                                         <state key="normal" title="PAY">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onClickPay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uZV-rq-R6d"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Kfb-RT-sOf">
                                                         <rect key="frame" x="15" y="14" width="129.33333333333334" height="17"/>

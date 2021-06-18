@@ -10,3 +10,8 @@
 struct SetNewPasswordDependency {
 
 }
+
+struct SetNewPasswordRequest {
+    var newPassword: String?
+    var conformPassword: String?
+}

@@ -104,6 +104,14 @@ class CartVC: UIViewController {
         btnFifteen.setTitleColor(UIColor.white, for: .normal)
     }
     
+    @IBAction func onClickPay(_ sender: Any) {
+        guard let vc = PaymentTypeVC.load(withDependency: nil) else {
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     func setupView(){
         
         viewTxtFieldBack.layer.cornerRadius = 10

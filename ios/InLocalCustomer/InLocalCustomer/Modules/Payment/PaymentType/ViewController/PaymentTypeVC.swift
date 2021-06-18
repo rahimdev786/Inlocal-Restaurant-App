@@ -15,11 +15,19 @@ class PaymentTypeVC: UIViewController {
 	lazy var dataManager = PaymentTypeDataManager()
     var dependency: PaymentTypeDependency?
     
+    @IBOutlet weak var viewBackPaypal: UIView!
+    
+    @IBOutlet weak var viewBackStripe: UIView!
+    
+    @IBOutlet weak var imgViewPaypalTick: UIImageView!
+    @IBOutlet weak var imgViewStripeTick: UIImageView!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        setupUI()
     }
     
     override func viewDidLayoutSubviews() {
@@ -45,6 +53,26 @@ class PaymentTypeVC: UIViewController {
     // MARK: Deinitialization
     deinit {
        debugPrint("\(self) deinitialized")
+    }
+    
+    @IBAction func onClickBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickPaypal(_ sender: Any) {
+        imgViewPaypalTick.image = #imageLiteral(resourceName: "tick_round_blue")
+        imgViewStripeTick.image = #imageLiteral(resourceName: "untick_round_blue")
+        
+    }
+    
+    @IBAction func onClickStripe(_ sender: Any) {
+        imgViewPaypalTick.image = #imageLiteral(resourceName: "untick_round_blue")
+        imgViewStripeTick.image = #imageLiteral(resourceName: "tick_round_blue")
+    }
+    
+    func setupUI() {
+        viewBackPaypal.applyLightShadow()
+        viewBackStripe.applyLightShadow()
     }
 }
 
