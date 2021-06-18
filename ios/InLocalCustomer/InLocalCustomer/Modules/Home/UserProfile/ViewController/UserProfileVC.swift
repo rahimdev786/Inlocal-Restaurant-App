@@ -104,7 +104,9 @@ class UserProfileVC: UIViewController {
     
     func setupView(){
         viewProfileImageBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
-        btnFollow.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner], radius: btnFollow.frame.height/2)
+        //btnFollow.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner], radius: btnFollow.frame.height/2)
+        
+        btnFollow.layer.cornerRadius = 3.0
         
         let widthValue = ((UIScreen.main.bounds.width-36)/2)
         let heightValue = widthValue
@@ -125,6 +127,11 @@ class UserProfileVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func didTapOnFollow(_ sender: UIButton) {
+        btnFollow.isHidden = true
+    }
+    
 }
 
 // MARK: - Load from storyboard with dependency

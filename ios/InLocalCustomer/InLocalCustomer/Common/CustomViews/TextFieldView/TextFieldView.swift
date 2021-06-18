@@ -178,6 +178,7 @@ class TextFieldView: UIView {
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "otp")
             imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
+            
 
         case .cnfrmPassword:
             txtFldInput.isSecureTextEntry = true
@@ -185,10 +186,12 @@ class TextFieldView: UIView {
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "password")
             txtFldInput.textContentType = UITextContentType(rawValue: "")
+            
 
             imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
-            btnShowPwd.isHidden = true
+            btnShowPwd.isHidden = false
+            btnShowPwd.setImage(#imageLiteral(resourceName: "hide_password"), for: .normal)
             
         case .newPassword:
             txtFldInput.isSecureTextEntry = true
@@ -199,7 +202,8 @@ class TextFieldView: UIView {
 
             imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
-            btnShowPwd.isHidden = true
+            btnShowPwd.isHidden = false
+            btnShowPwd.setImage(#imageLiteral(resourceName: "hide_password"), for: .normal)
             
         case .oldPassword:
             txtFldInput.isSecureTextEntry = true
@@ -210,7 +214,8 @@ class TextFieldView: UIView {
 
             imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
-            btnShowPwd.isHidden = true
+            btnShowPwd.isHidden = false
+            btnShowPwd.setImage(#imageLiteral(resourceName: "hide_password"), for: .normal)
                         
         case .landmark:
             txtFldInput.isSecureTextEntry = false

@@ -18,6 +18,8 @@ class RestaurantMenuVC: UIViewController {
     @IBOutlet weak var collectionViewCategory: UICollectionView!
     @IBOutlet weak var tableViewMenuList: UITableView!
     
+    var previousCell: MenuCategoryCVC?
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +107,7 @@ extension RestaurantMenuVC: RestaurantMenuAPIResponseDelegate {
     
 }
 
-extension RestaurantMenuVC: UICollectionViewDataSource {
+extension RestaurantMenuVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
     }
@@ -113,7 +115,24 @@ extension RestaurantMenuVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCategoryCVC", for: indexPath) as! MenuCategoryCVC
+        
+        if indexPath.row == 0 {
+            previousCell = cell
+            cell.viewLblBackground.backgroundColor = UIColor(hexString: "1DA1F2")
+        }else{
+            cell.viewLblBackground.backgroundColor = UIColor(hexString: "333333")
+        }
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! MenuCategoryCVC
+        cell.viewLblBackground.backgroundColor = UIColor(hexString: "1DA1F2")
+        previousCell?.viewLblBackground.backgroundColor = UIColor(hexString: "333333")
+        previousCell = cell
+        
     }
 }
 

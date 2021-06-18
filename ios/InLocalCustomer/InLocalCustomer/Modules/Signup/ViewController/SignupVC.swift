@@ -114,18 +114,26 @@ class SignupVC: UIViewController {
         txtFieldFullName.delegate = self
         txtFieldFullName.populateWithData(text: "", placeholderText: "Full Name", fieldType: .firstName)
         txtFieldFullName.txtFldInput.returnKeyType = UIReturnKeyType.next
+        txtFieldFullName.txtFldInput.delegate = self
+        txtFieldFullName.txtFldInput.tag = 0
         
         txtFieldEmailAddress.delegate = self
         txtFieldEmailAddress.populateWithData(text: "", placeholderText: "Email Address", fieldType: .email)
-        txtFieldEmailAddress.txtFldInput.returnKeyType = UIReturnKeyType.default
+        txtFieldEmailAddress.txtFldInput.returnKeyType = UIReturnKeyType.next
+        txtFieldEmailAddress.txtFldInput.delegate = self
+        txtFieldEmailAddress.txtFldInput.tag = 1
         
         txtFieldPhoneNo.delegate = self
         txtFieldPhoneNo.populateWithData(text: "", placeholderText: "Phone Number", fieldType: .phone)
         txtFieldPhoneNo.txtFldInput.returnKeyType = UIReturnKeyType.next
+        txtFieldPhoneNo.txtFldInput.delegate = self
+        txtFieldPhoneNo.txtFldInput.tag = 2
         
         txtFieldPassword.delegate = self
         txtFieldPassword.populateWithData(text: "", placeholderText: "Password", fieldType: .password)
         txtFieldPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
+        txtFieldPassword.txtFldInput.delegate = self
+        txtFieldPassword.txtFldInput.tag = 3
         
         validateFields()
     }
@@ -238,3 +246,20 @@ extension SignupVC: TextFieldDelegate{
 }
 
 
+extension SignupVC: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        
+        if  txtFieldFullName.txtFldInput.tag == textField.tag {
+            txtFieldEmailAddress.txtFldInput.becomeFirstResponder()
+        } else if txtFieldEmailAddress.txtFldInput.tag == textField.tag {
+            txtFieldPhoneNo.txtFldInput.becomeFirstResponder()
+        }else{
+            textField.resignFirstResponder()
+        }
+        
+        return true
+        
+    }
+}

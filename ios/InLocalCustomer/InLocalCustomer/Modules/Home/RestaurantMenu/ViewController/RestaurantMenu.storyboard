@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -144,12 +145,17 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fo-H2-rhE">
                                                     <rect key="frame" x="0.0" y="10" width="380" height="90"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cheese_burger" translatesAutoresizingMaskIntoConstraints="NO" id="pDQ-f0-4Oy">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="pDQ-f0-4Oy">
                                                             <rect key="frame" x="10" y="10" width="70" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="80" id="JEB-Lp-l9M"/>
                                                                 <constraint firstAttribute="width" secondItem="pDQ-f0-4Oy" secondAttribute="height" multiplier="1:1" id="XOs-CA-3Ha"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kpn-rm-GWI">
                                                             <rect key="frame" x="98" y="10" width="202" height="39"/>
@@ -236,7 +242,7 @@
     </scenes>
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
-        <image name="cheese_burger" width="132" height="132"/>
+        <image name="food" width="170" height="135"/>
         <image name="three_dot_black" width="28" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

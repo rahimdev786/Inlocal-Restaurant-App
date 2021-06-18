@@ -94,10 +94,10 @@ class ProfileInfoVC: UIViewController {
         tableView.tableHeaderView = view
         tableView.tableFooterView = view
         
-        arrDetails = [AccountDetails(title: "My Orders", image: #imageLiteral(resourceName: "myBookings"), type: .orders),
+        arrDetails = [AccountDetails(title: "My Orders", image: #imageLiteral(resourceName: "myOrders"), type: .orders),
         AccountDetails(title: "My Bookings", image: #imageLiteral(resourceName: "myBookings"), type: .bookings),
         AccountDetails(title: "Saved Posts", image: #imageLiteral(resourceName: "savedPost"), type: .savedPosts),
-        AccountDetails(title: "Address Book", image: #imageLiteral(resourceName: "myBookings"), type: .addressBook),
+        AccountDetails(title: "Address Book", image: #imageLiteral(resourceName: "myOrders"), type: .addressBook),
         AccountDetails(title: "Change Password", image: #imageLiteral(resourceName: "changePassword"), type: .changePassword),
         AccountDetails(title: "Notification Settings", image: #imageLiteral(resourceName: "notificationSettings"), type: .notificationSettings),
         ]

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,8 +31,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2L2-Nu-2FC">
                                 <rect key="frame" x="0.0" y="44" width="375" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taged Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AT-OG-gSG">
-                                        <rect key="frame" x="123.00000000000001" y="22" width="129.33333333333337" height="26.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagged Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AT-OG-gSG">
+                                        <rect key="frame" x="113.66666666666669" y="22.333333333333329" width="148" height="25.666666666666671"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -69,7 +70,7 @@
                                         <state key="normal" image="user_profile_image_tagedphoto"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr2-pD-eGw">
-                                        <rect key="frame" x="63" y="8" width="278" height="32"/>
+                                        <rect key="frame" x="63" y="8.6666666666666714" width="278" height="31"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                         <state key="normal" title="Jane Copper">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,16 +97,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1uc-RF-yh4">
-                                                    <rect key="frame" x="16" y="261.66666666666669" width="235" height="65.333333333333314"/>
+                                                    <rect key="frame" x="16" y="263.33333333333331" width="235" height="63.666666666666686"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subway place try our new rolls at your local store" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlI-Yy-cZW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="235" height="38.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="235" height="37.333333333333336"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#burger  #burger king  #love" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yox-ol-gLT">
-                                                            <rect key="frame" x="0.0" y="48.333333333333314" width="235" height="17"/>
+                                                            <rect key="frame" x="0.0" y="47.333333333333371" width="235" height="16.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
                                                             <color key="textColor" red="0.94117647059999998" green="0.95294117649999999" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -139,37 +140,37 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxr-jm-eDt">
-                                                    <rect key="frame" x="287" y="59" width="54" height="218"/>
+                                                    <rect key="frame" x="302" y="87" width="39" height="190"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SGp-ae-6Gp">
-                                                            <rect key="frame" x="8" y="10.666666666666671" width="38" height="197"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SGp-ae-6Gp">
+                                                            <rect key="frame" x="8" y="37" width="23" height="116"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYl-fl-P4j">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="23" height="23"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="RYl-fl-P4j" secondAttribute="height" multiplier="1:1" id="83H-ae-mwu"/>
-                                                                        <constraint firstAttribute="height" constant="38" id="kR0-Gv-xJf"/>
+                                                                        <constraint firstAttribute="height" constant="23" id="kR0-Gv-xJf"/>
                                                                     </constraints>
                                                                     <state key="normal" image="burgerking_icon"/>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkw-nn-mWO">
-                                                                    <rect key="frame" x="0.0" y="53" width="38" height="38"/>
+                                                                    <rect key="frame" x="0.0" y="31" width="23" height="23"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="38" id="PoH-4f-xub"/>
+                                                                        <constraint firstAttribute="height" constant="23" id="PoH-4f-xub"/>
                                                                     </constraints>
                                                                     <state key="normal" image="menu_icon_white"/>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVd-Hq-hR9">
-                                                                    <rect key="frame" x="0.0" y="105.99999999999999" width="38" height="38.000000000000014"/>
+                                                                    <rect key="frame" x="0.0" y="62" width="23" height="23"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="38" id="6EA-Jg-EUt"/>
+                                                                        <constraint firstAttribute="height" constant="23" id="6EA-Jg-EUt"/>
                                                                     </constraints>
                                                                     <state key="normal" image="favrite_blue"/>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8L-sk-yS9">
-                                                                    <rect key="frame" x="0.0" y="159" width="38" height="38"/>
+                                                                    <rect key="frame" x="0.0" y="93" width="23" height="23"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="38" id="a0F-MJ-Sh9"/>
+                                                                        <constraint firstAttribute="height" constant="23" id="a0F-MJ-Sh9"/>
                                                                     </constraints>
                                                                     <state key="normal" image="comment_white"/>
                                                                 </button>
@@ -177,16 +178,16 @@
                                                             <constraints>
                                                                 <constraint firstItem="nVd-Hq-hR9" firstAttribute="width" secondItem="nVd-Hq-hR9" secondAttribute="height" multiplier="1:1" id="9rU-Zl-Bg0"/>
                                                                 <constraint firstItem="Y8L-sk-yS9" firstAttribute="width" secondItem="Y8L-sk-yS9" secondAttribute="height" multiplier="1:1" id="ae7-60-o8i"/>
-                                                                <constraint firstAttribute="width" constant="38" id="eay-8N-Kbj"/>
+                                                                <constraint firstAttribute="width" constant="23" id="eay-8N-Kbj"/>
                                                                 <constraint firstItem="Rkw-nn-mWO" firstAttribute="width" secondItem="Rkw-nn-mWO" secondAttribute="height" multiplier="1:1" id="qgL-0D-mFY"/>
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="218" id="40O-zb-mdb"/>
+                                                        <constraint firstAttribute="height" constant="190" id="40O-zb-mdb"/>
                                                         <constraint firstItem="SGp-ae-6Gp" firstAttribute="centerY" secondItem="zxr-jm-eDt" secondAttribute="centerY" id="PJT-dZ-nbT"/>
-                                                        <constraint firstAttribute="width" constant="54" id="Yaq-se-hn6"/>
+                                                        <constraint firstAttribute="width" constant="39" id="Yaq-se-hn6"/>
                                                         <constraint firstItem="SGp-ae-6Gp" firstAttribute="centerX" secondItem="zxr-jm-eDt" secondAttribute="centerX" id="a71-Jo-NBy"/>
                                                     </constraints>
                                                 </view>
@@ -197,6 +198,9 @@
                                                         <constraint firstAttribute="width" secondItem="5Ds-NO-qB1" secondAttribute="height" multiplier="1:1" id="csX-Yv-nFk"/>
                                                     </constraints>
                                                     <state key="normal" image="threedot_vertical_white"/>
+                                                    <connections>
+                                                        <action selector="didTapOnMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAB-Jf-jhp"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

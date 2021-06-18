@@ -65,6 +65,15 @@ class ChangePasswordVC: UIViewController {
     }
     
     @IBAction func onClickSave(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Success", message: "Change Password Successful", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default) { (sucess) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     func setupUI() {
