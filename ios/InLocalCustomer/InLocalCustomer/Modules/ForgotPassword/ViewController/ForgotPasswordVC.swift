@@ -59,10 +59,12 @@ class ForgotPasswordVC: UIViewController {
     }
     
     @IBAction func onClickBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onClickContinue(_ sender: Any) {
+        
+        
     }
     
     // MARK: Methods
@@ -70,6 +72,8 @@ class ForgotPasswordVC: UIViewController {
         txtFieldPhoneNumber.delegate = self
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone no", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.next
+        
+        txtFieldPhoneNumber.txtFldInput.text = "+43 "
         
         validateFields()
     }

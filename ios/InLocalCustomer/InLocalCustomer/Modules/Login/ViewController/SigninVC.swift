@@ -87,6 +87,8 @@ class SigninVC: UIViewController {
         txtFieldPassword.populateWithData(text: "", placeholderText: "Password", fieldType: .password)
         txtFieldPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
         
+        txtFieldPhoneNumber.txtFldInput.text = "+43 "
+        
         validateFields()
     }
     
@@ -181,7 +183,7 @@ extension SigninVC: SigninAPIResponseDelegate {
         guard let forgotPasswordViewController = ForgotPasswordVC.load(withDependency: nil) else {
             return
         }
-        self.present(forgotPasswordViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(forgotPasswordViewController, animated: true)
     }
     
  }

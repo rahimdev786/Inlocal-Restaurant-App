@@ -98,6 +98,8 @@ class UploadStoryVC: UIViewController, UINavigationControllerDelegate {
         //showActionSheet()
         
         //self.checkCameraAccess()
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     func showActionSheet() {

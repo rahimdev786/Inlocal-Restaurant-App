@@ -64,6 +64,11 @@ class UploadPostVC: UIViewController {
         
     }
     
+    @IBAction func didTapOnPost(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
     
 }
 
