@@ -24,8 +24,10 @@ class SearchVC: UIViewController {
     @IBOutlet weak var tableViewPostList_Height: NSLayoutConstraint!
     @IBOutlet weak var tableViewPostList: UITableView!
     
-    var isGridViewEnable = true
+    @IBOutlet weak var txtFieldSearch: UITextField!
     
+    var isGridViewEnable = true
+    var selectedCategory = 0
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +91,8 @@ class SearchVC: UIViewController {
         viewSearchContainer.layer.borderWidth = 1
         viewSearchContainer.layer.borderColor = UIColor.lightGray.cgColor
         
+        txtFieldSearch.delegate = self
+        
         let widthValue = ((UIScreen.main.bounds.width-22)/2)
         let heightValue = widthValue
         let layout = UICollectionViewFlowLayout()
@@ -148,10 +152,6 @@ extension SearchVC: SearchAPIResponseDelegate {
     
 }
 
-extension SearchVC: UICollectionViewDelegate {
-    
-}
-
 extension SearchVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -160,10 +160,25 @@ extension SearchVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionViewCategory{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVC", for: indexPath) as! CategoryCVC
+            if selectedCategory == indexPath.row{
+                cell.viewCategoryLblBack.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+            } else{
+                cell.viewCategoryLblBack.backgroundColor = UIColor.init(hexString: "#333333")
+            }
+            
             return cell
         } else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
             return cell
+        }
+    }
+}
+
+extension SearchVC : UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == collectionViewCategory{
+            selectedCategory = indexPath.row
+            collectionViewCategory.reloadData()
         }
     }
 }
@@ -177,5 +192,12 @@ extension SearchVC: UITableViewDataSource {
         //SearchPostListTVC
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchPostListTVC", for: indexPath) as! SearchPostListTVC
         return cell
+    }
+}
+
+extension SearchVC: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

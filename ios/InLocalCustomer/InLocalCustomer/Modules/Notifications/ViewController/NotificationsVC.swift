@@ -80,11 +80,16 @@ extension NotificationsVC: NotificationsAPIResponseDelegate {
 
 extension NotificationsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTVC", for: indexPath) as! NotificationTVC
+        if indexPath.row < 3{
+            cell.imgViewNewNotification.isHidden = false
+        } else{
+            cell.imgViewNewNotification.isHidden = true
+        }
         return cell
     }
     

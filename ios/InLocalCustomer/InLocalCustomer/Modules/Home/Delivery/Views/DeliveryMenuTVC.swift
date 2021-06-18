@@ -12,6 +12,8 @@ class DeliveryMenuTVC: UITableViewCell {
     @IBOutlet weak var viewCellBackground: UIView!
     @IBOutlet weak var btnCustomizable: UIButton!
     
+    @IBOutlet weak var btnCount: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,5 +25,20 @@ class DeliveryMenuTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    
+    @IBAction func onClickPlus(_ sender: Any) {
+        var count = Int((btnCount.titleLabel?.text!)!)
+        count = count! + 1
+        btnCount.setTitle(String(count!), for: .normal)
+    }
+    
+    @IBAction func onClickMinus(_ sender: Any) {
+        var count = Int((btnCount.titleLabel?.text!)!)!
+        if count > 1{
+            count = count - 1
+            btnCount.setTitle(String(count), for: .normal)
+        }
+    }
+    
 }

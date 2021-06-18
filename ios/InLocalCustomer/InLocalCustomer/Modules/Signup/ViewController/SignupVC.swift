@@ -105,7 +105,7 @@ class SignupVC: UIViewController {
     func setupUI() {
       
         otpView.frame = UIScreen.main.bounds
-        //otpView.delegate = self
+        otpView.delegate = self
         otpView.viewBckGrnd.applyAllAroundShadow()
         otpView.viewBckGrnd.layer.cornerRadius = 10
         otpView.imgViewBckGrnd.backgroundColor = .black
@@ -168,7 +168,12 @@ extension SignupVC {
 extension SignupVC: SignupAPIResponseDelegate {
     
 }
-
+extension SignupVC : ValidateOTPDelegate{
+    func onClickContinue() {
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.moveToTabBarVC()
+    }
+}
 extension SignupVC: TextFieldDelegate{
    func forgotPwdClicked() {
        

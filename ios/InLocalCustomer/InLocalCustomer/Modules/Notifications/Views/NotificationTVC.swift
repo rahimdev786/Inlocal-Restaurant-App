@@ -9,6 +9,8 @@ import UIKit
 
 class NotificationTVC: UITableViewCell {
 
+    @IBOutlet weak var imgViewNewNotification: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

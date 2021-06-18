@@ -2,12 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
         <array key="SFProDisplay-Medium.ttf">
             <string>SFProDisplay-Medium</string>
         </array>
@@ -33,7 +37,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27n-ak-cSJ">
-                            <rect key="frame" x="0.0" y="467" width="414" height="429"/>
+                            <rect key="frame" x="0.0" y="485" width="414" height="411"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1i-MQ-vvU">
                                     <rect key="frame" x="130.5" y="60" width="153" height="26.5"/>
@@ -41,21 +45,32 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the OTP send to +91 9876543210" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrJ-q3-3dP">
-                                    <rect key="frame" x="72" y="106.5" width="270" height="19.5"/>
-                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nuv-ne-6lq">
+                                    <rect key="frame" x="17" y="107" width="380" height="19.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the OTP sent to" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrJ-q3-3dP">
+                                            <rect key="frame" x="0.0" y="0.0" width="194.5" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91 9876543210" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-kt-2gD">
+                                            <rect key="frame" x="199.5" y="0.0" width="180.5" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pos-Ss-0nk" customClass="OTPFieldView" customModule="OTPFieldView">
-                                    <rect key="frame" x="20" y="157" width="374" height="58"/>
+                                    <rect key="frame" x="20" y="157" width="374" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="58" id="tb4-ST-xla"/>
+                                        <constraint firstAttribute="height" constant="40" id="tb4-ST-xla"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="p50-rn-gjR">
-                                    <rect key="frame" x="101" y="245" width="212.5" height="29"/>
+                                    <rect key="frame" x="101" y="227" width="212.5" height="29"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't receive the OTP?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9G-HA-RZT">
                                             <rect key="frame" x="0.0" y="0.0" width="133.5" height="29"/>
@@ -71,7 +86,7 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPp-bX-CA5">
-                                    <rect key="frame" x="17" y="324" width="380" height="45"/>
+                                    <rect key="frame" x="17" y="306" width="380" height="45"/>
                                     <color key="backgroundColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="zmx-iF-rld"/>
@@ -85,6 +100,9 @@
                                             <integer key="value" value="4"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onClickContinue:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="3p7-qy-AJx"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -92,14 +110,15 @@
                                 <constraint firstAttribute="trailing" secondItem="BPp-bX-CA5" secondAttribute="trailing" constant="17" id="1Fz-vO-HU2"/>
                                 <constraint firstItem="BPp-bX-CA5" firstAttribute="top" secondItem="p50-rn-gjR" secondAttribute="bottom" constant="50" id="5bK-nS-K3y"/>
                                 <constraint firstItem="O1i-MQ-vvU" firstAttribute="centerX" secondItem="27n-ak-cSJ" secondAttribute="centerX" id="Fnl-CS-tes"/>
+                                <constraint firstItem="nuv-ne-6lq" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="17" id="LTM-YA-SrG"/>
                                 <constraint firstItem="Pos-Ss-0nk" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="20" id="Nmg-K8-s4n"/>
-                                <constraint firstItem="YrJ-q3-3dP" firstAttribute="top" secondItem="O1i-MQ-vvU" secondAttribute="bottom" constant="20" id="Rwp-Ij-oHX"/>
-                                <constraint firstItem="Pos-Ss-0nk" firstAttribute="top" secondItem="YrJ-q3-3dP" secondAttribute="bottom" constant="31" id="YtN-Rb-AVW"/>
+                                <constraint firstItem="nuv-ne-6lq" firstAttribute="top" secondItem="O1i-MQ-vvU" secondAttribute="bottom" constant="20.5" id="OVA-Vn-EG5"/>
+                                <constraint firstItem="Pos-Ss-0nk" firstAttribute="top" secondItem="nuv-ne-6lq" secondAttribute="bottom" constant="30.5" id="RBH-46-2MM"/>
                                 <constraint firstItem="p50-rn-gjR" firstAttribute="top" secondItem="Pos-Ss-0nk" secondAttribute="bottom" constant="30" id="b58-t8-IDv"/>
-                                <constraint firstItem="YrJ-q3-3dP" firstAttribute="centerX" secondItem="O1i-MQ-vvU" secondAttribute="centerX" id="bQ0-lq-6eC"/>
                                 <constraint firstAttribute="trailing" secondItem="Pos-Ss-0nk" secondAttribute="trailing" constant="20" id="bQG-cj-oPK"/>
                                 <constraint firstItem="BPp-bX-CA5" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="17" id="fvn-qh-dX0"/>
                                 <constraint firstItem="O1i-MQ-vvU" firstAttribute="top" secondItem="27n-ak-cSJ" secondAttribute="top" constant="60" id="oFP-YZ-D8m"/>
+                                <constraint firstAttribute="trailing" secondItem="nuv-ne-6lq" secondAttribute="trailing" constant="17" id="tb3-zr-BfA"/>
                                 <constraint firstItem="p50-rn-gjR" firstAttribute="centerX" secondItem="Pos-Ss-0nk" secondAttribute="centerX" id="w7s-qd-FqP"/>
                                 <constraint firstAttribute="bottom" secondItem="BPp-bX-CA5" secondAttribute="bottom" constant="60" id="wyh-yY-OIZ"/>
                             </constraints>
@@ -126,6 +145,7 @@
                 <constraint firstItem="cup-5E-wZ6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ft7-HJ-oCT"/>
             </constraints>
             <connections>
+                <outlet property="btnContinue" destination="BPp-bX-CA5" id="bl5-YZ-lak"/>
                 <outlet property="imgViewBckGrnd" destination="txc-1c-r6k" id="Dik-Yq-6eQ"/>
                 <outlet property="otpTextFieldView" destination="Pos-Ss-0nk" id="Aog-WY-rAF"/>
                 <outlet property="viewBckGrnd" destination="27n-ak-cSJ" id="Geo-cG-ejt"/>

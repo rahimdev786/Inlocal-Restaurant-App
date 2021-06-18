@@ -180,7 +180,7 @@ extension BottumTabBarVC{
         tabController.notificationBadgeAppearance.borderColor = .clear
         tabController.notificationBadgeAppearance.borderWidth = 0.2
 
-        tabController.setBadgeText("0", atIndex: 4)
+        tabController.setBadgeText("3", atIndex: 4)
 
         tabController.setIndex(10, animated: true)
 

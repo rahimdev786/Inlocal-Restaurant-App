@@ -207,7 +207,6 @@ extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        
         if  txtFiledCurrentPassword.tag == textField.tag {
             txtFiledNewPassword.txtFldInput.becomeFirstResponder()
         } else if txtFiledNewPassword.tag == textField.tag {

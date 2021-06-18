@@ -209,6 +209,18 @@
 		C13511122679CECC00509F4E /* DateSelectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13511112679CECC00509F4E /* DateSelectionHelper.swift */; };
 		C13511502679D20A00509F4E /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C135114F2679D20A00509F4E /* EditProfile.storyboard */; };
 		C14B059F2671EEF60098AFC6 /* DineInCartItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B059E2671EEF60098AFC6 /* DineInCartItemTVC.swift */; };
+		C14CC238267CA39000D989C9 /* PaymentTypeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC230267CA38C00D989C9 /* PaymentTypeDataManager.swift */; };
+		C14CC239267CA39000D989C9 /* PaymentTypeLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC231267CA38C00D989C9 /* PaymentTypeLocalDataManager.swift */; };
+		C14CC23A267CA39000D989C9 /* PaymentTypeAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC232267CA38C00D989C9 /* PaymentTypeAPIDataManager.swift */; };
+		C14CC23B267CA39100D989C9 /* PaymentTypeDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC234267CA38D00D989C9 /* PaymentTypeDependency.swift */; };
+		C14CC23C267CA39100D989C9 /* PaymentType.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14CC236267CA39000D989C9 /* PaymentType.storyboard */; };
+		C14CC23D267CA39100D989C9 /* PaymentTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC237267CA39000D989C9 /* PaymentTypeVC.swift */; };
+		C14CC257267CA3E600D989C9 /* SetNewPasswordDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC24F267CA3E500D989C9 /* SetNewPasswordDependency.swift */; };
+		C14CC258267CA3E600D989C9 /* SetNewPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC251267CA3E500D989C9 /* SetNewPasswordDataManager.swift */; };
+		C14CC259267CA3E600D989C9 /* SetNewPasswordAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC252267CA3E500D989C9 /* SetNewPasswordAPIDataManager.swift */; };
+		C14CC25A267CA3E600D989C9 /* SetNewPasswordLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC253267CA3E500D989C9 /* SetNewPasswordLocalDataManager.swift */; };
+		C14CC25B267CA3E600D989C9 /* SetNewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CC255267CA3E600D989C9 /* SetNewPasswordVC.swift */; };
+		C14CC25C267CA3E600D989C9 /* SetNewPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14CC256267CA3E600D989C9 /* SetNewPassword.storyboard */; };
 		C153C79326662E65002FF282 /* ForgotPasswordAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78B26662E65002FF282 /* ForgotPasswordAPIDataManager.swift */; };
 		C153C79426662E65002FF282 /* ForgotPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78C26662E65002FF282 /* ForgotPasswordDataManager.swift */; };
 		C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78D26662E65002FF282 /* ForgotPasswordLocalDataManager.swift */; };
@@ -594,6 +606,18 @@
 		C13511112679CECC00509F4E /* DateSelectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelectionHelper.swift; sourceTree = "<group>"; };
 		C135114F2679D20A00509F4E /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		C14B059E2671EEF60098AFC6 /* DineInCartItemTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DineInCartItemTVC.swift; sourceTree = "<group>"; };
+		C14CC230267CA38C00D989C9 /* PaymentTypeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentTypeDataManager.swift; sourceTree = "<group>"; };
+		C14CC231267CA38C00D989C9 /* PaymentTypeLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentTypeLocalDataManager.swift; sourceTree = "<group>"; };
+		C14CC232267CA38C00D989C9 /* PaymentTypeAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentTypeAPIDataManager.swift; sourceTree = "<group>"; };
+		C14CC234267CA38D00D989C9 /* PaymentTypeDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentTypeDependency.swift; sourceTree = "<group>"; };
+		C14CC236267CA39000D989C9 /* PaymentType.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PaymentType.storyboard; sourceTree = "<group>"; };
+		C14CC237267CA39000D989C9 /* PaymentTypeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentTypeVC.swift; sourceTree = "<group>"; };
+		C14CC24F267CA3E500D989C9 /* SetNewPasswordDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNewPasswordDependency.swift; sourceTree = "<group>"; };
+		C14CC251267CA3E500D989C9 /* SetNewPasswordDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNewPasswordDataManager.swift; sourceTree = "<group>"; };
+		C14CC252267CA3E500D989C9 /* SetNewPasswordAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNewPasswordAPIDataManager.swift; sourceTree = "<group>"; };
+		C14CC253267CA3E500D989C9 /* SetNewPasswordLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNewPasswordLocalDataManager.swift; sourceTree = "<group>"; };
+		C14CC255267CA3E600D989C9 /* SetNewPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNewPasswordVC.swift; sourceTree = "<group>"; };
+		C14CC256267CA3E600D989C9 /* SetNewPassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SetNewPassword.storyboard; sourceTree = "<group>"; };
 		C153C78B26662E65002FF282 /* ForgotPasswordAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordAPIDataManager.swift; sourceTree = "<group>"; };
 		C153C78C26662E65002FF282 /* ForgotPasswordDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataManager.swift; sourceTree = "<group>"; };
 		C153C78D26662E65002FF282 /* ForgotPasswordLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordLocalDataManager.swift; sourceTree = "<group>"; };
@@ -1693,6 +1717,8 @@
 		C10C7639265F913800473CB7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C14CC241267CA3B100D989C9 /* SetNewPassword */,
+				C14CC224267CA34100D989C9 /* Payment */,
 				6D4389172674F6DA0049C888 /* AddPost */,
 				6D21FDE02670A58C00611AD4 /* Follower */,
 				C16920AC2670767500055FD3 /* MapRadius */,
@@ -1960,6 +1986,88 @@
 				C14B059E2671EEF60098AFC6 /* DineInCartItemTVC.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C14CC224267CA34100D989C9 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				C14CC225267CA34B00D989C9 /* PaymentType */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		C14CC225267CA34B00D989C9 /* PaymentType */ = {
+			isa = PBXGroup;
+			children = (
+				C14CC22F267CA38C00D989C9 /* DataManager */,
+				C14CC233267CA38D00D989C9 /* Model */,
+				C14CC235267CA38D00D989C9 /* ViewController */,
+			);
+			path = PaymentType;
+			sourceTree = "<group>";
+		};
+		C14CC22F267CA38C00D989C9 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C14CC230267CA38C00D989C9 /* PaymentTypeDataManager.swift */,
+				C14CC231267CA38C00D989C9 /* PaymentTypeLocalDataManager.swift */,
+				C14CC232267CA38C00D989C9 /* PaymentTypeAPIDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C14CC233267CA38D00D989C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C14CC234267CA38D00D989C9 /* PaymentTypeDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C14CC235267CA38D00D989C9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C14CC236267CA39000D989C9 /* PaymentType.storyboard */,
+				C14CC237267CA39000D989C9 /* PaymentTypeVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C14CC241267CA3B100D989C9 /* SetNewPassword */ = {
+			isa = PBXGroup;
+			children = (
+				C14CC250267CA3E500D989C9 /* DataManager */,
+				C14CC24E267CA3E500D989C9 /* Model */,
+				C14CC254267CA3E600D989C9 /* ViewController */,
+			);
+			path = SetNewPassword;
+			sourceTree = "<group>";
+		};
+		C14CC24E267CA3E500D989C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C14CC24F267CA3E500D989C9 /* SetNewPasswordDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C14CC250267CA3E500D989C9 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C14CC251267CA3E500D989C9 /* SetNewPasswordDataManager.swift */,
+				C14CC252267CA3E500D989C9 /* SetNewPasswordAPIDataManager.swift */,
+				C14CC253267CA3E500D989C9 /* SetNewPasswordLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C14CC254267CA3E600D989C9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C14CC255267CA3E600D989C9 /* SetNewPasswordVC.swift */,
+				C14CC256267CA3E600D989C9 /* SetNewPassword.storyboard */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C153C77D26662E25002FF282 /* ForgotPassword */ = {
@@ -2938,6 +3046,7 @@
 				C10FBA9E266DD2140012FD8E /* MenuDetail.storyboard in Resources */,
 				C185D8942664D95400BCDA2E /* SFProDisplay-UltralightItalic.ttf in Resources */,
 				6D5123772678ECB8005E1F59 /* UploadPost.storyboard in Resources */,
+				C14CC25C267CA3E600D989C9 /* SetNewPassword.storyboard in Resources */,
 				C185D8AE2664D95500BCDA2E /* SFProText-BoldItalic.ttf in Resources */,
 				C185D8A32664D95400BCDA2E /* SFProText-Semibold.ttf in Resources */,
 				C185D8AF2664D95500BCDA2E /* SFProText-Medium.ttf in Resources */,
@@ -2953,6 +3062,7 @@
 				C1B963A626678F9400CECDDF /* Notifications.storyboard in Resources */,
 				C1B9639526678EE900CECDDF /* Search.storyboard in Resources */,
 				C185D8AB2664D95500BCDA2E /* SFProText-MediumItalic.ttf in Resources */,
+				C14CC23C267CA39100D989C9 /* PaymentType.storyboard in Resources */,
 				C185D89E2664D95400BCDA2E /* SFProText-Regular.ttf in Resources */,
 				6D4821D12667A77F00F1DE01 /* BookingDetails.storyboard in Resources */,
 				C10C7603265F8BDB00473CB7 /* LaunchScreen.storyboard in Resources */,
@@ -3080,6 +3190,7 @@
 				6D446D322676FE9B00C5ED9B /* CGSize+Scale.swift in Sources */,
 				C1AE0E4B266F248E000E6470 /* ReservationVC.swift in Sources */,
 				6D4822392667A82200F1DE01 /* OrderListAPIDataManager.swift in Sources */,
+				C14CC25A267CA3E600D989C9 /* SetNewPasswordLocalDataManager.swift in Sources */,
 				6D446D2E2676FE9B00C5ED9B /* ImagePickerController+Closure.swift in Sources */,
 				6D48F8DA2667BA6E00A19468 /* OrderListTVC.swift in Sources */,
 				6D5123792678ECB8005E1F59 /* UploadPostLocalDataManager.swift in Sources */,
@@ -3104,6 +3215,7 @@
 				C10FBA9B266DD2140012FD8E /* MenuDetailLocalDataManager.swift in Sources */,
 				C127790D266E25A600F9F7FC /* DeliveryMenuTVC.swift in Sources */,
 				C1042D142669DE780054B24D /* UserProfileAPIDataManager.swift in Sources */,
+				C14CC238267CA39000D989C9 /* PaymentTypeDataManager.swift in Sources */,
 				6D4822382667A82200F1DE01 /* OrderListLocalDataManager.swift in Sources */,
 				C1AACA33267714FF000D4D2A /* AddressBookDependency.swift in Sources */,
 				6D446D2C2676FE9B00C5ED9B /* ImagePickerController+ButtonActions.swift in Sources */,
@@ -3112,6 +3224,7 @@
 				C185D9462664F85D00BCDA2E /* SignupVC.swift in Sources */,
 				6D48224A2667A83400F1DE01 /* OrderDetailsLocalDataManager.swift in Sources */,
 				6D51237A2678ECB8005E1F59 /* UploadPostAPIDataManager.swift in Sources */,
+				C14CC259267CA3E600D989C9 /* SetNewPasswordAPIDataManager.swift in Sources */,
 				C185D9662664F90300BCDA2E /* ValidateOTPLocalDataManager.swift in Sources */,
 				C185D9612664F90300BCDA2E /* ValidateOTPDependency.swift in Sources */,
 				C16920A52670765500055FD3 /* CartDataManager.swift in Sources */,
@@ -3168,6 +3281,7 @@
 				C1CB45452671CA85002170D8 /* DineInCartDependency.swift in Sources */,
 				6D446D4A2676FE9C00C5ED9B /* DropdownTransitionDelegate.swift in Sources */,
 				6D4821AE2667A75700F1DE01 /* BookingListDependency.swift in Sources */,
+				C14CC23B267CA39100D989C9 /* PaymentTypeDependency.swift in Sources */,
 				C1AACA17267714B9000D4D2A /* AddAddressAPIDataManager.swift in Sources */,
 				C185D93C2664F85D00BCDA2E /* SigninDataManager.swift in Sources */,
 				C185D9632664F90300BCDA2E /* ValidateOTPVC.swift in Sources */,
@@ -3179,6 +3293,7 @@
 				6D48223C2667A82200F1DE01 /* OrderListVC.swift in Sources */,
 				6D54BB48266DE1C600BC4C34 /* SavedPostsDependency.swift in Sources */,
 				C16920C6267076F600055FD3 /* SelectRediusDataManager.swift in Sources */,
+				C14CC23D267CA39100D989C9 /* PaymentTypeVC.swift in Sources */,
 				C1CB45432671CA85002170D8 /* DineInCartLocalDataManager.swift in Sources */,
 				C1042D132669DE780054B24D /* UserProfileDataManager.swift in Sources */,
 				C1DDAC5A2668F27700B4DB90 /* ViewStoryLocalDataManager.swift in Sources */,
@@ -3188,6 +3303,7 @@
 				C16920A62670765500055FD3 /* CartAPIDataManager.swift in Sources */,
 				C1030C1326737C85002A47AB /* MenuCustomisationDataManager.swift in Sources */,
 				6D446D6C2676FED300C5ED9B /* CustomPickerVC.swift in Sources */,
+				C14CC25B267CA3E600D989C9 /* SetNewPasswordVC.swift in Sources */,
 				C1AACA37267714FF000D4D2A /* AddressBookVC.swift in Sources */,
 				C16920C4267076F600055FD3 /* SelectRediusDependency.swift in Sources */,
 				6D432A142675E8B3006186D1 /* CustomCameraOverlay.swift in Sources */,
@@ -3224,6 +3340,8 @@
 				C1042D112669DE780054B24D /* UserProfileVC.swift in Sources */,
 				C1B963AE26678FE000CECDDF /* NotificationsAPIDataManager.swift in Sources */,
 				C185D9442664F85D00BCDA2E /* SignupLocalDataManager.swift in Sources */,
+				C14CC257267CA3E600D989C9 /* SetNewPasswordDependency.swift in Sources */,
+				C14CC258267CA3E600D989C9 /* SetNewPasswordDataManager.swift in Sources */,
 				6D4821B12667A75700F1DE01 /* BookingListAPIDataManager.swift in Sources */,
 				6D48216C26674CBE00F1DE01 /* ProfileInfoDataManager.swift in Sources */,
 				6D21FE0B2670A64500611AD4 /* FollowerVC.swift in Sources */,
@@ -3308,6 +3426,7 @@
 				C10FBA9F266DD2140012FD8E /* MenuDetailDependency.swift in Sources */,
 				6D4389312674F77B0049C888 /* UploadStoryAPIDataManager.swift in Sources */,
 				6D446D472676FE9C00C5ED9B /* AlbumCell.swift in Sources */,
+				C14CC23A267CA39000D989C9 /* PaymentTypeAPIDataManager.swift in Sources */,
 				6D446D492676FE9C00C5ED9B /* AlbumsViewController.swift in Sources */,
 				6D446D3C2676FE9B00C5ED9B /* PlayerView.swift in Sources */,
 				C1AE0E74266F41A7000E6470 /* CommentTVC.swift in Sources */,
@@ -3330,6 +3449,7 @@
 				C1CD22DB2668A52F000324FF /* FeedwallPostTVC.swift in Sources */,
 				C1DDAC5C2668F27700B4DB90 /* ViewStoryAPIDataManager.swift in Sources */,
 				C1030C1026737C85002A47AB /* MenuCustomisationDependency.swift in Sources */,
+				C14CC239267CA39000D989C9 /* PaymentTypeLocalDataManager.swift in Sources */,
 				C185D9432664F85D00BCDA2E /* SignupAPIDataManager.swift in Sources */,
 				C16920C3267076F600055FD3 /* SelectRediusVC.swift in Sources */,
 				C1AE0E6A266F2554000E6470 /* RestaurantInfoVC.swift in Sources */,

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -39,23 +40,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="XkM-m5-ERi">
-                                        <rect key="frame" x="339" y="21" width="28" height="28"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daW-gi-vIn">
-                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
-                                                <state key="normal" image="three_dot_black"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="7Xc-xY-pk5" firstAttribute="centerX" secondItem="zvo-j0-M8b" secondAttribute="centerX" id="4Dj-85-Wom"/>
                                     <constraint firstAttribute="height" constant="70" id="KRX-hj-bo7"/>
                                     <constraint firstItem="7Xc-xY-pk5" firstAttribute="centerY" secondItem="zvo-j0-M8b" secondAttribute="centerY" id="SI5-c4-8PB"/>
-                                    <constraint firstItem="XkM-m5-ERi" firstAttribute="centerY" secondItem="7Xc-xY-pk5" secondAttribute="centerY" id="dLI-V1-kO2"/>
-                                    <constraint firstAttribute="trailing" secondItem="XkM-m5-ERi" secondAttribute="trailing" constant="8" id="kSx-5r-mLb"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPD-4c-X3K">
@@ -136,6 +126,9 @@
                                                                                             <integer key="value" value="4"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                     </userDefinedRuntimeAttributes>
+                                                                                    <connections>
+                                                                                        <action selector="onClickMinus:" destination="GxD-UL-gPv" eventType="touchUpInside" id="Wpd-tB-sAU"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6N-xV-fPa">
                                                                                     <rect key="frame" x="26" y="0.0" width="26" height="26"/>
@@ -149,7 +142,7 @@
                                                                                     </state>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                            <integer key="value" value="4"/>
+                                                                                            <integer key="value" value="5"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </button>
@@ -168,6 +161,9 @@
                                                                                             <integer key="value" value="4"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                     </userDefinedRuntimeAttributes>
+                                                                                    <connections>
+                                                                                        <action selector="onClickPlus:" destination="GxD-UL-gPv" eventType="touchUpInside" id="Ubr-yq-plG"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -211,6 +207,7 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
+                                                            <outlet property="btnCount" destination="w6N-xV-fPa" id="Xm3-h6-a4U"/>
                                                             <outlet property="viewBackCell" destination="ADP-8n-df0" id="Ckc-6O-CtT"/>
                                                         </connections>
                                                     </tableViewCell>
@@ -318,6 +315,9 @@
                                                                 <integer key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onClickFive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YTe-wM-tdy"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-20-d60">
                                                         <rect key="frame" x="118.33333333333333" y="0.0" width="58.333333333333329" height="28"/>
@@ -334,6 +334,9 @@
                                                                 <integer key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onClickTen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dq8-XT-0ZO"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMV-HO-Bem">
                                                         <rect key="frame" x="236.66666666666671" y="0.0" width="58.333333333333343" height="28"/>
@@ -350,6 +353,9 @@
                                                                 <integer key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onClickFiften:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VmZ-Ds-HO4"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -438,6 +444,9 @@
                                                         <state key="normal" title="PAY">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onClickPay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uZV-rq-R6d"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Kfb-RT-sOf">
                                                         <rect key="frame" x="15" y="14" width="129.33333333333334" height="17"/>
@@ -523,7 +532,10 @@
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="btnFifteen" destination="tMV-HO-Bem" id="mcZ-fy-gF6"/>
+                        <outlet property="btnFive" destination="i9Y-f0-1lf" id="nT0-pC-QYk"/>
                         <outlet property="btnPay" destination="0Ez-Al-nF7" id="f3F-l5-kpC"/>
+                        <outlet property="btnTen" destination="g6L-20-d60" id="qt1-w9-PX6"/>
                         <outlet property="tableViewItems" destination="JuR-5B-rdd" id="7BZ-cn-5Lf"/>
                         <outlet property="tableViewItems_Height" destination="vKC-Na-e8U" id="h1e-7K-RqO"/>
                         <outlet property="viewGrantTotalBack" destination="ymL-jl-1Zw" id="WsA-nz-g5H"/>
@@ -540,7 +552,6 @@
     <resources>
         <image name="cart_cheese_burger" width="80" height="80"/>
         <image name="empty_checkbox_gray" width="24" height="24"/>
-        <image name="three_dot_black" width="28" height="28"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

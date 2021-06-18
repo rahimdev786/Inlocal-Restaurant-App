@@ -20,10 +20,16 @@ class SelectRediusVC: UIViewController {
     @IBOutlet weak var viewSliderBack: UIView!
     
     @IBOutlet weak var sliderRadius: UISlider!
+
+    @IBOutlet weak var btnFirstRadius: UIButton!
+    @IBOutlet weak var btnSecondRadius: UIButton!
+    @IBOutlet weak var btnThirdRadius: UIButton!
     
     var locationManager = CLLocationManager()
     var circ1 = GMSCircle()
-    
+    var camera = GMSCameraPosition()
+    var lat = 0.0
+    var long = 0.0
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,23 +69,47 @@ class SelectRediusVC: UIViewController {
     
     @IBAction func onClickFirstRadiusButton(_ sender: Any) {
         sliderRadius.value = 5
-        setRadius(radiusValue: 5)
+        btnFirstRadius.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+        btnSecondRadius.backgroundColor = UIColor.init(hexString: "#333333")
+        btnThirdRadius.backgroundColor = UIColor.init(hexString: "#333333")
+        self.setMapCamera(lat: self.lat, lang: self.long, zoom: 11.0)
+        self.setRadius(lat: self.lat, lang: self.long, radiusValue: 5)
     }
     
     @IBAction func onClickSecondRadiusButton(_ sender: Any) {
         sliderRadius.value = 15
-        setRadius(radiusValue: 15)
+        btnFirstRadius.backgroundColor = UIColor.init(hexString: "#333333")
+        btnSecondRadius.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+        btnThirdRadius.backgroundColor = UIColor.init(hexString: "#333333")
+        self.setMapCamera(lat: self.lat, lang: self.long, zoom: 10.0)
+        self.setRadius(lat: self.lat, lang: self.long, radiusValue: 15)
     }
     
     @IBAction func onClickThirdRadiusButton(_ sender: Any) {
         sliderRadius.value = 30
-        setRadius(radiusValue: 30)
+        btnFirstRadius.backgroundColor = UIColor.init(hexString: "#333333")
+        btnSecondRadius.backgroundColor = UIColor.init(hexString: "#333333")
+        btnThirdRadius.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+        self.setMapCamera(lat: self.lat, lang: self.long, zoom: 9.0)
+        self.setRadius(lat: self.lat, lang: self.long, radiusValue: 30)
     }
     
     @IBAction func onMoveSlider(_ sender: UISlider) {
         let currentValue = Int(sender.value)
         DispatchQueue.main.async {
-            self.setRadius(radiusValue: currentValue)
+            self.btnFirstRadius.backgroundColor = UIColor.init(hexString: "#333333")
+            self.btnSecondRadius.backgroundColor = UIColor.init(hexString: "#333333")
+            self.btnThirdRadius.backgroundColor = UIColor.init(hexString: "#333333")
+            if currentValue < 6{
+                self.setMapCamera(lat: self.lat, lang: self.long, zoom: 12.0)
+            } else if currentValue >= 6 && currentValue < 15{
+                self.setMapCamera(lat: self.lat, lang: self.long, zoom: 11.0)
+            } else if currentValue >= 15 && currentValue < 25{
+                self.setMapCamera(lat: self.lat, lang: self.long, zoom: 10.0)
+            } else{
+                self.setMapCamera(lat: self.lat, lang: self.long, zoom: 9.0)
+            }
+            self.setRadius(lat: self.lat, lang: self.long, radiusValue: currentValue)
             print(currentValue)
         }
     }
@@ -95,21 +125,31 @@ class SelectRediusVC: UIViewController {
         self.locationManager.startUpdatingLocation()
         
         sliderRadius.value = 15
-        setRadius(radiusValue: 15)
+        
     }
 }
 
 extension SelectRediusVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //let location = locations.last
-        let camera = GMSCameraPosition.camera(withLatitude: 18.5204, longitude: 73.8567, zoom: 10)
-        self.mapView.animate(to: camera)
+        let location = locations.last
+        self.lat = location?.coordinate.latitude ?? 0.0
+        self.long = location?.coordinate.longitude ?? 0.0
+        
+        DispatchQueue.main.async {
+            self.setMapCamera(lat: self.lat, lang: self.long, zoom: 10.0)
+            self.setRadius(lat: self.lat, lang: self.long, radiusValue: 15)
+        }
         self.locationManager.stopUpdatingLocation()
     }
     
-    func setRadius(radiusValue: Int){
-        let circleCenter : CLLocationCoordinate2D  = CLLocationCoordinate2DMake(18.5204, 73.8567);
+    func setMapCamera(lat: Double, lang: Double, zoom: Float){
+        camera = .camera(withLatitude: lat, longitude: lang, zoom: zoom)
+        self.mapView.animate(to: camera)
+    }
+    
+    func setRadius(lat: Double, lang: Double, radiusValue: Int){
+        let circleCenter : CLLocationCoordinate2D  = CLLocationCoordinate2DMake(lat, lang);
         //let circ = GMSCircle(position: circleCenter, radius: CLLocationDistance(radiusValue * 1000))
         circ1.position = circleCenter
         circ1.radius = CLLocationDistance(radiusValue * 1000)
