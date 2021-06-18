@@ -24,6 +24,10 @@ class CartVC: UIViewController {
     @IBOutlet weak var viewItemTotalBack: UIView!
     @IBOutlet weak var btnPay: UIButton!
     
+    @IBOutlet weak var btnFive: UIButton!
+    @IBOutlet weak var btnTen: UIButton!
+    @IBOutlet weak var btnFifteen: UIButton!
+    
     var orderAllItem = false
     // MARK: - View Life Cycle Methods
     override func viewDidLoad() {
@@ -69,6 +73,35 @@ class CartVC: UIViewController {
             orderAllItem = true
             sender.setImage(#imageLiteral(resourceName: "checked_checkbox"), for: .normal)
         }
+    }
+    
+    
+    @IBAction func onClickFive(_ sender: Any) {
+        btnFive.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+        btnFive.setTitleColor(UIColor.white, for: .normal)
+        btnTen.backgroundColor = UIColor.init(hexString: "#EDF7FE")
+        btnTen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        btnFifteen.backgroundColor = UIColor.init(hexString: "#EDF7FE")
+        btnFifteen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+    }
+    
+    @IBAction func onClickTen(_ sender: Any) {
+        btnFive.backgroundColor = UIColor.init(hexString: "#EDF7FE")
+        btnFive.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        btnTen.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+        btnTen.setTitleColor(UIColor.white, for: .normal)
+        btnFifteen.backgroundColor = UIColor.init(hexString: "#EDF7FE")
+        btnFifteen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+    }
+    
+    @IBAction func onClickFiften(_ sender: Any) {
+        
+        btnFive.backgroundColor = UIColor.init(hexString: "#EDF7FE")
+        btnFive.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        btnTen.backgroundColor = UIColor.init(hexString: "#EDF7FE")
+        btnTen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        btnFifteen.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+        btnFifteen.setTitleColor(UIColor.white, for: .normal)
     }
     
     func setupView(){
@@ -119,6 +152,7 @@ extension CartVC: CartAPIResponseDelegate {
 }
 
 extension CartVC: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }

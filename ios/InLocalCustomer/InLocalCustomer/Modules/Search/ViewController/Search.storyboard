@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -80,7 +81,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5kb-FB-UYI">
                                                                         <rect key="frame" x="46" y="16" width="270" height="18.5"/>
                                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -170,6 +171,9 @@
                                                                         <constraint firstItem="Qnw-Vz-h59" firstAttribute="top" secondItem="1aK-iC-hc9" secondAttribute="top" id="mZH-WZ-5XB"/>
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="viewCategoryLblBack" destination="Qnw-Vz-h59" id="HXB-P3-cD5"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -228,7 +232,7 @@
                                                             <outlet property="delegate" destination="BYZ-38-t0r" id="663-9W-dnF"/>
                                                         </connections>
                                                     </collectionView>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uoS-qs-h6W">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uoS-qs-h6W">
                                                         <rect key="frame" x="10" y="127" width="394" height="651"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
@@ -363,6 +367,7 @@
                         <outlet property="collectionViewCategory" destination="hcO-9R-dYU" id="C2d-OD-JOT"/>
                         <outlet property="collectionViewPost" destination="I5V-8G-COt" id="SoR-pf-Yh9"/>
                         <outlet property="tableViewPostList" destination="uoS-qs-h6W" id="SQD-XB-A60"/>
+                        <outlet property="txtFieldSearch" destination="5kb-FB-UYI" id="20S-dr-Qm4"/>
                         <outlet property="viewSearchContainer" destination="lQh-5C-zoR" id="lJG-Rg-hSx"/>
                     </connections>
                 </viewController>

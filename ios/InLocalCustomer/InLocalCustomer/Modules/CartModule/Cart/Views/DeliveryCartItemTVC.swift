@@ -11,6 +11,7 @@ class DeliveryCartItemTVC: UITableViewCell {
 
     
     @IBOutlet weak var viewBackCell: UIView!
+    @IBOutlet weak var btnCount: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,4 +25,20 @@ class DeliveryCartItemTVC: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
+    @IBAction func onClickPlus(_ sender: Any) {
+        
+        var count = Int((btnCount.titleLabel?.text!)!)
+        count = count! + 1
+        btnCount.setTitle(String(count!), for: .normal)
+    }
+    
+    @IBAction func onClickMinus(_ sender: Any) {
+        var count = Int((btnCount.titleLabel?.text!)!)!
+        if count > 1{
+            count = count - 1
+            btnCount.setTitle(String(count), for: .normal)
+        }
+    }
+    
 }

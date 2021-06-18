@@ -19,6 +19,9 @@ class MenuDetailVC: UIViewController {
     
     @IBOutlet weak var collectionViewMenuImage_height: NSLayoutConstraint!
     
+    @IBOutlet weak var btnCount: UIButton!
+    
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +66,22 @@ class MenuDetailVC: UIViewController {
             return
         }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func onClickPlus(_ sender: Any) {
+        var count = Int((btnCount.titleLabel?.text!)!)
+        count = count! + 1
+        btnCount.setTitle(String(count!), for: .normal)
+    }
+    
+    
+    @IBAction func onClickMinus(_ sender: Any) {
+        var count = Int((btnCount.titleLabel?.text!)!)!
+        if count > 1{
+            count = count - 1
+            btnCount.setTitle(String(count), for: .normal)
+        }
     }
     
     func setupView(){
