@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -171,12 +172,46 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5MA-Te-cwS" customClass="TextFieldView" customModule="InLocalCustomer" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5MA-Te-cwS">
                                                                         <rect key="frame" x="0.0" y="32" width="341" height="51"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foo-Eu-Xyu">
+                                                                                <rect key="frame" x="10" y="25.666666666666629" width="0.0" height="0.0"/>
+                                                                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="Mdo-Sn-pWC">
+                                                                                <rect key="frame" x="311" y="15.666666666666629" width="20" height="20"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="Mdo-Sn-pWC" secondAttribute="height" multiplier="1:1" id="1Bn-VN-NbY"/>
+                                                                                    <constraint firstAttribute="height" constant="20" id="V8f-xj-BJa"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f1-4d-3Pm">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="341" height="51"/>
+                                                                                <connections>
+                                                                                    <action selector="onClickSelectCountry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pch-yt-yKj"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="51" placeholder="YES" id="GQK-u8-rGD"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="7f1-4d-3Pm" secondAttribute="trailing" id="EcO-uL-LED"/>
+                                                                            <constraint firstItem="foo-Eu-Xyu" firstAttribute="centerY" secondItem="5MA-Te-cwS" secondAttribute="centerY" id="GAi-6X-DeO"/>
+                                                                            <constraint firstAttribute="height" constant="51" id="GQK-u8-rGD"/>
+                                                                            <constraint firstItem="7f1-4d-3Pm" firstAttribute="top" secondItem="5MA-Te-cwS" secondAttribute="top" id="Nf0-ek-gdK"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Mdo-Sn-pWC" secondAttribute="trailing" constant="10" id="TO4-iM-D1y"/>
+                                                                            <constraint firstItem="Mdo-Sn-pWC" firstAttribute="centerY" secondItem="5MA-Te-cwS" secondAttribute="centerY" id="avq-9j-9uN"/>
+                                                                            <constraint firstItem="7f1-4d-3Pm" firstAttribute="leading" secondItem="5MA-Te-cwS" secondAttribute="leading" id="fH0-iZ-0Gv"/>
+                                                                            <constraint firstItem="foo-Eu-Xyu" firstAttribute="leading" secondItem="5MA-Te-cwS" secondAttribute="leading" constant="10" id="oaZ-O3-cZ1"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="7f1-4d-3Pm" secondAttribute="bottom" id="z4X-TG-BLK"/>
                                                                         </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="26"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
                                                                 <constraints>
@@ -203,6 +238,9 @@
                                                                 <integer key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onClickSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fcr-xq-bC4"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -249,8 +287,8 @@
                     </view>
                     <connections>
                         <outlet property="btnSave" destination="Go6-tI-34H" id="Je3-gj-eZU"/>
+                        <outlet property="lblCountry" destination="foo-Eu-Xyu" id="is3-ai-kco"/>
                         <outlet property="txtFieldCity" destination="bxP-0o-6ns" id="lWQ-6D-fXK"/>
-                        <outlet property="txtFieldCountry" destination="5MA-Te-cwS" id="Mwt-88-pyM"/>
                         <outlet property="txtFieldHouseNo" destination="57l-3g-tTU" id="8R5-lQ-eMc"/>
                         <outlet property="txtFiledLandmark" destination="6wF-fn-Plb" id="dOz-Wf-2ec"/>
                         <outlet property="txtFiledZipCode" destination="hax-89-dZQ" id="8Z0-Cb-Tha"/>
@@ -258,11 +296,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="68"/>
+            <point key="canvasLocation" x="141.59999999999999" y="67.980295566502463"/>
         </scene>
     </scenes>
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
+        <image name="dropdown" width="33.333332061767578" height="33.333332061767578"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

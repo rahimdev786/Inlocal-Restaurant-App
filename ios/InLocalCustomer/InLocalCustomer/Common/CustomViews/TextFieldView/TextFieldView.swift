@@ -27,7 +27,7 @@ enum InputFieldType{
     case deliveryType
     case timeSlot
     case date
-    
+    case houseNo
 }
 
   @objc protocol TextFieldDelegate: class {
@@ -166,11 +166,12 @@ class TextFieldView: UIView {
         case .city:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .default
-            txtFldInput.autocapitalizationType = .none
+            txtFldInput.autocapitalizationType = .words
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "landmark")
             imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
-
+            
+            
         case .otp:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .numberPad
@@ -220,16 +221,26 @@ class TextFieldView: UIView {
         case .landmark:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .default
-            txtFldInput.autocapitalizationType = .none
+            txtFldInput.autocapitalizationType = .sentences
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "landmark")
             imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
+            
             
         case .address:
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .default
             txtFldInput.autocapitalizationType = .none
             //imgViewLeftIcon.image = #imageLiteral(resourceName: "address")
+            imgViewLeftIcon.isHidden = true
+            imgViewRightIcon.isHidden = true
+            
+        case .houseNo:
+            txtFldInput.isSecureTextEntry = false
+            txtFldInput.keyboardType = .default
+            txtFldInput.autocapitalizationType = .none
+            //imgViewLeftIcon.image = #imageLiteral(resourceName: "address")
+            txtFldInput.textContentType = UITextContentType(rawValue: "")
             imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
             

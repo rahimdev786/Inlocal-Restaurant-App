@@ -16,7 +16,11 @@ class ReservationVC: UIViewController {
     var dependency: ReservationDependency?
     
     @IBOutlet weak var viewSpecialIntructionBack: UIView!
+    @IBOutlet weak var lblNoOfGuest: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
     
+    let guestCountView = NoOfGuestView.instanceFromNib()
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +58,27 @@ class ReservationVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickDate(_ sender: Any) {
+    
+    }
+    
+    @IBAction func onClickTime(_ sender: Any) {
+    
+    }
+    
+    @IBAction func onClickGuest(_ sender: Any) {
+        self.view.addSubview(guestCountView)
+    }
+    
     func setupView(){
         viewSpecialIntructionBack.layer.cornerRadius = 10
         viewSpecialIntructionBack.layer.borderWidth = 1
         viewSpecialIntructionBack.layer.borderColor = UIColor.lightGray.cgColor
+        
+        guestCountView.frame = UIScreen.main.bounds
+        guestCountView.delegate = self
+        guestCountView.imgViewBackground.backgroundColor = .black
+        guestCountView.imgViewBackground.alpha = 0.6
     }
 }
 
@@ -79,4 +100,14 @@ extension ReservationVC {
 // MARK: - ReservationAPIResponseDelegate
 extension ReservationVC: ReservationAPIResponseDelegate {
     
+}
+
+extension ReservationVC: NoOfGuestDelegate {
+    func onClickCancel() {
+        
+    }
+    
+    func onClickDone(guestCount: String) {
+        lblNoOfGuest.text = guestCount
+    }
 }

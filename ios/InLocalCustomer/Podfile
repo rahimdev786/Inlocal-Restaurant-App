@@ -20,5 +20,5 @@ pod 'GooglePlaces'
 pod 'AZTabBar'
 pod 'OTPFieldView'
 pod 'CalendarDateRangePicker'
-
+pod 'CountryList'
 end
