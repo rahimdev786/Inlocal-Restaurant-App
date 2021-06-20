@@ -26,6 +26,15 @@ class RestaurantProfileVC: UIViewController {
     @IBOutlet weak var btnReservation: UIButton!
     @IBOutlet weak var btnInfo: UIButton!
     
+    @IBOutlet weak var btnPostCount: UIButton!
+    @IBOutlet weak var btnPostName: UIButton!
+    @IBOutlet weak var btnInsideCount: UIButton!
+    @IBOutlet weak var btnInsightName: UIButton!
+    
+    @IBOutlet weak var viewToHightlightPost: UIView!
+    @IBOutlet weak var viewToHightlightInsight: UIView!
+    
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +72,30 @@ class RestaurantProfileVC: UIViewController {
     
     @IBAction func onClickBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickPost(_ sender: Any) {
+        btnPostCount.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        btnPostName.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        
+        btnInsideCount.setTitleColor(UIColor.black, for: .normal)
+        btnInsightName.setTitleColor(UIColor.black, for: .normal)
+        
+        viewToHightlightPost.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+        viewToHightlightInsight.backgroundColor = UIColor.white
+        
+    }
+    
+    @IBAction func onClickInsight(_ sender: Any) {
+        
+        btnPostCount.setTitleColor(UIColor.black, for: .normal)
+        btnPostName.setTitleColor(UIColor.black, for: .normal)
+        
+        btnInsideCount.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        btnInsightName.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        
+        viewToHightlightPost.backgroundColor = UIColor.white
+        viewToHightlightInsight.backgroundColor = UIColor.init(hexString: "#1DA1F2")
     }
     
     @IBAction func onClickFollowers(_ sender: Any) {
@@ -122,11 +155,16 @@ class RestaurantProfileVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func onClickFollow(_ sender: Any) {
-        guard let vc = ReservationVC.load(withDependency: nil) else{
-            return
+    @IBAction func onClickFollow(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            sender.setImage(#imageLiteral(resourceName: "follow_white"), for: .normal)
+            sender.backgroundColor = UIColor.init(hexString: "#333333")
+        } else{
+            sender.isSelected = true
+            sender.setImage(#imageLiteral(resourceName: "unfollow_icon"), for: .normal)
+            sender.backgroundColor = UIColor.init(hexString: "#1DA1F2")
         }
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onClickReservation(_ sender: Any) {
@@ -203,5 +241,15 @@ extension RestaurantProfileVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
         return cell
+    }
+}
+
+extension RestaurantProfileVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = TagedPhotosVC.load(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -9,6 +9,10 @@ import UIKit
 
 class MenuCustomisationTVC: UITableViewCell {
 
+    
+    @IBOutlet weak var btnFirst: UIButton!
+    @IBOutlet weak var btnSecond: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +23,15 @@ class MenuCustomisationTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    
+    @IBAction func onClickFirst(_ sender: Any) {
+        btnFirst.setImage(#imageLiteral(resourceName: "tick_round_blue"), for: .normal)
+        btnSecond.setImage(#imageLiteral(resourceName: "untick_round_blue"), for: .normal)
+    }
+    
+    @IBAction func onClickSecond(_ sender: Any) {
+        btnFirst.setImage(#imageLiteral(resourceName: "untick_round_blue"), for: .normal)
+        btnSecond.setImage(#imageLiteral(resourceName: "tick_round_blue"), for: .normal)
+    }
 }

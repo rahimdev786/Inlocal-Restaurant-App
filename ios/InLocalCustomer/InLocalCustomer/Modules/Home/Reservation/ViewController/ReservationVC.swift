@@ -8,14 +8,23 @@
 //
 
 import UIKit
+import DatePickerDialog
+import DateTimePicker
 
-class ReservationVC: UIViewController {
+class ReservationVC: UIViewController, DateTimePickerDelegate {
     
     // MARK: Instance variables
 	lazy var dataManager = ReservationDataManager()
     var dependency: ReservationDependency?
     
     @IBOutlet weak var viewSpecialIntructionBack: UIView!
+    @IBOutlet weak var lblNoOfGuest: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
+    
+    let guestCountView = NoOfGuestView.instanceFromNib()
+    var timePicker: DateTimePicker?
+    
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -54,10 +63,56 @@ class ReservationVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickDate(_ sender: Any) {
+        DatePickerDialog().show("DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) { date in
+            if let dt = date {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd MMM, yyyy"
+                self.lblDate.text = formatter.string(from: dt)
+            }
+        }
+    }
+    
+    @IBAction func onClickTime(_ sender: Any) {
+        let timePicker = DateTimePicker.create(minimumDate: nil, maximumDate: nil)
+        timePicker.timeInterval = DateTimePicker.MinuteInterval.default
+        timePicker.highlightColor = UIColor.black
+        timePicker.darkColor = UIColor.darkGray
+        timePicker.doneButtonTitle = "Done"
+        timePicker.doneBackgroundColor = UIColor.init(hexString: "#1DA1F2")
+        timePicker.todayButtonTitle = ""
+        timePicker.is12HourFormat = false
+        timePicker.dateFormat = "HH:mm"
+        timePicker.isTimePickerOnly = true
+        timePicker.includesMonth = false
+        timePicker.completionHandler = { date in
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            let timeString = formatter.string(from: date)
+            self.lblTime.text = timeString
+        }
+        timePicker.delegate = self
+        self.timePicker = timePicker
+        self.timePicker?.show()
+    }
+    
+    func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
+        
+    }
+    
+    @IBAction func onClickGuest(_ sender: Any) {
+        self.view.addSubview(guestCountView)
+    }
+    
     func setupView(){
         viewSpecialIntructionBack.layer.cornerRadius = 10
         viewSpecialIntructionBack.layer.borderWidth = 1
         viewSpecialIntructionBack.layer.borderColor = UIColor.lightGray.cgColor
+        
+        guestCountView.frame = UIScreen.main.bounds
+        guestCountView.delegate = self
+        guestCountView.imgViewBackground.backgroundColor = .black
+        guestCountView.imgViewBackground.alpha = 0.6
     }
 }
 
@@ -79,4 +134,14 @@ extension ReservationVC {
 // MARK: - ReservationAPIResponseDelegate
 extension ReservationVC: ReservationAPIResponseDelegate {
     
+}
+
+extension ReservationVC: NoOfGuestDelegate {
+    func onClickCancel() {
+        
+    }
+    
+    func onClickDone(guestCount: String) {
+        lblNoOfGuest.text = guestCount
+    }
 }

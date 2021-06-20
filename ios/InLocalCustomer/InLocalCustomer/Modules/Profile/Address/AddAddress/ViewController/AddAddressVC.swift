@@ -8,7 +8,8 @@
 //
 
 import UIKit
-
+import CountryList
+import Toast_Swift
 class AddAddressVC: UIViewController {
     
     // MARK: Instance variables
@@ -19,10 +20,13 @@ class AddAddressVC: UIViewController {
     @IBOutlet weak var txtFiledLandmark: TextFieldView!
     @IBOutlet weak var txtFiledZipCode: TextFieldView!
     @IBOutlet weak var txtFieldCity: TextFieldView!
-    @IBOutlet weak var txtFieldCountry: TextFieldView!
     
+    //@IBOutlet weak var viewBackCountry: TextFieldView!
     @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var imgViewCountry: UIImageView!
+    @IBOutlet weak var lblCountry: UILabel!
     
+    var countryList = CountryList()
     var addAddressRequest = AddAddressRequest()
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -61,27 +65,45 @@ class AddAddressVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickSelectCountry(_ sender: Any) {
+        let vc = UINavigationController(rootViewController: countryList)
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func onClickSave(_ sender: Any) {
+        self.view.makeToast("Address added.")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     func setupUI() {
       
         txtFieldHouseNo.delegate = self
-        txtFieldHouseNo.populateWithData(text: "", placeholderText: "House no, street name", fieldType: .address)
+        txtFieldHouseNo.txtFldInput.delegate = self
+        txtFieldHouseNo.populateWithData(text: "", placeholderText: "House no, street name", fieldType: .houseNo)
         txtFieldHouseNo.txtFldInput.returnKeyType = UIReturnKeyType.next
+        txtFieldHouseNo.txtFldInput.tag = 0
         
         txtFiledLandmark.delegate = self
+        txtFiledLandmark.txtFldInput.delegate = self
         txtFiledLandmark.populateWithData(text: "", placeholderText: "Landmark", fieldType: .landmark)
-        txtFiledLandmark.txtFldInput.returnKeyType = UIReturnKeyType.default
+        txtFiledLandmark.txtFldInput.returnKeyType = UIReturnKeyType.next
+        txtFiledLandmark.txtFldInput.tag = 1
         
         txtFiledZipCode.delegate = self
+        txtFiledZipCode.txtFldInput.delegate = self
         txtFiledZipCode.populateWithData(text: "", placeholderText:"Zip Code", fieldType: .zipcode)
         txtFiledZipCode.txtFldInput.returnKeyType = UIReturnKeyType.next
+        txtFiledZipCode.txtFldInput.tag = 2
         
         txtFieldCity.delegate = self
+        txtFieldCity.txtFldInput.delegate = self
         txtFieldCity.populateWithData(text: "", placeholderText: "City", fieldType: .city)
         txtFieldCity.txtFldInput.returnKeyType = UIReturnKeyType.default
+        txtFieldCity.txtFldInput.tag = 3
         
-        txtFieldCountry.delegate = self
-        txtFieldCountry.populateWithData(text: "", placeholderText: "Country", fieldType: .country)
-        txtFieldCountry.txtFldInput.returnKeyType = UIReturnKeyType.default
+        countryList.delegate = self
         
         validateFields()
     }
@@ -127,7 +149,7 @@ extension AddAddressVC: TextFieldDelegate{
         let strText = string
         let fieldType = textFieldView.fieldType!
         switch fieldType {
-        case .address:
+        case .houseNo:
             if strText.isNullString() {
                 addAddressRequest.flatNo = ""
                 textFieldView.showError(with: "* Required")
@@ -149,7 +171,10 @@ extension AddAddressVC: TextFieldDelegate{
             if strText.isNullString() {
                 addAddressRequest.zipCode = ""
                 textFieldView.showError(with: "* Required")
-            } else {
+            } else if !validZipCode(postalCode: strText){
+                addAddressRequest.zipCode = ""
+                textFieldView.showError(with: "Enter valid zip code.")
+            } else{
                 addAddressRequest.zipCode = strText
                 textFieldView.hideError()
             }
@@ -163,14 +188,6 @@ extension AddAddressVC: TextFieldDelegate{
                 textFieldView.hideError()
             }
             
-        case .country:
-            if strText.isNullString() {
-                addAddressRequest.country = ""
-                textFieldView.showError(with: "* Required")
-            } else {
-                addAddressRequest.country = strText
-                textFieldView.hideError()
-            }
             
         default:
             break
@@ -185,8 +202,50 @@ extension AddAddressVC: TextFieldDelegate{
     }
     
     func textFieldViewShouldReturn(_ textFieldView: TextFieldView) -> Bool {
-       
+        
         return true
     }
     
+    func validZipCode(postalCode:String)->Bool{
+            let postalcodeRegex = "^[0-9]{6}(-[0-9]{4})?$"
+            let pinPredicate = NSPredicate(format: "SELF MATCHES %@", postalcodeRegex)
+            let bool = pinPredicate.evaluate(with: postalCode) as Bool
+            return bool
+    }
+}
+
+extension AddAddressVC: UITextFieldDelegate {
+   
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.tag == txtFieldHouseNo.txtFldInput.tag{
+            txtFiledLandmark.txtFldInput.becomeFirstResponder()
+        } else if textField.tag == txtFiledLandmark.txtFldInput.tag{
+            txtFiledZipCode.txtFldInput.becomeFirstResponder()
+        } else if textField.tag == txtFiledZipCode.txtFldInput.tag{
+            txtFieldCity.txtFldInput.becomeFirstResponder()
+        } else{
+            textField.resignFirstResponder()
+        }
+        return true
+        
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == txtFiledZipCode.txtFldInput.tag{
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            return newLength <= 6
+        }
+        
+        return true
+    }
+}
+
+extension AddAddressVC: CountryListDelegate {
+    func selectedCountry(country: Country) {
+        lblCountry.text = "\(country.flag!) \(country.name!)"
+        addAddressRequest.country = country.name!
+        validateFields()
+    }
 }

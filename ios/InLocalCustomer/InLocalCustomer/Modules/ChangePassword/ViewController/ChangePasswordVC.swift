@@ -171,7 +171,6 @@ extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
                 } else{
                     textFieldView.showError(with: "Confirm password does not match")
                 }
-               
             }
             
         case .cnfrmPassword:
