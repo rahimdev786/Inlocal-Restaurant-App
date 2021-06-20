@@ -7,6 +7,8 @@ PODS:
     - EasyNotificationBadge
   - CalendarDateRangePicker (2.0)
   - CountryList (1.1)
+  - DatePickerDialog (4.0)
+  - DateTimePicker (2.5.3)
   - EasyNotificationBadge (1.2.5)
   - GoogleMaps (3.9.0):
     - GoogleMaps/Maps (= 3.9.0)
@@ -28,6 +30,8 @@ DEPENDENCIES:
   - AZTabBar
   - CalendarDateRangePicker
   - CountryList
+  - DatePickerDialog
+  - DateTimePicker
   - GoogleMaps
   - GooglePlaces
   - IQKeyboardManagerSwift (~> 6.4.1)
@@ -44,6 +48,8 @@ SPEC REPOS:
     - AZTabBar
     - CalendarDateRangePicker
     - CountryList
+    - DatePickerDialog
+    - DateTimePicker
     - EasyNotificationBadge
     - GoogleMaps
     - GooglePlaces
@@ -61,6 +67,8 @@ SPEC CHECKSUMS:
   AZTabBar: e4d5a1f5f3fc7be044d532b7a704d303cff9af11
   CalendarDateRangePicker: fa5f660023cf896180c04fe5c7687106734a54e4
   CountryList: ad58cd670c4ecab6bb014abebc12e63f619174b2
+  DatePickerDialog: ccff2f91ff7a018057a4d72fa5ad6de49c8cb0cd
+  DateTimePicker: 52701ddf656a50856d3510955933f767cd2c947c
   EasyNotificationBadge: a3ebbcb1de0c0558e102e954380c75801f352702
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
   GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
@@ -72,6 +80,6 @@ SPEC CHECKSUMS:
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 9d4201e31d43771b81b648631b346bcfd718c9a1
+PODFILE CHECKSUM: 79e5474f5341eb05b9d4dbbe230834d02e1f24bf
 
 COCOAPODS: 1.9.3

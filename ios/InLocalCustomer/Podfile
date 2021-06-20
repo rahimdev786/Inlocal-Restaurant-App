@@ -21,4 +21,7 @@ pod 'AZTabBar'
 pod 'OTPFieldView'
 pod 'CalendarDateRangePicker'
 pod 'CountryList'
+pod 'DatePickerDialog'
+pod 'DateTimePicker'
+
 end
