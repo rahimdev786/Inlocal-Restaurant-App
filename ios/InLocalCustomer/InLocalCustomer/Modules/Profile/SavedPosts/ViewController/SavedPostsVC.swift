@@ -28,7 +28,7 @@ class SavedPostsVC: UIViewController {
             UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
             UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .normal)
         }else{
-            
+
             segmentedControl.tintColor = UIColor(hexString: "1DA1F2")
             segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.selected)
             segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)

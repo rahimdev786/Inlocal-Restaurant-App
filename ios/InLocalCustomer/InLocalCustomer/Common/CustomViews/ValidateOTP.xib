@@ -62,8 +62,8 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pos-Ss-0nk" customClass="OTPFieldView" customModule="OTPFieldView">
-                                    <rect key="frame" x="20" y="157" width="374" height="40"/>
+                                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pos-Ss-0nk" customClass="OTPFieldView" customModule="OTPFieldView">
+                                    <rect key="frame" x="-80" y="157" width="474" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="tb4-ST-xla"/>
@@ -109,23 +109,23 @@
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="BPp-bX-CA5" secondAttribute="trailing" constant="17" id="1Fz-vO-HU2"/>
                                 <constraint firstItem="BPp-bX-CA5" firstAttribute="top" secondItem="p50-rn-gjR" secondAttribute="bottom" constant="50" id="5bK-nS-K3y"/>
+                                <constraint firstAttribute="trailing" secondItem="Pos-Ss-0nk" secondAttribute="trailing" constant="20" id="8EG-lO-IP8"/>
+                                <constraint firstItem="Pos-Ss-0nk" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="-80" id="CmE-We-cgH"/>
                                 <constraint firstItem="O1i-MQ-vvU" firstAttribute="centerX" secondItem="27n-ak-cSJ" secondAttribute="centerX" id="Fnl-CS-tes"/>
                                 <constraint firstItem="nuv-ne-6lq" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="17" id="LTM-YA-SrG"/>
-                                <constraint firstItem="Pos-Ss-0nk" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="20" id="Nmg-K8-s4n"/>
                                 <constraint firstItem="nuv-ne-6lq" firstAttribute="top" secondItem="O1i-MQ-vvU" secondAttribute="bottom" constant="20.5" id="OVA-Vn-EG5"/>
                                 <constraint firstItem="Pos-Ss-0nk" firstAttribute="top" secondItem="nuv-ne-6lq" secondAttribute="bottom" constant="30.5" id="RBH-46-2MM"/>
                                 <constraint firstItem="p50-rn-gjR" firstAttribute="top" secondItem="Pos-Ss-0nk" secondAttribute="bottom" constant="30" id="b58-t8-IDv"/>
-                                <constraint firstAttribute="trailing" secondItem="Pos-Ss-0nk" secondAttribute="trailing" constant="20" id="bQG-cj-oPK"/>
                                 <constraint firstItem="BPp-bX-CA5" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="17" id="fvn-qh-dX0"/>
                                 <constraint firstItem="O1i-MQ-vvU" firstAttribute="top" secondItem="27n-ak-cSJ" secondAttribute="top" constant="60" id="oFP-YZ-D8m"/>
                                 <constraint firstAttribute="trailing" secondItem="nuv-ne-6lq" secondAttribute="trailing" constant="17" id="tb3-zr-BfA"/>
-                                <constraint firstItem="p50-rn-gjR" firstAttribute="centerX" secondItem="Pos-Ss-0nk" secondAttribute="centerX" id="w7s-qd-FqP"/>
                                 <constraint firstAttribute="bottom" secondItem="BPp-bX-CA5" secondAttribute="bottom" constant="60" id="wyh-yY-OIZ"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="p50-rn-gjR" firstAttribute="centerX" secondItem="cup-5E-wZ6" secondAttribute="centerX" id="0Od-Qy-dRx"/>
                         <constraint firstItem="txc-1c-r6k" firstAttribute="top" secondItem="cup-5E-wZ6" secondAttribute="top" id="YHb-Iv-xn5"/>
                         <constraint firstItem="txc-1c-r6k" firstAttribute="leading" secondItem="cup-5E-wZ6" secondAttribute="leading" id="avM-wi-l2U"/>
                         <constraint firstAttribute="trailing" secondItem="txc-1c-r6k" secondAttribute="trailing" id="gNS-KM-5OU"/>

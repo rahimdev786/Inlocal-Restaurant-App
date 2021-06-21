@@ -34,6 +34,7 @@ class AddAddressVC: UIViewController {
         
         dataManager.apiResponseDelegate = self
         setupUI()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -103,6 +104,7 @@ class AddAddressVC: UIViewController {
         txtFieldCity.txtFldInput.returnKeyType = UIReturnKeyType.default
         txtFieldCity.txtFldInput.tag = 3
         
+        lblCountry.text = "🇩🇪 Germany"
         countryList.delegate = self
         
         validateFields()

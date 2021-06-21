@@ -148,12 +148,17 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="al6-fz-LJi">
                                                     <rect key="frame" x="0.0" y="10" width="341" height="90"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cheese_burger" translatesAutoresizingMaskIntoConstraints="NO" id="DQM-bY-ThG">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="DQM-bY-ThG">
                                                             <rect key="frame" x="10" y="10" width="70" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="80" id="e7i-Wg-XvD"/>
                                                                 <constraint firstAttribute="width" secondItem="DQM-bY-ThG" secondAttribute="height" multiplier="1:1" id="ynK-z1-OAr"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WeP-qf-yz7">
                                                             <rect key="frame" x="98" y="10" width="131" height="70.333333333333329"/>
@@ -321,7 +326,7 @@
     </scenes>
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
-        <image name="cheese_burger" width="58.666667938232422" height="58.666667938232422"/>
+        <image name="food" width="170" height="135"/>
         <image name="three_dot_black" width="28" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

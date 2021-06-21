@@ -34,6 +34,7 @@ class RestaurantProfileVC: UIViewController {
     @IBOutlet weak var viewToHightlightPost: UIView!
     @IBOutlet weak var viewToHightlightInsight: UIView!
     
+    @IBOutlet weak var lblFollow: UILabel!
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -160,11 +161,16 @@ class RestaurantProfileVC: UIViewController {
             sender.isSelected = false
             sender.setImage(#imageLiteral(resourceName: "follow_white"), for: .normal)
             sender.backgroundColor = UIColor.init(hexString: "#333333")
+            
+            lblFollow.text = "Follow"
         } else{
             sender.isSelected = true
             sender.setImage(#imageLiteral(resourceName: "unfollow_icon"), for: .normal)
             sender.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+            lblFollow.text = "Unfollow"
         }
+        
+        
     }
     
     @IBAction func onClickReservation(_ sender: Any) {

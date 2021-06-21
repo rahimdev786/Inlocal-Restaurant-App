@@ -74,7 +74,7 @@ class SetNewPasswordVC: UIViewController {
         
         txtFieldConfirmPassword.delegate = self
         txtFieldConfirmPassword.populateWithData(text: "", placeholderText: "Confirm password", fieldType: .cnfrmPassword)
-        txtFieldConfirmPassword.txtFldInput.returnKeyType = UIReturnKeyType.next
+        txtFieldConfirmPassword.txtFldInput.returnKeyType = UIReturnKeyType.done
         txtFieldConfirmPassword.txtFldInput.delegate = self
         txtFieldConfirmPassword.txtFldInput.tag = 1
         
@@ -180,8 +180,8 @@ extension SetNewPasswordVC: UITextFieldDelegate {
    
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
        
-       if  txtFieldPassword.tag == textField.tag {
-        txtFieldPassword.txtFldInput.becomeFirstResponder()
+    if  txtFieldPassword.txtFldInput.tag == textField.tag {
+        txtFieldConfirmPassword.txtFldInput.becomeFirstResponder()
        } else{
            textField.resignFirstResponder()
        }

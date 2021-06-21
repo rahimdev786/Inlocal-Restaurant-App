@@ -462,6 +462,7 @@
                         <outlet property="btnReservation" destination="sx5-DC-Z1U" id="q9R-QV-AaE"/>
                         <outlet property="collectionViewPost" destination="VVY-58-2oC" id="gSy-wi-Vdy"/>
                         <outlet property="collectionViewPost_height" destination="TwI-50-zRa" id="K44-hE-bgh"/>
+                        <outlet property="lblFollow" destination="gv2-4G-cUB" id="JLa-Np-K68"/>
                         <outlet property="viewProfileBack" destination="CWQ-nG-kyg" id="QZ1-yw-iLP"/>
                         <outlet property="viewToHightlightInsight" destination="9kZ-Uu-qAp" id="Imq-gb-Mqr"/>
                         <outlet property="viewToHightlightPost" destination="dsS-li-2Yd" id="LlQ-uA-oio"/>
