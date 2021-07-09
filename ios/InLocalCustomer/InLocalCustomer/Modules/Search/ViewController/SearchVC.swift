@@ -26,6 +26,8 @@ class SearchVC: UIViewController {
     
     @IBOutlet weak var txtFieldSearch: UITextField!
     
+    var categoryArray = ["Indian", "German", "Italian", "French", "American"]
+    
     var isGridViewEnable = true
     var selectedCategory = 0
     // MARK: - View Life Cycle Methods
@@ -154,12 +156,17 @@ extension SearchVC: SearchAPIResponseDelegate {
 
 extension SearchVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if collectionView == collectionViewCategory{
+            return categoryArray.count
+        } else{
+            return 10
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionViewCategory{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVC", for: indexPath) as! CategoryCVC
+            cell.lblCategoryName.text = categoryArray[indexPath.row]
             if selectedCategory == indexPath.row{
                 cell.viewCategoryLblBack.backgroundColor = UIColor.init(hexString: "#1DA1F2")
             } else{

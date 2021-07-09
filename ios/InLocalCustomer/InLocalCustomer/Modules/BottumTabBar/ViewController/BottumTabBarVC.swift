@@ -210,13 +210,13 @@ extension BottumTabBarVC{
         tabController.setTitle("", atIndex: 3)
         tabController.setTitle("", atIndex: 4)
         tabController.font = UIFont(name: "AvenirNext-Regular", size: 12)
-
+        
         let container = tabController.buttonsContainer
         container?.layer.shadowOffset = CGSize(width: 0, height: -2)
         container?.layer.shadowRadius = 10
         container?.layer.shadowOpacity = 0.1
         container?.layer.shadowColor = UIColor.black.cgColor
-
+        
         //tabController.setButtonTintColor(color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), atIndex: 0)
     }
 }

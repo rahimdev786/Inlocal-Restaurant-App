@@ -51,7 +51,7 @@ class ProfileInfoVC: UIViewController {
     }
     
     @IBAction func didTapOnEditProfile(_ sender: UIButton) {
-        guard let vc = EditProfileVC.loadFromXIB() else{
+        guard let vc = OwnPostsVC.load() else{
             return
         }
         navigationController?.pushViewController(vc, animated: true)

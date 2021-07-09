@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -133,15 +134,14 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfm-lV-ZVI">
                                                                             <rect key="frame" x="253" y="85.666666666666671" width="78" height="26"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElJ-zz-Wao">
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElJ-zz-Wao">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                                                                     <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="ElJ-zz-Wao" secondAttribute="height" multiplier="1:1" id="PaQ-bA-hTl"/>
                                                                                         <constraint firstAttribute="height" constant="26" id="pjT-Kc-nWU"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
-                                                                                    <state key="normal" title="-">
+                                                                                    <state key="normal" image="minus_icon">
                                                                                         <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     </state>
                                                                                 </button>
@@ -156,14 +156,13 @@
                                                                                         <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     </state>
                                                                                 </button>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFL-l5-4R5">
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFL-l5-4R5">
                                                                                     <rect key="frame" x="52" y="0.0" width="26" height="26"/>
                                                                                     <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="26" id="mMA-H8-qdC"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
-                                                                                    <state key="normal" title="+">
+                                                                                    <state key="normal" image="plus_icon">
                                                                                         <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     </state>
                                                                                 </button>
@@ -355,6 +354,7 @@
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="nS8-8Q-kcN">
                                                 <rect key="frame" x="15" y="671.66666666666663" width="345" height="31"/>
+                                                <color key="tintColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </slider>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ve-Z5-N2w">
                                                 <rect key="frame" x="0.0" y="721.66666666666663" width="375" height="91"/>
@@ -546,6 +546,8 @@
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
         <image name="cart_cheese_burger" width="80" height="80"/>
+        <image name="minus_icon" width="16" height="16"/>
+        <image name="plus_icon" width="16" height="16"/>
         <image name="three_dot_black" width="28" height="28"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

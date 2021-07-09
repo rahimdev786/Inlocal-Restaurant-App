@@ -100,7 +100,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="28"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOK-sP-jCI">
-                                                            <rect key="frame" x="10" y="0.0" width="55" height="28"/>
+                                                            <rect key="frame" x="15" y="0.0" width="45" height="28"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -108,10 +108,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="xOK-sP-jCI" secondAttribute="trailing" constant="10" id="WT2-gW-1Ke"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xOK-sP-jCI" secondAttribute="trailing" constant="15" id="WT2-gW-1Ke"/>
                                                         <constraint firstAttribute="bottom" secondItem="xOK-sP-jCI" secondAttribute="bottom" id="XKh-WZ-3rh"/>
                                                         <constraint firstAttribute="height" constant="28" id="cG6-nX-Vep"/>
-                                                        <constraint firstItem="xOK-sP-jCI" firstAttribute="leading" secondItem="0FO-KS-B4O" secondAttribute="leading" constant="10" id="r3z-2l-V1Z"/>
+                                                        <constraint firstItem="xOK-sP-jCI" firstAttribute="leading" secondItem="0FO-KS-B4O" secondAttribute="leading" constant="15" id="r3z-2l-V1Z"/>
                                                         <constraint firstItem="xOK-sP-jCI" firstAttribute="top" secondItem="0FO-KS-B4O" secondAttribute="top" id="s4J-6c-7Xm"/>
                                                     </constraints>
                                                 </view>
@@ -125,6 +125,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="75" height="28"/>
                                         <connections>
+                                            <outlet property="lblCategoryName" destination="xOK-sP-jCI" id="5a5-3B-siw"/>
                                             <outlet property="viewLblBackground" destination="0FO-KS-B4O" id="cY0-Fw-w5s"/>
                                         </connections>
                                     </collectionViewCell>
@@ -184,20 +185,19 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xuo-VK-rHn">
-                                                            <rect key="frame" x="239" y="16" width="92" height="58"/>
+                                                            <rect key="frame" x="239" y="16.333333333333332" width="92" height="57.333333333333343"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d01-YP-cp1">
                                                                     <rect key="frame" x="7" y="0.0" width="78" height="26"/>
                                                                     <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waA-cs-H0G">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waA-cs-H0G">
                                                                             <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                                                             <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="26" id="2pR-tQ-7dg"/>
                                                                                 <constraint firstAttribute="width" secondItem="waA-cs-H0G" secondAttribute="height" multiplier="1:1" id="OsV-7m-Ac0"/>
                                                                             </constraints>
-                                                                            <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
-                                                                            <state key="normal" title="-">
+                                                                            <state key="normal" image="minus_icon">
                                                                                 <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </state>
                                                                             <userDefinedRuntimeAttributes>
@@ -209,14 +209,14 @@
                                                                                 <action selector="onClickMinus:" destination="tfb-ns-fC3" eventType="touchUpInside" id="LLt-gb-3Tg"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wr5-SO-cqO">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wr5-SO-cqO">
                                                                             <rect key="frame" x="26" y="0.0" width="26" height="26"/>
-                                                                            <color key="backgroundColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="26" id="Jc1-J6-8HX"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
-                                                                            <state key="normal" title="2">
+                                                                            <state key="normal" image="plus_icon">
                                                                                 <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </state>
                                                                             <userDefinedRuntimeAttributes>
@@ -224,15 +224,17 @@
                                                                                     <integer key="value" value="5"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
+                                                                            <connections>
+                                                                                <action selector="onClickAdd:" destination="tfb-ns-fC3" eventType="touchUpInside" id="paw-b4-fkE"/>
+                                                                            </connections>
                                                                         </button>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-oX-6U5">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-oX-6U5">
                                                                             <rect key="frame" x="52" y="0.0" width="26" height="26"/>
                                                                             <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="26" id="Twj-FL-P11"/>
                                                                             </constraints>
-                                                                            <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
-                                                                            <state key="normal" title="+">
+                                                                            <state key="normal" image="plus_icon">
                                                                                 <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </state>
                                                                             <userDefinedRuntimeAttributes>
@@ -256,11 +258,18 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </stackView>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgC-o1-Yp9">
-                                                                    <rect key="frame" x="11.666666666666657" y="31" width="69" height="27"/>
-                                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
-                                                                    <state key="normal" title="Customizable">
-                                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LgC-o1-Yp9">
+                                                                    <rect key="frame" x="11.666666666666657" y="31.000000000000007" width="69" height="26.333333333333336"/>
+                                                                    <state key="normal">
+                                                                        <attributedString key="attributedTitle">
+                                                                            <fragment content="Customizable">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                    <font key="NSFont" size="12" name="SFProDisplay-Regular"/>
+                                                                                    <integer key="NSUnderline" value="1"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
                                                                     </state>
                                                                 </button>
                                                             </subviews>
@@ -289,6 +298,8 @@
                                         <connections>
                                             <outlet property="btnCount" destination="wr5-SO-cqO" id="jTe-62-btK"/>
                                             <outlet property="btnCustomizable" destination="LgC-o1-Yp9" id="Q5U-VW-yem"/>
+                                            <outlet property="btnMinus" destination="waA-cs-H0G" id="3ui-ea-f9E"/>
+                                            <outlet property="btnPlus" destination="gwW-oX-6U5" id="j20-zp-Hie"/>
                                             <outlet property="viewCellBackground" destination="al6-fz-LJi" id="LR6-8k-zUc"/>
                                         </connections>
                                     </tableViewCell>
@@ -327,6 +338,8 @@
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
         <image name="food" width="170" height="135"/>
+        <image name="minus_icon" width="16" height="16"/>
+        <image name="plus_icon" width="16" height="16"/>
         <image name="three_dot_black" width="28" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

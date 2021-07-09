@@ -12,12 +12,17 @@ class DeliveryMenuTVC: UITableViewCell {
     @IBOutlet weak var viewCellBackground: UIView!
     @IBOutlet weak var btnCustomizable: UIButton!
     
+    @IBOutlet weak var btnMinus: UIButton!
+    @IBOutlet weak var btnPlus: UIButton!
     @IBOutlet weak var btnCount: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         viewCellBackground.roundCorners([.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner], radius: 10)
+        
+        btnMinus.isHidden = true
+        btnPlus.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,6 +32,14 @@ class DeliveryMenuTVC: UITableViewCell {
     }
     
     
+    @IBAction func onClickAdd(_ sender: UIButton) {
+        sender.setImage(nil, for: .normal)
+        btnCount.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+        btnCount.setTitle("1", for: .normal)
+        btnMinus.isHidden = false
+        btnPlus.isHidden = false
+        
+    }
     @IBAction func onClickPlus(_ sender: Any) {
         var count = Int((btnCount.titleLabel?.text!)!)
         count = count! + 1

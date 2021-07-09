@@ -21,6 +21,7 @@ class UserProfileVC: UIViewController {
     @IBOutlet weak var collectionViewPost_height: NSLayoutConstraint!
     @IBOutlet weak var btnFollow: UIButton!
     
+    var isFollowSelected = false
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +130,13 @@ class UserProfileVC: UIViewController {
     }
     
     @IBAction func didTapOnFollow(_ sender: UIButton) {
-        btnFollow.isHidden = true
+        if isFollowSelected{
+            isFollowSelected = false
+            sender.setTitle("FOLLOW", for: .normal)
+        } else{
+            isFollowSelected = true
+            sender.setTitle("UNFOLLOW", for: .normal)
+        }
     }
     
 }

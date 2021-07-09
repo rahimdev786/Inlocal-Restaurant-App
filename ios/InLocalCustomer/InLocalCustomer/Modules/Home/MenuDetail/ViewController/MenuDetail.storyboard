@@ -66,7 +66,7 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="698"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygo-im-CgX">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="713.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="712.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fAx-St-0aI">
                                                 <rect key="frame" x="17" y="10" width="341" height="204"/>
@@ -97,20 +97,19 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="b15-0n-BtP">
-                                                <rect key="frame" x="281" y="234" width="78" height="57"/>
+                                                <rect key="frame" x="281" y="234" width="78" height="56"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4K-WP-Ye2">
                                                         <rect key="frame" x="0.0" y="0.0" width="78" height="26"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1el-tu-2MU">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1el-tu-2MU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="26" id="QoQ-XJ-aEe"/>
                                                                     <constraint firstAttribute="width" secondItem="1el-tu-2MU" secondAttribute="height" multiplier="1:1" id="bjq-1l-BuD"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
-                                                                <state key="normal" title="-">
+                                                                <state key="normal" image="minus_icon">
                                                                     <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -138,14 +137,13 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8q-c2-LT3">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8q-c2-LT3">
                                                                 <rect key="frame" x="52" y="0.0" width="26" height="26"/>
                                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="26" id="fDy-gK-Ygv"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="12"/>
-                                                                <state key="normal" title="+">
+                                                                <state key="normal" image="plus_icon">
                                                                     <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -169,11 +167,18 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmR-If-IG9">
-                                                        <rect key="frame" x="7" y="31" width="64" height="26"/>
-                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="11"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmR-If-IG9">
+                                                        <rect key="frame" x="7" y="31" width="64" height="25"/>
                                                         <state key="normal" title="Customizable">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="Customizable">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="11" name="SFProDisplay-Regular"/>
+                                                                        <integer key="NSUnderline" value="1"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
                                                         </state>
                                                         <connections>
                                                             <action selector="onClickCustomizable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AjY-gc-5iK"/>
@@ -182,7 +187,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9x-rs-75A">
-                                                <rect key="frame" x="17" y="311" width="341" height="59"/>
+                                                <rect key="frame" x="17" y="310" width="341" height="59"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="A cheese burger is a hamburger topped with cheese. Traditionally, the slice of cheese is placed on top  of the meat patty.">
                                                         <attributes>
@@ -194,7 +199,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wo4-T1-MDd">
-                                                <rect key="frame" x="17" y="390" width="341" height="323.66666666666674"/>
+                                                <rect key="frame" x="17" y="389" width="341" height="323.66666666666674"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="323.66666666666674" id="Hu3-BP-1fa"/>
@@ -302,6 +307,8 @@
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
         <image name="cheese_burger_detail_photo" width="343" height="204"/>
+        <image name="minus_icon" width="16" height="16"/>
+        <image name="plus_icon" width="16" height="16"/>
         <image name="sanwitch" width="170" height="135"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

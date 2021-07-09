@@ -28,6 +28,14 @@ class CartVC: UIViewController {
     @IBOutlet weak var btnTen: UIButton!
     @IBOutlet weak var btnFifteen: UIButton!
     
+    @IBOutlet weak var lblTipPercent: UILabel!
+    @IBOutlet weak var tipSlider: UISlider!
+    @IBOutlet weak var lblTipAmount: UILabel!
+    @IBOutlet weak var lblGrandTotalAmount: UILabel!
+    
+    @IBOutlet weak var containerView: UIView!
+    
+    
     var orderAllItem = false
     // MARK: - View Life Cycle Methods
     override func viewDidLoad() {
@@ -83,6 +91,10 @@ class CartVC: UIViewController {
         btnTen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
         btnFifteen.backgroundColor = UIColor.init(hexString: "#EDF7FE")
         btnFifteen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        
+        lblTipPercent.text = "5 %"
+        tipSlider.value = 5
+        calculateTipAmount(tipPer: 5)
     }
     
     @IBAction func onClickTen(_ sender: Any) {
@@ -92,6 +104,10 @@ class CartVC: UIViewController {
         btnTen.setTitleColor(UIColor.white, for: .normal)
         btnFifteen.backgroundColor = UIColor.init(hexString: "#EDF7FE")
         btnFifteen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        
+        lblTipPercent.text = "10 %"
+        tipSlider.value = 10
+        calculateTipAmount(tipPer: 10)
     }
     
     @IBAction func onClickFiften(_ sender: Any) {
@@ -102,6 +118,26 @@ class CartVC: UIViewController {
         btnTen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
         btnFifteen.backgroundColor = UIColor.init(hexString: "#1DA1F2")
         btnFifteen.setTitleColor(UIColor.white, for: .normal)
+        
+        lblTipPercent.text = "15 %"
+        tipSlider.value = 15
+        calculateTipAmount(tipPer: 15)
+    }
+    
+    
+    @IBAction func onMoveTripSlider(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        lblTipPercent.text = "\(currentValue) %"
+
+        btnFive.backgroundColor = UIColor.init(hexString: "#EDF7FE")
+        btnFive.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        btnTen.backgroundColor = UIColor.init(hexString: "#EDF7FE")
+        btnTen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        btnFifteen.backgroundColor = UIColor.init(hexString: "#EDF7FE")
+        btnFifteen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
+        
+        calculateTipAmount(tipPer: currentValue)
+        
     }
     
     @IBAction func onClickPay(_ sender: Any) {
@@ -111,8 +147,8 @@ class CartVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
     func setupView(){
+        tipSlider.value = 15
         
         viewTxtFieldBack.layer.cornerRadius = 10
         viewTxtFieldBack.layer.borderWidth = 1
@@ -125,6 +161,9 @@ class CartVC: UIViewController {
         viewGrantTotalBack.roundCorners([.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner], radius: 5)
         
         btnPay.roundCorners([.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner], radius: 5)
+        
+        calculateTipAmount(tipPer: 15)
+        
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -137,6 +176,15 @@ class CartVC: UIViewController {
             }
         }
     }
+    
+    func calculateTipAmount(tipPer: Int){
+        let multi = Double(tipPer * 170)
+        let tipValue = Double(multi / 100)
+        lblTipAmount.text = "€ \(tipValue)"
+        let grandTotal = Double(tipValue + 170 + 20)
+        lblGrandTotalAmount.text = "€ \(grandTotal)"
+    }
+    
 }
 
 // MARK: - Load from storyboard with dependency

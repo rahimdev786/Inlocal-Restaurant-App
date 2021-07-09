@@ -18,6 +18,7 @@ class DeliveryVC: UIViewController {
     @IBOutlet weak var collectionViewMenuCategory: UICollectionView!
     @IBOutlet weak var tableViewDeliveryMenu: UITableView!
     
+    var categoryArray = ["All", "Starter", "Burger", "Drinks", "Soup", "Pizza"]
     var previousCell: MenuCategoryCVC?
     
     // MARK: - View Life Cycle Methods
@@ -108,12 +109,13 @@ extension DeliveryVC: DeliveryAPIResponseDelegate {
 //DeliveryMenuTVC
 extension DeliveryVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return categoryArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCategoryCVC", for: indexPath) as! MenuCategoryCVC
+        cell.lblCategoryName.text = categoryArray[indexPath.row]
         if indexPath.row == 0 {
             previousCell = cell
             cell.viewLblBackground.backgroundColor = UIColor(hexString: "1DA1F2")

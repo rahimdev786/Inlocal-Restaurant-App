@@ -231,6 +231,13 @@
 		C153C79826662E65002FF282 /* ForgotPasswordDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C79226662E65002FF282 /* ForgotPasswordDependency.swift */; };
 		C153C79E26664228002FF282 /* ValidateOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C79C26664228002FF282 /* ValidateOTP.swift */; };
 		C153C79F26664228002FF282 /* ValidateOTP.xib in Resources */ = {isa = PBXBuildFile; fileRef = C153C79D26664228002FF282 /* ValidateOTP.xib */; };
+		C15977962692FF86003DD395 /* OwnPostsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C159778E2692FF85003DD395 /* OwnPostsDependency.swift */; };
+		C15977972692FF86003DD395 /* OwnPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15977902692FF85003DD395 /* OwnPosts.storyboard */; };
+		C15977982692FF86003DD395 /* OwnPostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15977912692FF85003DD395 /* OwnPostsVC.swift */; };
+		C15977992692FF86003DD395 /* OwnPostsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15977932692FF85003DD395 /* OwnPostsDataManager.swift */; };
+		C159779A2692FF86003DD395 /* OwnPostsAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15977942692FF85003DD395 /* OwnPostsAPIDataManager.swift */; };
+		C159779B2692FF86003DD395 /* OwnPostsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15977952692FF85003DD395 /* OwnPostsLocalDataManager.swift */; };
+		C15977A2269328E2003DD395 /* MBSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15977A1269328E2003DD395 /* MBSliderView.swift */; };
 		C16920A32670765500055FD3 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169209B2670765500055FD3 /* Cart.storyboard */; };
 		C16920A42670765500055FD3 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169209C2670765500055FD3 /* CartVC.swift */; };
 		C16920A52670765500055FD3 /* CartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169209E2670765500055FD3 /* CartDataManager.swift */; };
@@ -630,6 +637,13 @@
 		C153C79226662E65002FF282 /* ForgotPasswordDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDependency.swift; sourceTree = "<group>"; };
 		C153C79C26664228002FF282 /* ValidateOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateOTP.swift; sourceTree = "<group>"; };
 		C153C79D26664228002FF282 /* ValidateOTP.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateOTP.xib; sourceTree = "<group>"; };
+		C159778E2692FF85003DD395 /* OwnPostsDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnPostsDependency.swift; sourceTree = "<group>"; };
+		C15977902692FF85003DD395 /* OwnPosts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OwnPosts.storyboard; sourceTree = "<group>"; };
+		C15977912692FF85003DD395 /* OwnPostsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnPostsVC.swift; sourceTree = "<group>"; };
+		C15977932692FF85003DD395 /* OwnPostsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnPostsDataManager.swift; sourceTree = "<group>"; };
+		C15977942692FF85003DD395 /* OwnPostsAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnPostsAPIDataManager.swift; sourceTree = "<group>"; };
+		C15977952692FF85003DD395 /* OwnPostsLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnPostsLocalDataManager.swift; sourceTree = "<group>"; };
+		C15977A1269328E2003DD395 /* MBSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBSliderView.swift; sourceTree = "<group>"; };
 		C169209B2670765500055FD3 /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		C169209C2670765500055FD3 /* CartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		C169209E2670765500055FD3 /* CartDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartDataManager.swift; sourceTree = "<group>"; };
@@ -2120,6 +2134,51 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C15977832692FF39003DD395 /* OwnPosts */ = {
+			isa = PBXGroup;
+			children = (
+				C15977922692FF85003DD395 /* DataManager */,
+				C159778D2692FF85003DD395 /* Model */,
+				C159778F2692FF85003DD395 /* ViewController */,
+			);
+			path = OwnPosts;
+			sourceTree = "<group>";
+		};
+		C159778D2692FF85003DD395 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C159778E2692FF85003DD395 /* OwnPostsDependency.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C159778F2692FF85003DD395 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C15977902692FF85003DD395 /* OwnPosts.storyboard */,
+				C15977912692FF85003DD395 /* OwnPostsVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C15977922692FF85003DD395 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C15977932692FF85003DD395 /* OwnPostsDataManager.swift */,
+				C15977942692FF85003DD395 /* OwnPostsAPIDataManager.swift */,
+				C15977952692FF85003DD395 /* OwnPostsLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		C15977A0269328B2003DD395 /* MBSlider */ = {
+			isa = PBXGroup;
+			children = (
+				C15977A1269328E2003DD395 /* MBSliderView.swift */,
+			);
+			path = MBSlider;
+			sourceTree = "<group>";
+		};
 		C169208F2670752F00055FD3 /* CartModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -2372,6 +2431,7 @@
 		C185D9722664FE2600BCDA2E /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				C15977A0269328B2003DD395 /* MBSlider */,
 				C14CF92A267E006000546D45 /* NoOfGuest */,
 				C185D9712664FE0D00BCDA2E /* TextFieldView */,
 				C153C79C26664228002FF282 /* ValidateOTP.swift */,
@@ -2817,6 +2877,7 @@
 		C1CD22AE266887C5000324FF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C15977832692FF39003DD395 /* OwnPosts */,
 				C1030BFA26737BDF002A47AB /* MenuCustomisation */,
 				C1AE0E50266F2495000E6470 /* RestaurantInfo */,
 				C1AE0E34266F2448000E6470 /* Reservation */,
@@ -3066,6 +3127,7 @@
 				C185D8A32664D95400BCDA2E /* SFProText-Semibold.ttf in Resources */,
 				C185D8AF2664D95500BCDA2E /* SFProText-Medium.ttf in Resources */,
 				C153C79626662E65002FF282 /* ForgotPassword.storyboard in Resources */,
+				C15977972692FF86003DD395 /* OwnPosts.storyboard in Resources */,
 				C185D8A92664D95500BCDA2E /* SFProDisplay-MediumItalic.ttf in Resources */,
 				C185D8972664D95400BCDA2E /* SFProText-RegularItalic.ttf in Resources */,
 				C10FBA7F266DD1A50012FD8E /* RestaurantMenu.storyboard in Resources */,
@@ -3223,6 +3285,7 @@
 				C10FBABC266DD3DA0012FD8E /* DeliveryAPIDataManager.swift in Sources */,
 				6D446D332676FE9B00C5ED9B /* ArrowView.swift in Sources */,
 				6D5123752678ECB8005E1F59 /* UploadPostDependency.swift in Sources */,
+				C15977A2269328E2003DD395 /* MBSliderView.swift in Sources */,
 				C1864853267843B900413491 /* MenuCustomisationTVC.swift in Sources */,
 				6D54BB45266DE1C600BC4C34 /* SavedPostsDataManager.swift in Sources */,
 				C1042D82266A356B0054B24D /* TagedPhotosLocalDataManager.swift in Sources */,
@@ -3240,11 +3303,13 @@
 				6D48224A2667A83400F1DE01 /* OrderDetailsLocalDataManager.swift in Sources */,
 				6D51237A2678ECB8005E1F59 /* UploadPostAPIDataManager.swift in Sources */,
 				C14CC259267CA3E600D989C9 /* SetNewPasswordAPIDataManager.swift in Sources */,
+				C15977982692FF86003DD395 /* OwnPostsVC.swift in Sources */,
 				C185D9662664F90300BCDA2E /* ValidateOTPLocalDataManager.swift in Sources */,
 				C185D9612664F90300BCDA2E /* ValidateOTPDependency.swift in Sources */,
 				C16920A52670765500055FD3 /* CartDataManager.swift in Sources */,
 				6D446D682676FED300C5ED9B /* CustomPickerAPIDataManager.swift in Sources */,
 				6D446D2A2676FE9B00C5ED9B /* ImagePickerController+PresentationDelegate.swift in Sources */,
+				C159779B2692FF86003DD395 /* OwnPostsLocalDataManager.swift in Sources */,
 				6D4821CC2667A77F00F1DE01 /* BookingDetailsDependency.swift in Sources */,
 				C16920A72670765500055FD3 /* CartLocalDataManager.swift in Sources */,
 				C1DDAC68266905A200B4DB90 /* ViewStoryCVC.swift in Sources */,
@@ -3255,6 +3320,7 @@
 				6D54BB26266DE1A700BC4C34 /* EditProfileVC.swift in Sources */,
 				C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */,
 				6D446D482676FE9C00C5ED9B /* AlbumsTableViewDataSource.swift in Sources */,
+				C15977992692FF86003DD395 /* OwnPostsDataManager.swift in Sources */,
 				C1AE0E2E266F2412000E6470 /* CommentAPIDataManager.swift in Sources */,
 				C10C7661265F9F2E00473CB7 /* LocationManager.swift in Sources */,
 				C1042D122669DE780054B24D /* UserProfileLocalDataManager.swift in Sources */,
@@ -3353,6 +3419,7 @@
 				6D4822682667A85900F1DE01 /* NotificationSettingsAPIDataManager.swift in Sources */,
 				6D4389332674F77B0049C888 /* UploadStoryLocalDataManager.swift in Sources */,
 				6D446D3A2676FE9B00C5ED9B /* LivePreviewViewController.swift in Sources */,
+				C15977962692FF86003DD395 /* OwnPostsDependency.swift in Sources */,
 				C1042D112669DE780054B24D /* UserProfileVC.swift in Sources */,
 				C1B963AE26678FE000CECDDF /* NotificationsAPIDataManager.swift in Sources */,
 				C185D9442664F85D00BCDA2E /* SignupLocalDataManager.swift in Sources */,
@@ -3393,6 +3460,7 @@
 				6D446D2D2676FE9B00C5ED9B /* ImagePickerControllerDelegate.swift in Sources */,
 				C1042D332669DF500054B24D /* RestaurantProfileVC.swift in Sources */,
 				6D446D392676FE9B00C5ED9B /* PreviewViewController.swift in Sources */,
+				C159779A2692FF86003DD395 /* OwnPostsAPIDataManager.swift in Sources */,
 				C1AACA18267714B9000D4D2A /* AddAddressLocalDataManager.swift in Sources */,
 				6D4389322674F77B0049C888 /* UploadStoryDataManager.swift in Sources */,
 				C10C7688265FA20700473CB7 /* AppFonts.swift in Sources */,

@@ -19,7 +19,7 @@ class RestaurantMenuVC: UIViewController {
     @IBOutlet weak var tableViewMenuList: UITableView!
     
     var previousCell: MenuCategoryCVC?
-    
+    var categoryArray = ["All", "Starter", "Burger", "Drinks", "Soup", "Pizza"]
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,13 +109,13 @@ extension RestaurantMenuVC: RestaurantMenuAPIResponseDelegate {
 
 extension RestaurantMenuVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return categoryArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCategoryCVC", for: indexPath) as! MenuCategoryCVC
-        
+        cell.lblCategoryName.text = categoryArray[indexPath.row]
         if indexPath.row == 0 {
             previousCell = cell
             cell.viewLblBackground.backgroundColor = UIColor(hexString: "1DA1F2")

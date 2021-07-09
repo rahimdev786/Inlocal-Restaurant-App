@@ -13,6 +13,7 @@ class MenuCategoryCVC: UICollectionViewCell {
     
     @IBOutlet weak var viewLblBackground: UIView!
     
+    @IBOutlet weak var lblCategoryName: UILabel!
     override func awakeFromNib() {
         super .awakeFromNib()
         

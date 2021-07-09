@@ -1,23 +1,24 @@
 //
-//  MenuDetailVC.swift
+//  OwnPostsVC.swift
 //  InLocalCustomer
 //
-//  Created by Sudipta Patel on 07/06/21.
+//  Created by Sudipta Patel on 05/07/21.
 //  Copyright © 2021 ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
 
 import UIKit
 
-class MenuDetailVC: UIViewController {
+class OwnPostsVC: UIViewController {
     
     // MARK: Instance variables
-	lazy var dataManager = MenuDetailDataManager()
-    var dependency: MenuDetailDependency?
+	lazy var dataManager = OwnPostsDataManager()
+    var dependency: OwnPostsDependency?
     
-    @IBOutlet weak var collectionViewMenuImage: UICollectionView!
-    @IBOutlet weak var collectionViewMenuImage_height: NSLayoutConstraint!
-    @IBOutlet weak var btnCount: UIButton!
+    @IBOutlet weak var viewProfileImageBack: UIView!
+    @IBOutlet weak var collectionViewPost: UICollectionView!
+    
+    @IBOutlet weak var collectionViewPost_height: NSLayoutConstraint!
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -37,7 +38,7 @@ class MenuDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.collectionViewMenuImage.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        self.collectionViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -46,7 +47,7 @@ class MenuDetailVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.collectionViewMenuImage.removeObserver(self, forKeyPath: "contentSize")
+        self.collectionViewPost.removeObserver(self, forKeyPath: "contentSize")
     }
     
     // MARK: Deinitialization
@@ -58,38 +59,39 @@ class MenuDetailVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func onClickCustomizable(_ sender: Any) {
-        guard let vc = MenuCustomisationVC.load(withDependency: nil) else{
+    @IBAction func onClickFollowers(_ sender: Any) {
+        guard let vc = FollowerVC.loadFromXIB(withDependency: nil) else{
             return
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
-    @IBAction func onClickPlus(_ sender: Any) {
-        var count = Int((btnCount.titleLabel?.text!)!)
-        count = count! + 1
-        btnCount.setTitle(String(count!), for: .normal)
+    @IBAction func onClickFollowing(_ sender: Any) {
+        guard let vc = FollowerVC.loadFromXIB(withDependency: nil) else{
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
-    @IBAction func onClickMinus(_ sender: Any) {
-        var count = Int((btnCount.titleLabel?.text!)!)!
-        if count > 1{
-            count = count - 1
-            btnCount.setTitle(String(count), for: .normal)
+    @IBAction func onClickEditProfile(_ sender: Any) {
+        //EditProfileVC
+        guard let vc = EditProfileVC.loadFromXIB(withDependency: nil) else{
+            return
         }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setupView(){
-        
+        viewProfileImageBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
+        //btnFollow.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner], radius: btnFollow.frame.height/2)
+       
         let widthValue = ((UIScreen.main.bounds.width-36)/2)
         let heightValue = widthValue
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 2
         layout.minimumLineSpacing = 2
         layout.itemSize = CGSize(width: widthValue, height: heightValue)
-        self.collectionViewMenuImage.setCollectionViewLayout(layout, animated: true)
+        self.collectionViewPost.setCollectionViewLayout(layout, animated: true)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -97,7 +99,7 @@ class MenuDetailVC: UIViewController {
             if object is UICollectionView{
                 if let newvalue = change?[.newKey]{
                     let newsize = newvalue as! CGSize
-                    self.collectionViewMenuImage_height.constant = newsize.height
+                    self.collectionViewPost_height.constant = newsize.height
                 }
             }
         }
@@ -105,13 +107,13 @@ class MenuDetailVC: UIViewController {
 }
 
 // MARK: - Load from storyboard with dependency
-extension MenuDetailVC {
+extension OwnPostsVC {
     
-    class func load(withDependency dependency: MenuDetailDependency? = nil) -> MenuDetailVC? {
+    class func load(withDependency dependency: OwnPostsDependency? = nil) -> OwnPostsVC? {
         
-        let storyboard = UIStoryboard(name: "MenuDetail", bundle: nil)
+        let storyboard = UIStoryboard(name: "OwnPosts", bundle: nil)
         
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "MenuDetailVC") as? MenuDetailVC else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "OwnPostsVC") as? OwnPostsVC else {
             return nil
         }
         vc.dependency = dependency
@@ -119,12 +121,11 @@ extension MenuDetailVC {
     }
 }
 
-// MARK: - MenuDetailAPIResponseDelegate
-extension MenuDetailVC: MenuDetailAPIResponseDelegate {
+// MARK: - OwnPostsAPIResponseDelegate
+extension OwnPostsVC: OwnPostsAPIResponseDelegate {
     
 }
-
-extension MenuDetailVC: UICollectionViewDataSource {
+extension OwnPostsVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
     }
@@ -133,4 +134,9 @@ extension MenuDetailVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
         return cell
     }
+}
+
+extension OwnPostsVC: UICollectionViewDelegate {
+    
+    
 }

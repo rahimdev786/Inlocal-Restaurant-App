@@ -10,4 +10,7 @@ import UIKit
 class CategoryCVC: UICollectionViewCell {
     
     @IBOutlet weak var viewCategoryLblBack: UIView!
+    
+    @IBOutlet weak var lblCategoryName: UILabel!
+    
 }
