@@ -27,6 +27,8 @@ class FeedwallPostTVC: UITableViewCell {
     
     var isMenuOpen = false
     var isLiked = false
+    var isFavorite = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         viewMenuContainer.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner], radius: 20.0)
@@ -66,6 +68,17 @@ class FeedwallPostTVC: UITableViewCell {
             } completion: { [self] (state) in
                 isMenuOpen = true
             }
+        }
+    }
+    
+    
+    @IBAction func onClickFavorite(_ sender: UIButton) {
+        if isFavorite{
+            isFavorite = false
+            sender.setImage(#imageLiteral(resourceName: "favorite_white"), for: .normal)
+        } else{
+            isFavorite = true
+            sender.setImage(#imageLiteral(resourceName: "favrite_blue"), for: .normal)
         }
     }
     

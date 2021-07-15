@@ -25,25 +25,8 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
     
     let imagePicker = UIImagePickerController()
     var isImageSelected = false
-    
-    
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var btnEdit: UIButton!
-    
-    var isEdit: Bool = false {
         
-        didSet{
-            if isEdit {
-                lblTitle.text = "Edit Profile"
-                btnEdit.isHidden = true
-                btnSave.isHidden = false
-            }else{
-                lblTitle.text = "My Profile"
-                btnEdit.isHidden = false
-                btnSave.isHidden = true
-            }
-        }
-    }
+    @IBOutlet weak var lblTitle: UILabel!
 
     var updateProfileRequest = UpdateProfileRequest()
     // MARK: - View Life Cycle Methods
@@ -53,6 +36,7 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         
         setupUI()
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
@@ -107,7 +91,6 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         //txtFieldPhoneNumber.txtFldInput.backgroundColor = .clear
         //txtFieldPhoneNumber.contentView.backgroundColor = .clear
         
-        btnSave.isHidden = true
     }
     
     func validateFields() {
@@ -220,11 +203,6 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         showActionSheet()
     }
     
-    @IBAction func didTapOnEdit(_ sender: UIButton) {
-        
-        isEdit = true
-    }
-
 }
 
 // MARK: - Load from storyboard with dependency

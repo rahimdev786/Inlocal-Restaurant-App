@@ -133,9 +133,11 @@ class UserProfileVC: UIViewController {
         if isFollowSelected{
             isFollowSelected = false
             sender.setTitle("FOLLOW", for: .normal)
+            sender.backgroundColor = UIColor.init(hexString: "#1DA1F2")
         } else{
             isFollowSelected = true
             sender.setTitle("UNFOLLOW", for: .normal)
+            sender.backgroundColor = UIColor.lightGray
         }
     }
     
@@ -178,6 +180,7 @@ extension UserProfileVC: UICollectionViewDelegate {
         guard let vc = TagedPhotosVC.load(withDependency: nil) else{
             return
         }
+        vc.headerTitle = "Posts"
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

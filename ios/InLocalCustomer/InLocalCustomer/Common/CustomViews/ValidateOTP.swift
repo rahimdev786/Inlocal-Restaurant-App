@@ -38,8 +38,8 @@ class ValidateOTP: UIView{
         self.otpTextFieldView.filledBorderColor = UIColor.darkGray
         self.otpTextFieldView.cursorColor = UIColor.black
         self.otpTextFieldView.displayType = .square
-        self.otpTextFieldView.fieldSize = 30
-        self.otpTextFieldView.separatorSpace = 5
+        self.otpTextFieldView.fieldSize = 40
+        self.otpTextFieldView.separatorSpace = 8
         self.otpTextFieldView.shouldAllowIntermediateEditing = false
         self.otpTextFieldView.delegate = self
         self.otpTextFieldView.initializeUI()

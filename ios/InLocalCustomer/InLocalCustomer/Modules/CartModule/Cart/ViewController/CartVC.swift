@@ -19,7 +19,7 @@ class CartVC: UIViewController {
     @IBOutlet weak var tableViewItems_Height: NSLayoutConstraint!
     
     @IBOutlet weak var viewTxtFieldBack: UIView!
-    @IBOutlet weak var viewOrderAllItemBack: UIView!
+    //@IBOutlet weak var viewOrderAllItemBack: UIView!
     @IBOutlet weak var viewGrantTotalBack: UIView!
     @IBOutlet weak var viewItemTotalBack: UIView!
     @IBOutlet weak var btnPay: UIButton!
@@ -71,18 +71,6 @@ class CartVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
-    
-    
-    @IBAction func onClickOrderAllCheckBox(_ sender: UIButton) {
-        if orderAllItem{
-            orderAllItem = false
-            sender.setImage(#imageLiteral(resourceName: "empty_checkbox_gray"), for: .normal)
-        } else{
-            orderAllItem = true
-            sender.setImage(#imageLiteral(resourceName: "checked_checkbox"), for: .normal)
-        }
-    }
-    
     
     @IBAction func onClickFive(_ sender: Any) {
         btnFive.backgroundColor = UIColor.init(hexString: "#1DA1F2")
@@ -137,7 +125,6 @@ class CartVC: UIViewController {
         btnFifteen.setTitleColor(UIColor.init(hexString: "#1DA1F2"), for: .normal)
         
         calculateTipAmount(tipPer: currentValue)
-        
     }
     
     @IBAction func onClickPay(_ sender: Any) {
@@ -157,7 +144,6 @@ class CartVC: UIViewController {
         viewItemTotalBack.layer.borderWidth = 1
         viewItemTotalBack.layer.borderColor = UIColor.lightGray.cgColor
         
-        viewOrderAllItemBack.roundCorners([.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner], radius: 10)
         viewGrantTotalBack.roundCorners([.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner], radius: 5)
         
         btnPay.roundCorners([.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner], radius: 5)

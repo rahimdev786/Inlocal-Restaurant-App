@@ -10,8 +10,12 @@ import UIKit
 class MenuCustomisationTVC: UITableViewCell {
 
     
+    @IBOutlet weak var lblHeaderTitle: UILabel!
     @IBOutlet weak var btnFirst: UIButton!
     @IBOutlet weak var btnSecond: UIButton!
+    
+    @IBOutlet weak var lblFirst: UILabel!
+    @IBOutlet weak var lblSecond: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

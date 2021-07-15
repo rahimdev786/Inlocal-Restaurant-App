@@ -128,7 +128,7 @@
 		6D54BB46266DE1C600BC4C34 /* SavedPostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB3F266DE1C600BC4C34 /* SavedPostsVC.swift */; };
 		6D54BB47266DE1C600BC4C34 /* SavedPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D54BB40266DE1C600BC4C34 /* SavedPosts.storyboard */; };
 		6D54BB48266DE1C600BC4C34 /* SavedPostsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB42266DE1C600BC4C34 /* SavedPostsDependency.swift */; };
-		7DA6B199F286E9C5CD746A03 /* Pods_InLocalCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */; };
+		A4C7D52BF3B6A95281B333FD /* Pods_InLocalCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94010EEB37E7AC1B1FA6E7C /* Pods_InLocalCustomer.framework */; };
 		C1030BF326736EBB002A47AB /* SearchPostListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1030BF226736EBB002A47AB /* SearchPostListTVC.swift */; };
 		C1030C1026737C85002A47AB /* MenuCustomisationDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1030C0826737C84002A47AB /* MenuCustomisationDependency.swift */; };
 		C1030C1126737C85002A47AB /* MenuCustomisation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1030C0A26737C84002A47AB /* MenuCustomisation.storyboard */; };
@@ -223,6 +223,8 @@
 		C14CC25C267CA3E600D989C9 /* SetNewPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14CC256267CA3E600D989C9 /* SetNewPassword.storyboard */; };
 		C14CF92D267E009E00546D45 /* NoOfGuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14CF92B267E009E00546D45 /* NoOfGuestView.swift */; };
 		C14CF92E267E009E00546D45 /* NoOfGuestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C14CF92C267E009E00546D45 /* NoOfGuestView.xib */; };
+		C1519F8426986F4400BB5AD5 /* DeclineMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1519F8226986F4400BB5AD5 /* DeclineMessageView.swift */; };
+		C1519F8526986F4400BB5AD5 /* DeclineMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1519F8326986F4400BB5AD5 /* DeclineMessageView.xib */; };
 		C153C79326662E65002FF282 /* ForgotPasswordAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78B26662E65002FF282 /* ForgotPasswordAPIDataManager.swift */; };
 		C153C79426662E65002FF282 /* ForgotPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78C26662E65002FF282 /* ForgotPasswordDataManager.swift */; };
 		C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C153C78D26662E65002FF282 /* ForgotPasswordLocalDataManager.swift */; };
@@ -405,8 +407,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E376E308EF62AA7CE0CE549 /* Pods-InLocalCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InLocalCustomer.release.xcconfig"; path = "Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer.release.xcconfig"; sourceTree = "<group>"; };
-		281CFFC35515D0E7C94A34E3 /* Pods-InLocalCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InLocalCustomer.debug.xcconfig"; path = "Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer.debug.xcconfig"; sourceTree = "<group>"; };
+		129808249598E927DFEECF1C /* Pods-InLocalCustomer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InLocalCustomer.debug.xcconfig"; path = "Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer.debug.xcconfig"; sourceTree = "<group>"; };
+		1F0928EA72D043E1428DD493 /* Pods-InLocalCustomer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InLocalCustomer.release.xcconfig"; path = "Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer.release.xcconfig"; sourceTree = "<group>"; };
 		6D21FDCF26708E1900611AD4 /* BookingDetailsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsTVC.swift; sourceTree = "<group>"; };
 		6D21FDFF2670A64500611AD4 /* FollowerAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerAPIDataManager.swift; sourceTree = "<group>"; };
 		6D21FE002670A64500611AD4 /* FollowerLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerLocalDataManager.swift; sourceTree = "<group>"; };
@@ -528,7 +530,6 @@
 		6D54BB3F266DE1C600BC4C34 /* SavedPostsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPostsVC.swift; sourceTree = "<group>"; };
 		6D54BB40266DE1C600BC4C34 /* SavedPosts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedPosts.storyboard; sourceTree = "<group>"; };
 		6D54BB42266DE1C600BC4C34 /* SavedPostsDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPostsDependency.swift; sourceTree = "<group>"; };
-		A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InLocalCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1030BF226736EBB002A47AB /* SearchPostListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPostListTVC.swift; sourceTree = "<group>"; };
 		C1030C0826737C84002A47AB /* MenuCustomisationDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCustomisationDependency.swift; sourceTree = "<group>"; };
 		C1030C0A26737C84002A47AB /* MenuCustomisation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuCustomisation.storyboard; sourceTree = "<group>"; };
@@ -629,6 +630,8 @@
 		C14CC256267CA3E600D989C9 /* SetNewPassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SetNewPassword.storyboard; sourceTree = "<group>"; };
 		C14CF92B267E009E00546D45 /* NoOfGuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoOfGuestView.swift; sourceTree = "<group>"; };
 		C14CF92C267E009E00546D45 /* NoOfGuestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoOfGuestView.xib; sourceTree = "<group>"; };
+		C1519F8226986F4400BB5AD5 /* DeclineMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclineMessageView.swift; sourceTree = "<group>"; };
+		C1519F8326986F4400BB5AD5 /* DeclineMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeclineMessageView.xib; sourceTree = "<group>"; };
 		C153C78B26662E65002FF282 /* ForgotPasswordAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordAPIDataManager.swift; sourceTree = "<group>"; };
 		C153C78C26662E65002FF282 /* ForgotPasswordDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataManager.swift; sourceTree = "<group>"; };
 		C153C78D26662E65002FF282 /* ForgotPasswordLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordLocalDataManager.swift; sourceTree = "<group>"; };
@@ -791,6 +794,7 @@
 		C1DDAC67266905A200B4DB90 /* ViewStoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStoryCVC.swift; sourceTree = "<group>"; };
 		C1E7D1DF26679F5E00A677A7 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		C1E7D1E42667A58100A677A7 /* SearchPostCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPostCVC.swift; sourceTree = "<group>"; };
+		F94010EEB37E7AC1B1FA6E7C /* Pods_InLocalCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InLocalCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -798,7 +802,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DA6B199F286E9C5CD746A03 /* Pods_InLocalCustomer.framework in Frameworks */,
+				A4C7D52BF3B6A95281B333FD /* Pods_InLocalCustomer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,14 +823,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		57CE094EEE0148E5E0E0EAF9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A3E7E9B879F40A451E7B677C /* Pods_InLocalCustomer.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		6D21FDE02670A58C00611AD4 /* Follower */ = {
 			isa = PBXGroup;
 			children = (
@@ -1469,11 +1465,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9B57BC31403F1D98D3DE58BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F94010EEB37E7AC1B1FA6E7C /* Pods_InLocalCustomer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C020C172CBA0FD658C8185F0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				281CFFC35515D0E7C94A34E3 /* Pods-InLocalCustomer.debug.xcconfig */,
-				1E376E308EF62AA7CE0CE549 /* Pods-InLocalCustomer.release.xcconfig */,
+				129808249598E927DFEECF1C /* Pods-InLocalCustomer.debug.xcconfig */,
+				1F0928EA72D043E1428DD493 /* Pods-InLocalCustomer.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1644,7 +1648,7 @@
 				C10C7617265F8BDB00473CB7 /* InLocalCustomerUITests */,
 				C10C75F4265F8BD700473CB7 /* Products */,
 				C020C172CBA0FD658C8185F0 /* Pods */,
-				57CE094EEE0148E5E0E0EAF9 /* Frameworks */,
+				9B57BC31403F1D98D3DE58BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2097,6 +2101,15 @@
 			path = NoOfGuest;
 			sourceTree = "<group>";
 		};
+		C1519F8126986ED400BB5AD5 /* DeclineView */ = {
+			isa = PBXGroup;
+			children = (
+				C1519F8226986F4400BB5AD5 /* DeclineMessageView.swift */,
+				C1519F8326986F4400BB5AD5 /* DeclineMessageView.xib */,
+			);
+			path = DeclineView;
+			sourceTree = "<group>";
+		};
 		C153C77D26662E25002FF282 /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -2431,6 +2444,7 @@
 		C185D9722664FE2600BCDA2E /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				C1519F8126986ED400BB5AD5 /* DeclineView */,
 				C15977A0269328B2003DD395 /* MBSlider */,
 				C14CF92A267E006000546D45 /* NoOfGuest */,
 				C185D9712664FE0D00BCDA2E /* TextFieldView */,
@@ -3004,12 +3018,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C10C761D265F8BDB00473CB7 /* Build configuration list for PBXNativeTarget "InLocalCustomer" */;
 			buildPhases = (
-				FF9D06BB122C3D2BAF8DDCB1 /* [CP] Check Pods Manifest.lock */,
+				D65670F0BF161A5CF521E238 /* [CP] Check Pods Manifest.lock */,
 				C10C75EF265F8BD700473CB7 /* Sources */,
 				C10C75F0265F8BD700473CB7 /* Frameworks */,
 				C10C75F1265F8BD700473CB7 /* Resources */,
-				F2E4D475AAC8C2B19EEDE5C4 /* [CP] Embed Pods Frameworks */,
-				708593089025FCC995BF416B /* [CP] Copy Pods Resources */,
+				094977726BE016BB5E40C4D2 /* [CP] Embed Pods Frameworks */,
+				129B5F19B378269B51566008 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3180,6 +3194,7 @@
 				C185D8992664D95400BCDA2E /* SFProText-Bold.ttf in Resources */,
 				6D432A0F2675E898006186D1 /* CustomCameraOverlay.xib in Resources */,
 				C1AE0E6B266F2554000E6470 /* RestaurantInfo.storyboard in Resources */,
+				C1519F8526986F4400BB5AD5 /* DeclineMessageView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3200,24 +3215,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		708593089025FCC995BF416B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2E4D475AAC8C2B19EEDE5C4 /* [CP] Embed Pods Frameworks */ = {
+		094977726BE016BB5E40C4D2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3234,7 +3232,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF9D06BB122C3D2BAF8DDCB1 /* [CP] Check Pods Manifest.lock */ = {
+		129B5F19B378269B51566008 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InLocalCustomer/Pods-InLocalCustomer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D65670F0BF161A5CF521E238 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3320,6 +3335,7 @@
 				6D54BB26266DE1A700BC4C34 /* EditProfileVC.swift in Sources */,
 				C153C79526662E65002FF282 /* ForgotPasswordLocalDataManager.swift in Sources */,
 				6D446D482676FE9C00C5ED9B /* AlbumsTableViewDataSource.swift in Sources */,
+				C1519F8426986F4400BB5AD5 /* DeclineMessageView.swift in Sources */,
 				C15977992692FF86003DD395 /* OwnPostsDataManager.swift in Sources */,
 				C1AE0E2E266F2412000E6470 /* CommentAPIDataManager.swift in Sources */,
 				C10C7661265F9F2E00473CB7 /* LocationManager.swift in Sources */,
@@ -3733,7 +3749,7 @@
 		};
 		C10C761E265F8BDB00473CB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 281CFFC35515D0E7C94A34E3 /* Pods-InLocalCustomer.debug.xcconfig */;
+			baseConfigurationReference = 129808249598E927DFEECF1C /* Pods-InLocalCustomer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3757,7 +3773,7 @@
 		};
 		C10C761F265F8BDB00473CB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E376E308EF62AA7CE0CE549 /* Pods-InLocalCustomer.release.xcconfig */;
+			baseConfigurationReference = 1F0928EA72D043E1428DD493 /* Pods-InLocalCustomer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

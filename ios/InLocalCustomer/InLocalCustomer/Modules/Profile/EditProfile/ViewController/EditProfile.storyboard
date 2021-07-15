@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,26 +44,13 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rq-lt-gKv">
-                                        <rect key="frame" x="325" y="10" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="Bbp-X3-Q8S"/>
-                                            <constraint firstAttribute="height" constant="50" id="lPr-iK-DV1"/>
-                                        </constraints>
-                                        <state key="normal" image="editProfileCircle"/>
-                                        <connections>
-                                            <action selector="didTapOnEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fNF-eO-WvW"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="BvY-u4-dAh"/>
                                     <constraint firstItem="CUD-hK-I46" firstAttribute="centerY" secondItem="U1T-fN-syO" secondAttribute="centerY" id="G9l-LG-1mC"/>
                                     <constraint firstItem="MY8-tC-wzB" firstAttribute="centerX" secondItem="U1T-fN-syO" secondAttribute="centerX" id="MiZ-2S-9P8"/>
-                                    <constraint firstItem="8rq-lt-gKv" firstAttribute="centerY" secondItem="U1T-fN-syO" secondAttribute="centerY" id="aiI-zS-poc"/>
                                     <constraint firstItem="CUD-hK-I46" firstAttribute="leading" secondItem="U1T-fN-syO" secondAttribute="leading" id="kdb-k9-nm7"/>
-                                    <constraint firstAttribute="trailing" secondItem="8rq-lt-gKv" secondAttribute="trailing" id="m9N-0w-jUB"/>
                                     <constraint firstItem="MY8-tC-wzB" firstAttribute="centerY" secondItem="U1T-fN-syO" secondAttribute="centerY" id="qZh-pU-0BR"/>
                                 </constraints>
                             </view>
@@ -266,7 +254,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnEdit" destination="8rq-lt-gKv" id="K5G-2k-xID"/>
                         <outlet property="btnSave" destination="mAc-VB-eiC" id="5Aq-wY-kkB"/>
                         <outlet property="imgViewProfile" destination="bKI-5K-6Qr" id="jfc-vX-UtA"/>
                         <outlet property="lblTitle" destination="MY8-tC-wzB" id="aYi-Zs-wJC"/>

@@ -36,7 +36,7 @@ class TagedPhotoTVC: UITableViewCell {
         
         if isMenuOpen{
             self.widthMenuView.constant = 54
-            self.widthStackView.constant = 38
+            self.widthStackView.constant = 32
         } else{
             self.widthMenuView.constant = 0
             self.widthStackView.constant = 0
@@ -57,7 +57,7 @@ class TagedPhotoTVC: UITableViewCell {
         } else{
             UIView.animate(withDuration: 0.3) {
                 self.widthMenuView.constant = 54
-                self.widthStackView.constant = 38
+                self.widthStackView.constant = 32
                 self.layoutIfNeeded()
             } completion: { [self] (state) in
                 isMenuOpen = true

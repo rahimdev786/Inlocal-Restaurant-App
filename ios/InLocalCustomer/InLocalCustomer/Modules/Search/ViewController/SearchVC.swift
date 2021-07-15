@@ -29,7 +29,7 @@ class SearchVC: UIViewController {
     var categoryArray = ["Indian", "German", "Italian", "French", "American"]
     
     var isGridViewEnable = true
-    var selectedCategory = 0
+    var selectedCategory = -1
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()

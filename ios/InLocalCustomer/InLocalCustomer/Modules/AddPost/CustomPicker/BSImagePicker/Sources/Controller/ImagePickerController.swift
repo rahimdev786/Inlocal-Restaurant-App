@@ -28,8 +28,6 @@ import Photos
     // MARK: Public properties
     
     
-    
-    
     public weak var imagePickerDelegate: ImagePickerControllerDelegate?
     public var settings: Settings = Settings()
     public var doneButton: UIBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)

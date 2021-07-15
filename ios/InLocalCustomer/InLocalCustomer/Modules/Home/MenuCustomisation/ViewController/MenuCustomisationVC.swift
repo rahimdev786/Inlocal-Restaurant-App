@@ -18,6 +18,9 @@ class MenuCustomisationVC: UIViewController {
     @IBOutlet weak var tableViewCustomisation: UITableView!
     @IBOutlet weak var tableViewCustomisation_Height: NSLayoutConstraint!
     
+    @IBOutlet weak var btnMinus: UIButton!
+    @IBOutlet weak var btnCount: UIButton!
+    @IBOutlet weak var btnPlus: UIButton!
     
     // MARK: - View Life Cycle Methods
     override func viewDidLoad() {
@@ -56,6 +59,20 @@ class MenuCustomisationVC: UIViewController {
     
     @IBAction func onClickBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickMinus(_ sender: Any) {
+        var count = Int((btnCount.titleLabel?.text!)!)!
+        if count > 1{
+            count = count - 1
+            btnCount.setTitle(String(count), for: .normal)
+        }
+    }
+    
+    @IBAction func onClickPlus(_ sender: Any) {
+        var count = Int((btnCount.titleLabel?.text!)!)
+        count = count! + 1
+        btnCount.setTitle(String(count!), for: .normal)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -98,6 +115,26 @@ extension MenuCustomisationVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCustomisationTVC", for: indexPath) as! MenuCustomisationTVC
+        switch indexPath.row {
+        case 0:
+            cell.lblHeaderTitle.text = "Select Size"
+            cell.lblFirst.text = "Small"
+            cell.lblSecond.text = "Large"
+            
+        case 1:
+            cell.lblHeaderTitle.text = "Add Fillings"
+            cell.lblFirst.text = "Mayonnaise"
+            cell.lblSecond.text = "Sauce"
+            
+        case 2:
+            cell.lblHeaderTitle.text = "Select Cheese"
+            cell.lblFirst.text = "Mozrila"
+            cell.lblSecond.text = "Pepper"
+            
+        default:
+            print("")
+        }
+        
         return cell
     }
     

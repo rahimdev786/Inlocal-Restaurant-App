@@ -59,6 +59,23 @@ class OwnPostsVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickOption(_ sender: Any) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let action0 = UIAlertAction(title: "Share", style: .default) { (action) in
+            
+        }
+        action0.setValue(UIColor.black, forKey: "titleTextColor")
+        
+        let action1 = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            
+        }
+        action1.setValue(UIColor.black, forKey: "titleTextColor")
+        
+        alertController.addAction(action0)
+        alertController.addAction(action1)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func onClickFollowers(_ sender: Any) {
         guard let vc = FollowerVC.loadFromXIB(withDependency: nil) else{
             return

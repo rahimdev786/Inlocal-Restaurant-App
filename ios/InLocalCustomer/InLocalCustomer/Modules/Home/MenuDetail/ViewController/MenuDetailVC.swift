@@ -17,7 +17,10 @@ class MenuDetailVC: UIViewController {
     
     @IBOutlet weak var collectionViewMenuImage: UICollectionView!
     @IBOutlet weak var collectionViewMenuImage_height: NSLayoutConstraint!
+    
     @IBOutlet weak var btnCount: UIButton!
+    @IBOutlet weak var btnMinus: UIButton!
+    @IBOutlet weak var btnPlus: UIButton!
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -58,13 +61,12 @@ class MenuDetailVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func onClickCustomizable(_ sender: Any) {
+    @IBAction func onClickCount(_ sender: Any) {
         guard let vc = MenuCustomisationVC.load(withDependency: nil) else{
             return
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     
     @IBAction func onClickPlus(_ sender: Any) {
         var count = Int((btnCount.titleLabel?.text!)!)
@@ -82,6 +84,9 @@ class MenuDetailVC: UIViewController {
     }
     
     func setupView(){
+        
+        btnMinus.isHidden = true
+        btnPlus.isHidden = true
         
         let widthValue = ((UIScreen.main.bounds.width-36)/2)
         let heightValue = widthValue

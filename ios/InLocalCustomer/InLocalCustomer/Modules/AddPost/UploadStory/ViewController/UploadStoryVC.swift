@@ -230,15 +230,17 @@ extension UploadStoryVC: UIImagePickerControllerDelegate {
 
 extension UploadStoryVC: CustomCameraOverlayProtocol {
     
+    func switchCamera(isSelected: Bool) {
+        if isSelected {
+            imagePicker.cameraDevice = .front
+        }else{
+            imagePicker.cameraDevice = .rear
+        }
+    }
+    
     func cameraTapped(isSelected:Bool) {
         
         imagePicker.takePicture()
-//        if isSelected {
-//            imagePicker.cameraDevice = .front
-//        }else{
-//            imagePicker.cameraDevice = .rear
-//        }
-        
     }
     
     func cameraCancelled() {

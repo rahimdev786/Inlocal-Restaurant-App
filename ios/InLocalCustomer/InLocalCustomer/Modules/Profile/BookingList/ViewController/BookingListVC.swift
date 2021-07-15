@@ -15,11 +15,15 @@ class BookingListVC: UIViewController {
     var dependency: BookingListDependency?
     
     @IBOutlet weak var tableView: UITableView!
-    
+    let declinedMessageView = DeclineMessageView.instanceFromNib()
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
+        
+        declinedMessageView.frame = UIScreen.main.bounds
+        declinedMessageView.imageViewBackground.backgroundColor = .black
+        declinedMessageView.imageViewBackground.alpha = 0.6
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -114,5 +118,9 @@ extension BookingListVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 108.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.view.addSubview(declinedMessageView)
     }
 }

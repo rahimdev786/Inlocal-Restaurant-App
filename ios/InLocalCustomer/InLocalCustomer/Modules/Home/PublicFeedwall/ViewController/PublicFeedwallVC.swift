@@ -141,10 +141,7 @@ extension PublicFeedwallVC: UITableViewDataSource{
         
         cell.btnMenu.addTarget(self, action: #selector(onClickMenu(sender:)), for: .touchUpInside)
         cell.btnMenu.tag = indexPath.row
-        
-        cell.btnSavedPost.addTarget(self, action: #selector(onClickSavedPost(sender:)), for: .touchUpInside)
-        cell.btnSavedPost.tag = indexPath.row
-        
+            
         cell.btnComment.addTarget(self, action: #selector(onClickComment(sender:)), for: .touchUpInside)
         cell.btnComment.tag = indexPath.row
         return cell
@@ -175,14 +172,6 @@ extension PublicFeedwallVC {
             return
         }
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc func onClickSavedPost(sender: UIButton){
-        let buttonTag = sender.tag
-        guard let vc = SavedPostsVC.loadFromXIB() else{
-            return
-        }
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func onClickComment(sender: UIButton){

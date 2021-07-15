@@ -63,7 +63,7 @@
                                     </subviews>
                                 </stackView>
                                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pos-Ss-0nk" customClass="OTPFieldView" customModule="OTPFieldView">
-                                    <rect key="frame" x="-80" y="157" width="474" height="40"/>
+                                    <rect key="frame" x="5" y="157" width="389" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="tb4-ST-xla"/>
@@ -108,9 +108,9 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="BPp-bX-CA5" secondAttribute="trailing" constant="17" id="1Fz-vO-HU2"/>
+                                <constraint firstItem="Pos-Ss-0nk" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="5" id="2oo-nn-cnt"/>
                                 <constraint firstItem="BPp-bX-CA5" firstAttribute="top" secondItem="p50-rn-gjR" secondAttribute="bottom" constant="50" id="5bK-nS-K3y"/>
                                 <constraint firstAttribute="trailing" secondItem="Pos-Ss-0nk" secondAttribute="trailing" constant="20" id="8EG-lO-IP8"/>
-                                <constraint firstItem="Pos-Ss-0nk" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="-80" id="CmE-We-cgH"/>
                                 <constraint firstItem="O1i-MQ-vvU" firstAttribute="centerX" secondItem="27n-ak-cSJ" secondAttribute="centerX" id="Fnl-CS-tes"/>
                                 <constraint firstItem="nuv-ne-6lq" firstAttribute="leading" secondItem="27n-ak-cSJ" secondAttribute="leading" constant="17" id="LTM-YA-SrG"/>
                                 <constraint firstItem="nuv-ne-6lq" firstAttribute="top" secondItem="O1i-MQ-vvU" secondAttribute="bottom" constant="20.5" id="OVA-Vn-EG5"/>

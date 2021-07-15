@@ -142,8 +142,8 @@ extension DeliveryVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryMenuTVC", for: indexPath) as! DeliveryMenuTVC
-        cell.btnCustomizable.addTarget(self, action: #selector(onClickCustomizable(sender:)), for: .touchUpInside)
-        cell.btnCustomizable.tag = indexPath.row
+        cell.btnCount.addTarget(self, action: #selector(onClickCustomizable(sender:)), for: .touchUpInside)
+        cell.btnCount.tag = indexPath.row
         return cell
     }
     

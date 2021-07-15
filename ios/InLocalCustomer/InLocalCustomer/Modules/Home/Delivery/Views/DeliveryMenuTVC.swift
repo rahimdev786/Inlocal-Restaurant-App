@@ -31,7 +31,7 @@ class DeliveryMenuTVC: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
+    /*
     @IBAction func onClickAdd(_ sender: UIButton) {
         sender.setImage(nil, for: .normal)
         btnCount.backgroundColor = UIColor.init(hexString: "#1DA1F2")
@@ -40,6 +40,8 @@ class DeliveryMenuTVC: UITableViewCell {
         btnPlus.isHidden = false
         
     }
+     */
+    
     @IBAction func onClickPlus(_ sender: Any) {
         var count = Int((btnCount.titleLabel?.text!)!)
         count = count! + 1

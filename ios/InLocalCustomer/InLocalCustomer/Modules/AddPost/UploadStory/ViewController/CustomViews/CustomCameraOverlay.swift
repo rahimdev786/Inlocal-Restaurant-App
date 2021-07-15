@@ -15,6 +15,7 @@ protocol CustomCameraOverlayProtocol: AnyObject {
     func flashTapped()
     func storyTapped()
     func postTapped()
+    func switchCamera(isSelected:Bool)
 }
 class CustomCameraOverlay: UIView {
 
@@ -28,7 +29,7 @@ class CustomCameraOverlay: UIView {
         super.awakeFromNib()
         btnStory.isSelected = true
         btnStory.titleLabel?.textColor = .white
-        btnStory.backgroundColor = .blue
+        btnStory.backgroundColor = UIColor(hexString: "1DA1F2")
         delegate?.postTapped()
     }
     
@@ -37,9 +38,15 @@ class CustomCameraOverlay: UIView {
         delegate?.cameraTapped(isSelected:sender.isSelected)
     }
     
+    @IBAction func didTapOnSwitchCamera(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        delegate?.switchCamera(isSelected:sender.isSelected)
+    }
+    
     @IBAction func didTapOnCancel(_ sender: UIButton) {
         delegate?.cameraCancelled()
     }
+    
     @IBAction func didTapOnGallery(_ sender: UIButton) {
         delegate?.galleryTapped()
     }
@@ -52,7 +59,7 @@ class CustomCameraOverlay: UIView {
     @IBAction func didTapOnStory(_ sender: UIButton) {
         sender.isSelected = true
         sender.titleLabel?.textColor = .white
-        sender.backgroundColor = .blue
+        sender.backgroundColor = UIColor(hexString: "1DA1F2")
         btnPost.backgroundColor = UIColor(hexString: "333333")
         btnPost.titleLabel?.textColor = .white
         btnPost.isSelected = false
@@ -62,7 +69,7 @@ class CustomCameraOverlay: UIView {
     
     @IBAction func didTapOnPost(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        sender.backgroundColor = .blue
+        sender.backgroundColor = UIColor(hexString: "1DA1F2")
         btnStory.backgroundColor = UIColor(hexString: "333333")
         btnStory.titleLabel?.textColor = .white
         btnStory.isSelected = false

@@ -16,12 +16,17 @@ class TagedPhotosVC: UIViewController {
     var dependency: TagedPhotosDependency?
     
     @IBOutlet weak var tableViewPosts: UITableView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var tableViewPostHeight: NSLayoutConstraint!
+    
+    var headerTitle = "Taged photos"
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        setView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,6 +39,7 @@ class TagedPhotosVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableViewPosts.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -42,6 +48,7 @@ class TagedPhotosVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.tableViewPosts.removeObserver(self, forKeyPath: "contentSize")
     }
     
     // MARK: Deinitialization
@@ -82,6 +89,21 @@ class TagedPhotosVC: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func setView(){
+        lblTitle.text = headerTitle
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize"{
+            if object is UITableView{
+                if let newvalue = change?[.newKey]{
+                    let newsize = newvalue as! CGSize
+                    self.tableViewPostHeight.constant = newsize.height
+                }
+            }
+        }
+    }
+
 }
 
 // MARK: - Load from storyboard with dependency

@@ -185,7 +185,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xuo-VK-rHn">
-                                                            <rect key="frame" x="239" y="16.333333333333332" width="92" height="57.333333333333343"/>
+                                                            <rect key="frame" x="239" y="16" width="92" height="58"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d01-YP-cp1">
                                                                     <rect key="frame" x="7" y="0.0" width="78" height="26"/>
@@ -224,9 +224,6 @@
                                                                                     <integer key="value" value="5"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
-                                                                            <connections>
-                                                                                <action selector="onClickAdd:" destination="tfb-ns-fC3" eventType="touchUpInside" id="paw-b4-fkE"/>
-                                                                            </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-oX-6U5">
                                                                             <rect key="frame" x="52" y="0.0" width="26" height="26"/>
@@ -258,18 +255,11 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </stackView>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LgC-o1-Yp9">
-                                                                    <rect key="frame" x="11.666666666666657" y="31.000000000000007" width="69" height="26.333333333333336"/>
-                                                                    <state key="normal">
-                                                                        <attributedString key="attributedTitle">
-                                                                            <fragment content="Customizable">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <font key="NSFont" size="12" name="SFProDisplay-Regular"/>
-                                                                                    <integer key="NSUnderline" value="1"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgC-o1-Yp9">
+                                                                    <rect key="frame" x="11.666666666666657" y="31" width="69" height="27"/>
+                                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
+                                                                    <state key="normal" title="Customizable">
+                                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.49526434075342468" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     </state>
                                                                 </button>
                                                             </subviews>
@@ -297,7 +287,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnCount" destination="wr5-SO-cqO" id="jTe-62-btK"/>
-                                            <outlet property="btnCustomizable" destination="LgC-o1-Yp9" id="Q5U-VW-yem"/>
                                             <outlet property="btnMinus" destination="waA-cs-H0G" id="3ui-ea-f9E"/>
                                             <outlet property="btnPlus" destination="gwW-oX-6U5" id="j20-zp-Hie"/>
                                             <outlet property="viewCellBackground" destination="al6-fz-LJi" id="LR6-8k-zUc"/>
