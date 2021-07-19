@@ -13,17 +13,14 @@ class FeedwallPostTVC: UITableViewCell {
     @IBOutlet weak var widthMenuView: NSLayoutConstraint!
     @IBOutlet weak var imgViewPost: UIImageView!
     @IBOutlet weak var widthStackView: NSLayoutConstraint!
-    
     @IBOutlet weak var lblLikeCount: UILabel!
-    
     @IBOutlet weak var btnRestaurent: UIButton!
     @IBOutlet weak var btnMenu: UIButton!
     @IBOutlet weak var btnSavedPost: UIButton!
     @IBOutlet weak var btnComment: UIButton!
-    
     @IBOutlet weak var btnUserProfile: UIButton!
-    
     @IBOutlet weak var btnUserName: UIButton!
+    @IBOutlet weak var lblDescription: UILabel!
     
     var isMenuOpen = false
     var isLiked = false
@@ -43,9 +40,11 @@ class FeedwallPostTVC: UITableViewCell {
         if isMenuOpen{
             self.widthMenuView.constant = 54
             self.widthStackView.constant = 38
+            self.lblDescription.numberOfLines = 5
         } else{
             self.widthMenuView.constant = 0
             self.widthStackView.constant = 0
+            self.lblDescription.numberOfLines = 2
         }
     }
 
@@ -56,6 +55,7 @@ class FeedwallPostTVC: UITableViewCell {
             UIView.animate(withDuration: 0.3) {
                 self.widthMenuView.constant = 0
                 self.widthStackView.constant = 0
+                self.lblDescription.numberOfLines = 2
                 self.layoutIfNeeded()
             } completion: { [self] (state) in
                 isMenuOpen = false
@@ -64,6 +64,7 @@ class FeedwallPostTVC: UITableViewCell {
             UIView.animate(withDuration: 0.3) {
                 self.widthMenuView.constant = 54
                 self.widthStackView.constant = 38
+                self.lblDescription.numberOfLines = 5
                 self.layoutIfNeeded()
             } completion: { [self] (state) in
                 isMenuOpen = true

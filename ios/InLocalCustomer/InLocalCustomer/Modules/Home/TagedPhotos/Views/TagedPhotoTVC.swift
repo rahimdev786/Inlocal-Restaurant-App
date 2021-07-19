@@ -20,6 +20,8 @@ class TagedPhotoTVC: UITableViewCell {
     @IBOutlet weak var btnSavedPost: UIButton!
     @IBOutlet weak var btnComment: UIButton!
     
+    @IBOutlet weak var lblDescription: UILabel!
+    
     var isMenuOpen = false
     var isLiked = false
     
@@ -37,9 +39,11 @@ class TagedPhotoTVC: UITableViewCell {
         if isMenuOpen{
             self.widthMenuView.constant = 54
             self.widthStackView.constant = 32
+            self.lblDescription.numberOfLines = 5
         } else{
             self.widthMenuView.constant = 0
             self.widthStackView.constant = 0
+            self.lblDescription.numberOfLines = 2
         }
     }
     
@@ -50,6 +54,7 @@ class TagedPhotoTVC: UITableViewCell {
             UIView.animate(withDuration: 0.3) {
                 self.widthMenuView.constant = 0
                 self.widthStackView.constant = 0
+                self.lblDescription.numberOfLines = 2
                 self.layoutIfNeeded()
             } completion: { [self] (state) in
                 isMenuOpen = false
@@ -58,6 +63,7 @@ class TagedPhotoTVC: UITableViewCell {
             UIView.animate(withDuration: 0.3) {
                 self.widthMenuView.constant = 54
                 self.widthStackView.constant = 32
+                self.lblDescription.numberOfLines = 5
                 self.layoutIfNeeded()
             } completion: { [self] (state) in
                 isMenuOpen = true

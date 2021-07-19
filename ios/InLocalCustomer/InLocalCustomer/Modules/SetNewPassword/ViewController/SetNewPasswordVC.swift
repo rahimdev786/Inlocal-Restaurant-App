@@ -119,51 +119,55 @@ extension SetNewPasswordVC: TextFieldDelegate{
        
    }
    
-   func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
-       let strText = string
-       let fieldType = textFieldView.fieldType!
-       switch fieldType {
-       
-
-       case .newPassword:
-        setNewPasswordRequest.newPassword = strText
-                     
-           if strText.isNullString() {
-               textFieldView.showError(with: "* Required")
-           } else if strText.count >= 6{
-               textFieldView.hideError()
-           } else{
-               textFieldView.showError(with: "Password should be atleast 6 characters")
-           }
-              
-           if setNewPasswordRequest.conformPassword?.isNullString() ?? true{
-                  
-           } else{
-               if strText == setNewPasswordRequest.conformPassword{
-                   textFieldView.hideError()
-               } else{
-                   textFieldView.showError(with: "Confirm password does not match")
-               }
-              
-           }
-           
-       case .cnfrmPassword:
-        setNewPasswordRequest.conformPassword = strText
-           if strText.isNullString() {
-               textFieldView.showError(with: "* Required")
-               
-           } else if strText == setNewPasswordRequest.newPassword {
-               textFieldView.hideError()
-           } else{
-               textFieldView.showError(with: "Confirm password does not match")
-           }
-           
-       default:
-           break
-       }
-       
-       validateFields()
-   }
+    func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
+        let strText = string
+        let fieldType = textFieldView.fieldType!
+        switch fieldType {
+        
+        
+        case .newPassword:
+            if strText.isNullString() {
+                setNewPasswordRequest.newPassword = ""
+                textFieldView.showError(with: "* Required")
+            } else if Validator.isValid(itemToValidate: strText , validationType: .password){
+                setNewPasswordRequest.newPassword = strText
+                textFieldView.hideError()
+            } else{
+                setNewPasswordRequest.newPassword = ""
+                textFieldView.showError(with: "Password must be 8 characters, must contain at least 1 special character, must contaibn at least 1 number & 1 uppercase character")
+            }
+            
+            if setNewPasswordRequest.conformPassword?.isNullString() ?? true{
+                
+            } else{
+                if strText == setNewPasswordRequest.conformPassword{
+                    textFieldView.hideError()
+                } else{
+                    textFieldView.showError(with: "Confirm password does not match")
+                }
+                
+            }
+            
+        case .cnfrmPassword:
+            
+            if strText.isNullString() {
+                setNewPasswordRequest.conformPassword = ""
+                textFieldView.showError(with: "* Required")
+                
+            } else if strText == setNewPasswordRequest.newPassword {
+                setNewPasswordRequest.conformPassword = strText
+                textFieldView.hideError()
+            } else{
+                setNewPasswordRequest.conformPassword = ""
+                textFieldView.showError(with: "Confirm password does not match")
+            }
+            
+        default:
+            break
+        }
+        
+        validateFields()
+    }
    
     func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {
         

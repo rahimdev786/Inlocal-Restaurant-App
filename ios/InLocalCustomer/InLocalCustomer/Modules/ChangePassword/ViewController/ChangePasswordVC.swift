@@ -143,26 +143,29 @@ extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
         switch fieldType {
         
         case .oldPassword:
-            changePasswordRequest.currentPassword = strText
             if strText.isNullString() {
+                changePasswordRequest.currentPassword = ""
                 textFieldView.showError(with: "* Required")
-            }else if strText.count >= 6{
+            } else if Validator.isValid(itemToValidate: strText , validationType: .password){
+                changePasswordRequest.currentPassword = strText
                 textFieldView.hideError()
             } else{
-                textFieldView.showError(with: "Password should be atleast 6 characters")
+                changePasswordRequest.currentPassword = ""
+                textFieldView.showError(with: "Password must be 8 characters, must contain at least 1 special character, must contaibn at least 1 number & 1 uppercase character")
+            }
+
+        case .newPassword:
+            if strText.isNullString() {
+                changePasswordRequest.newPassword = ""
+                textFieldView.showError(with: "* Required")
+            } else if Validator.isValid(itemToValidate: strText , validationType: .password){
+                changePasswordRequest.newPassword = strText
+                textFieldView.hideError()
+            } else{
+                changePasswordRequest.newPassword = ""
+                textFieldView.showError(with: "Password must be 8 characters, must contain at least 1 special character, must contaibn at least 1 number & 1 uppercase character")
             }
             
-        case .newPassword:
-            changePasswordRequest.newPassword = strText
-                      
-            if strText.isNullString() {
-                textFieldView.showError(with: "* Required")
-            } else if strText.count >= 6{
-                textFieldView.hideError()
-            } else{
-                textFieldView.showError(with: "Password should be atleast 6 characters")
-            }
-               
             if changePasswordRequest.confirmNewPassword?.isNullString() ?? true{
                    
             } else{
@@ -174,13 +177,15 @@ extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
             }
             
         case .cnfrmPassword:
-            changePasswordRequest.confirmNewPassword = strText
             if strText.isNullString() {
+                changePasswordRequest.confirmNewPassword = ""
                 textFieldView.showError(with: "* Required")
                 
             } else if strText == changePasswordRequest.newPassword {
+                changePasswordRequest.confirmNewPassword = strText
                 textFieldView.hideError()
             } else{
+                changePasswordRequest.confirmNewPassword = ""
                 textFieldView.showError(with: "Confirm password does not match")
             }
             

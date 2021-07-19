@@ -2,14 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AvenirLTStd-Book.otf">
-            <string>AvenirLTStd-Book</string>
-        </array>
         <array key="AvenirLTStd-Roman.otf">
             <string>AvenirLTStd-Roman</string>
         </array>
@@ -26,8 +24,6 @@
                 <outlet property="btnForgot" destination="zQ4-3W-jai" id="QIw-ZZ-yzW"/>
                 <outlet property="btnShowPwd" destination="hYr-iD-Ztg" id="RQD-KJ-VGZ"/>
                 <outlet property="contentView" destination="al1-Wu-EM4" id="VOE-uy-7bJ"/>
-                <outlet property="imgDropdown" destination="rCe-Se-vfL" id="dQJ-Ha-Ky9"/>
-                <outlet property="imgViewCountryFlag" destination="Pqg-NH-g8F" id="81h-j2-4xu"/>
                 <outlet property="imgViewLeftIcon" destination="gmt-Xo-hSY" id="H9B-rH-zgH"/>
                 <outlet property="imgViewRightIcon" destination="oce-4J-Y6m" id="ptn-td-qlO"/>
                 <outlet property="lblCountryCode" destination="FNi-wl-j78" id="sJ1-cx-R0z"/>
@@ -50,7 +46,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjc-x2-nBF">
                             <rect key="frame" x="0.0" y="0.0" width="368" height="51"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="4HZ-WH-LFH">
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4HZ-WH-LFH">
                                     <rect key="frame" x="5" y="0.0" width="358" height="50"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmt-Xo-hSY">
@@ -62,37 +58,24 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MKB-H6-9Yh">
-                                            <rect key="frame" x="38" y="15" width="79" height="20"/>
+                                            <rect key="frame" x="35" y="16" width="30" height="18"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter" translatesAutoresizingMaskIntoConstraints="NO" id="Pqg-NH-g8F">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+43" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNi-wl-j78">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="18"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="C6S-Dk-MdL"/>
-                                                        <constraint firstAttribute="width" constant="30" id="sLY-GL-sNd"/>
+                                                        <constraint firstAttribute="width" constant="30" id="uoB-07-SNq"/>
                                                     </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sort_review_arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="rCe-Se-vfL">
-                                                    <rect key="frame" x="34" y="0.0" width="15" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="15" id="Mf8-0w-d38"/>
-                                                        <constraint firstAttribute="height" constant="20" id="ohn-7K-zUy"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNi-wl-j78">
-                                                    <rect key="frame" x="53" y="1.5" width="26" height="17.5"/>
-                                                    <fontDescription key="fontDescription" name="AvenirLTStd-Book" family="Avenir LT Std" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="FNi-wl-j78" firstAttribute="centerY" secondItem="MKB-H6-9Yh" secondAttribute="centerY" id="aMO-TS-2IC"/>
-                                                <constraint firstItem="Pqg-NH-g8F" firstAttribute="centerY" secondItem="MKB-H6-9Yh" secondAttribute="centerY" id="clf-p5-rDe"/>
-                                                <constraint firstItem="rCe-Se-vfL" firstAttribute="centerY" secondItem="MKB-H6-9Yh" secondAttribute="centerY" id="yzG-86-Y1S"/>
                                             </constraints>
                                         </stackView>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzR-nL-Thj">
-                                            <rect key="frame" x="130" y="11" width="109" height="28"/>
+                                            <rect key="frame" x="75" y="11" width="170" height="28"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
@@ -102,7 +85,7 @@
                                             </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQ4-3W-jai">
-                                            <rect key="frame" x="252" y="11" width="68" height="28"/>
+                                            <rect key="frame" x="255" y="11" width="68" height="28"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="68" id="G7J-yy-ejR"/>
                                             </constraints>
@@ -200,7 +183,6 @@
         </view>
     </objects>
     <resources>
-        <image name="filter" width="16" height="16"/>
         <image name="sort_review_arrow_down" width="11.5" height="6"/>
     </resources>
 </document>

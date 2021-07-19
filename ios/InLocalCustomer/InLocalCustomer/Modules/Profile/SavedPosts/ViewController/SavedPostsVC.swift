@@ -99,4 +99,12 @@ extension SavedPostsVC:UICollectionViewDataSource, UICollectionViewDelegateFlowL
         let size = CGSize(width: width, height: width)
         return size
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = TagedPhotosVC.load(withDependency: nil) else{
+            return
+        }
+        vc.headerTitle = "Posts"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

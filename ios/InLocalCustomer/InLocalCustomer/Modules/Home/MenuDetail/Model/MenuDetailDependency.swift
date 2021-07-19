@@ -10,3 +10,8 @@
 struct MenuDetailDependency {
 
 }
+
+enum PageType {
+    case menu
+    case delivery
+}

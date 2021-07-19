@@ -153,6 +153,7 @@ extension RestaurantMenuVC: UITableViewDelegate {
         guard let vc = MenuDetailVC.load(withDependency: nil) else{
             return
         }
+        vc.pageType = .menu
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

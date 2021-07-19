@@ -18,9 +18,12 @@ class MenuDetailVC: UIViewController {
     @IBOutlet weak var collectionViewMenuImage: UICollectionView!
     @IBOutlet weak var collectionViewMenuImage_height: NSLayoutConstraint!
     
+    @IBOutlet weak var stackViewAddItem: UIStackView!
     @IBOutlet weak var btnCount: UIButton!
     @IBOutlet weak var btnMinus: UIButton!
     @IBOutlet weak var btnPlus: UIButton!
+    
+    var pageType : PageType!
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -84,6 +87,14 @@ class MenuDetailVC: UIViewController {
     }
     
     func setupView(){
+        switch pageType {
+        case .menu:
+            stackViewAddItem.isHidden = true
+        case .delivery:
+            stackViewAddItem.isHidden = false
+        default:
+            print("")
+        }
         
         btnMinus.isHidden = true
         btnPlus.isHidden = true

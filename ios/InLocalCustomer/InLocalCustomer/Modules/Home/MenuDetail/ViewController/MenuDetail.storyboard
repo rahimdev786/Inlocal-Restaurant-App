@@ -288,6 +288,7 @@
                         <outlet property="btnPlus" destination="e8q-c2-LT3" id="TXS-ZN-U7k"/>
                         <outlet property="collectionViewMenuImage" destination="Wo4-T1-MDd" id="cbT-ys-z4f"/>
                         <outlet property="collectionViewMenuImage_height" destination="Hu3-BP-1fa" id="h96-b5-RiI"/>
+                        <outlet property="stackViewAddItem" destination="b15-0n-BtP" id="gaH-Iy-6Jf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

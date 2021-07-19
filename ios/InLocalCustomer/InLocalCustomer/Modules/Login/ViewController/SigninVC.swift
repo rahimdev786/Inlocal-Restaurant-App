@@ -87,8 +87,6 @@ class SigninVC: UIViewController {
         txtFieldPassword.populateWithData(text: "", placeholderText: "Password", fieldType: .password)
         txtFieldPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
         
-        txtFieldPhoneNumber.txtFldInput.text = "+43 "
-        
         validateFields()
     }
     
@@ -136,14 +134,25 @@ extension SigninVC: SigninAPIResponseDelegate {
             if strText.isNullString() {
                 userLoginData.phone = ""
                 textFieldView.showError(with: "* Required")
-            } else {
+            } else if strText.count > 9{
                 userLoginData.phone = strText
                 textFieldView.hideError()
+            } else {
+                userLoginData.phone = ""
+                textFieldView.showError(with: "Enter valid phone number.")
             }
             
         case .password:
-            userLoginData.password = strText
-            strText.isNullString() ? textFieldView.showError(with: "* Required") : textFieldView.hideError()
+            if strText.isNullString() {
+                userLoginData.password = ""
+                textFieldView.showError(with: "* Required")
+            } else if Validator.isValid(itemToValidate: strText , validationType: .password){
+                userLoginData.password = strText
+                textFieldView.hideError()
+            } else{
+                userLoginData.password = ""
+                textFieldView.showError(with: "Password must be 8 characters, must contain at least 1 special character, must contaibn at least 1 number & 1 uppercase character")
+            }
             
         default:
             break

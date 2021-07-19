@@ -193,13 +193,17 @@ extension SignupVC: TextFieldDelegate{
             } else{
                 textFieldView.showError(with: "Enter valid fullname")
             }
+            
         case .phone:
             if strText.isNullString() {
                 signUpRequest.phone = ""
                 textFieldView.showError(with: "* Required")
-            } else {
+            } else if strText.count > 9{
                 signUpRequest.phone = strText
                 textFieldView.hideError()
+            } else {
+                signUpRequest.phone = ""
+                textFieldView.showError(with: "Enter valid phone number.")
             }
             
         case .email:
@@ -219,14 +223,14 @@ extension SignupVC: TextFieldDelegate{
             if strText.isNullString() {
                 signUpRequest.password = ""
                 textFieldView.showError(with: "* Required")
-            } else if strText.count >= 6{
+            } else if Validator.isValid(itemToValidate: strText , validationType: .password){
                 signUpRequest.password = strText
                 textFieldView.hideError()
             } else{
                 signUpRequest.password = ""
-                textFieldView.showError(with: "Password should be atleast 6 characters")
+                textFieldView.showError(with: "Password must be 8 characters, must contain at least 1 special character, must contaibn at least 1 number & 1 uppercase character")
             }
-            
+
         default:
             break
         }

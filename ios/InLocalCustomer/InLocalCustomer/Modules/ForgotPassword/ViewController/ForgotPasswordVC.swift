@@ -79,9 +79,7 @@ class ForgotPasswordVC: UIViewController {
         txtFieldPhoneNumber.delegate = self
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone no", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.next
-        
-        txtFieldPhoneNumber.txtFldInput.text = "+43 "
-        
+       
         validateFields()
     }
     
@@ -138,9 +136,12 @@ extension ForgotPasswordVC: TextFieldDelegate{
             if strText.isNullString() {
                 forgotPasswordRequest.phone = ""
                 textFieldView.showError(with: "* Required")
-            } else {
+            } else if strText.count > 9{
                 forgotPasswordRequest.phone = strText
                 textFieldView.hideError()
+            } else {
+                forgotPasswordRequest.phone = ""
+                textFieldView.showError(with: "Enter valid phone number.")
             }
             
         default:

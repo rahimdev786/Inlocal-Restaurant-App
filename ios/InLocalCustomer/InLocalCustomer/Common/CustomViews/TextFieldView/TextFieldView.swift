@@ -127,6 +127,7 @@ class TextFieldView: UIView {
             txtFldInput.isSecureTextEntry = false
             txtFldInput.keyboardType = .phonePad
             stckViewCountryCode.isHidden = true
+            stckViewCountryCode.isHidden = false
             imgViewLeftIcon.isHidden = true
             imgViewRightIcon.isHidden = true
             

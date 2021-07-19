@@ -149,6 +149,16 @@ extension DeliveryVC: UITableViewDataSource {
     
 }
 
+extension DeliveryVC : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = MenuDetailVC.load(withDependency: nil) else{
+            return
+        }
+        vc.pageType = .delivery
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
 extension DeliveryVC{
     @objc func onClickCustomizable(sender: UIButton){
         let buttonTag = sender.tag

@@ -160,13 +160,12 @@ class RestaurantProfileVC: UIViewController {
         if sender.isSelected {
             sender.isSelected = false
             sender.setImage(#imageLiteral(resourceName: "follow_white"), for: .normal)
-            sender.backgroundColor = UIColor.init(hexString: "#333333")
-            
+            sender.backgroundColor = UIColor.init(hexString: "#1DA1F2")
             lblFollow.text = "Follow"
         } else{
             sender.isSelected = true
             sender.setImage(#imageLiteral(resourceName: "unfollow_icon"), for: .normal)
-            sender.backgroundColor = UIColor.init(hexString: "#1DA1F2")
+            sender.backgroundColor =  UIColor.init(hexString: "#333333")
             lblFollow.text = "Unfollow"
         }
         
