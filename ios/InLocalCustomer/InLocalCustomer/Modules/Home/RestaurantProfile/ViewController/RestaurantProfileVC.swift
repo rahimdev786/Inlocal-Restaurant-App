@@ -36,6 +36,13 @@ class RestaurantProfileVC: UIViewController {
     
     @IBOutlet weak var lblFollow: UILabel!
     
+    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var tabItemHome: UITabBarItem!
+    @IBOutlet weak var tabItemSearch: UITabBarItem!
+    @IBOutlet weak var tabItemAddPost: UITabBarItem!
+    @IBOutlet weak var tabItemCart: UITabBarItem!
+    @IBOutlet weak var tabItemNotification: UITabBarItem!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,6 +164,7 @@ class RestaurantProfileVC: UIViewController {
     }
     
     @IBAction func onClickFollow(_ sender: UIButton) {
+        
         if sender.isSelected {
             sender.isSelected = false
             sender.setImage(#imageLiteral(resourceName: "follow_white"), for: .normal)
@@ -168,8 +176,6 @@ class RestaurantProfileVC: UIViewController {
             sender.backgroundColor =  UIColor.init(hexString: "#333333")
             lblFollow.text = "Unfollow"
         }
-        
-        
     }
     
     @IBAction func onClickReservation(_ sender: Any) {
@@ -189,6 +195,9 @@ class RestaurantProfileVC: UIViewController {
     }
     
     func setupView(){
+        tabBar.delegate = self
+        tabBar.unselectedItemTintColor = .white
+        
         btnFollow.layer.cornerRadius = btnFollow.frame.height/2
         btnMenu.layer.cornerRadius = btnMenu.frame.height/2
         btnDelivery.layer.cornerRadius = btnDelivery.frame.height/2
@@ -258,3 +267,34 @@ extension RestaurantProfileVC: UICollectionViewDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+extension RestaurantProfileVC: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item {
+        case tabItemHome:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 0)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemSearch:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 1)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemAddPost:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 2)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemCart:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 3)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemNotification:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 4)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        default:
+            print("")
+        }
+    }
+}
+
+

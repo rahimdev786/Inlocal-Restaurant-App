@@ -18,6 +18,8 @@ enum PostType {
 
 class BottumTabBarVC: UIViewController, UINavigationControllerDelegate {
     
+        
+    
     // MARK: Instance variables
 	lazy var dataManager = BottumTabBarDataManager()
     var dependency: BottumTabBarDependency?
@@ -35,7 +37,8 @@ class BottumTabBarVC: UIViewController, UINavigationControllerDelegate {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
-        setUpTabBat()
+        setUpTabBar()
+        addObserver()
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,10 +60,32 @@ class BottumTabBarVC: UIViewController, UINavigationControllerDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
-    
+
     // MARK: Deinitialization
     deinit {
        debugPrint("\(self) deinitialized")
+    }
+    
+    func addObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.clickAtIndex), name: NSNotification.Name(rawValue: "onClickTab"), object: nil)
+    }
+    
+    @objc func clickAtIndex(notification: Notification){
+        guard let index = notification.object as? Int else {
+            return
+        }
+        switch index {
+        case 0,1,3,4:
+            tabController.setIndex(index)
+            
+        case 2:
+            self.tabController.onlyShowTextForSelectedButtons = !self.tabController.onlyShowTextForSelectedButtons
+            self.checkCameraAccess()
+            
+        default:
+            print("")
+        }
+        
     }
 }
 
@@ -85,7 +110,7 @@ extension BottumTabBarVC: BottumTabBarAPIResponseDelegate {
 }
 
 extension BottumTabBarVC{
-    func setUpTabBat(){
+    func setUpTabBar(){
         var icons = [UIImage]()
         icons.append(#imageLiteral(resourceName: "tab_home"))
         icons.append(#imageLiteral(resourceName: "tab_search"))
@@ -93,16 +118,9 @@ extension BottumTabBarVC{
         icons.append(#imageLiteral(resourceName: "tab_cart"))
         icons.append(#imageLiteral(resourceName: "tab_notification"))
         
-        var sIcons = [UIImage]()
-        sIcons.append(#imageLiteral(resourceName: "tab_home"))
-        sIcons.append(#imageLiteral(resourceName: "tab_search"))
-        sIcons.append(#imageLiteral(resourceName: "tab_addpost"))
-        sIcons.append(#imageLiteral(resourceName: "tab_cart"))
-        sIcons.append(#imageLiteral(resourceName: "tab_notification"))
-
         //init
         //tabController = .insert(into: self, withTabIconNames: icons)
-        tabController = .insert(into: self, withTabIcons: icons, andSelectedIcons: sIcons)
+        tabController = .insert(into: self, withTabIcons: icons, andSelectedIcons: icons)
 
         //set delegate
         tabController.delegate = self
@@ -182,7 +200,7 @@ extension BottumTabBarVC{
 
         tabController.setBadgeText("3", atIndex: 4)
 
-        tabController.setIndex(10, animated: true)
+        //tabController.setIndex(10, animated: true)
 
         tabController.setAction(atIndex: 3){
             self.counter = 0
@@ -191,9 +209,7 @@ extension BottumTabBarVC{
 
         tabController.setAction(atIndex: 2) {
             self.tabController.onlyShowTextForSelectedButtons = !self.tabController.onlyShowTextForSelectedButtons
-            
             self.checkCameraAccess()
-            
         }
 
         tabController.setAction(atIndex: 4) {

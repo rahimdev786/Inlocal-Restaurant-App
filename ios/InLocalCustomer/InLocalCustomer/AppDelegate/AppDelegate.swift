@@ -3,7 +3,9 @@
 //  InLocalCustomer
 //
 //  Created by Sudipta Patel on 27/05/21.
-//
+//SKU: 20210721
+//com.innofied.app.InLocalCustomer
+//com.app.InLocalCustomer
 
 import UIKit
 import GoogleMaps

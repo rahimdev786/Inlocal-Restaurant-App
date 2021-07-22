@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-KS-wXv">
-                                        <rect key="frame" x="151.5" y="22" width="111.5" height="26.5"/>
+                                        <rect key="frame" x="149" y="22" width="116.5" height="26"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -133,7 +133,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ba-Rd-xRY">
-                                <rect key="frame" x="17" y="152" width="380" height="744"/>
+                                <rect key="frame" x="17" y="152" width="380" height="650"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuListTVC" rowHeight="110" id="HVV-19-BoM" customClass="MenuListTVC" customModule="InLocalCustomer" customModuleProvider="target">
@@ -159,16 +159,16 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kpn-rm-GWI">
-                                                            <rect key="frame" x="98" y="10" width="202" height="39"/>
+                                                            <rect key="frame" x="98" y="10" width="202" height="52"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheese Burger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJS-8m-xuH">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="202" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="202" height="19"/>
                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Populer in the middle east and Greece" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Si-ZG-kRU">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="202" height="14.5"/>
+                                                                    <rect key="frame" x="0.0" y="24" width="202" height="28"/>
                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -176,7 +176,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 65.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeA-ei-FwD">
-                                                            <rect key="frame" x="310" y="38" width="60" height="14.5"/>
+                                                            <rect key="frame" x="310" y="38" width="60" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="aeo-8s-4ag"/>
                                                             </constraints>
@@ -215,6 +215,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="SfJ-z2-RrK"/>
                                 </connections>
                             </tableView>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chv-QU-BNf">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="pCz-lS-W9m"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="" image="tab_home" id="RZF-mO-6Zw">
+                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="tab_search" id="3VG-FB-cdy"/>
+                                    <tabBarItem title="" image="tab_addpost" id="gcw-4f-KDr"/>
+                                    <tabBarItem title="" image="tab_cart" id="rab-9J-gzw"/>
+                                    <tabBarItem title="" image="tab_notification" badgeValue="3" id="I2s-BK-XkY">
+                                        <color key="badgeColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -222,17 +243,26 @@
                             <constraint firstItem="2ba-Rd-xRY" firstAttribute="top" secondItem="uo6-sp-n9V" secondAttribute="bottom" constant="10" id="7Xw-fg-9pq"/>
                             <constraint firstItem="gwC-28-JNq" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="8ar-SJ-d11"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="uo6-sp-n9V" secondAttribute="trailing" constant="17" id="8nJ-uf-hno"/>
+                            <constraint firstItem="chv-QU-BNf" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="D0H-IG-yro"/>
                             <constraint firstItem="2ba-Rd-xRY" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="DaC-1C-3ms"/>
                             <constraint firstItem="uo6-sp-n9V" firstAttribute="top" secondItem="gwC-28-JNq" secondAttribute="bottom" id="Hlq-m2-SwJ"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="gwC-28-JNq" secondAttribute="trailing" id="Jbp-zT-38r"/>
                             <constraint firstItem="uo6-sp-n9V" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="g5d-3z-ggl"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="2ba-Rd-xRY" secondAttribute="trailing" constant="17" id="i8G-Ei-cAt"/>
-                            <constraint firstAttribute="bottom" secondItem="2ba-Rd-xRY" secondAttribute="bottom" id="kUw-ut-nHX"/>
+                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="bottom" secondItem="chv-QU-BNf" secondAttribute="bottom" id="lvi-3H-1FW"/>
                             <constraint firstItem="gwC-28-JNq" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="odd-X1-oJe"/>
+                            <constraint firstItem="chv-QU-BNf" firstAttribute="top" secondItem="2ba-Rd-xRY" secondAttribute="bottom" id="sHN-7l-rc8"/>
+                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="chv-QU-BNf" secondAttribute="trailing" id="ur8-sv-UlY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionViewCategory" destination="uo6-sp-n9V" id="KKC-hJ-qzE"/>
+                        <outlet property="tabBar" destination="chv-QU-BNf" id="yDs-aq-qjY"/>
+                        <outlet property="tabItemAddPost" destination="gcw-4f-KDr" id="WBE-ex-5nQ"/>
+                        <outlet property="tabItemCart" destination="rab-9J-gzw" id="oC8-Nd-1mg"/>
+                        <outlet property="tabItemHome" destination="RZF-mO-6Zw" id="kfL-QC-lDg"/>
+                        <outlet property="tabItemNotification" destination="I2s-BK-XkY" id="mf4-TL-V30"/>
+                        <outlet property="tabItemSearch" destination="3VG-FB-cdy" id="b8x-43-SzA"/>
                         <outlet property="tableViewMenuList" destination="2ba-Rd-xRY" id="WZw-S3-0e2"/>
                     </connections>
                 </viewController>
@@ -244,6 +274,11 @@
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
         <image name="food" width="170" height="135"/>
+        <image name="tab_addpost" width="32.5" height="32"/>
+        <image name="tab_cart" width="23" height="23"/>
+        <image name="tab_home" width="24" height="20"/>
+        <image name="tab_notification" width="24" height="24"/>
+        <image name="tab_search" width="24.5" height="24"/>
         <image name="three_dot_black" width="28" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

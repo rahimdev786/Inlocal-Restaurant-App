@@ -21,6 +21,13 @@ class UserProfileVC: UIViewController {
     @IBOutlet weak var collectionViewPost_height: NSLayoutConstraint!
     @IBOutlet weak var btnFollow: UIButton!
     
+    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var tabItemHome: UITabBarItem!
+    @IBOutlet weak var tabItemSearch: UITabBarItem!
+    @IBOutlet weak var tabItemAddPost: UITabBarItem!
+    @IBOutlet weak var tabItemCart: UITabBarItem!
+    @IBOutlet weak var tabItemNotification: UITabBarItem!
+    
     var isFollowSelected = false
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -104,8 +111,10 @@ class UserProfileVC: UIViewController {
     }
     
     func setupView(){
+        tabBar.delegate = self
+        tabBar.unselectedItemTintColor = .white
+        
         viewProfileImageBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
-        //btnFollow.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner], radius: btnFollow.frame.height/2)
         
         btnFollow.layer.cornerRadius = 3.0
         
@@ -184,3 +193,34 @@ extension UserProfileVC: UICollectionViewDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+extension UserProfileVC: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item {
+        case tabItemHome:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 0)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemSearch:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 1)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemAddPost:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 2)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemCart:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 3)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemNotification:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 4)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        default:
+            print("")
+        }
+    }
+}
+
+

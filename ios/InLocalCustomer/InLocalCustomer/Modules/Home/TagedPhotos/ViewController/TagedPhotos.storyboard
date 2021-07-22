@@ -59,10 +59,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCM-G1-gJr">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="604"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWW-mb-Br8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="698"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Luf-Ek-9KN">
                                                 <rect key="frame" x="16" y="0.0" width="343" height="48"/>
@@ -85,10 +85,10 @@
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fak-Y3-gjW">
-                                                <rect key="frame" x="17" y="48" width="341" height="650"/>
+                                                <rect key="frame" x="17" y="48" width="341" height="500"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="650" id="1wK-Yp-Eev"/>
+                                                    <constraint firstAttribute="height" constant="500" id="1wK-Yp-Eev"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TagedPhotoTVC" rowHeight="351" id="ghM-O4-IsR" customClass="TagedPhotoTVC" customModule="InLocalCustomer" customModuleProvider="target">
@@ -110,7 +110,7 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlI-Yy-cZW">
                                                                             <rect key="frame" x="0.0" y="0.0" width="235" height="38.333333333333336"/>
-                                                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -263,21 +263,51 @@
                                     <constraint firstItem="bWW-mb-Br8" firstAttribute="top" secondItem="jCM-G1-gJr" secondAttribute="top" id="wXm-9m-oqY"/>
                                 </constraints>
                             </scrollView>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mby-po-iKv">
+                                <rect key="frame" x="0.0" y="718" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="S1T-3F-kcE"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="" image="tab_home" id="L08-Ba-EcN">
+                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="tab_search" id="Lvq-m1-ZT0"/>
+                                    <tabBarItem title="" image="tab_addpost" id="3Ud-M4-Nu8"/>
+                                    <tabBarItem title="" image="tab_cart" id="U8X-B3-mxe"/>
+                                    <tabBarItem title="" image="tab_notification" badgeValue="3" id="qhl-nv-LeA">
+                                        <color key="badgeColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mby-po-iKv" firstAttribute="top" secondItem="jCM-G1-gJr" secondAttribute="bottom" id="0sY-lc-HDA"/>
                             <constraint firstItem="jCM-G1-gJr" firstAttribute="top" secondItem="2L2-Nu-2FC" secondAttribute="bottom" id="20R-XA-F0G"/>
+                            <constraint firstItem="mby-po-iKv" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="9jh-5p-e9k"/>
                             <constraint firstItem="2L2-Nu-2FC" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Gzs-6G-bBW"/>
                             <constraint firstItem="jCM-G1-gJr" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="aQ9-L4-nWu"/>
                             <constraint firstItem="2L2-Nu-2FC" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="ksN-xE-NVU"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="top" secondItem="2L2-Nu-2FC" secondAttribute="top" id="luU-UR-oEr"/>
+                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="bottom" secondItem="mby-po-iKv" secondAttribute="bottom" id="m1W-mp-vFZ"/>
                             <constraint firstItem="jCM-G1-gJr" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="oUC-un-OK8"/>
-                            <constraint firstAttribute="bottom" secondItem="jCM-G1-gJr" secondAttribute="bottom" id="pYG-Ik-3xr"/>
+                            <constraint firstItem="mby-po-iKv" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="vji-gZ-WVR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lblTitle" destination="5AT-OG-gSG" id="ibM-De-K4f"/>
+                        <outlet property="tabBar" destination="mby-po-iKv" id="6N1-gD-sRA"/>
+                        <outlet property="tabItemAddPost" destination="3Ud-M4-Nu8" id="zjD-r4-zcC"/>
+                        <outlet property="tabItemCart" destination="U8X-B3-mxe" id="osh-qd-ozs"/>
+                        <outlet property="tabItemHome" destination="L08-Ba-EcN" id="jPV-jk-wsG"/>
+                        <outlet property="tabItemNotification" destination="qhl-nv-LeA" id="W6f-Rc-Zi2"/>
+                        <outlet property="tabItemSearch" destination="Lvq-m1-ZT0" id="3yz-T0-UY2"/>
                         <outlet property="tableViewPostHeight" destination="1wK-Yp-Eev" id="avW-WZ-rpH"/>
                         <outlet property="tableViewPosts" destination="fak-Y3-gjW" id="uwq-bX-JgK"/>
                     </connections>
@@ -295,6 +325,11 @@
         <image name="feedwall_post_image" width="343" height="343"/>
         <image name="like_empty_white" width="24" height="24"/>
         <image name="menu_icon_white" width="38" height="38"/>
+        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_cart" width="23" height="22.666666030883789"/>
+        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_notification" width="24" height="24"/>
+        <image name="tab_search" width="24.333333969116211" height="24"/>
         <image name="threedot_vertical_white" width="28" height="28"/>
         <image name="user_profile_image_tagedphoto" width="52" height="52"/>
         <systemColor name="systemBackgroundColor">

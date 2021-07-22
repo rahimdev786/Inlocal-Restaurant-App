@@ -60,10 +60,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSu-Nw-XL3">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="604"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygo-im-CgX">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="713.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fAx-St-0aI">
                                                 <rect key="frame" x="17" y="10" width="341" height="204"/>
@@ -188,10 +188,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wo4-T1-MDd">
-                                                <rect key="frame" x="17" y="390" width="341" height="323.66666666666674"/>
+                                                <rect key="frame" x="17" y="390" width="341" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="323.66666666666674" id="Hu3-BP-1fa"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Hu3-BP-1fa"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nrN-Fm-f9N">
                                                     <size key="itemSize" width="160" height="174"/>
@@ -269,17 +269,41 @@
                                     <constraint firstItem="ygo-im-CgX" firstAttribute="leading" secondItem="GSu-Nw-XL3" secondAttribute="leading" id="pEi-fH-73j"/>
                                 </constraints>
                             </scrollView>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0a-fT-fwa">
+                                <rect key="frame" x="0.0" y="718" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ucl-vH-pC5"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="" image="tab_home" id="j3D-pf-YQS">
+                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="tab_search" id="3aK-Gn-GWN"/>
+                                    <tabBarItem title="" image="tab_addpost" id="9jG-M2-gAZ"/>
+                                    <tabBarItem title="" image="tab_cart" id="Vj7-zn-GTX"/>
+                                    <tabBarItem title="" image="tab_notification" badgeValue="3" id="tx9-9R-o5j">
+                                        <color key="badgeColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="b0a-fT-fwa" firstAttribute="top" secondItem="GSu-Nw-XL3" secondAttribute="bottom" id="6hm-uo-KRl"/>
                             <constraint firstItem="GSu-Nw-XL3" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="F46-CO-pwU"/>
                             <constraint firstItem="1Tb-FW-G3f" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="JJQ-Kt-AXn"/>
+                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="bottom" secondItem="b0a-fT-fwa" secondAttribute="bottom" id="Od6-F4-519"/>
                             <constraint firstItem="GSu-Nw-XL3" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="WCp-KP-Rhl"/>
                             <constraint firstItem="1Tb-FW-G3f" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="WH2-BW-G1Z"/>
                             <constraint firstItem="GSu-Nw-XL3" firstAttribute="top" secondItem="1Tb-FW-G3f" secondAttribute="bottom" id="bX4-8O-aCt"/>
+                            <constraint firstItem="b0a-fT-fwa" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="fOx-RP-P1e"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="1Tb-FW-G3f" secondAttribute="trailing" id="gVX-lD-YjH"/>
-                            <constraint firstAttribute="bottom" secondItem="GSu-Nw-XL3" secondAttribute="bottom" id="w54-2Q-NRa"/>
+                            <constraint firstAttribute="trailing" secondItem="b0a-fT-fwa" secondAttribute="trailing" id="ypa-10-n5L"/>
                         </constraints>
                     </view>
                     <connections>
@@ -289,6 +313,12 @@
                         <outlet property="collectionViewMenuImage" destination="Wo4-T1-MDd" id="cbT-ys-z4f"/>
                         <outlet property="collectionViewMenuImage_height" destination="Hu3-BP-1fa" id="h96-b5-RiI"/>
                         <outlet property="stackViewAddItem" destination="b15-0n-BtP" id="gaH-Iy-6Jf"/>
+                        <outlet property="tabBar" destination="b0a-fT-fwa" id="z4j-7h-xHH"/>
+                        <outlet property="tabItemAddPost" destination="9jG-M2-gAZ" id="lmq-Np-h4I"/>
+                        <outlet property="tabItemCart" destination="Vj7-zn-GTX" id="y4n-Y4-5Na"/>
+                        <outlet property="tabItemHome" destination="j3D-pf-YQS" id="nPM-dt-1I1"/>
+                        <outlet property="tabItemNotification" destination="tx9-9R-o5j" id="AD1-AQ-AcV"/>
+                        <outlet property="tabItemSearch" destination="3aK-Gn-GWN" id="af5-mC-lp2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -302,6 +332,11 @@
         <image name="minus_icon" width="16" height="16"/>
         <image name="plus_icon" width="16" height="16"/>
         <image name="sanwitch" width="170" height="135"/>
+        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_cart" width="23" height="22.666666030883789"/>
+        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_notification" width="24" height="24"/>
+        <image name="tab_search" width="24.333333969116211" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

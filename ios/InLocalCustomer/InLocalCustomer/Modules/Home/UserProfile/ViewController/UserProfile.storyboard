@@ -71,10 +71,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU5-aC-4Cq">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="604"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-1f-GQr">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="692"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="560"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhZ-M7-0mD">
                                                 <rect key="frame" x="17" y="0.0" width="341" height="144"/>
@@ -177,10 +177,10 @@
                                                 </subviews>
                                             </stackView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8P9-gX-GU3">
-                                                <rect key="frame" x="17" y="260" width="341" height="432"/>
+                                                <rect key="frame" x="17" y="260" width="341" height="300"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="432" id="XvI-RP-gy2"/>
+                                                    <constraint firstAttribute="height" constant="300" id="XvI-RP-gy2"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="sUU-ky-Q14">
                                                     <size key="itemSize" width="148" height="154"/>
@@ -256,34 +256,69 @@
                                     <constraint firstItem="Dgr-1f-GQr" firstAttribute="top" secondItem="LU5-aC-4Cq" secondAttribute="top" id="wtT-rG-hoA"/>
                                 </constraints>
                             </scrollView>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiO-Cy-l0S">
+                                <rect key="frame" x="0.0" y="718" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="d5s-t0-oaa"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="" image="tab_home" id="KUc-9M-cax">
+                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="tab_search" id="4vO-vI-sed"/>
+                                    <tabBarItem title="" image="tab_addpost" id="1QI-je-OEl"/>
+                                    <tabBarItem title="" image="tab_cart" id="WhK-Q7-K9U"/>
+                                    <tabBarItem title="" image="tab_notification" badgeValue="3" id="PoJ-e8-3db">
+                                        <color key="badgeColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Z9G-eV-bUm" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="1Gz-2j-KEV"/>
                             <constraint firstItem="Z9G-eV-bUm" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="2rX-Pi-FY3"/>
+                            <constraint firstItem="wiO-Cy-l0S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8UJ-z8-415"/>
                             <constraint firstItem="LU5-aC-4Cq" firstAttribute="top" secondItem="Z9G-eV-bUm" secondAttribute="bottom" id="DMx-6l-0TP"/>
                             <constraint firstItem="LU5-aC-4Cq" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="TzV-4Y-9J4"/>
-                            <constraint firstAttribute="bottom" secondItem="LU5-aC-4Cq" secondAttribute="bottom" id="gQg-N5-sKr"/>
+                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="bottom" secondItem="wiO-Cy-l0S" secondAttribute="bottom" id="eVR-q2-S00"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="top" secondItem="Z9G-eV-bUm" secondAttribute="top" id="oUb-FB-awv"/>
+                            <constraint firstAttribute="trailing" secondItem="wiO-Cy-l0S" secondAttribute="trailing" id="qp7-sg-fir"/>
                             <constraint firstItem="LU5-aC-4Cq" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="wnt-r7-Y9N"/>
+                            <constraint firstItem="wiO-Cy-l0S" firstAttribute="top" secondItem="LU5-aC-4Cq" secondAttribute="bottom" id="y05-JB-kNg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnFollow" destination="2Ux-fy-gRL" id="8tn-O8-I9B"/>
                         <outlet property="collectionViewPost" destination="8P9-gX-GU3" id="whN-Hv-T7D"/>
                         <outlet property="collectionViewPost_height" destination="XvI-RP-gy2" id="MWL-RG-8bu"/>
+                        <outlet property="tabBar" destination="wiO-Cy-l0S" id="FYU-SX-QiH"/>
+                        <outlet property="tabItemAddPost" destination="1QI-je-OEl" id="QWh-Pt-uF8"/>
+                        <outlet property="tabItemCart" destination="WhK-Q7-K9U" id="rUp-IW-Oxa"/>
+                        <outlet property="tabItemHome" destination="KUc-9M-cax" id="j2J-ow-cBD"/>
+                        <outlet property="tabItemNotification" destination="PoJ-e8-3db" id="T7t-4e-fVC"/>
+                        <outlet property="tabItemSearch" destination="4vO-vI-sed" id="rXU-OU-9bm"/>
                         <outlet property="viewProfileImageBack" destination="KhZ-M7-0mD" id="OHo-uB-QFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-761" y="64"/>
+            <point key="canvasLocation" x="-762.39999999999998" y="63.546798029556655"/>
         </scene>
     </scenes>
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
         <image name="sanwitch" width="170" height="135"/>
+        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_cart" width="23" height="22.666666030883789"/>
+        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_notification" width="24" height="24"/>
+        <image name="tab_search" width="24.333333969116211" height="24"/>
         <image name="three_dot_black" width="28" height="28"/>
         <image name="user_profile_photo" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">

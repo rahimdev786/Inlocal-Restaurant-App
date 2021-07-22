@@ -23,6 +23,13 @@ class MenuDetailVC: UIViewController {
     @IBOutlet weak var btnMinus: UIButton!
     @IBOutlet weak var btnPlus: UIButton!
     
+    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var tabItemHome: UITabBarItem!
+    @IBOutlet weak var tabItemSearch: UITabBarItem!
+    @IBOutlet weak var tabItemAddPost: UITabBarItem!
+    @IBOutlet weak var tabItemCart: UITabBarItem!
+    @IBOutlet weak var tabItemNotification: UITabBarItem!
+    
     var pageType : PageType!
     
     // MARK: - View Life Cycle Methods
@@ -96,6 +103,9 @@ class MenuDetailVC: UIViewController {
             print("")
         }
         
+        tabBar.delegate = self
+        tabBar.unselectedItemTintColor = .white
+        
         btnMinus.isHidden = true
         btnPlus.isHidden = true
         
@@ -148,5 +158,34 @@ extension MenuDetailVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
         return cell
+    }
+}
+
+extension MenuDetailVC: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item {
+        case tabItemHome:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 0)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemSearch:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 1)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemAddPost:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 2)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemCart:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 3)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemNotification:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 4)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        default:
+            print("")
+        }
     }
 }

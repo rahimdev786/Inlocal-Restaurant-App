@@ -18,6 +18,13 @@ class RestaurantMenuVC: UIViewController {
     @IBOutlet weak var collectionViewCategory: UICollectionView!
     @IBOutlet weak var tableViewMenuList: UITableView!
     
+    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var tabItemHome: UITabBarItem!
+    @IBOutlet weak var tabItemSearch: UITabBarItem!
+    @IBOutlet weak var tabItemAddPost: UITabBarItem!
+    @IBOutlet weak var tabItemCart: UITabBarItem!
+    @IBOutlet weak var tabItemNotification: UITabBarItem!
+    
     var previousCell: MenuCategoryCVC?
     var categoryArray = ["All", "Starter", "Burger", "Drinks", "Soup", "Pizza"]
     // MARK: - View Life Cycle Methods
@@ -25,6 +32,7 @@ class RestaurantMenuVC: UIViewController {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        setupView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -85,6 +93,10 @@ class RestaurantMenuVC: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func setupView(){
+        tabBar.delegate = self
+        tabBar.unselectedItemTintColor = .white
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -157,3 +169,34 @@ extension RestaurantMenuVC: UITableViewDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+extension RestaurantMenuVC: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item {
+        case tabItemHome:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 0)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemSearch:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 1)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemAddPost:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 2)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemCart:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 3)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemNotification:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 4)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        default:
+            print("")
+        }
+    }
+}
+
+

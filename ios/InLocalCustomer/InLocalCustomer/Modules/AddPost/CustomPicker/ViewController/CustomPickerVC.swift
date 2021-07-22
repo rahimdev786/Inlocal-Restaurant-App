@@ -99,7 +99,6 @@ class CustomPickerVC: UIViewController {
         
         let imagePicker = ImagePickerController()
         
-        
         let settings = imagePicker.settings
         settings.fetch.assets.supportedMediaTypes = [.image]
         settings.preview.enabled = false
@@ -124,9 +123,7 @@ class CustomPickerVC: UIViewController {
         imagePicker.view.frame = self.pickerView.bounds
         self.pickerView.addSubview(imagePicker.view)
         
-
     }
-    
     
 }
 

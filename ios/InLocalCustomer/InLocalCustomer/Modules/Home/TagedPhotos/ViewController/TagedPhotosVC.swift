@@ -19,6 +19,13 @@ class TagedPhotosVC: UIViewController {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tableViewPostHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var tabItemHome: UITabBarItem!
+    @IBOutlet weak var tabItemSearch: UITabBarItem!
+    @IBOutlet weak var tabItemAddPost: UITabBarItem!
+    @IBOutlet weak var tabItemCart: UITabBarItem!
+    @IBOutlet weak var tabItemNotification: UITabBarItem!
+    
     var headerTitle = "Taged photos"
     
     // MARK: - View Life Cycle Methods
@@ -91,6 +98,8 @@ class TagedPhotosVC: UIViewController {
     
     func setView(){
         lblTitle.text = headerTitle
+        tabBar.delegate = self
+        tabBar.unselectedItemTintColor = .white
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -181,5 +190,34 @@ extension TagedPhotosVC {
             return
         }
         self.navigationController?.pushViewController(viewStoryController, animated: true)
+    }
+}
+
+extension TagedPhotosVC: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item {
+        case tabItemHome:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 0)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemSearch:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 1)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemAddPost:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 2)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemCart:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 3)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        case tabItemNotification:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "onClickTab"), object: 4)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        default:
+            print("")
+        }
     }
 }

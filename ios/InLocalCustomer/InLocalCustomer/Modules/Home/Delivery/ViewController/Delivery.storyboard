@@ -136,7 +136,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9VC-zP-S1y">
-                                <rect key="frame" x="17" y="162" width="341" height="650"/>
+                                <rect key="frame" x="17" y="162" width="341" height="556"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeliveryMenuTVC" rowHeight="110" id="tfb-ns-fC3" customClass="DeliveryMenuTVC" customModule="InLocalCustomer" customModuleProvider="target">
@@ -298,6 +298,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="qmG-5z-XEW"/>
                                 </connections>
                             </tableView>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD5-vg-fye">
+                                <rect key="frame" x="0.0" y="718" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="DyQ-0R-IZR"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="" image="tab_home" id="jqx-VC-EjY">
+                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="tab_search" id="uHk-RR-naw"/>
+                                    <tabBarItem title="" image="tab_addpost" id="7Yc-4V-3DK"/>
+                                    <tabBarItem title="" image="tab_cart" id="kFw-Ks-KXL"/>
+                                    <tabBarItem title="" image="tab_notification" badgeValue="3" id="DrG-4d-wBR">
+                                        <color key="badgeColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -305,10 +326,13 @@
                             <constraint firstItem="9VC-zP-S1y" firstAttribute="top" secondItem="7t3-nq-cXA" secondAttribute="bottom" constant="20" id="0Xa-j0-WDc"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="7t3-nq-cXA" secondAttribute="trailing" constant="17" id="3ru-Z5-1T2"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="X2k-62-6dz" secondAttribute="trailing" id="5YF-sx-CRL"/>
+                            <constraint firstAttribute="trailing" secondItem="xD5-vg-fye" secondAttribute="trailing" id="EDC-iM-0v3"/>
+                            <constraint firstItem="xD5-vg-fye" firstAttribute="bottom" secondItem="gtQ-gH-aQA" secondAttribute="bottom" id="ENy-lt-Z2b"/>
                             <constraint firstItem="9VC-zP-S1y" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="F4j-je-Y5A"/>
-                            <constraint firstAttribute="bottom" secondItem="9VC-zP-S1y" secondAttribute="bottom" id="TcI-ez-fAu"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="9VC-zP-S1y" secondAttribute="trailing" constant="17" id="Wy4-jH-OdU"/>
                             <constraint firstItem="7t3-nq-cXA" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="bii-CB-sjt"/>
+                            <constraint firstItem="xD5-vg-fye" firstAttribute="top" secondItem="9VC-zP-S1y" secondAttribute="bottom" id="dqr-aP-cT7"/>
+                            <constraint firstItem="xD5-vg-fye" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ize-Gi-5io"/>
                             <constraint firstItem="X2k-62-6dz" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="pTP-Ua-Xnh"/>
                             <constraint firstItem="X2k-62-6dz" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="sJa-kz-Cla"/>
                             <constraint firstItem="7t3-nq-cXA" firstAttribute="top" secondItem="X2k-62-6dz" secondAttribute="bottom" id="zrk-e6-mud"/>
@@ -316,6 +340,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewMenuCategory" destination="7t3-nq-cXA" id="0Vd-hH-Lqz"/>
+                        <outlet property="tabBar" destination="xD5-vg-fye" id="Jki-lS-FSV"/>
+                        <outlet property="tabItemAddPost" destination="7Yc-4V-3DK" id="GYb-35-PGO"/>
+                        <outlet property="tabItemCart" destination="kFw-Ks-KXL" id="Che-dg-cRJ"/>
+                        <outlet property="tabItemHome" destination="jqx-VC-EjY" id="9e7-bC-ynH"/>
+                        <outlet property="tabItemNotification" destination="DrG-4d-wBR" id="CMw-tX-tu3"/>
+                        <outlet property="tabItemSearch" destination="uHk-RR-naw" id="J9s-dA-YMM"/>
                         <outlet property="tableViewDeliveryMenu" destination="9VC-zP-S1y" id="PcD-dO-oQ7"/>
                     </connections>
                 </viewController>
@@ -329,6 +359,11 @@
         <image name="food" width="170" height="135"/>
         <image name="minus_icon" width="16" height="16"/>
         <image name="plus_icon" width="16" height="16"/>
+        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_cart" width="23" height="22.666666030883789"/>
+        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_notification" width="24" height="24"/>
+        <image name="tab_search" width="24.333333969116211" height="24"/>
         <image name="three_dot_black" width="28" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

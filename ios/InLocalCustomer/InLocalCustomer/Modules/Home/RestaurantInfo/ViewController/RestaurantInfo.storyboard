@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,7 +23,7 @@
             <objects>
                 <viewController storyboardIdentifier="RestaurantInfoVC" id="BYZ-38-t0r" customClass="RestaurantInfoVC" customModule="InLocalCustomer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQD-fi-P3B">
@@ -70,7 +71,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEG-Av-hxt">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="892"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idi-8c-C75">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="876.33333333333337"/>
@@ -340,21 +341,52 @@
                                     <constraint firstAttribute="bottom" secondItem="idi-8c-C75" secondAttribute="bottom" id="Wnp-t5-GxE"/>
                                 </constraints>
                             </scrollView>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhQ-TR-ML2">
+                                <rect key="frame" x="0.0" y="1006" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BdC-N4-0L1"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="" image="tab_home" id="Fxh-NI-TpN">
+                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="tab_search" id="q8k-63-sri"/>
+                                    <tabBarItem title="" image="tab_addpost" id="Ath-T0-m5k"/>
+                                    <tabBarItem title="" image="tab_cart" id="AVS-7r-miC"/>
+                                    <tabBarItem title="" image="tab_notification" badgeValue="3" id="9c9-PQ-FI5">
+                                        <color key="badgeColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wQD-fi-P3B" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="K3l-Nz-1VE"/>
-                            <constraint firstAttribute="bottom" secondItem="CEG-Av-hxt" secondAttribute="bottom" id="ODN-8L-EuQ"/>
                             <constraint firstItem="wQD-fi-P3B" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="Rar-Bq-9UH"/>
                             <constraint firstItem="CEG-Av-hxt" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="UHu-96-tQF"/>
+                            <constraint firstItem="zhQ-TR-ML2" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="V9x-17-ytK"/>
                             <constraint firstItem="wQD-fi-P3B" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="a8f-0j-I4t"/>
                             <constraint firstItem="CEG-Av-hxt" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="dHH-sC-6Yp"/>
+                            <constraint firstItem="zhQ-TR-ML2" firstAttribute="top" secondItem="CEG-Av-hxt" secondAttribute="bottom" id="doM-IF-6yO"/>
+                            <constraint firstAttribute="trailing" secondItem="zhQ-TR-ML2" secondAttribute="trailing" id="kFu-Ci-elt"/>
                             <constraint firstItem="CEG-Av-hxt" firstAttribute="top" secondItem="wQD-fi-P3B" secondAttribute="bottom" id="ocH-L1-ukj"/>
+                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="bottom" secondItem="zhQ-TR-ML2" secondAttribute="bottom" id="rj0-zl-9DT"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="collctionViewRestaurantImage" destination="hJy-eA-h8N" id="ogZ-Z0-pKR"/>
+                        <outlet property="tabBar" destination="zhQ-TR-ML2" id="78E-IG-4xA"/>
+                        <outlet property="tabItemAddPost" destination="Ath-T0-m5k" id="f6h-xD-pFB"/>
+                        <outlet property="tabItemCart" destination="AVS-7r-miC" id="nZb-44-V4X"/>
+                        <outlet property="tabItemHome" destination="Fxh-NI-TpN" id="GH9-T5-xKn"/>
+                        <outlet property="tabItemNotification" destination="9c9-PQ-FI5" id="UJb-JV-ZMo"/>
+                        <outlet property="tabItemSearch" destination="q8k-63-sri" id="AC1-x0-CaU"/>
                         <outlet property="tableViewOpeningHourse" destination="T8w-Wg-yEC" id="91o-Xg-DCE"/>
                         <outlet property="tableViewOpeningHourse_Height" destination="YF9-LD-reA" id="rmU-zi-jrz"/>
                         <outlet property="viewTblOpeninghourseBack" destination="aWn-6N-sTJ" id="dF9-Af-Z9F"/>
@@ -371,6 +403,11 @@
         <image name="email_gray" width="12" height="9.6666669845581055"/>
         <image name="location_gray" width="10" height="16"/>
         <image name="restaurantinfo_image" width="343" height="204"/>
+        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_cart" width="23" height="22.666666030883789"/>
+        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_notification" width="24" height="24"/>
+        <image name="tab_search" width="24.333333969116211" height="24"/>
         <image name="three_dot_black" width="28" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

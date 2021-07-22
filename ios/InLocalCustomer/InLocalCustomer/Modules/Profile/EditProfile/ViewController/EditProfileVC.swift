@@ -86,8 +86,8 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         txtFieldEmail.delegate = self
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone No", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.default
-        txtFieldPhoneNumber.txtFldInput.text = "+91 1234567890"
-        updateProfileRequest.phoneNumber = "+91 1234567890"
+        txtFieldPhoneNumber.txtFldInput.text = "1234567890"
+        updateProfileRequest.phoneNumber = "1234567890"
         //txtFieldPhoneNumber.txtFldInput.backgroundColor = .clear
         //txtFieldPhoneNumber.contentView.backgroundColor = .clear
         

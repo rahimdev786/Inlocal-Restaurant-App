@@ -124,7 +124,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ANf-iF-fma">
-                                <rect key="frame" x="0.0" y="274.66666666666674" width="375" height="421.33333333333326"/>
+                                <rect key="frame" x="0.0" y="274.66666666666674" width="375" height="361.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileInfoTVC" rowHeight="80" id="GA8-on-Xyl" customClass="ProfileInfoTVC" customModule="InLocalCustomer" customModuleProvider="target">
@@ -208,7 +208,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2N-5D-Ac7">
-                                <rect key="frame" x="17" y="716" width="341" height="45"/>
+                                <rect key="frame" x="17" y="656" width="341" height="45"/>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ob3-Ua-v6X"/>
@@ -226,13 +226,36 @@
                                     <action selector="didTapOnLogout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbS-ol-XOG"/>
                                 </connections>
                             </button>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rve-gI-qpH">
+                                <rect key="frame" x="0.0" y="718" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fgO-xM-jur"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="" image="tab_home" id="5wI-lI-dMG">
+                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="tab_search" id="L9o-t8-qSV"/>
+                                    <tabBarItem title="" image="tab_addpost" id="Ez3-ls-X71"/>
+                                    <tabBarItem title="" image="tab_cart" id="iWe-T1-kVe"/>
+                                    <tabBarItem title="" image="tab_notification" badgeValue="3" id="QVf-3L-4Rs">
+                                        <color key="badgeColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ANf-iF-fma" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="0hy-ac-cZW"/>
-                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="bottom" secondItem="u2N-5D-Ac7" secondAttribute="bottom" constant="17" id="0p1-ak-iAp"/>
+                            <constraint firstAttribute="trailing" secondItem="Rve-gI-qpH" secondAttribute="trailing" id="Bw2-wc-9Sf"/>
                             <constraint firstItem="w0s-3e-3pi" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="NfS-nv-Zkk"/>
+                            <constraint firstItem="Rve-gI-qpH" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Oja-b8-6PR"/>
+                            <constraint firstItem="Rve-gI-qpH" firstAttribute="top" secondItem="u2N-5D-Ac7" secondAttribute="bottom" constant="17" id="TKG-op-IkP"/>
                             <constraint firstItem="ANf-iF-fma" firstAttribute="top" secondItem="w0s-3e-3pi" secondAttribute="bottom" constant="20" id="ZHb-Ll-SHP"/>
                             <constraint firstItem="ANf-iF-fma" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="j90-Ec-zPI"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="u2N-5D-Ac7" secondAttribute="trailing" constant="17" id="llS-wa-nHy"/>
@@ -240,9 +263,16 @@
                             <constraint firstItem="w0s-3e-3pi" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="o7U-Fq-N6u"/>
                             <constraint firstItem="u2N-5D-Ac7" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="p8V-PJ-4RW"/>
                             <constraint firstItem="w0s-3e-3pi" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="pJK-QY-eTb"/>
+                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="bottom" secondItem="Rve-gI-qpH" secondAttribute="bottom" id="rK3-eu-Vy6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tabBar" destination="Rve-gI-qpH" id="ndv-Mt-fdL"/>
+                        <outlet property="tabItemAddPost" destination="Ez3-ls-X71" id="kbN-zp-JiQ"/>
+                        <outlet property="tabItemCart" destination="iWe-T1-kVe" id="Ndl-2X-lNx"/>
+                        <outlet property="tabItemHome" destination="5wI-lI-dMG" id="ADu-VB-jop"/>
+                        <outlet property="tabItemNotification" destination="QVf-3L-4Rs" id="pPc-y2-Eb0"/>
+                        <outlet property="tabItemSearch" destination="L9o-t8-qSV" id="Oko-XF-sBc"/>
                         <outlet property="tableView" destination="ANf-iF-fma" id="ccj-ar-k7D"/>
                     </connections>
                 </viewController>
@@ -256,6 +286,11 @@
         <image name="back_button_dark" width="24" height="22"/>
         <image name="radio_active" width="24" height="24.333333969116211"/>
         <image name="rightArrow" width="9" height="16"/>
+        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_cart" width="23" height="22.666666030883789"/>
+        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_notification" width="24" height="24"/>
+        <image name="tab_search" width="24.333333969116211" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
