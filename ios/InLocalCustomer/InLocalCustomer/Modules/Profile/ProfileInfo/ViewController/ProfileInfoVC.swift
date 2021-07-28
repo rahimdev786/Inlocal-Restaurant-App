@@ -22,6 +22,7 @@ class ProfileInfoVC: UIViewController {
     @IBOutlet weak var tabItemAddPost: UITabBarItem!
     @IBOutlet weak var tabItemCart: UITabBarItem!
     @IBOutlet weak var tabItemNotification: UITabBarItem!
+    @IBOutlet weak var tableViewMenuHeight: NSLayoutConstraint!
     
     var arrDetails: [AccountDetails]?
     
@@ -41,12 +42,14 @@ class ProfileInfoVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.tableView.removeObserver(self, forKeyPath: "contentSize")
     }
     // MARK: Deinitialization
     deinit {
@@ -110,6 +113,17 @@ class ProfileInfoVC: UIViewController {
         AccountDetails(title: "Change Password", image: #imageLiteral(resourceName: "changePassword"), type: .changePassword),
         AccountDetails(title: "Notification Settings", image: #imageLiteral(resourceName: "notificationSettings"), type: .notificationSettings),
         ]
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize"{
+            if object is UITableView{
+                if let newvalue = change?[.newKey]{
+                    let newsize = newvalue as! CGSize
+                    self.tableViewMenuHeight.constant = newsize.height
+                }
+            }
+        }
     }
 }
 

@@ -42,8 +42,8 @@
                                             <action selector="didTapOnBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A4E-Ef-Q1L"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reservations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK8-aF-ns1" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                        <rect key="frame" x="139" y="21" width="96.666666666666657" height="26.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK8-aF-ns1" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                        <rect key="frame" x="128" y="22" width="119" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FI5-01-qW7">
-                                <rect key="frame" x="0.0" y="131" width="375" height="681"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookingListTVC" rowHeight="108" id="CBT-VB-Zsg" customClass="BookingListTVC" customModule="InLocalCustomer" customModuleProvider="target">
@@ -208,7 +208,7 @@
                         <constraints>
                             <constraint firstItem="Of5-zn-hcc" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="1Ld-aY-XEd"/>
                             <constraint firstItem="FI5-01-qW7" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Ofh-4l-9xA"/>
-                            <constraint firstItem="FI5-01-qW7" firstAttribute="top" secondItem="Of5-zn-hcc" secondAttribute="bottom" constant="17" id="YS3-7J-fmy"/>
+                            <constraint firstItem="FI5-01-qW7" firstAttribute="top" secondItem="Of5-zn-hcc" secondAttribute="bottom" id="YS3-7J-fmy"/>
                             <constraint firstAttribute="bottom" secondItem="FI5-01-qW7" secondAttribute="bottom" id="kdq-j3-voZ"/>
                             <constraint firstItem="Of5-zn-hcc" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="leE-O9-usT"/>
                             <constraint firstItem="Of5-zn-hcc" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="uBE-1r-FOv"/>

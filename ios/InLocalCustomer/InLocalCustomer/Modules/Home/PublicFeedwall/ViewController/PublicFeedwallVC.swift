@@ -19,12 +19,14 @@ class PublicFeedwallVC: UIViewController {
     @IBOutlet weak var tableViewPost: UITableView!
     
     @IBOutlet weak var tableViewPost_Height: NSLayoutConstraint!
+    @IBOutlet weak var scollViewFeedwall: UIScrollView!
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        scollViewFeedwall.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -121,6 +123,7 @@ extension PublicFeedwallVC: UICollectionViewDelegate{
         self.navigationController?.pushViewController(viewStoryController, animated: true)
         */
     }
+    
 }
 
 extension PublicFeedwallVC: UITableViewDataSource{
@@ -167,18 +170,26 @@ extension PublicFeedwallVC {
     }
     
     @objc func onClickMenu(sender: UIButton){
-        let buttonTag = sender.tag
-        guard let vc = RestaurantMenuVC.load(withDependency: nil) else{
+        guard let vc = MenuDetailVC.load(withDependency: nil) else{
             return
         }
+        vc.pageType = .menu
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc func onClickComment(sender: UIButton){
-        let buttonTag = sender.tag
         guard let viewStoryController = CommentVC.load(withDependency: nil) else{
             return
         }
         self.navigationController?.pushViewController(viewStoryController, animated: true)
     }
+}
+
+extension PublicFeedwallVC: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        print("Scrolling")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "closeSideBarOfFeedwall"), object: nil)
+    }
+    
 }

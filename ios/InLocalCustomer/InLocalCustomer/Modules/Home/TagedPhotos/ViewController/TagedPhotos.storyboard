@@ -171,7 +171,10 @@
                                                                                         <constraint firstAttribute="height" constant="32" id="6EA-Jg-EUt"/>
                                                                                         <constraint firstAttribute="width" secondItem="nVd-Hq-hR9" secondAttribute="height" multiplier="1:1" id="OL9-4V-OnF"/>
                                                                                     </constraints>
-                                                                                    <state key="normal" image="favrite_blue"/>
+                                                                                    <state key="normal" image="favorite_white"/>
+                                                                                    <connections>
+                                                                                        <action selector="onClickFavorite:" destination="ghM-O4-IsR" eventType="touchUpInside" id="RNJ-Gk-51c"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8L-sk-yS9">
                                                                                     <rect key="frame" x="0.0" y="120" width="32" height="32"/>
@@ -187,7 +190,7 @@
                                                                             </constraints>
                                                                         </stackView>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3982769691780822" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="170" id="40O-zb-mdb"/>
                                                                         <constraint firstItem="SGp-ae-6Gp" firstAttribute="centerY" secondItem="zxr-jm-eDt" secondAttribute="centerY" id="PJT-dZ-nbT"/>
@@ -302,6 +305,7 @@
                     </view>
                     <connections>
                         <outlet property="lblTitle" destination="5AT-OG-gSG" id="ibM-De-K4f"/>
+                        <outlet property="scollViewTaggedPhoto" destination="jCM-G1-gJr" id="JyY-oq-hVy"/>
                         <outlet property="tabBar" destination="mby-po-iKv" id="6N1-gD-sRA"/>
                         <outlet property="tabItemAddPost" destination="3Ud-M4-Nu8" id="zjD-r4-zcC"/>
                         <outlet property="tabItemCart" destination="U8X-B3-mxe" id="osh-qd-ozs"/>
@@ -321,13 +325,13 @@
         <image name="back_button_dark" width="24" height="22"/>
         <image name="burgerking_icon" width="38" height="38"/>
         <image name="comment_white" width="38" height="38"/>
-        <image name="favrite_blue" width="38" height="38"/>
+        <image name="favorite_white" width="38" height="38"/>
         <image name="feedwall_post_image" width="343" height="343"/>
         <image name="like_empty_white" width="24" height="24"/>
         <image name="menu_icon_white" width="38" height="38"/>
-        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_addpost" width="24.333333969116211" height="24"/>
         <image name="tab_cart" width="23" height="22.666666030883789"/>
-        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_home" width="29.666666030883789" height="24"/>
         <image name="tab_notification" width="24" height="24"/>
         <image name="tab_search" width="24.333333969116211" height="24"/>
         <image name="threedot_vertical_white" width="28" height="28"/>

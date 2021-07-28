@@ -24,6 +24,7 @@ class TagedPhotoTVC: UITableViewCell {
     
     var isMenuOpen = false
     var isLiked = false
+    var isFavorite = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,6 +45,19 @@ class TagedPhotoTVC: UITableViewCell {
             self.widthMenuView.constant = 0
             self.widthStackView.constant = 0
             self.lblDescription.numberOfLines = 2
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.closeSideBar), name: NSNotification.Name(rawValue: "closeSideBarOfTaggedPhoto"), object: nil)
+    }
+    
+    @objc func closeSideBar(notification: Notification){
+        UIView.animate(withDuration: 0.3) {
+            self.widthMenuView.constant = 0
+            self.widthStackView.constant = 0
+            self.lblDescription.numberOfLines = 2
+            self.layoutIfNeeded()
+        } completion: { [self] (state) in
+            isMenuOpen = false
         }
     }
     
@@ -71,6 +85,16 @@ class TagedPhotoTVC: UITableViewCell {
         }
     }
     
+    @IBAction func onClickFavorite(_ sender: UIButton) {
+        if isFavorite{
+            isFavorite = false
+            sender.setImage(#imageLiteral(resourceName: "favorite_white"), for: .normal)
+        } else{
+            isFavorite = true
+            sender.setImage(#imageLiteral(resourceName: "favrite_blue"), for: .normal)
+        }
+
+    }
     @IBAction func onClickLike(_ sender: UIButton) {
         if isLiked{
             isLiked = false

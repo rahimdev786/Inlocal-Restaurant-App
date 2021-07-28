@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -29,25 +28,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQr-Ki-esk">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqe-fP-SHb">
-                                        <rect key="frame" x="126" y="22.333333333333329" width="123.33333333333331" height="25.666666666666671"/>
+                                        <rect key="frame" x="126" y="12.333333333333337" width="123.33333333333331" height="25.666666666666671"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="FHg-z2-8Pz"/>
+                                    <constraint firstAttribute="height" constant="50" id="FHg-z2-8Pz"/>
                                     <constraint firstItem="fqe-fP-SHb" firstAttribute="centerX" secondItem="VQr-Ki-esk" secondAttribute="centerX" id="kzW-te-vGe"/>
                                     <constraint firstItem="fqe-fP-SHb" firstAttribute="centerY" secondItem="VQr-Ki-esk" secondAttribute="centerY" id="oju-9Y-DcD"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QSA-bL-ekq">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="718"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationTVC" rowHeight="113" id="f2e-8c-ElW" customClass="NotificationTVC" customModule="InLocalCustomer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="113"/>
@@ -118,7 +117,7 @@
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="lFh-2R-dj3" firstAttribute="leading" secondItem="usf-qz-CCq" secondAttribute="leading" constant="10" id="8ne-78-QSb"/>
                                                         <constraint firstItem="1fP-tg-kwk" firstAttribute="leading" secondItem="lFh-2R-dj3" secondAttribute="trailing" constant="15" id="F2O-Uq-dyN"/>
@@ -138,6 +137,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="usf-qz-CCq" secondAttribute="bottom" constant="10" id="09q-5P-Pvj"/>
                                                 <constraint firstAttribute="trailing" secondItem="usf-qz-CCq" secondAttribute="trailing" constant="20" id="TuV-tU-TSU"/>
@@ -157,7 +157,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VQr-Ki-esk" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="A3V-3s-mYM"/>
                             <constraint firstAttribute="bottom" secondItem="QSA-bL-ekq" secondAttribute="bottom" id="LHO-SI-RCb"/>
@@ -180,8 +180,5 @@
     <resources>
         <image name="new_notification" width="19.666666030883789" height="18"/>
         <image name="pizza_icon" width="40" height="40"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -26,6 +26,8 @@ class TagedPhotosVC: UIViewController {
     @IBOutlet weak var tabItemCart: UITabBarItem!
     @IBOutlet weak var tabItemNotification: UITabBarItem!
     
+    @IBOutlet weak var scollViewTaggedPhoto: UIScrollView!
+    
     var headerTitle = "Taged photos"
     
     // MARK: - View Life Cycle Methods
@@ -100,6 +102,8 @@ class TagedPhotosVC: UIViewController {
         lblTitle.text = headerTitle
         tabBar.delegate = self
         tabBar.unselectedItemTintColor = .white
+        
+        scollViewTaggedPhoto.delegate = self
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -169,19 +173,14 @@ extension TagedPhotosVC {
     }
     
     @objc func onClickMenu(sender: UIButton){
-        let buttonTag = sender.tag
-        guard let vc = RestaurantMenuVC.load(withDependency: nil) else{
+        guard let vc = MenuDetailVC.load(withDependency: nil) else{
             return
         }
+        vc.pageType = .menu
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func onClickSavedPost(sender: UIButton){
-        let buttonTag = sender.tag
-        guard let vc = SavedPostsVC.loadFromXIB() else{
-            return
-        }
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func onClickComment(sender: UIButton){
@@ -220,4 +219,11 @@ extension TagedPhotosVC: UITabBarDelegate {
             print("")
         }
     }
+}
+
+extension TagedPhotosVC: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "closeSideBarOfTaggedPhoto"), object: nil)
+    }
+    
 }

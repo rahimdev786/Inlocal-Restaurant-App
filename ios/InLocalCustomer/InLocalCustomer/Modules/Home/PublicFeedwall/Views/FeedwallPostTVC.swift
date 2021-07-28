@@ -46,8 +46,21 @@ class FeedwallPostTVC: UITableViewCell {
             self.widthStackView.constant = 0
             self.lblDescription.numberOfLines = 2
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.closeSideBar), name: NSNotification.Name(rawValue: "closeSideBarOfFeedwall"), object: nil)
     }
 
+    @objc func closeSideBar(notification: Notification){
+        UIView.animate(withDuration: 0.3) {
+            self.widthMenuView.constant = 0
+            self.widthStackView.constant = 0
+            self.lblDescription.numberOfLines = 2
+            self.layoutIfNeeded()
+        } completion: { [self] (state) in
+            isMenuOpen = false
+        }
+    }
+    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         //let tappedImage = tapGestureRecognizer.view as! UIImageView
         // Your action

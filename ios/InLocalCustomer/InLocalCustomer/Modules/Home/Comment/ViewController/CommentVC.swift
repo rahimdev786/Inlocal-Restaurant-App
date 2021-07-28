@@ -22,7 +22,16 @@ class CommentVC: UIViewController {
     @IBOutlet weak var viewCommentBack: UIView!
     @IBOutlet weak var tableViewComment_Height: NSLayoutConstraint!
     
+    @IBOutlet weak var widthMenuView: NSLayoutConstraint!
+    @IBOutlet weak var imgViewPost: UIImageView!
+    @IBOutlet weak var widthStackView: NSLayoutConstraint!
+    @IBOutlet weak var lblDescription: UILabel!
+    
+    @IBOutlet weak var scollViewComment: UIScrollView!
+    
     var isLiked = false
+    var isMenuOpen = false
+    var isFavorite = false
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,17 +79,21 @@ class CommentVC: UIViewController {
     }
     
     @IBAction func onClickMenu(_ sender: Any) {
-        guard let vc = RestaurantMenuVC.load(withDependency: nil) else{
+        guard let vc = MenuDetailVC.load(withDependency: nil) else{
             return
         }
+        vc.pageType = .menu
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func onClickSavedPost(_ sender: Any) {
-        guard let vc = SavedPostsVC.loadFromXIB() else{
-            return
+    @IBAction func onClickSavedPost(_ sender: UIButton) {
+        if isFavorite{
+            isFavorite = false
+            sender.setImage(#imageLiteral(resourceName: "favorite_white"), for: .normal)
+        } else{
+            isFavorite = true
+            sender.setImage(#imageLiteral(resourceName: "favrite_blue"), for: .normal)
         }
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onClickLike(_ sender: UIButton) {
@@ -100,6 +113,47 @@ class CommentVC: UIViewController {
         lblLike.layer.masksToBounds = true
         
         viewCommentBack.applyLightShadow()
+        
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imgViewPost.isUserInteractionEnabled = true
+        imgViewPost.addGestureRecognizer(tapGestureRecognizer)
+        
+        if isMenuOpen{
+            self.widthMenuView.constant = 54
+            self.widthStackView.constant = 38
+            self.lblDescription.numberOfLines = 5
+        } else{
+            self.widthMenuView.constant = 0
+            self.widthStackView.constant = 0
+            self.lblDescription.numberOfLines = 2
+        }
+        
+        scollViewComment.delegate = self
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        //let tappedImage = tapGestureRecognizer.view as! UIImageView
+        // Your action
+        if isMenuOpen{
+            UIView.animate(withDuration: 0.3) {
+                self.widthMenuView.constant = 0
+                self.widthStackView.constant = 0
+                self.lblDescription.numberOfLines = 2
+                self.view.layoutIfNeeded()
+            } completion: { [self] (state) in
+                isMenuOpen = false
+            }
+        } else{
+            UIView.animate(withDuration: 0.3) {
+                self.widthMenuView.constant = 54
+                self.widthStackView.constant = 38
+                self.lblDescription.numberOfLines = 5
+                self.view.layoutIfNeeded()
+            } completion: { [self] (state) in
+                isMenuOpen = true
+            }
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -144,4 +198,17 @@ extension CommentVC: UITableViewDataSource{
         return cell
     }
 
+}
+
+extension CommentVC: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        UIView.animate(withDuration: 0.3) {
+            self.widthMenuView.constant = 0
+            self.widthStackView.constant = 0
+            self.lblDescription.numberOfLines = 2
+            self.view.layoutIfNeeded()
+        } completion: { [self] (state) in
+            isMenuOpen = false
+        }
+    }
 }

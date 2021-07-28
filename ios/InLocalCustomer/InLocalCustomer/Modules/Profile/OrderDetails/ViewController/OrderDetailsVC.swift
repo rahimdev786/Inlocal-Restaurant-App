@@ -15,13 +15,9 @@ class OrderDetailsVC: UIViewController {
     var dependency: OrderDetailsDependency?
     
     @IBOutlet weak var placeholderView: UIView!
-    
     @IBOutlet weak var dateView: UIView!
-    
     var previousSelectedCell: BookingDetailsTVC?
-    
     @IBOutlet weak var btnUploadStatus: UIButton!
-    
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {

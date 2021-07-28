@@ -34,7 +34,7 @@ class CartVC: UIViewController {
     @IBOutlet weak var lblGrandTotalAmount: UILabel!
     
     @IBOutlet weak var containerView: UIView!
-    
+    @IBOutlet weak var txtViewNote: UITextView!
     
     var orderAllItem = false
     // MARK: - View Life Cycle Methods
@@ -150,6 +150,10 @@ class CartVC: UIViewController {
         
         calculateTipAmount(tipPer: 15)
         
+        txtViewNote.delegate = self
+        txtViewNote.text = "Note to chef"
+        txtViewNote.textColor = UIColor.lightGray
+        
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -204,4 +208,20 @@ extension CartVC: UITableViewDataSource {
         return cell
     }
     
+}
+
+extension CartVC : UITextViewDelegate{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Note to chef"
+            textView.textColor = UIColor.lightGray
+        }
+    }
 }

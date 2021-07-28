@@ -59,7 +59,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0t-L6-DKd">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="634"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0t6-b5-XjM">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="698"/>
@@ -161,7 +161,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="38" id="Usb-hm-M4P"/>
                                                                         </constraints>
-                                                                        <state key="normal" image="favrite_blue"/>
+                                                                        <state key="normal" image="favorite_white"/>
                                                                         <connections>
                                                                             <action selector="onClickSavedPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBS-uM-s4m"/>
                                                                         </connections>
@@ -174,7 +174,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3982769691780822" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="166" id="Ozv-pe-2fG"/>
                                                             <constraint firstAttribute="width" constant="54" id="RP6-Yx-vB9"/>
@@ -335,18 +335,23 @@
                             <constraint firstAttribute="bottom" secondItem="fsC-lS-dPI" secondAttribute="bottom" id="Emk-7l-oyk"/>
                             <constraint firstItem="fsC-lS-dPI" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Gxd-2U-2cw"/>
                             <constraint firstItem="O0t-L6-DKd" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="S19-vE-YhE"/>
+                            <constraint firstItem="fsC-lS-dPI" firstAttribute="top" secondItem="O0t-L6-DKd" secondAttribute="bottom" id="TTj-b3-fgU"/>
                             <constraint firstItem="O0t-L6-DKd" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="VsW-c4-7EV"/>
                             <constraint firstItem="Yhv-mB-OzP" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="W9p-Ty-edS"/>
                             <constraint firstItem="Yhv-mB-OzP" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="Z7r-ye-kDS"/>
-                            <constraint firstAttribute="bottom" secondItem="O0t-L6-DKd" secondAttribute="bottom" id="am1-WE-gCW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgViewPost" destination="1ll-G1-qHn" id="WKR-Ej-mrL"/>
+                        <outlet property="lblDescription" destination="VYm-h6-2Yk" id="qCg-oQ-Cbe"/>
                         <outlet property="lblLike" destination="Dsc-B6-PEd" id="MVX-mb-KvL"/>
+                        <outlet property="scollViewComment" destination="O0t-L6-DKd" id="gCC-uy-3LU"/>
                         <outlet property="tableViewComment" destination="KFq-SG-Svz" id="jW2-hs-ty6"/>
                         <outlet property="tableViewComment_Height" destination="LUi-1K-Dkd" id="gaG-pm-4qe"/>
                         <outlet property="viewCommentBack" destination="fsC-lS-dPI" id="Rlo-NR-df7"/>
                         <outlet property="viewMenuBack" destination="IAM-46-1ts" id="BhM-OP-3BX"/>
+                        <outlet property="widthMenuView" destination="RP6-Yx-vB9" id="xl3-eY-hE0"/>
+                        <outlet property="widthStackView" destination="Ioq-Xk-3YX" id="5He-fR-O8a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -361,7 +366,7 @@
         <image name="comment_avtar" width="40" height="40"/>
         <image name="comment_bg_image" width="343" height="343"/>
         <image name="comment_image" width="60" height="60"/>
-        <image name="favrite_blue" width="38" height="38"/>
+        <image name="favorite_white" width="38" height="38"/>
         <image name="like_empty_white" width="24" height="24"/>
         <image name="menu_icon_white" width="38" height="38"/>
         <image name="send_message" width="23.666666030883789" height="23"/>

@@ -30,17 +30,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkL-lQ-5Xp">
-                                <rect key="frame" x="17" y="48" width="341" height="36"/>
+                                <rect key="frame" x="17" y="44" width="341" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nlocal_logo_feedwall" translatesAutoresizingMaskIntoConstraints="NO" id="VEb-UA-T03">
-                                        <rect key="frame" x="0.0" y="12" width="147" height="12"/>
+                                        <rect key="frame" x="0.0" y="19" width="147" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="147" id="Ncs-Wt-RFJ"/>
                                             <constraint firstAttribute="height" constant="12" id="dHV-4W-zn1"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqX-2Y-4qE">
-                                        <rect key="frame" x="305" y="0.0" width="36" height="36"/>
+                                        <rect key="frame" x="305" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="PIY-E0-SxA"/>
                                             <constraint firstAttribute="width" secondItem="HqX-2Y-4qE" secondAttribute="height" multiplier="1:1" id="emS-Pc-N6Z"/>
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sO-sI-U7k">
-                                        <rect key="frame" x="243" y="3" width="52" height="30"/>
+                                        <rect key="frame" x="243" y="10" width="52" height="30"/>
                                         <state key="normal" title="Adriana">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -63,7 +63,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="VEb-UA-T03" firstAttribute="centerY" secondItem="wkL-lQ-5Xp" secondAttribute="centerY" id="6NC-eb-DyU"/>
-                                    <constraint firstAttribute="height" constant="36" id="Eff-T1-64d"/>
+                                    <constraint firstAttribute="height" constant="50" id="Eff-T1-64d"/>
                                     <constraint firstItem="VEb-UA-T03" firstAttribute="leading" secondItem="wkL-lQ-5Xp" secondAttribute="leading" id="a2S-Hj-Klq"/>
                                     <constraint firstItem="7sO-sI-U7k" firstAttribute="centerY" secondItem="HqX-2Y-4qE" secondAttribute="centerY" id="a8l-oh-moQ"/>
                                     <constraint firstItem="HqX-2Y-4qE" firstAttribute="leading" secondItem="7sO-sI-U7k" secondAttribute="trailing" constant="10" id="cHy-3O-SSr"/>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwR-M5-Mq8">
-                                <rect key="frame" x="0.0" y="84" width="375" height="728"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="718"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sez-mf-nUg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="722"/>
@@ -180,7 +180,7 @@
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VX6-cA-Yaa">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="235" height="38.333333333333336"/>
-                                                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
@@ -261,7 +261,7 @@
                                                                                     </constraints>
                                                                                 </stackView>
                                                                             </subviews>
-                                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3982769691780822" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstItem="7Mo-8A-sec" firstAttribute="centerY" secondItem="ZgI-iJ-SPQ" secondAttribute="centerY" id="EwK-50-eCh"/>
                                                                                 <constraint firstAttribute="height" constant="190" id="QPU-Yt-Kwe"/>
@@ -334,7 +334,7 @@
                             <constraint firstItem="fwR-M5-Mq8" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="EQp-p0-ut9"/>
                             <constraint firstItem="fwR-M5-Mq8" firstAttribute="top" secondItem="wkL-lQ-5Xp" secondAttribute="bottom" id="FPf-Rj-t4I"/>
                             <constraint firstItem="fwR-M5-Mq8" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="XPF-nC-WlM"/>
-                            <constraint firstItem="wkL-lQ-5Xp" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" constant="4" id="dPM-MA-Ife"/>
+                            <constraint firstItem="wkL-lQ-5Xp" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="dPM-MA-Ife"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="wkL-lQ-5Xp" secondAttribute="trailing" constant="17" id="e1v-Vz-9dN"/>
                             <constraint firstAttribute="bottom" secondItem="fwR-M5-Mq8" secondAttribute="bottom" id="u8H-Os-DEo"/>
                             <constraint firstItem="wkL-lQ-5Xp" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="w76-WW-mYq"/>
@@ -342,6 +342,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewStories" destination="3GK-1T-0qq" id="qwA-A9-z4W"/>
+                        <outlet property="scollViewFeedwall" destination="fwR-M5-Mq8" id="1ms-e2-9Wa"/>
                         <outlet property="tableViewPost" destination="6H0-qi-VY0" id="D2E-Z7-W8U"/>
                         <outlet property="tableViewPost_Height" destination="4ym-By-yzA" id="2QV-8N-ZGH"/>
                     </connections>
