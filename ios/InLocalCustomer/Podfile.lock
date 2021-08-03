@@ -17,6 +17,7 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.9.0):
     - GoogleMaps/Base (= 3.9.0)
+  - ImageCropper (0.1.5.1)
   - IQKeyboardManagerSwift (6.4.2)
   - JGProgressHUD (2.1)
   - LanguageManager-iOS (1.2.0)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - DateTimePicker
   - GoogleMaps
   - GooglePlaces
+  - ImageCropper
   - IQKeyboardManagerSwift (~> 6.4.1)
   - JGProgressHUD
   - LanguageManager-iOS
@@ -53,6 +55,7 @@ SPEC REPOS:
     - EasyNotificationBadge
     - GoogleMaps
     - GooglePlaces
+    - ImageCropper
     - IQKeyboardManagerSwift
     - JGProgressHUD
     - LanguageManager-iOS
@@ -72,6 +75,7 @@ SPEC CHECKSUMS:
   EasyNotificationBadge: a3ebbcb1de0c0558e102e954380c75801f352702
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
   GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
+  ImageCropper: 031f4dc49908419529d56cdedaea7111cd823c3d
   IQKeyboardManagerSwift: 79a3ec200dfb41cb66a89b8575417b5378107c5d
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
@@ -80,6 +84,6 @@ SPEC CHECKSUMS:
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 79e5474f5341eb05b9d4dbbe230834d02e1f24bf
+PODFILE CHECKSUM: 9bd82eb32c8a460de44a14f7946e592a958825a4
 
 COCOAPODS: 1.9.3

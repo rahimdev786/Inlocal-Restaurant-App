@@ -9,6 +9,10 @@
 
 import UIKit
 
+protocol ComeOnTabScreen {
+    func setCropFlag()
+}
+
 class UploadPostVC: UIViewController {
     // MARK: Instance variables
 	lazy var dataManager = UploadPostDataManager()
@@ -19,7 +23,9 @@ class UploadPostVC: UIViewController {
     @IBOutlet weak var selectRestaurantView: UIView!
     @IBOutlet weak var placeholderView: UIView!
     
-	override func viewDidLoad() {
+    var comeOnTabScreenDelegate : ComeOnTabScreen!
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
         
@@ -45,7 +51,9 @@ class UploadPostVC: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        comeOnTabScreenDelegate.setCropFlag()
     }
+    
     // MARK: Deinitialization
     deinit {
        debugPrint("\(self) deinitialized")
@@ -65,11 +73,9 @@ class UploadPostVC: UIViewController {
     }
     
     @IBAction func didTapOnPost(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
-    
-    
-    
 }
 
 // MARK: - Load from storyboard with dependency

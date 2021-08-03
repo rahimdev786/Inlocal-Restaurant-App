@@ -1,16 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "icons8-flash-off-96.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 95.png",
+      "filename" : "icons8-flash-off-97.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Group 95-1.png",
+      "filename" : "icons8-flash-off-98.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

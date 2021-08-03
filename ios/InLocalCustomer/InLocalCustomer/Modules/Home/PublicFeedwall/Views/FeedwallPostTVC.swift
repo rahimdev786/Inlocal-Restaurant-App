@@ -51,13 +51,15 @@ class FeedwallPostTVC: UITableViewCell {
     }
 
     @objc func closeSideBar(notification: Notification){
-        UIView.animate(withDuration: 0.3) {
-            self.widthMenuView.constant = 0
-            self.widthStackView.constant = 0
-            self.lblDescription.numberOfLines = 2
-            self.layoutIfNeeded()
-        } completion: { [self] (state) in
-            isMenuOpen = false
+        if isMenuOpen{
+            UIView.animate(withDuration: 0.3) {
+                self.widthMenuView.constant = 0
+                self.widthStackView.constant = 0
+                self.lblDescription.numberOfLines = 2
+                self.layoutIfNeeded()
+            } completion: { [self] (state) in
+                isMenuOpen = false
+            }
         }
     }
     

@@ -29,10 +29,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qI-l1-5AJ">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPK-lj-0aR">
-                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="5eH-bi-aqc"/>
                                             <constraint firstAttribute="height" constant="36" id="M3w-ss-jF5"/>
@@ -43,7 +43,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeO-0t-jdA" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                        <rect key="frame" x="139.33333333333334" y="22" width="96.666666666666657" height="26.333333333333329"/>
+                                        <rect key="frame" x="139.33333333333334" y="11.999999999999998" width="96.666666666666657" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="5cu-K1-sHt"/>
+                                    <constraint firstAttribute="height" constant="50" id="5cu-K1-sHt"/>
                                     <constraint firstItem="TeO-0t-jdA" firstAttribute="centerY" secondItem="1qI-l1-5AJ" secondAttribute="centerY" id="HPE-ef-FvI"/>
                                     <constraint firstItem="TeO-0t-jdA" firstAttribute="centerX" secondItem="1qI-l1-5AJ" secondAttribute="centerX" id="cqw-gA-cyU"/>
                                     <constraint firstItem="NPK-lj-0aR" firstAttribute="leading" secondItem="1qI-l1-5AJ" secondAttribute="leading" constant="10" id="qIZ-Yh-FTx"/>
@@ -59,7 +59,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6t-RM-TJA">
-                                <rect key="frame" x="0.0" y="114" width="375" height="604"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="624"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXQ-AD-rPS">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="404.33333333333331"/>
@@ -326,9 +326,9 @@
         <image name="back_button_dark" width="24" height="22"/>
         <image name="radio_active" width="24" height="24.333333969116211"/>
         <image name="rightArrow" width="9" height="16"/>
-        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_addpost" width="24.333333969116211" height="24"/>
         <image name="tab_cart" width="23" height="22.666666030883789"/>
-        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_home" width="29.666666030883789" height="24"/>
         <image name="tab_notification" width="24" height="24"/>
         <image name="tab_search" width="24.333333969116211" height="24"/>
         <systemColor name="systemBackgroundColor">

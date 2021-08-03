@@ -29,16 +29,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2L2-Nu-2FC">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagged Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AT-OG-gSG">
-                                        <rect key="frame" x="116.66666666666667" y="22" width="141.66666666666663" height="26.333333333333329"/>
+                                        <rect key="frame" x="116.66666666666667" y="11.999999999999998" width="141.66666666666663" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVK-bc-REC">
-                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="57V-tl-Ur8"/>
                                             <constraint firstAttribute="width" secondItem="FVK-bc-REC" secondAttribute="height" multiplier="1:1" id="q0f-GU-zMB"/>
@@ -55,11 +55,11 @@
                                     <constraint firstItem="5AT-OG-gSG" firstAttribute="centerX" secondItem="2L2-Nu-2FC" secondAttribute="centerX" id="CmY-mT-Ige"/>
                                     <constraint firstItem="FVK-bc-REC" firstAttribute="centerY" secondItem="5AT-OG-gSG" secondAttribute="centerY" id="DEi-xL-HHx"/>
                                     <constraint firstItem="5AT-OG-gSG" firstAttribute="centerY" secondItem="2L2-Nu-2FC" secondAttribute="centerY" id="JnA-WA-QZK"/>
-                                    <constraint firstAttribute="height" constant="70" id="djo-LT-fPv"/>
+                                    <constraint firstAttribute="height" constant="50" id="djo-LT-fPv"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCM-G1-gJr">
-                                <rect key="frame" x="0.0" y="114" width="375" height="604"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="624"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWW-mb-Br8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
@@ -190,7 +190,7 @@
                                                                             </constraints>
                                                                         </stackView>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3982769691780822" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.19874892979452055" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="170" id="40O-zb-mdb"/>
                                                                         <constraint firstItem="SGp-ae-6Gp" firstAttribute="centerY" secondItem="zxr-jm-eDt" secondAttribute="centerY" id="PJT-dZ-nbT"/>

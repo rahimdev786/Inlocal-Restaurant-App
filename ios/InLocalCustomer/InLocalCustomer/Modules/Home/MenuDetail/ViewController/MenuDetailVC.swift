@@ -109,11 +109,11 @@ class MenuDetailVC: UIViewController {
         btnMinus.isHidden = true
         btnPlus.isHidden = true
         
-        let widthValue = ((UIScreen.main.bounds.width-36)/2)
+        let widthValue = ((UIScreen.main.bounds.width-44)/2)
         let heightValue = widthValue
         let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 2
-        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
         layout.itemSize = CGSize(width: widthValue, height: heightValue)
         self.collectionViewMenuImage.setCollectionViewLayout(layout, animated: true)
     }

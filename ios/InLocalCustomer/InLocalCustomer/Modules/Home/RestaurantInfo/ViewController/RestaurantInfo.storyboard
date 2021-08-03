@@ -27,16 +27,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQD-fi-P3B">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-4p-6jZ">
-                                        <rect key="frame" x="132" y="22" width="111.33333333333331" height="26.333333333333329"/>
+                                        <rect key="frame" x="132" y="11.999999999999998" width="111.33333333333331" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOI-JY-QZC">
-                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dOI-JY-QZC" secondAttribute="height" multiplier="1:1" id="1AJ-9G-cJI"/>
                                             <constraint firstAttribute="height" constant="36" id="Ebw-Vt-oAO"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="GEb-7K-Zgu">
-                                        <rect key="frame" x="339" y="21" width="28" height="28"/>
+                                        <rect key="frame" x="339" y="11" width="28" height="28"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFT-kn-Ggi">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -61,7 +61,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="KEU-KI-nVc"/>
+                                    <constraint firstAttribute="height" constant="50" id="KEU-KI-nVc"/>
                                     <constraint firstItem="dOI-JY-QZC" firstAttribute="leading" secondItem="wQD-fi-P3B" secondAttribute="leading" constant="10" id="Nm9-kI-pYZ"/>
                                     <constraint firstItem="VQf-4p-6jZ" firstAttribute="centerY" secondItem="wQD-fi-P3B" secondAttribute="centerY" id="Q0I-Kj-kub"/>
                                     <constraint firstItem="dOI-JY-QZC" firstAttribute="centerY" secondItem="VQf-4p-6jZ" secondAttribute="centerY" id="eTF-kP-bK9"/>
@@ -71,7 +71,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEG-Av-hxt">
-                                <rect key="frame" x="0.0" y="114" width="375" height="892"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="912"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idi-8c-C75">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="876.33333333333337"/>
@@ -82,7 +82,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="204" id="jzR-mR-a9g"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lZh-TT-4xG">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lZh-TT-4xG">
                                                     <size key="itemSize" width="345" height="204"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -99,7 +99,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aK-bi-VXW">
                                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="204"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurantinfo_image" translatesAutoresizingMaskIntoConstraints="NO" id="J2H-I7-n9y">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurantinfo_image" translatesAutoresizingMaskIntoConstraints="NO" id="J2H-I7-n9y">
                                                                             <rect key="frame" x="0.0" y="0.0" width="345" height="204"/>
                                                                         </imageView>
                                                                     </subviews>
@@ -381,6 +381,7 @@
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="collctionViewRestaurantImage" destination="hJy-eA-h8N" id="ogZ-Z0-pKR"/>
+                        <outlet property="pageControlImage" destination="oj8-Dm-nsC" id="bQh-FZ-xRs"/>
                         <outlet property="tabBar" destination="zhQ-TR-ML2" id="78E-IG-4xA"/>
                         <outlet property="tabItemAddPost" destination="Ath-T0-m5k" id="f6h-xD-pFB"/>
                         <outlet property="tabItemCart" destination="AVS-7r-miC" id="nZb-44-V4X"/>
@@ -403,9 +404,9 @@
         <image name="email_gray" width="12" height="9.6666669845581055"/>
         <image name="location_gray" width="10" height="16"/>
         <image name="restaurantinfo_image" width="343" height="204"/>
-        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_addpost" width="24.333333969116211" height="24"/>
         <image name="tab_cart" width="23" height="22.666666030883789"/>
-        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_home" width="29.666666030883789" height="24"/>
         <image name="tab_notification" width="24" height="24"/>
         <image name="tab_search" width="24.333333969116211" height="24"/>
         <image name="three_dot_black" width="28" height="28"/>

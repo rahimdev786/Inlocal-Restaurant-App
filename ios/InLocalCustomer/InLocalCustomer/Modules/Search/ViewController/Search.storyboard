@@ -59,7 +59,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-N4-JBC">
                                 <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAm-qX-Mxy">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAm-qX-Mxy">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I66-uh-vm0">
@@ -117,7 +117,7 @@
                                                         </constraints>
                                                     </view>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-9R-dYU">
-                                                        <rect key="frame" x="10" y="62" width="394" height="28"/>
+                                                        <rect key="frame" x="0.0" y="62" width="414" height="28"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="28" id="MoN-gm-7aF"/>
@@ -126,11 +126,11 @@
                                                             <size key="itemSize" width="128" height="28"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCVC" id="WTG-Gr-xpa" customClass="CategoryCVC" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="74" height="28"/>
+                                                                <rect key="frame" x="10" y="0.0" width="74" height="28"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1aK-iC-hc9">
                                                                     <rect key="frame" x="0.0" y="0.0" width="74" height="28"/>
@@ -317,11 +317,11 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="I5V-8G-COt" firstAttribute="top" secondItem="hcO-9R-dYU" secondAttribute="bottom" constant="17" id="0Ad-bs-Y9H"/>
-                                                    <constraint firstAttribute="trailing" secondItem="hcO-9R-dYU" secondAttribute="trailing" constant="10" id="0WL-6E-JTp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hcO-9R-dYU" secondAttribute="trailing" id="0WL-6E-JTp"/>
                                                     <constraint firstAttribute="bottom" secondItem="uoS-qs-h6W" secondAttribute="bottom" id="566-Je-4YB"/>
                                                     <constraint firstAttribute="trailing" secondItem="qXl-WI-dNV" secondAttribute="trailing" id="87x-dg-ZHZ"/>
                                                     <constraint firstItem="uoS-qs-h6W" firstAttribute="top" secondItem="hcO-9R-dYU" secondAttribute="bottom" constant="17" id="AZl-P3-gfA"/>
-                                                    <constraint firstItem="hcO-9R-dYU" firstAttribute="leading" secondItem="qXl-WI-dNV" secondAttribute="leading" constant="10" id="Bnn-Up-S3J"/>
+                                                    <constraint firstItem="hcO-9R-dYU" firstAttribute="leading" secondItem="qXl-WI-dNV" secondAttribute="leading" id="Bnn-Up-S3J"/>
                                                     <constraint firstItem="qXl-WI-dNV" firstAttribute="top" secondItem="I66-uh-vm0" secondAttribute="top" id="EWk-eQ-XmZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="uoS-qs-h6W" secondAttribute="trailing" constant="10" id="FZ0-BJ-ggM"/>
                                                     <constraint firstAttribute="trailing" secondItem="I5V-8G-COt" secondAttribute="trailing" constant="10" id="SAl-fR-1h7"/>

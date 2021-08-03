@@ -30,16 +30,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Tb-FW-G3f">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSi-Fn-tbp">
-                                        <rect key="frame" x="132" y="22" width="111.33333333333331" height="26.333333333333329"/>
+                                        <rect key="frame" x="132" y="11.999999999999998" width="111.33333333333331" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNJ-8T-tcu">
-                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="GNJ-8T-tcu" secondAttribute="height" multiplier="1:1" id="L97-tR-Tbe"/>
                                             <constraint firstAttribute="height" constant="36" id="WfY-Og-Qce"/>
@@ -55,12 +55,12 @@
                                     <constraint firstItem="QSi-Fn-tbp" firstAttribute="centerY" secondItem="1Tb-FW-G3f" secondAttribute="centerY" id="AJU-5O-tur"/>
                                     <constraint firstItem="QSi-Fn-tbp" firstAttribute="centerX" secondItem="1Tb-FW-G3f" secondAttribute="centerX" id="DPg-kS-MfR"/>
                                     <constraint firstItem="GNJ-8T-tcu" firstAttribute="leading" secondItem="1Tb-FW-G3f" secondAttribute="leading" constant="10" id="DkB-1W-QSh"/>
-                                    <constraint firstAttribute="height" constant="70" id="Vah-uA-1PZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="Vah-uA-1PZ"/>
                                     <constraint firstItem="GNJ-8T-tcu" firstAttribute="centerY" secondItem="QSi-Fn-tbp" secondAttribute="centerY" id="v9c-GI-Fi6"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSu-Nw-XL3">
-                                <rect key="frame" x="0.0" y="114" width="375" height="604"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="624"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygo-im-CgX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
@@ -332,9 +332,9 @@
         <image name="minus_icon" width="16" height="16"/>
         <image name="plus_icon" width="16" height="16"/>
         <image name="sanwitch" width="170" height="135"/>
-        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_addpost" width="24.333333969116211" height="24"/>
         <image name="tab_cart" width="23" height="22.666666030883789"/>
-        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_home" width="29.666666030883789" height="24"/>
         <image name="tab_notification" width="24" height="24"/>
         <image name="tab_search" width="24.333333969116211" height="24"/>
         <systemColor name="systemBackgroundColor">

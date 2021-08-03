@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1T-fN-syO">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUD-hK-I46">
-                                        <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="Lfi-CY-6Mb"/>
                                             <constraint firstAttribute="height" constant="50" id="PxR-yr-uRd"/>
@@ -38,8 +38,8 @@
                                             <action selector="didTapOnBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fx8-oX-Fi9"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="My Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-tC-wzB">
-                                        <rect key="frame" x="139" y="21" width="96.666666666666657" height="26.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-tC-wzB">
+                                        <rect key="frame" x="142" y="11.999999999999998" width="91.333333333333314" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="BvY-u4-dAh"/>
+                                    <constraint firstAttribute="height" constant="50" id="BvY-u4-dAh"/>
                                     <constraint firstItem="CUD-hK-I46" firstAttribute="centerY" secondItem="U1T-fN-syO" secondAttribute="centerY" id="G9l-LG-1mC"/>
                                     <constraint firstItem="MY8-tC-wzB" firstAttribute="centerX" secondItem="U1T-fN-syO" secondAttribute="centerX" id="MiZ-2S-9P8"/>
                                     <constraint firstItem="CUD-hK-I46" firstAttribute="leading" secondItem="U1T-fN-syO" secondAttribute="leading" id="kdb-k9-nm7"/>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEU-3c-saq">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="718"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aj2-aV-qFd">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>

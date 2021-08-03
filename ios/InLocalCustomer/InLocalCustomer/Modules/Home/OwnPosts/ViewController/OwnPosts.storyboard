@@ -27,16 +27,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkR-9G-rMN">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZb-xy-9Se">
-                                        <rect key="frame" x="132.66666666666666" y="22" width="110" height="26.333333333333329"/>
+                                        <rect key="frame" x="132.66666666666666" y="11.999999999999998" width="110" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQH-QJ-g2F">
-                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="0x1-0B-6KC"/>
                                             <constraint firstAttribute="width" secondItem="zQH-QJ-g2F" secondAttribute="height" multiplier="1:1" id="bfA-J7-FJB"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ugk-Tv-7Kk">
-                                        <rect key="frame" x="330" y="21" width="28" height="28"/>
+                                        <rect key="frame" x="330" y="11" width="28" height="28"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLa-BB-lyI">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -62,7 +62,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ugk-Tv-7Kk" secondAttribute="trailing" constant="17" id="65e-b0-cya"/>
-                                    <constraint firstAttribute="height" constant="70" id="GUa-iW-hDd"/>
+                                    <constraint firstAttribute="height" constant="50" id="GUa-iW-hDd"/>
                                     <constraint firstItem="zQH-QJ-g2F" firstAttribute="centerY" secondItem="aZb-xy-9Se" secondAttribute="centerY" id="HsW-Nl-Qoy"/>
                                     <constraint firstItem="zQH-QJ-g2F" firstAttribute="leading" secondItem="xkR-9G-rMN" secondAttribute="leading" constant="10" id="WkE-zY-oyT"/>
                                     <constraint firstItem="ugk-Tv-7Kk" firstAttribute="centerY" secondItem="aZb-xy-9Se" secondAttribute="centerY" id="a7A-00-Ici"/>
@@ -71,7 +71,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rf-IO-B7P">
-                                <rect key="frame" x="0.0" y="114" width="375" height="604"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="624"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7A3-tM-NyW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="563"/>
@@ -319,9 +319,9 @@
         <image name="avatar" width="133.33332824707031" height="133.33332824707031"/>
         <image name="back_button_dark" width="24" height="22"/>
         <image name="sanwitch" width="170" height="135"/>
-        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_addpost" width="24.333333969116211" height="24"/>
         <image name="tab_cart" width="23" height="22.666666030883789"/>
-        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_home" width="29.666666030883789" height="24"/>
         <image name="tab_notification" width="24" height="24"/>
         <image name="tab_search" width="24.333333969116211" height="24"/>
         <image name="three_dot_black" width="28" height="28"/>

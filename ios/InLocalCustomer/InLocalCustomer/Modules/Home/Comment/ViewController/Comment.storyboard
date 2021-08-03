@@ -29,16 +29,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhv-mB-OzP">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcq-lO-yl3">
-                                        <rect key="frame" x="135" y="22" width="105" height="26.333333333333329"/>
+                                        <rect key="frame" x="135" y="11.999999999999998" width="105" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7q-yP-IaG">
-                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="l7q-yP-IaG" secondAttribute="height" multiplier="1:1" id="a9x-AW-W5D"/>
                                             <constraint firstAttribute="height" constant="36" id="h2P-V1-Y9J"/>
@@ -54,12 +54,12 @@
                                     <constraint firstItem="l7q-yP-IaG" firstAttribute="leading" secondItem="Yhv-mB-OzP" secondAttribute="leading" constant="10" id="MAd-HI-zFl"/>
                                     <constraint firstItem="qcq-lO-yl3" firstAttribute="centerY" secondItem="Yhv-mB-OzP" secondAttribute="centerY" id="Pqc-tp-s7h"/>
                                     <constraint firstItem="qcq-lO-yl3" firstAttribute="centerX" secondItem="Yhv-mB-OzP" secondAttribute="centerX" id="bWW-Rc-x3Q"/>
-                                    <constraint firstAttribute="height" constant="70" id="uJG-6H-eMT"/>
+                                    <constraint firstAttribute="height" constant="50" id="uJG-6H-eMT"/>
                                     <constraint firstItem="l7q-yP-IaG" firstAttribute="centerY" secondItem="qcq-lO-yl3" secondAttribute="centerY" id="vee-Pb-cLV"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0t-L6-DKd">
-                                <rect key="frame" x="0.0" y="114" width="375" height="634"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="620"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0t6-b5-XjM">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="698"/>
@@ -290,7 +290,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsC-lS-dPI">
-                                <rect key="frame" x="0.0" y="748" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="714" width="375" height="64"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_avtar" translatesAutoresizingMaskIntoConstraints="NO" id="Csy-9Z-rXg">
                                         <rect key="frame" x="17" y="12" width="40" height="40"/>
@@ -300,7 +300,10 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write your comment here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-rb-wkd">
-                                        <rect key="frame" x="72" y="22.666666666666629" width="236" height="18.666666666666671"/>
+                                        <rect key="frame" x="72" y="12" width="236" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Dmv-Bi-DYZ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -332,8 +335,8 @@
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="Yhv-mB-OzP" secondAttribute="trailing" id="0Cb-FB-RHl"/>
                             <constraint firstItem="fsC-lS-dPI" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="4vq-qJ-DU6"/>
                             <constraint firstItem="O0t-L6-DKd" firstAttribute="top" secondItem="Yhv-mB-OzP" secondAttribute="bottom" id="9jR-gP-83v"/>
-                            <constraint firstAttribute="bottom" secondItem="fsC-lS-dPI" secondAttribute="bottom" id="Emk-7l-oyk"/>
                             <constraint firstItem="fsC-lS-dPI" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Gxd-2U-2cw"/>
+                            <constraint firstItem="gtQ-gH-aQA" firstAttribute="bottom" secondItem="fsC-lS-dPI" secondAttribute="bottom" id="OG4-AG-TLf"/>
                             <constraint firstItem="O0t-L6-DKd" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="S19-vE-YhE"/>
                             <constraint firstItem="fsC-lS-dPI" firstAttribute="top" secondItem="O0t-L6-DKd" secondAttribute="bottom" id="TTj-b3-fgU"/>
                             <constraint firstItem="O0t-L6-DKd" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="VsW-c4-7EV"/>

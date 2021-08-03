@@ -29,16 +29,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMX-1Z-vPM">
-                                <rect key="frame" x="0.0" y="44" width="390" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQV-EZ-bL6">
-                                        <rect key="frame" x="157.66666666666666" y="22" width="75" height="26.333333333333329"/>
+                                        <rect key="frame" x="157.66666666666666" y="11.999999999999998" width="75" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B0-3H-9Si">
-                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="LCx-Wt-FsV"/>
                                             <constraint firstAttribute="width" secondItem="2B0-3H-9Si" secondAttribute="height" multiplier="1:1" id="hOt-gk-sEY"/>
@@ -55,14 +55,14 @@
                                     <constraint firstItem="eQV-EZ-bL6" firstAttribute="centerX" secondItem="mMX-1Z-vPM" secondAttribute="centerX" id="hEP-Zn-7po"/>
                                     <constraint firstItem="2B0-3H-9Si" firstAttribute="centerY" secondItem="eQV-EZ-bL6" secondAttribute="centerY" id="tN0-wL-VOB"/>
                                     <constraint firstItem="2B0-3H-9Si" firstAttribute="leading" secondItem="mMX-1Z-vPM" secondAttribute="leading" constant="10" id="wqz-Od-ZYz"/>
-                                    <constraint firstAttribute="height" constant="70" id="yEI-jn-sqM"/>
+                                    <constraint firstAttribute="height" constant="50" id="yEI-jn-sqM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPm-96-Sq4">
-                                <rect key="frame" x="0.0" y="122" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="102" width="390" height="742"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0c-vQ-OFb">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="742"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaQ-dO-6re">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="681.66666666666663"/>

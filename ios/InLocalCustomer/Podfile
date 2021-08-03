@@ -23,5 +23,6 @@ pod 'CalendarDateRangePicker'
 pod 'CountryList'
 pod 'DatePickerDialog'
 pod 'DateTimePicker'
+pod 'ImageCropper'
 
 end

@@ -10,6 +10,7 @@
 import UIKit
 import AZTabBar
 import Photos
+import ImageCropper
 
 enum PostType {
     case story
@@ -31,7 +32,7 @@ class BottumTabBarVC: UIViewController, UINavigationControllerDelegate {
     var isImageSelected = false
     var selectedImage: UIImage?
     var postType:PostType = .story
-    
+    var isCropped = false
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,7 +144,7 @@ extension BottumTabBarVC{
         
         
         //CartVC
-        guard let cartViewController = CartVC.load(withDependency: nil) else {
+        guard let cartViewController = DineInCartVC.load(withDependency: nil) else {
             return
         }
         tabController.setViewController(cartViewController, atIndex: 3)
@@ -331,12 +332,14 @@ extension BottumTabBarVC{
     func openImagePicker(isCamera: Bool) {
         self.imagePicker.delegate = self
         if isCamera {
-            //self.imagePicker.allowsEditing = true
+            
             self.imagePicker.sourceType = .camera
+            self.imagePicker.allowsEditing = true
+            
             //customize
             self.imagePicker.showsCameraControls = true
-             self.imagePicker.cameraFlashMode = .on
-             self.imagePicker.showsCameraControls = false
+            self.imagePicker.cameraFlashMode = .on
+            self.imagePicker.showsCameraControls = false
             let overlayView = Bundle.main.loadNibNamed("CustomCameraOverlay", owner: nil, options: nil)?.first as! CustomCameraOverlay
             overlayView.delegate = self
             overlayView.frame = (self.imagePicker.cameraOverlayView?.frame)!
@@ -356,10 +359,10 @@ extension BottumTabBarVC{
 extension BottumTabBarVC: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        
         isImageSelected = true
         selectedImage = img
-        dismiss(animated: true) {
+    
+        dismiss(animated: true) { [self] in
             
             if self.postType == .story {
                 let dependency = UploadStoryDependency(selectedImage: self.selectedImage!)
@@ -368,11 +371,51 @@ extension BottumTabBarVC: UIImagePickerControllerDelegate {
                 }
                 self.navigationController?.pushViewController(uploadStoryVC, animated: true)
             }else{
+                
+                var config = ImageCropperConfiguration(with: selectedImage!, and: .square)
+                //config.maskFillColor = UIColor(displayP3Red: 0.7, green: 0.5, blue: 0.2, alpha: 0.75)
+                config.maskFillColor = UIColor.black.withAlphaComponent(0.5)
+                config.borderColor = UIColor.white
+                config.showGrid = false
+                config.gridColor = UIColor.white
+                config.doneTitle = "CROP"
+                config.cancelTitle = "Cancel"
+                isCropped = false
+                let cropper = ImageCropperViewController.initialize(with: config, completionHandler: { _croppedImage in
+                  /*
+                  Code to perform after finishing cropping process
+                  */
+                    guard let _img = _croppedImage else { return }
+                    selectedImage = _img
+                    isCropped = true
+                    
+                }) {
+                  /*
+                  Code to perform after dismissing controller
+                  */
+                    if isCropped{
+                        let dependency = UploadPostDependency(selectedImage: self.selectedImage!)
+                        guard let uploadPostVC = UploadPostVC.loadFromXIB(withDependency: dependency) else {
+                            return
+                        }
+                        uploadPostVC.comeOnTabScreenDelegate = self
+                        self.navigationController?.pushViewController(uploadPostVC, animated: true)
+                    } else{
+                        self.navigationController?.popToRootViewController(animated: false)
+                        self.tabController.onlyShowTextForSelectedButtons = !self.tabController.onlyShowTextForSelectedButtons
+                        self.checkCameraAccess()
+                    }
+                }
+                self.navigationController?.pushViewController(cropper, animated: true)
+                //self.present(cropper, animated: true, completion: nil)
+
+                /*
                 let dependency = UploadPostDependency(selectedImage: self.selectedImage!)
                 guard let uploadPostVC = UploadPostVC.loadFromXIB(withDependency: dependency) else {
                     return
                 }
                 self.navigationController?.pushViewController(uploadPostVC, animated: true)
+                */
             }
             
         }
@@ -413,8 +456,13 @@ extension BottumTabBarVC: CustomCameraOverlayProtocol {
         }
     }
     
-    func flashTapped() {
-        self.imagePicker.cameraFlashMode = .off
+    func flashTapped(isSelected: Bool) {
+        if isSelected{
+            self.imagePicker.cameraFlashMode = .on
+        } else{
+            self.imagePicker.cameraFlashMode = .off
+        }
+        
     }
     
     func storyTapped() {
@@ -432,5 +480,11 @@ extension BottumTabBarVC:CustomPickerVCProtocol {
     }
     func didTapOnCamera(){
         self.checkCameraAccess()
+    }
+}
+//ComeOnTabScreen
+extension BottumTabBarVC: ComeOnTabScreen{
+    func setCropFlag() {
+        isCropped = false
     }
 }

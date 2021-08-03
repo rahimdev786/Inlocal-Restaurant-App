@@ -95,11 +95,11 @@ class SearchVC: UIViewController {
         
         txtFieldSearch.delegate = self
         
-        let widthValue = ((UIScreen.main.bounds.width-22)/2)
+        let widthValue = ((UIScreen.main.bounds.width-30)/2)
         let heightValue = widthValue
         let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 2
-        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
         layout.itemSize = CGSize(width: widthValue, height: heightValue)
         self.collectionViewPost.setCollectionViewLayout(layout, animated: true)
         

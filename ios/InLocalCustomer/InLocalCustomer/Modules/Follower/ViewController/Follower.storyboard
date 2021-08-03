@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKl-rH-UQm">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36P-hf-Uaw">
-                                        <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Xt4-fq-6o3"/>
                                             <constraint firstAttribute="width" constant="50" id="qHl-99-CTx"/>
@@ -36,8 +36,8 @@
                                             <action selector="onClickBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wT1-gV-LOX"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlK-eK-9hs">
-                                        <rect key="frame" x="139" y="21" width="96.666666666666657" height="26.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlK-eK-9hs">
+                                        <rect key="frame" x="143.66666666666666" y="11.999999999999998" width="87.666666666666657" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="2nA-Il-95j"/>
+                                    <constraint firstAttribute="height" constant="50" id="2nA-Il-95j"/>
                                     <constraint firstItem="36P-hf-Uaw" firstAttribute="leading" secondItem="BKl-rH-UQm" secondAttribute="leading" id="LXQ-qk-lBT"/>
                                     <constraint firstItem="36P-hf-Uaw" firstAttribute="centerY" secondItem="BKl-rH-UQm" secondAttribute="centerY" id="O7x-AB-s4d"/>
                                     <constraint firstItem="zlK-eK-9hs" firstAttribute="centerX" secondItem="BKl-rH-UQm" secondAttribute="centerX" id="kio-e0-KKM"/>
@@ -53,10 +53,10 @@
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="azl-k6-Br8">
-                                <rect key="frame" x="17" y="124" width="341" height="51"/>
+                                <rect key="frame" x="17" y="94" width="341" height="41"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="QBM-1H-dbM"/>
+                                    <constraint firstAttribute="height" constant="40" id="QBM-1H-dbM"/>
                                 </constraints>
                                 <segments>
                                     <segment title="FOLLOWERS"/>
@@ -69,7 +69,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-fj-WKD">
-                                <rect key="frame" x="17" y="191" width="341" height="587"/>
+                                <rect key="frame" x="17" y="144" width="341" height="634"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FollowerTVC" rowHeight="87" id="yzj-MD-RDF" customClass="FollowerTVC" customModule="InLocalCustomer" customModuleProvider="target">
@@ -216,10 +216,10 @@
                             <constraint firstItem="BKl-rH-UQm" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="5qk-H5-0Mi"/>
                             <constraint firstItem="4mF-fj-WKD" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="7f5-gV-nWa"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="4mF-fj-WKD" secondAttribute="trailing" constant="17" id="7tR-Rx-JhK"/>
-                            <constraint firstItem="azl-k6-Br8" firstAttribute="top" secondItem="BKl-rH-UQm" secondAttribute="bottom" constant="10" id="AmX-CA-2M5"/>
+                            <constraint firstItem="azl-k6-Br8" firstAttribute="top" secondItem="BKl-rH-UQm" secondAttribute="bottom" id="AmX-CA-2M5"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="bottom" secondItem="4mF-fj-WKD" secondAttribute="bottom" id="UWA-9F-vDI"/>
                             <constraint firstItem="azl-k6-Br8" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" constant="17" id="VMm-We-FZy"/>
-                            <constraint firstItem="4mF-fj-WKD" firstAttribute="top" secondItem="azl-k6-Br8" secondAttribute="bottom" constant="17" id="Xmi-cz-2lt"/>
+                            <constraint firstItem="4mF-fj-WKD" firstAttribute="top" secondItem="azl-k6-Br8" secondAttribute="bottom" constant="10" id="Xmi-cz-2lt"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="azl-k6-Br8" secondAttribute="trailing" constant="17" id="b1N-iT-tZe"/>
                             <constraint firstItem="BKl-rH-UQm" firstAttribute="top" secondItem="gtQ-gH-aQA" secondAttribute="top" id="oKd-qz-Oeu"/>
                             <constraint firstItem="BKl-rH-UQm" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="x6q-7F-6l9"/>

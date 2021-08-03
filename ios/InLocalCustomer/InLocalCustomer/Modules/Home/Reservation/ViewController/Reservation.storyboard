@@ -29,16 +29,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPf-Ew-RiV">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf6-3J-YTd">
-                                        <rect key="frame" x="131.33333333333334" y="22" width="112.66666666666666" height="26.333333333333329"/>
+                                        <rect key="frame" x="131.33333333333334" y="11.999999999999998" width="112.66666666666666" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jl-TM-Elq">
-                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="9jl-TM-Elq" secondAttribute="height" multiplier="1:1" id="9Xs-dt-1ZW"/>
                                             <constraint firstAttribute="height" constant="36" id="FSc-rl-xbL"/>
@@ -55,11 +55,11 @@
                                     <constraint firstItem="9jl-TM-Elq" firstAttribute="leading" secondItem="fPf-Ew-RiV" secondAttribute="leading" constant="10" id="H2j-3Y-3wL"/>
                                     <constraint firstItem="Kf6-3J-YTd" firstAttribute="centerX" secondItem="fPf-Ew-RiV" secondAttribute="centerX" id="UDj-Yh-qmu"/>
                                     <constraint firstItem="Kf6-3J-YTd" firstAttribute="centerY" secondItem="fPf-Ew-RiV" secondAttribute="centerY" id="Y0n-Xa-2Lb"/>
-                                    <constraint firstAttribute="height" constant="70" id="elV-T6-iR0"/>
+                                    <constraint firstAttribute="height" constant="50" id="elV-T6-iR0"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-E4-uNR">
-                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="718"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAF-Ro-RTQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
@@ -88,7 +88,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRa-WD-OTo">
-                                                                <rect key="frame" x="17.333333333333336" y="104.99999999999997" width="65.666666666666657" height="17"/>
+                                                                <rect key="frame" x="17.333333333333336" y="105" width="65.666666666666657" height="17"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpg-X2-nEm">
-                                                                <rect key="frame" x="17.333333333333343" y="104.99999999999997" width="65.333333333333329" height="17"/>
+                                                                <rect key="frame" x="17.333333333333343" y="105" width="65.333333333333329" height="17"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -132,7 +132,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No of guest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jt3-yj-g3Z">
-                                                                <rect key="frame" x="16.333333333333314" y="104.99999999999997" width="67.666666666666671" height="17"/>
+                                                                <rect key="frame" x="16.333333333333314" y="105" width="67.666666666666671" height="17"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -213,7 +213,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Instruction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMa-OL-4mu">
-                                                <rect key="frame" x="17" y="403.66666666666663" width="340" height="19.333333333333314"/>
+                                                <rect key="frame" x="17" y="403.66666666666669" width="340" height="19.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

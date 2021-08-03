@@ -29,10 +29,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oud-kZ-tW9">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPd-dH-oi9">
-                                        <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ibn-16-Kfe"/>
                                             <constraint firstAttribute="width" constant="50" id="xoM-rW-Rdc"/>
@@ -43,13 +43,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taU-HR-j5i" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                        <rect key="frame" x="126.33333333333331" y="22" width="122.66666666666669" height="26.333333333333329"/>
+                                        <rect key="frame" x="126.33333333333331" y="11.999999999999998" width="122.66666666666669" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEe-m2-Hrb">
-                                        <rect key="frame" x="325" y="10" width="50" height="50"/>
+                                        <rect key="frame" x="325" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8dp-xI-weR"/>
                                             <constraint firstAttribute="width" constant="50" id="h4X-Yu-G0W"/>
@@ -62,7 +62,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="K8G-DK-8RN"/>
+                                    <constraint firstAttribute="height" constant="50" id="K8G-DK-8RN"/>
                                     <constraint firstItem="gPd-dH-oi9" firstAttribute="leading" secondItem="oud-kZ-tW9" secondAttribute="leading" id="Yab-74-BBM"/>
                                     <constraint firstAttribute="trailing" secondItem="XEe-m2-Hrb" secondAttribute="trailing" id="ZDN-7J-mfj"/>
                                     <constraint firstItem="XEe-m2-Hrb" firstAttribute="centerY" secondItem="oud-kZ-tW9" secondAttribute="centerY" id="bfP-z0-oVE"/>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EI8-eD-RVS">
-                                <rect key="frame" x="0.0" y="131" width="375" height="681"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="708"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderListTVC" rowHeight="108" id="bfC-FF-Xma" customClass="OrderListTVC" customModule="InLocalCustomer" customModuleProvider="target">
@@ -178,7 +178,7 @@
                             <constraint firstItem="oud-kZ-tW9" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="QPE-ft-Ktd"/>
                             <constraint firstItem="EI8-eD-RVS" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="Tu6-7A-NGh"/>
                             <constraint firstAttribute="bottom" secondItem="EI8-eD-RVS" secondAttribute="bottom" id="UAm-rC-eun"/>
-                            <constraint firstItem="EI8-eD-RVS" firstAttribute="top" secondItem="oud-kZ-tW9" secondAttribute="bottom" constant="17" id="Yrl-38-kVe"/>
+                            <constraint firstItem="EI8-eD-RVS" firstAttribute="top" secondItem="oud-kZ-tW9" secondAttribute="bottom" constant="10" id="Yrl-38-kVe"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="EI8-eD-RVS" secondAttribute="trailing" id="iQd-4W-VYm"/>
                         </constraints>
                     </view>

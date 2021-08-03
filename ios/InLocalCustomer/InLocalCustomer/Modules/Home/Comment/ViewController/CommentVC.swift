@@ -202,13 +202,15 @@ extension CommentVC: UITableViewDataSource{
 
 extension CommentVC: UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        UIView.animate(withDuration: 0.3) {
-            self.widthMenuView.constant = 0
-            self.widthStackView.constant = 0
-            self.lblDescription.numberOfLines = 2
-            self.view.layoutIfNeeded()
-        } completion: { [self] (state) in
-            isMenuOpen = false
+        if isMenuOpen{
+            UIView.animate(withDuration: 0.3) {
+                self.widthMenuView.constant = 0
+                self.widthStackView.constant = 0
+                self.lblDescription.numberOfLines = 2
+                self.view.layoutIfNeeded()
+            } completion: { [self] (state) in
+                isMenuOpen = false
+            }
         }
     }
 }

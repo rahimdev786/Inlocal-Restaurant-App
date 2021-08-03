@@ -258,8 +258,13 @@ extension UploadStoryVC: CustomCameraOverlayProtocol {
         }
     }
     
-    func flashTapped() {
-        self.imagePicker.cameraFlashMode = .off
+    func flashTapped(isSelected: Bool) {
+        if isSelected{
+            self.imagePicker.cameraFlashMode = .on
+        } else{
+            self.imagePicker.cameraFlashMode = .off
+        }
+        
     }
     
     func storyTapped() {

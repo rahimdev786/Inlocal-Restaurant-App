@@ -24,10 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2if-xb-hdl">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTi-mz-x5J">
-                                        <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8w4-EB-VQI"/>
                                             <constraint firstAttribute="width" constant="50" id="zpo-cg-1xP"/>
@@ -37,8 +37,8 @@
                                             <action selector="didTapOnBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ij-Iu-bHa"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Favourites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1o-ZL-T5T" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                        <rect key="frame" x="139" y="21" width="96.666666666666657" height="26.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1o-ZL-T5T" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                        <rect key="frame" x="140.33333333333334" y="11.999999999999998" width="94.666666666666657" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="22"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="7yk-Oz-lfz"/>
+                                    <constraint firstAttribute="height" constant="50" id="7yk-Oz-lfz"/>
                                     <constraint firstItem="eTi-mz-x5J" firstAttribute="centerY" secondItem="2if-xb-hdl" secondAttribute="centerY" id="Pzd-sb-KiU"/>
                                     <constraint firstItem="eTi-mz-x5J" firstAttribute="leading" secondItem="2if-xb-hdl" secondAttribute="leading" id="QnW-tM-x2h"/>
                                     <constraint firstItem="u1o-ZL-T5T" firstAttribute="centerX" secondItem="2if-xb-hdl" secondAttribute="centerX" id="Tyj-Mj-9gs"/>
@@ -54,10 +54,10 @@
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1mm-Ph-iYp">
-                                <rect key="frame" x="17" y="124" width="341" height="51"/>
+                                <rect key="frame" x="17" y="94" width="341" height="41"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="MgK-yg-lPQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="MgK-yg-lPQ"/>
                                 </constraints>
                                 <segments>
                                     <segment title="USER'S POST"/>
@@ -67,7 +67,7 @@
                                 <color key="selectedSegmentTintColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qnZ-wD-0SI">
-                                <rect key="frame" x="17" y="199" width="341" height="613"/>
+                                <rect key="frame" x="17" y="144" width="341" height="668"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="Cj3-6X-h4B">
                                     <size key="itemSize" width="128" height="128"/>
@@ -151,8 +151,8 @@
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1mm-Ph-iYp" firstAttribute="top" secondItem="2if-xb-hdl" secondAttribute="bottom" constant="10" id="0xx-w4-39T"/>
-                            <constraint firstItem="qnZ-wD-0SI" firstAttribute="top" secondItem="1mm-Ph-iYp" secondAttribute="bottom" constant="25" id="4CZ-yk-OuZ"/>
+                            <constraint firstItem="1mm-Ph-iYp" firstAttribute="top" secondItem="2if-xb-hdl" secondAttribute="bottom" id="0xx-w4-39T"/>
+                            <constraint firstItem="qnZ-wD-0SI" firstAttribute="top" secondItem="1mm-Ph-iYp" secondAttribute="bottom" constant="10" id="4CZ-yk-OuZ"/>
                             <constraint firstItem="2if-xb-hdl" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="DCa-J9-blF"/>
                             <constraint firstItem="gtQ-gH-aQA" firstAttribute="trailing" secondItem="1mm-Ph-iYp" secondAttribute="trailing" constant="17" id="K8l-bt-vZH"/>
                             <constraint firstAttribute="bottom" secondItem="qnZ-wD-0SI" secondAttribute="bottom" id="Mhm-Vd-Kqx"/>

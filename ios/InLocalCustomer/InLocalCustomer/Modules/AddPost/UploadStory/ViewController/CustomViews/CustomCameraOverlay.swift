@@ -12,7 +12,7 @@ protocol CustomCameraOverlayProtocol: AnyObject {
     func cameraTapped(isSelected:Bool)
     func cameraCancelled()
     func galleryTapped()
-    func flashTapped()
+    func flashTapped(isSelected:Bool)
     func storyTapped()
     func postTapped()
     func switchCamera(isSelected:Bool)
@@ -52,8 +52,18 @@ class CustomCameraOverlay: UIView {
     }
     
     @IBAction func didTapOnFlash(_ sender: UIButton) {
+        //sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            sender.isSelected = false
+            sender.setImage(#imageLiteral(resourceName: "flash"), for: .normal)
+            delegate?.flashTapped(isSelected:true)
+            
+        } else{
+            sender.isSelected = true
+            sender.setImage(#imageLiteral(resourceName: "off_flash"), for: .normal)
+            delegate?.flashTapped(isSelected:false)
+        }
         
-        delegate?.flashTapped()
     }
     
     @IBAction func didTapOnStory(_ sender: UIButton) {

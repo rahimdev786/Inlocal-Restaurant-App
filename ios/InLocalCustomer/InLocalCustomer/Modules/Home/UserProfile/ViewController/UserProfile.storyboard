@@ -27,16 +27,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9G-eV-bUm">
-                                <rect key="frame" x="0.0" y="44" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jane Copper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbN-n6-fjQ">
-                                        <rect key="frame" x="126.66666666666669" y="22" width="122" height="26.333333333333329"/>
+                                        <rect key="frame" x="126.66666666666669" y="11.999999999999998" width="122" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc5-Qp-V8a">
-                                        <rect key="frame" x="10" y="17" width="36" height="36"/>
+                                        <rect key="frame" x="10" y="7" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="Ldc-RM-Ic1"/>
                                             <constraint firstAttribute="width" secondItem="Hc5-Qp-V8a" secondAttribute="height" multiplier="1:1" id="tHo-u3-zga"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="rGx-Pb-ndV">
-                                        <rect key="frame" x="339" y="21" width="28" height="28"/>
+                                        <rect key="frame" x="339" y="11" width="28" height="28"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7V-gq-EBX">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -65,13 +65,13 @@
                                     <constraint firstAttribute="trailing" secondItem="rGx-Pb-ndV" secondAttribute="trailing" constant="8" id="Bw8-g3-NUo"/>
                                     <constraint firstItem="Hc5-Qp-V8a" firstAttribute="leading" secondItem="Z9G-eV-bUm" secondAttribute="leading" constant="10" id="Cab-Iq-usy"/>
                                     <constraint firstItem="AbN-n6-fjQ" firstAttribute="centerY" secondItem="Z9G-eV-bUm" secondAttribute="centerY" id="PfT-xv-uw7"/>
-                                    <constraint firstAttribute="height" constant="70" id="cJb-jP-mXJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="cJb-jP-mXJ"/>
                                     <constraint firstItem="AbN-n6-fjQ" firstAttribute="centerX" secondItem="Z9G-eV-bUm" secondAttribute="centerX" id="koM-DX-jVc"/>
                                     <constraint firstItem="rGx-Pb-ndV" firstAttribute="centerY" secondItem="AbN-n6-fjQ" secondAttribute="centerY" id="ol9-h3-t1D"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU5-aC-4Cq">
-                                <rect key="frame" x="0.0" y="114" width="375" height="604"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="624"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-1f-GQr">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="560"/>
@@ -314,9 +314,9 @@
     <resources>
         <image name="back_button_dark" width="24" height="22"/>
         <image name="sanwitch" width="170" height="135"/>
-        <image name="tab_addpost" width="32.333332061767578" height="32"/>
+        <image name="tab_addpost" width="24.333333969116211" height="24"/>
         <image name="tab_cart" width="23" height="22.666666030883789"/>
-        <image name="tab_home" width="24" height="19.333333969116211"/>
+        <image name="tab_home" width="29.666666030883789" height="24"/>
         <image name="tab_notification" width="24" height="24"/>
         <image name="tab_search" width="24.333333969116211" height="24"/>
         <image name="three_dot_black" width="28" height="28"/>
