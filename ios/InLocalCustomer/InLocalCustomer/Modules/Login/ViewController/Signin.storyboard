@@ -192,7 +192,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
-                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="1rA-Ts-tl4" secondAttribute="bottom" id="6au-q6-4Th"/>
                             <constraint firstItem="1rA-Ts-tl4" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="i7k-oa-mb9"/>

@@ -1666,7 +1666,6 @@
 			isa = PBXGroup;
 			children = (
 				C10C7604265F8BDB00473CB7 /* Info.plist */,
-				C10C762F265F8F5800473CB7 /* SupportingFiles */,
 				C10C7630265F8F8A00473CB7 /* AppDelegate */,
 				C10C7638265F911200473CB7 /* Common */,
 				C10C7639265F913800473CB7 /* Modules */,
@@ -1694,13 +1693,6 @@
 				C10C761A265F8BDB00473CB7 /* Info.plist */,
 			);
 			path = InLocalCustomerUITests;
-			sourceTree = "<group>";
-		};
-		C10C762F265F8F5800473CB7 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		C10C7630265F8F8A00473CB7 /* AppDelegate */ = {
@@ -3753,7 +3745,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5.0;
 				DEVELOPMENT_TEAM = 675UK927UV;
@@ -3763,7 +3755,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.InLocalCustomer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.innofied.app.InLocalCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = InLocalCustomerDistributionProvisioningProfile;
 				SWIFT_VERSION = 5.0;
@@ -3777,19 +3769,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5.0;
-				DEVELOPMENT_TEAM = 675UK927UV;
+				DEVELOPMENT_TEAM = 9STZT28MB5;
 				INFOPLIST_FILE = InLocalCustomer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.InLocalCustomer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.innofied.app.InLocalCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = InLocalCustomerDistributionProvisioningProfile;
+				PROVISIONING_PROFILE_SPECIFIER = InLocalCustomerDev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -74,8 +74,7 @@ class SigninVC: UIViewController {
     @IBAction func onClickRegister(_ sender: Any) {
         moveToRegistration()
     }
-    
-    
+      
     // MARK: Methods
     func setupUI() {
       

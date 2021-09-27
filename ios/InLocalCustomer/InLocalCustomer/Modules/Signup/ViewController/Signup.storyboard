@@ -288,7 +288,7 @@
                                         </constraints>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="v0c-vQ-OFb" firstAttribute="top" secondItem="xPm-96-Sq4" secondAttribute="top" id="2rg-Kb-iWg"/>
                                     <constraint firstAttribute="bottom" secondItem="v0c-vQ-OFb" secondAttribute="bottom" id="DRX-8O-At5"/>
@@ -298,7 +298,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gtQ-gH-aQA"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xPm-96-Sq4" firstAttribute="trailing" secondItem="gtQ-gH-aQA" secondAttribute="trailing" id="CJo-ke-OOx"/>
                             <constraint firstItem="xPm-96-Sq4" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="I8f-Yt-DSU"/>
