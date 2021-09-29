@@ -9,10 +9,26 @@
 
 import Foundation
 
-class SigninAPIDataManager {
+typealias LoginCompletion = (_ successResponse: LoginResponseModel?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+class SigninAPIDataManager: APIDataManager {
 
     init() {
     }
     
     // Data fetch service methods goes here
+    func loginUserCall(
+                    phone: String,
+                    password: String,
+                    completion: @escaping LoginCompletion) {
+           let params = [
+               "phone": phone,
+               "password": password,
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: AuthenticationEndpoints.login,
+                       withParameters: params,
+                       completion: completion)
+       }
 }

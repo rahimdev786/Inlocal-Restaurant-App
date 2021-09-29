@@ -69,6 +69,12 @@ class SigninVC: UIViewController {
     @IBAction func onClickLogin(_ sender: Any) {
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.moveToTabBarVC()
+        
+        guard let phone = userLoginData.phone,let password = userLoginData.password else{
+            return
+        }
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "LogginYouIn", showInView: self.view)
+        dataManager.loginUserCall(phone: phone, password: password)
     }
     
     @IBAction func onClickRegister(_ sender: Any) {
@@ -117,7 +123,30 @@ extension SigninVC {
 
 // MARK: - SigninAPIResponseDelegate
 extension SigninVC: SigninAPIResponseDelegate {
+    func loginSuccess(withData: LoginResponseModel) {
+        AppActivityIndicator.hideActivityIndicator()
+        
+    }
     
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+          }
+    }
 }
 
  extension SigninVC: TextFieldDelegate{
