@@ -60,8 +60,14 @@ class SetNewPasswordVC: UIViewController {
     }
     
     @IBAction func onClickSave(_ sender: Any) {
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.moveToLoginVC()
+        //let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        //appdelegate.moveToLoginVC()
+        let id = "11"
+        guard let password = setNewPasswordRequest.newPassword,let confirmPassword = setNewPasswordRequest.conformPassword else{
+            return
+        }
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.setNewPasswordCall(id: id, password: password)
     }
     
     func setupUI() {
@@ -110,7 +116,18 @@ extension SetNewPasswordVC {
 
 // MARK: - SetNewPasswordAPIResponseDelegate
 extension SetNewPasswordVC: SetNewPasswordAPIResponseDelegate {
+    func setNewPasswordSuccess(withData: SetNewPasswordResponse) {
+        print(withData)
+    }
     
+    func apiError(_ error: APIError) {
+        
+    }
+    
+    func networkError(_ error: Error) {
+        
+    }
+
 }
 
 extension SetNewPasswordVC: TextFieldDelegate{

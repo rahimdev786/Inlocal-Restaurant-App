@@ -7,7 +7,7 @@
 
 import ObjectMapper
 
-struct LoginResponseModel : Mappable, Codable {
+struct LoginResponseModel: Mappable, Codable {
     
     var token : String!
     var notificationSettings : NotificationSettings?

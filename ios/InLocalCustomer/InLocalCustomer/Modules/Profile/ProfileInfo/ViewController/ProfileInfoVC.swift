@@ -31,7 +31,6 @@ class ProfileInfoVC: UIViewController {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
         
-        
         setupUI()
     }
     override func viewDidLayoutSubviews() {

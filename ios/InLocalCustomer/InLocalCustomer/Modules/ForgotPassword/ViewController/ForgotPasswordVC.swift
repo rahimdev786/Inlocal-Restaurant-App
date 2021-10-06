@@ -65,6 +65,13 @@ class ForgotPasswordVC: UIViewController {
     
     @IBAction func onClickContinue(_ sender: Any) {
         self.view.addSubview(otpView)
+        /*
+        guard let phone = forgotPasswordRequest.phone, let countryCode = forgotPasswordRequest.countryCode else{
+            return
+        }
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "Verifying Phone", showInView: self.view)
+        dataManager.forgotPasswordCall(countryCode: countryCode, phone: phone)
+        */
     }
     
     // MARK: Methods
@@ -79,6 +86,8 @@ class ForgotPasswordVC: UIViewController {
         txtFieldPhoneNumber.delegate = self
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone no", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.next
+        
+        forgotPasswordRequest.countryCode = "IN"
        
         validateFields()
     }
@@ -111,6 +120,34 @@ extension ForgotPasswordVC {
 
 // MARK: - ForgotPasswordAPIResponseDelegate
 extension ForgotPasswordVC: ForgotPasswordAPIResponseDelegate {
+    func forgotPasswordVerifyOTPSuccess(withData: ForgotPasswordVerifyOTPResponse) {
+        
+    }
+    
+    func forgotPasswordSuccess(withData: ForgotPasswordResponse) {
+        self.view.addSubview(otpView)
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+
+    }
     
 }
 
@@ -120,14 +157,20 @@ extension ForgotPasswordVC : ValidateOTPDelegate{
             return
         }
         self.navigationController?.pushViewController(forgotPasswordViewController, animated: true)
+        /*
+        let id = "11"
+        let otp = "938388"
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "Verifying OTP", showInView: self.view)
+        dataManager.changePasswordVerifyOTPCall(id: id, otp: otp)
+        */
     }
 }
 
 extension ForgotPasswordVC: TextFieldDelegate{
-   func forgotPwdClicked() {
-       
-   }
-   
+    func forgotPwdClicked() {
+        
+    }
+    
     func textFieldViewDidChangeEditing(_ textFieldView: TextFieldView, string: String) {
         let strText = string
         let fieldType = textFieldView.fieldType!
@@ -150,13 +193,13 @@ extension ForgotPasswordVC: TextFieldDelegate{
         
         validateFields()
     }
-   
+    
     func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {
         
     }
     
     func textFieldViewShouldReturn(_ textFieldView: TextFieldView) -> Bool {
-       
+        
         return true
     }
     

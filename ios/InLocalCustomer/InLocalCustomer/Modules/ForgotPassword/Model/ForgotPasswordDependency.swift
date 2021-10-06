@@ -13,4 +13,5 @@ struct ForgotPasswordDependency {
 
 struct ForgotPasswordRequest{
     var phone: String?
+    var countryCode : String?
 }

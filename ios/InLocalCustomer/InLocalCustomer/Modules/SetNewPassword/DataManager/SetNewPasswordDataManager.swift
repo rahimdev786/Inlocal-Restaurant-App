@@ -10,10 +10,12 @@
 import Foundation
 
 protocol SetNewPasswordAPIResponseDelegate {
-    
+    func setNewPasswordSuccess(withData: SetNewPasswordResponse)
+    func apiError(_ error: APIError)
+    func networkError(_ error: Error)
 }
 
-class SetNewPasswordDataManager {
+class SetNewPasswordDataManager: APIResponseHandler {
     
     var apiResponseDelegate: SetNewPasswordAPIResponseDelegate?
     lazy var localDataManager = SetNewPasswordLocalDataManager()
@@ -23,4 +25,30 @@ class SetNewPasswordDataManager {
     }
     
     // Data fetch service methods goes here
+    func setNewPasswordCall(id: String,password: String){
+        
+        apiDataManager.setNewPasswordCall(id: id,
+                                     password: password) {[weak self] (responseData, responseError, error) in
+                                        
+                                        
+            guard let welf = self else { return }
+           
+            let result = welf.verifyResponse(response: (responseData, responseError, error))
+            
+            if result.success {
+                welf.apiResponseDelegate?.setNewPasswordSuccess(withData: responseData!)
+            } else if result.errorResponse {
+                if responseError!.rawValue == 1002{
+                    //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)
+                }else{
+                    welf.apiResponseDelegate?.apiError(responseError!)
+                }
+            } else if result.error {
+                welf.apiResponseDelegate?.networkError(error!)
+            } else {
+                welf.apiResponseDelegate?.networkError(error!)
+            }
+        }
+    }
+
 }

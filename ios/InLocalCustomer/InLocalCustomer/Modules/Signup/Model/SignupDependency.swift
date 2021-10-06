@@ -16,4 +16,5 @@ struct SignUpRequest{
     var email: String?
     var phone: String?
     var password: String?
+    var countryCode : String?
 }

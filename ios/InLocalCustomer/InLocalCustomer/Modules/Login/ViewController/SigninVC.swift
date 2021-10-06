@@ -67,13 +67,13 @@ class SigninVC: UIViewController {
     }
     
     @IBAction func onClickLogin(_ sender: Any) {
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.moveToTabBarVC()
+        //let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        //appdelegate.moveToTabBarVC()
         
         guard let phone = userLoginData.phone,let password = userLoginData.password else{
             return
         }
-        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "LogginYouIn", showInView: self.view)
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "Loggin You", showInView: self.view)
         dataManager.loginUserCall(phone: phone, password: password)
     }
     
@@ -145,7 +145,7 @@ extension SigninVC: SigninAPIResponseDelegate {
             }
         } else {
             self.view.makeToast(error.localizedDescription)
-          }
+        }
     }
 }
 
@@ -194,13 +194,12 @@ extension SigninVC: SigninAPIResponseDelegate {
      }
      
      func textFieldViewShouldReturn(_ textFieldView: TextFieldView) -> Bool {
-        
-             if textFieldView == txtFieldPhoneNumber{
-                txtFieldPhoneNumber.txtFldInput.becomeFirstResponder()
-             } else{
-                 textFieldView.txtFldInput.resignFirstResponder()
-             }
-         return true
+        if textFieldView == txtFieldPhoneNumber{
+           txtFieldPhoneNumber.txtFldInput.becomeFirstResponder()
+        } else{
+            textFieldView.txtFldInput.resignFirstResponder()
+        }
+        return true
      }
      
  }

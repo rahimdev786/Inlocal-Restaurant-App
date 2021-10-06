@@ -93,9 +93,15 @@ class SignupVC: UIViewController {
     @IBAction func onClickPrivacyPolicy(_ sender: Any) {
     }
     
-    
     @IBAction func onClickContinue(_ sender: Any) {
         self.view.addSubview(otpView)
+        /*
+        guard let fullname = signUpRequest.fullName, let email = signUpRequest.email, let phone = signUpRequest.phone, let countryCode = signUpRequest.countryCode, let password = signUpRequest.password else{
+            return
+        }
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "Registering You", showInView: self.view)
+        dataManager.signupUserCall(fullname: fullname, email: email, phone: phone, countryCode: countryCode, password: password)
+        */
     }
     
     @IBAction func onClickSignIn(_ sender: Any) {
@@ -135,6 +141,8 @@ class SignupVC: UIViewController {
         txtFieldPassword.txtFldInput.delegate = self
         txtFieldPassword.txtFldInput.tag = 3
         
+        signUpRequest.countryCode = "IN"
+        
         validateFields()
     }
     
@@ -166,12 +174,37 @@ extension SignupVC {
 
 // MARK: - SignupAPIResponseDelegate
 extension SignupVC: SignupAPIResponseDelegate {
+    func verifyOTPSuccess(withData: LoginResponseModel) {
+        print("Success")
+    }
+    
+    func signupSuccess(withData: SignupResponse) {
+        self.view.addSubview(otpView)
+    }
+    
+    func apiError(_ error: APIError) {
+        print("error")
+    }
+    
+    func networkError(_ error: Error) {
+        print("network error")
+    }
+    
     
 }
 extension SignupVC : ValidateOTPDelegate{
     func onClickContinue() {
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.moveToTabBarVC()
+        //let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        //appdelegate.moveToTabBarVC()
+        
+//        guard let fullname = signUpRequest.fullName, let email = signUpRequest.email, let phone = signUpRequest.phone, let countryCode = signUpRequest.countryCode, let password = signUpRequest.password else{
+//            return
+//        }
+        
+        let id = "11"
+        let otp = "169763"
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "Verifying OTP", showInView: self.view)
+        dataManager.verifyOTP(id: id, otp: otp)
     }
 }
 extension SignupVC: TextFieldDelegate{
@@ -258,7 +291,6 @@ extension SignupVC: TextFieldDelegate{
 extension SignupVC: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         
         if  txtFieldFullName.txtFldInput.tag == textField.tag {
             txtFieldEmailAddress.txtFldInput.becomeFirstResponder()

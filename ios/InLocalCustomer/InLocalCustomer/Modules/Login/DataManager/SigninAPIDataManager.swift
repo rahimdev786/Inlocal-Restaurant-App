@@ -11,7 +11,7 @@ import Foundation
 
 typealias LoginCompletion = (_ successResponse: LoginResponseModel?, _ errorResponse: APIError?, _ error: Error?) -> Void
 
-class SigninAPIDataManager: APIDataManager {
+class SigninAPIDataManager: APIDataManager{
 
     init() {
     }

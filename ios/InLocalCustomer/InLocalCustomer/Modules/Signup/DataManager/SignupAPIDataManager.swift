@@ -9,10 +9,52 @@
 
 import Foundation
 
-class SignupAPIDataManager {
+typealias SignupCompletion = (_ successResponse: SignupResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+typealias VerifyOTPCompletion = (_ successResponse: LoginResponseModel?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+class SignupAPIDataManager: APIDataManager {
 
     init() {
     }
     
     // Data fetch service methods goes here
+    func signupUserCall(
+                    fullname: String,
+                    email: String,
+                    phone:String,
+                    countryCode:String,
+                    password:String,
+                    completion: @escaping SignupCompletion) {
+           
+        let params = [
+                "fullname": fullname,
+                "email": email,
+                "phone": phone,
+                "countryCode" : countryCode,
+                "password" : password
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: AuthenticationEndpoints.register,
+                       withParameters: params,
+                       completion: completion)
+       }
+    
+    
+    func verifyOTPCall(
+                    id: String,
+                    otp: String,
+                    completion: @escaping VerifyOTPCompletion) {
+           
+        let params = [
+                "id": id,
+                "otp": otp
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: AuthenticationEndpoints.verifyRegistration,
+                       withParameters: params,
+                       completion: completion)
+       }
 }

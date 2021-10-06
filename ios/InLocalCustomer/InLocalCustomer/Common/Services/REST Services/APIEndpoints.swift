@@ -30,6 +30,7 @@ enum AuthenticationEndpoints: APIEndpoint {
     case verifyOTP
     case resendOTP
     case forgotPassword
+    case setNewPassword
     case changePassword
     case updateProfile
     case logout
@@ -40,17 +41,19 @@ enum AuthenticationEndpoints: APIEndpoint {
         
         switch self {
         case .register:
-            return "/register"
+            return "/customer/signup"
         case .verifyRegistration:
-            return "/verify/registration/otp"
+            return "/customer/verifyotp"
         case .login:
             return "/customer/login"
         case .verifyOTP:
-            return "/verify/otp"
+            return "/customer/forgot/verifyotp"
         case .resendOTP:
             return "/resend/otp"
         case .forgotPassword:
-            return "/forget/password"
+            return "/customer/forgotpassword"
+        case .setNewPassword:
+            return "/customer/resetpassword"
         case .changePassword:
             return "/change/password"
         case .updateProfile:
@@ -78,6 +81,8 @@ var method: HTTPMethod {
         case .resendOTP:
             return .post
         case .forgotPassword:
+            return .post
+        case .setNewPassword:
             return .post
         case .changePassword:
             return .post

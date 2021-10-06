@@ -128,6 +128,9 @@
 		6D54BB46266DE1C600BC4C34 /* SavedPostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB3F266DE1C600BC4C34 /* SavedPostsVC.swift */; };
 		6D54BB47266DE1C600BC4C34 /* SavedPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D54BB40266DE1C600BC4C34 /* SavedPosts.storyboard */; };
 		6D54BB48266DE1C600BC4C34 /* SavedPostsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D54BB42266DE1C600BC4C34 /* SavedPostsDependency.swift */; };
+		6D79A8B52704369C00586794 /* SignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79A8B42704369C00586794 /* SignupResponse.swift */; };
+		6D88B5BA2705856D004BA680 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88B5B92705856D004BA680 /* VerifyOTPResponse.swift */; };
+		6D88B5BF2705BB82004BA680 /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88B5BE2705BB82004BA680 /* ForgotPasswordResponse.swift */; };
 		6DF2B1532701BF4D00ECBF49 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2B1522701BF4D00ECBF49 /* APIDataManager.swift */; };
 		6DF2B1582701C20B00ECBF49 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2B1572701C20B00ECBF49 /* APIEndpoints.swift */; };
 		6DF2B15D2701C3CA00ECBF49 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2B15C2701C3CA00ECBF49 /* ServerConfig.swift */; };
@@ -539,6 +542,9 @@
 		6D54BB3F266DE1C600BC4C34 /* SavedPostsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPostsVC.swift; sourceTree = "<group>"; };
 		6D54BB40266DE1C600BC4C34 /* SavedPosts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedPosts.storyboard; sourceTree = "<group>"; };
 		6D54BB42266DE1C600BC4C34 /* SavedPostsDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPostsDependency.swift; sourceTree = "<group>"; };
+		6D79A8B42704369C00586794 /* SignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponse.swift; sourceTree = "<group>"; };
+		6D88B5B92705856D004BA680 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
+		6D88B5BE2705BB82004BA680 /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
 		6DF2B1522701BF4D00ECBF49 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
 		6DF2B1572701C20B00ECBF49 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		6DF2B15C2701C3CA00ECBF49 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
@@ -2185,6 +2191,7 @@
 			isa = PBXGroup;
 			children = (
 				C153C79226662E65002FF282 /* ForgotPasswordDependency.swift */,
+				6D88B5BE2705BB82004BA680 /* ForgotPasswordResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2425,6 +2432,8 @@
 			isa = PBXGroup;
 			children = (
 				C185D9382664F85C00BCDA2E /* SignupDependency.swift */,
+				6D79A8B42704369C00586794 /* SignupResponse.swift */,
+				6D88B5B92705856D004BA680 /* VerifyOTPResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3505,6 +3514,7 @@
 				C10FBABD266DD3DA0012FD8E /* DeliveryDataManager.swift in Sources */,
 				C1042D83266A356B0054B24D /* TagedPhotosDataManager.swift in Sources */,
 				C19DB9F12666013300028326 /* BottumTabBarVC.swift in Sources */,
+				6D88B5BF2705BB82004BA680 /* ForgotPasswordResponse.swift in Sources */,
 				C1AE0E2C266F2412000E6470 /* CommentLocalDataManager.swift in Sources */,
 				C10C76C7265FA66800473CB7 /* UILabel.swift in Sources */,
 				C1030C1226737C85002A47AB /* MenuCustomisationVC.swift in Sources */,
@@ -3534,6 +3544,7 @@
 				C1CB45442671CA85002170D8 /* DineInCartDataManager.swift in Sources */,
 				C10C7687265FA20700473CB7 /* AppConstants.swift in Sources */,
 				C185D96C2664FDFA00BCDA2E /* TextFieldView.swift in Sources */,
+				6D79A8B52704369C00586794 /* SignupResponse.swift in Sources */,
 				6D4822692667A85900F1DE01 /* NotificationSettingsDataManager.swift in Sources */,
 				C10FBABE266DD3DA0012FD8E /* DeliveryDependency.swift in Sources */,
 				C10C75F7265F8BD700473CB7 /* AppDelegate.swift in Sources */,
@@ -3553,6 +3564,7 @@
 				C153C79326662E65002FF282 /* ForgotPasswordAPIDataManager.swift in Sources */,
 				C1CD22CF2668A139000324FF /* FeedwallStoryCVC.swift in Sources */,
 				C10FBABA266DD3DA0012FD8E /* DeliveryVC.swift in Sources */,
+				6D88B5BA2705856D004BA680 /* VerifyOTPResponse.swift in Sources */,
 				6D21FE0A2670A64500611AD4 /* FollowerDependency.swift in Sources */,
 				C1CD22C526688880000324FF /* PublicFeedwallLocalDataManager.swift in Sources */,
 				C1AE0E6E266F2554000E6470 /* RestaurantInfoLocalDataManager.swift in Sources */,

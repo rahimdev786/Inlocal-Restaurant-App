@@ -9,10 +9,26 @@
 
 import Foundation
 
-class SetNewPasswordAPIDataManager {
+typealias SetNewPasswordCompletion = (_ successResponse: SetNewPasswordResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+class SetNewPasswordAPIDataManager: APIDataManager {
 
     init() {
     }
     
     // Data fetch service methods goes here
+    func setNewPasswordCall(
+                    id: String,
+                    password: String,
+                    completion: @escaping SetNewPasswordCompletion) {
+           let params = [
+               "id": id,
+               "password": password,
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: AuthenticationEndpoints.setNewPassword,
+                       withParameters: params,
+                       completion: completion)
+       }
 }
