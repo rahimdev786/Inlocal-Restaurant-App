@@ -29,6 +29,7 @@ class AddAddressVC: UIViewController {
     var countryList = CountryList()
     var addAddressRequest = AddAddressRequest()
     // MARK: - View Life Cycle Methods
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,10 +73,19 @@ class AddAddressVC: UIViewController {
     }
     
     @IBAction func onClickSave(_ sender: Any) {
+        /*
         self.view.makeToast("Address added.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.navigationController?.popViewController(animated: true)
         }
+        */
+        
+        AppActivityIndicator.showActivityIndicator(showInView: self.view)
+        guard let address = addAddressRequest.flatNo, let landmark = addAddressRequest.landmark, let zipcode = addAddressRequest.zipCode, let city = addAddressRequest.zipCode, let countryCode = addAddressRequest.country, let country = addAddressRequest.countryName, let latitude = addAddressRequest.latitude, let longitude = addAddressRequest.longitude else{
+            return
+        }
+        
+        dataManager.addAddressCall(address: address, landmark: landmark, zipcode: zipcode, city: city, countryCode: countryCode, country: country, latitude: latitude, longitude: longitude)
     }
     
     func setupUI() {
@@ -106,7 +116,11 @@ class AddAddressVC: UIViewController {
         
         lblCountry.text = "🇩🇪 Germany"
         countryList.delegate = self
-        
+        addAddressRequest.country = "IN"
+        addAddressRequest.countryName = "India"
+        addAddressRequest.latitude = "18.5204"
+        addAddressRequest.longitude = "73.8567"
+
         validateFields()
     }
     
@@ -138,7 +152,17 @@ extension AddAddressVC {
 
 // MARK: - AddAddressAPIResponseDelegate
 extension AddAddressVC: AddAddressAPIResponseDelegate {
+    func addAddressSuccess(withData: AddAddressResponse) {
+        print("Success")
+    }
     
+    func apiError(_ error: APIError) {
+        
+    }
+    
+    func networkError(_ error: Error) {
+        
+    }
 }
 
 extension AddAddressVC: TextFieldDelegate{
@@ -189,8 +213,7 @@ extension AddAddressVC: TextFieldDelegate{
                 addAddressRequest.city = strText
                 textFieldView.hideError()
             }
-            
-            
+        
         default:
             break
         }

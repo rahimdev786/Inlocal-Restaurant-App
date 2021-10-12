@@ -16,18 +16,18 @@ class AddressBookVC: UIViewController {
     var dependency: AddressBookDependency?
     
     @IBOutlet weak var tableViewAddressBook: UITableView!
+    @IBOutlet weak var btnPlus: UIButton!
     
     var selectedIndexPath: IndexPath?
     var previousSelectedCell: AddressBookTVC?
+    var addressList = [AddressList]()
     
-    @IBOutlet weak var btnPlus: UIButton!
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
-        
         
     }
     
@@ -41,6 +41,8 @@ class AddressBookVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //AppActivityIndicator.showActivityIndicator(showInView: self.view)
+        //dataManager.getAddressListCall(token: "")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -113,7 +115,17 @@ extension AddressBookVC {
 
 // MARK: - AddressBookAPIResponseDelegate
 extension AddressBookVC: AddressBookAPIResponseDelegate {
+    func addressListSuccess(withData: AddressBookResponseModel) {
+        self.addressList = withData.addressList ?? []
+    }
     
+    func apiError(_ error: APIError) {
+        
+    }
+    
+    func networkError(_ error: Error) {
+        
+    }
 }
 
 extension AddressBookVC: UITableViewDataSource{

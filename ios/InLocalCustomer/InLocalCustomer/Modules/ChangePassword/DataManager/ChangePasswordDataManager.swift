@@ -9,11 +9,13 @@
 
 import Foundation
 
-protocol ChangePasswordAPIResponseDelegate {
-    
+protocol ChangePasswordAPIResponseDelegate : AnyObject {
+    func changePasswordSuccess(withData: ChangePasswordResponse)
+    func apiError(_ error: APIError)
+    func networkError(_ error: Error)
 }
 
-class ChangePasswordDataManager {
+class ChangePasswordDataManager : APIResponseHandler{
     
     var apiResponseDelegate: ChangePasswordAPIResponseDelegate?
     lazy var localDataManager = ChangePasswordLocalDataManager()
@@ -23,4 +25,30 @@ class ChangePasswordDataManager {
     }
     
     // Data fetch service methods goes here
+    func changePasswordCall(newPassword: String, oldPassword: String){
+        
+        apiDataManager.changePasswordCall(newPassword: newPassword,
+                                          oldPassword: oldPassword) {[weak self] (responseData, responseError, error) in
+                                        
+                                        
+            guard let welf = self else { return }
+           
+            let result = welf.verifyResponse(response: (responseData, responseError, error))
+            
+            if result.success {
+                welf.apiResponseDelegate?.changePasswordSuccess(withData: responseData!)
+            } else if result.errorResponse {
+                if responseError!.rawValue == 1002{
+                    //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)
+                }else{
+                    welf.apiResponseDelegate?.apiError(responseError!)
+                }
+            } else if result.error {
+                welf.apiResponseDelegate?.networkError(error!)
+            } else {
+                welf.apiResponseDelegate?.networkError(error!)
+            }
+        }
+    }
+
 }

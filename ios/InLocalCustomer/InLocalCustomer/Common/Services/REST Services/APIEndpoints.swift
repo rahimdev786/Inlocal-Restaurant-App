@@ -55,7 +55,7 @@ enum AuthenticationEndpoints: APIEndpoint {
         case .setNewPassword:
             return "/customer/resetpassword"
         case .changePassword:
-            return "/change/password"
+            return "/customer/changepassword"
         case .updateProfile:
             return "/update/profile"
         case .logout:
@@ -93,6 +93,69 @@ var method: HTTPMethod {
         case .socialLogin:
             return .post
         case .notificationList:
+            return .post
+        }
+    }
+}
+
+
+enum AddressEndpoints: APIEndpoint{
+    case addressList
+    case delete
+    case addAddress
+    case validAddress
+    case edit
+    
+    var path: String{
+        switch self {
+        case .addAddress:
+            return "/customer/address/add"
+        case .delete:
+            return "/delete/address"
+        case .addressList:
+            return "/customer/address/list"
+        case .validAddress:
+            return "/directory/countries"
+        case .edit:
+            return "/edit/address"
+            
+        }
+    }
+    
+    var method: HTTPMethod{
+        switch self {
+        case .addAddress:
+            return .post
+        case .delete:
+            return .post
+        case .addressList:
+            return .post
+        case .validAddress:
+            return .get
+        case .edit:
+            return .post
+        }
+    }
+}
+
+enum NotificationEndpoints: APIEndpoint{
+    case getList
+    case updateSetting
+    
+    var path: String{
+        switch self {
+        case .getList:
+            return "/customer/notification/setting"
+        case .updateSetting:
+            return "/customer/notify/setting/update"
+        }
+    }
+    
+    var method: HTTPMethod{
+        switch self {
+        case .getList:
+            return .get
+        case .updateSetting:
             return .post
         }
     }

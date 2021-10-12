@@ -65,7 +65,7 @@ class ChangePasswordVC: UIViewController {
     }
     
     @IBAction func onClickSave(_ sender: Any) {
-        
+        /*
         let alert = UIAlertController(title: "Success", message: "Change Password Successful", preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default) { (sucess) in
             self.navigationController?.popViewController(animated: true)
@@ -74,6 +74,12 @@ class ChangePasswordVC: UIViewController {
         self.present(alert, animated: true) {
             self.navigationController?.popViewController(animated: true)
         }
+        */
+        guard let newPassword = changePasswordRequest.newPassword,let oldPassword = changePasswordRequest.currentPassword else{
+            return
+        }
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.changePasswordCall(newPassword: newPassword, oldPassword: oldPassword)
     }
     
     func setupUI() {
@@ -126,8 +132,30 @@ extension ChangePasswordVC {
 }
 
 // MARK: - ChangePasswordAPIResponseDelegate
-extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
+ extension ChangePasswordVC: ChangePasswordAPIResponseDelegate {
+    func changePasswordSuccess(withData: ChangePasswordResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+    }
     
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
  
 

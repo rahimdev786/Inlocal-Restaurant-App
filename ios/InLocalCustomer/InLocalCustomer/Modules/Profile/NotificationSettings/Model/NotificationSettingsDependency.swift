@@ -9,3 +9,14 @@
 
 struct NotificationSettingsDependency {
 }
+
+struct NotificationSettingRequest{
+    var post: Bool?
+    var stories: Bool?
+    var comments: Bool?
+    var followers: Bool?
+    var orders: Bool?
+    var booking: Bool?
+    var payment: Bool?
+}
+

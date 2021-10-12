@@ -9,10 +9,31 @@
 
 import Foundation
 
-class AddAddressAPIDataManager {
+typealias AddAddressCompletionCompletion = (_ successResponse: AddAddressResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+class AddAddressAPIDataManager: APIDataManager {
 
     init() {
     }
     
     // Data fetch service methods goes here
+    func addAddressCall(
+        address: String, landmark: String, zipcode: String, city: String, countryCode: String, country: String, latitude: String, longitude: String,
+                    completion: @escaping AddAddressCompletionCompletion) {
+           let params = [
+            "address": address,
+            "landmark": landmark,
+            "zipcode" : zipcode,
+            "city" : city,
+            "country_code" : countryCode,
+            "country" : country,
+            "latitude" : latitude,
+            "longitude" : longitude
+            ] as [String : Any]
+        
+           print(params)
+        makeAPICall(to: AddressEndpoints.addAddress,
+                       withParameters: params,
+                       completion: completion)
+       }
 }

@@ -69,7 +69,7 @@ struct APIHeader {
         case uuid = "x-auth-deviceid"
         case deviceType = "x-auth-devicetype"
         case pushToken = "x-auth-notificationkey"
-        case authToken = "Authorization"
+        case authToken = "x-auth-token"
     }
     
     static let shared = APIHeader()
@@ -98,13 +98,14 @@ struct APIHeader {
             //HeaderKeys.accept.rawValue: "application/json",
             HeaderKeys.uuid.rawValue: uuidString,
             HeaderKeys.deviceType.rawValue: "1",
-            HeaderKeys.pushToken.rawValue : "asdssa"
+            HeaderKeys.pushToken.rawValue : "asdssa",
+            HeaderKeys.authToken.rawValue : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmZhNWNjMjc0YWIyZjAwOTQwNzg4ZWQyNTQ5MDNjOTEyNjllNjVmZDg4ODc1MTIwZGU4ZDAxYmM2YmRjYmRiNmQ0ZmQ3Yzk4ZTlkNGJhNjEiLCJpYXQiOjE2MzM1MTQ3NTMuMDkxNDg0LCJuYmYiOjE2MzM1MTQ3NTMuMDkxNDksImV4cCI6MTY2NTA1MDc1My4wNzk1NTEsInN1YiI6IjExIiwic2NvcGVzIjpbXX0.idLJIq8mS0WlptlX317Z4pKEHlExeDlP_qo-sQDonj85bIy-gqkz-8dxI7vWBN0mlL4U52j5e_0_dnLwqlCJkblzU9YC93oZwdxzvtbsUFCV-GK8s2VeSDppki3XleRF7we7HIlxHT9ZYCLZwFKZaYuvtdxcVkWfGgXubEA8Tf0RhG0fNr7LGRp7tRGSgIIRUInwapwkZz5wi3172Dyr-ahmpKAiOBpD_4eOqPlI65kklAiapBZt_a7BQBgdpVqZOH2ip3ynhKCkFA-6FsI602xjjQwxzkSAu3g57wtdcbrfUHlhG9APUwG0rb4r2lQ8UrhOZpFc6HcTRS7o5U4QSH2DK6ovh7qtqxm7aQY4JuWeKLQi3qrxz-4C_UEjeOkYvGHwispj3CjKYsyJgzoHwJuDmi8L-Dwozf-PLyphehT5FMrEGLFhVkx4mltAr9otq1AdOEWNkZzNf-FLM8snte6OZ0X00Ccusm_TFOj8KATnvFZv5GwmkcRdjv5nlMZ-QwDZEbCbJPX-hHFqiuCt4KhqiL8QgbsSirnQTpdeqDMTn4S_u_99edTBUkgoZrLRQJyJxPUEDklAmBCljcFrfz73266A96VSNDc254XypRLub8gC0m7ssmMybo3nopFN37YaMCm5P1qQDzXt_VHl1B2Iqo7Rl38UulqfVx6wDh8"
         ]
-        
+        /*
         if let authToken = authToken {
             headerDict[HeaderKeys.authToken.rawValue] = "Bearer \(authToken)"
         }
-        
+        */
         return headerDict
     }
     
