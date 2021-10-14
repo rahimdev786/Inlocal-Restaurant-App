@@ -79,7 +79,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWQ-nG-kyg">
                                                 <rect key="frame" x="17" y="0.0" width="380" height="204"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurent_placeholder_photo" translatesAutoresizingMaskIntoConstraints="NO" id="AtM-ST-2NY">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurent_placeholder_photo" translatesAutoresizingMaskIntoConstraints="NO" id="AtM-ST-2NY">
                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="204"/>
                                                     </imageView>
                                                 </subviews>
@@ -92,7 +92,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="AtM-ST-2NY" secondAttribute="bottom" id="DY4-zh-V6B"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger_round" translatesAutoresizingMaskIntoConstraints="NO" id="u2D-r8-GRR">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger_round" translatesAutoresizingMaskIntoConstraints="NO" id="u2D-r8-GRR">
                                                 <rect key="frame" x="147" y="134" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="u2D-r8-GRR" secondAttribute="height" multiplier="1:1" id="RiX-LO-tRG"/>
@@ -475,8 +475,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bntFollowersCount" destination="1Qa-ua-QoT" id="vbN-M4-QR8"/>
                         <outlet property="btnDelivery" destination="bnD-w6-f6i" id="MEo-8N-ReS"/>
                         <outlet property="btnFollow" destination="87C-oj-dwB" id="8rX-aR-Rnc"/>
+                        <outlet property="btnFollowingCount" destination="dYO-tc-YRK" id="qx3-Qa-XmE"/>
                         <outlet property="btnInfo" destination="6pM-h4-gKS" id="wxt-UD-BcC"/>
                         <outlet property="btnInsideCount" destination="vif-aJ-fIw" id="w87-Kx-hiC"/>
                         <outlet property="btnInsightName" destination="Mno-7o-NOt" id="jdl-He-G4k"/>
@@ -486,7 +488,10 @@
                         <outlet property="btnReservation" destination="sx5-DC-Z1U" id="q9R-QV-AaE"/>
                         <outlet property="collectionViewPost" destination="VVY-58-2oC" id="gSy-wi-Vdy"/>
                         <outlet property="collectionViewPost_height" destination="TwI-50-zRa" id="K44-hE-bgh"/>
+                        <outlet property="imageViewCover" destination="AtM-ST-2NY" id="btN-eL-cpL"/>
+                        <outlet property="imageViewRestaurant" destination="u2D-r8-GRR" id="DfM-l4-lZU"/>
                         <outlet property="lblFollow" destination="gv2-4G-cUB" id="JLa-Np-K68"/>
+                        <outlet property="lblTitle" destination="dDe-8N-A7G" id="Cj5-h4-Jrm"/>
                         <outlet property="tabBar" destination="yd1-Fy-l9s" id="Qjp-lb-g0P"/>
                         <outlet property="tabItemAddPost" destination="a9n-76-Kxs" id="Lg4-jB-gQ7"/>
                         <outlet property="tabItemCart" destination="mUn-hZ-vZT" id="qf7-VL-Bj4"/>
@@ -504,7 +509,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="burger_round" width="120" height="120"/>
         <image name="delivery_white" width="29" height="29"/>
         <image name="follow_white" width="24.5" height="24.5"/>

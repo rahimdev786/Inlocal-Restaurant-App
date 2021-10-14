@@ -9,10 +9,27 @@
 
 import Foundation
 
-class PublicFeedwallAPIDataManager {
+typealias FeedListCompletion = (_ successResponse: FeedWallListResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+class PublicFeedwallAPIDataManager: APIDataManager {
 
     init() {
     }
     
     // Data fetch service methods goes here
+    func feedwallListCall(
+                        skip: Int,
+                        limit: Int,
+                        completion: @escaping FeedListCompletion) {
+           let params = [
+                "skip": skip,
+                "limit": limit,
+                "login_user_type" : "Customer"
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: HomeEndpoints.getFeedList,
+                       withParameters: params,
+                       completion: completion)
+       }
 }

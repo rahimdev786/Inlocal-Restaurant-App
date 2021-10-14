@@ -27,7 +27,6 @@ class SignupDataManager : APIResponseHandler {
     }
     
     // Data fetch service methods goes here
-    // Data fetch service methods goes here
     func signupUserCall(fullname: String, email: String, phone: String, countryCode: String, password: String){
         
         apiDataManager.signupUserCall(fullname: fullname, email: email,
@@ -43,6 +42,7 @@ class SignupDataManager : APIResponseHandler {
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
                     //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)
+                    welf.apiResponseDelegate?.apiError(responseError!)
                 }else{
                     welf.apiResponseDelegate?.apiError(responseError!)
                 }

@@ -160,3 +160,26 @@ enum NotificationEndpoints: APIEndpoint{
         }
     }
 }
+
+enum HomeEndpoints: APIEndpoint{
+    case getFeedList
+    case getRestaurentDeatils
+    var path: String{
+        switch self {
+        case .getFeedList:
+            return "/common/post/feedwall/list"
+        case .getRestaurentDeatils:
+            return "/restaurant/details"
+        }
+        
+    }
+    
+    var method: HTTPMethod{
+        switch self {
+        case .getFeedList:
+            return .post
+        case .getRestaurentDeatils:
+            return .post
+        }
+    }
+}

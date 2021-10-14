@@ -23,6 +23,9 @@ PODS:
   - LanguageManager-iOS (1.2.0)
   - ObjectMapper (3.5.3)
   - OTPFieldView (1.0.1)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - Toast-Swift (4.0.1)
   - "UITextView+Placeholder (1.4.0)"
 
@@ -40,6 +43,7 @@ DEPENDENCIES:
   - JGProgressHUD
   - LanguageManager-iOS
   - OTPFieldView
+  - SDWebImage
   - Toast-Swift (~> 4.0.0)
   - "UITextView+Placeholder"
 
@@ -61,6 +65,7 @@ SPEC REPOS:
     - LanguageManager-iOS
     - ObjectMapper
     - OTPFieldView
+    - SDWebImage
     - Toast-Swift
     - "UITextView+Placeholder"
 
@@ -81,9 +86,10 @@ SPEC CHECKSUMS:
   LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   OTPFieldView: 700a752fe62c41d1c4914c78aa500fb30d97c255
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 9bd82eb32c8a460de44a14f7946e592a958825a4
+PODFILE CHECKSUM: 087e160d0e0647647118ae935a5ac2f00dd24232
 
 COCOAPODS: 1.10.1

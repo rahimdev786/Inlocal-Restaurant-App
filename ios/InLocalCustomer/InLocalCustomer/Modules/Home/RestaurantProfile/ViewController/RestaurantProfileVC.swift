@@ -14,11 +14,17 @@ class RestaurantProfileVC: UIViewController {
     // MARK: Instance variables
 	lazy var dataManager = RestaurantProfileDataManager()
     var dependency: RestaurantProfileDependency?
+    var restaurantDetails: RestaurantDetails?
     
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var viewProfileBack: UIView!
     @IBOutlet weak var collectionViewPost: UICollectionView!
     
     @IBOutlet weak var collectionViewPost_height: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var imageViewCover: UIImageView!
+    @IBOutlet weak var imageViewRestaurant: UIImageView!
     
     @IBOutlet weak var btnFollow: UIButton!
     @IBOutlet weak var btnMenu: UIButton!
@@ -30,6 +36,9 @@ class RestaurantProfileVC: UIViewController {
     @IBOutlet weak var btnPostName: UIButton!
     @IBOutlet weak var btnInsideCount: UIButton!
     @IBOutlet weak var btnInsightName: UIButton!
+    
+    @IBOutlet weak var bntFollowersCount: UIButton!
+    @IBOutlet weak var btnFollowingCount: UIButton!
     
     @IBOutlet weak var viewToHightlightPost: UIView!
     @IBOutlet weak var viewToHightlightInsight: UIView!
@@ -62,6 +71,9 @@ class RestaurantProfileVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.restaurentDetailsCall(restaurantId: 19)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -204,6 +216,12 @@ class RestaurantProfileVC: UIViewController {
         btnReservation.layer.cornerRadius = btnReservation.frame.height/2
         btnInfo.layer.cornerRadius = btnInfo.frame.height/2
         
+        imageViewRestaurant.layer.cornerRadius = 60
+        imageViewRestaurant.layer.masksToBounds = false
+        imageViewRestaurant.clipsToBounds = true
+        
+        imageViewCover.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
+        
         viewProfileBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
         
         let widthValue = ((UIScreen.main.bounds.width-44)/2)
@@ -225,6 +243,28 @@ class RestaurantProfileVC: UIViewController {
             }
         }
     }
+    
+    func setDataToView(){
+        lblTitle.text = restaurantDetails?.name
+        if let postCount = restaurantDetails?.postsCounter{
+            btnPostCount.setTitle("\(postCount)", for: .normal)
+        }
+        if let insideCount = restaurantDetails?.insightCounter{
+            btnInsideCount.setTitle("\(insideCount)", for: .normal)
+        }
+        if let followersCount = restaurantDetails?.followers{
+            bntFollowersCount.setTitle("\(followersCount)", for: .normal)
+        }
+        if let followingCount = restaurantDetails?.followings{
+            btnFollowingCount.setTitle("\(followingCount)", for: .normal)
+        }
+        if let coverPhotoUrl = restaurantDetails?.coverImage{
+            imageViewCover.sd_setImage(with:  URL(string: coverPhotoUrl), placeholderImage: nil)
+        }
+        if let restaurantPhotoUrl = restaurantDetails?.coverImage{
+            imageViewRestaurant.sd_setImage(with:  URL(string: restaurantPhotoUrl), placeholderImage: nil)
+        }
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -244,7 +284,33 @@ extension RestaurantProfileVC {
 
 // MARK: - RestaurantProfileAPIResponseDelegate
 extension RestaurantProfileVC: RestaurantProfileAPIResponseDelegate {
+    func restaurantDetailSuccess(withData: RestaurentDetailResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        restaurantDetails = withData.restaurantDetails
+        if restaurantDetails != nil{
+            setDataToView()
+        }
+    }
     
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 
 extension RestaurantProfileVC: UICollectionViewDataSource {

@@ -33,6 +33,10 @@ class FeedwallPostTVC: UITableViewCell {
         lblLikeCount.layer.cornerRadius = lblLikeCount.frame.height / 2
         lblLikeCount.layer.masksToBounds = true
         
+        imgViewPost.layer.cornerRadius = 20
+        imgViewPost.layer.masksToBounds = false
+        imgViewPost.clipsToBounds = true
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imgViewPost.isUserInteractionEnabled = true
         imgViewPost.addGestureRecognizer(tapGestureRecognizer)

@@ -16,6 +16,7 @@ pod 'UITextView+Placeholder'
 pod 'JGProgressHUD'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+pod 'SDWebImage'
 
 pod 'AZTabBar'
 pod 'OTPFieldView'

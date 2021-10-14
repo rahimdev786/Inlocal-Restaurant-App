@@ -154,6 +154,7 @@ extension APIDataManager {
                     
                 case .failure(let error):
                     //Log.e("Failed Request: \(error.localizedDescription)")
+                    print(error.localizedDescription)
                     completion(nil, nil, error)
                 }
             }

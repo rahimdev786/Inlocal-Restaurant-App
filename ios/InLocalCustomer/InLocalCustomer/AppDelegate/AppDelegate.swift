@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyAwRfuPEhmSsjGxT-kB57Yr4yeqKX5xr7Y")
         GMSServices.provideAPIKey("AIzaSyAwRfuPEhmSsjGxT-kB57Yr4yeqKX5xr7Y")
         
-        moveToLoginVC()
-        //moveToTabBarVC()
+        //moveToLoginVC()
+        moveToTabBarVC()
         
         // IQKeyboard
         IQKeyboardManager.shared.enable = true

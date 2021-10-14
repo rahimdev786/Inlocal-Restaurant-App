@@ -8,72 +8,50 @@
 import ObjectMapper
 
 struct FeedWallListResponse : Mappable, Codable {
-    var feedwallListing: [FeedwallListing]?
+    var feedWallListing: [FeedwallListing]?
     init?(map: Map) {
         
     }
     
     mutating func mapping(map: Map) {
-        feedwallListing <- map["feedwallListing"]
+        feedWallListing <- map["MyFeedWallPosts"]
     }
 }
 
 struct FeedwallListing: Mappable, Codable {
     
-    var id: String?
-    var desc: String?
-    var photoUrl: String?
-    var isFav: String?
-    var favCount: String?
-    var personInfo: PersonInfo?
-    var restauruntDetails : RestaurentDetails?
-    
-    init?(map: Map) {
-
-    }
-    
-    mutating func mapping(map: Map) {
-        id <- map["id"]
-        desc <- map["desc"]
-        photoUrl <- map["photoUrl"]
-        isFav <- map["isFav"]
-        favCount <- map["favCount"]
-        personInfo <- map["personInfo"]
-        restauruntDetails <- map["restauruntDetails"]
-    }
-}
-
-struct PersonInfo: Mappable, Codable{
-    
+    var postId: Int?
+    var restaurantId: Int?
+    var postUserType: String?
+    var userPostBy: Int?
+    var menuItemId: Int?
+    var message: String?
+    var likeCounter: Int?
+    var postImage: String?
     var name: String?
-    var id: String?
-    var profilePhoto: String?
+    var profileImage: String?
+    var isLiked: Bool?
+    var isFavorite: Bool?
+    var restaurantImg: String?
     
     init?(map: Map) {
-        
+
     }
     
     mutating func mapping(map: Map) {
+        postId <- map["post_id"]
+        restaurantId <- map["restaurant_id"]
+        postUserType <- map["post_user_type"]
+        userPostBy <- map["user_post_by"]
+        menuItemId <- map["menu_item_id"]
+        message <- map["message"]
+        likeCounter <- map["like_counter"]
+        postImage <- map["post_image"]
         name <- map["name"]
-        id <- map["id"]
-        profilePhoto <- map["profilePhoto"]
+        profileImage <- map["profile_image"]
+        isLiked <- map["isLiked"]
+        isFavorite <- map["isFavorite"]
+        restaurantImg <- map["restaurant_img"]
     }
 }
 
-struct RestaurentDetails : Mappable, Codable{
-    var id: String?
-    var name: String?
-    var address: String?
-    var photo: String?
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        id <- map["id"]
-        name <- map["name"]
-        address <- map["adr"]
-        photo <- map["photo"]
-    }
-}

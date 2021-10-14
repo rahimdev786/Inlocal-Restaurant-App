@@ -8,12 +8,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PublicFeedwallVC: UIViewController {
     
     // MARK: Instance variables
 	lazy var dataManager = PublicFeedwallDataManager()
     var dependency: PublicFeedwallDependency?
+    var feedwallListing = [FeedwallListing]()
     
     @IBOutlet weak var collectionViewStories: UICollectionView!
     @IBOutlet weak var tableViewPost: UITableView!
@@ -40,6 +42,9 @@ class PublicFeedwallVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.feedwallListCall(skip: 0, limit: 10)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -94,6 +99,32 @@ extension PublicFeedwallVC {
 // MARK: - PublicFeedwallAPIResponseDelegate
 extension PublicFeedwallVC: PublicFeedwallAPIResponseDelegate {
     
+    func feedListSuccess(withData: FeedWallListResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        feedwallListing = withData.feedWallListing ?? []
+        print(withData.feedWallListing?.count)
+        tableViewPost.reloadData()
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 
 extension PublicFeedwallVC: UICollectionViewDataSource{
@@ -128,11 +159,25 @@ extension PublicFeedwallVC: UICollectionViewDelegate{
 
 extension PublicFeedwallVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return feedwallListing.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedwallPostTVC", for: indexPath) as! FeedwallPostTVC
+        
+        let feedData = feedwallListing[indexPath.row]
+        
+        cell.lblDescription.text = feedData.message
+        cell.lblLikeCount.text = "\(feedData.likeCounter!)"
+        if let photoUrl = feedData.postImage{
+            cell.imgViewPost.sd_setImage(with:  URL(string: photoUrl), placeholderImage: #imageLiteral(resourceName: "feedwall_post_image"))
+        }
+
+        cell.btnUserName.setTitle(feedData.name, for: .normal)
+        if let photoUrl = feedData.postImage{
+            
+        }
+        
         cell.btnUserProfile.addTarget(self, action: #selector(onUserProfile(sender:)), for: .touchUpInside)
         cell.btnUserProfile.tag = indexPath.row
         

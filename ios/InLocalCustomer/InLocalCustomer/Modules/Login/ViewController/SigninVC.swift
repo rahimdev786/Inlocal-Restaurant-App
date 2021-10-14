@@ -67,8 +67,6 @@ class SigninVC: UIViewController {
     }
     
     @IBAction func onClickLogin(_ sender: Any) {
-        //let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        //appdelegate.moveToTabBarVC()
         
         guard let phone = userLoginData.phone,let password = userLoginData.password else{
             return
@@ -125,7 +123,8 @@ extension SigninVC {
 extension SigninVC: SigninAPIResponseDelegate {
     func loginSuccess(withData: LoginResponseModel) {
         AppActivityIndicator.hideActivityIndicator()
-        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.moveToTabBarVC()
     }
     
     func apiError(_ error: APIError) {

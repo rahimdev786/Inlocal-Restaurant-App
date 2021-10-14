@@ -33,10 +33,13 @@ class SigninDataManager: APIResponseHandler {
             let result = welf.verifyResponse(response: (responseData, responseError, error))
             
             if result.success {
+                IEUserDefaults.shared.apiToken = responseData?.token
+                IEUserDefaults.shared.userDetails = responseData?.user
+                IEUserDefaults.shared.notificationSettings = responseData?.notificationSettings
                 welf.apiResponseDelegate?.loginSuccess(withData: responseData!)
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
-                    //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)
+                    welf.apiResponseDelegate?.apiError(responseError!)
                 }else{
                     welf.apiResponseDelegate?.apiError(responseError!)
                 }

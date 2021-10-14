@@ -148,7 +148,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="341" height="351"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedwall_post_image" translatesAutoresizingMaskIntoConstraints="NO" id="DXb-UA-ick">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DXb-UA-ick">
                                                                             <rect key="frame" x="0.0" y="5" width="341" height="336"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="341" id="85r-Yl-HN4"/>
@@ -362,7 +362,6 @@
         <image name="burgerking_icon" width="38" height="38"/>
         <image name="comment_white" width="38" height="38"/>
         <image name="favorite_white" width="38" height="38"/>
-        <image name="feedwall_post_image" width="343" height="343"/>
         <image name="feedwall_profile_face" width="52" height="52"/>
         <image name="feedwall_user_avtar" width="42" height="42"/>
         <image name="feedwall_user_story" width="100" height="100"/>

@@ -9,10 +9,23 @@
 
 import Foundation
 
-class RestaurantProfileAPIDataManager {
+typealias RestaurantDetailCompletion = (_ successResponse: RestaurentDetailResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+class RestaurantProfileAPIDataManager: APIDataManager{
 
     init() {
     }
     
     // Data fetch service methods goes here
+    func restaurentDetailsCall(restaurantId: Int,
+                        completion: @escaping RestaurantDetailCompletion) {
+           let params = [
+                "restaurant_id": restaurantId
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: HomeEndpoints.getRestaurentDeatils,
+                       withParameters: params,
+                       completion: completion)
+       }
 }

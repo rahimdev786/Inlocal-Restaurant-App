@@ -15,4 +15,5 @@ class PublicFeedwallLocalDataManager {
     }
     
     // Data fetch service methods goes here
+    
 }

@@ -29,21 +29,26 @@ class IEUserDefaults{
     static let shared = IEUserDefaults()
     private let Language = "Language"
     private let ApiToken = "ApiToken"
-    private let UserDetails = "UserDetails"
-    private let TotalCartCount = "TotalCartCount"
     private let PushToken = "PushToken"
-    private let NotificationCount = "NotificationCount"
-    private let GLobalURLs = "GLobalURLs"
-    private let CartID = "CartId"
-    private let social = "Social"
+    private let UserDetails = "UserDetails"
+    private let NotificationSettings = "NotificationSettings"
     
-
-    var socialLogin: Bool?{
-        get {
-            return UserDefaults.standard.bool(forKey: social)
+    var selectedLanguage: String?{
+        get{
+            return UserDefaults.standard.value(forKey: Language) as? String
         }
         set(newValue){
-            UserDefaults.standard.set(newValue, forKey: social)
+            UserDefaults.standard.set(newValue, forKey: Language)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    var apiToken: String?{
+        get{
+            return UserDefaults.standard.value(forKey: ApiToken) as? String
+        }
+        set(newValue){
+            UserDefaults.standard.set(newValue, forKey: ApiToken)
             UserDefaults.standard.synchronize()
         }
     }
@@ -58,64 +63,12 @@ class IEUserDefaults{
         }
     }
     
-    var notificationCount: Int?{
-        get {
-            return UserDefaults.standard.value(forKey: NotificationCount) as? Int
-        }
-        set(newValue){
-            UserDefaults.standard.set(newValue, forKey: NotificationCount)
-            UserDefaults.standard.synchronize()
-        }
-    }
-    
-    var selectedLanguage: String?{
-        get{
-            return UserDefaults.standard.value(forKey: Language) as? String
-        }
-        set(newValue){
-            UserDefaults.standard.set(newValue, forKey: Language)
-            UserDefaults.standard.synchronize()
-        }
-    }
-    
-    
-    var apiToken: String?{
-        get{
-            return UserDefaults.standard.value(forKey: ApiToken) as? String
-        }
-        set(newValue){
-            UserDefaults.standard.set(newValue, forKey: ApiToken)
-            UserDefaults.standard.synchronize()
-        }
-    }
-    
-    
-    var totalCartCount: Int? {
-       get{
-           return UserDefaults.standard.value(forKey: TotalCartCount) as? Int
-       }
-       set(newValue){
-           UserDefaults.standard.set(newValue, forKey: TotalCartCount)
-           UserDefaults.standard.synchronize()
-       }
-   }
-    
-    var cartID: Int? {
-        get{
-            return UserDefaults.standard.value(forKey: CartID) as? Int
-        }
-        set(newValue){
-            UserDefaults.standard.set(newValue, forKey: CartID)
-            UserDefaults.standard.synchronize()
-        }
-    }
-/*
-   var userDetails:CustomerDetails? {
+   var userDetails:User? {
         get{
             guard let data = UserDefaults.standard.object(forKey: UserDetails) as? String else {
                 return nil
             }
-            guard let userData = Mapper<CustomerDetails>().map(JSONString: data) else {
+            guard let userData = Mapper<User>().map(JSONString: data) else {
                 return nil
             }
             return userData
@@ -129,7 +82,28 @@ class IEUserDefaults{
         }
     }
     
-
+    var notificationSettings: NotificationSettings?{
+        get{
+            guard let data = UserDefaults.standard.object(forKey: NotificationSettings) as? String else{
+                return nil
+            }
+            guard let settingData = Mapper<NotificationSettings>().map(JSONString: data) else{
+                return nil
+            }
+            return settingData
+        }
+        
+        set(newValue){
+            if let jsonString = newValue?.toJSONString(prettyPrint: true){
+                UserDefaults.standard.set(jsonString, forKey: NotificationSettings)
+                UserDefaults.standard.synchronize()
+            }
+            
+        }
+        
+    }
+    
+/*
     var globalUrls: Urls?{
         get{
             guard let data = UserDefaults.standard.object(forKey: GLobalURLs) as? String else {
