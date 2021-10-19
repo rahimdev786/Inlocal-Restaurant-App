@@ -5,7 +5,6 @@
 //  Created by Sajib Ghosh on 13/10/21.
 //
 
-import Foundation
 import ObjectMapper
 
 struct RestaurentDetailResponse: Mappable, Codable{
@@ -60,3 +59,5 @@ struct RestaurantDetails: Mappable, Codable {
         isFollow <- map["IsFollow"]
     }
 }
+
+

@@ -125,7 +125,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="NGd-R7-q9t">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="NGd-R7-q9t">
                                 <rect key="frame" x="15" y="101" width="345" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="1O5-XM-zLs"/>
@@ -144,22 +144,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subway place try our new rolls at your local store" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOQ-Nk-LS3">
-                                        <rect key="frame" x="40" y="30" width="261" height="38.5"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="jOQ-Nk-LS3" firstAttribute="leading" secondItem="Paj-Ht-1bJ" secondAttribute="leading" constant="40" id="0hP-aR-xTd"/>
                                     <constraint firstAttribute="bottom" secondItem="smS-il-QPw" secondAttribute="bottom" id="377-wx-0MY"/>
                                     <constraint firstItem="smS-il-QPw" firstAttribute="top" secondItem="Paj-Ht-1bJ" secondAttribute="top" id="RhW-3i-kcm"/>
                                     <constraint firstItem="smS-il-QPw" firstAttribute="leading" secondItem="Paj-Ht-1bJ" secondAttribute="leading" id="Wk5-ae-j5z"/>
                                     <constraint firstAttribute="trailing" secondItem="smS-il-QPw" secondAttribute="trailing" id="agJ-3s-rzd"/>
-                                    <constraint firstItem="jOQ-Nk-LS3" firstAttribute="top" secondItem="Paj-Ht-1bJ" secondAttribute="top" constant="30" id="gZZ-Zj-U3w"/>
-                                    <constraint firstAttribute="trailing" secondItem="jOQ-Nk-LS3" secondAttribute="trailing" constant="40" id="jbV-IH-CCU"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -181,6 +172,15 @@
                             <constraint firstItem="Aem-u2-DAd" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="utb-AZ-c3o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonRestaurantImage" destination="VBC-r1-bCD" id="AKa-Kc-Rs8"/>
+                        <outlet property="buttonThreeDot" destination="zxm-oB-A1i" id="v1O-XT-gqg"/>
+                        <outlet property="buttonUserImage" destination="7J3-mv-Cc8" id="PsM-Wb-wMM"/>
+                        <outlet property="imageViewStory" destination="smS-il-QPw" id="GxA-IG-ofO"/>
+                        <outlet property="lblRestaurantName" destination="Wgr-Ku-7wD" id="sNV-hh-2p8"/>
+                        <outlet property="lblUserName" destination="6tw-oU-TR9" id="0H3-Ko-QYU"/>
+                        <outlet property="sliderView" destination="NGd-R7-q9t" id="hqQ-N9-BDD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,7 +188,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="burgerking_icon2" width="52" height="52"/>
         <image name="cross_white" width="38" height="38"/>
         <image name="story_user_photo" width="55" height="55"/>

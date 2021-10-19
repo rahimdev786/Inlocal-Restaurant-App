@@ -103,7 +103,7 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="MDw-UW-sPT">
                                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="115"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedwall_user_story" translatesAutoresizingMaskIntoConstraints="NO" id="ICo-Ja-XAg">
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedwall_user_story" translatesAutoresizingMaskIntoConstraints="NO" id="ICo-Ja-XAg">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="ICo-Ja-XAg" secondAttribute="height" multiplier="1:1" id="VoT-Vd-Upw"/>
@@ -127,6 +127,10 @@
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="100" height="115"/>
+                                                                <connections>
+                                                                    <outlet property="imageViewStory" destination="ICo-Ja-XAg" id="lFn-6y-wnz"/>
+                                                                    <outlet property="lblName" destination="jI9-Ug-cB8" id="dzn-yb-g2W"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>

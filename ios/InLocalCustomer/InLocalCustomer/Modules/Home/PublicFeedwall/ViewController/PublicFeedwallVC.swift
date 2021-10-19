@@ -16,6 +16,7 @@ class PublicFeedwallVC: UIViewController {
 	lazy var dataManager = PublicFeedwallDataManager()
     var dependency: PublicFeedwallDependency?
     var feedwallListing = [FeedwallListing]()
+    var myFeedWallStories = [MyFeedWallStories]()
     
     @IBOutlet weak var collectionViewStories: UICollectionView!
     @IBOutlet weak var tableViewPost: UITableView!
@@ -29,6 +30,12 @@ class PublicFeedwallVC: UIViewController {
         
         dataManager.apiResponseDelegate = self
         scollViewFeedwall.delegate = self
+        
+        
+        dataManager.storyFeedwallListCall(skip: 0, limit: 10)
+        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.feedwallListCall(skip: 0, limit: 10)
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,9 +49,6 @@ class PublicFeedwallVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-        
-        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
-        dataManager.feedwallListCall(skip: 0, limit: 10)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -99,10 +103,14 @@ extension PublicFeedwallVC {
 // MARK: - PublicFeedwallAPIResponseDelegate
 extension PublicFeedwallVC: PublicFeedwallAPIResponseDelegate {
     
+    func storyFeedListSuccess(withData: StoryFeedwallListResponse) {
+        myFeedWallStories = withData.myFeedWallStories ?? []
+        collectionViewStories.reloadData()
+    }
+    
     func feedListSuccess(withData: FeedWallListResponse) {
         AppActivityIndicator.hideActivityIndicator()
         feedwallListing = withData.feedWallListing ?? []
-        print(withData.feedWallListing?.count)
         tableViewPost.reloadData()
     }
     
@@ -129,11 +137,16 @@ extension PublicFeedwallVC: PublicFeedwallAPIResponseDelegate {
 
 extension PublicFeedwallVC: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return myFeedWallStories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedwallStoryCVC", for: indexPath) as! FeedwallStoryCVC
+        let storyData = myFeedWallStories[indexPath.row]
+        cell.lblName.text = storyData.name
+        if let storyImageUrl = storyData.storyImage{
+            cell.imageViewStory.sd_setImage(with:  URL(string: storyImageUrl), placeholderImage: nil)
+        }
         return cell
     }
 }
@@ -144,15 +157,9 @@ extension PublicFeedwallVC: UICollectionViewDelegate{
         guard let viewStoryController = ViewStoryVC.load(withDependency: nil) else{
             return
         }
+        viewStoryController.myFeedWallStories = myFeedWallStories[indexPath.row]
         self.navigationController?.pushViewController(viewStoryController, animated: true)
         
-        /*
-        //CommentVC
-        guard let viewStoryController = CommentVC.load(withDependency: nil) else{
-            return
-        }
-        self.navigationController?.pushViewController(viewStoryController, animated: true)
-        */
     }
     
 }

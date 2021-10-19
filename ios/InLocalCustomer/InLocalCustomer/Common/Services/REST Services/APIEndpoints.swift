@@ -162,23 +162,42 @@ enum NotificationEndpoints: APIEndpoint{
 }
 
 enum HomeEndpoints: APIEndpoint{
+    case getStoryFeedList
     case getFeedList
     case getRestaurentDeatils
+    case getRestaurantPostList
+    case getCustomerDetails
+    case getCustomerPostList
     var path: String{
         switch self {
+        case .getStoryFeedList:
+            return "/common/story/feedwall/list"
         case .getFeedList:
             return "/common/post/feedwall/list"
         case .getRestaurentDeatils:
             return "/restaurant/details"
+        case .getRestaurantPostList:
+            return "/restaurant/post/list"
+        case .getCustomerDetails:
+            return "/customer/details"
+        case .getCustomerPostList:
+            return "/customer/post/list"
         }
-        
     }
     
     var method: HTTPMethod{
         switch self {
+        case .getStoryFeedList:
+            return .post
         case .getFeedList:
             return .post
         case .getRestaurentDeatils:
+            return .post
+        case .getRestaurantPostList:
+            return .post
+        case .getCustomerDetails:
+            return .post
+        case .getCustomerPostList:
             return .post
         }
     }

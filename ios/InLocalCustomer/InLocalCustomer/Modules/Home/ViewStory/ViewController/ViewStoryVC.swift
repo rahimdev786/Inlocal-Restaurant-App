@@ -11,16 +11,65 @@ import UIKit
 
 class ViewStoryVC: UIViewController {
     
+    @IBOutlet weak var imageViewStory: UIImageView!
+    @IBOutlet weak var lblUserName: UILabel!
+    @IBOutlet weak var lblRestaurantName: UILabel!
+    @IBOutlet weak var buttonThreeDot: UIButton!
+    @IBOutlet weak var buttonUserImage: UIButton!
+    @IBOutlet weak var buttonRestaurantImage: UIButton!
+    @IBOutlet weak var sliderView: UISlider!
+    
     // MARK: Instance variables
 	lazy var dataManager = ViewStoryDataManager()
     var dependency: ViewStoryDependency?
 
+    var myFeedWallStories : MyFeedWallStories?
+    
+    var  mytimer : Timer?
+    var  reversing : Bool?
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
+        
+        buttonThreeDot.isHidden = true
+        buttonRestaurantImage.isHidden = true
+        lblRestaurantName.text = " "
+        
+        reversing = false
+        mytimer =  Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        
+        setData()
+    }
+    
+    @objc func timerAction(){
+        var sliderrange =  sliderView.maximumValue - sliderView.minimumValue;
+        var increment = sliderrange/100;
+        var newval = sliderView.value;
+        
+        newval = (sliderView.value + increment);
+        if(newval >= sliderView.maximumValue){
+            if mytimer != nil {
+                mytimer!.invalidate()
+                mytimer = nil
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
+        /*
+        if(newval >= sliderView.maximumValue)
+        {
+          reversing = true;
+           newval = newval - 2*increment;
+
+        }
+        else  if(newval <= 0)
+        {
+          reversing = false;
+        }
+        */
+        sliderView.setValue(newval, animated: true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,6 +86,10 @@ class ViewStoryVC: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        if mytimer != nil {
+            mytimer!.invalidate()
+            mytimer = nil
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -94,6 +147,17 @@ class ViewStoryVC: UIViewController {
             return
         }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func setData(){
+        lblUserName.text = myFeedWallStories?.name
+        if let storyImageUrl = myFeedWallStories?.storyImage{
+            imageViewStory.sd_setImage(with:  URL(string: storyImageUrl), placeholderImage: nil)
+        }
+        
+        UIView.animate(withDuration: 5, animations: {
+          self.sliderView.setValue(0, animated:true)
+        })
     }
 }
 

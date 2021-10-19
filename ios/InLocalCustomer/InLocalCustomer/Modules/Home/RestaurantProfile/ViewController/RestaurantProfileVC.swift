@@ -15,6 +15,7 @@ class RestaurantProfileVC: UIViewController {
 	lazy var dataManager = RestaurantProfileDataManager()
     var dependency: RestaurantProfileDependency?
     var restaurantDetails: RestaurantDetails?
+    var restaurantPostList = [RestaurantPostList]()
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var viewProfileBack: UIView!
@@ -58,6 +59,11 @@ class RestaurantProfileVC: UIViewController {
         
         dataManager.apiResponseDelegate = self
         setupView()
+        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.restaurentDetailsCall(restaurantId: 19)
+        
+        dataManager.restaurentPostListCall(restaurantId: 19, skip: 0, limit: 10)
     }
     
     override func viewDidLayoutSubviews() {
@@ -71,9 +77,6 @@ class RestaurantProfileVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-        
-        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
-        dataManager.restaurentDetailsCall(restaurantId: 19)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -249,6 +252,7 @@ class RestaurantProfileVC: UIViewController {
         if let postCount = restaurantDetails?.postsCounter{
             btnPostCount.setTitle("\(postCount)", for: .normal)
         }
+        
         if let insideCount = restaurantDetails?.insightCounter{
             btnInsideCount.setTitle("\(insideCount)", for: .normal)
         }
@@ -292,6 +296,11 @@ extension RestaurantProfileVC: RestaurantProfileAPIResponseDelegate {
         }
     }
     
+    func restaurantPostListSuccess(withData: RestaurantPostResponse) {
+        restaurantPostList = withData.restaurantPostList ?? []
+        collectionViewPost.reloadData()
+    }
+    
     func apiError(_ error: APIError) {
         AppActivityIndicator.hideActivityIndicator()
         self.view.makeToast("\(error.errorDescription ?? "")")
@@ -315,11 +324,17 @@ extension RestaurantProfileVC: RestaurantProfileAPIResponseDelegate {
 
 extension RestaurantProfileVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return restaurantPostList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
+        let postData = restaurantPostList[indexPath.row]
+        
+        if let postImageUrl = postData.postImage{
+            cell.imgViewUserPost.sd_setImage(with:  URL(string: postImageUrl), placeholderImage: nil)
+        }
+        
         return cell
     }
 }

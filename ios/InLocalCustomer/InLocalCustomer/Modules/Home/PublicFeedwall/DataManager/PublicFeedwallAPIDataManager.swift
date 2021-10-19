@@ -10,7 +10,8 @@
 import Foundation
 
 typealias FeedListCompletion = (_ successResponse: FeedWallListResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
-
+typealias StoryFeedListCompletion = (_ successResponse: StoryFeedwallListResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+//StoryFeedwallListResponse
 class PublicFeedwallAPIDataManager: APIDataManager {
 
     init() {
@@ -29,6 +30,23 @@ class PublicFeedwallAPIDataManager: APIDataManager {
         
            print(params)
            makeAPICall(to: HomeEndpoints.getFeedList,
+                       withParameters: params,
+                       completion: completion)
+       }
+    
+    func storyFeedwallListCall(
+                        skip: Int,
+                        limit: Int,
+                        completion: @escaping StoryFeedListCompletion) {
+        
+           let params = [
+                "skip": skip,
+                "limit": limit,
+                "login_user_type" : "Customer"
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: HomeEndpoints.getStoryFeedList,
                        withParameters: params,
                        completion: completion)
        }

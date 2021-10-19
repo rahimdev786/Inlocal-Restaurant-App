@@ -295,8 +295,13 @@
                     </view>
                     <connections>
                         <outlet property="btnFollow" destination="2Ux-fy-gRL" id="8tn-O8-I9B"/>
+                        <outlet property="btnFollowersCount" destination="tGl-ZN-dpC" id="Qs1-Lf-PgN"/>
+                        <outlet property="btnFollowingCount" destination="z0S-zv-xYg" id="6tJ-Gw-ayo"/>
+                        <outlet property="btnPostCount" destination="q0F-1H-0bd" id="Apr-Qb-Pb6"/>
                         <outlet property="collectionViewPost" destination="8P9-gX-GU3" id="whN-Hv-T7D"/>
                         <outlet property="collectionViewPost_height" destination="XvI-RP-gy2" id="MWL-RG-8bu"/>
+                        <outlet property="imageViewCustomerProfile" destination="9nl-3b-YJf" id="chy-VH-CTe"/>
+                        <outlet property="lblCustomerName" destination="AbN-n6-fjQ" id="KAA-Eh-O9q"/>
                         <outlet property="tabBar" destination="wiO-Cy-l0S" id="FYU-SX-QiH"/>
                         <outlet property="tabItemAddPost" destination="1QI-je-OEl" id="QWh-Pt-uF8"/>
                         <outlet property="tabItemCart" destination="WhK-Q7-K9U" id="rUp-IW-Oxa"/>
@@ -312,7 +317,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="sanwitch" width="170" height="135"/>
         <image name="tab_addpost" width="24.333333969116211" height="24"/>
         <image name="tab_cart" width="23" height="22.666666030883789"/>

@@ -11,6 +11,8 @@ import Foundation
 
 protocol RestaurantProfileAPIResponseDelegate {
     func restaurantDetailSuccess(withData: RestaurentDetailResponse)
+    func restaurantPostListSuccess(withData: RestaurantPostResponse)
+    //RestaurantPostResponse
     func apiError(_ error: APIError)
     func networkError(_ error: Error)
 }
@@ -36,6 +38,30 @@ class RestaurantProfileDataManager: APIResponseHandler {
             
             if result.success {
                 welf.apiResponseDelegate?.restaurantDetailSuccess(withData: responseData!)
+            } else if result.errorResponse {
+                if responseError!.rawValue == 1002{
+                    welf.apiResponseDelegate?.apiError(responseError!)
+                }else{
+                    welf.apiResponseDelegate?.apiError(responseError!)
+                }
+            } else if result.error {
+                welf.apiResponseDelegate?.networkError(error!)
+            } else {
+                welf.apiResponseDelegate?.networkError(error!)
+            }
+        }
+    }
+    
+    func restaurentPostListCall(restaurantId: Int, skip: Int, limit: Int){
+        
+        apiDataManager.restaurentPostListCall(restaurantId: restaurantId, skip: skip, limit: limit) {[weak self] (responseData, responseError, error) in
+                                        
+            guard let welf = self else { return }
+           
+            let result = welf.verifyResponse(response: (responseData, responseError, error))
+            
+            if result.success {
+                welf.apiResponseDelegate?.restaurantPostListSuccess(withData: responseData!)
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
                     welf.apiResponseDelegate?.apiError(responseError!)

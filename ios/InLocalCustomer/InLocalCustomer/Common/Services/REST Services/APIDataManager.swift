@@ -16,7 +16,6 @@ struct AppServerResponse<T: BaseMappable>: Mappable {
     var message : String?
     var data: T?
 
-    
     init?(map: Map) {
         guard let _ = map.JSON["success"] else {
             //Log.e("Success is not present.")
