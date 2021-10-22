@@ -27,17 +27,26 @@ class CommentVC: UIViewController {
     @IBOutlet weak var widthStackView: NSLayoutConstraint!
     @IBOutlet weak var lblDescription: UILabel!
     
+    @IBOutlet weak var txtFieldComment: UITextField!
     @IBOutlet weak var scollViewComment: UIScrollView!
     
     var isLiked = false
     var isMenuOpen = false
     var isFavorite = false
+    
+    var commentList : CommentList?
+    var comments = [Comments]()
+    var commentRequest = CommentRequest()
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
         setupView()
+        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.commentListCall(skip: 0, limit: 10, postId: 1)
     }
     
     override func viewDidLayoutSubviews() {
@@ -106,6 +115,17 @@ class CommentVC: UIViewController {
         }
     }
     
+    @IBAction func clickOnAddComment(_ sender: Any) {
+        commentRequest.comment = txtFieldComment.text!
+        guard let message = commentRequest.comment else{
+            return
+        }
+        if message != ""{
+            AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+            dataManager.addCommentCall(postId: 1, message: message)
+        }
+    }
+    
     func setupView(){
         viewMenuBack.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner], radius: 20.0)
         //lblLike.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMinYCorner], radius: lblLike.frame.height/2)
@@ -113,7 +133,6 @@ class CommentVC: UIViewController {
         lblLike.layer.masksToBounds = true
         
         viewCommentBack.applyLightShadow()
-        
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imgViewPost.isUserInteractionEnabled = true
@@ -185,16 +204,53 @@ extension CommentVC {
 
 // MARK: - CommentAPIResponseDelegate
 extension CommentVC: CommentAPIResponseDelegate {
+    func addCommentSuccess(withData: EmptyResponse?) {
+        txtFieldComment.text = ""
+        dataManager.commentListCall(skip: 0, limit: 10, postId: 1)
+    }
     
+    func commentListSuccess(withData: CommentListResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        commentList = withData.commentList
+        comments = withData.commentList?.comments ?? []
+        tableViewComment.reloadData()
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 
 extension CommentVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTVC", for: indexPath) as! CommentTVC
+        let commentData = comments[indexPath.row]
+        cell.lblName.text = commentData.name
+        cell.lblDetails.text = commentData.message
+        if let userImageURL = commentData.userProfileImage{
+            cell.imageViewUser.sd_setImage(with:  URL(string: userImageURL), placeholderImage: nil)
+        }
+        
         return cell
     }
 

@@ -206,6 +206,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageViewMenu" destination="pDQ-f0-4Oy" id="deW-3r-6e9"/>
+                                            <outlet property="lblMenuDetails" destination="4Si-ZG-kRU" id="1FA-gk-hql"/>
+                                            <outlet property="lblMenuName" destination="FJS-8m-xuH" id="7wW-Dr-osh"/>
+                                            <outlet property="lblMenuPrice" destination="eeA-ei-FwD" id="QCy-2W-bjZ"/>
                                             <outlet property="viewCellBackground" destination="7fo-H2-rhE" id="3sf-KR-A8t"/>
                                         </connections>
                                     </tableViewCell>
@@ -272,7 +276,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="food" width="170" height="135"/>
         <image name="tab_addpost" width="24.5" height="24"/>
         <image name="tab_cart" width="23" height="23"/>

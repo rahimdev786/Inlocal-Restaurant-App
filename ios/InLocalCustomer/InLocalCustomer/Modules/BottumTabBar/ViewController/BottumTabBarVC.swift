@@ -19,8 +19,6 @@ enum PostType {
 
 class BottumTabBarVC: UIViewController, UINavigationControllerDelegate {
     
-        
-    
     // MARK: Instance variables
 	lazy var dataManager = BottumTabBarDataManager()
     var dependency: BottumTabBarDependency?

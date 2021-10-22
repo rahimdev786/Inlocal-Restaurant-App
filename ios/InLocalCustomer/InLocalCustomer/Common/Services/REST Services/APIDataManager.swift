@@ -58,6 +58,7 @@ typealias GenericCompletion<T: BaseMappable> = (
     _ errorResponse: APIError?,
     _ error: Error?) -> Void
 
+
 typealias GenericArrayCompletion<T: BaseMappable> = (
     _ successResponse: [T]?,
     _ errorResponse: APIError?,
@@ -157,6 +158,87 @@ extension APIDataManager {
                     completion(nil, nil, error)
                 }
             }
+        dataRequest.resume()
+        return dataRequest
+    }
+}
+
+
+extension APIDataManager{
+    @discardableResult
+    func createStoryCall<T: BaseMappable>(to endpoint: APIEndpoint,
+                                      withImage image: UIImage,
+                                      withParameters parameters: Parameters? = nil,
+                                      ofType parameterType: ParameterType = .httpBody,
+                                      completion: @escaping GenericCompletion<T>) -> DataRequest {
+        
+        let userData = ["story_user_type" : "Customer"]
+        
+        let imageData = image.jpegData(compressionQuality: 1.0)
+        
+        let dataRequest = AF.upload(multipartFormData: { (MultipartFormData) in
+            
+            for (key, value) in userData {
+                MultipartFormData.append(value.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withName: key)
+            }
+
+            MultipartFormData.append(imageData!, withName: "profileImage", fileName: "picture.jpeg", mimeType: "image/jpeg")
+            
+            
+        },to: endpoint.urlPath, usingThreshold: UInt64.init(),
+          method: endpoint.method,
+          headers: HTTPHeaders.init(APIHeader.shared.headers))
+        .validate()
+        .responseString{ response in
+        
+            switch (response.result){
+            case .success(let responseString):
+                print(responseString)
+                guard let parsedData = AppServerResponse<T>(JSONString: responseString) else {
+                    // No Response for 200
+                    if let _ = IEUserDefaults.shared.apiToken {
+                        completion(nil,nil,JsonResponseError.sessionOut)
+                    } else {
+                        completion(nil,nil,APIError.UNKNOWN_ERROR)
+                    }
+                    return
+                }
+                
+                if parsedData.success {
+                    // DATA
+                    guard let data = parsedData.data else {
+                        // no data on succes true
+                        completion(nil,nil,nil)
+                        return
+                    }
+                    completion(data,nil,nil)
+                } else {
+                    // error
+                    guard let apiError = parsedData.apiError else {
+                        // no error code on false success
+                        completion(nil,nil,APIError.UNKNOWN_ERROR)
+                        return
+                    }
+                    if apiError == APIError.code405 {
+                        //Specialcase for deliverytype api . Data present when success is false
+                        if let data = parsedData.data {
+                            completion(data,apiError,nil)
+                        } else {
+                            completion(nil,apiError,nil)
+                        }
+                    } else {
+                        completion(nil,apiError,nil)
+                    }
+                    
+                }
+                
+            case .failure(let error):
+                //Log.e("Failed Request: \(error.localizedDescription)")
+                print(error.localizedDescription)
+                completion(nil, nil, error)
+            }
+        }
+    
         dataRequest.resume()
         return dataRequest
     }

@@ -10,6 +10,10 @@ import UIKit
 class MenuListTVC: UITableViewCell {
 
     @IBOutlet weak var viewCellBackground: UIView!
+    @IBOutlet weak var imageViewMenu: UIImageView!
+    @IBOutlet weak var lblMenuName: UILabel!
+    @IBOutlet weak var lblMenuDetails: UILabel!
+    @IBOutlet weak var lblMenuPrice: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -9,10 +9,26 @@
 
 import Foundation
 
-class MenuDetailAPIDataManager {
+typealias MenuDetailCompletion = (_ successResponse: MenuDetailResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+class MenuDetailAPIDataManager: APIDataManager {
 
     init() {
     }
     
     // Data fetch service methods goes here
+    func menuDetailCall(
+                    menuItemId: Int,
+                    restaurantId: Int,
+                    completion: @escaping MenuDetailCompletion) {
+           let params = [
+               "menu_item_id": menuItemId,
+               "restaurant_id": restaurantId
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: HomeEndpoints.menuDetail,
+                       withParameters: params,
+                       completion: completion)
+       }
 }

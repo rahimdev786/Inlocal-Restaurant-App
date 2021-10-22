@@ -9,6 +9,10 @@ import UIKit
 
 class CommentTVC: UITableViewCell {
 
+    @IBOutlet weak var imageViewUser: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblDetails: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

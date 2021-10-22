@@ -168,6 +168,12 @@ enum HomeEndpoints: APIEndpoint{
     case getRestaurantPostList
     case getCustomerDetails
     case getCustomerPostList
+    case createStory
+    case menuCategoryList
+    case menuList
+    case menuDetail
+    case commentList
+    case addCommnet
     var path: String{
         switch self {
         case .getStoryFeedList:
@@ -182,6 +188,18 @@ enum HomeEndpoints: APIEndpoint{
             return "/customer/details"
         case .getCustomerPostList:
             return "/customer/post/list"
+        case .createStory:
+            return "/common/story/create"
+        case .menuCategoryList:
+            return "/menu_category/list"
+        case .menuList:
+            return "/menu/list"
+        case .menuDetail:
+            return "/menu/details"
+        case .commentList:
+            return "/common/comment/list"
+        case .addCommnet:
+            return "/common/comment/create"
         }
     }
     
@@ -198,6 +216,18 @@ enum HomeEndpoints: APIEndpoint{
         case .getCustomerDetails:
             return .post
         case .getCustomerPostList:
+            return .post
+        case .createStory:
+            return .post
+        case .menuCategoryList:
+            return .post
+        case .menuList:
+            return .post
+        case .menuDetail:
+            return .post
+        case .commentList:
+            return .post
+        case .addCommnet:
             return .post
         }
     }

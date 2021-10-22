@@ -10,3 +10,7 @@
 struct CommentDependency {
 
 }
+
+struct CommentRequest {
+    var comment: String?
+}

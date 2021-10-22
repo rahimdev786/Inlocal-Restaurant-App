@@ -38,6 +38,9 @@ class MenuDetailVC: UIViewController {
         
         dataManager.apiResponseDelegate = self
         setupView()
+        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.menuDetailCall(menuItemId: 17, restaurantId: 19)
     }
     
     override func viewDidLayoutSubviews() {
@@ -147,7 +150,30 @@ extension MenuDetailVC {
 
 // MARK: - MenuDetailAPIResponseDelegate
 extension MenuDetailVC: MenuDetailAPIResponseDelegate {
+    func menuDetailSuccess(withData: MenuDetailResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        print(withData.menuItemDetails)
+    }
     
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 
 extension MenuDetailVC: UICollectionViewDataSource {

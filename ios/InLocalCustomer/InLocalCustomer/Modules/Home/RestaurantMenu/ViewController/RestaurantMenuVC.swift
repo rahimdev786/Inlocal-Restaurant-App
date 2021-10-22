@@ -27,12 +27,20 @@ class RestaurantMenuVC: UIViewController {
     
     var previousCell: MenuCategoryCVC?
     var categoryArray = ["All", "Starter", "Burger", "Drinks", "Soup", "Pizza"]
+    
+    var menuCategoryList = [MenuCategoryList]()
+    var menuListing = [MenuListing]()
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
         setupView()
+        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.menuCategoryListCall(skip: 0, limit: 10, restaurantId: 19)
+        
+        dataManager.menuListCall(skip: 0, limit: 10, restaurantId: 19, menuCategoryId: 14, deliveryAvailable: 0, eatInsideAvailable: 0)
     }
     
     override func viewDidLayoutSubviews() {
@@ -116,18 +124,49 @@ extension RestaurantMenuVC {
 
 // MARK: - RestaurantMenuAPIResponseDelegate
 extension RestaurantMenuVC: RestaurantMenuAPIResponseDelegate {
+    func menuCategoryListSuccess(withData: MenuCategoryListResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        print(withData.categoryList)
+        self.menuCategoryList = withData.categoryList ?? []
+        collectionViewCategory.reloadData()
+    }
     
+    func menuListSuccess(withData: MenuListResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.menuListing = withData.menuListing ?? []
+        tableViewMenuList.reloadData()
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 
 extension RestaurantMenuVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryArray.count
+        return menuCategoryList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCategoryCVC", for: indexPath) as! MenuCategoryCVC
-        cell.lblCategoryName.text = categoryArray[indexPath.row]
+        cell.lblCategoryName.text = menuCategoryList[indexPath.row].name!
         if indexPath.row == 0 {
             previousCell = cell
             cell.viewLblBackground.backgroundColor = UIColor(hexString: "1DA1F2")
@@ -150,14 +189,22 @@ extension RestaurantMenuVC: UICollectionViewDataSource, UICollectionViewDelegate
 
 extension RestaurantMenuVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return menuListing.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuListTVC", for: indexPath) as! MenuListTVC
+        let menuData = menuListing[indexPath.row]
+        cell.lblMenuName.text = menuData.name
+        cell.lblMenuDetails.text = menuData.description
+        if let menuPrice = menuData.price{
+            cell.lblMenuPrice.text = "€ \(menuPrice)"
+        }
+        if let menuIconURL = menuData.image{
+            cell.imageViewMenu.sd_setImage(with:  URL(string: menuIconURL), placeholderImage: nil)
+        }
         return cell
     }
-    
 }
 
 extension RestaurantMenuVC: UITableViewDelegate {

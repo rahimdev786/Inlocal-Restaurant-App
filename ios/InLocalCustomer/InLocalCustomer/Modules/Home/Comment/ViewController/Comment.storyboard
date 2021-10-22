@@ -215,12 +215,19 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZG-mr-u0W">
                                                                     <rect key="frame" x="0.0" y="5" width="341" height="90"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_image" translatesAutoresizingMaskIntoConstraints="NO" id="LEN-TI-Vdm">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_image" translatesAutoresizingMaskIntoConstraints="NO" id="LEN-TI-Vdm">
                                                                             <rect key="frame" x="15" y="15" width="60" height="60"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="LEN-TI-Vdm" secondAttribute="height" multiplier="1:1" id="Yab-yH-uZf"/>
                                                                                 <constraint firstAttribute="height" constant="60" id="dGt-3n-RDP"/>
                                                                             </constraints>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                    <integer key="value" value="30"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m2z-0Z-KPr">
                                                                             <rect key="frame" x="90" y="14.999999999999996" width="236" height="60.666666666666657"/>
@@ -245,8 +252,8 @@
                                                                         <constraint firstItem="m2z-0Z-KPr" firstAttribute="top" secondItem="LEN-TI-Vdm" secondAttribute="top" id="ArS-nD-vvq"/>
                                                                         <constraint firstItem="LEN-TI-Vdm" firstAttribute="top" secondItem="KZG-mr-u0W" secondAttribute="top" constant="15" id="Kcy-b6-nVo"/>
                                                                         <constraint firstItem="LEN-TI-Vdm" firstAttribute="leading" secondItem="KZG-mr-u0W" secondAttribute="leading" constant="15" id="MM3-Wf-lTE"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="m2z-0Z-KPr" secondAttribute="bottom" constant="14.333333333333343" id="MWl-zc-SFp"/>
                                                                         <constraint firstItem="m2z-0Z-KPr" firstAttribute="leading" secondItem="LEN-TI-Vdm" secondAttribute="trailing" constant="15" id="P0n-On-czM"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="LEN-TI-Vdm" secondAttribute="bottom" constant="15" id="eKy-S2-aZN"/>
                                                                         <constraint firstAttribute="trailing" secondItem="m2z-0Z-KPr" secondAttribute="trailing" constant="15" id="w4H-zy-Wip"/>
                                                                     </constraints>
                                                                 </view>
@@ -258,6 +265,11 @@
                                                                 <constraint firstItem="KZG-mr-u0W" firstAttribute="leading" secondItem="shu-lK-3Hy" secondAttribute="leading" id="lvP-rN-wmW"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="imageViewUser" destination="LEN-TI-Vdm" id="l9R-EW-R97"/>
+                                                            <outlet property="lblDetails" destination="PM9-9S-Qp6" id="aoH-xX-KAg"/>
+                                                            <outlet property="lblName" destination="T2e-xE-buv" id="ae3-bO-OGi"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -314,6 +326,9 @@
                                             <constraint firstAttribute="width" secondItem="QZZ-Bv-LCU" secondAttribute="height" multiplier="1:1" id="K3w-Ee-XRy"/>
                                         </constraints>
                                         <state key="normal" image="send_message"/>
+                                        <connections>
+                                            <action selector="clickOnAddComment:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOf-fM-KCu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -351,6 +366,7 @@
                         <outlet property="scollViewComment" destination="O0t-L6-DKd" id="gCC-uy-3LU"/>
                         <outlet property="tableViewComment" destination="KFq-SG-Svz" id="jW2-hs-ty6"/>
                         <outlet property="tableViewComment_Height" destination="LUi-1K-Dkd" id="gaG-pm-4qe"/>
+                        <outlet property="txtFieldComment" destination="Trv-rb-wkd" id="Qbu-6O-ExZ"/>
                         <outlet property="viewCommentBack" destination="fsC-lS-dPI" id="Rlo-NR-df7"/>
                         <outlet property="viewMenuBack" destination="IAM-46-1ts" id="BhM-OP-3BX"/>
                         <outlet property="widthMenuView" destination="RP6-Yx-vB9" id="xl3-eY-hE0"/>
@@ -363,7 +379,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="burgerking_icon" width="38" height="38"/>
         <image name="burgerking_icon2" width="52" height="52"/>
         <image name="comment_avtar" width="40" height="40"/>
