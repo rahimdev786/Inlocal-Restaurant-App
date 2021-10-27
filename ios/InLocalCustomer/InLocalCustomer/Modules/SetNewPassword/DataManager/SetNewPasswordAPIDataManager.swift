@@ -9,7 +9,7 @@
 
 import Foundation
 
-typealias SetNewPasswordCompletion = (_ successResponse: SetNewPasswordResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+typealias SetNewPasswordCompletion = (_ successResponse: EmptyResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 
 class SetNewPasswordAPIDataManager: APIDataManager {
 
@@ -18,7 +18,7 @@ class SetNewPasswordAPIDataManager: APIDataManager {
     
     // Data fetch service methods goes here
     func setNewPasswordCall(
-                    id: String,
+                    id: Int,
                     password: String,
                     completion: @escaping SetNewPasswordCompletion) {
            let params = [

@@ -60,10 +60,8 @@ class SetNewPasswordVC: UIViewController {
     }
     
     @IBAction func onClickSave(_ sender: Any) {
-        //let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        //appdelegate.moveToLoginVC()
-        let id = "11"
-        guard let password = setNewPasswordRequest.newPassword,let confirmPassword = setNewPasswordRequest.conformPassword else{
+        
+        guard let id = dependency?.userId, let password = setNewPasswordRequest.newPassword,let confirmPassword = setNewPasswordRequest.conformPassword else{
             return
         }
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
@@ -116,16 +114,30 @@ extension SetNewPasswordVC {
 
 // MARK: - SetNewPasswordAPIResponseDelegate
 extension SetNewPasswordVC: SetNewPasswordAPIResponseDelegate {
-    func setNewPasswordSuccess(withData: SetNewPasswordResponse) {
-        print(withData)
+    func setNewPasswordSuccess(withData: EmptyResponse?) {
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.moveToLoginVC()
     }
     
     func apiError(_ error: APIError) {
-        
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
     }
     
     func networkError(_ error: Error) {
-        
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+
     }
 
 }

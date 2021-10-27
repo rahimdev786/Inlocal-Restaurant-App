@@ -25,9 +25,9 @@ class AddressBookDataManager : APIResponseHandler {
     }
     
     // Data fetch service methods goes here
-    func getAddressListCall(token: String){
+    func getAddressListCall(skip: Int, limit: Int){
         
-        apiDataManager.getAddressListCall(token: token) {[weak self] (responseData, responseError, error) in
+        apiDataManager.getAddressListCall(skip: skip, limit: limit) {[weak self] (responseData, responseError, error) in
                                         
                                         
             guard let welf = self else { return }
@@ -39,6 +39,7 @@ class AddressBookDataManager : APIResponseHandler {
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
                     //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)
+                    welf.apiResponseDelegate?.apiError(responseError!)
                 }else{
                     welf.apiResponseDelegate?.apiError(responseError!)
                 }

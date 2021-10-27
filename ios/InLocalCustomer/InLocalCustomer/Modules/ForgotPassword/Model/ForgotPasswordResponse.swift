@@ -8,8 +8,8 @@
 import ObjectMapper
 
 struct ForgotPasswordResponse: Mappable, Codable {
-    var id : String?
-    var otp: String?
+    var id : Int?
+    var otp: Int?
     
     init?(map: Map) {
         
@@ -18,18 +18,6 @@ struct ForgotPasswordResponse: Mappable, Codable {
     mutating func mapping(map: Map) {
         id <- map["id"]
         otp <- map["otp"]
-    }
-}
-
-
-struct ForgotPasswordVerifyOTPResponse: Mappable, Codable {
-    var message: String?
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        message <- map["message"]
     }
 }
 

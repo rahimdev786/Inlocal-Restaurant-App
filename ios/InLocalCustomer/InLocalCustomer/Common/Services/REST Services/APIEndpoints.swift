@@ -164,6 +164,7 @@ enum NotificationEndpoints: APIEndpoint{
 enum HomeEndpoints: APIEndpoint{
     case getStoryFeedList
     case getFeedList
+    case likePost
     case getRestaurentDeatils
     case getRestaurantPostList
     case getCustomerDetails
@@ -180,6 +181,8 @@ enum HomeEndpoints: APIEndpoint{
             return "/common/story/feedwall/list"
         case .getFeedList:
             return "/common/post/feedwall/list"
+        case .likePost:
+            return "/common/post/like"
         case .getRestaurentDeatils:
             return "/restaurant/details"
         case .getRestaurantPostList:
@@ -208,6 +211,8 @@ enum HomeEndpoints: APIEndpoint{
         case .getStoryFeedList:
             return .post
         case .getFeedList:
+            return .post
+        case .likePost:
             return .post
         case .getRestaurentDeatils:
             return .post

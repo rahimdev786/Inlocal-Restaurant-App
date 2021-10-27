@@ -70,7 +70,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="51w-z4-lCK">
                                                         <rect key="frame" x="28" y="119.99999999999999" width="319" height="19.333333333333329"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewv-vz-8QI" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewv-vz-8QI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="19.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -306,6 +306,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageViewAvtar" destination="ZnF-NV-u0n" id="VDa-vL-Kd9"/>
+                        <outlet property="lblUserName" destination="Ewv-vz-8QI" id="RTX-oH-cIU"/>
                         <outlet property="tabBar" destination="Rve-gI-qpH" id="ndv-Mt-fdL"/>
                         <outlet property="tabItemAddPost" destination="Ez3-ls-X71" id="kbN-zp-JiQ"/>
                         <outlet property="tabItemCart" destination="iWe-T1-kVe" id="Ndl-2X-lNx"/>
@@ -323,7 +325,7 @@
     </scenes>
     <resources>
         <image name="avatar" width="133.33332824707031" height="133.33332824707031"/>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="radio_active" width="24" height="24.333333969116211"/>
         <image name="rightArrow" width="9" height="16"/>
         <image name="tab_addpost" width="24.333333969116211" height="24"/>

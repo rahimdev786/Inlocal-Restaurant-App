@@ -10,7 +10,7 @@
 import Foundation
 
 protocol AddAddressAPIResponseDelegate {
-    func addAddressSuccess(withData: AddAddressResponse)
+    func addAddressSuccess(withData: EmptyResponse?)
     func apiError(_ error: APIError)
     func networkError(_ error: Error)
 }
@@ -35,7 +35,7 @@ class AddAddressDataManager : APIResponseHandler {
             let result = welf.verifyResponse(response: (responseData, responseError, error))
             
             if result.success {
-                welf.apiResponseDelegate?.addAddressSuccess(withData: responseData!)
+                welf.apiResponseDelegate?.addAddressSuccess(withData: responseData)
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
                     //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)

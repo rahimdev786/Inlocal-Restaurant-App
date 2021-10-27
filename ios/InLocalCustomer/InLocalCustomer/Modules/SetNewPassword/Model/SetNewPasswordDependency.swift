@@ -9,29 +9,10 @@
 import ObjectMapper
 
 struct SetNewPasswordDependency {
-
+    var userId: Int?
 }
 
 struct SetNewPasswordRequest {
     var newPassword: String?
     var conformPassword: String?
 }
-
-struct SetNewPasswordResponse: Mappable, Codable {
-    var message: String?
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        message <- map["message"]
-    }
-}
-
-/*
-{
-  "success": true,
-  "code": 200,
-  "message": "Password reset successfully."
-}
-*/

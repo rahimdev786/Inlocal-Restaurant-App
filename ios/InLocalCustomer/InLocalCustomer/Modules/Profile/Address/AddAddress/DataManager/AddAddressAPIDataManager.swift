@@ -9,7 +9,7 @@
 
 import Foundation
 
-typealias AddAddressCompletionCompletion = (_ successResponse: AddAddressResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+typealias AddAddressCompletionCompletion = (_ successResponse: EmptyResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 
 class AddAddressAPIDataManager: APIDataManager {
 
@@ -20,7 +20,8 @@ class AddAddressAPIDataManager: APIDataManager {
     func addAddressCall(
         address: String, landmark: String, zipcode: String, city: String, countryCode: String, country: String, latitude: String, longitude: String,
                     completion: @escaping AddAddressCompletionCompletion) {
-           let params = [
+           
+        let params = [
             "address": address,
             "landmark": landmark,
             "zipcode" : zipcode,
@@ -37,3 +38,4 @@ class AddAddressAPIDataManager: APIDataManager {
                        completion: completion)
        }
 }
+

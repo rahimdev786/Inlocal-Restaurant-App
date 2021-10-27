@@ -10,7 +10,7 @@
 import Foundation
 
 protocol SetNewPasswordAPIResponseDelegate {
-    func setNewPasswordSuccess(withData: SetNewPasswordResponse)
+    func setNewPasswordSuccess(withData: EmptyResponse?)
     func apiError(_ error: APIError)
     func networkError(_ error: Error)
 }
@@ -25,7 +25,7 @@ class SetNewPasswordDataManager: APIResponseHandler {
     }
     
     // Data fetch service methods goes here
-    func setNewPasswordCall(id: String,password: String){
+    func setNewPasswordCall(id: Int,password: String){
         
         apiDataManager.setNewPasswordCall(id: id,
                                      password: password) {[weak self] (responseData, responseError, error) in
@@ -36,10 +36,11 @@ class SetNewPasswordDataManager: APIResponseHandler {
             let result = welf.verifyResponse(response: (responseData, responseError, error))
             
             if result.success {
-                welf.apiResponseDelegate?.setNewPasswordSuccess(withData: responseData!)
+                welf.apiResponseDelegate?.setNewPasswordSuccess(withData: responseData)
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
                     //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)
+                    welf.apiResponseDelegate?.apiError(responseError!)
                 }else{
                     welf.apiResponseDelegate?.apiError(responseError!)
                 }

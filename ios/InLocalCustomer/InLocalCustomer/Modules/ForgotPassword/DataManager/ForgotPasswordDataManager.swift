@@ -11,7 +11,7 @@ import Foundation
 
 protocol ForgotPasswordAPIResponseDelegate {
     func forgotPasswordSuccess(withData: ForgotPasswordResponse)
-    func forgotPasswordVerifyOTPSuccess(withData: ForgotPasswordVerifyOTPResponse)
+    func forgotPasswordVerifyOTPSuccess(withData: EmptyResponse?)
     func apiError(_ error: APIError)
     func networkError(_ error: Error)
 }
@@ -53,7 +53,7 @@ class ForgotPasswordDataManager: APIResponseHandler {
         }
     }
     
-    func changePasswordVerifyOTPCall(id: String, otp: String){
+    func changePasswordVerifyOTPCall(id: Int, otp: String){
         
         apiDataManager.changePasswordVerifyOTPCall(id: id,
                                           otp: otp) {[weak self] (responseData, responseError, error) in
@@ -65,7 +65,7 @@ class ForgotPasswordDataManager: APIResponseHandler {
             
             if result.success {
                 
-                welf.apiResponseDelegate?.forgotPasswordVerifyOTPSuccess(withData: responseData!)
+                welf.apiResponseDelegate?.forgotPasswordVerifyOTPSuccess(withData: responseData)
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
                     //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)

@@ -32,6 +32,7 @@ class SignupAPIDataManager: APIDataManager {
                 "email": email,
                 "phone": phone,
                 "countryCode" : countryCode,
+                "dail_code": "+91",
                 "password" : password
                ] as [String : Any]
         
@@ -43,7 +44,7 @@ class SignupAPIDataManager: APIDataManager {
     
     
     func verifyOTPCall(
-                    id: String,
+                    id: Int,
                     otp: String,
                     completion: @escaping VerifyOTPCompletion) {
            

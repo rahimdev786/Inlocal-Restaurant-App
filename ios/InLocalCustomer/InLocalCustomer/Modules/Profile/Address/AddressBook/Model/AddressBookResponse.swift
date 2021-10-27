@@ -24,12 +24,14 @@ struct AddressBookResponseModel: Mappable, Codable {
 struct AddressList: Mappable, Codable {
     
     var id : Int?
-    var houseNo : String?
+    var customerId : Int?
+    var address : String?
     var landmark : String?
-    var zipCode : String?
     var city : String?
+    var zipCode : String?
+    var country : String?
     var countryCode : String?
-    var isDefault : Bool?
+    var isDefault : String?
     
     init?(map: Map) {
         
@@ -37,10 +39,12 @@ struct AddressList: Mappable, Codable {
     
     mutating func mapping(map: Map) {
         id <- map["id"]
-        houseNo <- map["house_no"]
+        customerId <- map["customer_id"]
+        address <- map["address"]
         landmark <- map["landmark"]
-        zipCode <- map["zipcode"]
         city <- map["city"]
+        zipCode <- map["zipcode"]
+        country <- map["country"]
         countryCode <- map["countryCOde"]
         isDefault <- map["isDefault"]
     }

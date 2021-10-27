@@ -8,7 +8,7 @@
 //
 
 struct ForgotPasswordDependency {
-
+    
 }
 
 struct ForgotPasswordRequest{

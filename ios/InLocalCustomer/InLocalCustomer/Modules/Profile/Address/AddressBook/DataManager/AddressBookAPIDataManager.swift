@@ -18,7 +18,8 @@ class AddressBookAPIDataManager: APIDataManager {
     
     // Data fetch service methods goes here
     func getAddressListCall(
-                    token: String,
+                    skip: Int,
+                    limit: Int,
                     completion: @escaping AddressCompletionCompletion) {
            let params = [
                "limit": 10,

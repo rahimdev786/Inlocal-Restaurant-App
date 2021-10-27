@@ -21,6 +21,7 @@ class PublicFeedwallVC: UIViewController {
     @IBOutlet weak var collectionViewStories: UICollectionView!
     @IBOutlet weak var tableViewPost: UITableView!
     
+    @IBOutlet weak var btnUserProfileImage: UIButton!
     @IBOutlet weak var tableViewPost_Height: NSLayoutConstraint!
     @IBOutlet weak var scollViewFeedwall: UIScrollView!
     
@@ -31,6 +32,7 @@ class PublicFeedwallVC: UIViewController {
         dataManager.apiResponseDelegate = self
         scollViewFeedwall.delegate = self
         
+        setData()
         
         dataManager.storyFeedwallListCall(skip: 0, limit: 10)
         
@@ -83,6 +85,20 @@ class PublicFeedwallVC: UIViewController {
             }
         }
     }
+    
+    func setData(){
+        /*
+        guard let user = IEUserDefaults.shared. as? PersonalInfo else{
+            return
+        }
+        
+        if let photoUrl = user.i{
+            btnUserProfileImage.sd_setImage(with: URL(string: photoUrl), for: UIControl.State.normal) { (image, error, catche, rul) in
+            }
+            
+        }
+        */
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -112,6 +128,10 @@ extension PublicFeedwallVC: PublicFeedwallAPIResponseDelegate {
         AppActivityIndicator.hideActivityIndicator()
         feedwallListing = withData.feedWallListing ?? []
         tableViewPost.reloadData()
+    }
+    
+    func postLikeSuccess(withData: EmptyResponse?) {
+        AppActivityIndicator.hideActivityIndicator()
     }
     
     func apiError(_ error: APIError) {
@@ -181,9 +201,22 @@ extension PublicFeedwallVC: UITableViewDataSource{
         }
 
         cell.btnUserName.setTitle(feedData.name, for: .normal)
-        if let photoUrl = feedData.postImage{
-            
+        if let photoUrl = feedData.profileImage{           cell.btnUserProfile.sd_setImage(with: URL(string: photoUrl), for: UIControl.State.normal) { (image, error, catche, rul) in
+            }
         }
+        
+        if let photoUrl = feedData.restaurantImg{           cell.btnRestaurent.sd_setImage(with: URL(string: photoUrl), for: UIControl.State.normal) { (image, error, catche, rul) in
+            }
+        }
+        
+        if feedData.isLiked!{
+            cell.btnLike.setImage(#imageLiteral(resourceName: "like_filled"), for: .normal)
+        } else{
+            cell.btnLike.setImage(#imageLiteral(resourceName: "like_empty_white"), for: .normal)
+        }
+        
+        cell.btnLike.addTarget(self, action: #selector(onClickLike(sender:)), for: .touchUpInside)
+        cell.btnLike.tag = indexPath.row
         
         cell.btnUserProfile.addTarget(self, action: #selector(onUserProfile(sender:)), for: .touchUpInside)
         cell.btnUserProfile.tag = indexPath.row
@@ -205,6 +238,20 @@ extension PublicFeedwallVC: UITableViewDataSource{
 }
 
 extension PublicFeedwallVC {
+    @objc func onClickLike(sender: UIButton){
+        let buttonTag = sender.tag
+        var postData = feedwallListing[buttonTag]
+        
+        if !postData.isLiked!{
+            feedwallListing[buttonTag].isLiked = true
+            guard let postId = postData.postId else {
+                return
+            }
+            AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+            dataManager.postLikeCall(id: postId, likeStatus: "Like")
+        }
+    }
+    
     @objc func onUserProfile(sender: UIButton){
         let buttonTag = sender.tag
         guard let vc = UserProfileVC.load(withDependency: nil) else{

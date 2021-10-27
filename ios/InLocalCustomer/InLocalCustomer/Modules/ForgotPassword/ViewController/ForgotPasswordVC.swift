@@ -25,6 +25,7 @@ class ForgotPasswordVC: UIViewController {
     
     var forgotPasswordRequest = ForgotPasswordRequest()
     let otpView = ValidateOTP.instanceFromNib()
+    var forgotPasswordResponse: ForgotPasswordResponse?
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -64,14 +65,13 @@ class ForgotPasswordVC: UIViewController {
     }
     
     @IBAction func onClickContinue(_ sender: Any) {
-        self.view.addSubview(otpView)
-        /*
+    
         guard let phone = forgotPasswordRequest.phone, let countryCode = forgotPasswordRequest.countryCode else{
             return
         }
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "Verifying Phone", showInView: self.view)
         dataManager.forgotPasswordCall(countryCode: countryCode, phone: phone)
-        */
+        
     }
     
     // MARK: Methods
@@ -120,11 +120,16 @@ extension ForgotPasswordVC {
 
 // MARK: - ForgotPasswordAPIResponseDelegate
 extension ForgotPasswordVC: ForgotPasswordAPIResponseDelegate {
-    func forgotPasswordVerifyOTPSuccess(withData: ForgotPasswordVerifyOTPResponse) {
-        
+    func forgotPasswordVerifyOTPSuccess(withData: EmptyResponse?) {
+        guard let forgotPasswordViewController = SetNewPasswordVC.load(withDependency: .init(userId: forgotPasswordResponse?.id)) else {
+            return
+        }
+        self.navigationController?.pushViewController(forgotPasswordViewController, animated: true)
     }
     
     func forgotPasswordSuccess(withData: ForgotPasswordResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        forgotPasswordResponse = withData
         self.view.addSubview(otpView)
     }
     
@@ -153,16 +158,13 @@ extension ForgotPasswordVC: ForgotPasswordAPIResponseDelegate {
 
 extension ForgotPasswordVC : ValidateOTPDelegate{
     func onClickContinue() {
-        guard let forgotPasswordViewController = SetNewPasswordVC.load(withDependency: nil) else {
+        
+        guard let id = forgotPasswordResponse?.id, let otp = forgotPasswordResponse?.otp else{
             return
         }
-        self.navigationController?.pushViewController(forgotPasswordViewController, animated: true)
-        /*
-        let id = "11"
-        let otp = "938388"
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "Verifying OTP", showInView: self.view)
-        dataManager.changePasswordVerifyOTPCall(id: id, otp: otp)
-        */
+        dataManager.changePasswordVerifyOTPCall(id: id, otp: String(otp))
+        
     }
 }
 

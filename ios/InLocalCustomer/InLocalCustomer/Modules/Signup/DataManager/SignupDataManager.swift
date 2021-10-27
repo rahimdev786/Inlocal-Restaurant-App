@@ -41,7 +41,6 @@ class SignupDataManager : APIResponseHandler {
                 welf.apiResponseDelegate?.signupSuccess(withData: responseData!)
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
-                    //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)
                     welf.apiResponseDelegate?.apiError(responseError!)
                 }else{
                     welf.apiResponseDelegate?.apiError(responseError!)
@@ -54,7 +53,7 @@ class SignupDataManager : APIResponseHandler {
         }
     }
     
-    func verifyOTP(id: String, otp: String){
+    func verifyOTP(id: Int, otp: String){
         
         apiDataManager.verifyOTPCall(id: id, otp: otp) {[weak self] (responseData, responseError, error) in
                                         
@@ -63,10 +62,13 @@ class SignupDataManager : APIResponseHandler {
             let result = welf.verifyResponse(response: (responseData, responseError, error))
             
             if result.success {
+                IEUserDefaults.shared.apiToken = responseData?.token
+                IEUserDefaults.shared.userDetails = responseData?.user
+                IEUserDefaults.shared.notificationSettings = responseData?.notificationSettings
                 welf.apiResponseDelegate?.verifyOTPSuccess(withData: responseData!)
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
-                    //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)
+                    welf.apiResponseDelegate?.apiError(responseError!)
                 }else{
                     welf.apiResponseDelegate?.apiError(responseError!)
                 }

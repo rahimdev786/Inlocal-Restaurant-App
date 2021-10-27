@@ -73,15 +73,9 @@ class AddAddressVC: UIViewController {
     }
     
     @IBAction func onClickSave(_ sender: Any) {
-        /*
-        self.view.makeToast("Address added.")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.navigationController?.popViewController(animated: true)
-        }
-        */
         
         AppActivityIndicator.showActivityIndicator(showInView: self.view)
-        guard let address = addAddressRequest.flatNo, let landmark = addAddressRequest.landmark, let zipcode = addAddressRequest.zipCode, let city = addAddressRequest.zipCode, let countryCode = addAddressRequest.country, let country = addAddressRequest.countryName, let latitude = addAddressRequest.latitude, let longitude = addAddressRequest.longitude else{
+        guard let address = addAddressRequest.flatNo, let landmark = addAddressRequest.landmark, let zipcode = addAddressRequest.zipCode, let city = addAddressRequest.city, let countryCode = addAddressRequest.country, let country = addAddressRequest.countryName, let latitude = addAddressRequest.latitude, let longitude = addAddressRequest.longitude else{
             return
         }
         
@@ -152,16 +146,32 @@ extension AddAddressVC {
 
 // MARK: - AddAddressAPIResponseDelegate
 extension AddAddressVC: AddAddressAPIResponseDelegate {
-    func addAddressSuccess(withData: AddAddressResponse) {
-        print("Success")
+    func addAddressSuccess(withData: EmptyResponse?) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("Address added.")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     func apiError(_ error: APIError) {
-        
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
     }
     
     func networkError(_ error: Error) {
-        
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
     }
 }
 

@@ -128,6 +128,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnSelect" destination="xAr-YZ-dQq" id="m38-Sk-QVs"/>
+                                            <outlet property="lblAddress" destination="KfD-vj-bCW" id="G1o-hl-8H7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -161,7 +162,7 @@
     </scenes>
     <resources>
         <image name="add_blue" width="48" height="48"/>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="order_select" width="22" height="22"/>
         <image name="order_unselect" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">

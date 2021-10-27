@@ -20,6 +20,7 @@ class FeedwallPostTVC: UITableViewCell {
     @IBOutlet weak var btnComment: UIButton!
     @IBOutlet weak var btnUserProfile: UIButton!
     @IBOutlet weak var btnUserName: UIButton!
+    @IBOutlet weak var btnLike: UIButton!
     @IBOutlet weak var lblDescription: UILabel!
     
     var isMenuOpen = false
@@ -30,6 +31,8 @@ class FeedwallPostTVC: UITableViewCell {
         super.awakeFromNib()
         viewMenuContainer.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner], radius: 20.0)
         
+        btnUserProfile.imageView?.layer.cornerRadius = 18
+        btnRestaurent.imageView?.layer.cornerRadius = btnRestaurent.frame.height/2
         lblLikeCount.layer.cornerRadius = lblLikeCount.frame.height / 2
         lblLikeCount.layer.masksToBounds = true
         

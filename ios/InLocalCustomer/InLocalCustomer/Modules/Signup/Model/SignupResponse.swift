@@ -8,8 +8,8 @@
 import ObjectMapper
 
 struct SignupResponse: Mappable, Codable {
-    var id: String?
-    var otp: String?
+    var id: Int?
+    var otp: Int?
     
     init?(map: Map) {
         

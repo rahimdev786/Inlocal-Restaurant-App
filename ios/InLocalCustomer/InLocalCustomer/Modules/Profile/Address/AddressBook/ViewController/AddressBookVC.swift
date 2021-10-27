@@ -28,7 +28,6 @@ class AddressBookVC: UIViewController {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,8 +40,8 @@ class AddressBookVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //AppActivityIndicator.showActivityIndicator(showInView: self.view)
-        //dataManager.getAddressListCall(token: "")
+        AppActivityIndicator.showActivityIndicator(showInView: self.view)
+        dataManager.getAddressListCall(skip: 0, limit: 10)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -116,25 +115,48 @@ extension AddressBookVC {
 // MARK: - AddressBookAPIResponseDelegate
 extension AddressBookVC: AddressBookAPIResponseDelegate {
     func addressListSuccess(withData: AddressBookResponseModel) {
+        AppActivityIndicator.hideActivityIndicator()
         self.addressList = withData.addressList ?? []
+        tableViewAddressBook.reloadData()
     }
     
     func apiError(_ error: APIError) {
-        
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
     }
     
     func networkError(_ error: Error) {
-        
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
     }
 }
 
 extension AddressBookVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return addressList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddressBookTVC", for: indexPath) as! AddressBookTVC
+        
+        let addressData = addressList[indexPath.row]
+        let address = addressData.address ?? ""
+        let landmark = addressData.landmark ?? ""
+        let city = addressData.city ?? ""
+        let country = addressData.country ?? ""
+        let zipcode = addressData.zipCode ?? ""
+        
+        cell.lblAddress.text = "\(address) \(landmark) \(city) \(country) \(zipcode)"
         if indexPath.row == 0 {
             previousSelectedCell = cell
             cell.btnSelect.isSelected = true
@@ -143,6 +165,7 @@ extension AddressBookVC: UITableViewDataSource{
         }
         return cell
     }
+    
 }
 
 extension AddressBookVC: UITableViewDelegate{
@@ -150,6 +173,5 @@ extension AddressBookVC: UITableViewDelegate{
         let cell = tableView.cellForRow(at: indexPath) as! AddressBookTVC
         selectedIndexPath = indexPath
         openActionSheet()
-        
     }
 }

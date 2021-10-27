@@ -11,7 +11,7 @@ import Foundation
 
 typealias ForgotPasswordCompletion = (_ successResponse: ForgotPasswordResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 
-typealias ForgotPasswordVerifyOTPCompletion = (_ successResponse: ForgotPasswordVerifyOTPResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+typealias ForgotPasswordVerifyOTPCompletion = (_ successResponse: EmptyResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 
 class ForgotPasswordAPIDataManager: APIDataManager{
 
@@ -34,7 +34,7 @@ class ForgotPasswordAPIDataManager: APIDataManager{
                        completion: completion)
        }
     
-    func changePasswordVerifyOTPCall(id: String, otp: String,
+    func changePasswordVerifyOTPCall(id: Int, otp: String,
                     completion: @escaping ForgotPasswordVerifyOTPCompletion) {
            let params = [
                "id": id,

@@ -52,8 +52,8 @@ struct NotificationSettings: Mappable, Codable {
 }
 
 struct User: Mappable, Codable{
-    var _id: String?
-    var mobile_verified: String?
+    var id: Int?
+    var phone_verified: String?
     var personalInfo: PersonalInfo?
     
     init?(map: Map){
@@ -61,8 +61,8 @@ struct User: Mappable, Codable{
     }
     
     mutating func mapping(map: Map) {
-        _id <- map["_id"]
-        mobile_verified <- map["mobile_verified"]
+        id <- map["id"]
+        phone_verified <- map["phone_verified"]
         personalInfo <- map["personalInfo"]
     }
 }
@@ -87,8 +87,11 @@ struct PersonalInfo : Mappable, Codable {
     
 }
 
+
+
 struct Phone : Mappable, Codable{
     var countryCode: String?
+    var dail_code: String?
     var number: String?
     
     init?(map: Map) {
@@ -97,6 +100,7 @@ struct Phone : Mappable, Codable{
     
     mutating func mapping(map: Map){
         countryCode <- map["countryCode"]
+        dail_code <- map["dail_code"]
         number <- map["number"]
     }
 }

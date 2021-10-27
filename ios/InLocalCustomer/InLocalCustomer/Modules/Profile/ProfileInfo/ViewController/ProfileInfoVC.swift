@@ -16,6 +16,9 @@ class ProfileInfoVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var imageViewAvtar: UIImageView!
+    
+    @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var tabItemHome: UITabBarItem!
     @IBOutlet weak var tabItemSearch: UITabBarItem!
@@ -112,6 +115,19 @@ class ProfileInfoVC: UIViewController {
         AccountDetails(title: "Change Password", image: #imageLiteral(resourceName: "changePassword"), type: .changePassword),
         AccountDetails(title: "Notification Settings", image: #imageLiteral(resourceName: "notificationSettings"), type: .notificationSettings),
         ]
+        
+        var user: User? {
+            return IEUserDefaults.shared.userDetails
+        }
+        
+        if let photoUrl = user?.personalInfo?.profilePicture{
+            imageViewAvtar.sd_setImage(with:  URL(string: photoUrl), placeholderImage: #imageLiteral(resourceName: "feedwall_post_image"))
+        }
+        
+        if let userName = user?.personalInfo?.fullname{
+            lblUserName.text = userName
+        }
+        
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

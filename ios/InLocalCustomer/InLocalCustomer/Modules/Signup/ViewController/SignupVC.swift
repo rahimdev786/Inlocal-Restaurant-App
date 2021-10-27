@@ -39,6 +39,8 @@ class SignupVC: UIViewController {
     
     let otpView = ValidateOTP.instanceFromNib()
     var isTermConditionAccepted = false
+    var signupResponse : SignupResponse?
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,14 +96,13 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func onClickContinue(_ sender: Any) {
-        self.view.addSubview(otpView)
-        /*
+        
         guard let fullname = signUpRequest.fullName, let email = signUpRequest.email, let phone = signUpRequest.phone, let countryCode = signUpRequest.countryCode, let password = signUpRequest.password else{
             return
         }
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "Registering You", showInView: self.view)
         dataManager.signupUserCall(fullname: fullname, email: email, phone: phone, countryCode: countryCode, password: password)
-        */
+        
     }
     
     @IBAction func onClickSignIn(_ sender: Any) {
@@ -175,38 +176,50 @@ extension SignupVC {
 // MARK: - SignupAPIResponseDelegate
 extension SignupVC: SignupAPIResponseDelegate {
     func verifyOTPSuccess(withData: LoginResponseModel) {
-        print("Success")
+        AppActivityIndicator.hideActivityIndicator()
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.moveToTabBarVC()
     }
     
     func signupSuccess(withData: SignupResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        signupResponse = withData
         self.view.addSubview(otpView)
     }
     
     func apiError(_ error: APIError) {
-        print("error")
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
     }
     
     func networkError(_ error: Error) {
-        print("network error")
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
     }
-    
-    
 }
+
 extension SignupVC : ValidateOTPDelegate{
+    
     func onClickContinue() {
-        //let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        //appdelegate.moveToTabBarVC()
+        guard let id = signupResponse?.id, let otp = signupResponse?.otp else{
+            return
+        }
         
-//        guard let fullname = signUpRequest.fullName, let email = signUpRequest.email, let phone = signUpRequest.phone, let countryCode = signUpRequest.countryCode, let password = signUpRequest.password else{
-//            return
-//        }
-        
-        let id = "11"
-        let otp = "169763"
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "Verifying OTP", showInView: self.view)
-        dataManager.verifyOTP(id: id, otp: otp)
+        dataManager.verifyOTP(id: id, otp: String(otp))
     }
 }
+
 extension SignupVC: TextFieldDelegate{
    func forgotPwdClicked() {
        

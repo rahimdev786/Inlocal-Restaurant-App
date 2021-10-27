@@ -11,6 +11,7 @@ import Foundation
 
 typealias FeedListCompletion = (_ successResponse: FeedWallListResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 typealias StoryFeedListCompletion = (_ successResponse: StoryFeedwallListResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+typealias LikePostCompletion = (_ successResponse: EmptyResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 //StoryFeedwallListResponse
 class PublicFeedwallAPIDataManager: APIDataManager {
 
@@ -47,6 +48,23 @@ class PublicFeedwallAPIDataManager: APIDataManager {
         
            print(params)
            makeAPICall(to: HomeEndpoints.getStoryFeedList,
+                       withParameters: params,
+                       completion: completion)
+       }
+    
+    func postLikeCall(
+                        id: Int,
+                        likeStatus: String,
+                        completion: @escaping LikePostCompletion) {
+        
+           let params = [
+                "id": id,
+                "like_status": likeStatus,
+                "login_user_type" : "Customer"
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: HomeEndpoints.likePost,
                        withParameters: params,
                        completion: completion)
        }
