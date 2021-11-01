@@ -289,6 +289,10 @@
                                             <outlet property="btnCount" destination="wr5-SO-cqO" id="jTe-62-btK"/>
                                             <outlet property="btnMinus" destination="waA-cs-H0G" id="3ui-ea-f9E"/>
                                             <outlet property="btnPlus" destination="gwW-oX-6U5" id="j20-zp-Hie"/>
+                                            <outlet property="imageViewMenu" destination="DQM-bY-ThG" id="uw9-Oo-M67"/>
+                                            <outlet property="lblMenuDetails" destination="2Rq-IV-WdS" id="0hs-tW-O6n"/>
+                                            <outlet property="lblMenuName" destination="vZd-bP-UQ9" id="vpb-wL-bb3"/>
+                                            <outlet property="lblMenuPrice" destination="pKG-hk-2Td" id="NOh-eU-xWr"/>
                                             <outlet property="viewCellBackground" destination="al6-fz-LJi" id="LR6-8k-zUc"/>
                                         </connections>
                                     </tableViewCell>
@@ -355,7 +359,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="food" width="170" height="135"/>
         <image name="minus_icon" width="16" height="16"/>
         <image name="plus_icon" width="16" height="16"/>

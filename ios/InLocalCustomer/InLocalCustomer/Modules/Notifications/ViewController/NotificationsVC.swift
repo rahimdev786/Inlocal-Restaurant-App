@@ -18,6 +18,7 @@ class NotificationsVC: UIViewController {
     
     @IBOutlet weak var tableViewNotification: UITableView!
     
+    var notificationList = [NotificationList]()
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -25,6 +26,9 @@ class NotificationsVC: UIViewController {
         
         dataManager.apiResponseDelegate = self
         setupUI()
+        
+        AppActivityIndicator.showActivityIndicator(showInView: self.view)
+        dataManager.getNotificationListCall(skip: 0, limit: 10)
     }
     
     override func viewDidLayoutSubviews() {
@@ -75,16 +79,46 @@ extension NotificationsVC {
 
 // MARK: - NotificationsAPIResponseDelegate
 extension NotificationsVC: NotificationsAPIResponseDelegate {
+    func readNotificationSuccess(withData: EmptyResponse?) {
+        AppActivityIndicator.hideActivityIndicator()
+    }
     
+    func notificationListSuccess(withData: NotificationListResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        notificationList = withData.notificationList ?? []
+        tableViewNotification.reloadData()
+    }
+
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 
 extension NotificationsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return notificationList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTVC", for: indexPath) as! NotificationTVC
+        let notificationData = notificationList[indexPath.row]
+        
         if indexPath.row < 3{
             cell.imgViewNewNotification.isHidden = false
         } else{
@@ -95,3 +129,10 @@ extension NotificationsVC: UITableViewDataSource {
     
 }
 
+extension NotificationsVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let notificationData = notificationList[indexPath.row]
+        AppActivityIndicator.showActivityIndicator(showInView: self.view)
+        dataManager.readNotificationCall(notificationId: notificationData.id!                                              )
+    }
+}

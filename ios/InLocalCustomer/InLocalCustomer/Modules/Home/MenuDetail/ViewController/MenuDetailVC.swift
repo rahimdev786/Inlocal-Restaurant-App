@@ -18,6 +18,12 @@ class MenuDetailVC: UIViewController {
     @IBOutlet weak var collectionViewMenuImage: UICollectionView!
     @IBOutlet weak var collectionViewMenuImage_height: NSLayoutConstraint!
     
+    @IBOutlet weak var lblRestaurantName: UILabel!
+    @IBOutlet weak var imageViewMenu: UIImageView!
+    @IBOutlet weak var lblMenu: UILabel!
+    @IBOutlet weak var lblDetails: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
+    
     @IBOutlet weak var stackViewAddItem: UIStackView!
     @IBOutlet weak var btnCount: UIButton!
     @IBOutlet weak var btnMinus: UIButton!
@@ -31,6 +37,7 @@ class MenuDetailVC: UIViewController {
     @IBOutlet weak var tabItemNotification: UITabBarItem!
     
     var pageType : PageType!
+    var menuItemDetails : MenuItemDetails?
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -41,6 +48,7 @@ class MenuDetailVC: UIViewController {
         
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
         dataManager.menuDetailCall(menuItemId: 17, restaurantId: 19)
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -131,6 +139,26 @@ class MenuDetailVC: UIViewController {
             }
         }
     }
+    
+    func setData(){
+        imageViewMenu.roundedCorners([.topLeft, .topRight], radius: 40)
+        
+        if let menuImage = menuItemDetails?.image{
+            imageViewMenu.sd_setImage(with:  URL(string: menuImage), placeholderImage: nil)
+        }
+        
+        if let menuName = menuItemDetails?.name{
+            lblMenu.text = menuName
+        }
+        
+        if let menuPrice = menuItemDetails?.price{
+            lblPrice.text = "€ \(menuPrice)"
+        }
+        
+        if let menuDescription = menuItemDetails?.description{
+            lblDetails.text = menuDescription
+        }
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -152,7 +180,9 @@ extension MenuDetailVC {
 extension MenuDetailVC: MenuDetailAPIResponseDelegate {
     func menuDetailSuccess(withData: MenuDetailResponse) {
         AppActivityIndicator.hideActivityIndicator()
-        print(withData.menuItemDetails)
+        menuItemDetails = withData.menuItemDetails
+        setData()
+        //print(withData.menuItemDetails)
     }
     
     func apiError(_ error: APIError) {

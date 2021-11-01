@@ -11,7 +11,7 @@ import Foundation
 
 protocol NotificationSettingsAPIResponseDelegate: class {
     func getNotificationSettingSuccess(withData: NotificationSettingResponseModel)
-    func updateNotificationSuccess(withData: UpdateSettingResponse)
+    func updateNotificationSuccess(withData: EmptyResponse?)
     func apiError(_ error: APIError)
     func networkError(_ error: Error)
 }
@@ -49,7 +49,7 @@ class NotificationSettingsDataManager : APIResponseHandler {
         }
     }
 
-    func updateNotificationSettings(post: Bool, stories: Bool, comments: Bool, followers: Bool, orders: Bool, booking: Bool, payments: Bool){
+    func updateNotificationSettings(post: String, stories: String, comments: String, followers: String, orders: String, booking: String, payments: String){
         
         apiDataManager.updateNotificationSettings(post: post, stories: stories, comments: comments, followers: followers, orders: orders, booking: booking, payments: payments) {[weak self] (responseData, responseError, error) in
                                         
@@ -59,10 +59,11 @@ class NotificationSettingsDataManager : APIResponseHandler {
             let result = welf.verifyResponse(response: (responseData, responseError, error))
             
             if result.success {
-                welf.apiResponseDelegate?.updateNotificationSuccess(withData: responseData!)
+                welf.apiResponseDelegate?.updateNotificationSuccess(withData: responseData)
             } else if result.errorResponse {
                 if responseError!.rawValue == 1002{
                     //welf.apiResponseDelegate?.showVerifyEmailScreen(responseError!)
+                    welf.apiResponseDelegate?.apiError(responseError!)
                 }else{
                     welf.apiResponseDelegate?.apiError(responseError!)
                 }

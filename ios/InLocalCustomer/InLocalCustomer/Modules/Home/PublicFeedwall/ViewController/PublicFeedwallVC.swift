@@ -18,9 +18,11 @@ class PublicFeedwallVC: UIViewController {
     var feedwallListing = [FeedwallListing]()
     var myFeedWallStories = [MyFeedWallStories]()
     
+
     @IBOutlet weak var collectionViewStories: UICollectionView!
     @IBOutlet weak var tableViewPost: UITableView!
     
+    @IBOutlet weak var btnUserName: UIButton!
     @IBOutlet weak var btnUserProfileImage: UIButton!
     @IBOutlet weak var tableViewPost_Height: NSLayoutConstraint!
     @IBOutlet weak var scollViewFeedwall: UIScrollView!
@@ -87,18 +89,20 @@ class PublicFeedwallVC: UIViewController {
     }
     
     func setData(){
-        /*
-        guard let user = IEUserDefaults.shared. as? PersonalInfo else{
-            return
+        var user: User? {
+            return IEUserDefaults.shared.userDetails
         }
         
-        if let photoUrl = user.i{
+        btnUserProfileImage.imageView?.layer.cornerRadius = btnUserProfileImage.frame.height/2
+        if let photoUrl = user?.personalInfo?.profilePicture{
             btnUserProfileImage.sd_setImage(with: URL(string: photoUrl), for: UIControl.State.normal) { (image, error, catche, rul) in
             }
-            
         }
-        */
-    }
+        
+        if let userName = user?.personalInfo?.fullname{
+            btnUserName.setTitle(userName, for: .normal)
+        }
+    } 
 }
 
 // MARK: - Load from storyboard with dependency
@@ -118,6 +122,10 @@ extension PublicFeedwallVC {
 
 // MARK: - PublicFeedwallAPIResponseDelegate
 extension PublicFeedwallVC: PublicFeedwallAPIResponseDelegate {
+    
+    func postSaveSuccess(withData: EmptyResponse?) {
+        AppActivityIndicator.hideActivityIndicator()
+    }
     
     func storyFeedListSuccess(withData: StoryFeedwallListResponse) {
         myFeedWallStories = withData.myFeedWallStories ?? []
@@ -201,11 +209,13 @@ extension PublicFeedwallVC: UITableViewDataSource{
         }
 
         cell.btnUserName.setTitle(feedData.name, for: .normal)
-        if let photoUrl = feedData.profileImage{           cell.btnUserProfile.sd_setImage(with: URL(string: photoUrl), for: UIControl.State.normal) { (image, error, catche, rul) in
+        if let photoUrl = feedData.profileImage{
+            cell.btnUserProfile.sd_setImage(with: URL(string: photoUrl), for: UIControl.State.normal) { (image, error, catche, rul) in
             }
         }
         
-        if let photoUrl = feedData.restaurantImg{           cell.btnRestaurent.sd_setImage(with: URL(string: photoUrl), for: UIControl.State.normal) { (image, error, catche, rul) in
+        if let photoUrl = feedData.restaurantImg{
+            cell.btnRestaurent.sd_setImage(with: URL(string: photoUrl), for: UIControl.State.normal) { (image, error, catche, rul) in
             }
         }
         
@@ -217,6 +227,9 @@ extension PublicFeedwallVC: UITableViewDataSource{
         
         cell.btnLike.addTarget(self, action: #selector(onClickLike(sender:)), for: .touchUpInside)
         cell.btnLike.tag = indexPath.row
+        
+        cell.btnSavedPost.addTarget(self, action: #selector(onClickSavePost(sender:)), for: .touchUpInside)
+        cell.btnSavedPost.tag = indexPath.row
         
         cell.btnUserProfile.addTarget(self, action: #selector(onUserProfile(sender:)), for: .touchUpInside)
         cell.btnUserProfile.tag = indexPath.row
@@ -251,6 +264,20 @@ extension PublicFeedwallVC {
             dataManager.postLikeCall(id: postId, likeStatus: "Like")
         }
     }
+
+    @objc func onClickSavePost(sender: UIButton){
+        let buttonTag = sender.tag
+        var postData = feedwallListing[buttonTag]
+        if !postData.isFavorite!{
+            feedwallListing[buttonTag].isLiked = true
+            guard let postId = postData.postId else {
+                return
+            }
+            AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+            dataManager.postSaveCall(id: postId, favoriteStatus: "Favorite")
+        }
+    }
+    
     
     @objc func onUserProfile(sender: UIButton){
         let buttonTag = sender.tag

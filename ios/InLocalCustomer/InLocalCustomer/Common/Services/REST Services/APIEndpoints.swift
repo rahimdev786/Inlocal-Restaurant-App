@@ -141,6 +141,8 @@ enum AddressEndpoints: APIEndpoint{
 enum NotificationEndpoints: APIEndpoint{
     case getList
     case updateSetting
+    case notificationList
+    case reatNotification
     
     var path: String{
         switch self {
@@ -148,6 +150,10 @@ enum NotificationEndpoints: APIEndpoint{
             return "/customer/notification/setting"
         case .updateSetting:
             return "/customer/notify/setting/update"
+        case .notificationList:
+            return "/common/notification/list"
+        case .reatNotification:
+            return "/common/notification/read"
         }
     }
     
@@ -157,6 +163,10 @@ enum NotificationEndpoints: APIEndpoint{
             return .get
         case .updateSetting:
             return .post
+        case .notificationList:
+            return .post
+        case .reatNotification:
+            return .post
         }
     }
 }
@@ -165,6 +175,7 @@ enum HomeEndpoints: APIEndpoint{
     case getStoryFeedList
     case getFeedList
     case likePost
+    case savePost
     case getRestaurentDeatils
     case getRestaurantPostList
     case getCustomerDetails
@@ -175,6 +186,7 @@ enum HomeEndpoints: APIEndpoint{
     case menuDetail
     case commentList
     case addCommnet
+    case getSavedPost
     var path: String{
         switch self {
         case .getStoryFeedList:
@@ -183,6 +195,8 @@ enum HomeEndpoints: APIEndpoint{
             return "/common/post/feedwall/list"
         case .likePost:
             return "/common/post/like"
+        case .savePost:
+            return "/common/post/favorite"
         case .getRestaurentDeatils:
             return "/restaurant/details"
         case .getRestaurantPostList:
@@ -203,6 +217,8 @@ enum HomeEndpoints: APIEndpoint{
             return "/common/comment/list"
         case .addCommnet:
             return "/common/comment/create"
+        case .getSavedPost:
+            return "/common/post/favorite/list"
         }
     }
     
@@ -213,6 +229,8 @@ enum HomeEndpoints: APIEndpoint{
         case .getFeedList:
             return .post
         case .likePost:
+            return .post
+        case .savePost:
             return .post
         case .getRestaurentDeatils:
             return .post
@@ -233,6 +251,8 @@ enum HomeEndpoints: APIEndpoint{
         case .commentList:
             return .post
         case .addCommnet:
+            return .post
+        case .getSavedPost:
             return .post
         }
     }

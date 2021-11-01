@@ -26,7 +26,6 @@ class RestaurantMenuVC: UIViewController {
     @IBOutlet weak var tabItemNotification: UITabBarItem!
     
     var previousCell: MenuCategoryCVC?
-    var categoryArray = ["All", "Starter", "Burger", "Drinks", "Soup", "Pizza"]
     
     var menuCategoryList = [MenuCategoryList]()
     var menuListing = [MenuListing]()

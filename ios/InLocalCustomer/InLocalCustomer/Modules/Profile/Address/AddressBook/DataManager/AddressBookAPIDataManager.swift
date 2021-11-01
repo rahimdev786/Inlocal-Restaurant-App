@@ -22,8 +22,8 @@ class AddressBookAPIDataManager: APIDataManager {
                     limit: Int,
                     completion: @escaping AddressCompletionCompletion) {
            let params = [
-               "limit": 10,
-               "skip": 0,
+               "limit": limit,
+               "skip": skip,
                ] as [String : Any]
         
            print(params)

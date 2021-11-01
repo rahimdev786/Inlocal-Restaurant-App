@@ -164,6 +164,9 @@
                             <constraint firstItem="vtl-3R-QON" firstAttribute="leading" secondItem="gtQ-gH-aQA" secondAttribute="leading" id="pol-IH-iKh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableViewSetting" destination="vtl-3R-QON" id="hAB-5m-Qf1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,17 +11,22 @@ import UIKit
 
 class NotificationSettingsVC: UIViewController {
     // MARK: Instance variables
+    
+    @IBOutlet weak var tableViewSetting: UITableView!
+    
 	lazy var dataManager = NotificationSettingsDataManager()
     var dependency: NotificationSettingsDependency?
     
     var arrSettings = ["Posts","Stories","Comments","Followers","Orders","Bookings","Payment"]
     var notificationSettingRequest = NotificationSettingRequest()
     
+    var notificationSettingResponseModel : NotificationSettingResponseModel?
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.apiResponseDelegate = self
-        setData()
+        //setData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,18 +60,19 @@ class NotificationSettingsVC: UIViewController {
         guard let post = notificationSettingRequest.post, let stories = notificationSettingRequest.stories, let comments = notificationSettingRequest.comments, let followers = notificationSettingRequest.followers,let orders = notificationSettingRequest.orders, let bookings = notificationSettingRequest.booking, let payment = notificationSettingRequest.payment else{
             return
         }
+        
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
         dataManager.updateNotificationSettings(post: post, stories: stories, comments: comments, followers: followers, orders: orders, booking: bookings, payments: payment)
     }
     
     func setData(){
-        notificationSettingRequest.post = false
-        notificationSettingRequest.stories = false
-        notificationSettingRequest.comments = false
-        notificationSettingRequest.followers = false
-        notificationSettingRequest.orders = false
-        notificationSettingRequest.booking = false
-        notificationSettingRequest.payment = false
+        notificationSettingRequest.post = notificationSettingResponseModel?.post
+        notificationSettingRequest.stories = notificationSettingResponseModel?.stories
+        notificationSettingRequest.comments = notificationSettingResponseModel?.comments
+        notificationSettingRequest.followers = notificationSettingResponseModel?.followers
+        notificationSettingRequest.orders = notificationSettingResponseModel?.orders
+        notificationSettingRequest.booking = notificationSettingResponseModel?.booking
+        notificationSettingRequest.payment = notificationSettingResponseModel?.payment
     }
 }
 
@@ -86,11 +92,15 @@ extension NotificationSettingsVC {
 extension NotificationSettingsVC: NotificationSettingsAPIResponseDelegate {
     func getNotificationSettingSuccess(withData: NotificationSettingResponseModel) {
         AppActivityIndicator.hideActivityIndicator()
-        print(withData)
+        notificationSettingResponseModel = withData
+        setData()
+        tableViewSetting.reloadData()
     }
     
-    func updateNotificationSuccess(withData: UpdateSettingResponse) {
+    func updateNotificationSuccess(withData: EmptyResponse?) {
         AppActivityIndicator.hideActivityIndicator()
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.getNotificationSettingCall()
     }
     
     func apiError(_ error: APIError) {
@@ -125,6 +135,74 @@ extension NotificationSettingsVC: UITableViewDataSource {
         cell.lblTitle.text = arrSettings[indexPath.row]
         cell.settingsSwitch.tag = indexPath.row
         cell.settingsSwitch.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
+        
+        switch indexPath.row {
+        case 0:
+            if let status = notificationSettingResponseModel?.post{
+                if status == "0"{
+                    cell.settingsSwitch.isOn = false
+                } else{
+                    cell.settingsSwitch.isOn = true
+                }
+            }
+        case 1:
+            if let status = notificationSettingResponseModel?.stories{
+                if status == "0"{
+                    cell.settingsSwitch.isOn = false
+                } else{
+                    cell.settingsSwitch.isOn = true
+                }
+            }
+            
+        case 2:
+            if let status = notificationSettingResponseModel?.comments{
+                if status == "0"{
+                    cell.settingsSwitch.isOn = false
+                } else{
+                    cell.settingsSwitch.isOn = true
+                }
+            }
+            
+        case 3:
+            if let status = notificationSettingResponseModel?.followers{
+                if status == "0"{
+                    cell.settingsSwitch.isOn = false
+                } else{
+                    cell.settingsSwitch.isOn = true
+                }
+            }
+        
+        case 4:
+            if let status = notificationSettingResponseModel?.orders{
+                if status == "0"{
+                    cell.settingsSwitch.isOn = false
+                } else{
+                    cell.settingsSwitch.isOn = true
+                }
+            }
+            
+        case 5:
+            if let status = notificationSettingResponseModel?.booking{
+                if status == "0"{
+                    cell.settingsSwitch.isOn = false
+                } else{
+                    cell.settingsSwitch.isOn = true
+                }
+            }
+        
+        case 6:
+            if let status = notificationSettingResponseModel?.payment{
+                if status == "0"{
+                    cell.settingsSwitch.isOn = false
+                } else{
+                    cell.settingsSwitch.isOn = true
+                }
+            }
+            
+        default:
+            print("")
+        }
+        
         return cell
     }
     
@@ -139,51 +217,51 @@ extension NotificationSettingsVC: UITableViewDataSource {
         switch index {
         case 0:
             if sender.isOn{
-                notificationSettingRequest.post = true
+                notificationSettingRequest.post = "1"
             } else{
-                notificationSettingRequest.post = false
+                notificationSettingRequest.post = "0"
             }
             
         case 1:
             if sender.isOn{
-                notificationSettingRequest.stories = true
+                notificationSettingRequest.stories = "1"
             } else{
-                notificationSettingRequest.stories = false
+                notificationSettingRequest.stories = "0"
             }
             
         case 2:
             if sender.isOn{
-                notificationSettingRequest.comments = true
+                notificationSettingRequest.comments = "1"
             } else{
-                notificationSettingRequest.comments = false
+                notificationSettingRequest.comments = "0"
             }
             
         case 3:
             if sender.isOn{
-                notificationSettingRequest.followers = true
+                notificationSettingRequest.followers = "1"
             } else{
-                notificationSettingRequest.followers = false
+                notificationSettingRequest.followers = "0"
             }
             
         case 4:
             if sender.isOn{
-                notificationSettingRequest.orders = true
+                notificationSettingRequest.orders = "1"
             } else{
-                notificationSettingRequest.orders = false
+                notificationSettingRequest.orders = "0"
             }
             
         case 5:
             if sender.isOn{
-                notificationSettingRequest.booking = true
+                notificationSettingRequest.booking = "1"
             } else{
-                notificationSettingRequest.booking = false
+                notificationSettingRequest.booking = "0"
             }
             
         case 6:
             if sender.isOn{
-                notificationSettingRequest.payment = true
+                notificationSettingRequest.payment = "1"
             } else{
-                notificationSettingRequest.payment = false
+                notificationSettingRequest.payment = "0"
             }
             
         default:

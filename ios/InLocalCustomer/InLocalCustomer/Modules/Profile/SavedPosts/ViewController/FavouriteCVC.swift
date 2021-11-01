@@ -9,5 +9,7 @@ import UIKit
 
 class FavouriteCVC: UICollectionViewCell {
     
+    @IBOutlet weak var imageViewPost: UIImageView!
+    
     static let identifier = "FavouriteCVC"
 }

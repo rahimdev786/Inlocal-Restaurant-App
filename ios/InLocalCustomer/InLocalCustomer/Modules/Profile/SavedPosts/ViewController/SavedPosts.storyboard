@@ -65,6 +65,9 @@
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="selectedSegmentTintColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="chageTab:" destination="BYZ-38-t0r" eventType="valueChanged" id="5DR-or-L0P"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qnZ-wD-0SI">
                                 <rect key="frame" x="17" y="144" width="341" height="668"/>
@@ -140,6 +143,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="yy5-i5-W2x" secondAttribute="trailing" id="zTZ-f0-Gfp"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageViewPost" destination="FxJ-MI-9XY" id="BVY-3o-VxR"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -174,7 +180,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="favrite_blue" width="38" height="38"/>
         <image name="food" width="170" height="135"/>
         <systemColor name="systemBackgroundColor">

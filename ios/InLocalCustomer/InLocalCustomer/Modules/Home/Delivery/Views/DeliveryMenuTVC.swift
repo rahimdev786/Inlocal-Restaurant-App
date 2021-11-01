@@ -12,6 +12,11 @@ class DeliveryMenuTVC: UITableViewCell {
     @IBOutlet weak var viewCellBackground: UIView!
     @IBOutlet weak var btnCustomizable: UIButton!
     
+    @IBOutlet weak var imageViewMenu: UIImageView!
+    @IBOutlet weak var lblMenuName: UILabel!
+    @IBOutlet weak var lblMenuDetails: UILabel!
+    @IBOutlet weak var lblMenuPrice: UILabel!
+    
     @IBOutlet weak var btnMinus: UIButton!
     @IBOutlet weak var btnPlus: UIButton!
     @IBOutlet weak var btnCount: UIButton!

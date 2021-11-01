@@ -12,6 +12,7 @@ import Foundation
 typealias FeedListCompletion = (_ successResponse: FeedWallListResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 typealias StoryFeedListCompletion = (_ successResponse: StoryFeedwallListResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 typealias LikePostCompletion = (_ successResponse: EmptyResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+typealias SavePostCompletion = (_ successResponse: EmptyResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 //StoryFeedwallListResponse
 class PublicFeedwallAPIDataManager: APIDataManager {
 
@@ -33,7 +34,7 @@ class PublicFeedwallAPIDataManager: APIDataManager {
            makeAPICall(to: HomeEndpoints.getFeedList,
                        withParameters: params,
                        completion: completion)
-       }
+    }
     
     func storyFeedwallListCall(
                         skip: Int,
@@ -50,7 +51,7 @@ class PublicFeedwallAPIDataManager: APIDataManager {
            makeAPICall(to: HomeEndpoints.getStoryFeedList,
                        withParameters: params,
                        completion: completion)
-       }
+    }
     
     func postLikeCall(
                         id: Int,
@@ -67,5 +68,23 @@ class PublicFeedwallAPIDataManager: APIDataManager {
            makeAPICall(to: HomeEndpoints.likePost,
                        withParameters: params,
                        completion: completion)
-       }
+    }
+    
+    func postSaveCall(
+                        id: Int,
+                        favoriteStatus: String,
+                        completion: @escaping SavePostCompletion) {
+        
+           let params = [
+                "id": id,
+                "favorite_status": favoriteStatus,
+                "login_user_type" : "Customer"
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: HomeEndpoints.savePost,
+                       withParameters: params,
+                       completion: completion)
+    }
+    
 }

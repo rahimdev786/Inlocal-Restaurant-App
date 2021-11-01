@@ -17,6 +17,8 @@ class SavedPostsVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    var favoritePostList = [FavoritePostList]()
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,9 @@ class SavedPostsVC: UIViewController {
             segmentedControl.backgroundColor = UIColor(hexString: "333333")
             segmentedControl.layer.cornerRadius = 4
         }
+        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.getSavedPostCall(skip: 0, limit: 10, loginUserType: "Customer")
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -58,10 +63,22 @@ class SavedPostsVC: UIViewController {
     deinit {
        debugPrint("\(self) deinitialized")
     }
+    
     @IBAction func didTapOnBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func chageTab(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            
+            AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+            dataManager.getSavedPostCall(skip: 0, limit: 10, loginUserType: "Customer")
+        } else{
+            
+            AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+            dataManager.getSavedPostCall(skip: 0, limit: 10, loginUserType: "Restaurant")
+        }
+    }
     
 }
 
@@ -79,17 +96,46 @@ extension SavedPostsVC {
 
 // MARK: - SavedPostsAPIResponseDelegate
 extension SavedPostsVC: SavedPostsAPIResponseDelegate {
+    func getSavedPostSuccess(withData: SavedPostResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        favoritePostList.removeAll()
+        favoritePostList = withData.favoritePostList ?? []
+        collectionView.reloadData()
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
-
 
 extension SavedPostsVC:UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return favoritePostList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: FavouriteCVC.identifier, for: indexPath) as! FavouriteCVC
+        let postData = favoritePostList[indexPath.row]
+        if let postPhotoUrl = postData.image{
+            item.imageViewPost.sd_setImage(with:  URL(string: postPhotoUrl), placeholderImage: #imageLiteral(resourceName: "feedwall_post_image"))
+        }
         return item
     }
     

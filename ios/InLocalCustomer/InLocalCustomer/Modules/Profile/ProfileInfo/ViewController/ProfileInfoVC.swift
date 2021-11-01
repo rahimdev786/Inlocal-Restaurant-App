@@ -160,6 +160,7 @@ extension ProfileInfoVC: ProfileInfoAPIResponseDelegate {
 
 //MARK: UITableViewDataSource
 extension ProfileInfoVC: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrDetails?.count ?? 0
     }
@@ -172,6 +173,7 @@ extension ProfileInfoVC: UITableViewDataSource {
         
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
     }
@@ -215,7 +217,6 @@ extension ProfileInfoVC: UITableViewDelegate {
         default:
             ()
         }
- 
     }
 }
 

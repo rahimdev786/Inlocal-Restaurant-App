@@ -39,10 +39,10 @@
                                             <constraint firstAttribute="height" constant="12" id="dHV-4W-zn1"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqX-2Y-4qE">
-                                        <rect key="frame" x="291" y="0.0" width="50" height="50"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqX-2Y-4qE">
+                                        <rect key="frame" x="301" y="5" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="PIY-E0-SxA"/>
+                                            <constraint firstAttribute="height" constant="40" id="PIY-E0-SxA"/>
                                             <constraint firstAttribute="width" secondItem="HqX-2Y-4qE" secondAttribute="height" multiplier="1:1" id="emS-Pc-N6Z"/>
                                         </constraints>
                                         <state key="normal" image="feedwall_profile_face"/>
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sO-sI-U7k">
-                                        <rect key="frame" x="229" y="10" width="52" height="30"/>
+                                        <rect key="frame" x="239" y="10" width="52" height="30"/>
                                         <state key="normal" title="Adriana">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -356,6 +356,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnUserName" destination="7sO-sI-U7k" id="67l-or-3PA"/>
                         <outlet property="btnUserProfileImage" destination="HqX-2Y-4qE" id="hgc-pR-4Rt"/>
                         <outlet property="collectionViewStories" destination="3GK-1T-0qq" id="qwA-A9-z4W"/>
                         <outlet property="scollViewFeedwall" destination="fwR-M5-Mq8" id="1ms-e2-9Wa"/>

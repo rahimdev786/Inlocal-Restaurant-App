@@ -11,12 +11,12 @@ struct NotificationSettingsDependency {
 }
 
 struct NotificationSettingRequest{
-    var post: Bool?
-    var stories: Bool?
-    var comments: Bool?
-    var followers: Bool?
-    var orders: Bool?
-    var booking: Bool?
-    var payment: Bool?
+    var post: String?
+    var stories: String?
+    var comments: String?
+    var followers: String?
+    var orders: String?
+    var booking: String?
+    var payment: String?
 }
 

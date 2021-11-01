@@ -10,7 +10,7 @@
 import Foundation
 //UpdateSettingResponse
 typealias GetNotificationSettingCompletion = (_ successResponse: NotificationSettingResponseModel?, _ errorResponse: APIError?, _ error: Error?) -> Void
-typealias UpdateSettingCompletion = (_ successResponse: UpdateSettingResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+typealias UpdateSettingCompletion = (_ successResponse: EmptyResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
 
 class NotificationSettingsAPIDataManager: APIDataManager {
     init() {
@@ -24,7 +24,7 @@ class NotificationSettingsAPIDataManager: APIDataManager {
                        completion: completion)
     }
     
-    func updateNotificationSettings(post: Bool, stories: Bool, comments: Bool, followers: Bool, orders: Bool, booking: Bool, payments: Bool, completion: @escaping UpdateSettingCompletion) {
+    func updateNotificationSettings(post: String, stories: String, comments: String, followers: String, orders: String, booking: String, payments: String, completion: @escaping UpdateSettingCompletion) {
            let params = [
             "post" : post,
             "stories" : stories,

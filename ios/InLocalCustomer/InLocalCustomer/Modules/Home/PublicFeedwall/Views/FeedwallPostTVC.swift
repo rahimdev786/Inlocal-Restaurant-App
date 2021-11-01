@@ -32,7 +32,7 @@ class FeedwallPostTVC: UITableViewCell {
         viewMenuContainer.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner], radius: 20.0)
         
         btnUserProfile.imageView?.layer.cornerRadius = 18
-        btnRestaurent.imageView?.layer.cornerRadius = btnRestaurent.frame.height/2
+        btnRestaurent.imageView?.layer.cornerRadius = btnRestaurent.frame.height / 2
         lblLikeCount.layer.cornerRadius = lblLikeCount.frame.height / 2
         lblLikeCount.layer.masksToBounds = true
         
