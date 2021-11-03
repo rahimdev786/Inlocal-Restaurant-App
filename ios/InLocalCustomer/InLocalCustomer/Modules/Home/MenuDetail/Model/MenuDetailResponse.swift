@@ -8,7 +8,7 @@
 import ObjectMapper
 
 struct  MenuDetailResponse: Mappable, Codable  {
-    var menuItemDetails : MenuItemDetails?
+    var menuItemDetails : MenuListing?
     
     init?(map: Map) {
         
@@ -19,8 +19,8 @@ struct  MenuDetailResponse: Mappable, Codable  {
     }
 }
 
+/*
 struct MenuItemDetails: Mappable, Codable {
-    
     var id : Int?
     var name : String?
     var description : String?
@@ -31,6 +31,7 @@ struct MenuItemDetails: Mappable, Codable {
     var active: String?
     var cartQty : Int?
     var inInCart : Bool?
+    var customizeList: [CustomizeList]?
     
     init?(map: Map) {
         
@@ -47,6 +48,8 @@ struct MenuItemDetails: Mappable, Codable {
         active <- map["active"]
         cartQty <- map["cartQty"]
         inInCart <- map["inInCart"]
+        customizeList <- map["customizeList"]
         
     }
 }
+*/

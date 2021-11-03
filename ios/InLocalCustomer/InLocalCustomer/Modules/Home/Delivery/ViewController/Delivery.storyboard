@@ -183,6 +183,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="131" id="6me-nJ-CNZ"/>
+                                                            </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xuo-VK-rHn">
                                                             <rect key="frame" x="239" y="16" width="92" height="58"/>
@@ -344,6 +347,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewMenuCategory" destination="7t3-nq-cXA" id="0Vd-hH-Lqz"/>
+                        <outlet property="lblRestaurantName" destination="H5G-q5-fbE" id="LYj-yw-j9e"/>
                         <outlet property="tabBar" destination="xD5-vg-fye" id="Jki-lS-FSV"/>
                         <outlet property="tabItemAddPost" destination="7Yc-4V-3DK" id="GYb-35-PGO"/>
                         <outlet property="tabItemCart" destination="kFw-Ks-KXL" id="Che-dg-cRJ"/>

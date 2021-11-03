@@ -8,5 +8,5 @@
 //
 
 struct DeliveryDependency {
-
+    var restaurantName: String?
 }

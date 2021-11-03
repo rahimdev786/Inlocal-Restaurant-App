@@ -8,7 +8,7 @@
 //
 
 struct MenuDetailDependency {
-
+    var restaurantName : String?
 }
 
 enum PageType {

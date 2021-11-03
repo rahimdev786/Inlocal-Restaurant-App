@@ -9,13 +9,9 @@ import UIKit
 
 class MenuCustomisationTVC: UITableViewCell {
 
-    
-    @IBOutlet weak var lblHeaderTitle: UILabel!
     @IBOutlet weak var btnFirst: UIButton!
-    @IBOutlet weak var btnSecond: UIButton!
-    
     @IBOutlet weak var lblFirst: UILabel!
-    @IBOutlet weak var lblSecond: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,15 +23,5 @@ class MenuCustomisationTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
-    @IBAction func onClickFirst(_ sender: Any) {
-        btnFirst.setImage(#imageLiteral(resourceName: "tick_round_blue"), for: .normal)
-        btnSecond.setImage(#imageLiteral(resourceName: "untick_round_blue"), for: .normal)
-    }
-    
-    @IBAction func onClickSecond(_ sender: Any) {
-        btnFirst.setImage(#imageLiteral(resourceName: "untick_round_blue"), for: .normal)
-        btnSecond.setImage(#imageLiteral(resourceName: "tick_round_blue"), for: .normal)
-    }
+
 }

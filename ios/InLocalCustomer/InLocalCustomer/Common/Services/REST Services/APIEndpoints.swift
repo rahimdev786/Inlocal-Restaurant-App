@@ -187,6 +187,7 @@ enum HomeEndpoints: APIEndpoint{
     case commentList
     case addCommnet
     case getSavedPost
+    case addToCart
     var path: String{
         switch self {
         case .getStoryFeedList:
@@ -219,6 +220,8 @@ enum HomeEndpoints: APIEndpoint{
             return "/common/comment/create"
         case .getSavedPost:
             return "/common/post/favorite/list"
+        case .addToCart:
+            return "/cart/add"
         }
     }
     
@@ -253,6 +256,8 @@ enum HomeEndpoints: APIEndpoint{
         case .addCommnet:
             return .post
         case .getSavedPost:
+            return .post
+        case .addToCart:
             return .post
         }
     }

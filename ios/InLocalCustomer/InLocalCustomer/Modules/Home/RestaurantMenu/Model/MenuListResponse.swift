@@ -14,6 +14,7 @@ struct MenuListResponse: Mappable, Codable  {
     init?(map: Map) {
         
     }
+    
     mutating func mapping(map: Map) {
         menuListing <- map["menuListing"]
     }
@@ -29,6 +30,7 @@ struct MenuListing: Mappable, Codable {
     var cartQty: Int?
     var inInCart: Bool?
     var customizeList: [CustomizeList]?
+    
     init?(map: Map) {
         
     }
@@ -72,6 +74,7 @@ struct MenuItemSubAddon: Mappable, Codable {
     var name: String?
     var price: String?
     var active : String?
+    var isSelectedInCart : Bool?
     
     init?(map: Map) {
         
@@ -83,5 +86,6 @@ struct MenuItemSubAddon: Mappable, Codable {
         name <- map["name"]
         price <- map["price"]
         active <- map["active"]
+        isSelectedInCart <- map["isSelectedInCart"]
     }
 }

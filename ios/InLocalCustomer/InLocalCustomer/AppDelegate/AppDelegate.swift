@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navVC.isNavigationBarHidden = true
         window?.rootViewController = navVC
         window?.makeKeyAndVisible()
-    }
+    } 
 
     func moveToTabBarVC(){
         guard let tabViewController = BottumTabBarVC.load(withDependency: nil) else {

@@ -172,7 +172,7 @@ class RestaurantProfileVC: UIViewController {
     }
     
     @IBAction func onClickDelivery(_ sender: Any) {
-        guard let vc = DeliveryVC.load(withDependency: nil) else{
+        guard let vc = DeliveryVC.load(withDependency: .init(restaurantName: restaurantDetails?.name)) else{
             return
         }
         self.navigationController?.pushViewController(vc, animated: true)

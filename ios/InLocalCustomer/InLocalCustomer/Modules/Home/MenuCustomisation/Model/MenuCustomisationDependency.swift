@@ -8,5 +8,7 @@
 //
 
 struct MenuCustomisationDependency {
-
+    var menuDitails : MenuListing?
 }
+
+

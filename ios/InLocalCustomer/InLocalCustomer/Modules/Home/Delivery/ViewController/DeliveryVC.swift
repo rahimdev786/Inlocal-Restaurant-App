@@ -15,6 +15,7 @@ class DeliveryVC: UIViewController {
 	lazy var dataManager = DeliveryDataManager()
     var dependency: DeliveryDependency?
     
+    @IBOutlet weak var lblRestaurantName: UILabel!
     @IBOutlet weak var collectionViewMenuCategory: UICollectionView!
     @IBOutlet weak var tableViewDeliveryMenu: UITableView!
     
@@ -25,7 +26,6 @@ class DeliveryVC: UIViewController {
     @IBOutlet weak var tabItemCart: UITabBarItem!
     @IBOutlet weak var tabItemNotification: UITabBarItem!
     
-    var categoryArray = ["All", "Starter", "Burger", "Drinks", "Soup", "Pizza"]
     var previousCell: MenuCategoryCVC?
     
     var menuCategoryList = [MenuCategoryList]()
@@ -105,6 +105,8 @@ class DeliveryVC: UIViewController {
     func setupView(){
         tabBar.delegate = self
         tabBar.unselectedItemTintColor = .white
+        
+        lblRestaurantName.text = dependency?.restaurantName
     }
 }
 
@@ -210,7 +212,7 @@ extension DeliveryVC: UITableViewDataSource {
 
 extension DeliveryVC : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let vc = MenuDetailVC.load(withDependency: nil) else{
+        guard let vc = MenuDetailVC.load(withDependency: .init(restaurantName: dependency?.restaurantName)) else{
             return
         }
         vc.pageType = .delivery

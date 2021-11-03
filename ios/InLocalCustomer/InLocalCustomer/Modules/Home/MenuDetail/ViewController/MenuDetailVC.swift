@@ -37,7 +37,7 @@ class MenuDetailVC: UIViewController {
     @IBOutlet weak var tabItemNotification: UITabBarItem!
     
     var pageType : PageType!
-    var menuItemDetails : MenuItemDetails?
+    var menuItemDetails : MenuListing?
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -83,9 +83,10 @@ class MenuDetailVC: UIViewController {
     }
     
     @IBAction func onClickCount(_ sender: Any) {
-        guard let vc = MenuCustomisationVC.load(withDependency: nil) else{
+        guard let vc = MenuCustomisationVC.load(withDependency: .init(menuDitails: menuItemDetails)) else{
             return
         }
+        vc.customizeList = (menuItemDetails?.customizeList)!
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -158,6 +159,8 @@ class MenuDetailVC: UIViewController {
         if let menuDescription = menuItemDetails?.description{
             lblDetails.text = menuDescription
         }
+        
+        lblRestaurantName.text = dependency?.restaurantName
     }
 }
 
@@ -172,6 +175,7 @@ extension MenuDetailVC {
             return nil
         }
         vc.dependency = dependency
+        
         return vc
     }
 }
