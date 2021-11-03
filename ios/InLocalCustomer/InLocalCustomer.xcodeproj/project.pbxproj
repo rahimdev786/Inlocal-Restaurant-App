@@ -138,6 +138,7 @@
 		6D79A8B52704369C00586794 /* SignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79A8B42704369C00586794 /* SignupResponse.swift */; };
 		6D88B5BA2705856D004BA680 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88B5B92705856D004BA680 /* VerifyOTPResponse.swift */; };
 		6D88B5BF2705BB82004BA680 /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88B5BE2705BB82004BA680 /* ForgotPasswordResponse.swift */; };
+		6D90D7D0273248A400E5FF27 /* CartListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90D7CF273248A400E5FF27 /* CartListResponse.swift */; };
 		6D93764A27294BF000C67BCF /* DeliveryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93764927294BF000C67BCF /* DeliveryListResponse.swift */; };
 		6DCDFEC3271FDC2E0056625C /* MenuCategoryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFEC2271FDC2E0056625C /* MenuCategoryListResponse.swift */; };
 		6DCDFECB271FF3990056625C /* MenuListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFECA271FF3990056625C /* MenuListResponse.swift */; };
@@ -569,6 +570,7 @@
 		6D79A8B42704369C00586794 /* SignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponse.swift; sourceTree = "<group>"; };
 		6D88B5B92705856D004BA680 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
 		6D88B5BE2705BB82004BA680 /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
+		6D90D7CF273248A400E5FF27 /* CartListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListResponse.swift; sourceTree = "<group>"; };
 		6D93764927294BF000C67BCF /* DeliveryListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListResponse.swift; sourceTree = "<group>"; };
 		6DCDFEC2271FDC2E0056625C /* MenuCategoryListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoryListResponse.swift; sourceTree = "<group>"; };
 		6DCDFECA271FF3990056625C /* MenuListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListResponse.swift; sourceTree = "<group>"; };
@@ -2329,6 +2331,7 @@
 			isa = PBXGroup;
 			children = (
 				C16920A22670765500055FD3 /* CartDependency.swift */,
+				6D90D7CF273248A400E5FF27 /* CartListResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3689,6 +3692,7 @@
 				6D48216D26674CBE00F1DE01 /* ProfileInfoLocalDataManager.swift in Sources */,
 				C1042D0F2669DE780054B24D /* UserProfileDependency.swift in Sources */,
 				C1CB45422671CA85002170D8 /* DineInCartAPIDataManager.swift in Sources */,
+				6D90D7D0273248A400E5FF27 /* CartListResponse.swift in Sources */,
 				6D4FFDC2266E2ACF00F04634 /* FavouriteCVC.swift in Sources */,
 				6D446D3B2676FE9B00C5ED9B /* PreviewBuilder.swift in Sources */,
 				6D54BB44266DE1C600BC4C34 /* SavedPostsAPIDataManager.swift in Sources */,
@@ -3887,10 +3891,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5.0;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 9STZT28MB5;
 				INFOPLIST_FILE = InLocalCustomer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3911,10 +3915,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5.0;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 9STZT28MB5;
 				INFOPLIST_FILE = InLocalCustomer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

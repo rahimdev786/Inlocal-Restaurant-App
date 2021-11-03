@@ -213,6 +213,12 @@
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="btnCount" destination="w6N-xV-fPa" id="Xm3-h6-a4U"/>
+                                                            <outlet property="imageViewMenu" destination="COU-Us-tRr" id="pnr-k8-YHe"/>
+                                                            <outlet property="lblCustomizationDetail" destination="SJb-9y-cDf" id="cXe-su-E6V"/>
+                                                            <outlet property="lblDescription" destination="tMw-hx-osC" id="Rlf-Xm-Ffw"/>
+                                                            <outlet property="lblNemuName" destination="WyW-Yf-SLJ" id="gfc-Xy-0h3"/>
+                                                            <outlet property="lblPrice" destination="iSF-T9-D3K" id="dHw-fb-SlT"/>
+                                                            <outlet property="lblTotalPrice" destination="DaO-Cz-ezl" id="ud0-lw-WLQ"/>
                                                             <outlet property="viewBackCell" destination="ADP-8n-df0" id="Ckc-6O-CtT"/>
                                                         </connections>
                                                     </tableViewCell>

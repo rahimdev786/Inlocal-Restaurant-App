@@ -9,7 +9,12 @@ import UIKit
 
 class DeliveryCartItemTVC: UITableViewCell {
 
-    
+    @IBOutlet weak var imageViewMenu: UIImageView!
+    @IBOutlet weak var lblNemuName: UILabel!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblCustomizationDetail: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var lblTotalPrice: UILabel!
     @IBOutlet weak var viewBackCell: UIView!
     @IBOutlet weak var btnCount: UIButton!
     

@@ -37,6 +37,9 @@ class CartVC: UIViewController {
     @IBOutlet weak var txtViewNote: UITextView!
     
     var orderAllItem = false
+    
+    var cartorderdetail : Cartorderdetail?
+    var cartitems = [Cartitems]()
     // MARK: - View Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,17 +197,47 @@ extension CartVC {
 
 // MARK: - CartAPIResponseDelegate
 extension CartVC: CartAPIResponseDelegate {
+    func cartListSuccess(withData: CartListResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        cartorderdetail = withData.cartorderdetail
+        cartitems = cartorderdetail?.cartitems ?? []
+        tableViewItems.reloadData()
+    }
     
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 
 extension CartVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return cartitems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryCartItemTVC", for: indexPath) as! DeliveryCartItemTVC
+        let cartItemData = cartitems[indexPath.row]
+        cell.lblNemuName.text = cartItemData.menuItemName
+        cell.lblDescription.text = cartItemData.description
+        cell.lblCustomizationDetail.text = cartItemData.cartItemsSubAddon![0].subAddonName
+        
         return cell
     }
     
