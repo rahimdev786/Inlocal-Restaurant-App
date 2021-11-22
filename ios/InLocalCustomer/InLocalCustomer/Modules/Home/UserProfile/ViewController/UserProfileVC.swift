@@ -45,9 +45,12 @@ class UserProfileVC: UIViewController {
         dataManager.apiResponseDelegate = self
         setupView()
         
+        guard let userId = dependency?.userId else {
+            return
+        }
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
-        dataManager.customerDetailsCall(customerId: 10)
-        dataManager.userPostListCall(userId: 10, skip: 0, limit: 10)
+        dataManager.customerDetailsCall(customerId: userId)
+        dataManager.userPostListCall(userId: userId, skip: 0, limit: 10)
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,7 +64,6 @@ class UserProfileVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionViewPost.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-        
         
     }
     
@@ -238,7 +240,6 @@ extension UserProfileVC: UserProfileAPIResponseDelegate {
             self.view.makeToast(error.localizedDescription)
         }
     }
-    
 }
 
 extension UserProfileVC: UICollectionViewDataSource {

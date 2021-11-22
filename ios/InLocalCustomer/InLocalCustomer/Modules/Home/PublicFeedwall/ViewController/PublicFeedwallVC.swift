@@ -149,6 +149,7 @@ extension PublicFeedwallVC: PublicFeedwallAPIResponseDelegate {
     
     func networkError(_ error: Error) {
         AppActivityIndicator.hideActivityIndicator()
+        
         if let error = error.asAFError?.underlyingError as NSError? {
             if error.code == APIError.noInternet.rawValue {
                self.view.makeToast("NoInternet".localiz())
@@ -164,6 +165,7 @@ extension PublicFeedwallVC: PublicFeedwallAPIResponseDelegate {
 }
 
 extension PublicFeedwallVC: UICollectionViewDataSource{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myFeedWallStories.count
     }
@@ -180,19 +182,18 @@ extension PublicFeedwallVC: UICollectionViewDataSource{
 }
 
 extension PublicFeedwallVC: UICollectionViewDelegate{
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         guard let viewStoryController = ViewStoryVC.load(withDependency: nil) else{
             return
         }
         viewStoryController.myFeedWallStories = myFeedWallStories[indexPath.row]
         self.navigationController?.pushViewController(viewStoryController, animated: true)
-        
     }
-    
 }
 
 extension PublicFeedwallVC: UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feedwallListing.count
     }
@@ -267,7 +268,7 @@ extension PublicFeedwallVC {
 
     @objc func onClickSavePost(sender: UIButton){
         let buttonTag = sender.tag
-        var postData = feedwallListing[buttonTag]
+        let postData = feedwallListing[buttonTag]
         if !postData.isFavorite!{
             feedwallListing[buttonTag].isLiked = true
             guard let postId = postData.postId else {
@@ -281,10 +282,21 @@ extension PublicFeedwallVC {
     
     @objc func onUserProfile(sender: UIButton){
         let buttonTag = sender.tag
-        guard let vc = UserProfileVC.load(withDependency: nil) else{
-            return
+        let userType = feedwallListing[buttonTag].postUserType
+        let userId = feedwallListing[buttonTag].userPostBy
+        let restaurantId = feedwallListing[buttonTag].restaurantId
+        
+        if userType == "Customer"{
+            guard let vc = UserProfileVC.load(withDependency: .init(userId: userId)) else{
+                return
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else{
+            guard let vc = RestaurantProfileVC.load(withDependency: .init(restaurantId: restaurantId)) else{
+                return
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func onClickRestaurent(sender: UIButton){
@@ -305,7 +317,12 @@ extension PublicFeedwallVC {
     }
     
     @objc func onClickComment(sender: UIButton){
-        guard let viewStoryController = CommentVC.load(withDependency: nil) else{
+        let buttonTag = sender.tag
+        let feedData = feedwallListing[buttonTag]
+        guard let postId = feedData.postId else{
+            return
+        }
+        guard let viewStoryController = CommentVC.load(withDependency: .init(postId: postId)) else{
             return
         }
         self.navigationController?.pushViewController(viewStoryController, animated: true)

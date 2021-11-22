@@ -9,8 +9,26 @@
 
 import Foundation
 
-class FollowerAPIDataManager {
+typealias FollowerListCompletion = (_ successResponse: FollowersListResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+class FollowerAPIDataManager : APIDataManager {
+    
     init() {
     }
+    
     // Data fetch service methods goes here
+    func followerListCall(skip: Int,
+                          limit: Int,
+                        completion: @escaping FollowerListCompletion) {
+           let params = [
+            "login_user_type" : "Customer",
+            "limit" : limit,
+            "skip" : skip
+               ] as [String : Any]
+        
+           print(params)
+           makeAPICall(to: HomeEndpoints.getFollowerList,
+                       withParameters: params,
+                       completion: completion)
+    }
 }

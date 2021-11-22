@@ -46,7 +46,7 @@ struct AddressList: Mappable, Codable {
         zipCode <- map["zipcode"]
         country <- map["country"]
         countryCode <- map["countryCOde"]
-        isDefault <- map["isDefault"]
+        isDefault <- map["is_default"]
     }
 }
 

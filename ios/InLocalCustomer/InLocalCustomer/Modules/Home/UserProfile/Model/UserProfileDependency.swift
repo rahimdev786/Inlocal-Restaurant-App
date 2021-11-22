@@ -8,5 +8,5 @@
 //
 
 struct UserProfileDependency {
-
+    var userId: Int?
 }

@@ -19,9 +19,9 @@ class TagedPhotoTVC: UITableViewCell {
     @IBOutlet weak var btnMenu: UIButton!
     @IBOutlet weak var btnSavedPost: UIButton!
     @IBOutlet weak var btnComment: UIButton!
-    
+    @IBOutlet weak var btnLike: UIButton!
     @IBOutlet weak var lblDescription: UILabel!
-    
+
     var isMenuOpen = false
     var isLiked = false
     var isFavorite = false

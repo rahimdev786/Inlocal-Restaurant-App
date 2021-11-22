@@ -22,7 +22,6 @@ enum SelectedLanguage {
         
         }
     }
-    
 }
 
 class IEUserDefaults{

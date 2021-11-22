@@ -12,7 +12,6 @@ import Foundation
 protocol RestaurantProfileAPIResponseDelegate {
     func restaurantDetailSuccess(withData: RestaurentDetailResponse)
     func restaurantPostListSuccess(withData: RestaurantPostResponse)
-    //RestaurantPostResponse
     func apiError(_ error: APIError)
     func networkError(_ error: Error)
 }

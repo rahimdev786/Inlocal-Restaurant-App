@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let signinViewController = SigninVC.load(withDependency: nil) else {
             return
         }
+        
         let navVC = UINavigationController(rootViewController: signinViewController)
         navVC.isNavigationBarHidden = true
         window?.rootViewController = navVC
@@ -49,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let tabViewController = BottumTabBarVC.load(withDependency: nil) else {
             return
         }
+        
         let navVC = UINavigationController(rootViewController: tabViewController)
         navVC.isNavigationBarHidden = true
         window?.rootViewController = navVC

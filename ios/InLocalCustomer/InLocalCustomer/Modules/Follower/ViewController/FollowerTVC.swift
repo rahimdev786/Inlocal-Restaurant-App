@@ -17,6 +17,9 @@ class FollowerTVC: UITableViewCell {
 
     static let identifier = "FollowerTVC"
     
+    @IBOutlet weak var imageViewUser: UIImageView!
+    @IBOutlet weak var lblUserName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

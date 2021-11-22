@@ -8,5 +8,5 @@
 //
 
 struct RestaurantProfileDependency {
-
+    var restaurantId : Int?
 }

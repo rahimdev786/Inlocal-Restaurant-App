@@ -10,6 +10,8 @@ import UIKit
 class FollowingTVC: UITableViewCell {
 
     static let identifier = "FollowingTVC"
+    @IBOutlet weak var imageViewUser: UIImageView!
+    @IBOutlet weak var lblUserName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -29,6 +29,7 @@ class TagedPhotosVC: UIViewController {
     @IBOutlet weak var scollViewTaggedPhoto: UIScrollView!
     
     var headerTitle = "Taged photos"
+    var customerAllPostList = [CustomerAllPostList]()
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -36,6 +37,8 @@ class TagedPhotosVC: UIViewController {
         
         dataManager.apiResponseDelegate = self
         setView()
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.customerPostListCall(skip: 0, limit: 10, customerId: 10)
     }
     
     override func viewDidLayoutSubviews() {
@@ -136,16 +139,60 @@ extension TagedPhotosVC {
 
 // MARK: - TagedPhotosAPIResponseDelegate
 extension TagedPhotosVC: TagedPhotosAPIResponseDelegate {
+    func customerPostListSuccess(withData: CustomerPostListResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        customerAllPostList = withData.customerPostList ?? []
+        tableViewPosts.reloadData()
+    }
     
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 //TagedPhotoTVC
 extension TagedPhotosVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return customerAllPostList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TagedPhotoTVC", for: indexPath) as! TagedPhotoTVC
+        
+        let postData = customerAllPostList[indexPath.row]
+        
+        cell.lblDescription.text = postData.message
+        cell.lblLikeCount.text = "\(postData.likeCounter!)"
+        if let photoUrl = postData.postImage{
+            cell.imgViewPost.sd_setImage(with:  URL(string: photoUrl), placeholderImage: #imageLiteral(resourceName: "feedwall_post_image"))
+        }
+
+        if let photoUrl = postData.restaurantImg{
+            cell.btnRestaurent.sd_setImage(with: URL(string: photoUrl), for: UIControl.State.normal) { (image, error, catche, rul) in
+            }
+        }
+        
+        if postData.isLiked!{
+            cell.btnLike.setImage(#imageLiteral(resourceName: "like_filled"), for: .normal)
+        } else{
+            cell.btnLike.setImage(#imageLiteral(resourceName: "like_empty_white"), for: .normal)
+        }
+        
         cell.btnRestaurent.addTarget(self, action: #selector(onClickRestaurent(sender:)), for: .touchUpInside)
         cell.btnRestaurent.tag = indexPath.row
         

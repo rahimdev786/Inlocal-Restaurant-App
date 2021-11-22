@@ -21,9 +21,8 @@ class LocationManager: NSObject {
     var currentLocation = CLLocation()
     var locCompletion: LocationCompletionHandler?
 
-    
-    
     func currentAuthorizationStatus() -> CLAuthorizationStatus {
+        
         if CLLocationManager.locationServicesEnabled() {
            
             switch CLLocationManager.authorizationStatus() {
@@ -77,6 +76,7 @@ class LocationManager: NSObject {
     }
     
     func getAddressFromCoordinates(lat:Double,long:Double,completion:@escaping(_ address: String?, _ error: Error?, _ stateShortName: String?) -> ()){
+        
         let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(lat),\(long)&key=AppConstants.GoogleApiKey.key"
 
         AF.request(url).validate().responseJSON { response in
@@ -107,12 +107,14 @@ class LocationManager: NSObject {
             } else {
                 completion(nil,nil,nil)
             }
+            
         case .failure(let error):
             print(error)
             completion(nil,error,nil)
 
         }
-        /*        let geocoder = GMSGeocoder()
+            
+        /*   let geocoder = GMSGeocoder()
 
              let position = CLLocationCoordinate2DMake(lat, long)
         geocoder.reverseGeocodeCoordinate(position) { response , error in
@@ -127,6 +129,7 @@ class LocationManager: NSObject {
                 completion(address1)
             }
         }*/
+            
         }
     }
     
@@ -153,7 +156,7 @@ extension LocationManager: CLLocationManagerDelegate{
                 currentLocation = location
             print("Current location: \(currentLocation.coordinate.latitude) logitude: \(currentLocation.coordinate.longitude)")
             locCompletion?(currentLocation)
-            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

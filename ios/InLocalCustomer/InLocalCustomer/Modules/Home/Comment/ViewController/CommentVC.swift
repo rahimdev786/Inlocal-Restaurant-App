@@ -15,9 +15,15 @@ class CommentVC: UIViewController {
 	lazy var dataManager = CommentDataManager()
     var dependency: CommentDependency?
     
+    
+    @IBOutlet weak var imageViewPost: UIImageView!
+    @IBOutlet weak var lblDetails: UILabel!
+    @IBOutlet weak var lblRestaurantName: UILabel!
+    @IBOutlet weak var buttonRestarantImage: UIButton!
     @IBOutlet weak var tableViewComment: UITableView!
     @IBOutlet weak var viewMenuBack: UIView!
     @IBOutlet weak var lblLike: UILabel!
+    @IBOutlet weak var buttonLike: UIButton!
     
     @IBOutlet weak var viewCommentBack: UIView!
     @IBOutlet weak var tableViewComment_Height: NSLayoutConstraint!
@@ -46,7 +52,10 @@ class CommentVC: UIViewController {
         setupView()
         
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
-        dataManager.commentListCall(skip: 0, limit: 10, postId: 1)
+        guard let postId = dependency?.postId else{
+            return
+        }
+        dataManager.commentListCall(skip: 0, limit: 10, postId: postId)
     }
     
     override func viewDidLayoutSubviews() {
@@ -127,6 +136,8 @@ class CommentVC: UIViewController {
     }
     
     func setupView(){
+        
+        imageViewPost.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
         viewMenuBack.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner], radius: 20.0)
         //lblLike.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMinYCorner], radius: lblLike.frame.height/2)
         lblLike.layer.cornerRadius = lblLike.frame.height / 2
@@ -149,6 +160,17 @@ class CommentVC: UIViewController {
         }
         
         scollViewComment.delegate = self
+    }
+    
+    func setDataToView(){
+        lblDetails.text = commentList?.message
+        //lblRestaurantName.text = commentList.
+        if let likeCountValue = commentList?.likeCounter{
+            lblLike.text = "\(likeCountValue)"
+        }
+        if let postImageURL = commentList?.postImage{
+            imageViewPost.sd_setImage(with:  URL(string: postImageURL), placeholderImage: nil)
+        }
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
@@ -213,6 +235,7 @@ extension CommentVC: CommentAPIResponseDelegate {
         AppActivityIndicator.hideActivityIndicator()
         commentList = withData.commentList
         comments = withData.commentList?.comments ?? []
+        setDataToView()
         tableViewComment.reloadData()
     }
     

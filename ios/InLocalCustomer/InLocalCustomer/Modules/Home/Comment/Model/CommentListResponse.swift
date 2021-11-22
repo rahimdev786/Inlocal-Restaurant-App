@@ -47,6 +47,7 @@ struct CommentList: Mappable, Codable {
 }
 
 struct Comments : Mappable, Codable {
+    
     var id : Int?
     var message : String?
     var userCommentBy : Int?

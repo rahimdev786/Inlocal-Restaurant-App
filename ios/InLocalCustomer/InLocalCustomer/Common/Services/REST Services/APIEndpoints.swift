@@ -65,9 +65,9 @@ enum AuthenticationEndpoints: APIEndpoint {
         case .notificationList:
             return "/get/notification"
         }
-}
+    }
 
-var method: HTTPMethod {
+    var method: HTTPMethod {
         
         switch self {
         case .register:
@@ -105,7 +105,7 @@ enum AddressEndpoints: APIEndpoint{
     case addAddress
     case validAddress
     case edit
-    
+    case setDefaultAddress
     var path: String{
         switch self {
         case .addAddress:
@@ -118,7 +118,8 @@ enum AddressEndpoints: APIEndpoint{
             return "/directory/countries"
         case .edit:
             return "/edit/address"
-            
+        case .setDefaultAddress:
+            return "/customer/address/set_default"
         }
     }
     
@@ -134,11 +135,14 @@ enum AddressEndpoints: APIEndpoint{
             return .get
         case .edit:
             return .post
+        case .setDefaultAddress:
+            return .post
         }
     }
 }
 
 enum NotificationEndpoints: APIEndpoint{
+    
     case getList
     case updateSetting
     case notificationList
@@ -189,6 +193,8 @@ enum HomeEndpoints: APIEndpoint{
     case getSavedPost
     case addToCart
     case getCart
+    case getFollowerList
+    
     var path: String{
         switch self {
         case .getStoryFeedList:
@@ -225,6 +231,8 @@ enum HomeEndpoints: APIEndpoint{
             return "/cart/add"
         case .getCart:
             return "/cart/get"
+        case .getFollowerList:
+            return "/common/myfollower/list"
         }
     }
     
@@ -263,6 +271,8 @@ enum HomeEndpoints: APIEndpoint{
         case .addToCart:
             return .post
         case .getCart:
+            return .post
+        case .getFollowerList:
             return .post
         }
     }

@@ -23,7 +23,7 @@ class FollowerVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var type: UserType = .followers
-    
+    var myFollowerList = [MyFollowerList]()
     var numberOfItems = 10
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -46,8 +46,10 @@ class FollowerVC: UIViewController {
             segmentedControl.backgroundColor = UIColor(hexString: "333333")
             segmentedControl.layer.cornerRadius = 4
         }
-        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.followerListCall(skip: 0, limit: 10)
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
@@ -73,6 +75,8 @@ class FollowerVC: UIViewController {
         if sender.selectedSegmentIndex == 0 {
             type = .followers
             lblTitle.text = "Followers"
+            AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+            dataManager.followerListCall(skip: 0, limit: 10)
         }else{
             type = .following
             lblTitle.text = "Following"
@@ -100,12 +104,39 @@ extension FollowerVC {
 
 // MARK: - FollowerAPIResponseDelegate
 extension FollowerVC: FollowerAPIResponseDelegate {
+    func followersListSuccess(withData: FollowersListResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        myFollowerList.removeAll()
+        myFollowerList = withData.myFollowerList ?? []
+        tableView.reloadData()
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
+    
 }
 
 //MARK: UITableViewDataSource
 extension FollowerVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfItems
+        return myFollowerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -113,15 +144,16 @@ extension FollowerVC: UITableViewDataSource {
         if type == .followers {
             let cell = tableView.dequeueReusableCell(withIdentifier: FollowerTVC.identifier, for: indexPath) as! FollowerTVC
             cell.delegate = self
+            let followerData = myFollowerList[indexPath.row]
+            if let userPhotoUrl = followerData.profileimage{
+                cell.imageViewUser.sd_setImage(with:  URL(string: userPhotoUrl), placeholderImage: #imageLiteral(resourceName: "story_user_photo"))
+            }
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: FollowingTVC.identifier, for: indexPath) as! FollowingTVC
             return cell
         }
-        
-        
     }
-    
 }
 
 extension FollowerVC: UITableViewDelegate {

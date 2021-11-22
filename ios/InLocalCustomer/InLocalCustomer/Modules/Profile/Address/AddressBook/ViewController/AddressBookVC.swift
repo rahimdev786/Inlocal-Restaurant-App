@@ -68,15 +68,24 @@ class AddressBookVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func openActionSheet(){
+    func openActionSheet(index: Int){
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     
-        let action0 = UIAlertAction(title: "Set Default", style: .default) { (action) in
+        let action0 = UIAlertAction(title: "Set Default", style: .default) { [self] (action) in
+            /*
             let cell = self.tableViewAddressBook.cellForRow(at: self.selectedIndexPath!) as! AddressBookTVC
             cell.btnSelect.isSelected = true
             self.previousSelectedCell?.btnSelect.isSelected = false
             self.previousSelectedCell = cell
+            */
+            let addressDara = addressList[index]
+            guard let addressId = addressDara.id else{
+                return
+            }
+            AppActivityIndicator.showActivityIndicator(showInView: self.view)
+            self.dataManager.setDefaultAddressCall(addressId: addressId)
         }
+        
         action0.setValue(UIColor.black, forKey: "titleTextColor")
         
         let action1 = UIAlertAction(title: "Delete", style: .default) { (action) in
@@ -114,6 +123,11 @@ extension AddressBookVC {
 
 // MARK: - AddressBookAPIResponseDelegate
 extension AddressBookVC: AddressBookAPIResponseDelegate {
+    func setDefaultAddressSuccess(withData: EmptyResponse?) {
+        AppActivityIndicator.hideActivityIndicator()
+        dataManager.getAddressListCall(skip: 0, limit: 10)
+    }
+    
     func addressListSuccess(withData: AddressBookResponseModel) {
         AppActivityIndicator.hideActivityIndicator()
         self.addressList = withData.addressList ?? []
@@ -157,12 +171,13 @@ extension AddressBookVC: UITableViewDataSource{
         let zipcode = addressData.zipCode ?? ""
         
         cell.lblAddress.text = "\(address) \(landmark) \(city) \(country) \(zipcode)"
-        if indexPath.row == 0 {
-            previousSelectedCell = cell
+        
+        if (addressData.isDefault == "1"){
             cell.btnSelect.isSelected = true
-        }else{
-            //cell.btnSelect.isSelected = false
+        } else{
+            cell.btnSelect.isSelected = false
         }
+    
         return cell
     }
     
@@ -172,6 +187,6 @@ extension AddressBookVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! AddressBookTVC
         selectedIndexPath = indexPath
-        openActionSheet()
+        openActionSheet(index: indexPath.row)
     }
 }

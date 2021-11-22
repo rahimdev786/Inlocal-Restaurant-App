@@ -60,10 +60,12 @@ class RestaurantProfileVC: UIViewController {
         dataManager.apiResponseDelegate = self
         setupView()
         
+        guard let restaurantId = dependency?.restaurantId else {
+            return
+        }
         AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
-        dataManager.restaurentDetailsCall(restaurantId: 19)
-        
-        dataManager.restaurentPostListCall(restaurantId: 19, skip: 0, limit: 10)
+        dataManager.restaurentDetailsCall(restaurantId: restaurantId)
+        dataManager.restaurentPostListCall(restaurantId: restaurantId, skip: 0, limit: 10)
     }
     
     override func viewDidLayoutSubviews() {

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -360,9 +359,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonLike" destination="MQf-Ey-y86" id="iUw-6W-xfz"/>
+                        <outlet property="buttonRestarantImage" destination="sJL-x1-wte" id="cAB-ny-vhn"/>
+                        <outlet property="imageViewPost" destination="1ll-G1-qHn" id="hYa-lA-oz9"/>
                         <outlet property="imgViewPost" destination="1ll-G1-qHn" id="WKR-Ej-mrL"/>
                         <outlet property="lblDescription" destination="VYm-h6-2Yk" id="qCg-oQ-Cbe"/>
+                        <outlet property="lblDetails" destination="VYm-h6-2Yk" id="tNY-fb-J9k"/>
                         <outlet property="lblLike" destination="Dsc-B6-PEd" id="MVX-mb-KvL"/>
+                        <outlet property="lblRestaurantName" destination="9Ea-fx-pZ7" id="wcA-Iw-KhV"/>
                         <outlet property="scollViewComment" destination="O0t-L6-DKd" id="gCC-uy-3LU"/>
                         <outlet property="tableViewComment" destination="KFq-SG-Svz" id="jW2-hs-ty6"/>
                         <outlet property="tableViewComment_Height" destination="LUi-1K-Dkd" id="gaG-pm-4qe"/>

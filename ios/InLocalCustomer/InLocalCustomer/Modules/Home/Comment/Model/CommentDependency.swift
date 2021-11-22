@@ -8,7 +8,7 @@
 //
 
 struct CommentDependency {
-
+    var postId: Int?
 }
 
 struct CommentRequest {

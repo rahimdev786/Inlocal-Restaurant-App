@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -228,6 +227,7 @@
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="btnComment" destination="Y8L-sk-yS9" id="jei-Q8-fEn"/>
+                                                            <outlet property="btnLike" destination="L6U-Vk-0jb" id="Ygh-wR-ioC"/>
                                                             <outlet property="btnMenu" destination="Rkw-nn-mWO" id="DbI-ih-tgI"/>
                                                             <outlet property="btnRestaurent" destination="RYl-fl-P4j" id="Sjf-ge-1Co"/>
                                                             <outlet property="btnSavedPost" destination="nVd-Hq-hR9" id="lcI-s5-ESJ"/>
@@ -322,7 +322,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="burgerking_icon" width="38" height="38"/>
         <image name="comment_white" width="38" height="38"/>
         <image name="favorite_white" width="38" height="38"/>

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -299,8 +298,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnFollowersCount" destination="ah7-DP-FRh" id="rNw-dc-Ooj"/>
+                        <outlet property="btnFollowingCount" destination="yYy-OG-Sig" id="xL7-Ai-T4E"/>
+                        <outlet property="btnPostCount" destination="EWh-Tz-2mU" id="Hdd-Cj-Wzf"/>
                         <outlet property="collectionViewPost" destination="q75-LZ-eUR" id="OL0-9h-sP0"/>
                         <outlet property="collectionViewPost_height" destination="890-rF-jk9" id="wk5-Si-e7F"/>
+                        <outlet property="imageViewCustomerProfile" destination="buG-Je-eZY" id="clK-T6-D2f"/>
+                        <outlet property="lblCustomerName" destination="aZb-xy-9Se" id="K1G-v2-hA1"/>
                         <outlet property="tabBar" destination="we4-Ci-Ks9" id="iPw-D0-gga"/>
                         <outlet property="tabItemAddPost" destination="djU-nn-CPH" id="zB5-th-dN6"/>
                         <outlet property="tabItemCart" destination="FJ8-YI-81e" id="Ebk-Kk-fmi"/>
@@ -317,7 +321,7 @@
     </scenes>
     <resources>
         <image name="avatar" width="133.33332824707031" height="133.33332824707031"/>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="sanwitch" width="170" height="135"/>
         <image name="tab_addpost" width="24.333333969116211" height="24"/>
         <image name="tab_cart" width="23" height="22.666666030883789"/>

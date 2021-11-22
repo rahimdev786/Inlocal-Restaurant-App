@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -93,7 +92,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wade Warren" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oar-Hi-oWg" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wade Warren" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oar-Hi-oWg">
                                                             <rect key="frame" x="88" y="30" width="95.666666666666686" height="20"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,6 +135,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="BSO-dF-bqX" secondAttribute="trailing" id="dBy-Af-5ov"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageViewUser" destination="8t0-hr-nPY" id="uem-21-k0G"/>
+                                            <outlet property="lblUserName" destination="oar-Hi-oWg" id="mWm-eT-Ret"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FollowingTVC" rowHeight="87" id="ULj-e7-ycn" customClass="FollowingTVC" customModule="InLocalCustomer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="115" width="341" height="87"/>
@@ -158,7 +161,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wade Warren" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0a-Pv-HGz" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wade Warren" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0a-Pv-HGz">
                                                             <rect key="frame" x="88" y="30" width="95.666666666666686" height="20"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -202,6 +205,10 @@
                                                 <constraint firstItem="YhB-pJ-95H" firstAttribute="leading" secondItem="Q94-SF-GoO" secondAttribute="leading" id="k5y-ud-xQ1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageViewUser" destination="RBq-f4-Fcb" id="JSO-kr-KXP"/>
+                                            <outlet property="lblUserName" destination="I0a-Pv-HGz" id="C9U-kL-UtL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -237,7 +244,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="follower_cross" width="38" height="38"/>
         <image name="follower_image" width="60" height="60"/>
         <image name="friend_req_notSent" width="38" height="38"/>

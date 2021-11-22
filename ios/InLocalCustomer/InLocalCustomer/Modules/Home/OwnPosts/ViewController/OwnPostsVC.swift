@@ -15,6 +15,8 @@ class OwnPostsVC: UIViewController {
 	lazy var dataManager = OwnPostsDataManager()
     var dependency: OwnPostsDependency?
     
+    @IBOutlet weak var lblCustomerName: UILabel!
+    @IBOutlet weak var imageViewCustomerProfile: UIImageView!
     @IBOutlet weak var viewProfileImageBack: UIView!
     @IBOutlet weak var collectionViewPost: UICollectionView!
     
@@ -27,12 +29,32 @@ class OwnPostsVC: UIViewController {
     @IBOutlet weak var tabItemCart: UITabBarItem!
     @IBOutlet weak var tabItemNotification: UITabBarItem!
     
+    @IBOutlet weak var btnPostCount: UILabel!
+    @IBOutlet weak var btnFollowersCount: UIButton!
+    @IBOutlet weak var btnFollowingCount: UIButton!
+    
+    var isFollowSelected = false
+    var customerDetails: CustomerDetails?
+    var customerPostList = [CustomerPostList]()
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
         
         dataManager.apiResponseDelegate = self
         setupView()
+        
+        var user: User? {
+            return IEUserDefaults.shared.userDetails
+        }
+        
+        guard let userId = user?.id else{
+            return
+        }
+        
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        dataManager.customerDetailsCall(customerId: userId)
+        dataManager.userPostListCall(userId: userId, skip: 0, limit: 10)
     }
     
     override func viewDidLayoutSubviews() {
@@ -110,6 +132,9 @@ class OwnPostsVC: UIViewController {
         tabBar.unselectedItemTintColor = .white
         
         viewProfileImageBack.roundCorners([.layerMinXMinYCorner, .layerMaxXMinYCorner], radius: 20)
+        imageViewCustomerProfile.layer.cornerRadius = 50
+        imageViewCustomerProfile.layer.masksToBounds = false
+        imageViewCustomerProfile.clipsToBounds = true
        
         let widthValue = ((UIScreen.main.bounds.width-44)/2)
         let heightValue = widthValue
@@ -128,6 +153,26 @@ class OwnPostsVC: UIViewController {
                     self.collectionViewPost_height.constant = newsize.height
                 }
             }
+        }
+    }
+    
+    func setDataToView(){
+        lblCustomerName.text = customerDetails?.name
+        
+        if let customerPhotoUrl = customerDetails?.profilePicture{
+            imageViewCustomerProfile.sd_setImage(with:  URL(string: customerPhotoUrl), placeholderImage: nil)
+        }
+
+        if let postCount = customerDetails?.postsCounter{
+            btnPostCount.text = "\(postCount)"
+        }
+        
+        if let followersCount = customerDetails?.followers{
+            btnFollowersCount.setTitle("\(followersCount)", for: .normal)
+        }
+        
+        if let following = customerDetails?.followings{
+            btnFollowingCount.setTitle("\(following)", for: .normal)
         }
     }
 }
@@ -150,20 +195,60 @@ extension OwnPostsVC {
 // MARK: - OwnPostsAPIResponseDelegate
 extension OwnPostsVC: OwnPostsAPIResponseDelegate {
     
+    func customerDetailSuccess(withData: CustomerDetailResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        customerDetails = withData.customerDetails
+        if customerDetails != nil{
+            setDataToView()
+        }
+    }
+    
+    func userPostListSuccess(withData: UserPostListResponse) {
+        customerPostList = withData.customerPostList ?? []
+        collectionViewPost.reloadData()
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
+
 extension OwnPostsVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return customerPostList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchPostCVC", for: indexPath) as! SearchPostCVC
+        
+        let postData = customerPostList[indexPath.row]
+        
+        if let postImageUrl = postData.postImage{
+            cell.imgViewUserPost.sd_setImage(with:  URL(string: postImageUrl), placeholderImage: nil)
+        }
+        
         return cell
     }
 }
 
 extension OwnPostsVC: UICollectionViewDelegate {
-    
     
 }
 
