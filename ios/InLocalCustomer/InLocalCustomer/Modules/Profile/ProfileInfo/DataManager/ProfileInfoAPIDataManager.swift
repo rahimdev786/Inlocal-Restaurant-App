@@ -9,8 +9,18 @@
 
 import Foundation
 
-class ProfileInfoAPIDataManager {
+typealias LogoutCompletion = (_ successResponse: EmptyResponse?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+class ProfileInfoAPIDataManager : APIDataManager {
     init() {
     }
     // Data fetch service methods goes here
+    func logoutUserCall(
+                    completion: @escaping LogoutCompletion) {
+           
+          
+           makeAPICall(to: AuthenticationEndpoints.logout,
+                       withParameters: nil,
+                       completion: completion)
+       }
 }

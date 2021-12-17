@@ -33,6 +33,7 @@ class SigninDataManager: APIResponseHandler {
             let result = welf.verifyResponse(response: (responseData, responseError, error))
             
             if result.success {
+                IEUserDefaults.shared.isUserLoggedIn = true
                 IEUserDefaults.shared.apiToken = responseData?.token
                 IEUserDefaults.shared.userDetails = responseData?.user
                 IEUserDefaults.shared.notificationSettings = responseData?.notificationSettings

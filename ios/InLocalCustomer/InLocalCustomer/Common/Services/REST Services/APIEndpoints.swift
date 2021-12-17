@@ -57,9 +57,9 @@ enum AuthenticationEndpoints: APIEndpoint {
         case .changePassword:
             return "/customer/changepassword"
         case .updateProfile:
-            return "/update/profile"
+            return "/customer/updateProfile"
         case .logout:
-            return "/logout"
+            return "/customer/logout"
         case .socialLogin:
             return "/social/login"
         case .notificationList:
@@ -89,7 +89,7 @@ enum AuthenticationEndpoints: APIEndpoint {
         case .updateProfile:
             return .post
         case .logout:
-            return .post
+            return .get
         case .socialLogin:
             return .post
         case .notificationList:
@@ -206,9 +206,9 @@ enum HomeEndpoints: APIEndpoint{
         case .savePost:
             return "/common/post/favorite"
         case .getRestaurentDeatils:
-            return "/restaurant/details"
+            return "/common/restaurant/details"
         case .getRestaurantPostList:
-            return "/restaurant/post/list"
+            return "/common/restaurant/post/list"
         case .getCustomerDetails:
             return "/customer/details"
         case .getCustomerPostList:

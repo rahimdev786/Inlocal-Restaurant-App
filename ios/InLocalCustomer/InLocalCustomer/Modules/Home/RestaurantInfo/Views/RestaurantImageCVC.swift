@@ -9,4 +9,6 @@ import UIKit
 
 class RestaurantImageCVC: UICollectionViewCell {
     
+    @IBOutlet weak var imageViewRestaurant: UIImageView!
+    
 }

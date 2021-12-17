@@ -140,11 +140,14 @@
 		6D88B5BF2705BB82004BA680 /* ForgotPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88B5BE2705BB82004BA680 /* ForgotPasswordResponse.swift */; };
 		6D90D7D0273248A400E5FF27 /* CartListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90D7CF273248A400E5FF27 /* CartListResponse.swift */; };
 		6D93764A27294BF000C67BCF /* DeliveryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93764927294BF000C67BCF /* DeliveryListResponse.swift */; };
+		6D994DF82755C20E006B7E5E /* EditProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D994DF72755C20E006B7E5E /* EditProfileResponse.swift */; };
 		6DAEB4E5274A1A1C00307B79 /* FollowersListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAEB4E4274A1A1C00307B79 /* FollowersListResponse.swift */; };
 		6DAEB4EA274A5DDD00307B79 /* CustomerPostListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAEB4E9274A5DDD00307B79 /* CustomerPostListResponse.swift */; };
+		6DC15F27274CDFBB00C93223 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DC15F26274CDFBB00C93223 /* GoogleService-Info.plist */; };
 		6DCDFEC3271FDC2E0056625C /* MenuCategoryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFEC2271FDC2E0056625C /* MenuCategoryListResponse.swift */; };
 		6DCDFECB271FF3990056625C /* MenuListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFECA271FF3990056625C /* MenuListResponse.swift */; };
 		6DCDFED0272036A40056625C /* MenuDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDFECF272036A40056625C /* MenuDetailResponse.swift */; };
+		6DCEAC1C274CA7D500D8EB87 /* AppDelegate+PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCEAC1B274CA7D500D8EB87 /* AppDelegate+PushNotification.swift */; };
 		6DE3AA30270EB567009E5F96 /* NotificationSettingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE3AA2F270EB567009E5F96 /* NotificationSettingResponseModel.swift */; };
 		6DEAE12F272D717300AF5CE2 /* SavedPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEAE12E272D717300AF5CE2 /* SavedPostResponse.swift */; };
 		6DF2B1532701BF4D00ECBF49 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2B1522701BF4D00ECBF49 /* APIDataManager.swift */; };
@@ -574,11 +577,15 @@
 		6D88B5BE2705BB82004BA680 /* ForgotPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponse.swift; sourceTree = "<group>"; };
 		6D90D7CF273248A400E5FF27 /* CartListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListResponse.swift; sourceTree = "<group>"; };
 		6D93764927294BF000C67BCF /* DeliveryListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListResponse.swift; sourceTree = "<group>"; };
+		6D994DF72755C20E006B7E5E /* EditProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileResponse.swift; sourceTree = "<group>"; };
 		6DAEB4E4274A1A1C00307B79 /* FollowersListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListResponse.swift; sourceTree = "<group>"; };
 		6DAEB4E9274A5DDD00307B79 /* CustomerPostListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerPostListResponse.swift; sourceTree = "<group>"; };
+		6DC15F26274CDFBB00C93223 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6DC15F91274CFDD100C93223 /* InLocalCustomer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InLocalCustomer.entitlements; sourceTree = "<group>"; };
 		6DCDFEC2271FDC2E0056625C /* MenuCategoryListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoryListResponse.swift; sourceTree = "<group>"; };
 		6DCDFECA271FF3990056625C /* MenuListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListResponse.swift; sourceTree = "<group>"; };
 		6DCDFECF272036A40056625C /* MenuDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailResponse.swift; sourceTree = "<group>"; };
+		6DCEAC1B274CA7D500D8EB87 /* AppDelegate+PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+PushNotification.swift"; sourceTree = "<group>"; };
 		6DE3AA2F270EB567009E5F96 /* NotificationSettingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingResponseModel.swift; sourceTree = "<group>"; };
 		6DEAE12E272D717300AF5CE2 /* SavedPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostResponse.swift; sourceTree = "<group>"; };
 		6DF2B1522701BF4D00ECBF49 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
@@ -1490,6 +1497,7 @@
 			isa = PBXGroup;
 			children = (
 				6D54BB1E266DE1A700BC4C34 /* EditProfileDependency.swift */,
+				6D994DF72755C20E006B7E5E /* EditProfileResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1768,7 +1776,9 @@
 		C10C75F5265F8BD700473CB7 /* InLocalCustomer */ = {
 			isa = PBXGroup;
 			children = (
+				6DC15F91274CFDD100C93223 /* InLocalCustomer.entitlements */,
 				C10C7604265F8BDB00473CB7 /* Info.plist */,
+				6DC15F26274CDFBB00C93223 /* GoogleService-Info.plist */,
 				C10C7630265F8F8A00473CB7 /* AppDelegate */,
 				C10C7638265F911200473CB7 /* Common */,
 				C10C7639265F913800473CB7 /* Modules */,
@@ -1802,6 +1812,7 @@
 			isa = PBXGroup;
 			children = (
 				C10C75F6265F8BD700473CB7 /* AppDelegate.swift */,
+				6DCEAC1B274CA7D500D8EB87 /* AppDelegate+PushNotification.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -3296,6 +3307,7 @@
 				C185D8A02664D95400BCDA2E /* SFProDisplay-Black.ttf in Resources */,
 				C1042D80266A356B0054B24D /* TagedPhotos.storyboard in Resources */,
 				C16920A32670765500055FD3 /* Cart.storyboard in Resources */,
+				6DC15F27274CDFBB00C93223 /* GoogleService-Info.plist in Resources */,
 				C1AACA38267714FF000D4D2A /* AddressBook.storyboard in Resources */,
 				C185D8AC2664D95500BCDA2E /* SFProDisplay-ThinItalic.ttf in Resources */,
 				C185D89A2664D95400BCDA2E /* SFProDisplay-Bold.ttf in Resources */,
@@ -3445,6 +3457,7 @@
 				C1DDAC68266905A200B4DB90 /* ViewStoryCVC.swift in Sources */,
 				C10C7673265FA15700473CB7 /* EmptyResponse.swift in Sources */,
 				6D54BB25266DE1A700BC4C34 /* EditProfileDependency.swift in Sources */,
+				6DCEAC1C274CA7D500D8EB87 /* AppDelegate+PushNotification.swift in Sources */,
 				C1AE0E2D266F2412000E6470 /* CommentDataManager.swift in Sources */,
 				C1042D81266A356B0054B24D /* TagedPhotosVC.swift in Sources */,
 				6D54BB26266DE1A700BC4C34 /* EditProfileVC.swift in Sources */,
@@ -3606,6 +3619,7 @@
 				C1042D8B266A4E5A0054B24D /* TagedPhotoTVC.swift in Sources */,
 				6DAEB4EA274A5DDD00307B79 /* CustomerPostListResponse.swift in Sources */,
 				C10FBABB266DD3DA0012FD8E /* DeliveryLocalDataManager.swift in Sources */,
+				6D994DF82755C20E006B7E5E /* EditProfileResponse.swift in Sources */,
 				C185D9642664F90300BCDA2E /* ValidateOTPDataManager.swift in Sources */,
 				6D446D2D2676FE9B00C5ED9B /* ImagePickerControllerDelegate.swift in Sources */,
 				C1042D332669DF500054B24D /* RestaurantProfileVC.swift in Sources */,
@@ -3897,19 +3911,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InLocalCustomer/InLocalCustomer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = 9STZT28MB5;
+				DEVELOPMENT_TEAM = 675UK927UV;
 				INFOPLIST_FILE = InLocalCustomer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.innofied.app.InLocalCustomer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.InLocalCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = InLocalCustomerDev;
+				PROVISIONING_PROFILE_SPECIFIER = InLocalDevelopmentProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -3921,19 +3936,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InLocalCustomer/InLocalCustomer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = 9STZT28MB5;
+				DEVELOPMENT_TEAM = 675UK927UV;
 				INFOPLIST_FILE = InLocalCustomer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.innofied.app.InLocalCustomer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.InLocalCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = InLocalCustomerDev;
+				PROVISIONING_PROFILE_SPECIFIER = InLocalDevelopmentProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

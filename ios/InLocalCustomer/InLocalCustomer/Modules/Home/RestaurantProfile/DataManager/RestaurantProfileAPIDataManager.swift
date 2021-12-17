@@ -21,7 +21,8 @@ class RestaurantProfileAPIDataManager: APIDataManager{
     func restaurentDetailsCall(restaurantId: Int,
                         completion: @escaping RestaurantDetailCompletion) {
            let params = [
-                "restaurant_id": restaurantId
+                "restaurant_id": restaurantId,
+                "login_user_type" : "Customer"
                ] as [String : Any]
         
            print(params)

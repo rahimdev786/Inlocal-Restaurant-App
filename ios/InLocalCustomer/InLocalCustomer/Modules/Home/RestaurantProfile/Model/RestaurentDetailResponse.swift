@@ -36,6 +36,9 @@ struct RestaurantDetails: Mappable, Codable {
     var restDeliveryAvailable: String?
     var restReservationAvailable: String?
     var isFollow: Bool?
+    var phone : RestaurantPhone?
+    var location : Location?
+    var openingHourse : [OpeningHourse]?
     
     init?(map: Map) {
         
@@ -57,7 +60,57 @@ struct RestaurantDetails: Mappable, Codable {
         restDeliveryAvailable <- map["restDeliveryAvailable"]
         restReservationAvailable <- map["restReservationAvailable"]
         isFollow <- map["IsFollow"]
+        phone <- map["phone"]
+        location <- map["location"]
+        openingHourse <- map["openingHours"]
     }
 }
+
+struct RestaurantPhone : Mappable, Codable{
+    var countryCode: String?
+    var number: String?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        countryCode <- map["countryCode"]
+        number <- map["number"]
+    }
+}
+
+struct Location : Mappable, Codable {
+    var latitude : String?
+    var longitude : String?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        latitude <- map["latitue"]
+        longitude <- map["logitute"]
+    }
+}
+
+struct OpeningHourse : Mappable, Codable {
+    var weekdayName : String?
+    var starttime : String?
+    var closeTime : String?
+    var isOpen : String?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        weekdayName <- map["weekday_name"]
+        starttime <- map["starttime"]
+        closeTime <- map["closetime"]
+        isOpen <- map["isOpen"]
+    }
+}
+
 
 

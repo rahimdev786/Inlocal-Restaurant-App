@@ -73,17 +73,11 @@ class ProfileInfoVC: UIViewController {
         
         
         let alertVC = UIAlertController(title: "Logout", message: "Are you sure you want to logout of the app?", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+        let okAction = UIAlertAction(title: "Yes", style: .default) { [self] (_) in
 
-            guard let introVC = SigninVC.load()else {
-                fatalError("IntroVC or LoginVC could not be loaded.")
-            }
-            let navVC = PopNavigationController(rootViewController: introVC)
-            navVC.isNavigationBarHidden = true
+            AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+            self.dataManager.logoutUserCall()
             
-            AppDelegate.shared.window?.replaceRootViewControllerWith(navVC, animated: true, completion: {
-                //do nothing as of now
-            })
         }
         
         //okAction.setValue(AppColors.themeOrange.color, forKey: "titleTextColor")
@@ -95,8 +89,6 @@ class ProfileInfoVC: UIViewController {
         alertVC.addAction(okAction)
         alertVC.addAction(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
-        
-        
     }
     
     func setupUI() {
@@ -121,7 +113,7 @@ class ProfileInfoVC: UIViewController {
         }
         
         if let photoUrl = user?.personalInfo?.profilePicture{
-            imageViewAvtar.sd_setImage(with:  URL(string: photoUrl), placeholderImage: #imageLiteral(resourceName: "feedwall_post_image"))
+            imageViewAvtar.sd_setImage(with:  URL(string: photoUrl), placeholderImage: nil)
         }
         
         if let userName = user?.personalInfo?.fullname{
@@ -156,6 +148,39 @@ extension ProfileInfoVC {
 
 // MARK: - ProfileInfoAPIResponseDelegate
 extension ProfileInfoVC: ProfileInfoAPIResponseDelegate {
+    func logoutSuccess(withData: EmptyResponse?) {
+        AppActivityIndicator.hideActivityIndicator()
+        guard let introVC = SigninVC.load()else {
+            fatalError("IntroVC or LoginVC could not be loaded.")
+        }
+        let navVC = PopNavigationController(rootViewController: introVC)
+        navVC.isNavigationBarHidden = true
+        
+        AppDelegate.shared.window?.replaceRootViewControllerWith(navVC, animated: true, completion: {
+            //do nothing as of now
+        })
+        //AppDelegate.shared.moveToLoginVC()
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 
 //MARK: UITableViewDataSource
@@ -178,6 +203,7 @@ extension ProfileInfoVC: UITableViewDataSource {
         return 60.0
     }
 }
+
 //MARK: UITableViewDataSource
 extension ProfileInfoVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

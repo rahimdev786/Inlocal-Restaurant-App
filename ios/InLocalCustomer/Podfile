@@ -17,6 +17,7 @@ pod 'JGProgressHUD'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'SDWebImage'
+pod 'Firebase/Messaging'
 
 pod 'AZTabBar'
 pod 'OTPFieldView'

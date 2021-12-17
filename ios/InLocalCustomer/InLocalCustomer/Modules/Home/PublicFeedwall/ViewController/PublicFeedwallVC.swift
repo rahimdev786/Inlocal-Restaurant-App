@@ -27,6 +27,8 @@ class PublicFeedwallVC: UIViewController {
     @IBOutlet weak var tableViewPost_Height: NSLayoutConstraint!
     @IBOutlet weak var scollViewFeedwall: UIScrollView!
     
+    @IBOutlet weak var collectionStoryView_Height: NSLayoutConstraint!
+    
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,6 +147,11 @@ extension PublicFeedwallVC: PublicFeedwallAPIResponseDelegate {
     func apiError(_ error: APIError) {
         AppActivityIndicator.hideActivityIndicator()
         self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func storyApiError(_ error: Error){
+        AppActivityIndicator.hideActivityIndicator()
+        collectionStoryView_Height.constant = 0
     }
     
     func networkError(_ error: Error) {

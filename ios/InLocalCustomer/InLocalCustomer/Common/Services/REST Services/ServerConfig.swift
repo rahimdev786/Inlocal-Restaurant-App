@@ -21,7 +21,7 @@ enum APIMode {
 struct ServerConfig {
     
     // MARK: - Static stored properties
-    static var baseURL = "http://ec2-3-0-166-170.ap-southeast-1.compute.amazonaws.com/inlocal-restaurant-nfc-app/api"
+    static var baseURL = ""
     static var mqttURL = ""
     static var mqttPort = UInt16()
     

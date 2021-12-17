@@ -205,7 +205,7 @@ class RestaurantProfileVC: UIViewController {
     
     @IBAction func onClickInfo(_ sender: Any) {
         //RestaurantInfoVC
-        guard let vc = RestaurantInfoVC.load(withDependency: nil) else{
+        guard let vc = RestaurantInfoVC.load(withDependency: .init(restaurantDetails: restaurantDetails)) else{
             return
         }
         self.navigationController?.pushViewController(vc, animated: true)

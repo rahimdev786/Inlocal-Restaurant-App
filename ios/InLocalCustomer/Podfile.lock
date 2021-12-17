@@ -10,6 +10,38 @@ PODS:
   - DatePickerDialog (4.0)
   - DateTimePicker (2.5.3)
   - EasyNotificationBadge (1.2.5)
+  - Firebase/CoreOnly (8.6.1):
+    - FirebaseCore (= 8.6.1)
+  - Firebase/Messaging (8.6.1):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 8.6.0)
+  - FirebaseCore (8.6.1):
+    - FirebaseCoreDiagnostics (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+  - FirebaseCoreDiagnostics (8.6.0):
+    - GoogleDataTransport (~> 9.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+    - nanopb (~> 2.30908.0)
+  - FirebaseInstallations (8.6.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/UserDefaults (~> 7.4)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - FirebaseMessaging (8.6.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleDataTransport (~> 9.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Reachability (~> 7.4)
+    - GoogleUtilities/UserDefaults (~> 7.4)
+    - nanopb (~> 2.30908.0)
+  - GoogleDataTransport (9.1.0):
+    - GoogleUtilities/Environment (~> 7.2)
+    - nanopb (~> 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
   - GoogleMaps (3.9.0):
     - GoogleMaps/Maps (= 3.9.0)
   - GoogleMaps/Base (3.9.0)
@@ -17,12 +49,35 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.9.0):
     - GoogleMaps/Base (= 3.9.0)
+  - GoogleUtilities/AppDelegateSwizzler (7.5.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.5.1):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.5.1):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/Network (7.5.1):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.5.1)"
+  - GoogleUtilities/Reachability (7.5.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.5.1):
+    - GoogleUtilities/Logger
   - ImageCropper (0.1.5.1)
   - IQKeyboardManagerSwift (6.4.2)
   - JGProgressHUD (2.1)
   - LanguageManager-iOS (1.2.0)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
   - ObjectMapper (3.5.3)
   - OTPFieldView (1.0.1)
+  - PromisesObjC (2.0.0)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -36,6 +91,7 @@ DEPENDENCIES:
   - CountryList
   - DatePickerDialog
   - DateTimePicker
+  - Firebase/Messaging
   - GoogleMaps
   - GooglePlaces
   - ImageCropper
@@ -57,14 +113,23 @@ SPEC REPOS:
     - DatePickerDialog
     - DateTimePicker
     - EasyNotificationBadge
+    - Firebase
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseInstallations
+    - FirebaseMessaging
+    - GoogleDataTransport
     - GoogleMaps
     - GooglePlaces
+    - GoogleUtilities
     - ImageCropper
     - IQKeyboardManagerSwift
     - JGProgressHUD
     - LanguageManager-iOS
+    - nanopb
     - ObjectMapper
     - OTPFieldView
+    - PromisesObjC
     - SDWebImage
     - Toast-Swift
     - "UITextView+Placeholder"
@@ -78,18 +143,27 @@ SPEC CHECKSUMS:
   DatePickerDialog: ccff2f91ff7a018057a4d72fa5ad6de49c8cb0cd
   DateTimePicker: 52701ddf656a50856d3510955933f767cd2c947c
   EasyNotificationBadge: a3ebbcb1de0c0558e102e954380c75801f352702
+  Firebase: e84d95f6d3a91f634abc384f0751c434cb3aecfa
+  FirebaseCore: a753c231801f04f5ccd10cc92119ad1b12a61165
+  FirebaseCoreDiagnostics: 3721920bde3a9a6d5aa093c1d25e9d3e47f694af
+  FirebaseInstallations: 0ede6ffcd215b8f93c19d9b06c1c54e2d4107e98
+  FirebaseMessaging: ce0a5ee974f7bfe83b6cc5acce88c2d969e37c41
+  GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
   GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
+  GoogleUtilities: 3df19e3c24f7bbc291d8b5809aa6b0d41e642437
   ImageCropper: 031f4dc49908419529d56cdedaea7111cd823c3d
   IQKeyboardManagerSwift: 79a3ec200dfb41cb66a89b8575417b5378107c5d
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   OTPFieldView: 700a752fe62c41d1c4914c78aa500fb30d97c255
+  PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 087e160d0e0647647118ae935a5ac2f00dd24232
+PODFILE CHECKSUM: 625b19c8ec560bc47468536ee05547e96d1760b6
 
 COCOAPODS: 1.10.1

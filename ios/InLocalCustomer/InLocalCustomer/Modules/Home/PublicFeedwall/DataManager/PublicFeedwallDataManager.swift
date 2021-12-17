@@ -15,6 +15,7 @@ protocol PublicFeedwallAPIResponseDelegate {
     func postLikeSuccess(withData: EmptyResponse?)
     func postSaveSuccess(withData: EmptyResponse?)
     func apiError(_ error: APIError)
+    func storyApiError(_ error: Error)
     func networkError(_ error: Error)
 }
 
@@ -74,7 +75,7 @@ class PublicFeedwallDataManager: APIResponseHandler {
                     welf.apiResponseDelegate?.apiError(responseError!)
                 }
             } else if result.error {
-                welf.apiResponseDelegate?.networkError(error!)
+                welf.apiResponseDelegate?.storyApiError(error!)
             } else {
                 welf.apiResponseDelegate?.networkError(error!)
             }

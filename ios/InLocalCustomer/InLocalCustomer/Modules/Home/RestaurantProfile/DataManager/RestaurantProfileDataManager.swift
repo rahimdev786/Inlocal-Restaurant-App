@@ -30,7 +30,6 @@ class RestaurantProfileDataManager: APIResponseHandler {
         
         apiDataManager.restaurentDetailsCall(restaurantId: restaurantId) {[weak self] (responseData, responseError, error) in
                                         
-                                        
             guard let welf = self else { return }
            
             let result = welf.verifyResponse(response: (responseData, responseError, error))

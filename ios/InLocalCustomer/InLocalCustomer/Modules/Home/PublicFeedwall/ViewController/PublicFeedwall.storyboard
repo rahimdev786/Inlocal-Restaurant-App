@@ -358,6 +358,7 @@
                     <connections>
                         <outlet property="btnUserName" destination="7sO-sI-U7k" id="67l-or-3PA"/>
                         <outlet property="btnUserProfileImage" destination="HqX-2Y-4qE" id="hgc-pR-4Rt"/>
+                        <outlet property="collectionStoryView_Height" destination="wUD-qm-knW" id="v2b-tm-Z0M"/>
                         <outlet property="collectionViewStories" destination="3GK-1T-0qq" id="qwA-A9-z4W"/>
                         <outlet property="scollViewFeedwall" destination="fwR-M5-Mq8" id="1ms-e2-9Wa"/>
                         <outlet property="tableViewPost" destination="6H0-qi-VY0" id="D2E-Z7-W8U"/>

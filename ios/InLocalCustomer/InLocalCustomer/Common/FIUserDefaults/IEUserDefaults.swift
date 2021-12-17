@@ -19,18 +19,29 @@ enum SelectedLanguage {
             return "ar"
         case .English:
             return "en"
-        
         }
     }
 }
 
 class IEUserDefaults{
     static let shared = IEUserDefaults()
+    private let UserLoggedIn = "UserLoggedIn"
     private let Language = "Language"
     private let ApiToken = "ApiToken"
     private let PushToken = "PushToken"
     private let UserDetails = "UserDetails"
     private let NotificationSettings = "NotificationSettings"
+    
+    var isUserLoggedIn: Bool{
+        get{
+            return UserDefaults.standard.bool(forKey: UserLoggedIn)
+        }
+        
+        set(newValue){
+            UserDefaults.standard.set(newValue, forKey: UserLoggedIn)
+            UserDefaults.standard.synchronize()
+        }
+    }
     
     var selectedLanguage: String?{
         get{

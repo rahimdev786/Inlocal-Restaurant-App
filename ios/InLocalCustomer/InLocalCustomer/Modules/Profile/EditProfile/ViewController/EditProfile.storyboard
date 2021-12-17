@@ -215,6 +215,9 @@
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onClickSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2SZ-yb-Hef"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
@@ -270,7 +273,7 @@
     </scenes>
     <resources>
         <image name="avatar" width="133.33332824707031" height="133.33332824707031"/>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="editProfileCircle" width="38" height="38"/>
     </resources>
 </document>

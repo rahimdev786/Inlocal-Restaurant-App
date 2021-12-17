@@ -8,5 +8,5 @@
 //
 
 struct RestaurantInfoDependency {
-    
+    var restaurantDetails : RestaurantDetails?
 }

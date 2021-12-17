@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-4p-6jZ">
-                                        <rect key="frame" x="132" y="11.999999999999998" width="111.33333333333331" height="26.333333333333329"/>
+                                        <rect key="frame" x="129.33333333333334" y="12.333333333333337" width="116.33333333333334" height="25.666666666666671"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -74,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="94" width="375" height="912"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idi-8c-C75">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="876.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="874.33333333333337"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hJy-eA-h8N">
                                                 <rect key="frame" x="17" y="0.0" width="341" height="204"/>
@@ -120,6 +119,9 @@
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="345" height="204"/>
+                                                        <connections>
+                                                            <outlet property="imageViewRestaurant" destination="J2H-I7-n9y" id="WHm-lF-Xl8"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
@@ -133,13 +135,13 @@
                                                 <color key="currentPageIndicatorTintColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                             </pageControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qo-lY-77Q">
-                                                <rect key="frame" x="17" y="219" width="341" height="19.333333333333343"/>
+                                                <rect key="frame" x="17" y="219" width="341" height="18.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ndu-DU-Zuu">
-                                                <rect key="frame" x="17" y="258.33333333333331" width="341" height="75"/>
+                                                <rect key="frame" x="17" y="257.66666666666669" width="341" height="75"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vth-uA-u5c">
                                                         <rect key="frame" x="0.0" y="0.0" width="341" height="15"/>
@@ -198,13 +200,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening Hourse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bze-X1-s3D">
-                                                <rect key="frame" x="17" y="353.33333333333331" width="341" height="17"/>
+                                                <rect key="frame" x="17" y="352.66666666666669" width="341" height="16.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWn-6N-sTJ">
-                                                <rect key="frame" x="17" y="385.33333333333331" width="341" height="100"/>
+                                                <rect key="frame" x="17" y="384" width="341" height="100"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T8w-Wg-yEC">
                                                         <rect key="frame" x="0.0" y="0.0" width="341" height="100"/>
@@ -224,16 +226,16 @@
                                                                             <rect key="frame" x="16" y="11" width="309" height="28"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mU7-w8-IU4">
-                                                                                    <rect key="frame" x="0.0" y="5.6666666666666679" width="309" height="17"/>
+                                                                                    <rect key="frame" x="0.0" y="6" width="309" height="16.333333333333332"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3w2-BJ-wdA">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="17"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="16.333333333333332"/>
                                                                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                                             <color key="textColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=": 10 AM - 11 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBb-gt-SD6">
-                                                                                            <rect key="frame" x="164.66666666666663" y="0.0" width="144.33333333333337" height="17"/>
+                                                                                            <rect key="frame" x="164.66666666666663" y="0.0" width="144.33333333333337" height="16.333333333333332"/>
                                                                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
@@ -257,6 +259,10 @@
                                                                         <constraint firstItem="EPE-60-FEO" firstAttribute="bottom" secondItem="4n6-Z9-RWK" secondAttribute="bottomMargin" id="rVx-l5-f64"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="lblDayName" destination="3w2-BJ-wdA" id="dBo-xj-g9N"/>
+                                                                    <outlet property="lblTime" destination="UBb-gt-SD6" id="e7N-Rb-hal"/>
+                                                                </connections>
                                                             </tableViewCell>
                                                         </prototypes>
                                                         <connections>
@@ -274,16 +280,16 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NkE-cT-Ot3">
-                                                <rect key="frame" x="17" y="505.33333333333337" width="341" height="17"/>
+                                                <rect key="frame" x="17" y="503.99999999999994" width="341" height="16.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Charges" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pje-xM-c8x">
-                                                        <rect key="frame" x="0.0" y="0.0" width="160.66666666666666" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="160.66666666666666" height="16.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 99.95" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDI-gF-zjP">
-                                                        <rect key="frame" x="180.66666666666663" y="0.0" width="160.33333333333337" height="17"/>
+                                                        <rect key="frame" x="180.66666666666663" y="0.0" width="160.33333333333337" height="16.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -291,7 +297,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrt-UH-4H6" customClass="GMSMapView">
-                                                <rect key="frame" x="17" y="542.33333333333337" width="341" height="314"/>
+                                                <rect key="frame" x="17" y="540.33333333333337" width="341" height="314"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="314" id="b9a-Me-M9h"/>
@@ -381,6 +387,12 @@
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="collctionViewRestaurantImage" destination="hJy-eA-h8N" id="ogZ-Z0-pKR"/>
+                        <outlet property="lblAddress" destination="nKp-5K-H3P" id="lCN-0b-M5S"/>
+                        <outlet property="lblContactNumber" destination="eoY-uV-W9r" id="IdP-Cl-HVB"/>
+                        <outlet property="lblDeliveryChanges" destination="iDI-gF-zjP" id="ygT-FK-ZvI"/>
+                        <outlet property="lblEmail" destination="bjC-7c-43M" id="FB8-ef-StY"/>
+                        <outlet property="lblNavigationTitile" destination="VQf-4p-6jZ" id="9BA-On-pXe"/>
+                        <outlet property="lblRestaurantName" destination="4qo-lY-77Q" id="PdH-s8-cnf"/>
                         <outlet property="pageControlImage" destination="oj8-Dm-nsC" id="bQh-FZ-xRs"/>
                         <outlet property="tabBar" destination="zhQ-TR-ML2" id="78E-IG-4xA"/>
                         <outlet property="tabItemAddPost" destination="Ath-T0-m5k" id="f6h-xD-pFB"/>
@@ -399,7 +411,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="contact_gray" width="10" height="16"/>
         <image name="email_gray" width="12" height="9.6666669845581055"/>
         <image name="location_gray" width="10" height="16"/>

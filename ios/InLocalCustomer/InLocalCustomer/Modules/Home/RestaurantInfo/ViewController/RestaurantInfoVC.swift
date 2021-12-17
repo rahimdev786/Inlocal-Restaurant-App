@@ -28,7 +28,16 @@ class RestaurantInfoVC: UIViewController {
     @IBOutlet weak var tabItemCart: UITabBarItem!
     @IBOutlet weak var tabItemNotification: UITabBarItem!
     
+    @IBOutlet weak var lblNavigationTitile: UILabel!
+    @IBOutlet weak var lblRestaurantName: UILabel!
+    @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var lblContactNumber: UILabel!
+    @IBOutlet weak var lblDeliveryChanges: UILabel!
+    
     @IBOutlet weak var pageControlImage: UIPageControl!
+    
+    var openingHourse = [OpeningHourse]()
     
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -36,6 +45,7 @@ class RestaurantInfoVC: UIViewController {
         
         dataManager.apiResponseDelegate = self
         setupView()
+        setData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -117,6 +127,23 @@ class RestaurantInfoVC: UIViewController {
             }
         }
     }
+    
+    func setData(){
+        guard let restaurantDetail = dependency?.restaurantDetails else {
+            return
+        }
+        
+        lblNavigationTitile.text = restaurantDetail.name
+        lblRestaurantName.text = restaurantDetail.name
+        lblAddress.text = restaurantDetail.address
+        lblEmail.text = restaurantDetail.email
+        lblContactNumber.text = restaurantDetail.phone?.number
+        
+        openingHourse = restaurantDetail.openingHourse ?? []
+        //lblDeliveryChanges.text = "€ \(restaurantDetail.)"
+        tableViewOpeningHourse.reloadData()
+        
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -173,11 +200,14 @@ extension RestaurantInfoVC : UICollectionViewDelegateFlowLayout{
 
 extension RestaurantInfoVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return openingHourse.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OpeningHourseTVC", for: indexPath) as! OpeningHourseTVC
+        let workingData = openingHourse[indexPath.row]
+        cell.lblDayName.text = workingData.weekdayName
+        cell.lblTime.text = "\(workingData.starttime!) - \(workingData.closeTime!)"
         return cell
     }
 }

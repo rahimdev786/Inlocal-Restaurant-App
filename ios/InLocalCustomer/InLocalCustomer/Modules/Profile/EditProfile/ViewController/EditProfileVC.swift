@@ -65,8 +65,7 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         txtFieldName.delegate = self
         txtFieldName.populateWithData(text: "", placeholderText: "Name", fieldType: .firstName)
         txtFieldName.txtFldInput.returnKeyType = UIReturnKeyType.next
-        txtFieldName.txtFldInput.text = "John Doe"
-        updateProfileRequest.userName = "John Doe"
+        
         //txtFieldName.txtFldInput.backgroundColor = .clear
         //txtFieldName.contentView.backgroundColor = .clear
         
@@ -75,8 +74,7 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         txtFieldEmail.delegate = self
         txtFieldEmail.populateWithData(text: "", placeholderText: "Email", fieldType: .email)
         txtFieldEmail.txtFldInput.returnKeyType = UIReturnKeyType.default
-        txtFieldEmail.txtFldInput.text = "a@b.com"
-        updateProfileRequest.email = "a@b.com"
+        
         //txtFieldEmail.txtFldInput.backgroundColor = .clear
         //txtFieldEmail.contentView.backgroundColor = .clear
         
@@ -86,11 +84,32 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         txtFieldEmail.delegate = self
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone No", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.default
-        txtFieldPhoneNumber.txtFldInput.text = "1234567890"
-        updateProfileRequest.phoneNumber = "1234567890"
+        
         //txtFieldPhoneNumber.txtFldInput.backgroundColor = .clear
         //txtFieldPhoneNumber.contentView.backgroundColor = .clear
         
+        var user: User? {
+            return IEUserDefaults.shared.userDetails
+        }
+        
+        if let photoUrl = user?.personalInfo?.profilePicture{
+            imgViewProfile.sd_setImage(with:  URL(string: photoUrl), placeholderImage: nil)
+        }
+        
+        if let userName = user?.personalInfo?.fullname{
+            txtFieldName.txtFldInput.text = userName
+            updateProfileRequest.userName = userName
+        }
+        
+        if let userEmail = user?.personalInfo?.email{
+            txtFieldEmail.txtFldInput.text = userEmail
+            updateProfileRequest.email = userEmail
+        }
+        
+        if let userPhone = user?.personalInfo?.phone?.number{
+            txtFieldPhoneNumber.txtFldInput.text = userPhone
+            updateProfileRequest.phoneNumber = userPhone
+        }
     }
     
     func validateFields() {
@@ -203,6 +222,10 @@ class EditProfileVC: UIViewController, UINavigationControllerDelegate {
         showActionSheet()
     }
     
+    @IBAction func onClickSave(_ sender: Any) {
+        AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
+        self.dataManager.editUserProfileCall(fullname: updateProfileRequest.userName!, email: updateProfileRequest.email!, phone: updateProfileRequest.phoneNumber!)
+    }
 }
 
 // MARK: - Load from storyboard with dependency
@@ -219,6 +242,32 @@ extension EditProfileVC {
 
 // MARK: - EditProfileAPIResponseDelegate
 extension EditProfileVC: EditProfileAPIResponseDelegate {
+    func editProfileSuccess(withData: EditProfileResponse) {
+        AppActivityIndicator.hideActivityIndicator()
+        let userData = withData.customerDetails
+        //IEUserDefaults.shared.userDetails
+        self.view.makeToast("Profile updated successfully.")
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast("\(error.errorDescription ?? "")")
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        if let error = error.asAFError?.underlyingError as NSError? {
+            if error.code == APIError.noInternet.rawValue {
+               self.view.makeToast("NoInternet".localiz())
+            } else if error.code == -1001 {
+                self.view.makeToast("TimeOut".localiz())
+            } else {
+                self.view.makeToast(error.localizedDescription)
+            }
+        } else {
+            self.view.makeToast(error.localizedDescription)
+        }
+    }
 }
 
 extension EditProfileVC: TextFieldDelegate{
@@ -293,9 +342,10 @@ extension EditProfileVC: UIImagePickerControllerDelegate {
         isImageSelected = true
         imgViewProfile.image = img
         
-        //        let fixedImg = img.fixOrientation()
-        //        saveImageDocumentDirectory(with: fixedImg, name: "profile.png")
-        //        imageChanged = true
+        //let fixedImg = img.fixOrientation()
+        //saveImageDocumentDirectory(with: fixedImg, name: "profile.png")
+        //imageChanged = true
+        
         dismiss(animated: true, completion: nil)
     }
 }
