@@ -277,3 +277,27 @@ enum HomeEndpoints: APIEndpoint{
         }
     }
 }
+
+enum OrderEndPoints: APIEndpoint{
+    
+    case getOrderHistory
+    
+    
+    var path: String{
+        switch self {
+        case .getOrderHistory:
+            return "/order/list"
+        
+        }
+    }
+    
+    var method: HTTPMethod{
+        switch self{
+        case .getOrderHistory:
+            return .post
+        }
+            
+    }
+    
+    
+}

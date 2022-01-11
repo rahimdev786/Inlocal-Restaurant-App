@@ -73,7 +73,7 @@ class UploadStoryVC: UIViewController, UINavigationControllerDelegate {
             tagRestaurantView.isHidden = false
         }
         
-        imgUpload.image = dependency.selectedImage
+        imgUpload.image = dependency?.selectedImage
     }
     
     @IBAction func didTapOnBack(_ sender: UIButton) {
@@ -85,8 +85,8 @@ class UploadStoryVC: UIViewController, UINavigationControllerDelegate {
     
     @IBAction func didTapOnTagRestaurant(_ sender: UIButton) {
         isTaggedRestaurant = true
-        let dependency = OrderListDependency(isComingFromUpload: true)
-        guard let vc = OrderListVC.loadFromXIB(withDependency: dependency) else{
+        
+        guard let vc = OrderListVC.loadFromXIB(withDependency: nil) else{
             return
         }
         navigationController?.pushViewController(vc, animated: true)

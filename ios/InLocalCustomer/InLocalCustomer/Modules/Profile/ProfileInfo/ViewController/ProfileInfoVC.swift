@@ -77,6 +77,7 @@ class ProfileInfoVC: UIViewController {
 
             AppActivityIndicator.showActivityIndicator(displayStyle: .dark, displayMessage: "", showInView: self.view)
             self.dataManager.logoutUserCall()
+            self.logoutSuccess(withData: nil)
             
         }
         

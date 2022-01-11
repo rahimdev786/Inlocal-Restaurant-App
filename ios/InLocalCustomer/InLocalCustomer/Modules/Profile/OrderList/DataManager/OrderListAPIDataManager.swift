@@ -9,8 +9,27 @@
 
 import Foundation
 
-class OrderListAPIDataManager {
+
+
+typealias orderHistoryCompletion = (_ success: OrderListing?,_ apiError:APIError?,_ error:Error? ) -> Void
+
+
+class OrderListAPIDataManager : APIDataManager{
     init() {
     }
     // Data fetch service methods goes here
+    
+    func getOrderList(skip:Int,startDate:String,endDate:String, completion : @escaping orderHistoryCompletion)
+    {
+        
+        let requestBody:[String:Any] = ["limit": 50,
+          "skip": skip,
+          "dateRange": [
+            "startDate": startDate,
+            "endDate": endDate
+          ]
+        ]
+        makeAPICall(to: OrderEndPoints.getOrderHistory, withParameters: requestBody, ofType: .httpBody, completion: completion)
+    }
+    
 }

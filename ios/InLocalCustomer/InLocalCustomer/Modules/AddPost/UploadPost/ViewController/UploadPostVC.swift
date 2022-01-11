@@ -64,8 +64,8 @@ class UploadPostVC: UIViewController {
     }
     
     @IBAction func didTapOnPreviousOrder(_ sender: UIButton) {
-        let dependency = OrderListDependency(isComingFromUpload: false)
-        guard let vc = OrderListVC.loadFromXIB(withDependency: dependency) else{
+        
+        guard let vc = OrderListVC.loadFromXIB(withDependency: nil) else{
             return
         }
         navigationController?.pushViewController(vc, animated: true)

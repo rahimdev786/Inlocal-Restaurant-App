@@ -19,6 +19,9 @@ class OrderListVC: UIViewController {
     // MARK: Instance variables
 	lazy var dataManager = OrderListDataManager()
     var dependency: OrderListDependency?
+    
+    var orderListingData : OrderListing?
+    
     // MARK: - View Life Cycle Methods
     
     @IBOutlet weak var tableView: UITableView!
@@ -39,6 +42,8 @@ class OrderListVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.dataManager.getOrderList(skip: 0, startDate: Utility.getDateStringFromFormat(formatString: "yyyy-MM-dd", date: Date()), endDate: Utility.getDateStringFromFormat(formatString: "yyyy-MM-dd", date: Date()))
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -68,8 +73,11 @@ class OrderListVC: UIViewController {
               } else{
                   let dateFormatter = DateFormatter()
                   dateFormatter.dateFormat = ApiDateFormat.filterDateFormat
-                  let fromDate = dateFormatter.string(from: checkInDate!)
-                  let toDate = dateFormatter.string(from: checkoutDate!)
+//                  let fromDate = dateFormatter.string(from: checkInDate!)
+//                  let toDate = dateFormatter.string(from: checkoutDate!)
+                
+                self.dataManager.getOrderList(skip: 0, startDate: Utility.getDateStringFromFormat(formatString: "yyyy-MM-dd", date: checkInDate!), endDate: Utility.getDateStringFromFormat(formatString: "yyyy-MM-dd", date: checkoutDate!))
+                
                 /*
                   self.lblStartDate.text = fromDate
                   self.startDate = checkInDate
@@ -105,16 +113,41 @@ extension OrderListVC {
 
 // MARK: - OrderListAPIResponseDelegate
 extension OrderListVC: OrderListAPIResponseDelegate {
+    func orderListfetched(orderList: OrderListing?) {
+        self.orderListingData = orderList
+        self.tableView.reloadData()
+    }
+    
+    func apiError(_ error: APIError) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast(error.errorDescription)
+    }
+    
+    func networkError(_ error: Error) {
+        AppActivityIndicator.hideActivityIndicator()
+        self.view.makeToast(error.localizedDescription)
+        print(error.localizedDescription)
+    }
+    
+    
 }
 
 //MARK: UITableViewDataSource
 extension OrderListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.orderListingData?.orderListing?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: OrderListTVC.identifier, for: indexPath) as! OrderListTVC
+        let orderObject = self.orderListingData?.orderListing?[indexPath.row]
+        
+        cell.orderIdLabelOutlet.text = "Order Id : #\(orderObject?.id ?? 0)"
+        cell.resturantDineInLabelOutlet.text = "\(orderObject?.order_type == "DELIVERY" ? "DELIVERY" : "Resturant Dine In")"
+        cell.cusineNameOutlet.text = orderObject?.restaurant?.name ?? ""
+        cell.priceLabelOutlet.text = "$ \(orderObject?.final_order_amount ?? 0.0)"
+        cell.orderDateLabelOutlet.text =  Utility.getDateStringFromFormat(formatString: "hh:mm a, dd.MM.yyyy", date: Utility.getDateFromDateString(formatString: "yyyy-MM-dd'T'HH:mm:ss.SSSZ", dateString: orderObject?.order_date ?? ""))
+        
         return cell
     }
     

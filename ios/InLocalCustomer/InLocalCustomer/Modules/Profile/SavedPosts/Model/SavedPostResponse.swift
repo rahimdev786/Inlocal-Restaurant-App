@@ -22,6 +22,9 @@ struct SavedPostResponse: Mappable, Codable {
 
 struct FavoritePostList : Mappable, Codable {
     
+
+    
+    
     var id : Int?
     var restaurantId : Int?
     var menuItemId : Int?

@@ -7,10 +7,17 @@
 
 import UIKit
 
+
+
 class OrderListTVC: UITableViewCell {
 
+    @IBOutlet weak var resturantDineInLabelOutlet: UILabel!
     static let identifier = "OrderListTVC"
     
+    @IBOutlet weak var cusineNameOutlet: UILabel!
+    @IBOutlet weak var orderDateLabelOutlet: UILabel!
+    @IBOutlet weak var priceLabelOutlet: UILabel!
+    @IBOutlet weak var orderIdLabelOutlet: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

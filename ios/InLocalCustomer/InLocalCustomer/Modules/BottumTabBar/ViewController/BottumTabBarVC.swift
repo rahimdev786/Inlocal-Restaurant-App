@@ -29,7 +29,7 @@ class BottumTabBarVC: UIViewController, UINavigationControllerDelegate {
     let imagePicker = UIImagePickerController()
     var isImageSelected = false
     var selectedImage: UIImage?
-    var postType:PostType = .story
+    var postType:PostType = .post
     var isCropped = false
     // MARK: - View Life Cycle Methods
 	override func viewDidLoad() {
@@ -139,7 +139,7 @@ extension BottumTabBarVC{
 //            return
 //        }
 //        tabController.setViewController(uploadStoryVC, atIndex: 2)
-        
+//
         
         //CartVC
         guard let cartViewController = DineInCartVC.load(withDependency: nil) else {
@@ -281,7 +281,12 @@ extension BottumTabBarVC{
             ()
         case .authorized:
             DispatchQueue.main.async {
+                #if targetEnvironment(simulator)
+                self.openImagePicker(isCamera: false)
+                #else
                 self.openImagePicker(isCamera: true)
+                #endif
+                
             }
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { success in
