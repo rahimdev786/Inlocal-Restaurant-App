@@ -8,7 +8,8 @@
 //
 
 import UIKit
-
+import CountryPickerView
+ 
 class SigninVC: UIViewController {
     
     // MARK: Instance variables
@@ -68,6 +69,12 @@ class SigninVC: UIViewController {
     
     @IBAction func onClickLogin(_ sender: Any) {
         
+//        userLoginData.phone = "8830470876"
+//        userLoginData.password = "12345678"
+        
+        userLoginData.phone = "8524563875"
+        userLoginData.password = "Userpass@1234"
+        
         guard let phone = userLoginData.phone,let password = userLoginData.password else{
             return
         }
@@ -86,12 +93,21 @@ class SigninVC: UIViewController {
         txtFieldPhoneNumber.populateWithData(text: "", placeholderText: "Phone no", fieldType: .phone)
         txtFieldPhoneNumber.txtFldInput.returnKeyType = UIReturnKeyType.next
         
+        txtFieldPhoneNumber.countryPickerView.delegate = self
+        txtFieldPhoneNumber.countryPickerView.dataSource = self
+        
+        txtFieldPhoneNumber.countryPickerView.showCountryCodeInView = false
+        txtFieldPhoneNumber.countryPickerView.tag = 1
+        
+        
         txtFieldPassword.delegate = self
         txtFieldPassword.populateWithData(text: "", placeholderText: "Password", fieldType: .password)
         txtFieldPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
         
-        validateFields()
+//        validateFields()
     }
+    
+    
     
     func validateFields() {
         if userLoginData.phone?.isNullString() ?? true || userLoginData.password?.isNullString() ?? true{
@@ -103,6 +119,43 @@ class SigninVC: UIViewController {
         }
     }
 }
+ 
+ extension SigninVC : CountryPickerViewDelegate {
+   
+    func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
+        
+        print(country.phoneCode)
+        
+    }
+    
+ }
+ 
+ extension SigninVC : CountryPickerViewDataSource {
+    
+    func showOnlyPreferredSection(in countryPickerView: CountryPickerView) -> Bool {
+        return countryPickerView.tag == txtFieldPhoneNumber.countryPickerView.tag
+    }
+    
+    func sectionTitleForPreferredCountries(in countryPickerView: CountryPickerView) -> String? {
+        if countryPickerView.tag == txtFieldPhoneNumber.countryPickerView.tag {
+            return "Preferred title"
+        }
+        return nil
+    }
+    
+    func navigationTitle(in countryPickerView: CountryPickerView) -> String? {
+        return "Select a Country"
+    }
+    
+    func searchBarPosition(in countryPickerView: CountryPickerView) -> SearchBarPosition {
+        if countryPickerView.tag == txtFieldPhoneNumber.countryPickerView.tag {
+//            switch searchBarPosition.selectedSegmentIndex
+        }
+        return .tableViewHeader
+    }
+    
+ }
+ 
 
 // MARK: - Load from storyboard with dependency
 extension SigninVC {
@@ -185,7 +238,7 @@ extension SigninVC: SigninAPIResponseDelegate {
             break
         }
         
-        validateFields()
+//        validateFields()
     }
     
      func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {

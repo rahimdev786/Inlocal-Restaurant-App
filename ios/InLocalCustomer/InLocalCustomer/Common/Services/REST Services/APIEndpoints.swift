@@ -141,6 +141,26 @@ enum AddressEndpoints: APIEndpoint{
     }
 }
 
+enum OrderDetailsEndpoints: APIEndpoint{
+    
+    case getOrderList
+    
+    var path: String{
+        switch self {
+        case .getOrderList:
+            return "/order/get"
+        }
+    }
+    
+    var method: HTTPMethod{
+        switch self {
+        case .getOrderList:
+            return .post
+        }
+    }
+}
+
+
 enum NotificationEndpoints: APIEndpoint{
     
     case getList

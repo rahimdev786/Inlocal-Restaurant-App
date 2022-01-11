@@ -119,6 +119,18 @@ extension NotificationsVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTVC", for: indexPath) as! NotificationTVC
         let notificationData = notificationList[indexPath.row]
         
+        cell.deliveryTitle_Lbl.text = notificationData.title
+        cell.deliveryDetails_Lbl.text = notificationData.message
+        cell.deliveryImgView.sd_setImage(with:  URL(string: notificationData.fromImage ?? ""), placeholderImage: UIImage())
+
+        let dateStr = convertDate(DateStr: notificationData.createdAt ?? "")
+        cell.day_Lbl.text = dateStr
+        
+        let timeStr = convertTime(timeStr: notificationData.time ?? "")
+        cell.date_Lbl.text = timeStr
+        
+        
+        
         if indexPath.row < 3{
             cell.imgViewNewNotification.isHidden = false
         } else{
@@ -127,12 +139,39 @@ extension NotificationsVC: UITableViewDataSource {
         return cell
     }
     
+    func convertDate(DateStr:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:SS.000000Z"
+        let date = dateFormatter.date(from: DateStr)
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let resultString = dateFormatter.string(from: date!)
+        return resultString
+    }
+    
+    
+        func convertTime(timeStr:String) -> String {
+            let timeFormatter = DateFormatter()
+            timeFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:SS.000000Z"
+            let time = timeFormatter.date(from: timeStr)
+            timeFormatter.dateFormat = "hh:mm a"
+            let resultString = timeFormatter.string(from: time!)
+            return resultString
+        }
+    
+    
 }
 
 extension NotificationsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let notificationData = notificationList[indexPath.row]
-        AppActivityIndicator.showActivityIndicator(showInView: self.view)
-        dataManager.readNotificationCall(notificationId: notificationData.id!                                              )
+//        let notificationData = notificationList[indexPath.row]
+//        AppActivityIndicator.showActivityIndicator(showInView: self.view)
+//        dataManager.readNotificationCall(notificationId: notificationData.id!)
+        
+        guard let vc = OrderDetailsVC.loadFromXIB() else{
+            return
+        }
+        vc.id = notificationList[indexPath.row].toID!
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }

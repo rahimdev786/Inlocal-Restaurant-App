@@ -26,6 +26,7 @@ pod 'CountryList'
 pod 'DatePickerDialog'
 pod 'DateTimePicker'
 pod 'ImageCropper'
+pod 'CountryPickerView'
 
 end
 deployment_target = '12.0'

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountryPickerView
 
 enum InputFieldType{
     case email
@@ -49,7 +50,9 @@ class TextFieldView: UIView {
     @IBOutlet weak var btnForgot: UIButton!
     @IBOutlet weak var btnShowPwd: UIButton!
     @IBOutlet weak var stckViewCountryCode: UIStackView!
-    @IBOutlet weak var lblCountryCode: UILabel!
+    
+    @IBOutlet weak var countryPickerView: CountryPickerView!
+    @IBOutlet weak var lblCountryCode: UITextField!
     @IBOutlet weak var imgViewCountryFlag: UIImageView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var viewBottom: UIView!

@@ -9,8 +9,21 @@
 
 import Foundation
 
-class OrderDetailsAPIDataManager {
+typealias orderDetailsCompletion = (_ successResponse: OrderDetailsDataClass?, _ errorResponse: APIError?, _ error: Error?) -> Void
+
+
+class OrderDetailsAPIDataManager : APIDataManager {
     init() {
     }
     // Data fetch service methods goes here
+    func getOrderDetails(orderId: Int,completion: @escaping orderDetailsCompletion) {
+        let params = [
+            "order_id": orderId
+        ] as [String : Any]
+        
+        print(params)
+        makeAPICall(to: OrderDetailsEndpoints.getOrderList,
+                    withParameters: params,
+                    completion: completion)
+    }
 }

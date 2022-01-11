@@ -163,6 +163,7 @@
 		6DF9F9E0271D3709009FC23F /* StoryFeedwallListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F9DF271D3709009FC23F /* StoryFeedwallListResponse.swift */; };
 		6DF9F9E5271D73DB009FC23F /* RestaurantPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F9E4271D73DB009FC23F /* RestaurantPostResponse.swift */; };
 		6DF9FA02271D88B4009FC23F /* UserPostListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9FA01271D88B3009FC23F /* UserPostListResponse.swift */; };
+		79D12690278D8E2C00307747 /* SuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1268F278D8E2C00307747 /* SuccessModel.swift */; };
 		A4C7D52BF3B6A95281B333FD /* Pods_InLocalCustomer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94010EEB37E7AC1B1FA6E7C /* Pods_InLocalCustomer.framework */; };
 		C1030BF326736EBB002A47AB /* SearchPostListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1030BF226736EBB002A47AB /* SearchPostListTVC.swift */; };
 		C1030C1026737C85002A47AB /* MenuCustomisationDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1030C0826737C84002A47AB /* MenuCustomisationDependency.swift */; };
@@ -601,6 +602,7 @@
 		6DF9F9DF271D3709009FC23F /* StoryFeedwallListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFeedwallListResponse.swift; sourceTree = "<group>"; };
 		6DF9F9E4271D73DB009FC23F /* RestaurantPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPostResponse.swift; sourceTree = "<group>"; };
 		6DF9FA01271D88B3009FC23F /* UserPostListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostListResponse.swift; sourceTree = "<group>"; };
+		79D1268F278D8E2C00307747 /* SuccessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessModel.swift; sourceTree = "<group>"; };
 		C1030BF226736EBB002A47AB /* SearchPostListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPostListTVC.swift; sourceTree = "<group>"; };
 		C1030C0826737C84002A47AB /* MenuCustomisationDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCustomisationDependency.swift; sourceTree = "<group>"; };
 		C1030C0A26737C84002A47AB /* MenuCustomisation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuCustomisation.storyboard; sourceTree = "<group>"; };
@@ -1776,6 +1778,7 @@
 		C10C75F5265F8BD700473CB7 /* InLocalCustomer */ = {
 			isa = PBXGroup;
 			children = (
+				79D1268F278D8E2C00307747 /* SuccessModel.swift */,
 				6DC15F91274CFDD100C93223 /* InLocalCustomer.entitlements */,
 				C10C7604265F8BDB00473CB7 /* Info.plist */,
 				6DC15F26274CDFBB00C93223 /* GoogleService-Info.plist */,
@@ -3531,6 +3534,7 @@
 				C1042D132669DE780054B24D /* UserProfileDataManager.swift in Sources */,
 				C1DDAC5A2668F27700B4DB90 /* ViewStoryLocalDataManager.swift in Sources */,
 				6D70BB4D2716DC270009DAD1 /* RestaurentDetailResponse.swift in Sources */,
+				79D12690278D8E2C00307747 /* SuccessModel.swift in Sources */,
 				6D446D6A2676FED300C5ED9B /* CustomPickerDataManager.swift in Sources */,
 				6D446D402676FE9B00C5ED9B /* SelectionView.swift in Sources */,
 				C1B963A026678F3A00CECDDF /* SearchAPIDataManager.swift in Sources */,

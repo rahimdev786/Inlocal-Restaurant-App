@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -24,9 +25,10 @@
                 <outlet property="btnForgot" destination="zQ4-3W-jai" id="QIw-ZZ-yzW"/>
                 <outlet property="btnShowPwd" destination="hYr-iD-Ztg" id="RQD-KJ-VGZ"/>
                 <outlet property="contentView" destination="al1-Wu-EM4" id="VOE-uy-7bJ"/>
+                <outlet property="countryPickerView" destination="Thh-EP-soh" id="XU5-AB-sZp"/>
                 <outlet property="imgViewLeftIcon" destination="gmt-Xo-hSY" id="H9B-rH-zgH"/>
                 <outlet property="imgViewRightIcon" destination="oce-4J-Y6m" id="ptn-td-qlO"/>
-                <outlet property="lblCountryCode" destination="FNi-wl-j78" id="sJ1-cx-R0z"/>
+                <outlet property="lblCountryCode" destination="vMD-7v-7fr" id="3wc-6U-RoI"/>
                 <outlet property="lblError" destination="WBJ-4d-VWG" id="OvY-wO-40u"/>
                 <outlet property="stckViewCountryCode" destination="MKB-H6-9Yh" id="CdG-em-Ql9"/>
                 <outlet property="txtFldInput" destination="EzR-nL-Thj" id="iux-WX-PVQ"/>
@@ -58,24 +60,31 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MKB-H6-9Yh">
-                                            <rect key="frame" x="35" y="16" width="30" height="18"/>
+                                            <rect key="frame" x="35" y="16.5" width="50" height="17.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+43" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNi-wl-j78">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="18"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Thh-EP-soh" customClass="CountryPickerView" customModule="CountryPickerView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="17.5"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vMD-7v-7fr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="17.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="uoB-07-SNq"/>
+                                                        <constraint firstItem="vMD-7v-7fr" firstAttribute="top" secondItem="Thh-EP-soh" secondAttribute="top" id="1mX-u3-6bg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vMD-7v-7fr" secondAttribute="trailing" id="9m8-Mb-htK"/>
+                                                        <constraint firstItem="vMD-7v-7fr" firstAttribute="leading" secondItem="Thh-EP-soh" secondAttribute="leading" id="dzV-wV-RvH"/>
+                                                        <constraint firstAttribute="width" constant="50" id="faH-4D-7xc"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vMD-7v-7fr" secondAttribute="bottom" id="lgm-Xr-sfX"/>
+                                                        <constraint firstAttribute="height" constant="17.5" id="uIW-vX-ZN1"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="FNi-wl-j78" firstAttribute="centerY" secondItem="MKB-H6-9Yh" secondAttribute="centerY" id="aMO-TS-2IC"/>
-                                            </constraints>
                                         </stackView>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EzR-nL-Thj">
-                                            <rect key="frame" x="75" y="11" width="170" height="28"/>
+                                            <rect key="frame" x="95" y="11" width="150" height="28"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
@@ -179,10 +188,13 @@
                 <constraint firstItem="k5F-YU-oL4" firstAttribute="trailing" secondItem="Kyu-wI-BAr" secondAttribute="trailing" id="ro3-aY-KgP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-26" y="1"/>
+            <point key="canvasLocation" x="-27.199999999999999" y="0.89955022488755632"/>
         </view>
     </objects>
     <resources>
         <image name="sort_review_arrow_down" width="11.5" height="6"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
