@@ -12,6 +12,14 @@ class BookingDetailsTVC: UITableViewCell {
     static let identifier = "BookingDetailsTVC"
     @IBOutlet weak var btnSelect: UIButton!
     
+    @IBOutlet weak var name_Lbl: UILabel!
+    @IBOutlet weak var details_Lbl: UILabel!
+    @IBOutlet weak var customization_Lbl: UILabel!
+    @IBOutlet weak var orderTotal_Lbl: UILabel!
+    @IBOutlet weak var finalOrderAmt_Lbl: UILabel!
+    @IBOutlet weak var quantity_Lbl: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

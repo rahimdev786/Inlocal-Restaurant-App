@@ -94,11 +94,6 @@ extension APIDataManager {
                                       ofType parameterType: ParameterType = .httpBody,
                                       completion: @escaping GenericCompletion<T>) -> DataRequest {
         
-        //Log.i("Headers: \(APIHeader.shared.headers)")
-        //Log.i("Parameters: \(String(describing: parameters))")
-        
-        
-        
         let dataRequest = AF.request(endpoint.urlPath,
                                      method: endpoint.method,
                                      parameters: parameters,
@@ -107,9 +102,9 @@ extension APIDataManager {
             .validate()
             .responseString { (response) in
                 
-                //Log.i("Request URL: \(response.request?.url?.absoluteString ?? "")")
-                //  Log.i("Response Data: \(response.result.value ?? "")")
-                // check for http response code 200 or network timeout
+                print("Request URL: \(response.request?.url?.absoluteString ?? "")")
+                print("Headers: \(APIHeader.shared.headers)")
+                print("Parameters: \(String(describing: parameters))")
                 
                 switch (response.result){
                 case .success(let responseString):

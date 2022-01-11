@@ -9,6 +9,15 @@ import UIKit
 
 class NotificationTVC: UITableViewCell {
 
+    
+    @IBOutlet weak var deliveryTitle_Lbl: UILabel!
+    @IBOutlet weak var deliveryDetails_Lbl: UILabel!
+    @IBOutlet weak var day_Lbl: UILabel!
+    @IBOutlet weak var date_Lbl: UILabel!
+    @IBOutlet weak var deliveryImgView: UIImageView!
+    
+    
+    
     @IBOutlet weak var imgViewNewNotification: UIImageView!
     
     override func awakeFromNib() {

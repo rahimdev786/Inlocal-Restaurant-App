@@ -58,7 +58,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usf-qz-CCq">
                                                     <rect key="frame" x="20" y="10" width="335" height="93"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza_icon" translatesAutoresizingMaskIntoConstraints="NO" id="lFh-2R-dj3">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza_icon" translatesAutoresizingMaskIntoConstraints="NO" id="lFh-2R-dj3">
                                                             <rect key="frame" x="10" y="15" width="48" height="48"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="HEy-ne-akY"/>
@@ -146,6 +146,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="date_Lbl" destination="Gl4-hy-xYJ" id="TeC-D2-gxh"/>
+                                            <outlet property="day_Lbl" destination="Y8H-Xw-a0s" id="If1-tv-pdW"/>
+                                            <outlet property="deliveryDetails_Lbl" destination="skr-ye-dNZ" id="TcW-kh-pu2"/>
+                                            <outlet property="deliveryImgView" destination="lFh-2R-dj3" id="LPC-6q-A8d"/>
+                                            <outlet property="deliveryTitle_Lbl" destination="Lqw-AZ-rpn" id="FAV-K1-s41"/>
                                             <outlet property="imgViewNewNotification" destination="g5Q-hK-AQK" id="NQ9-4O-vNh"/>
                                         </connections>
                                     </tableViewCell>

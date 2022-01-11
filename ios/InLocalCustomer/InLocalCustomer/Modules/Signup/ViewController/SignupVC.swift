@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import CountryPickerView
 
 class SignupVC: UIViewController {
     
@@ -136,6 +137,12 @@ class SignupVC: UIViewController {
         txtFieldPhoneNo.txtFldInput.delegate = self
         txtFieldPhoneNo.txtFldInput.tag = 2
         
+        txtFieldPhoneNo.countryPickerView.delegate = self
+        txtFieldPhoneNo.countryPickerView.dataSource = self
+        
+        txtFieldPhoneNo.countryPickerView.showCountryCodeInView = false
+        txtFieldPhoneNo.countryPickerView.tag = 1
+        
         txtFieldPassword.delegate = self
         txtFieldPassword.populateWithData(text: "", placeholderText: "Password", fieldType: .password)
         txtFieldPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
@@ -157,8 +164,43 @@ class SignupVC: UIViewController {
         }
     }
 }
+extension SignupVC : CountryPickerViewDelegate {
+  
+   func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
+       
+    
+        signUpRequest.countryCode = country.code
+    
+       
+   }
+   
+}
 
-// MARK: - Load from storyboard with dependency
+extension SignupVC : CountryPickerViewDataSource {
+   
+   func showOnlyPreferredSection(in countryPickerView: CountryPickerView) -> Bool {
+       return countryPickerView.tag == txtFieldPhoneNo.countryPickerView.tag
+   }
+   
+   func sectionTitleForPreferredCountries(in countryPickerView: CountryPickerView) -> String? {
+       if countryPickerView.tag == txtFieldPhoneNo.countryPickerView.tag {
+           return "Preferred title"
+       }
+       return nil
+   }
+   
+   func navigationTitle(in countryPickerView: CountryPickerView) -> String? {
+       return "Select a Country"
+   }
+   
+   func searchBarPosition(in countryPickerView: CountryPickerView) -> SearchBarPosition {
+       if countryPickerView.tag == txtFieldPhoneNo.countryPickerView.tag {
+//            switch searchBarPosition.selectedSegmentIndex
+       }
+       return .tableViewHeader
+   }
+   
+}// MARK: - Load from storyboard with dependency
 extension SignupVC {
     
     class func load(withDependency dependency: SignupDependency? = nil) -> SignupVC? {

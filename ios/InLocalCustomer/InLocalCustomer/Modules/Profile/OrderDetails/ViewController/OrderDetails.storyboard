@@ -95,7 +95,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbb-FI-XRh">
                                                         <rect key="frame" x="12" y="10" width="110" height="22"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Id : #687980" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-qp-vi4" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Id : #687980" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-qp-vi4">
                                                                 <rect key="frame" x="8.6666666666666643" y="4.3333333333333295" width="92.666666666666686" height="13.333333333333336"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="11"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,7 +124,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWQ-ud-uku">
                                                         <rect key="frame" x="231" y="8.9999999999999982" width="134" height="24.333333333333329"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:31 PM, 03.03.2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVM-Ug-N3v" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:31 PM, 03.03.2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVM-Ug-N3v">
                                                                 <rect key="frame" x="10" y="5.0000000000000009" width="114" height="14.333333333333336"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,7 +152,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-yZ-hfQ" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger King Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-yZ-hfQ">
                                                         <rect key="frame" x="12.000000000000007" y="69" width="115.66666666666669" height="14.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -225,37 +225,37 @@
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3Z-NR-if9">
                                                                                             <rect key="frame" x="115" y="0.0" width="200" height="101"/>
                                                                                             <subviews>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Dine In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3d-7p-bnq" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Dine In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3d-7p-bnq">
                                                                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="17"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subway Place Try our new delicious" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg2-Zl-Ydn" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subway Place Try our new delicious" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg2-Zl-Ydn">
                                                                                                     <rect key="frame" x="0.0" y="27" width="160" height="28.666666666666671"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="12"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customization: Sause" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqv-gF-Kfv" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                                                    <rect key="frame" x="0.0" y="65.666666666666671" width="106.66666666666667" height="14.333333333333329"/>
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqv-gF-Kfv">
+                                                                                                    <rect key="frame" x="0.0" y="65.666666666666671" width="0.0" height="0.0"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="12"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$85.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecK-t0-IRi" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                                                    <rect key="frame" x="0.0" y="90" width="40" height="17"/>
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$85.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecK-t0-IRi">
+                                                                                                    <rect key="frame" x="0.0" y="75.666666666666671" width="40" height="17"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="14"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$170.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nap-ad-TnG" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
-                                                                                                    <rect key="frame" x="160" y="90" width="45.333333333333343" height="17"/>
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$170.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nap-ad-TnG">
+                                                                                                    <rect key="frame" x="160" y="75.666666666666671" width="45.333333333333343" height="17"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="14"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRO-b9-RhE" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRO-b9-RhE">
                                                                                                     <rect key="frame" x="160" y="0.0" width="16" height="17"/>
                                                                                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="14"/>
                                                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -333,6 +333,12 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <outlet property="btnSelect" destination="abI-Jx-1T2" id="I1M-lf-gvU"/>
+                                                            <outlet property="customization_Lbl" destination="Gqv-gF-Kfv" id="gC4-ri-jDl"/>
+                                                            <outlet property="details_Lbl" destination="Mg2-Zl-Ydn" id="TBU-ZQ-2Wd"/>
+                                                            <outlet property="finalOrderAmt_Lbl" destination="nap-ad-TnG" id="nxX-uR-EJj"/>
+                                                            <outlet property="name_Lbl" destination="r3d-7p-bnq" id="fuR-1N-s6x"/>
+                                                            <outlet property="orderTotal_Lbl" destination="ecK-t0-IRi" id="Dne-44-mzS"/>
+                                                            <outlet property="quantity_Lbl" destination="IRO-b9-RhE" id="1Vh-JB-H5B"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -425,7 +431,7 @@
                                                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaO-u4-Osv" customClass="AppNavBarTitleLabel" customModule="InLocalCustomer" customModuleProvider="target">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaO-u4-Osv">
                                                                                         <rect key="frame" x="173.66666666666663" y="0.0" width="173.33333333333337" height="49"/>
                                                                                         <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="12"/>
                                                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -660,8 +666,18 @@
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="btnUploadStatus" destination="3Rb-gg-XyU" id="qnR-oR-lyE"/>
+                        <outlet property="dateTime_Lbl" destination="pVM-Ug-N3v" id="SO4-FA-KDE"/>
                         <outlet property="dateView" destination="AWQ-ud-uku" id="cj4-52-C3E"/>
+                        <outlet property="deliveryCharge_Lbl" destination="0Ds-4N-ZG8" id="P8f-f9-440"/>
+                        <outlet property="grandTotal_Lbl" destination="Nfr-lo-08g" id="P8m-cN-4ve"/>
+                        <outlet property="itemTotal_Lbl" destination="rDE-O5-CfK" id="hc9-UP-i7b"/>
+                        <outlet property="orderId_Lbl" destination="lp6-qp-vi4" id="oDF-k2-5Cy"/>
+                        <outlet property="orderItem_Tbl" destination="AGe-PQ-fdZ" id="7eS-Bx-AoQ"/>
                         <outlet property="placeholderView" destination="2kt-iM-Txj" id="1OU-nG-moL"/>
+                        <outlet property="restaurantName_Lbl" destination="ewd-yZ-hfQ" id="HjA-6C-EIc"/>
+                        <outlet property="tableNo_Lbl" destination="jaO-u4-Osv" id="ixS-Ua-t7Y"/>
+                        <outlet property="tax_Lbl" destination="Nyt-Z4-YLK" id="thL-KA-GQF"/>
+                        <outlet property="tip_Lbl" destination="bsP-XU-Pmk" id="oLC-zr-vqG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -670,7 +686,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_button_dark" width="24" height="22"/>
+        <image name="back_button_dark" width="36" height="36"/>
         <image name="food" width="170" height="135"/>
         <image name="radio_select" width="22" height="22"/>
         <image name="radio_unselect" width="22" height="22"/>

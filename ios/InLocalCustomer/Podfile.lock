@@ -7,6 +7,7 @@ PODS:
     - EasyNotificationBadge
   - CalendarDateRangePicker (2.0)
   - CountryList (1.1)
+  - CountryPickerView (3.3.0)
   - DatePickerDialog (4.0)
   - DateTimePicker (2.5.3)
   - EasyNotificationBadge (1.2.5)
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - AZTabBar
   - CalendarDateRangePicker
   - CountryList
+  - CountryPickerView
   - DatePickerDialog
   - DateTimePicker
   - Firebase/Messaging
@@ -109,6 +111,7 @@ SPEC REPOS:
     - AZTabBar
     - CalendarDateRangePicker
     - CountryList
+    - CountryPickerView
     - DatePickerDialog
     - DateTimePicker
     - EasyNotificationBadge
@@ -139,6 +142,7 @@ SPEC CHECKSUMS:
   AZTabBar: e4d5a1f5f3fc7be044d532b7a704d303cff9af11
   CalendarDateRangePicker: fa5f660023cf896180c04fe5c7687106734a54e4
   CountryList: ad58cd670c4ecab6bb014abebc12e63f619174b2
+  CountryPickerView: 6322ada32a80b0cd721b0267282a5c24f406f263
   DatePickerDialog: ccff2f91ff7a018057a4d72fa5ad6de49c8cb0cd
   DateTimePicker: 52701ddf656a50856d3510955933f767cd2c947c
   EasyNotificationBadge: a3ebbcb1de0c0558e102e954380c75801f352702
@@ -163,6 +167,6 @@ SPEC CHECKSUMS:
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: d1b2b630b9bfd6b93bf249f198a61fe1c8973fb5
+PODFILE CHECKSUM: c4d01217ef4292c418ae962a5aa7908aece2e6ad
 
 COCOAPODS: 1.11.2
