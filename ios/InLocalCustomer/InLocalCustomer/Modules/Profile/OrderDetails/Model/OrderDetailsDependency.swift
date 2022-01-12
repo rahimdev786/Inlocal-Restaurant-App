@@ -175,22 +175,22 @@ struct Orderitemssubaddon:Mappable, Codable {
 }
 
 // MARK: - OrderStatus
-struct OrderStatus:Mappable, Codable {
-    var id: Int?
-    var name, value, createdAt, updatedAt: String?
-
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        id <- map["id"]
-        name <- map["name"]
-        value <- map["value"]
-        createdAt <- map["created_at"]
-        updatedAt <- map["updated_at"]
-    }
-}
+//struct OrderStatus:Mappable, Codable {
+//    var id: Int?
+//    var name, value, createdAt, updatedAt: String?
+//
+//    init?(map: Map) {
+//        
+//    }
+//    
+//    mutating func mapping(map: Map) {
+//        id <- map["id"]
+//        name <- map["name"]
+//        value <- map["value"]
+//        createdAt <- map["created_at"]
+//        updatedAt <- map["updated_at"]
+//    }
+//}
 
 // MARK: - Restaurant
 struct Restaurant: Mappable,Codable {

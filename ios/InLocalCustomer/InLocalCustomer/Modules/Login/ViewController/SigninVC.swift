@@ -72,8 +72,8 @@ class SigninVC: UIViewController {
 //        userLoginData.phone = "8830470876"
 //        userLoginData.password = "12345678"
         
-        userLoginData.phone = "8524563875"
-        userLoginData.password = "Userpass@1234"
+//        userLoginData.phone = "8524563875"
+//        userLoginData.password = "Userpass@1234"
         
         guard let phone = userLoginData.phone,let password = userLoginData.password else{
             return
@@ -104,7 +104,7 @@ class SigninVC: UIViewController {
         txtFieldPassword.populateWithData(text: "", placeholderText: "Password", fieldType: .password)
         txtFieldPassword.txtFldInput.returnKeyType = UIReturnKeyType.default
         
-//        validateFields()
+        validateFields()
     }
     
     
@@ -238,7 +238,7 @@ extension SigninVC: SigninAPIResponseDelegate {
             break
         }
         
-//        validateFields()
+        validateFields()
     }
     
      func textFiedViewDidEndEditing(_ textFieldView: TextFieldView) {

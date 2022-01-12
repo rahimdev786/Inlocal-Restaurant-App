@@ -47,66 +47,67 @@ struct OrderListing : Mappable, Codable
 }
 
 struct OrderListObjectData :Mappable,Codable{
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-         id <- map["id"]
-         customer_id <- map["customer_id"]
-           restaurant_id <- map["restaurant_id"]
-           order_status_id <- map["order_status_id"]
-           order_type <- map["order_type"]
-           percentage_tip_value <- map["percentage_tip_value"]
-           order_date <- map["order_date"]
-           table_no <- map["table_no"]
-           no_of_guest <- map["no_of_guest"]
-         transaction_id <- map["transaction_id"]
-         payment_status <- map["payment_status"]
-         payment_mode <- map["payment_mode"]
-         order_subtotal <- map["order_subtotal"]
-           delivery_charge <- map["delivery_charge"]
-         tax <- map["tax"]
-         discount_amount <- map["discount_amount"]
-         final_order_amount <- map["final_order_amount"]
-         order_commission <- map["order_commission"]
-        
-           note <- map["note"]
-         message <- map["message"]
-           created_at <- map["created_at"]
-           updated_at <- map["updated_at"]
-           order_status <- map["order_status"]
-           order_items <- map["order_items"]
-           restaurant <- map["restaurant"]
-    }
-    
     
     var id : Int?
     var customer_id : Int?
-      var restaurant_id: Int?
-      var order_status_id:Int?
-      var order_type: String?
-      var percentage_tip_value: Int?
-      var order_date: String?
-      var table_no: Int?
-      var no_of_guest:Int?
+    var restaurant_id: Int?
+    var order_status_id:Int?
+    var order_type: String?
+    var percentage_tip_value: Int?
+    var order_date: String?
+    var table_no: Int?
+    var no_of_guest:Int?
     var transaction_id : String?
     var payment_status:String?
     var payment_mode : String?
     var order_subtotal:Double?
-      var delivery_charge: Double?
+    var delivery_charge: Double?
     var tax : Double?
     var discount_amount : Double?
     var final_order_amount : Double?
     var order_commission : Double?
     
-      var note: String?
+    var note: String?
     var message : String?
-      var created_at: String?
-      var updated_at: String?
-      var order_status: OrderStatus?
-      var order_items: [OrderedItem]?
-      var restaurant: ResturantInfo?
+    var created_at: String?
+    var updated_at: String?
+    var order_status: OrderStatus?
+    var order_items: [OrderedItem]?
+    var restaurant: ResturantInfo?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        id <- map["id"]
+        customer_id <- map["customer_id"]
+        restaurant_id <- map["restaurant_id"]
+        order_status_id <- map["order_status_id"]
+        order_type <- map["order_type"]
+        percentage_tip_value <- map["percentage_tip_value"]
+        order_date <- map["order_date"]
+        table_no <- map["table_no"]
+        no_of_guest <- map["no_of_guest"]
+        transaction_id <- map["transaction_id"]
+        payment_status <- map["payment_status"]
+        payment_mode <- map["payment_mode"]
+        order_subtotal <- map["order_subtotal"]
+        delivery_charge <- map["delivery_charge"]
+        tax <- map["tax"]
+        discount_amount <- map["discount_amount"]
+        final_order_amount <- map["final_order_amount"]
+        order_commission <- map["order_commission"]
+        
+        note <- map["note"]
+        message <- map["message"]
+        created_at <- map["created_at"]
+        updated_at <- map["updated_at"]
+        order_status <- map["order_status"]
+        order_items <- map["order_items"]
+        restaurant <- map["restaurant"]
+    }
+    
     
 }
 
@@ -131,16 +132,16 @@ struct OrderedItem : Mappable,Codable
     }
     
     var id:Int?
-  var order_id: Int?
-  var menu_item_id: Int?
-  var menu_item_name:String?
+    var order_id: Int?
+    var menu_item_id: Int?
+    var menu_item_name:String?
     var price:Int?
-  var qty: Int?
+    var qty: Int?
     var status:String?
-  var message: String?
-  var created_at: String?
-  var updated_at: String?
-  var orderitemssubaddon: [OrderedItemAddOn]?
+    var message: String?
+    var created_at: String?
+    var updated_at: String?
+    var orderitemssubaddon: [OrderedItemAddOn]?
 }
 
 struct OrderedItemAddOn : Mappable,Codable
@@ -163,15 +164,15 @@ struct OrderedItemAddOn : Mappable,Codable
     }
     
     var id : Int?
-  var order_item_id:Int?
+    var order_item_id:Int?
     var addon_id : Int?
-  var addon_name:String?
+    var addon_name:String?
     var sub_addon_id : Int?
-  var sub_addon_name : String?
+    var sub_addon_name : String?
     var price : Double?
     var qty : Int?
-  var created_at: String?
-  var updated_at: String?
+    var created_at: String?
+    var updated_at: String?
 }
 
 
@@ -190,8 +191,8 @@ struct OrderStatus : Mappable,Codable
     }
     
     var id:Int?
-  var name: String?
-  var value:String?
+    var name: String?
+    var value:String?
     var created_at:String?
     var updated_at:String?
 }
@@ -203,41 +204,41 @@ struct ResturantInfo:Mappable,Codable
     }
     
     mutating func mapping(map: Map) {
-         id <- map["id"]
-         name <- map["name"]
-         email <- map["email"]
-         phone <- map["phone"]
-         profile_image <- map["profile_image"]
-         cover_image <- map["cover_image"]
-         owner_name <- map["owner_name"]
-         owner_email <- map["owner_email"]
-         owner_phone <- map["owner_phone"]
-         description <- map["description"]
-         address <- map["address"]
-         latitue <- map["latitue"]
-         logitute <- map["logitute"]
-         zipcode <- map["zipcode"]
-         city <- map["city"]
-         country_code <- map["country_code"]
-         country <- map["country"]
-         landmark <- map["landmark"]
-         device_token <- map["device_token"]
-         restReservationAvailable <- map["restReservationAvailable"]
-         restDeliveryAvailable <- map["restDeliveryAvailable"]
-         mobile_verified <- map["mobile_verified"]
-         commission_type <- map["commission_type"]
-         commission_value <- map["commission_value"]
-         delivery_charges <- map["delivery_charges"]
-         delivery_note <- map["delivery_note"]
-         favaourite_counter <- map["favaourite_counter"]
-         like_counter <- map["like_counter"]
-         followers <- map["followers"]
-         followings <- map["followings"]
-         posts_counter <- map["posts_counter"]
-         insight_counter <- map["insight_counter"]
-         status <- map["status"]
-         created_at <- map["created_at"]
-         updated_at <- map["updated_at"]
+        id <- map["id"]
+        name <- map["name"]
+        email <- map["email"]
+        phone <- map["phone"]
+        profile_image <- map["profile_image"]
+        cover_image <- map["cover_image"]
+        owner_name <- map["owner_name"]
+        owner_email <- map["owner_email"]
+        owner_phone <- map["owner_phone"]
+        description <- map["description"]
+        address <- map["address"]
+        latitue <- map["latitue"]
+        logitute <- map["logitute"]
+        zipcode <- map["zipcode"]
+        city <- map["city"]
+        country_code <- map["country_code"]
+        country <- map["country"]
+        landmark <- map["landmark"]
+        device_token <- map["device_token"]
+        restReservationAvailable <- map["restReservationAvailable"]
+        restDeliveryAvailable <- map["restDeliveryAvailable"]
+        mobile_verified <- map["mobile_verified"]
+        commission_type <- map["commission_type"]
+        commission_value <- map["commission_value"]
+        delivery_charges <- map["delivery_charges"]
+        delivery_note <- map["delivery_note"]
+        favaourite_counter <- map["favaourite_counter"]
+        like_counter <- map["like_counter"]
+        followers <- map["followers"]
+        followings <- map["followings"]
+        posts_counter <- map["posts_counter"]
+        insight_counter <- map["insight_counter"]
+        status <- map["status"]
+        created_at <- map["created_at"]
+        updated_at <- map["updated_at"]
     }
     
     var id : Int?
@@ -260,7 +261,7 @@ struct ResturantInfo:Mappable,Codable
     var landmark:String?
     
     var device_token:String?
-
+    
     var restReservationAvailable : String?
     var restDeliveryAvailable : String?
     var mobile_verified :String?
@@ -278,7 +279,7 @@ struct ResturantInfo:Mappable,Codable
     var created_at:String?
     var updated_at:String?
     
-  }
+}
 
 struct PhoneNumber:Mappable,Codable
 {

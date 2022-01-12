@@ -126,7 +126,7 @@ extension OrderDetailsVC: OrderDetailsAPIResponseDelegate {
         orderItem_Tbl.reloadData()
         
         
-        orderId_Lbl.text = "\(id)"
+        orderId_Lbl.text = "Order Id: \(id)"
         dateTime_Lbl.text = ""
         tableNo_Lbl.text = "\(orderDetails?.orderDetail?.tableNo ?? 0)"
         itemTotal_Lbl.text = "\(orderDetails?.orderDetail?.orderSubtotal ?? 0)"
